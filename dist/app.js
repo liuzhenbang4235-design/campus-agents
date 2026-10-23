@@ -29,7 +29,7 @@ function formatBubble(text){
 }
 function sourceMarkup(s){
  if(s.sourceType==='campus_board'){
-  return '<button class="source-btn" data-action="board-contact" data-id="'+esc(s.listingId)+'">['+s.citation+'] '+esc(s.title||'同学登记')+' · 联系对方</button>';
+  return '<button class="source-btn" data-action="board-offer" data-id="'+esc(s.listingId)+'" data-title="'+esc(s.rawTitle||s.title||'同学登记')+'" data-owner="'+esc(s.ownerName||'')+'" data-type="'+esc(s.type||'')+'" data-expires="'+esc(s.expiresAt||'')+'">['+s.citation+'] '+esc(s.title||'同学登记')+' · 是否开聊</button>';
  }
  if(s.sourceType==='map'){
   let url;try{url=new URL(s.sourceUrl);if(url.protocol!=='https:'||!((url.hostname==='uri.amap.com'&&url.pathname==='/search')||(url.hostname==='www.openstreetmap.org'&&/^\/(node|way|relation)\/\d+$/.test(url.pathname)))||url.username||url.password)return ''}catch{return ''}
@@ -59,7 +59,7 @@ function aiConfigLabel(){const s=providerShort();return ai.configIssue?'配置�
 function aiStatusNote(){const s=providerShort();return ai.configIssue?'模型 ID 需修正':ai.verified?s+'已连接':ai.ready?'配置待验证':'模型待配置'}
 
 let state={version:2,agents:[],docs:[],audit:[],chats:{},account:null};
-let account=null,boardListings=[],boardQuery='',boardType='全部',boardBusy=false,boardNeedsRefresh=true,dmListingId=null;
+let account=null,boardListings=[],boardBusy=false,boardNeedsRefresh=true,dmListingId=null,boardQuestion='',boardAnswer=null,boardAsking=false,boardPublishOpen=false;
 let ai={ready:false,hasKey:false,model:'',dailyLimit:50,usedToday:0},busy=false,pendingChat=null,chatError='',cloudConsent=false;
 async function api(path,body){
  const response=await fetch('/api/'+path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json','X-Campus-Client':'1'}:{},body:body?JSON.stringify(body):undefined});
@@ -80,24 +80,31 @@ const badge=s=>`<span class="tag ${['published','approved'].includes(s)?'green':
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('visible');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('visible'),3500)}
 function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['gallery','board','chat','upload','team','admin'].includes(parts[0])?parts[0]:'gallery',id:parts[1]||'affairs'}}
 function go(page,id){const hash='#'+page+(id?'/'+id:'');if(location.hash===hash)render();else location.hash=hash}
-const titles={gallery:'Agent 广场',board:'校园信息',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理'};
-function shell(content){const r=route();return `<div class="shell"><aside class="sidebar"><a class="brand" href="#gallery"><span class="brand-mark">集</span><div><strong>校集</strong><small>CAMPUS AGENTS</small></div></a><div class="nav-title">校园共创空间</div><nav class="nav" aria-label="主导航">${[['gallery','grid','Agent 广场'],['board','board','校园信息'],['chat','chat','与助手对话'],['upload','upload','资料贡献'],['team','team','团队工作台'],['admin','shield','审核管理']].map(([p,i,l])=>`<a class="nav-link ${r.page===p?'active':''}" href="#${p}" ${r.page===p?'aria-current="page"':''}>${icon(i)}${l}</a>`).join('')}</nav><div class="sidebar-bottom"><div class="local-label">${icon('spark')}本地资料问答 · V2</div><p>知识库保存在你的电脑。<br>云端模型需配置后启用。</p><button data-action="reset">重置演示数据</button></div></aside><div class="main"><header class="topbar"><div class="breadcrumb">校园共创平台 <span>/ ${titles[r.page]}</span></div><div class="identity">${account?`<span class="tag blue">学号 ${esc(account.studentId)}</span><button class="btn small" data-action="auth-logout">退出学号</button>`:`<button class="btn small" data-action="nav" data-page="board">学号登录</button>`}<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button><label for="profile">演示身份</label><select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select><span class="avatar" aria-hidden="true">${esc(me().name[0])}</span></div></header><main class="content" id="main-content">${content}</main></div></div>`}
+const titles={gallery:'Agent 广场',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理'};
+function shell(content){const r=route();return `<div class="shell"><aside class="sidebar"><a class="brand" href="#gallery"><span class="brand-mark">集</span><div><strong>校集</strong><small>CAMPUS AGENTS</small></div></a><div class="nav-title">校园共创空间</div><nav class="nav" aria-label="主导航">${[['gallery','grid','Agent 广场'],['board','board','互助通达'],['chat','chat','与助手对话'],['upload','upload','资料贡献'],['team','team','团队工作台'],['admin','shield','审核管理']].map(([p,i,l])=>`<a class="nav-link ${r.page===p?'active':''}" href="#${p}" ${r.page===p?'aria-current="page"':''}>${icon(i)}${l}</a>`).join('')}</nav><div class="sidebar-bottom"><div class="local-label">${icon('spark')}本地资料问答 · V2</div><p>知识库保存在你的电脑。<br>云端模型需配置后启用。</p><button data-action="reset">重置演示数据</button></div></aside><div class="main"><header class="topbar"><div class="breadcrumb">校园共创平台 <span>/ ${titles[r.page]}</span></div><div class="identity">${account?`<span class="tag blue">学号 ${esc(account.studentId)}</span><button class="btn small" data-action="auth-logout">退出学号</button>`:`<button class="btn small" data-action="nav" data-page="board">学号登录</button>`}<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button><label for="profile">演示身份</label><select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select><span class="avatar" aria-hidden="true">${esc(me().name[0])}</span></div></header><main class="content" id="main-content">${content}</main></div></div>`}
 function heading(eye,title,sub,action=''){return `<div class="page-heading"><div><div class="eyebrow">${eye}</div><h1>${title}</h1><p>${sub}</p></div>${action}</div>`}
 function gallery(){const items=state.agents.filter(a=>a.status==='published'&&(category==='全部'||a.category===category)&&(!query||[a.name,a.description,teamName(a.team)].some(v=>v.includes(query))));return `${heading('DISCOVER & CONNECT','你的校园问题，从这里开始','由校园团队共建，让有用的知识找到需要它的人。',`<button class="btn" data-action="nav" data-page="upload">${icon('plus')}贡献一份资料</button>`)}<section class="hero"><div class="hero-main"><div class="eyebrow">本周推荐 · 学校事务</div><h2>办事前，先问问校园办事助手</h2><p>准备哪些材料、下一步怎么做？<br>从有来源的资料中，找到清楚的答案。</p><button class="btn" data-action="chat" data-id="affairs">开始对话 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>团队共创<small>每个助手都有维护团队</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section><div class="toolbar"><div class="chips" role="group" aria-label="助手分类">${['全部','校园生活','学习资料','学校事务'].map(c=>`<button class="chip ${category===c?'active':''}" data-action="category" data-value="${c}">${c==='全部'?'全部助手':c}</button>`).join('')}</div><label class="search">${icon('search')}<input id="search" aria-label="搜索助手或团队" placeholder="搜索助手或团队" value="${esc(query)}"></label></div><div class="section-heading"><h2>发现校园助手</h2><span>${items.length} 个已上线助手</span></div><div class="cards">${items.map(a=>`<article class="agent-card"><div class="card-top"><div class="agent-icon ${a.color}">${icon(a.icon)}</div><span class="tag green">已审核上线</span></div><h3>${esc(a.name)}</h3><p>${esc(a.description)}</p><div><span class="tag">${a.category}</span></div><div class="team-line">${icon('team')}${teamName(a.team)}</div><div class="card-foot"><small>${state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length} 份已审核资料</small><button class="btn text small" data-action="chat" data-id="${a.id}">开始对话 ${icon('arrow')}</button></div></article>`).join('')}</div>${!items.length?'<div class="empty"><p>没有找到相关助手，试试其他分类或关键词。</p></div>':''}<div class="bottom-note"><span>${icon('shield')} 资料审核后入库 · 回答展示来源</span><span>本地试用版 · 公开资料与演示资料均有标注 · ${aiStatusNote()}</span></div>`}
 function boardPage(){
  const logged=!!account;
- const items=Array.isArray(boardListings)?boardListings:[];
- return heading('CAMPUS INFO','校园信息','同学自愿登记的供需信息；问助手时会按匹配条目回答，并可开聊联系对方。')+
- '<div class="banner">'+icon('shield')+'此处为信息收集入口，不是论坛发帖。联系方式由登记人自愿公开；请自行核实，平台不做交易担保。</div>'+
- '<div class="two-col"><section class="panel"><h2>'+(logged?'登记一条供需':'学号登录后可登记')+'</h2>'+
+ const mine=(Array.isArray(boardListings)?boardListings:[]).filter(l=>logged&&l.ownerStudentId===account.studentId);
+ const answer=boardAnswer;
+ const suggestions=['今天下午有没有人代取快递？','有没有人收高数教材？','有没有代购？'];
+ return heading('MUTUAL AID','互助通达','直接用一句话问就行。例如有没有代购、代取快递，或有没有人收高数教材。')+
+ '<section class="panel board-ask"><h2>想找同学帮忙？直接问</h2><p class="hint">互助通达会在同学登记里找还在有效期内、时间也对得上的信息。不用自己翻列表。</p>'+
+ '<form id="board-ask-form"><textarea name="question" aria-label="向互助通达提问" required maxlength="500" rows="3" placeholder="例如：今天下午有没有人代取快递？有没有人收高数教材？">'+esc(boardQuestion)+'</textarea>'+
+ '<div class="board-ask-bar"><div class="board-chips">'+suggestions.map(s=>'<button type="button" data-action="board-suggest" data-value="'+esc(s)+'">'+esc(s)+'</button>').join('')+'</div>'+
+ '<button class="btn primary" type="submit"'+(boardAsking?' disabled':'')+'>'+(boardAsking?'正在查找…':'提问')+'</button></div></form>'+
+ (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>'+(answer.offers&&answer.offers.length?'<div class="actions" style="margin-top:12px"><button class="btn" type="button" data-action="board-reoffer">和信息发出者聊聊</button></div>':''):'<div class="empty" style="margin-top:16px"><p>还没提问。在上面输入你想找的帮助，例如代购、代取快递或收教材。</p></div>')+
+ '</section>'+
+ '<details class="panel board-publish" id="board-publish"'+(boardPublishOpen?' open':'')+'><summary>登记一条互助信息</summary>'+
+ '<p class="small muted">这是补充登记的入口，方便同学继续往互助通达里放数据。找人帮忙请用上面的提问框。发布需要学号登录。</p>'+
  (logged
-  ?('<p class="muted small" style="margin:7px 0 16px">当前学号：'+esc(account.studentId)+(account.displayName?' · '+esc(account.displayName):'')+'</p>'+
-    '<form id="board-form"><div class="form-grid"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><select id="board-type" name="type" required><option>代课</option><option>代购</option><option>二手书</option><option>其他</option></select></div><div class="field"><label for="board-days">有效期</label><select id="board-days" name="days"><option value="3">3 天</option><option value="7" selected>7 天</option><option value="14">14 天</option></select></div></div><div class="field"><label for="board-title">标题 <span class="required">*</span></label><input id="board-title" name="title" required maxlength="60" placeholder="例如：出一套高数教材"></div><div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="补充年级、课程、成色等，不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开） <span class="required">*</span></label><input id="board-contact" name="contact" required maxlength="80" placeholder="例如 QQ / 微信 / 手机号"></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>')
-  :('<form id="auth-form"><div class="field"><label for="auth-id">学号</label><input id="auth-id" name="studentId" required pattern="\\d{8,12}" maxlength="12" placeholder="8—12 位数字学号"></div><div class="field"><label for="auth-name">昵称（注册时可选）</label><input id="auth-name" name="displayName" maxlength="20" placeholder="例如：小陈"></div><div class="field"><label for="auth-pass">密码</label><input id="auth-pass" name="password" type="password" required minlength="6" maxlength="72" autocomplete="new-password"></div><div class="actions"><button class="btn primary" type="submit" data-auth="login">登录</button><button class="btn" type="submit" data-auth="register">注册学号账号</button></div><p class="small muted" style="margin-top:12px">演示身份仍可浏览助手；登记与开聊需学号账号。</p></form>'))+
- '</section><aside class="stack"><section class="panel"><h2>有效登记 <span class="count">'+items.length+'</span></h2>'+
- '<div class="toolbar" style="margin-bottom:12px"><div class="chips" role="group">'+['全部','代课','代购','二手书','其他'].map(c=>'<button type="button" class="chip '+(boardType===c?'active':'')+'" data-action="board-type" data-value="'+c+'">'+c+'</button>').join('')+'</div><label class="search">'+icon('search')+'<input id="board-search" aria-label="搜索登记" placeholder="搜标题或说明" value="'+esc(boardQuery)+'"></label></div>'+
- (items.length?items.map(l=>'<article class="record"><div><p><span class="tag blue">'+esc(l.type)+'</span> '+esc(l.title)+'</p><small>'+esc(l.description)+'</small><small>登记人：'+esc(l.ownerName||('同学'+String(l.ownerStudentId||'').slice(-4)))+' · 有效至 '+esc(String(l.expiresAt||'').slice(0,10))+(l.contact?' · 联系 '+esc(l.contact):'')+'</small><div class="actions" style="margin-top:8px">'+(account&&account.studentId!==l.ownerStudentId?'<button class="btn small" data-action="board-contact" data-id="'+esc(l.id)+'">联系对方</button>':'')+(account&&account.studentId===l.ownerStudentId?'<button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">下架</button>':'')+'</div></div></article>').join(''):empty('暂无有效登记。可先登录学号后提交一条。'))+
- '</section></aside></div>';
+  ?('<p class="muted small" style="margin:12px 0">当前学号：'+esc(account.studentId)+(account.displayName?' · '+esc(account.displayName):'')+'</p>'+
+    '<form id="board-form"><div class="form-grid"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><select id="board-type" name="type" required><option>代课</option><option>代购</option><option>二手书</option><option>其他</option></select></div><div class="field"><label for="board-days">有效期</label><select id="board-days" name="days"><option value="3">3 天</option><option value="7" selected>7 天</option><option value="14">14 天</option></select></div></div><div class="field"><label for="board-title">标题 <span class="required">*</span></label><input id="board-title" name="title" required maxlength="60" placeholder="例如：出一套高数教材"></div><div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清能帮忙的时间，例如今天下午、周三晚上。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开） <span class="required">*</span></label><input id="board-contact" name="contact" required maxlength="80" placeholder="例如 QQ / 微信 / 手机号"></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
+    '<h3 style="margin-top:8px">我的有效登记 <span class="count">'+mine.length+'</span></h3>'+
+    (mine.length?mine.map(l=>'<article class="record"><div><p><span class="tag blue">'+esc(l.type)+'</span> '+esc(l.title)+'</p><small>'+esc(l.description)+'</small><small>有效至 '+esc(String(l.expiresAt||'').slice(0,10))+'</small><div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">下架</button></div></div></article>').join(''):'<p class="small muted">你还没有有效登记。</p>'))
+  :('<form id="auth-form"><div class="field"><label for="auth-id">学号</label><input id="auth-id" name="studentId" required pattern="\\d{8,12}" maxlength="12" placeholder="8—12 位数字学号"></div><div class="field"><label for="auth-name">昵称（注册时可选）</label><input id="auth-name" name="displayName" maxlength="20" placeholder="例如：小陈"></div><div class="field"><label for="auth-pass">密码</label><input id="auth-pass" name="password" type="password" required minlength="6" maxlength="72" autocomplete="new-password"></div><div class="actions"><button class="btn primary" type="submit" data-auth="login">登录</button><button class="btn" type="submit" data-auth="register">注册学号账号</button></div><p class="small muted" style="margin-top:12px">提问不用登录。登记和开聊需要学号账号。</p></form>'))+
+ '</details>';
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}
 function guard(kind){return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>${kind==='admin'?'管理员审核空间':'团队创作空间'}</h1><p>${kind==='admin'?'审核管理仅对管理员演示身份开放。':'请切换为团队成员，管理所属团队的 Agent。'}<br>此处为演示身份切换，不是真实登录认证。</p><button class="btn primary" data-action="switch" data-value="${kind==='admin'?'admin':'team'}">切换为${kind==='admin'?'管理员':'校园共创组成员'}</button></div>`}
@@ -123,7 +130,33 @@ function chat(){
  '<aside class="stack chat-aside"><section class="panel"><div class="aside-title">'+icon('book')+' 已审核知识库</div>'+ (docs.length?docs.map(d=>'<div class="resource"><button class="btn text" data-action="view-doc" data-id="'+d.id+'">'+esc(d.title)+'</button><small>'+esc(d.source)+' · '+(d.chunkCount||1)+' 个片段</small><small>入库于 '+d.date+'</small></div>').join('')+'</div>':empty('暂无已审核资料。'))+'</section><section class="panel"><div class="aside-title">回答规则</div><p class="small muted">'+esc(a.rules)+'</p><div class="inline-notice">知识库和检索保存在本机。正常问题均可由云端模型回答；通用知识与建议不代表学校规定。具体校园事实缺少资料时，会明确说明无法确认。</div><button class="btn" data-action="nav" data-page="upload">'+icon('plus')+'贡献资料</button></section></aside></div>';
 }
 function admin(){if(me().role!=='admin')return guard('admin');const docs=state.docs.filter(d=>d.status==='pending');const agents=state.agents.filter(a=>a.status==='pending');const published=[...state.docs.filter(d=>d.status==='approved'||d.status==='offline').map(d=>({kind:'doc',data:d})),...state.agents.filter(a=>a.status==='published'||a.status==='offline').map(a=>({kind:'agent',data:a}))];return `${heading('REVIEW & PUBLISH','审核管理','查看提交内容与来源，决定哪些知识可以进入校园助手。')}<div class="stats"><div class="stat"><span>待审核资料</span><strong>${docs.length}</strong></div><div class="stat"><span>待上线 Agent</span><strong>${agents.length}</strong></div><div class="stat"><span>本次审核记录</span><strong>${state.audit.length}</strong></div></div><div class="two-col"><section class="panel"><div class="review-tabs" role="group" aria-label="审核类型"><button data-action="review-tab" data-value="docs" class="${reviewTab==='docs'?'active':''}">资料 <span class="count">${docs.length}</span></button><button data-action="review-tab" data-value="agents" class="${reviewTab==='agents'?'active':''}">Agent <span class="count">${agents.length}</span></button><button data-action="review-tab" data-value="published" class="${reviewTab==='published'?'active':''}">已发布</button></div>${reviewTab==='docs'?(docs.length?docs.map(d=>`<article class="review-card"><div class="review-card-head"><h3>${esc(d.title)}</h3>${badge(d.status)}</div><p>提交人：${profiles[d.owner]?.name||'演示用户'} · ${d.date}</p><p>目标助手：${esc(state.agents.find(a=>a.id===d.agent)?.name||'已不可用')}</p><p>来源：${esc(d.source)}</p><div class="actions"><button class="btn small" data-action="view-doc" data-id="${d.id}">查看内容并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('资料已处理完，暂无待审核内容。')):reviewTab==='agents'?(agents.length?agents.map(a=>`<article class="review-card"><div class="review-card-head"><h3>${esc(a.name)}</h3>${badge(a.status)}</div><p>${teamName(a.team)} · ${a.category}</p><p>${esc(a.description)}</p><div class="actions"><button class="btn small" data-action="review-agent" data-id="${a.id}">查看配置并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('暂无待审核的 Agent。')):published.map(({kind,data:d})=>`<div class="record"><div><p>${esc(d.title||d.name)}</p><small>${kind==='doc'?'资料':'Agent'} · ${statusLabel[d.status]}</small></div>${d.status==='offline'?`<button class="btn small" data-action="online" data-kind="${kind}" data-id="${d.id}">重新上架</button>`:`<button class="btn danger small" data-action="offline" data-kind="${kind}" data-id="${d.id}">下架</button>`}</div>`).join('')}</section><aside class="stack"><section class="panel"><h2>审核要点</h2><ul class="info-list"><li>内容是否适合目标助手？</li><li>来源是否清楚，是否有分享权限？</li><li>是否包含个人信息或过期内容？</li><li>驳回时说明原因，便于提交人修改。</li></ul><div class="inline-notice">这里演示的是人工审核流程，不代表已经通过真实安全审查。</div></section><section class="panel"><h2>最近操作</h2>${state.audit.length?state.audit.slice().reverse().slice(0,8).map(a=>`<div class="audit-line"><strong>${esc(a.action)}</strong> · ${esc(a.title)}<br>${esc(a.time)}</div>`).join(''):'<p class="small muted" style="margin-top:15px">操作完成后会记录在这里。</p>'}</section></aside></div>`}
-async function loadBoard(){try{const q=new URLSearchParams({q:boardQuery||'',type:boardType==='全部'?'':boardType});const data=await api('board?'+q.toString());boardListings=data.listings||[];if('account' in data)account=data.account}catch(e){toast(e.message)}}
+async function loadBoard(){try{const data=await api('board');boardListings=data.listings||[];if('account' in data)account=data.account}catch(e){toast(e.message)}}
+function openOfferModal(offers){
+ const list=Array.isArray(offers)?offers.filter(o=>o&&o.listingId):[];
+ if(!list.length)return;
+ const one=list.length===1;
+ const cards=list.map(o=>'<article class="offer-card"><p><span class="tag blue">'+esc(o.type||'互助')+'</span> '+esc(o.title||'')+'</p><small class="muted">'+esc(o.ownerName||'登记同学')+(o.expiresAt?' · 有效至 '+esc(String(o.expiresAt).slice(0,10)):'')+'</small>'+(one?'':'<div class="modal-actions"><button class="btn primary" type="button" data-action="board-accept" data-id="'+esc(o.listingId)+'">同意开聊</button></div>')+'</article>').join('');
+ const lead=one
+  ?'<p>找到同学「'+esc(list[0].ownerName||'登记同学')+'」登记的「'+esc(list[0].title||'')+'」。同意后打开一对一对话；考虑一下就留在当前结果，不会建聊。</p>'
+  :'<p>找到 '+list.length+' 条时间对得上的登记。选一位开聊，或先考虑一下（不会建聊）。</p>';
+ const actions=one
+  ?'<div class="modal-actions"><button class="btn primary" type="button" data-action="board-accept" data-id="'+esc(list[0].listingId)+'">同意开聊</button><button class="btn" type="button" data-action="board-decline">考虑一下</button></div>'
+  :'<div class="modal-actions"><button class="btn" type="button" data-action="board-decline">考虑一下</button></div>';
+ modal('要和信息发出者聊聊吗？',lead+cards+actions);
+}
+async function askBoard(question){
+ const q=String(question||'').trim();
+ if(!q||boardAsking)return;
+ boardQuestion=q;boardAsking=true;render();
+ try{
+  const data=await api('board/ask',{question:q});
+  if('account' in data)account=data.account;
+  boardAnswer={text:data.text||'',offers:Array.isArray(data.offers)?data.offers:[]};
+  boardAsking=false;render();
+  if(boardAnswer.offers.length)openOfferModal(boardAnswer.offers);
+ }catch(err){boardAsking=false;render();toast(err.message)}
+}
+
 function openDmModal(data,listingId){
  dmListingId=listingId;
  const msgs=(data.messages||[]).map(m=>'<div class="message '+(account&&m.from===account.studentId?'user':'')+'"><div class="bubble">'+esc(m.text)+'<br><small>'+esc(String(m.time||'').replace('T',' ').slice(0,16))+'</small></div></div>').join('');
@@ -179,7 +212,7 @@ document.addEventListener('change',async e=>{
 });
 document.addEventListener('click',async e=>{
  const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset;
- if(a.action==='close')return closeModal();
+ if(a.action==='close'||a.action==='board-decline')return closeModal();
  if(a.action==='nav')return go(a.page);
  if(a.action==='chat'){chatError='';return go('chat',a.id)}
  if(a.action==='category'){category=a.value;return render()}
@@ -202,14 +235,16 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='approve')return approve(a.kind,a.id);
  if(a.action==='reject')return rejectForm(a.kind,a.id);
  if(a.action==='suggest')return sendChat(a.value);
- if(a.action==='board-type'){boardType=a.value;boardNeedsRefresh=true;return render()}
- if(a.action==='auth-logout'){try{applyResult(await api('auth/logout',{}));toast('已退出学号账号');boardNeedsRefresh=true;render()}catch(e){toast(e.message)}return}
- if(a.action==='board-takedown'){try{applyResult(await api('board/takedown',{id:a.id}));toast('已下架');boardNeedsRefresh=true;render()}catch(e){toast(e.message)}return}
- if(a.action==='board-contact'){
-  if(!account){go('board');return toast('请先用学号登录后再联系对方。')}
-  try{openDmModal(await api('board/dm?listingId='+encodeURIComponent(a.id)),a.id)}catch(e){toast(e.message)}
+ if(a.action==='board-suggest')return askBoard(a.value);
+ if(a.action==='board-reoffer'){if(boardAnswer?.offers?.length)openOfferModal(boardAnswer.offers);return}
+ if(a.action==='board-offer'){openOfferModal([{listingId:a.id,title:a.title,ownerName:a.owner,type:a.type,expiresAt:a.expires}]);return}
+ if(a.action==='board-accept'){
+  if(!account){closeModal();boardPublishOpen=true;if(route().page!=='board')go('board');else render();return toast('请先用学号登录，再和对方开聊。')}
+  try{const data=await api('board/open',{listingId:a.id});openDmModal(data.thread,a.id)}catch(err){toast(err.message)}
   return;
  }
+ if(a.action==='auth-logout'){try{applyResult(await api('auth/logout',{}));toast('已退出学号账号');boardNeedsRefresh=true;render()}catch(e){toast(e.message)}return}
+ if(a.action==='board-takedown'){try{applyResult(await api('board/takedown',{id:a.id}));toast('已下架');boardNeedsRefresh=true;render()}catch(e){toast(e.message)}return}
  if(a.action==='offline')return modal('确认下架',`<p>下架后不再检索该内容，相关本地聊天记录会清除。此前已经发送到云端的内容无法通过本机下架撤回。</p><div class="modal-actions"><button class="btn" data-action="close">取消</button><button class="btn danger" data-action="confirm-offline" data-kind="${a.kind}" data-id="${a.id}">确认下架</button></div>`);
  if(a.action==='confirm-offline')return perform({action:'offline',kind:a.kind,id:a.id},'已下架。');
  if(a.action==='online')return modal('确认重新上架',`<p>重新上架后，资料会重新参与检索，助手会重新出现在广场。已经清除的本地聊天记录不会自动恢复。</p><div class="modal-actions"><button class="btn" data-action="close">取消</button><button class="btn primary" data-action="confirm-online" data-kind="${a.kind}" data-id="${a.id}">确认重新上架</button></div>`);
@@ -221,16 +256,17 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='confirm-reset'){await perform({action:'reset'},'已恢复初始资料。');go('gallery')}
 });
 document.addEventListener('submit',async e=>{
- const f=e.target;if(!['upload-form','agent-form','reject-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','board-form','dm-form'].includes(f.id))return;e.preventDefault();if(busy&&!['auth-form','board-form','dm-form'].includes(f.id))return;
+ const f=e.target;if(!['upload-form','agent-form','reject-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','board-form','board-ask-form','dm-form'].includes(f.id))return;e.preventDefault();if(busy&&!['auth-form','board-form','board-ask-form','dm-form'].includes(f.id))return;
  const fd=new FormData(f),get=n=>String(fd.get(n)||'').trim();
  if(f.id==='chat-form')return sendChat(get('question'));
+ if(f.id==='board-ask-form')return askBoard(get('question'));
  if(f.id==='auth-form'){
   const mode=e.submitter?.dataset?.auth||'login';
   try{applyResult(await api('auth/'+mode,{studentId:get('studentId'),password:get('password'),displayName:get('displayName')}));toast(mode==='register'?'注册成功，已登录':'登录成功');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
   return;
  }
  if(f.id==='board-form'){
-  try{applyResult(await api('board/create',{type:get('type'),title:get('title'),description:get('description'),contact:get('contact'),days:Number(get('days')||7)}));toast('已登记，有效期内可被助手匹配');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
+  try{applyResult(await api('board/create',{type:get('type'),title:get('title'),description:get('description'),contact:get('contact'),days:Number(get('days')||7)}));toast('已登记，有效期内可被互助通达匹配');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
   return;
  }
  if(f.id==='dm-form'){
@@ -249,13 +285,13 @@ document.addEventListener('submit',async e=>{
  if(f.id==='reject-form')return perform({action:'review',kind:f.dataset.kind,id:f.dataset.id,decision:'reject',reason:get('reason')},'已驳回并记录原因。');
  if(f.id==='edit-doc-form')return perform({action:'editDoc',id:f.dataset.id,title:get('title'),source:get('source'),sourceUrl:get('sourceUrl'),publishedAt:get('publishedAt'),collectedAt:get('collectedAt'),sourceKind:get('sourceKind'),content:get('content')},'已修改并重新提交。');
 });
-document.addEventListener('keydown',e=>{if(e.target.matches('#chat-form textarea')&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}});
+document.addEventListener('keydown',e=>{if((e.target.matches('#chat-form textarea')||e.target.matches('#board-ask-form textarea'))&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}});
 function searchInput(e){
- if(e.target.id==='board-search'){if(e.isComposing)return;boardQuery=e.target.value;boardNeedsRefresh=true;const pos=e.target.selectionStart;render();const el=document.getElementById('board-search');if(el){el.focus();el.setSelectionRange(pos,pos)}return}
  if(e.target.id!=='search'||e.isComposing)return;const pos=e.target.selectionStart;query=e.target.value;render();const el=document.getElementById('search');el.focus();el.setSelectionRange(pos,pos)
 }
-document.addEventListener('input',e=>{if(e.target.id==='city-keyword')document.getElementById('city-map-link').href=cityMapUrl(e.target.value)});
+document.addEventListener('input',e=>{if(e.target.id==='city-keyword')document.getElementById('city-map-link').href=cityMapUrl(e.target.value);if(e.target.matches?.('#board-ask-form textarea'))boardQuestion=e.target.value});
 document.addEventListener('input',searchInput);document.addEventListener('compositionend',searchInput);
+document.addEventListener('toggle',e=>{if(e.target.id==='board-publish')boardPublishOpen=e.target.open},true);
 window.addEventListener('hashchange',()=>{if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'list_campus_agents',title:'查看已上线校园助手',description:'只读列出当前本地平台已上线的助手与已审核资料数。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute(input){if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('不接受参数');return state.agents.filter(a=>a.status==='published').map(a=>({id:a.id,name:a.name,documents:state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length}))}},{signal:lifecycle.signal})).catch(()=>{})}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})}

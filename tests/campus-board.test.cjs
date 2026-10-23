@@ -85,3 +85,87 @@ test('unit: matchListings scores topical campus intents',()=>{
  assert.deepEqual(board.matchListings('宇宙黑洞'),[]);
  fs.rmSync(dir,{recursive:true,force:true});
 });
+
+function fixtureListing(over){
+ return {id:over.id,type:over.type||'其他',title:over.title,description:over.description||over.title,contact:over.contact||'微信 a',ownerStudentId:over.ownerStudentId||'20240001',ownerName:over.ownerName||'戊',status:'active',createdAt:over.createdAt,expiresAt:over.expiresAt,...(over.windowEnd?{windowEnd:over.windowEnd}:{})};
+}
+test('time-aligned listings outrank vague ones and miss the window when they do not overlap',()=>{
+ const now=Date.parse('2026-10-23T04:00:00.000Z');
+ const day=86400000;
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-board-time-'));
+ const file=path.join(dir,'board.json');
+ const created=new Date(now-3600000).toISOString();
+ fs.writeFileSync(file,JSON.stringify({version:1,accounts:[],threads:{},listings:[
+  fixtureListing({id:'afternoon',type:'其他',title:'代取快递',description:'今天下午可以去南门代取快递',createdAt:created,expiresAt:new Date(now+7*day).toISOString()}),
+  fixtureListing({id:'tomorrow-am',type:'其他',title:'代取快递',description:'明天上午可以代取快递',createdAt:created,expiresAt:new Date(now+7*day).toISOString()}),
+  fixtureListing({id:'anytime',type:'其他',title:'代取快递',description:'南门可以代取快递 https://example.com/pickup',createdAt:created,expiresAt:new Date(now+7*day).toISOString()}),
+  fixtureListing({id:'milk',type:'代购',title:'代购奶茶',description:'可以代购奶茶',createdAt:created,expiresAt:new Date(now+3*day).toISOString()}),
+  fixtureListing({id:'book-soon',type:'二手书',title:'收高数教材',description:'收高等数学教材',createdAt:created,expiresAt:new Date(now+2*3600000).toISOString()}),
+  fixtureListing({id:'book-week',type:'二手书',title:'收高数教材',description:'收高等数学教材，成色不限',createdAt:created,expiresAt:new Date(now+7*day).toISOString()}),
+  fixtureListing({id:'wed',type:'代课',title:'高数代课',description:'周三下午可以代高数课',createdAt:created,expiresAt:new Date(now+14*day).toISOString()}),
+  fixtureListing({id:'fri-am',type:'代课',title:'高数代课',description:'周五上午可以代高数课',createdAt:created,expiresAt:new Date(now+14*day).toISOString()}),
+  fixtureListing({id:'closed-window',type:'其他',title:'代取快递',description:'代取快递仍在公示期',createdAt:created,expiresAt:new Date(now+7*day).toISOString(),windowEnd:new Date(now-1000).toISOString()})
+ ]},null,2));
+ const board=createBoard({file});
+ const afternoon=board.matchListings('今天下午有没有人代取快递',3,now);
+ assert.equal(afternoon[0].listingId,'afternoon');
+ assert.ok(afternoon.some(x=>x.listingId==='anytime'));
+ assert.ok(!afternoon.some(x=>x.listingId==='tomorrow-am'||x.listingId==='closed-window'));
+ assert.deepEqual(board.matchListings('下个月有没有代购奶茶',3,now),[]);
+ const tomorrowBook=board.matchListings('明天有没有人收高数教材',3,now);
+ assert.deepEqual(tomorrowBook.map(x=>x.listingId),['book-week']);
+ const wed=board.matchListings('周三下午有没有高数代课',3,now);
+ assert.deepEqual(wed.map(x=>x.listingId),['wed']);
+ const asked=board.ask('今天下午有没有人代取快递',{now});
+ assert.match(asked.text,/互助通达/);
+ assert.match(asked.text,/• /);
+ assert.match(asked.text,/https:\/\/example\.com\/pickup/);
+ assert.equal(asked.offers[0].listingId,'afternoon');
+ assert.equal(asked.offers[0].title,'代取快递');
+ assert.deepEqual(board.db.threads,{});
+ fs.rmSync(dir,{recursive:true,force:true});
+});
+
+test('ask does not open a chat until the student accepts',async t=>{
+ const {request,app}=await setup(t);
+ await request('auth/register',{studentId:'20250001',password:'secret1',displayName:'己'});
+ assert.equal((await request('board/create',{type:'其他',title:'代取快递',description:'今天下午可以代取快递',contact:'微信 noon',days:7})).status,200);
+ await request('auth/logout',{});
+ const asked=await request('board/ask',{question:'今天下午有没有人代取快递'});
+ assert.equal(asked.status,200);
+ assert.match(asked.text,/互助通达/);
+ assert.match(asked.text,/• /);
+ assert.ok(asked.offers.length);
+ assert.deepEqual(app.board.db.threads,{});
+ const id=asked.offers[0].listingId;
+ assert.equal((await request('board/dm?listingId='+encodeURIComponent(id))).status,401);
+ assert.deepEqual(app.board.db.threads,{});
+ await request('auth/register',{studentId:'20250002',password:'secret1',displayName:'庚'});
+ const peek=await request('board/dm?listingId='+encodeURIComponent(id));
+ assert.equal(peek.status,200);
+ assert.deepEqual(peek.messages,[]);
+ assert.deepEqual(app.board.db.threads,{});
+ const opened=await request('board/open',{listingId:id});
+ assert.equal(opened.status,200);
+ assert.equal(opened.thread.peer.displayName,'己');
+ assert.deepEqual(opened.thread.messages,[]);
+ assert.ok(app.board.db.threads[opened.thread.key]);
+ const declined=await request('board/ask',{question:'宇宙黑洞'});
+ assert.equal(declined.offers.length,0);
+ assert.equal(Object.keys(app.board.db.threads).length,1);
+});
+
+test('互助通达 replaces 校园信息 in the student UI',()=>{
+ const app=fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8');
+ const backend=fs.readFileSync(path.join(__dirname,'../lib/backend.cjs'),'utf8');
+ assert.match(app,/互助通达/);
+ assert.doesNotMatch(app,/校园信息/);
+ assert.doesNotMatch(backend,/校园信息/);
+ assert.match(app,/同意开聊/);
+ assert.match(app,/考虑一下/);
+ assert.match(app,/board-ask-form/);
+ assert.match(app,/board-decline/);
+ assert.match(app,/board-accept/);
+ assert.doesNotMatch(app,/data-action="board-contact"|action==='board-contact'/);
+ assert.match(app,/board-suggest/);
+});
