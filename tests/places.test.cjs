@@ -138,3 +138,32 @@ test('source provenance survives reject and resubmit and is sent to the model on
  await request('config',{apiKey:'test-only',model:'ep-test',enabled:true,dailyLimit:50,consent:true});
  r=await request('chat',{agentId:'life',question:'旧年测试餐馆活动',cloudConsent:true});assert.equal(r.status,200);const s=sent.sources.find(s=>s.title===body.title);assert.equal(s.publishedAt,'2025-09-01');assert.equal(s.collectedAt,'2026-09-24');assert.equal(s.sourceKind,'merchant');assert.equal(s.url,body.sourceUrl);
 });
+
+test('place source excerpts are plain Chinese place lines, not JSON dumps',async()=>{
+ const service=createPlacesService({getConfig:()=>({apiKey:'test-key',enabled:true,revision:0}),consume(){},fetchImpl:async()=>response([poi(1,'119.400000,32.400000')])});
+ const session={actor:'student'};
+ const r=await service.run(session,{keyword:'咖啡',scope:'city',consent:true});
+ const refs=service.sources(session,r.contextToken);
+ assert.equal(refs.length,1);
+ assert.match(refs[0].excerpt,/测试地点1/);
+ assert.match(refs[0].excerpt,/直线约|距离未查/);
+ assert.match(refs[0].excerpt,/测试路1号|地址未提供/);
+ assert.doesNotMatch(refs[0].excerpt,/^\s*\{/);
+ assert.doesNotMatch(refs[0].excerpt,/"名称"/);
+ assert.doesNotMatch(refs[0].excerpt,/直线距离米/);
+});
+test('life helper without a model shows human place lists instead of JSON',async t=>{
+ const {request}=await setup(t,()=>{throw Error('automatic lookup must stay local')},()=>{throw Error('must not call model')});
+ const r=await request('chat',{agentId:'life',question:'通达附近有什么吃的？'});
+ assert.equal(r.status,200);assert.equal(r.message.mode,'retrieval');
+ assert.match(r.message.text,/还没接上云端模型/);
+ assert.match(r.message.text,/1\. /);
+ assert.ok(r.message.sources.some(s=>s.sourceType==='map'));
+ assert.doesNotMatch(r.message.text,/"名称"/);
+ assert.doesNotMatch(r.message.text,/直线距离米/);
+ assert.doesNotMatch(r.message.text,/JSON/);
+ for(const s of r.message.sources.filter(s=>s.sourceType==='map')){
+  assert.doesNotMatch(s.excerpt,/^\s*\{/);
+  assert.match(s.excerpt,/ · /);
+ }
+});
