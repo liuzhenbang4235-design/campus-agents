@@ -7,6 +7,8 @@ config.json
 
 # local knowledge / usage (keep private)
 data/
+# campus board may contain student contacts — never commit real PII
+data/campus-board.json
 node_modules/
 
 # OS / editor
