@@ -1,5 +1,5 @@
 'use strict';
-const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),vm=require('node:vm');
 const {createApp}=require('../lib/backend.cjs'),{fetchPlaces,createPlacesService}=require('../lib/places.cjs');
 const poi=(i,location='119.400000,32.400000')=>({id:'B'+i,name:'测试地点'+i,address:'测试路'+i+'号',cityname:'扬州市',adname:'邗江区',location,tel:[],type:'餐饮服务'});
 const response=(pois)=>new Response(JSON.stringify({status:'1',pois}));
@@ -87,6 +87,45 @@ test('no matching local place reports a collection gap without calling the model
  const other=await request('chat',{agentId:'study',question:'通达附近有什么吃的？'});assert(!other.message.sources.some(s=>s.sourceType==='map'));
 });
 
+function placesMarkup(places,provider){
+ const document={addEventListener(){},getElementById(){return null}};
+ const ctx=vm.createContext({document,URL,URLSearchParams,esc:v=>String(v??''),cityMapUrl:()=>'https://uri.amap.com/search',busy:false,ai:{places}});
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/places.js'),'utf8')+`
+if(${JSON.stringify(provider)})placesUi.provider=${JSON.stringify(provider)};
+globalThis.__html=cityDiscovery();
+`,ctx);
+ return ctx.__html;
+}
+test('realtime place search is offered only after an Amap key is ready',()=>{
+ const local={ready:false,localReady:true,localCount:59,localUpdatedAt:'2026-09-23T18:09:53.779Z',hasKey:false,enabled:false};
+ const plain=placesMarkup(local);
+ assert.match(plain,/当前使用本地快照数据，非实时/);
+ assert.match(plain,/已收录 59 个公开地点/);
+ assert.doesNotMatch(plain,/实时查询|id="places-provider"|高德地图 · 需配置/);
+ const forced=placesMarkup(local,'amap');
+ assert.doesNotMatch(forced,/实时查询|id="places-provider"/);
+ assert.match(forced,/本地快照数据，非实时/);
+ const ready=placesMarkup({...local,ready:true,hasKey:true,enabled:true,dailyLimit:50,usedToday:0});
+ assert.match(ready,/<option value="local"[^>]*>本地快照数据，非实时<\/option>/);
+ assert.match(ready,/<option value="amap"[^>]*>实时查询<\/option>/);
+});
+test('place search without an Amap key uses the local snapshot instead of failing',async t=>{
+ let calls=0;
+ const {request}=await setup(t,()=>{calls++;throw Error('amap must not be called')});
+ const selected=await request('places/search',{provider:'amap',keyword:'咖啡',scope:'city',consent:true});
+ assert.equal(selected.status,200);
+ assert.equal(selected.provider,'local');
+ assert.ok(selected.places.length>0);
+ assert.equal(selected.ai.places.ready,false);
+ assert.equal(selected.ai.places.usedToday,0);
+ assert.equal(calls,0);
+ assert.doesNotMatch(JSON.stringify(selected),/尚未配置高德/);
+ const implicit=await request('places/search',{keyword:'打印',scope:'city'});
+ assert.equal(implicit.status,200);
+ assert.equal(implicit.provider,'local');
+ assert.ok(implicit.places.some(p=>/打印|文印|复印/.test(p.name+p.category)));
+ assert.equal(calls,0);
+});
 test('source provenance survives reject and resubmit and is sent to the model only after approval',async t=>{
  let sent;const {request}=await setup(t,()=>{throw Error('no map')},async(u,init)=>{sent=JSON.parse(JSON.parse(init.body).messages[1].content);return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify({answer:'该活动为历史商家宣传。[1]',citations:[1]})}}]}))});
  await request('session',{profile:'admin'});

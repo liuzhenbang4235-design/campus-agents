@@ -33,6 +33,31 @@ test('local context expires, resets with identity, and invalid provider is rejec
  r=await s.run(a,{provider:'local',keyword:'咖啡',scope:'city'});s.reset(a);assert.throws(()=>s.sources(a,r.contextToken),/过期/);
  await assert.rejects(s.run(a,{provider:'unknown',keyword:'咖啡',scope:'city'}),/来源无效/);
 });
+test('amap without a key falls back to the local snapshot and does not call Amap',async()=>{
+ let fetched=0,consumed=0;
+ const s=service({fetchImpl(){fetched++;throw Error('should not fetch')},consume(){consumed++}});
+ const session={actor:'student'};
+ const centers=await s.run(session,{provider:'amap',keyword:'测试大学'},true);
+ assert.equal(centers.centers.length,1);
+ const nearby=await s.run(session,{provider:'amap',keyword:'咖啡',scope:'nearby',centerToken:centers.centers[0].token,radius:3000});
+ assert.equal(nearby.provider,'local');
+ assert.deepEqual(nearby.places.map(p=>p.name),['近处店']);
+ assert.equal(nearby.dataUpdatedAt,fixture.collectedAt);
+ const city=await s.run(session,{keyword:'咖啡',scope:'city'});
+ assert.equal(city.provider,'local');
+ assert.equal(fetched,0);
+ assert.equal(consumed,0);
+});
+test('a configured Amap key is not rewritten to the local snapshot',async()=>{
+ let fetched=0;
+ const s=service({getConfig:()=>({enabled:true,apiKey:'test-only',revision:1}),consume(){},fetchImpl:async()=>{fetched++;return new Response(JSON.stringify({status:'1',pois:[]}))}});
+ const session={actor:'student'};
+ await assert.rejects(s.run(session,{provider:'amap',keyword:'咖啡',scope:'city'}),/确认/);
+ assert.equal(fetched,0);
+ const r=await s.run(session,{provider:'amap',keyword:'咖啡',scope:'city',consent:true});
+ assert.equal(r.provider,'amap');
+ assert.equal(fetched,1);
+});
 test('public snapshot has explicit provenance, no network identifiers, and verified campus center',()=>{
  assert.equal(dataset.license,'ODbL-1.0');assert.equal(dataset.coordinateSystem,'WGS84');assert(dataset.places.length>0);assert(dataset.places.some(p=>p.name==='南京邮电大学通达学院'&&p.centerOnly));
  const keys=new Set(['id','name','kind','address','city','district','telephone','location','mapUrl','centerOnly']);
