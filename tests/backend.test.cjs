@@ -48,6 +48,20 @@ test('a specific form name survives a colloquial question with little exact word
 test('unconfigured service returns real local results without any model call',async t=>{
  const {request}=await setup(t,()=>{throw Error('must not call')});const r=await request('chat',{agentId:'affairs',question:'学生证怎么补办？'});
  assert.equal(r.status,200);assert.equal(r.message.mode,'retrieval');assert.equal(r.message.sources[0].docId,'d3');assert.equal(r.ai.usedToday,0);
+ assert.match(r.message.text,/还没接上云端模型/);
+ assert.match(r.message.text,/1\. .*学生证/);
+ assert.doesNotMatch(r.message.text,/尚未启用云端模型 API/);
+ assert.doesNotMatch(r.message.text,/\n\n\[1\] /);
+ // Avoid date stacking in the student-facing retrieval summary.
+ assert.doesNotMatch(r.message.text,/入库于|采集日期|查询时间/);
+});
+test('unconfigured retrieval summary stays readable and light on dates',async t=>{
+ const {request}=await setup(t,()=>{throw Error('must not call')});
+ const r=await request('chat',{agentId:'affairs',question:'学生证怎么补办？'});
+ assert.equal(r.message.mode,'retrieval');
+ assert.match(r.message.text,/供你参考/);
+ assert.match(r.message.text,/来源：/);
+ if(r.message.sources[0].date)assert.ok(!r.message.text.includes(r.message.sources[0].date),'student summary should not stack source dates');
 });
 test('greetings give local guidance without pretending the model was contacted',async t=>{
  const {request}=await setup(t,()=>{throw Error('must not call')});const r=await request('chat',{agentId:'affairs',question:'你好'});
