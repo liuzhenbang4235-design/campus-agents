@@ -49,7 +49,7 @@ test('unconfigured service returns real local results without any model call',as
  const {request}=await setup(t,()=>{throw Error('must not call')});const r=await request('chat',{agentId:'affairs',question:'学生证怎么补办？'});
  assert.equal(r.status,200);assert.equal(r.message.mode,'retrieval');assert.equal(r.message.sources[0].docId,'d3');assert.equal(r.ai.usedToday,0);
  assert.match(r.message.text,/还没接上云端模型/);
- assert.match(r.message.text,/1\. .*学生证/);
+ assert.match(r.message.text,/• .*学生证/);
  assert.doesNotMatch(r.message.text,/尚未启用云端模型 API/);
  assert.doesNotMatch(r.message.text,/\n\n\[1\] /);
  // Avoid date stacking in the student-facing retrieval summary.
@@ -60,8 +60,23 @@ test('unconfigured retrieval summary stays readable and light on dates',async t=
  const r=await request('chat',{agentId:'affairs',question:'学生证怎么补办？'});
  assert.equal(r.message.mode,'retrieval');
  assert.match(r.message.text,/供你参考/);
- assert.match(r.message.text,/来源：/);
+ assert.match(r.message.text,/• /);
+ assert.match(r.message.text,/请再核对官方最新通知/);
  if(r.message.sources[0].date)assert.ok(!r.message.text.includes(r.message.sources[0].date),'student summary should not stack source dates');
+ assert.doesNotMatch(r.message.text,/(请再核对官方最新通知.*){2}/s);
+});
+test('retrieval bullets expose source URLs as plain http(s) lines',async t=>{
+ const {request,opts}=await setup(t,()=>{throw Error('must not call')});
+ const up=await request('action',{action:'upload',agent:'affairs',title:'证卡补办链接说明',source:'演示官网',content:'学生证补办可先在示例窗口提交申请，再到服务中心领取。',sourceUrl:'https://example.com/campus/student-id',publishedAt:'2026-09-01',collectedAt:'2026-09-20',sourceKind:'official',cloudAllowed:true});
+ const d=up.state.docs.find(x=>x.title==='证卡补办链接说明');
+ await request('session',{profile:'admin'});
+ assert.equal((await request('action',{action:'review',kind:'doc',id:d.id,decision:'approve'})).status,200);
+ await request('session',{profile:'student'});
+ const r=await request('chat',{agentId:'affairs',question:'证卡补办链接说明怎么弄'});
+ assert.equal(r.message.mode,'retrieval');
+ assert.match(r.message.text,/• .*证卡补办链接说明/);
+ assert.match(r.message.text,/https:\/\/example\.com\/campus\/student-id/);
+ assert.match(r.message.text,/请再核对官方最新通知/);
 });
 test('greetings give local guidance without pretending the model was contacted',async t=>{
  const {request}=await setup(t,()=>{throw Error('must not call')});const r=await request('chat',{agentId:'affairs',question:'你好'});

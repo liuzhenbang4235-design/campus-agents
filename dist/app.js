@@ -2,6 +2,46 @@
 const icons={grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',chat:'<path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-6a9 9 0 1 1 18-5Z"/><path d="M7 10h10M7 14h6"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/>',team:'<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/>',shield:'<path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z"/><path d="m8 12 3 3 5-6"/>',book:'<path d="M12 5v16M3 3c4-1 7 0 9 2 2-2 5-3 9-2v16c-4-1-7 0-9 2-2-2-5-3-9-2V3Z"/>',home:'<path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Z"/>',brief:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18m-9-2v4"/>',search:'<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',plus:'<path d="M12 4v16M4 12h16"/>',file:'<path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',check:'<path d="m4 12 5 5L20 6"/>',lock:'<rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3"/>',spark:'<path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'};
 const icon=n=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${icons[n]||icons.spark}</svg>`;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function linkifyEscaped(escaped){
+ return String(escaped).replace(/https?:\/\/[^\s<>"']+/g,m=>{
+  try{
+   const href=m.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+   const u=new URL(href);
+   if(!['http:','https:'].includes(u.protocol)||u.username||u.password)return m;
+   return '<a href="'+esc(u.href)+'" target="_blank" rel="noopener noreferrer">'+m+'</a>';
+  }catch{return m}
+ });
+}
+function formatBubble(text){
+ const lines=String(text??'').split('\n');
+ const out=[];let list=[];
+ const flush=()=>{if(!list.length)return;out.push('<ul class="answer-list">'+list.map(item=>'<li>'+linkifyEscaped(esc(item))+'</li>').join('')+'</ul>');list=[]};
+ const bullet=/^\s*(?:[•\-–]|\d+[\.、])\s+(.*)$/;
+ for(const line of lines){
+  const m=line.match(bullet);
+  if(m){list.push(m[1]);continue}
+  flush();
+  if(!line){out.push('<br>');continue}
+  out.push(linkifyEscaped(esc(line))+'<br>');
+ }
+ flush();
+ return out.join('').replace(/(?:<br>)+$/,'');
+}
+function sourceMarkup(s){
+ if(s.sourceType==='map'){
+  let url;try{url=new URL(s.sourceUrl);if(url.protocol!=='https:'||!((url.hostname==='uri.amap.com'&&url.pathname==='/search')||(url.hostname==='www.openstreetmap.org'&&/^\/(node|way|relation)\/\d+$/.test(url.pathname)))||url.username||url.password)return ''}catch{return ''}
+  return '<a class="source-btn" href="'+esc(url.href)+'" target="_blank" rel="noopener noreferrer">['+s.citation+'] '+esc(s.title)+' · '+(url.hostname==='www.openstreetmap.org'?'本地快照，非实时':'高德查询结果')+' ↗</a>';
+ }
+ const label='['+s.citation+'] '+esc(s.title||'资料');
+ if(s.sourceUrl){
+  try{
+   const url=new URL(s.sourceUrl);
+   if(['https:','http:'].includes(url.protocol)&&!url.username&&!url.password)
+    return '<a class="source-btn" href="'+esc(url.href)+'" target="_blank" rel="noopener noreferrer">'+label+' · 打开原文 ↗</a>';
+  }catch{}
+ }
+ return '<button class="source-btn" data-action="view-doc" data-id="'+esc(s.docId)+'">'+label+' · 查看来源</button>';
+}
 const KEY='xiaoji-prototype-v1';
 const profiles={student:{name:'林同学',label:'普通学生 · 林同学',role:'student',team:null},team:{name:'陈同学',label:'团队成员 · 校园共创组',role:'team',team:'t1'},team2:{name:'周同学',label:'团队成员 · 学习互助组',role:'team',team:'t2'},admin:{name:'管理员',label:'平台管理员',role:'admin',team:null}};
 const AI_PROVIDERS={
@@ -56,7 +96,7 @@ function chat(){
  '<div class="banner">'+icon('shield')+(ai.configIssue?esc(ai.configIssue):ai.ready?(ai.verified?providerShort()+'连接已验证。':'配置已保存，连接尚待验证。')+'仅将当前问题、助手规则、检索到的已审核片段、匹配问题的本地公开地点及你勾选的地图结果发送至'+esc(providerMeta(ai.provider).vendor)+'。':'尚未配置云端模型：可使用本地资料检索和公开点位查询。')+'</div>'+
  (id==='life'?cityDiscovery():'')+'<div class="chat-layout"><section class="chat-box"><div class="chat-head"><div class="agent-icon '+a.color+'">'+icon(a.icon)+'</div><div><h2>'+esc(a.name)+'</h2><small>'+docs.length+' 份已审核资料</small></div><select id="chat-agent" aria-label="切换聊天助手">'+state.agents.filter(x=>x.status==='published').map(x=>'<option value="'+x.id+'" '+(x.id===id?'selected':'')+'>'+esc(x.name)+'</option>').join('')+'</select></div>'+
  '<div class="messages" id="messages" role="log" aria-label="对话记录"><div class="message"><span class="mini-avatar">集</span><div class="bubble">你好！可以问知识问题、制定学习计划，或咨询校园事务。有已审核资料时会附来源；通用回答不代表学校正式规定。请核对引用来源及原文日期；每条问题独立处理。</div></div>'+
- messages.map(m=>'<div class="message '+(m.role==='user'?'user':'')+'"><span class="mini-avatar">'+(m.role==='user'?'我':'集')+'</span><div class="bubble">'+(m.role==='user'?'':'<small>'+esc(modeLabel[m.mode]||'历史回答')+'</small>')+esc(m.text)+(m.sources||[]).map(sourceMarkup).join('')+'</div></div>').join('')+
+ messages.map(m=>'<div class="message '+(m.role==='user'?'user':'')+'"><span class="mini-avatar">'+(m.role==='user'?'我':'集')+'</span><div class="bubble'+(m.role==='user'?'':' rich')+'">'+(m.role==='user'?'':'<small>'+esc(modeLabel[m.mode]||'历史回答')+'</small>')+(m.role==='user'?esc(m.text):formatBubble(m.text))+(m.sources||[]).map(sourceMarkup).join('')+'</div></div>').join('')+
  (pendingChat?.aid===id?'<div class="message user"><div class="bubble">'+esc(pendingChat.question)+'</div></div><div class="message"><div class="bubble" role="status">'+(ai.ready?'正在检索资料并等待 AI 回答…':'正在检索本地知识库…')+'</div></div>':'')+'</div>'+
  '<div class="suggestions">'+suggestions.map(s=>'<button data-action="suggest" data-value="'+s+'">'+s+'</button>').join('')+'</div><div class="composer">'+(chatError?'<div class="reason" role="alert">'+esc(chatError)+'（没有生成成功回答，可重试）</div>':'')+
  (ai.ready?'<label class="check"><input id="cloud-consent" type="checkbox" '+(cloudConsent?'checked':'')+'>我同意将当前问题、相关公开资料、匹配问题的本地公开地点及勾选的地图结果发送至'+esc(providerMeta(ai.provider).vendor)+'；不输入敏感信息。</label>':'')+

@@ -157,8 +157,10 @@ test('life helper without a model shows human place lists instead of JSON',async
  const r=await request('chat',{agentId:'life',question:'通达附近有什么吃的？'});
  assert.equal(r.status,200);assert.equal(r.message.mode,'retrieval');
  assert.match(r.message.text,/还没接上云端模型/);
- assert.match(r.message.text,/1\. /);
+ assert.match(r.message.text,/• /);
+ assert.match(r.message.text,/营业与能否进入请再确认/);
  assert.ok(r.message.sources.some(s=>s.sourceType==='map'));
+ assert.ok(r.message.sources.filter(s=>s.sourceType==='map'&&s.sourceUrl).every(s=>r.message.text.includes(s.sourceUrl)));
  assert.doesNotMatch(r.message.text,/"名称"/);
  assert.doesNotMatch(r.message.text,/直线距离米/);
  assert.doesNotMatch(r.message.text,/JSON/);

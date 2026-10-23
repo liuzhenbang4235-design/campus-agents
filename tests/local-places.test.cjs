@@ -13,7 +13,7 @@ test('local search works without key or external consent, sorts and filters radi
  const centers=await s.run(session,{provider:'local',keyword:'测试大学'},true);assert.equal(centers.centers.length,1);assert(!Object.hasOwn(centers.centers[0],'location'));
  const r=await s.run(session,{provider:'local',keyword:'奶茶',scope:'nearby',centerToken:centers.centers[0].token,radius:1000});
  assert.deepEqual(r.places.map(p=>p.name),['近处店']);assert(r.places[0].distanceMeters>0&&r.places[0].distanceMeters<1000);assert.equal(r.provider,'local');assert.equal(r.dataUpdatedAt,fixture.collectedAt);
- const refs=s.sources(session,r.contextToken);assert.equal(refs[0].mapProvider,'local');assert.match(refs[0].source,/OpenStreetMap/);assert.match(refs[0].excerpt,/不是实时高德查询/);assert.match(refs[0].sourceUrl,/openstreetmap.org\/node\/2$/);assert.match(refs[0].date,/2026-09-24 01:00:00（北京时间）/);
+ const refs=s.sources(session,r.contextToken);assert.equal(refs[0].mapProvider,'local');assert.match(refs[0].source,/OpenStreetMap/);assert.match(refs[0].excerpt,/ · /);assert.doesNotMatch(refs[0].excerpt,/不是实时高德查询/);assert.match(refs[0].sourceUrl,/openstreetmap.org\/node\/2$/);assert.match(refs[0].date,/2026-09-24 01:00:00（北京时间）/);
 });
 test('local service aliases resolve to the same public categories',()=>{
  const s=service(),session={actor:'student'};

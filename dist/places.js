@@ -2,13 +2,6 @@
 const emptyPlaces=()=>({provider:'local',keyword:'咖啡',scope:'nearby',radius:3000,centerQuery:'南京邮电大学通达学院',centerToken:'',centers:[],result:null,error:'',consent:false,useForAnswer:false});
 let placesUi=emptyPlaces();
 function resetPlaces(){placesUi=emptyPlaces()}
-function sourceMarkup(s){
- if(s.sourceType==='map'){
-  let url;try{url=new URL(s.sourceUrl);if(url.protocol!=='https:'||!((url.hostname==='uri.amap.com'&&url.pathname==='/search')||(url.hostname==='www.openstreetmap.org'&&/^\/(node|way|relation)\/\d+$/.test(url.pathname)))||url.username||url.password)return ''}catch{return ''}
-  return '<a class="source-btn" href="'+esc(url.href)+'" target="_blank" rel="noopener noreferrer">['+s.citation+'] '+esc(s.title)+' · '+(url.hostname==='www.openstreetmap.org'?'本地快照，非实时':'高德查询结果')+' ↗</a>';
- }
- return '<button class="source-btn" data-action="view-doc" data-id="'+esc(s.docId)+'">['+s.citation+'] '+esc(s.title)+' · 查看来源</button>';
-}
 function cityDiscovery(){
  const p=ai.places||{};
  if(p.ready!==true&&placesUi.provider!=='local'){placesUi.provider='local';placesUi.consent=false;placesUi.result=null;placesUi.error=''}
