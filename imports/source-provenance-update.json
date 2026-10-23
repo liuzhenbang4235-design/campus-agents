@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-09-23T18:05:29.507Z",
+  "approvedCountUnchanged": 205,
+  "changed": [
+    {
+      "id": "33cef247-1e1c-48f9-b90a-a5d4feac8802",
+      "title": "待核实｜扬州渡江路萍姐姐0514小火锅抖音线索（2026-09-02）",
+      "sourceUrl": "https://www.douyin.com/video/7680633461464522154",
+      "publishedAt": "2026-09-02",
+      "collectedAt": "2026-09-24",
+      "sourceKind": "merchant",
+      "status": "rejected"
+    },
+    {
+      "id": "26424ee4-8809-485b-90ee-ce93bdfa1271",
+      "title": "待核实｜福禧牛扬州美食抖音线索（2026-09-02）",
+      "sourceUrl": "https://www.douyin.com/video/7680433626425344489",
+      "publishedAt": "2026-09-02",
+      "collectedAt": "2026-09-24",
+      "sourceKind": "merchant",
+      "status": "rejected"
+    }
+  ]
+}

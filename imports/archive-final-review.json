@@ -1,0 +1,285 @@
+{
+  "checkedAt": "2026-09-23T16:36:21.274032+00:00",
+  "scope": "仅2个公开旧包；复用已下载毕设RAR，新下载教务2013 RAR。未扩展网页抓取。",
+  "archiveLimit": 2,
+  "archivesChecked": 2,
+  "newDownloads": 1,
+  "htmlPagesFetched": 0,
+  "membersListed": 18,
+  "blankFormsParsed": 5,
+  "draftCount": 2,
+  "confirmedImportCount": 0,
+  "batchFile": "work/archive-final-batch.json",
+  "sources": [
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26498/page.htm",
+      "title": "毕业设计（论文）相关文件和表格",
+      "pageDate": "2022-04-21",
+      "status": "archive_inventory_and_selected_blank_forms_read",
+      "reason": "6成员盘点完成，2空表已读，2旧届次规定和2同主题副本排除；是否导入历史字段由root决定。",
+      "archiveUrl": "https://www.nytdc.edu.cn/_upload/article/files/ec/f6/0b7a184848599bf92f33096088fd/8bba44c1-a42d-4ecd-9ef8-693bc02cee1f.rar"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/ec/f6/0b7a184848599bf92f33096088fd/8bba44c1-a42d-4ecd-9ef8-693bc02cee1f.rar",
+      "title": "电子学院2022公开毕设历史资料包",
+      "status": "partial_historical_archive_read",
+      "reason": "只读指定2份空表，不把整个包当当前模板。",
+      "file": "work/campus-frontier/thesis-bundle.rar"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/337/list2.htm",
+      "title": "教务处学生常用表格第2页",
+      "status": "index_reviewed",
+      "reason": "使用先前已读目录确认2013-04-23条目，本轮未重抓网页。"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/74/65/b2f1ea3c44a98f6b490803168980/7247090e-fc5b-4f34-a488-43b250e2bc29.rar",
+      "title": "大学生科技创新文件表格汇总（2013目录版）",
+      "status": "archive_inventory_and_selected_blank_forms_read",
+      "reason": "12文件目录完成，只读调整、终止、归档3空表；项目汇总XLS不读，旧规则不作为现行。",
+      "file": "work\\archive-final\\innovation-2013.rar"
+    }
+  ],
+  "archives": [
+    {
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/ec/f6/0b7a184848599bf92f33096088fd/8bba44c1-a42d-4ecd-9ef8-693bc02cee1f.rar",
+      "sourcePage": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26498/page.htm",
+      "file": "work/campus-frontier/thesis-bundle.rar",
+      "sha256": "0659940c8a5d835177707ed14096196025f4daa5d97a4ff618b5f3601c6fa95e",
+      "memberListFile": "work/archive-final/thesis-list.txt",
+      "metadataFile": "work/archive-final/thesis-details.txt",
+      "memberTimestamps": "2012至2013；仅归档元数据，不作为正式生效日期。",
+      "members": [
+        {
+          "name": "2013届人文社科类毕业设计规定.doc",
+          "member": "毕业设计（论文）相关文件/2013届人文社科类毕业设计规定.doc",
+          "bodyRead": false,
+          "status": "historical_cohort_excluded",
+          "reason": "明确2013届工作规定；不读取和导入为当前规定。"
+        },
+        {
+          "name": "2013届理工类毕业设计规定.doc",
+          "member": "毕业设计（论文）相关文件/2013届理工类毕业设计规定.doc",
+          "bodyRead": false,
+          "status": "historical_cohort_excluded",
+          "reason": "明确2013届工作规定；不读取和导入为当前规定。"
+        },
+        {
+          "name": "外出毕设申请表.doc",
+          "member": "毕业设计（论文）相关文件/外出毕设申请表.doc",
+          "bodyRead": false,
+          "status": "same_topic_duplicate_not_read",
+          "reason": "已由2022独立公开附件摘要覆盖外出申请，同名RAR副本未读。",
+          "existingDocumentIds": [
+            "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+          ]
+        },
+        {
+          "name": "毕业设计更换导师申请表.doc",
+          "member": "毕业设计（论文）相关文件/毕业设计更换导师申请表.doc",
+          "bodyRead": false,
+          "status": "same_topic_duplicate_not_read",
+          "reason": "已由2022独立公开附件摘要覆盖换导师，同名RAR副本未读。",
+          "existingDocumentIds": [
+            "2a2518b8-b7cf-44d0-a15e-4ca5110656c5"
+          ]
+        },
+        {
+          "name": "毕业设计选题简表.doc",
+          "member": "毕业设计（论文）相关文件/毕业设计选题简表.doc",
+          "bodyRead": true,
+          "status": "parsed_historical_draft",
+          "reason": "已确认空白字段；可作历史栏目说明，不能声称当前模板。",
+          "verification": {
+            "file": "work\\archive-final\\thesis-topic.doc",
+            "evidenceFile": "work\\archive-final\\thesis-topic.text.txt",
+            "parseReport": "work\\archive-final\\thesis-topic.parse.json",
+            "sha256": "67fbed9a0a3ab39c6c200bbc0a614e2122e0fc7d872d9928ab7c9935ad93da64",
+            "mainStoryChars": 286,
+            "mainStoryLengthVerified": true,
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "blankFormConfirmed": true
+          },
+          "draftTitle": "通达学院：毕设选题简表和学期检查记录的填写内容（历史空表）"
+        },
+        {
+          "name": "毕业设计（论文）学期检查记录表.doc",
+          "member": "毕业设计（论文）相关文件/毕业设计（论文）学期检查记录表.doc",
+          "bodyRead": true,
+          "status": "parsed_historical_draft",
+          "reason": "已确认空白字段；可作历史栏目说明，不能声称当前模板。",
+          "verification": {
+            "file": "work\\archive-final\\thesis-check.doc",
+            "evidenceFile": "work\\archive-final\\thesis-check.text.txt",
+            "parseReport": "work\\archive-final\\thesis-check.parse.json",
+            "sha256": "69ea4302d964e824a7365da5903939f986b45ea5d99a661bcd47475f276a2cfd",
+            "mainStoryChars": 424,
+            "mainStoryLengthVerified": true,
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "blankFormConfirmed": true
+          },
+          "draftTitle": "通达学院：毕设选题简表和学期检查记录的填写内容（历史空表）"
+        }
+      ]
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/74/65/b2f1ea3c44a98f6b490803168980/7247090e-fc5b-4f34-a488-43b250e2bc29.rar",
+      "sourcePage": "https://jwc.nytdc.edu.cn/337/list2.htm",
+      "file": "work\\archive-final\\innovation-2013.rar",
+      "sha256": "74f1ee4c355db91ed1868ffa66ea3bc49c839045e0e9c41d6c7fd2567cf3c424",
+      "memberListFile": "work/archive-final/innovation-list.txt",
+      "metadataFile": "work/archive-final/innovation-details.txt",
+      "memberTimestamps": "文件均为2013-04-09；仅归档元数据，目录发布日期2013-04-23。",
+      "members": [
+        {
+          "name": "专业门类目录（本科）.doc",
+          "member": "大学生科技创新文件表格汇总/专业门类目录（本科）.doc",
+          "bodyRead": false,
+          "status": "old_taxonomy_excluded_unread",
+          "reason": "2013包的专业分类不能代表当前招生专业，已有2026专业目录和19专业摘要。"
+        },
+        {
+          "name": "南京邮电大学通达学院STITP工作章程.doc",
+          "member": "大学生科技创新文件表格汇总/南京邮电大学通达学院STITP工作章程.doc",
+          "bodyRead": false,
+          "status": "older_rules_same_topic_excluded_unread",
+          "reason": "已有较新大创制度摘要且2024正式修订正在核对；不把2013包旧规则或排期当当前，也未据此断言文件已正式废止。"
+        },
+        {
+          "name": "大学生科技创新训练计划(STITP)中期检查表.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划(STITP)中期检查表.doc",
+          "bodyRead": false,
+          "status": "historical_template_not_selected",
+          "reason": "只做旧包目录盘点；既有立项/中期/结项主题资料已有较新依据，此旧模板版本及与当前平台字段差异未核实，不推定正文已覆盖或现行可用。"
+        },
+        {
+          "name": "大学生科技创新训练计划(STITP)立项书.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划(STITP)立项书.doc",
+          "bodyRead": false,
+          "status": "historical_template_not_selected",
+          "reason": "只做旧包目录盘点；既有立项/中期/结项主题资料已有较新依据，此旧模板版本及与当前平台字段差异未核实，不推定正文已覆盖或现行可用。"
+        },
+        {
+          "name": "大学生科技创新训练计划(STITP)结题表.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划(STITP)结题表.doc",
+          "bodyRead": false,
+          "status": "historical_template_not_selected",
+          "reason": "只做旧包目录盘点；既有立项/中期/结项主题资料已有较新依据，此旧模板版本及与当前平台字段差异未核实，不推定正文已覆盖或现行可用。"
+        },
+        {
+          "name": "大学生科技创新训练计划(STITP)项目归档清单.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划(STITP)项目归档清单.doc",
+          "bodyRead": true,
+          "status": "parsed_not_imported",
+          "reason": "旧清单含光盘，以及调整/终止/结题等不同场景材料，不代表项目必须同时提交所有项目；无必要单独新增。",
+          "verification": {
+            "file": "work\\archive-final\\innovation-archive.doc",
+            "evidenceFile": "work\\archive-final\\innovation-archive.text.txt",
+            "parseReport": "work\\archive-final\\innovation-archive.parse.json",
+            "sha256": "e2c5b55bbba756c4b9647cea01d6839765271c924e5b4119c61018e834f76fc7",
+            "mainStoryChars": 312,
+            "mainStoryLengthVerified": true,
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "blankFormConfirmed": true
+          }
+        },
+        {
+          "name": "大学生科技创新训练计划(STITP)项目成果简介模板.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划(STITP)项目成果简介模板.doc",
+          "bodyRead": false,
+          "status": "historical_template_not_selected",
+          "reason": "只做旧包目录盘点；既有立项/中期/结项主题资料已有较新依据，此旧模板版本及与当前平台字段差异未核实，不推定正文已覆盖或现行可用。"
+        },
+        {
+          "name": "大学生科技创新训练计划(STITP)项目申请表.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划(STITP)项目申请表.doc",
+          "bodyRead": false,
+          "status": "historical_template_not_selected",
+          "reason": "只做旧包目录盘点；既有立项/中期/结项主题资料已有较新依据，此旧模板版本及与当前平台字段差异未核实，不推定正文已覆盖或现行可用。"
+        },
+        {
+          "name": "大学生科技创新训练计划(STITP)项目终止申请表.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划(STITP)项目终止申请表.doc",
+          "bodyRead": true,
+          "status": "parsed_draft_pending_newer_rules_comparison",
+          "reason": "空表稳定字段可供准备说明，但优先最新办法与当前表格。",
+          "verification": {
+            "file": "work\\archive-final\\innovation-stop.doc",
+            "evidenceFile": "work\\archive-final\\innovation-stop.text.txt",
+            "parseReport": "work\\archive-final\\innovation-stop.parse.json",
+            "sha256": "b8fcc97816a0c745e06703ba4b15c34bd601c9e1f836856b56b12153140b1f93",
+            "mainStoryChars": 213,
+            "mainStoryLengthVerified": true,
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "blankFormConfirmed": true
+          }
+        },
+        {
+          "name": "大学生科技创新训练计划(STITP)项目调整计划表.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划(STITP)项目调整计划表.doc",
+          "bodyRead": true,
+          "status": "parsed_draft_pending_newer_rules_comparison",
+          "reason": "正文标题为项目调整申请表；等待2024新规去重，非必入资料。",
+          "verification": {
+            "file": "work\\archive-final\\innovation-adjust.doc",
+            "evidenceFile": "work\\archive-final\\innovation-adjust.text.txt",
+            "parseReport": "work\\archive-final\\innovation-adjust.parse.json",
+            "sha256": "0ff07357a1cdccc30f3c167279c46fa6c54f27dbf07cb13bb1f8e34c005fdfa0",
+            "mainStoryChars": 261,
+            "mainStoryLengthVerified": true,
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "blankFormConfirmed": true
+          }
+        },
+        {
+          "name": "大学生科技创新训练计划（STITP）工作进程.doc",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划（STITP）工作进程.doc",
+          "bodyRead": false,
+          "status": "older_rules_same_topic_excluded_unread",
+          "reason": "已有较新大创制度摘要且2024正式修订正在核对；不把2013包旧规则或排期当当前，也未据此断言文件已正式废止。"
+        },
+        {
+          "name": "大学生科技创新训练计划（STITP）立项项目汇总表.xls",
+          "member": "大学生科技创新文件表格汇总/大学生科技创新训练计划（STITP）立项项目汇总表.xls",
+          "bodyRead": false,
+          "status": "project_summary_excluded_unread",
+          "reason": "可能为项目或人员汇总记录；仅盘点文件名，不读取表内记录。"
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "draftTitle": "通达学院：毕设选题简表和学期检查记录的填写内容（历史空表）",
+      "decision": "optional_historical_fields_only",
+      "newValue": "选题所需说明与指导教师填写的学期检查项目此前未覆盖。"
+    },
+    {
+      "draftTitle": "通达学院：大创项目调整和终止旧表要说明什么（2013目录版）",
+      "decision": "hold_for_2024_rules_comparison",
+      "newValue": "调整内容/原因与终止理由的明确填写角色；若新规则已覆盖或实用性不足则不导入。"
+    },
+    {
+      "topic": "归档清单",
+      "decision": "no_separate_record",
+      "reason": "光盘及互斥场景材料缺少现行证据，不值得新增一条待误用的清单。"
+    }
+  ],
+  "privacy": "已读5份DOC确认为未填空表；未读取项目汇总表、个人名单或已填写的项目记录。用tar只输出指定成员到固定文件名，不按包内路径落盘，不执行宏、可执行文件或文档链接。",
+  "remaining": [
+    "2026/2027届现用毕设模板及平台未由旧包证明。",
+    "2013大创模板是否已被2024规则附表或当前平台替代，由campus_sources与root核对。"
+  ],
+  "databaseOrAppChanged": false,
+  "integration": {
+    "checkedAt": "2026-09-23T17:08:11.548Z",
+    "inventory": "source-inventory.json",
+    "status": "sources_reconciled_with_approved_state",
+    "notice": "原始review的准备、排除和过期判定保留；当前入库状态以source-inventory各项及documentIds为准。"
+  }
+}

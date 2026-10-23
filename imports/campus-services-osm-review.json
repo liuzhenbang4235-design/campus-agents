@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-09-23T18:10:31.579Z",
+  "count": 59,
+  "previousCount": 52,
+  "added": [
+    {
+      "id": "osm:node/9516645481",
+      "name": "教育超市",
+      "kind": "supermarket",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.345676,
+        "lng": 119.391022
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9516645481",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9516645482",
+      "name": "菜鸟驿站",
+      "kind": "post_office",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3463534,
+        "lng": 119.3918841
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9516645482",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9516645491",
+      "name": "菜鸟驿站",
+      "kind": "post_office",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3450142,
+        "lng": 119.3894064
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9516645491",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9518474569",
+      "name": "扬子津汇文文印",
+      "kind": "copyshop",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3471278,
+        "lng": 119.3964545
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9518474569",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9518509141",
+      "name": "快递中心",
+      "kind": "post_office",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3473294,
+        "lng": 119.3977223
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9518509141",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/10207586538",
+      "name": "菜鸟驿站",
+      "kind": "parcel_locker",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3354386,
+        "lng": 119.3935155
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/10207586538",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680632",
+      "name": "十足",
+      "kind": "convenience",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3714399,
+        "lng": 119.3945202
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680632",
+      "centerOnly": false
+    }
+  ],
+  "rawFile": "work/campus-services-osm.json",
+  "rawSha256": "9c495dfe25b2708079f09b6933b03ef8be522c87a5517364985e00b6da23ff78",
+  "sourceUrl": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+  "scope": "南京邮电大学通达学院代表坐标周边5公里内的部分公开地点；不代表校门步行范围或全量商户",
+  "license": "ODbL-1.0",
+  "notice": "社区公开标注快照；未验证营业状态、价格或公众准入，不等于全量商户。"
+}

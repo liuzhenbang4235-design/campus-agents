@@ -1,0 +1,909 @@
+{
+  "version": 1,
+  "source": "OpenStreetMap",
+  "attribution": "© OpenStreetMap contributors",
+  "license": "ODbL-1.0",
+  "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyrightUrl": "https://www.openstreetmap.org/copyright",
+  "collectedAt": "2026-09-23T18:09:53.779Z",
+  "dataTimestamp": "2026-09-23T18:07:49Z",
+  "scope": "南京邮电大学通达学院代表坐标周边5公里内的部分公开地点；不代表校门步行范围或全量商户",
+  "coordinateSystem": "WGS84",
+  "query": "[out:json][timeout:35][maxsize:67108864];(nwr[amenity~\"^(restaurant|cafe|fast_food|food_court|ice_cream|bar|pub|cinema|theatre|library|arts_centre|university|post_office|parcel_locker|pharmacy)$\"][name](around:5000,32.3338294,119.3947991);nwr[leisure~\"^(park|sports_centre|stadium|fitness_centre|water_park|garden)$\"][name](around:5000,32.3338294,119.3947991);nwr[tourism~\"^(museum|gallery|attraction|zoo|aquarium|theme_park)$\"][name](around:5000,32.3338294,119.3947991);nwr[shop~\"^(mall|bakery|tea|supermarket|convenience|laundry|copyshop|hairdresser)$\"][name](around:5000,32.3338294,119.3947991););out center tags;",
+  "endpoint": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+  "places": [
+    {
+      "id": "osm:node/8926054841",
+      "name": "中国大运河博物馆",
+      "kind": "museum",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3646393,
+        "lng": 119.4219207
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/8926054841",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9516645481",
+      "name": "教育超市",
+      "kind": "supermarket",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.345676,
+        "lng": 119.391022
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9516645481",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9516645482",
+      "name": "菜鸟驿站",
+      "kind": "post_office",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3463534,
+        "lng": 119.3918841
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9516645482",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9516645491",
+      "name": "菜鸟驿站",
+      "kind": "post_office",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3450142,
+        "lng": 119.3894064
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9516645491",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517034823",
+      "name": "朗月湖",
+      "kind": "attraction",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3443522,
+        "lng": 119.3982445
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517034823",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517034824",
+      "name": "问月湖",
+      "kind": "attraction",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3411062,
+        "lng": 119.3917187
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517034824",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517034825",
+      "name": "紫藤长廊",
+      "kind": "attraction",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3409848,
+        "lng": 119.3908754
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517034825",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517035331",
+      "name": "扬州大学校徽",
+      "kind": "attraction",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3423105,
+        "lng": 119.3975115
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517035331",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517190162",
+      "name": "烧仙草",
+      "kind": "cafe",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3456481,
+        "lng": 119.3907062
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517190162",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9518343044",
+      "name": "文体馆小剧场",
+      "kind": "theatre",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3458986,
+        "lng": 119.3944694
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9518343044",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9518343045",
+      "name": "昭文馆报告厅",
+      "kind": "theatre",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3435885,
+        "lng": 119.3977054
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9518343045",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9518474569",
+      "name": "扬子津汇文文印",
+      "kind": "copyshop",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3471278,
+        "lng": 119.3964545
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9518474569",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9518509141",
+      "name": "快递中心",
+      "kind": "post_office",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3473294,
+        "lng": 119.3977223
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9518509141",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/10207586538",
+      "name": "菜鸟驿站",
+      "kind": "parcel_locker",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3354386,
+        "lng": 119.3935155
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/10207586538",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11074476283",
+      "name": "野外咖",
+      "kind": "fast_food",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3631134,
+        "lng": 119.424341
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11074476283",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11074707365",
+      "name": "听沙茶楼",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3672684,
+        "lng": 119.4104713
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11074707365",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11074709878",
+      "name": "北疆饭店",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3667919,
+        "lng": 119.4108319
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11074709878",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680623",
+      "name": "CoCo都可",
+      "kind": "cafe",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3704891,
+        "lng": 119.3937065
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680623",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680629",
+      "name": "肯德基",
+      "kind": "fast_food",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3736041,
+        "lng": 119.3945818
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680629",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680630",
+      "name": "星巴克",
+      "kind": "cafe",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3726135,
+        "lng": 119.3947216
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680630",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680632",
+      "name": "十足",
+      "kind": "convenience",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3714399,
+        "lng": 119.3945202
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680632",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680633",
+      "name": "杨国福麻辣烫",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3713547,
+        "lng": 119.3939883
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680633",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680636",
+      "name": "Mao Master",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3706506,
+        "lng": 119.3937184
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680636",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680637",
+      "name": "蜜雪冰城",
+      "kind": "cafe",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3704478,
+        "lng": 119.3934565
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680637",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680641",
+      "name": "茶百道",
+      "kind": "cafe",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3712091,
+        "lng": 119.3938441
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680641",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680643",
+      "name": "爷爷不泡茶",
+      "kind": "cafe",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3705584,
+        "lng": 119.3942351
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680643",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680644",
+      "name": "米村拌饭",
+      "kind": "fast_food",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3707721,
+        "lng": 119.3942727
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680644",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680645",
+      "name": "LINLEE",
+      "kind": "cafe",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3709187,
+        "lng": 119.3944719
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680645",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680646",
+      "name": "星伦多海鲜自助",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3710917,
+        "lng": 119.3941672
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680646",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680647",
+      "name": "東北風",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3701965,
+        "lng": 119.3939994
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680647",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680648",
+      "name": "Dairy Queen",
+      "kind": "fast_food",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3695871,
+        "lng": 119.3945137
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680648",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680649",
+      "name": "七分甜",
+      "kind": "cafe",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3696774,
+        "lng": 119.3947576
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680649",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13437555868",
+      "name": "蒋家桥饺面店",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3561984,
+        "lng": 119.3914762
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13437555868",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/237347498",
+      "name": "力宝广场",
+      "kind": "mall",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3729569,
+        "lng": 119.3941139
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/237347498",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/237617268",
+      "name": "M会员店",
+      "kind": "mall",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3721023,
+        "lng": 119.4060885
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/237617268",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/307835358",
+      "name": "扬州工业职业技术学院",
+      "kind": "university",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3374748,
+        "lng": 119.3956113
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/307835358",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/307835359",
+      "name": "许庄社区法治广场",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3431266,
+        "lng": 119.377542
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/307835359",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/310496639",
+      "name": "玉盛公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3402585,
+        "lng": 119.377567
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/310496639",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/310664863",
+      "name": "蝶湖公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3687514,
+        "lng": 119.4057084
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/310664863",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/311072544",
+      "name": "产业工人公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3270688,
+        "lng": 119.4392319
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/311072544",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/311905434",
+      "name": "扬州商城",
+      "kind": "mall",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3743967,
+        "lng": 119.4049264
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/311905434",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/361850923",
+      "name": "第二食堂",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3341456,
+        "lng": 119.3949743
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/361850923",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/361850972",
+      "name": "第一食堂",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3340699,
+        "lng": 119.3941795
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/361850972",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/791584655",
+      "name": "三湾湿地公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3580486,
+        "lng": 119.4245166
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/791584655",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1032897386",
+      "name": "昭文馆",
+      "kind": "library",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3439639,
+        "lng": 119.3972336
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1032897386",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1032897406",
+      "name": "润园",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3448986,
+        "lng": 119.3908416
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1032897406",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1032897451",
+      "name": "津园",
+      "kind": "restaurant",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3461412,
+        "lng": 119.3957256
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1032897451",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1032915225",
+      "name": "扬州大学扬子津校区",
+      "kind": "university",
+      "address": "扬州市 华扬西路 196",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.345117,
+        "lng": 119.3947065
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1032915225",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/1060003356",
+      "name": "扬州中国大运河博物馆",
+      "kind": "museum",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3642266,
+        "lng": 119.4228057
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1060003356",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1116025945",
+      "name": "南京邮电大学通达学院",
+      "kind": "university",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3338294,
+        "lng": 119.3947991
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1116025945",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/1316612684",
+      "name": "半岛公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3741653,
+        "lng": 119.3792448
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1316612684",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1338618439",
+      "name": "润茂国际广场",
+      "kind": "mall",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.369907,
+        "lng": 119.369102
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1338618439",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455123",
+      "name": "江苏旅游职业学院",
+      "kind": "university",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3046153,
+        "lng": 119.4044506
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455123",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/1339455125",
+      "name": "凤栖湖公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3064546,
+        "lng": 119.4112626
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455125",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455134",
+      "name": "扬州南部体育公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3130239,
+        "lng": 119.4213291
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455134",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455135",
+      "name": "九龙湖公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.30319,
+        "lng": 119.4222018
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455135",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455137",
+      "name": "扬子津生态中心",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3232073,
+        "lng": 119.4168534
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455137",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1340005224",
+      "name": "吉安路体育休闲公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3417283,
+        "lng": 119.382571
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1340005224",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1340527142",
+      "name": "树人公园",
+      "kind": "park",
+      "address": "",
+      "city": "通达学院周边5公里",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lat": 32.3057311,
+        "lng": 119.4158313
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1340527142",
+      "centerOnly": false
+    }
+  ],
+  "focus": {
+    "name": "南京邮电大学通达学院",
+    "radiusMeters": 5000,
+    "location": {
+      "lng": 119.3947991,
+      "lat": 32.3338294
+    }
+  }
+}

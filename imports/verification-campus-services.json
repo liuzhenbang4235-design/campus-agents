@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-09-23T18:12:34.853Z",
+  "activePlaces": 59,
+  "checks": [
+    {
+      "keyword": "超市",
+      "results": [
+        {
+          "name": "教育超市",
+          "distanceMeters": 1364,
+          "url": "https://www.openstreetmap.org/node/9516645481"
+        }
+      ]
+    },
+    {
+      "keyword": "快递",
+      "results": [
+        {
+          "name": "菜鸟驿站",
+          "distanceMeters": 216,
+          "url": "https://www.openstreetmap.org/node/10207586538"
+        },
+        {
+          "name": "菜鸟驿站",
+          "distanceMeters": 1343,
+          "url": "https://www.openstreetmap.org/node/9516645491"
+        },
+        {
+          "name": "菜鸟驿站",
+          "distanceMeters": 1419,
+          "url": "https://www.openstreetmap.org/node/9516645482"
+        },
+        {
+          "name": "快递中心",
+          "distanceMeters": 1526,
+          "url": "https://www.openstreetmap.org/node/9518509141"
+        }
+      ]
+    },
+    {
+      "keyword": "打印店",
+      "results": [
+        {
+          "name": "扬子津汇文文印",
+          "distanceMeters": 1487,
+          "url": "https://www.openstreetmap.org/node/9518474569"
+        }
+      ]
+    }
+  ],
+  "question": "学校附近哪里打印？能确定校外的人可以去吗？",
+  "message": {
+    "role": "assistant",
+    "text": "根据现有的OpenStreetMap本地公开点位快照，南京邮电大学通达学院周边约1487米处有一家名为扬子津汇文文印的打印复印店，但该数据为2026年9月24日采集的本地快照，并非实时查询结果，且资料未明确标注该店是否允许校外人员进入打印。校内相关历史学生体验信息仅针对2024年6月至2025年6月的情况，无法确认2026年校内打印服务及校外人员使用校内打印点的相关情况。\n\n参考资料：[1]",
+    "sources": [
+      {
+        "docId": "map:c2033b50-b6de-4d29-8935-5d6992a79db6:0",
+        "title": "扬子津汇文文印",
+        "source": "OpenStreetMap本地公开点位快照 · © OpenStreetMap contributors · ODbL",
+        "sourceType": "map",
+        "mapProvider": "local",
+        "sourceUrl": "https://www.openstreetmap.org/node/9518474569",
+        "date": "2026-09-24 02:09:53（北京时间）",
+        "excerpt": "{\"名称\":\"扬子津汇文文印\",\"地址\":\"未提供\",\"类别\":\"打印复印店\",\"中心地点\":\"南京邮电大学通达学院\",\"直线距离米\":1487,\"采集日期\":\"2026-09-24 02:09:53（北京时间）\",\"检索时间\":\"2026-09-24 02:12:33（北京时间）\",\"覆盖范围\":\"南京邮电大学通达学院代表坐标周边5公里内的部分公开地点；不代表校门步行范围或全量商户\",\"说明\":\"社区标注的本地采集快照，不是实时高德查询，不代表全量最近。坐标为代表点而非出入口，直线距离不是步行路程。周边地点可能位于其他学校或单位内部，名称和距离不能证明可进入或提供快递代收服务。未逐店核对营业、价格、预约、公众准入；空结果只表示未收录，不能断言附近没有。\"}",
+        "citation": 1
+      }
+    ],
+    "mode": "ai",
+    "time": "2026-09-23T18:12:34.826Z"
+  }
+}

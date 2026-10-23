@@ -1,0 +1,4385 @@
+{
+  "auditedAt": "2026-09-23T16:58:11.362Z",
+  "localDate": "2026-09-24",
+  "mode": "read-only-local-retrieval",
+  "inputs": {
+    "api": "GET http://127.0.0.1:4173/api/state",
+    "manifest": "outputs/campus-agent/imports/campus-programs-reviewed-batch.json",
+    "retrievalFile": "outputs/campus-agent/lib/retrieval.cjs",
+    "retrievalSha256": "c961f8a0f3115df6c12deba38fed51ea99f63bb7b7489d98c9be86919d60ed4d",
+    "approvedCloudStudyCount": 78,
+    "programDocs": 19
+  },
+  "configuration": {
+    "agent": "study",
+    "limit": 4,
+    "limitReason": "调用retrieve默认4，与lib/backend.cjs聊天无地图来源时一致；未更改分词、扩展或排序。"
+  },
+  "mutations": {
+    "database": false,
+    "applicationCode": false,
+    "configuration": false,
+    "cloudCalls": 0,
+    "externalFetches": 0
+  },
+  "criteria": {
+    "original": "每条原稿4问，正确专业资料进入前4条算命中，同时报告Top1。",
+    "comparison": "比较问题需所有指定专业同时进入前4条才算完整命中。",
+    "abbreviations": "网新/数媒/AI按记录中的人工意图评估；不预先扩写问句。",
+    "scope": "仅验证检索召回和次序，不调用云模型，因此不评价生成答案正确性；额外无关来源可能占用上下文。"
+  },
+  "missingImported": [],
+  "summary": {
+    "original": {
+      "queries": 76,
+      "hitAt1": 66,
+      "allExpectedHitAt4": 76,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0
+    },
+    "supplemental": {
+      "queries": 5,
+      "hitAt1": 1,
+      "allExpectedHitAt4": 5,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0
+    },
+    "totalQueries": 81
+  },
+  "programSummary": [
+    {
+      "title": "通达学院：网络与新媒体学什么",
+      "docId": "37a36c4a-cd3a-42b7-9faa-01b79c1d99e0",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：人工智能学什么",
+      "docId": "7ff2d060-c2db-4d06-8f4a-cc002026de7f",
+      "queries": 4,
+      "hitAt1": 3,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：金融工程学什么",
+      "docId": "8cb0f0a3-571e-4ef8-a918-441a407e8020",
+      "queries": 4,
+      "hitAt1": 3,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "title": "通达学院：广告学学什么",
+      "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：财务管理学什么",
+      "docId": "c231074b-e233-4854-8f5d-a766af7bdbc7",
+      "queries": 4,
+      "hitAt1": 3,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "title": "通达学院：大数据管理与应用学什么",
+      "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：电气工程及其自动化学什么",
+      "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+      "queries": 4,
+      "hitAt1": 3,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：自动化学什么",
+      "docId": "e4dfb0bd-d4cc-4bf3-8864-16329fbc4bfd",
+      "queries": 4,
+      "hitAt1": 3,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：集成电路设计与集成系统学什么",
+      "docId": "b3effe77-c226-455f-94b8-0747c5ac3234",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：光电信息科学与工程学什么",
+      "docId": "c4be257e-be3a-4e0b-9181-938a1ca1c6e6",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：电子科学与技术学什么",
+      "docId": "2e7356cb-ce45-4d32-8b08-7e527c103b58",
+      "queries": 4,
+      "hitAt1": 1,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "title": "通达学院：数字媒体技术学什么",
+      "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：物联网工程学什么",
+      "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：数据科学与大数据技术学什么",
+      "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：信息安全学什么",
+      "docId": "795bbcb4-6109-4b6d-be9e-91f64f8402c1",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：软件工程学什么",
+      "docId": "5cad6fb5-e66d-460e-88ca-45cdf223c41a",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：计算机科学与技术学什么",
+      "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+      "queries": 4,
+      "hitAt1": 4,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：信息工程学什么",
+      "docId": "267f6448-2fa1-423a-80f4-addd0df6464c",
+      "queries": 4,
+      "hitAt1": 3,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "title": "通达学院：通信工程学什么",
+      "docId": "cd8ef4f0-aebb-4922-9931-e1dce734df2b",
+      "queries": 4,
+      "hitAt1": 3,
+      "allExpectedHitAt4": 4,
+      "emptyResults": 0,
+      "missingExpectedQueries": 0,
+      "ranks": [
+        1,
+        1,
+        2,
+        1
+      ]
+    }
+  ],
+  "originalQuestions": [
+    {
+      "query": "网络与新媒体学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "网络与新媒体",
+      "expected": [
+        {
+          "title": "通达学院：网络与新媒体学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "37a36c4a-cd3a-42b7-9faa-01b79c1d99e0",
+          "title": "通达学院：网络与新媒体学什么",
+          "source": "学校招生网｜专业目录2026-05-20｜https://zs.nytdc.edu.cn/2026/0520/c138a49849/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 483
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+          "title": "通达学院：广告学学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 493
+        },
+        {
+          "rank": 4,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        }
+      ]
+    },
+    {
+      "query": "网络与新媒体有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "网络与新媒体",
+      "expected": [
+        {
+          "title": "通达学院：网络与新媒体学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "37a36c4a-cd3a-42b7-9faa-01b79c1d99e0",
+          "title": "通达学院：网络与新媒体学什么",
+          "source": "学校招生网｜专业目录2026-05-20｜https://zs.nytdc.edu.cn/2026/0520/c138a49849/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 483
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+          "title": "通达学院：广告学学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 493
+        },
+        {
+          "rank": 4,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        }
+      ]
+    },
+    {
+      "query": "网络与新媒体有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "网络与新媒体",
+      "expected": [
+        {
+          "title": "通达学院：网络与新媒体学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "37a36c4a-cd3a-42b7-9faa-01b79c1d99e0",
+          "title": "通达学院：网络与新媒体学什么",
+          "source": "学校招生网｜专业目录2026-05-20｜https://zs.nytdc.edu.cn/2026/0520/c138a49849/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 483
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 4,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        }
+      ]
+    },
+    {
+      "query": "网络与新媒体培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "网络与新媒体",
+      "expected": [
+        {
+          "title": "通达学院：网络与新媒体学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "37a36c4a-cd3a-42b7-9faa-01b79c1d99e0",
+          "title": "通达学院：网络与新媒体学什么",
+          "source": "学校招生网｜专业目录2026-05-20｜https://zs.nytdc.edu.cn/2026/0520/c138a49849/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 483
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+          "title": "通达学院：广告学学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 493
+        },
+        {
+          "rank": 4,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        }
+      ]
+    },
+    {
+      "query": "人工智能学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "人工智能",
+      "expected": [
+        {
+          "title": "通达学院：人工智能学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "7ff2d060-c2db-4d06-8f4a-cc002026de7f",
+          "title": "通达学院：人工智能学什么",
+          "source": "学校招生网｜专业目录2025-05-30｜https://zs.nytdc.edu.cn/2025/0530/c138a46159/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 480
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        }
+      ]
+    },
+    {
+      "query": "人工智能有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "人工智能",
+      "expected": [
+        {
+          "title": "通达学院：人工智能学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "7ff2d060-c2db-4d06-8f4a-cc002026de7f",
+          "title": "通达学院：人工智能学什么",
+          "source": "学校招生网｜专业目录2025-05-30｜https://zs.nytdc.edu.cn/2025/0530/c138a46159/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 480
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "1827096a-046e-4576-a784-6d92d8cf2ef6",
+          "title": "通达学院：综合素质选修至少5学分、与PU学时的区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "人工智能有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "人工智能",
+      "expected": [
+        {
+          "title": "通达学院：人工智能学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 2,
+          "docId": "7ff2d060-c2db-4d06-8f4a-cc002026de7f",
+          "title": "通达学院：人工智能学什么",
+          "source": "学校招生网｜专业目录2025-05-30｜https://zs.nytdc.edu.cn/2025/0530/c138a46159/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 480
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        }
+      ]
+    },
+    {
+      "query": "人工智能培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "人工智能",
+      "expected": [
+        {
+          "title": "通达学院：人工智能学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "7ff2d060-c2db-4d06-8f4a-cc002026de7f",
+          "title": "通达学院：人工智能学什么",
+          "source": "学校招生网｜专业目录2025-05-30｜https://zs.nytdc.edu.cn/2025/0530/c138a46159/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 480
+        },
+        {
+          "rank": 2,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        }
+      ]
+    },
+    {
+      "query": "金融工程学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "金融工程",
+      "expected": [
+        {
+          "title": "通达学院：金融工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "8cb0f0a3-571e-4ef8-a918-441a407e8020",
+          "title": "通达学院：金融工程学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3732/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 466
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "617b85b1-aecc-43a6-be53-18d6cc0e0a5d",
+          "title": "通达学院：C类竞赛完整目录（2/4）（2025修订）",
+          "source": "学校官网｜2025-03-24｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-2e34-4305-880c-f2ef1601d279",
+          "chunk": 1,
+          "excerptChars": 703
+        }
+      ]
+    },
+    {
+      "query": "金融工程有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "金融工程",
+      "expected": [
+        {
+          "title": "通达学院：金融工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "8cb0f0a3-571e-4ef8-a918-441a407e8020",
+          "title": "通达学院：金融工程学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3732/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 466
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "1981a5d2-c2a6-4499-8f67-c0d998c5545a",
+          "title": "通达学院：双创课程完整目录、负责部门和选课信息缺口",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc?PageIndex=2&CategoryCode=SCJY-sckc",
+          "chunk": 1,
+          "excerptChars": 485
+        }
+      ]
+    },
+    {
+      "query": "金融工程有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "金融工程",
+      "expected": [
+        {
+          "title": "通达学院：金融工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "8cb0f0a3-571e-4ef8-a918-441a407e8020",
+          "title": "通达学院：金融工程学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3732/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 466
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "金融工程培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "金融工程",
+      "expected": [
+        {
+          "title": "通达学院：金融工程学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 2,
+          "docId": "8cb0f0a3-571e-4ef8-a918-441a407e8020",
+          "title": "通达学院：金融工程学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3732/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 466
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+          "title": "通达学院：物联网工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 488
+        }
+      ]
+    },
+    {
+      "query": "广告学学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "广告学",
+      "expected": [
+        {
+          "title": "通达学院：广告学学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+          "title": "通达学院：广告学学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 493
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "c231074b-e233-4854-8f5d-a766af7bdbc7",
+          "title": "通达学院：财务管理学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3740/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 451
+        },
+        {
+          "rank": 4,
+          "docId": "cd8ef4f0-aebb-4922-9931-e1dce734df2b",
+          "title": "通达学院：通信工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3900/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 456
+        }
+      ]
+    },
+    {
+      "query": "广告学有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "广告学",
+      "expected": [
+        {
+          "title": "通达学院：广告学学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+          "title": "通达学院：广告学学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 493
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "bb1c8cb1-0912-4291-95ae-1a355feebc7b",
+          "title": "通达学院：学科竞赛管理系统官方入口",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xkjs",
+          "chunk": 1,
+          "excerptChars": 252
+        },
+        {
+          "rank": 4,
+          "docId": "1981a5d2-c2a6-4499-8f67-c0d998c5545a",
+          "title": "通达学院：双创课程完整目录、负责部门和选课信息缺口",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc?PageIndex=2&CategoryCode=SCJY-sckc",
+          "chunk": 1,
+          "excerptChars": 485
+        }
+      ]
+    },
+    {
+      "query": "广告学有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "广告学",
+      "expected": [
+        {
+          "title": "通达学院：广告学学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+          "title": "通达学院：广告学学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 493
+        },
+        {
+          "rank": 2,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "be2c9f5a-47df-4fd3-878c-5ff37a1c08f9",
+          "title": "通达学院：双创基地、机器人和数学建模实践室在哪里",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-scjd",
+          "chunk": 1,
+          "excerptChars": 359
+        }
+      ]
+    },
+    {
+      "query": "广告学培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "广告学",
+      "expected": [
+        {
+          "title": "通达学院：广告学学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+          "title": "通达学院：广告学学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 493
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "be2c9f5a-47df-4fd3-878c-5ff37a1c08f9",
+          "title": "通达学院：双创基地、机器人和数学建模实践室在哪里",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-scjd",
+          "chunk": 1,
+          "excerptChars": 359
+        },
+        {
+          "rank": 4,
+          "docId": "5a1a08fa-e00f-4555-9a74-e2b4bbfdb687",
+          "title": "通达学院：2024/2025级专业提升模块：升学、就业及认定缺口",
+          "source": "教务处｜2025-07-04｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 624
+        }
+      ]
+    },
+    {
+      "query": "财务管理学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "财务管理",
+      "expected": [
+        {
+          "title": "通达学院：财务管理学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "c231074b-e233-4854-8f5d-a766af7bdbc7",
+          "title": "通达学院：财务管理学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3740/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 451
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "财务管理有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "财务管理",
+      "expected": [
+        {
+          "title": "通达学院：财务管理学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "c231074b-e233-4854-8f5d-a766af7bdbc7",
+          "title": "通达学院：财务管理学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3740/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 451
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "bb1c8cb1-0912-4291-95ae-1a355feebc7b",
+          "title": "通达学院：学科竞赛管理系统官方入口",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xkjs",
+          "chunk": 1,
+          "excerptChars": 252
+        }
+      ]
+    },
+    {
+      "query": "财务管理有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "财务管理",
+      "expected": [
+        {
+          "title": "通达学院：财务管理学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "c231074b-e233-4854-8f5d-a766af7bdbc7",
+          "title": "通达学院：财务管理学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3740/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 451
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "财务管理培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "财务管理",
+      "expected": [
+        {
+          "title": "通达学院：财务管理学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 2,
+          "docId": "c231074b-e233-4854-8f5d-a766af7bdbc7",
+          "title": "通达学院：财务管理学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3740/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 451
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        }
+      ]
+    },
+    {
+      "query": "大数据管理与应用学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "大数据管理与应用",
+      "expected": [
+        {
+          "title": "通达学院：大数据管理与应用学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "大数据管理与应用有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "大数据管理与应用",
+      "expected": [
+        {
+          "title": "通达学院：大数据管理与应用学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        }
+      ]
+    },
+    {
+      "query": "大数据管理与应用有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "大数据管理与应用",
+      "expected": [
+        {
+          "title": "通达学院：大数据管理与应用学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        }
+      ]
+    },
+    {
+      "query": "大数据管理与应用培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "大数据管理与应用",
+      "expected": [
+        {
+          "title": "通达学院：大数据管理与应用学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        },
+        {
+          "rank": 2,
+          "docId": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+          "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 319
+        },
+        {
+          "rank": 3,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "电气工程及其自动化学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "电气工程及其自动化",
+      "expected": [
+        {
+          "title": "通达学院：电气工程及其自动化学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+          "title": "通达学院：电气工程及其自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 465
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "电气工程及其自动化有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "电气工程及其自动化",
+      "expected": [
+        {
+          "title": "通达学院：电气工程及其自动化学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 2,
+          "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+          "title": "通达学院：电气工程及其自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 465
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "1ee10685-5497-4a67-995b-a5d231add0ea",
+          "title": "通达学院：认识实习、生产实习、金工电装和制图安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 430
+        }
+      ]
+    },
+    {
+      "query": "电气工程及其自动化有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "电气工程及其自动化",
+      "expected": [
+        {
+          "title": "通达学院：电气工程及其自动化学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+          "title": "通达学院：电气工程及其自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 465
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "1ee10685-5497-4a67-995b-a5d231add0ea",
+          "title": "通达学院：认识实习、生产实习、金工电装和制图安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 430
+        }
+      ]
+    },
+    {
+      "query": "电气工程及其自动化培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "电气工程及其自动化",
+      "expected": [
+        {
+          "title": "通达学院：电气工程及其自动化学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+          "title": "通达学院：电气工程及其自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 465
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "1ee10685-5497-4a67-995b-a5d231add0ea",
+          "title": "通达学院：认识实习、生产实习、金工电装和制图安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 430
+        }
+      ]
+    },
+    {
+      "query": "自动化学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "自动化",
+      "expected": [
+        {
+          "title": "通达学院：自动化学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "e4dfb0bd-d4cc-4bf3-8864-16329fbc4bfd",
+          "title": "通达学院：自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3871/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 472
+        },
+        {
+          "rank": 2,
+          "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+          "title": "通达学院：电气工程及其自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 465
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        }
+      ]
+    },
+    {
+      "query": "自动化有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "自动化",
+      "expected": [
+        {
+          "title": "通达学院：自动化学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "e4dfb0bd-d4cc-4bf3-8864-16329fbc4bfd",
+          "title": "通达学院：自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3871/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 472
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "1ee10685-5497-4a67-995b-a5d231add0ea",
+          "title": "通达学院：认识实习、生产实习、金工电装和制图安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 430
+        }
+      ]
+    },
+    {
+      "query": "自动化有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "自动化",
+      "expected": [
+        {
+          "title": "通达学院：自动化学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 2,
+          "docId": "e4dfb0bd-d4cc-4bf3-8864-16329fbc4bfd",
+          "title": "通达学院：自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3871/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 472
+        },
+        {
+          "rank": 3,
+          "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+          "title": "通达学院：电气工程及其自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 465
+        },
+        {
+          "rank": 4,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        }
+      ]
+    },
+    {
+      "query": "自动化培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "自动化",
+      "expected": [
+        {
+          "title": "通达学院：自动化学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "e4dfb0bd-d4cc-4bf3-8864-16329fbc4bfd",
+          "title": "通达学院：自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3871/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 472
+        },
+        {
+          "rank": 2,
+          "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+          "title": "通达学院：电气工程及其自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 465
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        }
+      ]
+    },
+    {
+      "query": "集成电路设计与集成系统学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "集成电路设计与集成系统",
+      "expected": [
+        {
+          "title": "通达学院：集成电路设计与集成系统学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "b3effe77-c226-455f-94b8-0747c5ac3234",
+          "title": "通达学院：集成电路设计与集成系统学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2023/0516/c138a36005/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 498
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "集成电路设计与集成系统有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "集成电路设计与集成系统",
+      "expected": [
+        {
+          "title": "通达学院：集成电路设计与集成系统学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "b3effe77-c226-455f-94b8-0747c5ac3234",
+          "title": "通达学院：集成电路设计与集成系统学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2023/0516/c138a36005/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 498
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "集成电路设计与集成系统有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "集成电路设计与集成系统",
+      "expected": [
+        {
+          "title": "通达学院：集成电路设计与集成系统学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "b3effe77-c226-455f-94b8-0747c5ac3234",
+          "title": "通达学院：集成电路设计与集成系统学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2023/0516/c138a36005/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 498
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "集成电路设计与集成系统培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "集成电路设计与集成系统",
+      "expected": [
+        {
+          "title": "通达学院：集成电路设计与集成系统学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "b3effe77-c226-455f-94b8-0747c5ac3234",
+          "title": "通达学院：集成电路设计与集成系统学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2023/0516/c138a36005/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 498
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "光电信息科学与工程学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "光电信息科学与工程",
+      "expected": [
+        {
+          "title": "通达学院：光电信息科学与工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "c4be257e-be3a-4e0b-9181-938a1ca1c6e6",
+          "title": "通达学院：光电信息科学与工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3958/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 441
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "光电信息科学与工程有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "光电信息科学与工程",
+      "expected": [
+        {
+          "title": "通达学院：光电信息科学与工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "c4be257e-be3a-4e0b-9181-938a1ca1c6e6",
+          "title": "通达学院：光电信息科学与工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3958/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 441
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "光电信息科学与工程有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "光电信息科学与工程",
+      "expected": [
+        {
+          "title": "通达学院：光电信息科学与工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "c4be257e-be3a-4e0b-9181-938a1ca1c6e6",
+          "title": "通达学院：光电信息科学与工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3958/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 441
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "光电信息科学与工程培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "光电信息科学与工程",
+      "expected": [
+        {
+          "title": "通达学院：光电信息科学与工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "c4be257e-be3a-4e0b-9181-938a1ca1c6e6",
+          "title": "通达学院：光电信息科学与工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3958/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 441
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "电子科学与技术学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "电子科学与技术",
+      "expected": [
+        {
+          "title": "通达学院：电子科学与技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "2e7356cb-ce45-4d32-8b08-7e527c103b58",
+          "title": "通达学院：电子科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3959/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 453
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "电子科学与技术有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "电子科学与技术",
+      "expected": [
+        {
+          "title": "通达学院：电子科学与技术学什么",
+          "rank": 3
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 2,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 3,
+          "docId": "2e7356cb-ce45-4d32-8b08-7e527c103b58",
+          "title": "通达学院：电子科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3959/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 453
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "电子科学与技术有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "电子科学与技术",
+      "expected": [
+        {
+          "title": "通达学院：电子科学与技术学什么",
+          "rank": 3
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 2,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 3,
+          "docId": "2e7356cb-ce45-4d32-8b08-7e527c103b58",
+          "title": "通达学院：电子科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3959/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 453
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "电子科学与技术培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "电子科学与技术",
+      "expected": [
+        {
+          "title": "通达学院：电子科学与技术学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 2,
+          "docId": "2e7356cb-ce45-4d32-8b08-7e527c103b58",
+          "title": "通达学院：电子科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3959/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 453
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "数字媒体技术学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "数字媒体技术",
+      "expected": [
+        {
+          "title": "通达学院：数字媒体技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "数字媒体技术有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "数字媒体技术",
+      "expected": [
+        {
+          "title": "通达学院：数字媒体技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "数字媒体技术有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "数字媒体技术",
+      "expected": [
+        {
+          "title": "通达学院：数字媒体技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "数字媒体技术培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "数字媒体技术",
+      "expected": [
+        {
+          "title": "通达学院：数字媒体技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        },
+        {
+          "rank": 4,
+          "docId": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+          "title": "通达学院：广告学学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 493
+        }
+      ]
+    },
+    {
+      "query": "物联网工程学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "物联网工程",
+      "expected": [
+        {
+          "title": "通达学院：物联网工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+          "title": "通达学院：物联网工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 488
+        },
+        {
+          "rank": 2,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "物联网工程有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "物联网工程",
+      "expected": [
+        {
+          "title": "通达学院：物联网工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+          "title": "通达学院：物联网工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 488
+        },
+        {
+          "rank": 2,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "物联网工程有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "物联网工程",
+      "expected": [
+        {
+          "title": "通达学院：物联网工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+          "title": "通达学院：物联网工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 488
+        },
+        {
+          "rank": 2,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 3,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        },
+        {
+          "rank": 4,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        }
+      ]
+    },
+    {
+      "query": "物联网工程培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "物联网工程",
+      "expected": [
+        {
+          "title": "通达学院：物联网工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+          "title": "通达学院：物联网工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 488
+        },
+        {
+          "rank": 2,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "数据科学与大数据技术学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "数据科学与大数据技术",
+      "expected": [
+        {
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        }
+      ]
+    },
+    {
+      "query": "数据科学与大数据技术有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "数据科学与大数据技术",
+      "expected": [
+        {
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        }
+      ]
+    },
+    {
+      "query": "数据科学与大数据技术有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "数据科学与大数据技术",
+      "expected": [
+        {
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        }
+      ]
+    },
+    {
+      "query": "数据科学与大数据技术培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "数据科学与大数据技术",
+      "expected": [
+        {
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        }
+      ]
+    },
+    {
+      "query": "信息安全学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "信息安全",
+      "expected": [
+        {
+          "title": "通达学院：信息安全学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "795bbcb4-6109-4b6d-be9e-91f64f8402c1",
+          "title": "通达学院：信息安全学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2024/0529/c138a40763/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 463
+        },
+        {
+          "rank": 2,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        }
+      ]
+    },
+    {
+      "query": "信息安全有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "信息安全",
+      "expected": [
+        {
+          "title": "通达学院：信息安全学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "795bbcb4-6109-4b6d-be9e-91f64f8402c1",
+          "title": "通达学院：信息安全学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2024/0529/c138a40763/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 463
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "bb1c8cb1-0912-4291-95ae-1a355feebc7b",
+          "title": "通达学院：学科竞赛管理系统官方入口",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xkjs",
+          "chunk": 1,
+          "excerptChars": 252
+        }
+      ]
+    },
+    {
+      "query": "信息安全有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "信息安全",
+      "expected": [
+        {
+          "title": "通达学院：信息安全学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "795bbcb4-6109-4b6d-be9e-91f64f8402c1",
+          "title": "通达学院：信息安全学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2024/0529/c138a40763/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 463
+        },
+        {
+          "rank": 2,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        }
+      ]
+    },
+    {
+      "query": "信息安全培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "信息安全",
+      "expected": [
+        {
+          "title": "通达学院：信息安全学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "795bbcb4-6109-4b6d-be9e-91f64f8402c1",
+          "title": "通达学院：信息安全学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2024/0529/c138a40763/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 463
+        },
+        {
+          "rank": 2,
+          "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+          "title": "通达学院：物联网工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 488
+        },
+        {
+          "rank": 3,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "软件工程学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "软件工程",
+      "expected": [
+        {
+          "title": "通达学院：软件工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "5cad6fb5-e66d-460e-88ca-45cdf223c41a",
+          "title": "通达学院：软件工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3917/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 481
+        },
+        {
+          "rank": 2,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        }
+      ]
+    },
+    {
+      "query": "软件工程有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "软件工程",
+      "expected": [
+        {
+          "title": "通达学院：软件工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "5cad6fb5-e66d-460e-88ca-45cdf223c41a",
+          "title": "通达学院：软件工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3917/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 481
+        },
+        {
+          "rank": 2,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 3,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 4,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        }
+      ]
+    },
+    {
+      "query": "软件工程有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "软件工程",
+      "expected": [
+        {
+          "title": "通达学院：软件工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "5cad6fb5-e66d-460e-88ca-45cdf223c41a",
+          "title": "通达学院：软件工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3917/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 481
+        },
+        {
+          "rank": 2,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 3,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "软件工程培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "软件工程",
+      "expected": [
+        {
+          "title": "通达学院：软件工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "5cad6fb5-e66d-460e-88ca-45cdf223c41a",
+          "title": "通达学院：软件工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3917/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 481
+        },
+        {
+          "rank": 2,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 3,
+          "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+          "title": "通达学院：物联网工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 488
+        },
+        {
+          "rank": 4,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        }
+      ]
+    },
+    {
+      "query": "计算机科学与技术学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "计算机科学与技术",
+      "expected": [
+        {
+          "title": "通达学院：计算机科学与技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        },
+        {
+          "rank": 2,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "计算机科学与技术有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "计算机科学与技术",
+      "expected": [
+        {
+          "title": "通达学院：计算机科学与技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        },
+        {
+          "rank": 2,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "计算机科学与技术有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "计算机科学与技术",
+      "expected": [
+        {
+          "title": "通达学院：计算机科学与技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        },
+        {
+          "rank": 2,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "计算机科学与技术培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "计算机科学与技术",
+      "expected": [
+        {
+          "title": "通达学院：计算机科学与技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        },
+        {
+          "rank": 2,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "信息工程学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "信息工程",
+      "expected": [
+        {
+          "title": "通达学院：信息工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "267f6448-2fa1-423a-80f4-addd0df6464c",
+          "title": "通达学院：信息工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3882/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 462
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "c4be257e-be3a-4e0b-9181-938a1ca1c6e6",
+          "title": "通达学院：光电信息科学与工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3958/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 441
+        }
+      ]
+    },
+    {
+      "query": "信息工程有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "信息工程",
+      "expected": [
+        {
+          "title": "通达学院：信息工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "267f6448-2fa1-423a-80f4-addd0df6464c",
+          "title": "通达学院：信息工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3882/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 462
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "1981a5d2-c2a6-4499-8f67-c0d998c5545a",
+          "title": "通达学院：双创课程完整目录、负责部门和选课信息缺口",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc?PageIndex=2&CategoryCode=SCJY-sckc",
+          "chunk": 1,
+          "excerptChars": 485
+        }
+      ]
+    },
+    {
+      "query": "信息工程有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "信息工程",
+      "expected": [
+        {
+          "title": "通达学院：信息工程学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 2,
+          "docId": "267f6448-2fa1-423a-80f4-addd0df6464c",
+          "title": "通达学院：信息工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3882/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 462
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        }
+      ]
+    },
+    {
+      "query": "信息工程培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "信息工程",
+      "expected": [
+        {
+          "title": "通达学院：信息工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "267f6448-2fa1-423a-80f4-addd0df6464c",
+          "title": "通达学院：信息工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3882/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 462
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+          "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 362
+        }
+      ]
+    },
+    {
+      "query": "通信工程学什么",
+      "kind": "original-program-question",
+      "questionIndex": 1,
+      "program": "通信工程",
+      "expected": [
+        {
+          "title": "通达学院：通信工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "cd8ef4f0-aebb-4922-9931-e1dce734df2b",
+          "title": "通达学院：通信工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3900/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 456
+        },
+        {
+          "rank": 2,
+          "docId": "e79191f2-2d43-493a-ab51-1dc44b97544e",
+          "title": "通达学院：C类竞赛完整目录（1/4）（2025修订）",
+          "source": "学校官网｜2025-03-24｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-2e34-4305-880c-f2ef1601d279",
+          "chunk": 2,
+          "excerptChars": 429
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "267f6448-2fa1-423a-80f4-addd0df6464c",
+          "title": "通达学院：信息工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3882/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 462
+        }
+      ]
+    },
+    {
+      "query": "通信工程有哪些课",
+      "kind": "original-program-question",
+      "questionIndex": 2,
+      "program": "通信工程",
+      "expected": [
+        {
+          "title": "通达学院：通信工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "cd8ef4f0-aebb-4922-9931-e1dce734df2b",
+          "title": "通达学院：通信工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3900/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 456
+        },
+        {
+          "rank": 2,
+          "docId": "1981a5d2-c2a6-4499-8f67-c0d998c5545a",
+          "title": "通达学院：双创课程完整目录、负责部门和选课信息缺口",
+          "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc?PageIndex=2&CategoryCode=SCJY-sckc",
+          "chunk": 1,
+          "excerptChars": 485
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        }
+      ]
+    },
+    {
+      "query": "通信工程有什么实践",
+      "kind": "original-program-question",
+      "questionIndex": 3,
+      "program": "通信工程",
+      "expected": [
+        {
+          "title": "通达学院：通信工程学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "5d4ff564-8db0-4083-84df-41322408d821",
+          "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 428
+        },
+        {
+          "rank": 2,
+          "docId": "cd8ef4f0-aebb-4922-9931-e1dce734df2b",
+          "title": "通达学院：通信工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3900/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 456
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        }
+      ]
+    },
+    {
+      "query": "通信工程培养什么方向",
+      "kind": "original-program-question",
+      "questionIndex": 4,
+      "program": "通信工程",
+      "expected": [
+        {
+          "title": "通达学院：通信工程学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "cd8ef4f0-aebb-4922-9931-e1dce734df2b",
+          "title": "通达学院：通信工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3900/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 456
+        },
+        {
+          "rank": 2,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 3,
+          "docId": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+          "title": "通达学院：物联网工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 488
+        },
+        {
+          "rank": 4,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        }
+      ]
+    }
+  ],
+  "supplementalQuestions": [
+    {
+      "query": "软件工程和计算机科学与技术到底差在哪，平时分别学些啥？",
+      "kind": "full-name-comparison",
+      "expected": [
+        {
+          "title": "通达学院：软件工程学什么",
+          "rank": 2
+        },
+        {
+          "title": "通达学院：计算机科学与技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "4430d5c3-8127-44df-8808-084971d750e0",
+          "title": "通达学院：计算机科学与技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 471
+        },
+        {
+          "rank": 2,
+          "docId": "5cad6fb5-e66d-460e-88ca-45cdf223c41a",
+          "title": "通达学院：软件工程学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3917/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 481
+        },
+        {
+          "rank": 3,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        },
+        {
+          "rank": 4,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        }
+      ]
+    },
+    {
+      "query": "大数据管理与应用和数据科学与大数据技术有啥不一样？",
+      "kind": "full-name-comparison",
+      "expected": [
+        {
+          "title": "通达学院：大数据管理与应用学什么",
+          "rank": 2
+        },
+        {
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 2,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        }
+      ]
+    },
+    {
+      "query": "电气工程及其自动化和自动化是一回事吗，课程差在哪？",
+      "kind": "full-name-comparison",
+      "expected": [
+        {
+          "title": "通达学院：电气工程及其自动化学什么",
+          "rank": 1
+        },
+        {
+          "title": "通达学院：自动化学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+          "title": "通达学院：电气工程及其自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 465
+        },
+        {
+          "rank": 2,
+          "docId": "e4dfb0bd-d4cc-4bf3-8864-16329fbc4bfd",
+          "title": "通达学院：自动化学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3871/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 472
+        },
+        {
+          "rank": 3,
+          "docId": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+          "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 544
+        },
+        {
+          "rank": 4,
+          "docId": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+          "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 425
+        }
+      ]
+    },
+    {
+      "query": "网新和数媒是不是都拍视频？",
+      "kind": "abbreviated-comparison",
+      "interpretation": "网新=网络与新媒体，数媒=数字媒体技术；明确按该口语意图评估，未扩写再检索。",
+      "expected": [
+        {
+          "title": "通达学院：网络与新媒体学什么",
+          "rank": 1
+        },
+        {
+          "title": "通达学院：数字媒体技术学什么",
+          "rank": 2
+        }
+      ],
+      "hitAt1": false,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "37a36c4a-cd3a-42b7-9faa-01b79c1d99e0",
+          "title": "通达学院：网络与新媒体学什么",
+          "source": "学校招生网｜专业目录2026-05-20｜https://zs.nytdc.edu.cn/2026/0520/c138a49849/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 483
+        },
+        {
+          "rank": 2,
+          "docId": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+          "title": "通达学院：数字媒体技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 496
+        },
+        {
+          "rank": 3,
+          "docId": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+          "title": "通达学院：2026高考专业选科要求与版本提醒",
+          "source": "学校招生网｜2020-09-14｜https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 376
+        },
+        {
+          "rank": 4,
+          "docId": "23fdde6f-4b39-49b3-8f2f-61c42b676642",
+          "title": "通达学院：16学时是不是都算1学分（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 396
+        }
+      ]
+    },
+    {
+      "query": "AI专业会不会教Python和深度学习，还是只学理论？",
+      "kind": "colloquial-course-query",
+      "interpretation": "AI专业=人工智能；原查询直接送入本地检索器。",
+      "expected": [
+        {
+          "title": "通达学院：人工智能学什么",
+          "rank": 1
+        }
+      ],
+      "hitAt1": true,
+      "allExpectedHitAt4": true,
+      "missing": [],
+      "returned": [
+        {
+          "rank": 1,
+          "docId": "7ff2d060-c2db-4d06-8f4a-cc002026de7f",
+          "title": "通达学院：人工智能学什么",
+          "source": "学校招生网｜专业目录2025-05-30｜https://zs.nytdc.edu.cn/2025/0530/c138a46159/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 480
+        },
+        {
+          "rank": 2,
+          "docId": "9b93a2b4-b72d-40fa-b814-1a618e490598",
+          "title": "通达学院：体育课是4学分还是6学分、心理健康课学分（2024/2025级）",
+          "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+          "chunk": 1,
+          "excerptChars": 371
+        },
+        {
+          "rank": 3,
+          "docId": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+          "title": "通达学院：数据科学与大数据技术学什么",
+          "source": "学校招生网｜专业目录2025-04-30｜https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 506
+        },
+        {
+          "rank": 4,
+          "docId": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+          "title": "通达学院：大数据管理与应用学什么",
+          "source": "学校招生网｜专业目录2025-05-06｜https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+          "chunk": 1,
+          "excerptChars": 510
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "severity": "ranking-not-top1",
+      "query": "人工智能有什么实践",
+      "expectedRank": 2,
+      "top1": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "金融工程培养什么方向",
+      "expectedRank": 2,
+      "top1": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "财务管理培养什么方向",
+      "expectedRank": 2,
+      "top1": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "电气工程及其自动化有哪些课",
+      "expectedRank": 2,
+      "top1": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "自动化有什么实践",
+      "expectedRank": 2,
+      "top1": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "电子科学与技术有哪些课",
+      "expectedRank": 3,
+      "top1": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "电子科学与技术有什么实践",
+      "expectedRank": 3,
+      "top1": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "电子科学与技术培养什么方向",
+      "expectedRank": 2,
+      "top1": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "信息工程有什么实践",
+      "expectedRank": 2,
+      "top1": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）"
+    },
+    {
+      "severity": "ranking-not-top1",
+      "query": "通信工程有什么实践",
+      "expectedRank": 2,
+      "top1": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）"
+    }
+  ],
+  "diagnostics": [],
+  "knownDataLimits": [
+    "专业介绍不等于当前培养方案或课表",
+    "没有具体实践项目的条目只应回答已公开培养内容并说明缺口",
+    "比较结果只能基于来源课程和方向，不能推定就业或报考适合度"
+  ]
+}

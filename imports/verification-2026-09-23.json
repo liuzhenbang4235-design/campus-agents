@@ -1,0 +1,129 @@
+{
+  "checkedAt": "2026-09-23T14:47:49.974Z",
+  "newRecords": 32,
+  "approvedByAgent": {
+    "life": 28,
+    "study": 3,
+    "affairs": 47
+  },
+  "retrievalChecks": [
+    {
+      "agent": "life",
+      "question": "想喝咖啡",
+      "sources": [
+        "中运博内吃饭、咖啡甜品和喝茶"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "扬州周末想出去逛逛",
+      "sources": [
+        "扬州周末吃喝玩乐：运河文化度假区方向",
+        "扬州散步运动：宋夹城体育休闲公园",
+        "扬州水上游：御马头至大明寺游览线",
+        "扬州文化散步：天宁寺"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "下雨天可以去哪玩",
+      "sources": [
+        "扬州室内看展：扬州博物馆免费开放与预约",
+        "扬州历史展馆：汉广陵王墓博物馆",
+        "扬州博物馆游玩：中运博参观与交通",
+        "中运博内吃饭、咖啡甜品和喝茶"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "扬州哪能吃早茶",
+      "sources": [
+        "扬州早茶：冶春茶社总店",
+        "扬州早茶：趣园茶社总店",
+        "扬州早茶点心：富春绿杨邨茶社",
+        "扬州周末吃喝玩乐：运河文化度假区方向"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "食堂晚上几点关门",
+      "sources": [
+        "通达学院：一食堂、二食堂几点吃饭及食品问题投诉（2025版）",
+        "通达学院：南京与扬州校际班车上车点和时刻表（2025版）"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "寒假想留宿",
+      "sources": [
+        "通达学院：寒暑假留宿、长期离宿和退宿怎么处理（2021版）"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "不能考试怎么办",
+      "sources": [
+        "通达学院：参加比赛、生病或亲属突发情况怎么申请缓考",
+        "通达学院：因病申请缓考（考试规定第十一条）",
+        "通达学院：缓考申请表下载、填写和考前办理要求（2024版）",
+        "通达学院：考试中心办公室位置和电话"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "没钱交学费怎么办",
+      "sources": [
+        "通达学院：学费暂时交不起与新生绿色通道",
+        "通达学院：家庭经济困难认定和国家助学金申请入口",
+        "通达学院：学生资助管理中心位置及咨询电话",
+        "通达学院：入伍学费补偿、助学贷款代偿申请步骤（2021版）"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "卡丢了怎么办",
+      "sources": [
+        "通达学院：学生事务中心位置与学生证补办时段",
+        "通达学院：学生证补办（2025版官网摘要）",
+        "通达学院：校园一卡通挂失、补卡与密码重置（2021版）",
+        "通达学院：校园一卡通中心在哪里、几点办理"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "study",
+      "question": "申请大创",
+      "sources": [
+        "通达学院：大创项目怎么申请立项（官网流程图）"
+      ],
+      "passed": true
+    },
+    {
+      "agent": "study",
+      "question": "PU学时怎么弄",
+      "sources": [
+        "通达学院：PU素质拓展学时如何申报（2017级起试行的旧版办法）"
+      ],
+      "passed": true
+    }
+  ],
+  "automatedTests": 22,
+  "liveModelCheck": {
+    "question": "下雨天可以去哪玩？",
+    "observed": "Browser returned a Doubao answer citing Yangzhou Museum and Han tomb museum, and original source link opened in the record modal"
+  },
+  "limitations": [
+    "Public corpus snapshot, not full school or city coverage",
+    "Map action opens AMap externally; no live POI API integrated",
+    "Some imported forms are source links only; no claim of attachment parsing",
+    "Source publication dates can be older than collection date"
+  ]
+}

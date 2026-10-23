@@ -1,0 +1,399 @@
+{
+  "batch": "campus-core-forms-replacements.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:55:06.513Z",
+  "docs": [
+    {
+      "oldId": "5dc55ee9-0243-48db-8398-20c5a94eed81",
+      "oldTitle": "通达学院：学生毕业申请表（新）下载入口",
+      "agent": "affairs",
+      "title": "通达学院：未在首批获得双证的学生毕业申请表（2026版）",
+      "source": "教务处｜原文 2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c337a50224/page.htm",
+      "content": "教务处2026年5月发布的学生毕业申请表，附注明确适用于未能在第一批获得毕业证和学位证的学生，并非所有毕业生都须补填。学生填写班级、学号、姓名、专业、联系方式、录取省份、身份证号码及申请理由，签名并写日期。核查栏分别记录必修、限选、任选课已修学分、是否满足培养计划、平均学分绩点，以及毕业条件和学士学位授予条件的核查结果，设二级学院教秘签名栏。辅导员填写处分情况，学生处另行提供处分复审结果；教务处填写是否发毕业证、是否授予学位的意见。表内没有列出具体学分或绩点合格线、申请截止日期，也不能据此保证补发双证；先向所在学院教秘确认本人尚缺项目及办理批次。\n来源版本日期：2026-05-29；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2026/0529/c337a50224/page.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/eb/55/a1a7a5c64c33b2bf447fd045f04a/3c3c186b-3a01-41cd-a00e-ed66055468b0.doc",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0529/c337a50224/page.htm",
+        "sourceDate": "2026-05-29",
+        "dateKind": "page_publication_date",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/eb/55/a1a7a5c64c33b2bf447fd045f04a/3c3c186b-3a01-41cd-a00e-ed66055468b0.doc",
+        "attachmentSha256": "b0c01873b1e3f592aed12113a8462e82fe17a5b8292df8ded8fe56b8ebddb0c9",
+        "attachmentBytes": 25600,
+        "localFile": "work/campus-frontier/core-form-1.doc",
+        "evidenceFile": "work/campus-frontier/core-form-1.text.txt",
+        "parseReport": "work/campus-frontier/core-form-1.parse.json",
+        "method": "MS-DOC piece table, main story only",
+        "layoutRendered": false,
+        "approvalOrderInferred": false,
+        "sourceLinkUnchanged": true,
+        "keyFacts": [
+          "适用于未能第一批获得双证的学生",
+          "处分情况由学生处另行提供复审结果"
+        ],
+        "limitations": [
+          "不能当作全体毕业生通用申请要求",
+          "不含当前批次截止日或学位合格数值"
+        ],
+        "currentValidity": "published_2026_blank_form; specific eligibility and current notice must be checked",
+        "dataPrivacy": "公开空白表格；未采集已填个人信息，未执行宏。",
+        "mainStoryChars": 551,
+        "mainStoryLengthVerified": true
+      }
+    },
+    {
+      "oldId": "afcd822a-4766-417a-944c-de984a79a947",
+      "oldTitle": "通达学院：学生提前毕业（结业）申请表（新）下载入口",
+      "agent": "affairs",
+      "title": "通达学院：提前毕业（结业）申请填写与成绩核查（2026版）",
+      "source": "教务处｜原文 2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c337a50223/page.htm",
+      "content": "提前毕业（结业）申请表由学生填写学号、姓名、性别、班级、专业、身份证号码、联系电话、录取省份和申请理由。成绩核查栏记录必修、限选、任选课已修学分、是否满足教学计划和学士学位条件，以及平均学分绩点；表下注明成绩核查情况由教务部门填写，不应由学生自行认定审核通过。教务部门另有在校处分情况、是否发放毕业证和是否授予学位的意见栏及负责人签章。表格没有说明最低在校年限、提前毕业所需学分或绩点数值、当前申请时间和费用。毕业、结业、授予学位是不同审核结果；填表不等于提前毕业或获学位，须由教务结合本人培养方案确认。\n来源版本日期：2026-05-29；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2026/0529/c337a50223/page.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/73/ce/3ac3491f483b81d6d1d85e99fece/628b1b2a-2beb-40b6-8b95-166eba99cd60.doc",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0529/c337a50223/page.htm",
+        "sourceDate": "2026-05-29",
+        "dateKind": "page_publication_date",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/73/ce/3ac3491f483b81d6d1d85e99fece/628b1b2a-2beb-40b6-8b95-166eba99cd60.doc",
+        "attachmentSha256": "3d27627b0890d195eed56c7e26130af6aa0fbdc0c853c35db94b546cc8efe621",
+        "attachmentBytes": 24576,
+        "localFile": "work/campus-frontier/core-form-2.doc",
+        "evidenceFile": "work/campus-frontier/core-form-2.text.txt",
+        "parseReport": "work/campus-frontier/core-form-2.parse.json",
+        "method": "MS-DOC piece table, main story only",
+        "layoutRendered": false,
+        "approvalOrderInferred": false,
+        "sourceLinkUnchanged": true,
+        "keyFacts": [
+          "成绩核查由教务部门填写",
+          "毕业、结业、学位结果须分别审核"
+        ],
+        "limitations": [
+          "未提供最低在校年限或合格数值",
+          "未提供当期申请窗口"
+        ],
+        "currentValidity": "published_2026_blank_form; specific eligibility and current notice must be checked",
+        "dataPrivacy": "公开空白表格；未采集已填个人信息，未执行宏。",
+        "mainStoryChars": 468,
+        "mainStoryLengthVerified": true
+      }
+    },
+    {
+      "oldId": "1df2d90d-706d-4268-bc1f-6be023abc37a",
+      "oldTitle": "通达学院：自主编（跳）级申请表（新）下载入口",
+      "agent": "affairs",
+      "title": "通达学院：自主编（跳）级申请及家长材料（2026版）",
+      "source": "教务处｜原文 2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c337a50222/page.htm",
+      "content": "网页称自主编（跳）级申请表，附件正文标题为学生自主编（跳）级审批表。学生填写学年学期、原班级、申请编入年级、学号、姓名、专业和编（跳）级原因，并本人签名、注明日期。表内设家长意见、辅导员意见、二级学院意见、编入班级及教务处意见栏。说明要求提交表格时附家长身份证复印件，并由家长签字同意编级。申请编入年级不等于已获准改变年级或班级；附件没有规定适用资格、学分门槛、当期截止日期或一定能编入的班级，须向学院教秘确认。\n来源版本日期：2026-05-29；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2026/0529/c337a50222/page.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/49/24/7ae319b045f8a316c4859ed2ec4d/c4a5b511-f5ea-4d6c-8ce0-0c31b0a7f7c1.docx",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0529/c337a50222/page.htm",
+        "sourceDate": "2026-05-29",
+        "dateKind": "page_publication_date",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/49/24/7ae319b045f8a316c4859ed2ec4d/c4a5b511-f5ea-4d6c-8ce0-0c31b0a7f7c1.docx",
+        "attachmentSha256": "e658a694eefd8182d96e9fc241e4e3604396204f2dfa05a7de3b79076f0beb22",
+        "attachmentBytes": 14791,
+        "localFile": "work/campus-frontier/core-form-3.docx",
+        "evidenceFile": "work/campus-frontier/core-form-3.text.txt",
+        "parseReport": "work/campus-frontier/core-form-3.parse.json",
+        "method": "DOCX main document OOXML paragraph and table extraction",
+        "layoutRendered": false,
+        "approvalOrderInferred": false,
+        "sourceLinkUnchanged": true,
+        "keyFacts": [
+          "附件正文称审批表",
+          "须附家长身份证复印件并签字同意编级"
+        ],
+        "limitations": [
+          "不推定编级资格或实际编入班级",
+          "未提供当期截止日"
+        ],
+        "currentValidity": "published_2026_blank_form; specific eligibility and current notice must be checked",
+        "dataPrivacy": "公开空白表格；未采集已填个人信息，未执行宏。",
+        "trackedInsertions": 0,
+        "trackedDeletions": 0
+      }
+    },
+    {
+      "oldId": "2384f454-85b4-488a-84ab-79a60a8214ce",
+      "oldTitle": "通达学院：学生复学申请表（新）下载入口",
+      "agent": "affairs",
+      "title": "通达学院：休学期满复学的材料、选课与手续（2026版）",
+      "source": "教务处｜原文 2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c337a50221/page.htm",
+      "content": "复学申请表要求学生填写学年学期、学号、原班级、姓名、专业、本人和家长联系方式、复学原因及签名日期，设医务部门、二级学院、学工、教务及相关分管领导意见栏。说明要求休学期满在开学一周内办理，带离校时学校开具的休学证明书，以及学院所在地二级甲等及以上医疗机构的复查合格材料；复学手续办完后，要在学校规定的学籍异动学生选课时间内选课。表中未区分不同休学原因的复查材料，非因病休学是否适用同样材料，应向学院和教务确认，不能自行免除或一概套用。所附学生异动手续通知单涉及辅导员、宿管、财务、图书馆及教务收单，教务收单处标为行政楼九楼901室。表中保留“就餐卡”“借书证”等称谓，具体按现有一卡通、图书馆服务办理，不能据此认定必须另办独立卡证。开学一周为该表说明，实际到校批次和选课日期另核本学期通知。\n来源版本日期：2026-05-29；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2026/0529/c337a50221/page.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/40/ca/684d089845eab65c1b3ed4d2ade4/c86c9428-3600-4452-bd25-f89ea7edee69.docx",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0529/c337a50221/page.htm",
+        "sourceDate": "2026-05-29",
+        "dateKind": "page_publication_date",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/40/ca/684d089845eab65c1b3ed4d2ade4/c86c9428-3600-4452-bd25-f89ea7edee69.docx",
+        "attachmentSha256": "82ed621c630206ef3b7145a172025b729c6b321580d3eb2cc1e8823d4d46a908",
+        "attachmentBytes": 20286,
+        "localFile": "work/campus-frontier/core-form-4.docx",
+        "evidenceFile": "work/campus-frontier/core-form-4.text.txt",
+        "parseReport": "work/campus-frontier/core-form-4.parse.json",
+        "method": "DOCX main document OOXML paragraph and table extraction",
+        "layoutRendered": false,
+        "approvalOrderInferred": false,
+        "sourceLinkUnchanged": true,
+        "keyFacts": [
+          "开学一周内办理复学",
+          "学校休学证明及学院所在地二级甲等以上医疗机构复查材料",
+          "复学办完后在学籍异动选课时间选课"
+        ],
+        "limitations": [
+          "非因病休学复查要求需向部门确认",
+          "就餐卡、借书证等旧称不代表当前新增办卡要求"
+        ],
+        "currentValidity": "published_2026_blank_form; specific eligibility and current notice must be checked",
+        "dataPrivacy": "公开空白表格；未采集已填个人信息，未执行宏。",
+        "trackedInsertions": 0,
+        "trackedDeletions": 0
+      }
+    },
+    {
+      "oldId": "5880df43-82f9-4fdf-9482-198b93139c24",
+      "oldTitle": "通达学院：本科学生自动退学审批表（20260310）下载入口",
+      "agent": "affairs",
+      "title": "通达学院：本人申请退学所需材料与离校手续（2026版）",
+      "source": "教务处｜原文 2026-03-11｜https://jwc.nytdc.edu.cn/2026/0311/c337a48646/page.htm",
+      "content": "2026年3月发布的本科学生自动退学审批表用于学生提出退学申请。学生须准备本人手写申请书、由家长在身份证复印件上签署同意退学并写明签名日期的材料，再填写学年学期、班级、学号、姓名、学院专业、联系方式、籍贯和退学原因；表内有学生及家长签名。另设辅导员与学生、家长沟通情况，二级学院、学工、教务、相关分管领导及党政联席会议审批栏；表名中的“自动退学”不表示填表立即生效。说明写明表格留存于教务处办公室901。附带休学、退学通知单，涉及宿舍钥匙归还、图书清还、教材和学杂住宿费用结算、档案及学籍事项；户口关系、团组织关系、水卡及一卡通退费注销、助学贷款等行专门标注“仅退学办理”，不能直接套用给休学学生。具体适用项目、退款金额、现有卡证名称及手续顺序应按辅导员和经办部门确认，表内没有承诺处理时长或统一退款数额。\n来源版本日期：2026-03-11；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2026/0311/c337a48646/page.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/53/ec/e74f204341f2b25af003eefd88f7/3900f09e-4a1d-4d14-aed7-ae7cf8713b63.docx",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0311/c337a48646/page.htm",
+        "sourceDate": "2026-03-11",
+        "dateKind": "page_publication_date",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/53/ec/e74f204341f2b25af003eefd88f7/3900f09e-4a1d-4d14-aed7-ae7cf8713b63.docx",
+        "attachmentSha256": "70a429813c3a0dd7f105a9afea411e8cc36002991ec6230b9fbb7b3e3b92d181",
+        "attachmentBytes": 27078,
+        "localFile": "work/campus-frontier/core-form-5.docx",
+        "evidenceFile": "work/campus-frontier/core-form-5.text.txt",
+        "parseReport": "work/campus-frontier/core-form-5.parse.json",
+        "method": "DOCX main document OOXML paragraph and table extraction",
+        "layoutRendered": false,
+        "approvalOrderInferred": false,
+        "sourceLinkUnchanged": true,
+        "keyFacts": [
+          "本人手写申请和家长身份证复印件上的同意签名",
+          "仅退学办理行与通用离校项目分开",
+          "表格留存教务处办公室901"
+        ],
+        "limitations": [
+          "填表不表示退学已经生效",
+          "不得将仅退学办理项目套用于休学"
+        ],
+        "currentValidity": "published_2026_blank_form; specific eligibility and current notice must be checked",
+        "dataPrivacy": "公开空白表格；未采集已填个人信息，未执行宏。",
+        "policyReferenceOnly": "表格审批栏引用院发〔2021〕16号第三十三条，未据空表核实或导入该管理办法全文。",
+        "trackedInsertions": 0,
+        "trackedDeletions": 0
+      }
+    },
+    {
+      "oldId": "6abdaf3b-4291-4554-a8ae-d9bdf51a63d2",
+      "oldTitle": "通达学院：学生休学申请表（20260310）下载入口",
+      "agent": "affairs",
+      "title": "通达学院：休学申请材料与已考课程成绩保留（2026版）",
+      "source": "教务处｜原文 2026-03-11｜https://jwc.nytdc.edu.cn/2026/0311/c337a48645/page.htm",
+      "content": "2026年3月发布的休学申请表要求本人手写申请书，家长在身份证复印件上签署同意休学并写明签名日期，再填写姓名、班级、学号、专业、联系方式和休学原因。原因栏列留学、学习情况、参军、创业、疾病及其他原因，勾选某项不代表符合资格或一定获批。表中明确非因病休学者可不填写医务部门意见，另有辅导员、二级学院、学工、教务及相关分管领导意见栏。特别提醒：若当学期已参加部分课程考试，需要填写《一般事务申请表》申请保留这些成绩；表文提示否则将删除当学期课程记录，不能假定成绩会自动保留，应及时向教务确认办理。表格要求休学期满在开学一周内办理复学，并带学校休学证明及复查材料；非因病休学的复查要求须另向学院确认。附带休学、退学通知单中，户口、团组织关系、水卡及一卡通退费注销、助学贷款等明确标为仅退学办理，不能因为申请休学就直接按退学办理这些项目。当前办理时间、选课和实际离校清单以经办部门确认。\n来源版本日期：2026-03-11；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2026/0311/c337a48645/page.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/57/3f/aa19b3d24cd4b1c1541a961ad289/96528b4e-2cfd-4328-8260-437f32f74bf6.docx",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0311/c337a48645/page.htm",
+        "sourceDate": "2026-03-11",
+        "dateKind": "page_publication_date",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/57/3f/aa19b3d24cd4b1c1541a961ad289/96528b4e-2cfd-4328-8260-437f32f74bf6.docx",
+        "attachmentSha256": "4f0d31d3fe3cd043deb085da44c57d536b3f8fd376167d9a63eada799ae890cb",
+        "attachmentBytes": 27143,
+        "localFile": "work/campus-frontier/core-form-6.docx",
+        "evidenceFile": "work/campus-frontier/core-form-6.text.txt",
+        "parseReport": "work/campus-frontier/core-form-6.parse.json",
+        "method": "DOCX main document OOXML paragraph and table extraction",
+        "layoutRendered": false,
+        "approvalOrderInferred": false,
+        "sourceLinkUnchanged": true,
+        "keyFacts": [
+          "本人手写申请和家长同意材料",
+          "已考课程成绩需另填一般事务申请表保留",
+          "非因病休学可不填医务部门意见"
+        ],
+        "limitations": [
+          "表格原因选项不代表资格或获批",
+          "仅退学办理的通知单行不适用于所有休学学生"
+        ],
+        "currentValidity": "published_2026_blank_form; specific eligibility and current notice must be checked",
+        "dataPrivacy": "公开空白表格；未采集已填个人信息，未执行宏。",
+        "trackedInsertions": 0,
+        "trackedDeletions": 0
+      }
+    },
+    {
+      "oldId": "c9708f43-09e7-4031-8eec-4ac8f3435f0a",
+      "oldTitle": "通达学院：学生转专业申请表（20230426）下载入口",
+      "agent": "affairs",
+      "title": "通达学院：转专业申请表填写、家长材料及版本差异（2023旧表）",
+      "source": "教务处｜原文 2023-04-27｜https://jwc.nytdc.edu.cn/2023/0427/c337a35658/page.htm",
+      "content": "2023年4月公开的转专业申请表记录班级、姓名、学号、原专业、高考分数及省份、联系方式、拟转入学院和专业、申请理由；学生签字确认知晓相关规定并阅读转专业特别提醒。学院审核栏含前两年绩点和专业智育排名，另有考核结果、拟转入年级班级、学工及教务等意见栏。旧表要求家长或监护人书面知情同意及身份证正反面材料放入表内、双面打印，特殊情况可另附页。旧表附注为每学年办理一次、一般5月受理，这不是2026当期报名公告。尤其不能把旧表的排名栏当作2026级转出门槛：现有招生FAQ正文另写2026级实行“转出零门槛、转入有考核”，但FAQ页面日期与正文年份不一致，仅可作咨询线索。本人年级适用条件、现行表格、窗口和转入考核必须核对当年教务正式通知，不能保证转入。\n2026级相关FAQ线索：https://zs.nytdc.edu.cn/2020/1211/c211a12774/page.htm\n来源版本日期：2023-04-27；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2023/0427/c337a35658/page.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/06/aa/3d9381f94801ba1afcf41aa6a229/28c8e110-2ae9-403b-8b5c-c2cafd118bed.doc",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2023/0427/c337a35658/page.htm",
+        "sourceDate": "2023-04-27",
+        "dateKind": "page_publication_date",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/06/aa/3d9381f94801ba1afcf41aa6a229/28c8e110-2ae9-403b-8b5c-c2cafd118bed.doc",
+        "attachmentSha256": "ae2f1f3de8e7ebec6c1fda49b619750f6f52b60974d521e790f27c774baae20c",
+        "attachmentBytes": 26624,
+        "localFile": "work/campus-frontier/core-form-7.doc",
+        "evidenceFile": "work/campus-frontier/core-form-7.text.txt",
+        "parseReport": "work/campus-frontier/core-form-7.parse.json",
+        "method": "MS-DOC piece table, main story only",
+        "layoutRendered": false,
+        "approvalOrderInferred": false,
+        "sourceLinkUnchanged": true,
+        "keyFacts": [
+          "家长或监护人同意及身份证正反面材料",
+          "双面打印",
+          "旧排名字段与2026级FAQ须区分"
+        ],
+        "limitations": [
+          "2023旧表一般5月不代表当前窗口",
+          "排名字段不能作为2026级转出门槛",
+          "FAQ日期与正文年份不一致，不能替代正式细则"
+        ],
+        "currentValidity": "historical_blank_form; not current eligibility rules",
+        "dataPrivacy": "公开空白表格；未采集已填个人信息，未执行宏。",
+        "crossCheckedExistingDocumentIds": [
+          "d05edcfc-aeaf-4880-99cb-6309eb4714b2"
+        ],
+        "mainStoryChars": 691,
+        "mainStoryLengthVerified": true
+      }
+    },
+    {
+      "oldId": "50f88c93-f13e-4e2d-9c69-3ca11c6a7e2b",
+      "oldTitle": "通达学院：本科生申请学位审批表下载入口（2020版未解析）",
+      "agent": "affairs",
+      "title": "通达学院：本科生申请学位审批表的用途与填写（2020旧表）",
+      "source": "学校教务处学生常用表格｜2020-06-22更新｜https://jwc.nytdc.edu.cn/337/list.htm",
+      "content": "教务处学生常用表格目录把本科生申请学位审批表标注为2020年6月22日更新。表下注明，由需要向院学位评定委员会申请、交由该委员会决定是否授予学士学位的学生填写，并非全体毕业生统一填表即可获学位。学生填写学年学期、姓名、学号、专业班级、性别、籍贯、联系方式和申请理由并签字；表内设教务处审核及院学位会同意或不同意授予学位栏，以学位会评议结果为准。旧表列有特定绩点、毕业设计成绩及考试处分后改进等申请理由，但这些是2020版本内容，不能用作现在的授予门槛、豁免或必然可申请的条件。现行资格须向教务核对本人年级适用学位授予规定及复核安排；附件未说明当前截止日、补修要求或办结时限。\n来源版本日期：2020-06-22；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/337/list.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/fa/1c/984bf9b74cdd8b362879696e6af8/9cec357f-7f17-458f-8f29-36a499f7f4f4.doc",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/337/list.htm",
+        "sourceDate": "2020-06-22",
+        "dateKind": "directory_update_date",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/fa/1c/984bf9b74cdd8b362879696e6af8/9cec357f-7f17-458f-8f29-36a499f7f4f4.doc",
+        "attachmentSha256": "7449fa7ef0cd2178006deef63e32f9c46204de7a67778f56dec128df9f60c18a",
+        "attachmentBytes": 19968,
+        "localFile": "work/campus-frontier/core-form-8.doc",
+        "evidenceFile": "work/campus-frontier/core-form-8.text.txt",
+        "parseReport": "work/campus-frontier/core-form-8.parse.json",
+        "method": "MS-DOC piece table, main story only",
+        "layoutRendered": false,
+        "approvalOrderInferred": false,
+        "sourceLinkUnchanged": true,
+        "keyFacts": [
+          "适用需要提交学位评定委员会决定的申请",
+          "以学位会评议结果为准"
+        ],
+        "limitations": [
+          "旧绩点和处分情形不作为当前资格条件",
+          "未提供当前申请窗口和办结时限"
+        ],
+        "currentValidity": "historical_blank_form; not current eligibility rules",
+        "dataPrivacy": "公开空白表格；未采集已填个人信息，未执行宏。",
+        "historicalEvidenceNotForCurrentRules": "旧表原文列平均学分绩点低于3.4且不低于3.35、毕设优秀，以及一次考试违纪处分后评议改进等情形；仅留核验元数据，不将数值加入学生问答正文。",
+        "mainStoryChars": 476,
+        "mainStoryLengthVerified": true
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "ed657bb1-1c37-42f5-98b4-921d634bc98f",
+      "title": "通达学院：未在首批获得双证的学生毕业申请表（2026版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "2140e9e6-fa6d-4b8f-b544-b3cd29fb2c00",
+      "title": "通达学院：提前毕业（结业）申请填写与成绩核查（2026版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "57235d4a-cbf0-407a-b9c5-b770116a556a",
+      "title": "通达学院：自主编（跳）级申请及家长材料（2026版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "4875048d-4c27-4b57-9208-086c99b69aef",
+      "title": "通达学院：休学期满复学的材料、选课与手续（2026版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "d14629d1-6ec9-47d5-9885-076dc7b2e19f",
+      "title": "通达学院：本人申请退学所需材料与离校手续（2026版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "7e11440e-ad67-4128-81fb-dd67a36e8b76",
+      "title": "通达学院：休学申请材料与已考课程成绩保留（2026版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "159c3b7c-ee94-466b-9478-764e93c4e489",
+      "title": "通达学院：转专业申请表填写、家长材料及版本差异（2023旧表）",
+      "agent": "affairs"
+    },
+    {
+      "id": "23fa9bd4-a93e-498a-95e4-175daf600ee1",
+      "title": "通达学院：本科生申请学位审批表的用途与填写（2020旧表）",
+      "agent": "affairs"
+    }
+  ],
+  "offlined": [],
+  "added": 8,
+  "totalDocs": 154,
+  "approvedByAgent": {
+    "life": 51,
+    "study": 13,
+    "affairs": 73,
+    "freshman": 0
+  },
+  "superseded": [
+    {
+      "oldId": "5dc55ee9-0243-48db-8398-20c5a94eed81",
+      "newId": "ed657bb1-1c37-42f5-98b4-921d634bc98f",
+      "oldTitle": "通达学院：学生毕业申请表（新）下载入口",
+      "title": "通达学院：未在首批获得双证的学生毕业申请表（2026版）"
+    },
+    {
+      "oldId": "afcd822a-4766-417a-944c-de984a79a947",
+      "newId": "2140e9e6-fa6d-4b8f-b544-b3cd29fb2c00",
+      "oldTitle": "通达学院：学生提前毕业（结业）申请表（新）下载入口",
+      "title": "通达学院：提前毕业（结业）申请填写与成绩核查（2026版）"
+    },
+    {
+      "oldId": "1df2d90d-706d-4268-bc1f-6be023abc37a",
+      "newId": "57235d4a-cbf0-407a-b9c5-b770116a556a",
+      "oldTitle": "通达学院：自主编（跳）级申请表（新）下载入口",
+      "title": "通达学院：自主编（跳）级申请及家长材料（2026版）"
+    },
+    {
+      "oldId": "2384f454-85b4-488a-84ab-79a60a8214ce",
+      "newId": "4875048d-4c27-4b57-9208-086c99b69aef",
+      "oldTitle": "通达学院：学生复学申请表（新）下载入口",
+      "title": "通达学院：休学期满复学的材料、选课与手续（2026版）"
+    },
+    {
+      "oldId": "5880df43-82f9-4fdf-9482-198b93139c24",
+      "newId": "d14629d1-6ec9-47d5-9885-076dc7b2e19f",
+      "oldTitle": "通达学院：本科学生自动退学审批表（20260310）下载入口",
+      "title": "通达学院：本人申请退学所需材料与离校手续（2026版）"
+    },
+    {
+      "oldId": "6abdaf3b-4291-4554-a8ae-d9bdf51a63d2",
+      "newId": "7e11440e-ad67-4128-81fb-dd67a36e8b76",
+      "oldTitle": "通达学院：学生休学申请表（20260310）下载入口",
+      "title": "通达学院：休学申请材料与已考课程成绩保留（2026版）"
+    },
+    {
+      "oldId": "c9708f43-09e7-4031-8eec-4ac8f3435f0a",
+      "newId": "159c3b7c-ee94-466b-9478-764e93c4e489",
+      "oldTitle": "通达学院：学生转专业申请表（20230426）下载入口",
+      "title": "通达学院：转专业申请表填写、家长材料及版本差异（2023旧表）"
+    },
+    {
+      "oldId": "50f88c93-f13e-4e2d-9c69-3ca11c6a7e2b",
+      "newId": "23fa9bd4-a93e-498a-95e4-175daf600ee1",
+      "oldTitle": "通达学院：本科生申请学位审批表下载入口（2020版未解析）",
+      "title": "通达学院：本科生申请学位审批表的用途与填写（2020旧表）"
+    }
+  ],
+  "supersededAt": "2026-09-23T15:55:07.684Z"
+}

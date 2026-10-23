@@ -1,0 +1,17 @@
+# secrets & local runtime
+config.local.json
+config.json
+*.tmp
+.env
+.env.*
+
+# local knowledge / usage (keep private)
+data/
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

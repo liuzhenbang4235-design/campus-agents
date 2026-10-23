@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-09-24",
+  "scope": "2026本科章程、专转本简章、选考表及第二学历导航；专业介绍目录另单独处理。",
+  "docs": 6,
+  "items": [
+    {
+      "url": "https://zs.nytdc.edu.cn/2026/0520/c129a49848/pagem.htm",
+      "title": "2026年普通本科招生章程",
+      "status": "reviewed_ready",
+      "evidenceFile": "work\\admission-current\\charter.html",
+      "reason": "正文已读取；价格表已目视逐行核对，按版本摘要。"
+    },
+    {
+      "url": "https://zs.nytdc.edu.cn/2026/0107/c129a48471/pagem.htm",
+      "title": "南京邮电大学通达学院2026年“专转本”招生简章",
+      "status": "reviewed_ready",
+      "evidenceFile": "work\\admission-current\\transfer.html",
+      "reason": "正文已读取；价格表已目视逐行核对，按版本摘要。"
+    },
+    {
+      "url": "https://zs.nytdc.edu.cn/2020/0914/c559a10656/pagem.htm",
+      "title": "选考要求",
+      "status": "reviewed_ready",
+      "evidenceFile": "work\\admission-current\\subjects.html",
+      "reason": "正文已读取；价格表已目视逐行核对，按版本摘要。"
+    },
+    {
+      "url": "https://zs.nytdc.edu.cn/561/listm.htm",
+      "title": "第二学历",
+      "status": "empty_public_content",
+      "evidenceFile": "work\\admission-current\\second-degree.html",
+      "reason": "仅见导航和页脚，没有正文、招生项目或课程安排；不推断当前可修第二学历。"
+    }
+  ],
+  "limitations": [
+    "未登录任何学生系统、未抓取个人名单。",
+    "2026专转本计划数不是当前补录名额。",
+    "学费为对应年级和招生类型的公开标准，不确定个人最终结算。",
+    "选考页面保留2020日期，与2026表头不一致。"
+  ],
+  "databaseChanged": false,
+  "integration": {
+    "checkedAt": "2026-09-23T17:08:11.548Z",
+    "inventory": "source-inventory.json",
+    "status": "sources_reconciled_with_approved_state",
+    "notice": "原始review的准备、排除和过期判定保留；当前入库状态以source-inventory各项及documentIds为准。"
+  }
+}

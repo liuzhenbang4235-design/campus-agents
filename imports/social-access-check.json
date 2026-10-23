@@ -1,0 +1,20 @@
+{
+  "checkedDateBeijing": "2026-09-24",
+  "purpose": "核实抖音和小红书公开生活资料接入能力",
+  "douyin": {
+    "searchIndexReadable": true,
+    "fullDetailVerified": false,
+    "testedUrls": ["https://www.douyin.com/video/7680633461464522154", "https://www.douyin.com/video/7680433626425344489"],
+    "result": "网页读取分别返回不可访问和Cache miss；浏览器创建页超时，后续浏览器连接失败，无法据此判断登录要求。"
+  },
+  "xiaohongshu": {
+    "fullDetailVerified": false,
+    "result": "公开搜索未返回可用扬州笔记正文；未确认登录态能否解决。"
+  },
+  "pluginDiscovery": {
+    "query": "小红书 抖音 Xiaohongshu Douyin",
+    "results": 0
+  },
+  "importState": "两条搜索线索已进入待审核区，未加入已审核检索。见social-candidates-2026-09-24.json。",
+  "nextRequirement": "需要可读的原文、恢复浏览器访问，或获得授权的数据接口/导出，才能核验并导入社交内容；当前不能宣称实时接通。"
+}

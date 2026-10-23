@@ -1,0 +1,80 @@
+{
+  "batch": "curriculum-intro-replacement.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:57:27.872Z",
+  "docs": [
+    {
+      "agent": "study",
+      "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n培养方案列明培养目标、毕业要求、课程模块、课程名称与编号、学分学时、开课学期及先修关系；包括通识教育、专业教育、实践教育等内容。招生介绍里的课程不一定都必须学：招生介绍展示培养方向和代表课程，不能据此推定个人全部必修课，必修要求要查本人专业和年级的正式培养方案。指导意见也不是某个专业最终课程清单。个人课表还要看选课结果、班级及教务安排；公开指导意见不提供个人教室、教师、上课时间。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "培养方案是不是就是我的课表？",
+        "招生介绍里的课程都必须学吗？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              7,
+              8,
+              9
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      },
+      "oldId": "11ff459f-11c5-4044-ab81-3b5cff4e6753"
+    }
+  ],
+  "imported": [
+    {
+      "id": "5d4ff564-8db0-4083-84df-41322408d821",
+      "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+      "agent": "study"
+    }
+  ],
+  "offlined": [],
+  "added": 1,
+  "totalDocs": 255,
+  "approvedByAgent": {
+    "life": 56,
+    "study": 78,
+    "affairs": 94,
+    "freshman": 0
+  },
+  "superseded": [
+    {
+      "oldId": "11ff459f-11c5-4044-ab81-3b5cff4e6753",
+      "newId": "5d4ff564-8db0-4083-84df-41322408d821",
+      "oldTitle": "通达学院：培养方案、招生专业介绍和个人课表有什么区别（2024/2025级）",
+      "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）"
+    }
+  ],
+  "supersededAt": "2026-09-23T16:57:28.839Z"
+}

@@ -1,0 +1,170 @@
+{
+  "batch": "学籍全分页复核与公开操作指南",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:21:12.194Z",
+  "docs": [
+    {
+      "oldId": null,
+      "agent": "affairs",
+      "title": "通达学院：转专业后的课程抵扣、补修与编级风险（2026公开附件）",
+      "source": "教务处｜2026-04-10通知附件1和5｜https://jwc.nytdc.edu.cn/2026/0413/c521a49346/page.htm",
+      "content": "转专业不等于原来所修课程全部自动抵扣。2026年4月公开的实施细则与特别提醒说明，转入后按新专业培养方案管理；达到转入专业相应档次的必修、限选课程可按规则替换，低于转入专业要求的必修课要补修。课程名称、学分不同而不能直接替换的相近课程，应提出书面申请，由教务审核；与新专业无关的已修课程，能否计入综合素质教育课程学分也需按培养方案审核。跨年级补修可能发生课表冲突，甚至延长学习年限，申请前应找学院教秘核对缺课与补修计划。\n版本差异：同页附件1为院教发〔2024〕1号，附件5落款2026-04-09；两者对欠学分后编入低一年级的门槛写法不同，因此不能仅凭特别提醒中的统一数值判断本人是否需要编级，须由教务按年级和适用规则确认。这些内容说明课程处理和学习风险，不代表现行转出门槛；2026级另有招生FAQ政策线索，应按本人年级正式细则核对。该通知2026年4月的申请窗口已经结束，不能据此认定当前可以报名。\n核对日期：2026-09-24。\n原文：https://jwc.nytdc.edu.cn/2026/0413/c521a49346/page.htm\n实施细则：https://jwc.nytdc.edu.cn/_upload/article/files/0b/7d/613fea5641a292534bf83e40d70d/b0237d07-50ca-4d44-b98e-d75f2c17d0a2.doc\n特别提醒：https://jwc.nytdc.edu.cn/_upload/article/files/0b/7d/613fea5641a292534bf83e40d70d/5ffe9208-c41a-49b9-b48c-e994c93f8acd.doc",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0413/c521a49346/page.htm",
+        "pageDate": "2026-04-10",
+        "sourceFile": "work\\campus-academic\\transfer-2026.html",
+        "attachmentsRead": [
+          {
+            "url": "https://jwc.nytdc.edu.cn/_upload/article/files/0b/7d/613fea5641a292534bf83e40d70d/b0237d07-50ca-4d44-b98e-d75f2c17d0a2.doc",
+            "title": "附件1：南京邮电大学通达学院学生转专业实施细则（院教发〔2024〕1号）.doc",
+            "file": "work\\campus-academic\\guide-4.doc",
+            "sha256": "a714aaa42a3e30dab827397757d40a407ecea4d250058b54e3fba4bbfbef2e07",
+            "bytes": 24606,
+            "textFile": "work\\campus-academic\\guide-4.text.txt",
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "mainStoryLengthVerified": true,
+            "mainStoryChars": 1670,
+            "parseReport": "work\\campus-academic\\guide-4.parse.json"
+          },
+          {
+            "url": "https://jwc.nytdc.edu.cn/_upload/article/files/0b/7d/613fea5641a292534bf83e40d70d/5ffe9208-c41a-49b9-b48c-e994c93f8acd.doc",
+            "title": "附件5：关于对转专业同学的特别提醒.doc",
+            "file": "work\\campus-academic\\guide-5.doc",
+            "sha256": "95935adea1a0ffa7127ec625b1297ef2c96cb54e64f6f1c8bbfeb5cd4aa20899",
+            "bytes": 13824,
+            "textFile": "work\\campus-academic\\guide-5.text.txt",
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "mainStoryLengthVerified": true,
+            "mainStoryChars": 673,
+            "parseReport": "work\\campus-academic\\guide-5.parse.json"
+          }
+        ],
+        "scope": "仅导入课程替换、补修和延期风险的共同明确事实；门槛冲突明确提示，不输出统一编级阈值。",
+        "versionConflict": {
+          "rule2024": "第十二条（三）：大一学年必修课累计欠24学分、大二学年累计欠30学分达到编级条件。",
+          "reminder2026": "落款2026-04-09，引用第十三条并写统一差24分编低一年级。",
+          "resolution": "公开附件未自洽，当前个体判断交教务按年级确认；摘要不录入阈值。"
+        },
+        "relatedExistingDocumentIds": [
+          "159c3b7c-ee94-466b-9478-764e93c4e489",
+          "d05edcfc-aeaf-4880-99cb-6309eb4714b2"
+        ],
+        "deduplication": "现有两条只说明表格字段及2026级政策线索，没有课程替换与附件阈值冲突事实。"
+      }
+    },
+    {
+      "oldId": null,
+      "agent": "affairs",
+      "title": "通达学院：毕业图像采集码与江苏图采入口（2026指南）",
+      "source": "教务处｜2026-04-27公开指南｜https://jwc.nytdc.edu.cn/2026/0427/c521a49479/page.htm",
+      "content": "学校2027届毕业生图像采集通知的公开指南，提供获取图像采集码的三种渠道：学信网公众号、学信网App或学信档案网页。按2026指南，在自己的学信档案中选择学籍信息，再找获取图像采集码或查看对应采集码；网页渠道从学信网 https://www.chsi.com.cn 进入，完成本人登录和身份验证。取得采集码后，在微信打开“江苏图采”小程序，或从“江苏省招就中心”公众号的服务指南进入图像采集，按提示扫描或上传自己的码。指南还要求阅读学校通知和拍摄要求，建议接收照片状态通知。报错时按系统提示联系学校图采工作部门；不要把采集码、证件或账户密码提交给校园问答助手。\n适用时间：这是2026-04-27通知随附的操作说明，实际菜单以平台当前页面为准。该通知针对2023级、2027届，集中采集安排为2026年5月6日至8日，已经结束；这些入口不代表补采目前开放。错过采集应先向辅导员或教务管理科咨询下一次安排，通知公开联系电话为0514-89716026。\n核对日期：2026-09-24。\n原文：https://jwc.nytdc.edu.cn/2026/0427/c521a49479/page.htm\n采集码指南：https://jwc.nytdc.edu.cn/_upload/article/files/82/0f/836bd8ff48398d28b415c36ba68c/4411d698-6954-4869-8dfe-b05fe0de016a.docx\n学生操作指南：https://jwc.nytdc.edu.cn/_upload/article/files/82/0f/836bd8ff48398d28b415c36ba68c/12997dd3-0bd8-47ef-a0aa-3a23b9db2597.docx",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0427/c521a49479/page.htm",
+        "pageDate": "2026-04-27",
+        "sourceFile": "work\\campus-academic\\image-2027.html",
+        "attachmentsRead": [
+          {
+            "url": "https://jwc.nytdc.edu.cn/_upload/article/files/82/0f/836bd8ff48398d28b415c36ba68c/4411d698-6954-4869-8dfe-b05fe0de016a.docx",
+            "title": "附件1：如何获取学信网图像采集码.docx",
+            "file": "work\\campus-academic\\guide-1.docx",
+            "sha256": "cff7573b4ee953bd1505eefde03eb919ba22f1462e3c7c73f176e13bad35801c",
+            "bytes": 3434034,
+            "textFile": "work\\campus-academic\\guide-1.text.txt",
+            "layoutRendered": false,
+            "method": "DOCX main document text; embedded screenshots not yet inspected",
+            "embeddedImagesInspected": false,
+            "embeddedImagesImported": false,
+            "textChars": 710
+          },
+          {
+            "url": "https://jwc.nytdc.edu.cn/_upload/article/files/82/0f/836bd8ff48398d28b415c36ba68c/12997dd3-0bd8-47ef-a0aa-3a23b9db2597.docx",
+            "title": "附件2：学生用户使用指南.docx",
+            "file": "work\\campus-academic\\guide-2.docx",
+            "sha256": "9b5e509b8dc3a73a0262a35ed069ff4bfa977452bf79e1ce46ddc6a229a66d23",
+            "bytes": 1745490,
+            "textFile": "work\\campus-academic\\guide-2.text.txt",
+            "layoutRendered": false,
+            "method": "DOCX main document text; embedded screenshots not yet inspected",
+            "embeddedImagesInspected": false,
+            "embeddedImagesImported": false,
+            "textChars": 773
+          }
+        ],
+        "scope": "读取公开DOCX的文字操作步骤；未登录学信网、小程序或采集个人信息，未声称当前界面和补采窗口已验证。",
+        "expiredWindow": "2026-05-06 13:00至2026-05-08 19:00；不作为当前可报名窗口。",
+        "deduplication": "该通知在既有source-inventory因过期批次未入库；此次仅导入此前未解析的公共操作指南与联系渠道。"
+      }
+    },
+    {
+      "oldId": null,
+      "agent": "affairs",
+      "title": "通达学院：毕业照片不合格、账号锁定与草稿箱处理（2026指南）",
+      "source": "教务处｜2026-04-27附件2、3｜https://jwc.nytdc.edu.cn/2026/0427/c521a49479/page.htm",
+      "content": "学校2026年公开图像采集指南区分两种拍摄失败：多次活体检测失败导致账号锁定时，要联系学校图采工作部门，由老师按后台流程处理；其他指标多次不合格时，按页面给出的冷静期结束时间再拍，不要把所有锁定都当成等待即可解决。草稿箱已满会阻止继续拍摄，可依提示使用或删除已有照片；该版本说明照片存入一定时间后才可删除，实际以系统提示为准。检测通过后仍须确认上传，不能只把照片留在草稿箱就视为完成。\n不合格照片指南建议面向均匀光源，避开直射强光、强顶光或过暗环境；拍前擦净镜头、保持手机稳定，让头肩对齐取景提示，不能翻拍旧照或用美颜软件改脸。现场拍摄模式在该指南中要求后置摄像头。教务审核后仍可能重置不合格照片，学生应按通知重拍。\n适用时间：上述是2026-04-27公开操作说明，其对应2026年5月集中采集已结束，不表示现在开放补采；若当前界面规则变化，以系统和学校图采部门说明为准。学校通知公布教务管理科联系电话0514-89716026。\n核对日期：2026-09-24。\n原文：https://jwc.nytdc.edu.cn/2026/0427/c521a49479/page.htm\n操作指南：https://jwc.nytdc.edu.cn/_upload/article/files/82/0f/836bd8ff48398d28b415c36ba68c/12997dd3-0bd8-47ef-a0aa-3a23b9db2597.docx\n不合格照片说明：https://jwc.nytdc.edu.cn/_upload/article/files/82/0f/836bd8ff48398d28b415c36ba68c/9a210896-0958-4255-a3d9-77ea0319c0d3.docx",
+      "verification": {
+        "sourcePage": "https://jwc.nytdc.edu.cn/2026/0427/c521a49479/page.htm",
+        "pageDate": "2026-04-27",
+        "sourceFile": "work\\campus-academic\\image-2027.html",
+        "attachmentsRead": [
+          {
+            "url": "https://jwc.nytdc.edu.cn/_upload/article/files/82/0f/836bd8ff48398d28b415c36ba68c/12997dd3-0bd8-47ef-a0aa-3a23b9db2597.docx",
+            "title": "附件2：学生用户使用指南.docx",
+            "file": "work\\campus-academic\\guide-2.docx",
+            "sha256": "9b5e509b8dc3a73a0262a35ed069ff4bfa977452bf79e1ce46ddc6a229a66d23",
+            "bytes": 1745490,
+            "textFile": "work\\campus-academic\\guide-2.text.txt",
+            "layoutRendered": false,
+            "method": "DOCX main document text; embedded screenshots not yet inspected",
+            "embeddedImagesInspected": false,
+            "embeddedImagesImported": false,
+            "textChars": 773
+          },
+          {
+            "url": "https://jwc.nytdc.edu.cn/_upload/article/files/82/0f/836bd8ff48398d28b415c36ba68c/9a210896-0958-4255-a3d9-77ea0319c0d3.docx",
+            "title": "附件3：常见不合格照片及解决办法.docx",
+            "file": "work\\campus-academic\\guide-3.docx",
+            "sha256": "77d1f9c8d3d15b619291dbcb07ab9f04d9d031091b6434d8b9ef6ee3f85bc44e",
+            "bytes": 834232,
+            "textFile": "work\\campus-academic\\guide-3.text.txt",
+            "layoutRendered": false,
+            "method": "DOCX main document text; embedded screenshots not yet inspected",
+            "embeddedImagesInspected": false,
+            "embeddedImagesImported": false,
+            "textChars": 405
+          }
+        ],
+        "scope": "只依据附件明确文字归纳排错；未导入示例照片或截图内个人资料，未登录操作或测试平台。",
+        "currentValidity": "2026公开流程说明；实际平台状态与补采安排未验证。",
+        "deduplication": "现有approved未覆盖图采失败类型、草稿箱与上传确认步骤。"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "f96354e7-e1dc-4dbf-877a-ad224fd085eb",
+      "title": "通达学院：转专业后的课程抵扣、补修与编级风险（2026公开附件）",
+      "agent": "affairs"
+    },
+    {
+      "id": "9f38667a-e2eb-49a6-9bef-6b548d73abbe",
+      "title": "通达学院：毕业图像采集码与江苏图采入口（2026指南）",
+      "agent": "affairs"
+    },
+    {
+      "id": "c43cffd8-a24d-422a-bacf-f8316dd80c46",
+      "title": "通达学院：毕业照片不合格、账号锁定与草稿箱处理（2026指南）",
+      "agent": "affairs"
+    }
+  ],
+  "offlined": [],
+  "added": 3,
+  "totalDocs": 189,
+  "approvedByAgent": {
+    "life": 56,
+    "study": 32,
+    "affairs": 81,
+    "freshman": 0
+  }
+}

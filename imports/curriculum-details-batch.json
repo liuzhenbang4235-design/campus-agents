@@ -1,0 +1,924 @@
+{
+  "batch": "curriculum-details-2026-09-24",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:56:04.548Z",
+  "docs": [
+    {
+      "agent": "study",
+      "title": "通达学院：培养方案、招生专业介绍和个人课表有什么区别（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n培养方案列明培养目标、毕业要求、课程模块、课程名称与编号、学分学时、开课学期及先修关系；包括通识教育、专业教育、实践教育等内容。招生专业介绍用于了解培养方向和代表课程，不能据此推定个人全部必修课。指导意见也不是某个专业最终课程清单。个人课表还要看选课结果、班级及教务安排；公开指导意见不提供个人教室、教师、上课时间。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "培养方案是不是就是我的课表？",
+        "招生介绍里的课程都必须学吗？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              7,
+              8,
+              9
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：必修、限选和任选课怎么区分（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n必修课是要求学生必须学习的课程；选修课分限选和任选。限选是在规定范围内选择的课程；任选的课程范围可包括其他专业的必修和限选课程，实际选课仍受本专业方案及教务安排约束。培养方案中选修学分（含限选和任选）比例原则上不低于25%，这是培养方案设计要求，不表示个人可以任意用选修课替换四分之一的必修课。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "限选课能不能不修？",
+        "任选是不是想选什么就选什么？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              18
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              20
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：课程号末尾S和C、考试和考查的区别（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n课程编号由课程类别字母K、7位阿拉伯数字和考核标志字母组成；末尾S表示考试，C表示考查。数字第1—2位为单位代码，第3—4位为学科或系代码，第5—6位为顺序码，第7位为版本码，用于区分同名或同类课程的不同课时和学分。通识教育必修课、专业基础核心课和专业核心课原则上采用考试；其他课程由专业确定；实践教育中毕业设计（论文）为考试，其余为考查。同名课程不能仅凭名字认定可以互相抵扣。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "课程编号后面的S和C是什么意思？",
+        "课程名字一样就能抵学分吗？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              18
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              20
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：16学时是不是都算1学分（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n标准理论课教学（含混合式课程线下教学）每16学时计1学分。军事理论、体育、综合素质类选修课、线上课程每16学时计0.5学分。实践教育原则上每教学周计1学分，每教学周安排24学时；军事训练、社会实践、认识实习每教学周计0.5学分。不同课程类型计算方法不同，不能把所有16学时课程都当作1学分；具体学分按正式培养方案记录。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "16学时都能拿一学分吗？",
+        "军训一周算几学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              17
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              19
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：155和145学分上限是否等于毕业门槛（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n指导意见规定工科类专业总学分原则上不超过155学分，经、管、文类专业原则上不超过145学分。这是编制培养方案的原则上限，不是给每个人统一设置的最低毕业学分，也不表示凑够155或145分就一定能毕业。是否毕业要依据本人专业、年级正式培养方案的必修课、选修模块及实践要求审核；能否拿学位还需另行满足学位授予条件。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "是不是攒够155学分就毕业了？",
+        "经管毕业是不是都要145学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              17
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              19
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：英语分级、四级六级成绩与免修申请（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n大学英语按入学水平分A、B、C班（C班为零基础），前四个学期每学期设置3学分英语课程。GRE、托福、CET6、CET4等成绩达到学校规定分数的学生，可以申请免修部分学分或提前修读外语拓展选修课，应修英语总学分不低于9学分。文件没有列出具体免修分数线，不能推断四级一过就自动免修。第5学期起后续三个学期设置基础应用、提高应用、人文、考研和出国（境）等拓展课程；具体选择和免修结果以教务确认。该英语安排不替代小语种学生的专门外语选课说明。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "过了四级就不用上英语了吗？",
+        "英语A班B班C班怎么回事？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              10
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              11
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：计算机基础课程、一级考试与校内能力测试（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n理工科非计算机专业的计算机基础课包括计算机文化基础、计算机语言和计算机应用课程，要求修读一门语言类课程和一门应用类课程，总学分5学分。文科学生应掌握基础计算机知识、操作系统和文字处理等。指导意见还写明：根据水平和需要选课，以通过全国计算机等级考试一级或学院组织的计算机能力测试为基本要求，列入培养方案但不计学分。该测试要求与前述课程学分是不同事项，不能推断为所有专业必须考计算机二级；实际适用及测试安排应查本人正式方案与教务通知。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "学校是不是必须考计算机二级？",
+        "非计算机专业计算机基础要几学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              10
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              11
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：体育课是4学分还是6学分、心理健康课学分（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n体育与健康课程模块合计6学分，其中体育I—IV合计4学分，大学生心理健康课程2学分。因此不能把模块的6学分都说成体育课学分。心理健康课安排8学时理论课和24学时线上课程。选哪一项体育课、是否能申请免修或康复保健班，需按相应体育选课与办理通知，不由这份指导意见直接认定。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "体育是不是要修6学分？",
+        "心理健康课有几学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              11
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              12
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：职业规划和就业创业指导在哪学期上（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n两届指导意见的开课学期不同。2024级：第3学期安排职业生涯与发展规划，第6学期安排就业与创业指导；2025级：分别在第2、第5学期安排。两门课程各1学分。应先确认入学年级再回答开课时间，不把其中一个年级的安排说成全校统一；具体课程名称与开课结果按本专业正式方案、选课系统确认。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "职业规划大一还是大二上？",
+        "2024级和2025级就业指导学期一样吗？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              11
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              12
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：劳动教育32学时、不计学分是否还要上（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n各专业开设32学时劳动教育必修课程，包含通识教育类8学时劳动教育理论课（线上线下混合式）和24学时劳动教育实践，不计入总学分。不计入总学分不等于不用参加，文件明确其为必修课程；具体项目、考核和补做安排需看所在年级实际通知。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "劳动课没学分是不是不用上？",
+        "劳动教育到底多少学时？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              12
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              13
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：创新创业必修课在理工和经管文专业的区别（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n理工科专业在公共基础课程中设置1学分《创新与创业管理》必修课程，第3或第4学期开设；经、管、文类专业在专业基础课程中设置2学分《创新创业概论》必修课程，第2学期开设。两类安排不能混为所有专业统一2学分。此处是培养方案课程要求，不等于大创项目立项、竞赛获奖或PU学时认定，也不代表当前选课窗口开放。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "创新创业概论什么时候上？",
+        "理工科创新创业课到底一学分还是两学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              12
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              13
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：综合素质选修至少5学分、与PU学时的区别（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n综合素质课程分人工智能、语言文学、美学艺术、经济管理、科学技术五类。所有专业须在综合素质类选修课程中修读不少于5学分。这是课程学分要求，不能直接把PU课外素拓学时当作综合素质课程学分；也不能与专业提升课程的3学分混为同一模块。具体课程供给和认定以本人正式培养方案、选课通知为准。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "PU学时够了就不用修综合素质选修了吗？",
+        "综合素质选修要几学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              13
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              14
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：高数A1和A2、理工科大学物理怎么区分（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n指导意见表3中，电子信息类、自动化类、电气类：高等数学A1为12学分，包含复变函数；线性代数与解析几何3学分；大学物理A为7学分，物理实验A为3学分。计算机类：高等数学A2为11学分，不含复变函数；线性代数与解析几何3学分；大学物理B为5.5学分，物理实验B为2.5学分。概率统计课程按国家标准和认证标准等开设。这里按专业大类列要求，不可据此省略本人方案中其他数学课程。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "高数A1和A2差在哪？",
+        "计算机类大学物理和电子信息一样吗？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              15
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              16
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：经管和人文专业的数学物理课程（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n指导意见表3列出：经管类高等数学B（经管类）10学分、线性代数3学分；人文类文科数学3学分。经管、人文的物理课程均列物理学概论3学分或文科物理2学分，二选一。各专业根据培养目标及规定设置课程，不能把专业大类表直接当成某个学生当前课表，也不能据此声称文科完全不学数学或物理。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "文科是不是不用上数学和物理？",
+        "经管高数是多少学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              15
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              16
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：毕业设计论文的建议学分和周数（2024/2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2024/2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n实践教育模块表中毕业设计（论文）的建议学分为12学分；学时学分规定安排毕业设计（论文）12周，结束后2周内完成毕业鉴定。12周是培养方案安排，不是从今天起算的提交截止期限；开题、中期、查重、送审、答辩和当届提交日期需查看当届毕业设计通知。这一课程学分也不能直接回答学位审核中是否计入平均绩点，绩点应按专门学籍和学位规定核算。\n2024级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "毕业论文要做几周？",
+        "毕设是不是12学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2024,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+            "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+            "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+            "pages": 20,
+            "pdfPages": [
+              14,
+              17
+            ]
+          },
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              15,
+              19
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n2025级指导意见表4：电路分析基础A（混合式）4学分、第2学期，适用电子科学与技术、光电信息科学与工程、集成电路设计与集成系统；电路分析基础B为3学分、第2学期，适用通信工程、信息工程、人工智能。电路4学分、第2学期，适用自动化、电气工程及其自动化。电工电子技术基础3学分、第2学期，适用计算机科学与技术、数字媒体技术、物联网工程。课程版本、学分与专业需一一对应，不能看到同类名称就互换。\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "电路分析基础A和B分别哪些专业上？",
+        "人工智能的电路分析几学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              17
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n2025级表4：数字电路与逻辑设计A为4学分，第3、4学期，适用电子科学与技术、集成电路设计与集成系统；B为3学分，第3、4学期，适用电气工程及其自动化、光电信息科学与工程、计算机科学与技术、软件工程、数据科学与大数据技术、数字媒体技术、通信工程、物联网工程、信息安全、信息工程、自动化、人工智能。\n模拟电子线路A为4学分、第4学期，适用电子科学与技术、光电信息科学与工程、集成电路设计与集成系统；B为3学分、第4学期，适用通信工程、信息工程、自动化、电气工程及其自动化、人工智能。\n信号与系统A为4学分、第4学期，适用集成电路设计与集成系统、电子科学与技术、通信工程、信息工程；B为3学分、第4学期，适用电气工程及其自动化、自动化、光电信息科学与工程、数字媒体技术、人工智能。表中的第3、4学期不能解读为同一课程必须重复修两次，个人开课以正式方案为准。\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "软件工程上数字电路A还是B？",
+        "人工智能要上模拟电子线路B吗？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              17
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n2025级表4：电工电子基础实验I、II各2学分，分别第3、第4学期，适用通信工程、信息工程、自动化、电气工程及其自动化、光电信息科学与工程、人工智能。电工电子基础实验B为3学分、第4学期，适用计算机科学与技术、数字媒体技术、物联网工程。电工电子实验（一）、（二）各3学分，分别第3、第4学期，适用电子科学与技术、集成电路设计与集成系统。电子电路课程设计2学分、第5学期，适用通信工程、信息工程、自动化、电气工程及其自动化、光电信息科学与工程、电子科学与技术、集成电路设计与集成系统；该行未列人工智能，不能自行补入。\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "电工电子基础实验I和II各多少学分？",
+        "数字媒体技术上哪种电工电子实验？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              18
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：认识实习、生产实习、金工电装和制图安排（2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n2025级表4：认识实习0.5学分，安排第3、4学期，适用2025级全部专业；生产实习1.5学分，第8学期，适用2025级全部专业。电装实习1学分、第2、3学期，适用2025级计算机类、自动化类、电气类、电子信息类。\n金工实习1学分、第4学期，适用通信工程、信息工程、自动化、电气工程及其自动化、电子科学与技术、集成电路设计与集成系统、人工智能。制图基础及计算机绘图2学分、第1、2学期，适用上述金工实习列出的专业以及光电信息科学与工程。多个学期并列不等于必须重复修读；具体批次、实习单位、教室和时间查本人正式方案及当期安排。\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "认识实习和生产实习各是什么时候？",
+        "制图基础及计算机绘图是几学分？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              18
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+      "source": "教务处｜培养方案指导意见｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "适用范围：2025级本科专业培养方案指导性意见。以下是制定培养方案的依据，个人应以本专业、本年级正式培养方案及实际选课结果为准，不能直接套用到2026级或当作个人课表。\n2025级表4为财务管理、大数据管理与应用、金融工程列出经管平台课程：管理学原理（混合式）2学分、管理信息系统2学分、统计学3学分、宏观经济学2学分、微观经济学B为3学分；表列开设范围为第2至第5学期，没有逐门指定唯一学期。这不是三个专业全部课程清单，各专业其他基础课、方向课和实践课仍需查正式培养方案。\n2025级官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n核对日期：2026-09-24。",
+      "questions": [
+        "经管平台课有哪些、分别多少学分？",
+        "财务管理和金融工程有哪些共同基础课？"
+      ],
+      "verification": {
+        "official": true,
+        "checkedAt": "2026-09-24",
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sources": [
+          {
+            "year": 2025,
+            "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+            "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+            "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+            "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+            "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+            "pages": 22,
+            "pdfPages": [
+              18
+            ]
+          }
+        ],
+        "method": "公开扫描PDF逐页图像核对，按文件年级和版本区分；不采集个人课表",
+        "readScope": "topic_pages_verified"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "11ff459f-11c5-4044-ab81-3b5cff4e6753",
+      "title": "通达学院：培养方案、招生专业介绍和个人课表有什么区别（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "1439c7db-50ac-492a-a372-c08833a091e5",
+      "title": "通达学院：必修、限选和任选课怎么区分（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "48b4a0ea-dcfb-4e5b-a54c-54d1aa5b2664",
+      "title": "通达学院：课程号末尾S和C、考试和考查的区别（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "23fdde6f-4b39-49b3-8f2f-61c42b676642",
+      "title": "通达学院：16学时是不是都算1学分（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "c2718c4c-32c8-4d36-82a2-d069c688ce2e",
+      "title": "通达学院：155和145学分上限是否等于毕业门槛（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "04780a70-b7c3-4109-babc-700080adf9b0",
+      "title": "通达学院：英语分级、四级六级成绩与免修申请（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "2f40e3a4-9f91-4bd0-bb27-e5fb30bc6dfa",
+      "title": "通达学院：计算机基础课程、一级考试与校内能力测试（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "9b93a2b4-b72d-40fa-b814-1a618e490598",
+      "title": "通达学院：体育课是4学分还是6学分、心理健康课学分（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "275baf89-dfe2-4938-9be7-9db9860a9fb1",
+      "title": "通达学院：职业规划和就业创业指导在哪学期上（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "0af2827c-df59-40a6-948e-d0e9caacab12",
+      "title": "通达学院：劳动教育32学时、不计学分是否还要上（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "a450297f-e4ba-4354-b581-9841ae7496a5",
+      "title": "通达学院：创新创业必修课在理工和经管文专业的区别（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "1827096a-046e-4576-a784-6d92d8cf2ef6",
+      "title": "通达学院：综合素质选修至少5学分、与PU学时的区别（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "3d5bdf63-7cce-4ac0-b835-7ba7ad542349",
+      "title": "通达学院：高数A1和A2、理工科大学物理怎么区分（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "7e4aece8-fc3e-48ab-9ef3-cbe387b06895",
+      "title": "通达学院：经管和人文专业的数学物理课程（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "25d53158-a4a4-4df8-bdc6-0d5bcf3291e5",
+      "title": "通达学院：毕业设计论文的建议学分和周数（2024/2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+      "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+      "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+      "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "1ee10685-5497-4a67-995b-a5d231add0ea",
+      "title": "通达学院：认识实习、生产实习、金工电装和制图安排（2025级）",
+      "agent": "study"
+    },
+    {
+      "id": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+      "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+      "agent": "study"
+    }
+  ],
+  "offlined": [],
+  "added": 20,
+  "totalDocs": 254,
+  "approvedByAgent": {
+    "life": 56,
+    "study": 78,
+    "affairs": 94,
+    "freshman": 0
+  }
+}

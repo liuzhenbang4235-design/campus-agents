@@ -1,0 +1,55 @@
+{
+  "batch": "campus-sports-venue-2026-09-23",
+  "verifiedAt": "2026-09-23",
+  "status": "prepared-not-imported",
+  "docs": 1,
+  "oldId": null,
+  "oldIdReason": "GET /api/state中未发现校内体育场馆申请条目；已存在体育选课、课表和校外公园条目，不适合替换。",
+  "sourcePageLimit": 5,
+  "uniqueSourcesChecked": 3,
+  "sources": [
+    {
+      "url": "https://www.nytdc.edu.cn/tyb/1349/list.htm",
+      "status": "index-reviewed",
+      "evidenceFile": "work/campus-broader/sports-venues.html",
+      "method": "读取本轮已有本地公开栏目快照；web重开Cache miss",
+      "finding": "仅列2024-04-03体育场馆使用申请表"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/tyb/2024/0403/c1349a39853/page.htm",
+      "status": "read",
+      "publishedAt": "2024-04-03",
+      "method": "web已完整打开",
+      "finding": "正文提供PDF下载，无额外申请细则"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/f5/3b/1f25fc464ea1a63029b276afe5da/9b737c53-0f74-4e63-9cd0-fec4bb1ae6e9.pdf",
+      "status": "read-and-visually-verified",
+      "pages": 1,
+      "evidenceFile": "work/sports-venue-check/venue-application-2024.pdf",
+      "textFile": "work/sports-venue-check/venue-application-2024.txt",
+      "renderFile": "work/sports-venue-check/page-1.png",
+      "finding": "核对所有字段与4条说明；空白表，无个人已填写信息"
+    }
+  ],
+  "factualBoundaries": [
+    "申请单位负责人、体育部、分管院领导为表单意见栏，未另找文档证明现行审批时序或每种用途都需全部签批",
+    "表上说单位或个人可申请，未单列学生/社团身份资格；可给下载线索，不承诺审批通过",
+    "不得因设收费栏断言学生均收费，也不得当免费",
+    "校外租赁协议/收费票据要求不套用全部学生",
+    "体育部2025其他业务的体育馆202室和咨询电话没有挪作已确认场馆受理窗口"
+  ],
+  "unresolved": [
+    "2026是否仍沿用该表",
+    "学生个人与社团分别找谁签批/提交",
+    "受理地点或在线入口",
+    "具体场馆当前开放、占用、余量和收费"
+  ],
+  "databaseMutated": false,
+  "configurationMutated": false,
+  "integration": {
+    "checkedAt": "2026-09-23T16:05:02.485Z",
+    "status": "reviewed_sources_integrated",
+    "verification": "verification-details-2026-09-23.json"
+  }
+}

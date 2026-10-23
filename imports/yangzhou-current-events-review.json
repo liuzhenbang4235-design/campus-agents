@@ -1,0 +1,151 @@
+{
+  "batch": "yangzhou-current-events-2026-09-24",
+  "verifiedAt": "2026-09-24",
+  "status": "prepared-not-imported",
+  "databaseMutated": false,
+  "configurationMutated": false,
+  "mapOrModelCalls": 0,
+  "researchWindow": {
+    "from": "2026-09-24",
+    "through": "2026-10-08"
+  },
+  "existing": {
+    "source": "GET http://127.0.0.1:4173/api/state",
+    "approvedCloudLife": 52,
+    "filter": "agent === 'life' && status === 'approved' && cloudAllowed === true",
+    "snapshot": "work/yangzhou-events-existing-life.json"
+  },
+  "proposedDocs": 3,
+  "duplicateTitles": [],
+  "duplicateEventMatches": [],
+  "uniqueOfficialPageAttempts": 12,
+  "pageLimit": 12,
+  "officialPageAttempts": [
+    {
+      "url": "https://www.grandcanalmuseum.cn/",
+      "title": "中运博首页",
+      "result": "找到2026-09-16中秋国庆及景迈新展预告；仅选择与时间窗相关项目。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.yzmuseum.com/",
+      "title": "扬州博物馆首页",
+      "result": "web与直接请求均返回503，不能据此认定没有活动。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.yzdjy.com.cn/",
+      "title": "运河大剧院首页",
+      "result": "可读公开内容主要为2026春节及更早消息，未取得本时间窗排期。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.grandcanalmuseum.cn/yunboxinwen/1249.html",
+      "title": "景迈新展暨假期开放公告",
+      "result": "正文图片已视觉核对，拆成开放安排与新展两项实质新增资料。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.grandcanalmuseum.cn/yunbogonggao/1238.html",
+      "title": "9号、10号展厅暂停开放",
+      "result": "2026-08-27发布，正文落款2026-08-25；恢复时间另行通知。此条无明确未来起止，不作为本轮新活动导入。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.grandcanalmuseum.cn/linzhantezhan.html",
+      "title": "中运博临展特展目录",
+      "result": "混有过期展览；逐项按明确日期筛选，不能把列表所有内容当当前在展。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.yzdjy.com.cn/home/performer/index",
+      "title": "运河大剧院演出购票列表",
+      "result": "web可读列表最新所见场次为2026-01-22至01-23，其他为更早日期；直接请求SSL失败。未得到2026-09-24至10-08排期，不代表无演出。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.grandcanalmuseum.cn/linzhantezhan/1210.html",
+      "title": "盛辉与尘光详情",
+      "result": "2026-07-10至10-11，符合本轮窗口。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.grandcanalmuseum.cn/linzhantezhan/1190.html",
+      "title": "琉运澄辉详情",
+      "result": "展期2026-05-18至08-16，已过期，排除。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.grandcanalmuseum.cn/zaixianyuyue.html",
+      "title": "中运博在线预约",
+      "result": "页面只列活动预约和运河剧场预约；未当作普通入馆直链。入馆依本次最新假期公告指向官方微信公众号。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "http://www.yzmuseum.com/",
+      "title": "扬州博物馆HTTP重试",
+      "result": "未成功打开；按独立请求页计入12页上限。",
+      "verifiedAt": "2026-09-24"
+    },
+    {
+      "url": "https://www.yzmuseum.com/html/Article/list/65.html",
+      "title": "扬州博物馆扬博新闻列表",
+      "result": "本次可读列表最新日期2025-02-07，未取得2026中秋国庆及未来两周公告。",
+      "verifiedAt": "2026-09-24"
+    }
+  ],
+  "imageEvidence": {
+    "sourcePage": "https://www.grandcanalmuseum.cn/yunboxinwen/1249.html",
+    "downloadedAndViewedBodyImageNumbers": [
+      1,
+      2,
+      12,
+      13,
+      14
+    ],
+    "directory": "work/yangzhou-current-events/",
+    "note": "这些是同一公告的正文图片附件，不额外计为HTML页面。未采集与主题无关的其他场馆。"
+  },
+  "deduplicationNotes": [
+    "现有52条life包含中运博常规开放/预约、扬州博物馆常规指南及运河大剧院概况，没有这三项具体有日期的2026资料。",
+    "首两条共用一篇官方原文，分别回答假期开放预约与新展内容，事实不同；导入不要仅按URL去掉其中一条。",
+    "没有把网页更新日或检索日当作活动举办日期。"
+  ],
+  "noCurrentEventClaimFor": [
+    {
+      "venue": "扬州博物馆",
+      "reason": "首页503；官方新闻列表所见仍为2025-02及更早。搜索遇到第三方平台转载的2026-09活动文章，但任务限定场馆官网，未据此导入。只能说本轮未核实到，不能说该馆没有活动。"
+    },
+    {
+      "venue": "中国扬州运河大剧院",
+      "reason": "公开首页和购票列表未提供本轮日期窗内可核实的演出。没有使用第三方票务排期推定官方上演或余票。"
+    }
+  ],
+  "additionalAdvisory": {
+    "source": "https://www.grandcanalmuseum.cn/yunbogonggao/1238.html",
+    "publishedAt": "2026-08-27",
+    "noticeSignedAt": "2026-08-25",
+    "content": "9号展厅“紫禁城与大运河”和10号展厅“隋炀帝与大运河”因升级施工暂停开放，恢复时间另行通知。与本轮5号及11—12号展览不冲突，但不能笼统回答所有馆厅都开放。",
+    "unknown": "本轮未找到恢复公告，不将未找到等同实时确认仍关闭。"
+  },
+  "unknowns": [
+    "每一天实时余票、能否成功预约",
+    "展览是否临时调整/取消",
+    "景迈新展是否单独收费或另需预约",
+    "希腊古罗马展实时票价及购票细则",
+    "各场馆2026-10-08当天最新开放状态",
+    "学校到场馆距离和实时路线"
+  ],
+  "maintenance": [
+    "假期安排只适用2026-09-25至10-07指定日期，2026-10-08起应过期或重新核对。",
+    "盛辉与尘光2026-10-11展期结束后停止作为当前活动推荐。",
+    "景迈回响2027-01-03展期结束后停止作为当前活动推荐。",
+    "event/reviewAfter为本批元数据建议，未修改应用或保证系统已自动执行到期处理。"
+  ],
+  "integration": {
+    "checkedAt": "2026-09-23T17:08:11.548Z",
+    "inventory": "source-inventory.json",
+    "status": "sources_reconciled_with_approved_state",
+    "notice": "原始review的准备、排除和过期判定保留；当前入库状态以source-inventory各项及documentIds为准。"
+  }
+}

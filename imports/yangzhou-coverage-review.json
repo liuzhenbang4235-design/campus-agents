@@ -1,0 +1,296 @@
+{
+  "batch": "yangzhou-coverage-2026-09-23",
+  "verifiedAt": "2026-09-23",
+  "status": "prepared-not-imported",
+  "databaseMutated": false,
+  "configurationMutated": false,
+  "existing": {
+    "source": "GET http://127.0.0.1:4173/api/state",
+    "allLifeReturned": 47,
+    "approvedCloudLife": 45,
+    "filter": "status === 'approved' && cloudAllowed === true",
+    "excludedOfflineOrPending": [
+      {
+        "id": "d1",
+        "title": "图书馆借阅指南（虚构示例）",
+        "status": "offline",
+        "cloudAllowed": true
+      },
+      {
+        "id": "d4",
+        "title": "校园失物招领说明（虚构示例）",
+        "status": "pending",
+        "cloudAllowed": true
+      }
+    ]
+  },
+  "proposedDocs": 6,
+  "duplicateTitles": [],
+  "checkedPrimaryPageCount": 14,
+  "primaryPageLimit": 25,
+  "reviewedPages": [
+    {
+      "url": "https://www.powerlong.com/major/major-project%21projectYangzhou.action",
+      "title": "宝龙项目业态",
+      "result": "官方搜索索引正文可读，直接打开失败",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.powerlong.com/project/project%21toProject.action?projectId=yangzhou&request_locale=zh_CN",
+      "title": "宝龙项目四至",
+      "result": "官方搜索索引正文可读，直接打开失败；含规划表述",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.wanda.cn/index.php?a=lists&c=index&catid=90&m=content",
+      "title": "万达集团项目目录",
+      "result": "完整打开，列邗江店及官方子站链接",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "http://yangzhouhj.wandaplaza.cn",
+      "title": "集团指向的邗江万达子站",
+      "result": "未能打开，不声称客服/商户列表已验证",
+      "decision": "not-usable",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.mcdonalds.com.cn/news/20230629-LBS-Store",
+      "title": "2023麦当劳餐厅名单",
+      "result": "页面和定向搜索正文可读，仅地址与名称可作历史线索",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.mcdonalds.com.cn/index/Quality/publicinfo/deliveryinfo",
+      "title": "餐厅公示主入口",
+      "result": "完整打开，城市筛选页面可见，未执行登录",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.mcdonalds.com.cn/index/Quality/publicinfo/deliveryinfo?page=754",
+      "title": "扬州餐厅公示",
+      "result": "第754页完整打开，可见扬州万达餐厅；页码随目录变化",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.mcdonalds.com.cn/top/map",
+      "title": "麦当劳找餐厅",
+      "result": "官网链接可见，页面打开失败；未声称查到实时门店",
+      "decision": "not-usable",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://jsnews.jschina.com.cn/jsyw/202603/t20260308_s69acb795e4b09187ac9bd413.shtml",
+      "title": "三湾非遗园餐饮空间",
+      "result": "2026-03-08现场报道完整打开",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.js.gov.cn/art/2024/2/26/art_89285_11161006.html",
+      "title": "环明月湖商圈布局",
+      "result": "2024省政府文章完整打开，只保留片区关系",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://zgjssw.jschina.com.cn/shixianchuanzhen/yangzhou/202507/t20250705_8501949.shtml",
+      "title": "官方夜生活电子地图",
+      "result": "2025-07-05发布说明完整打开；微信端未测试",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.zgjssw.gov.cn/shixianchuanzhen/yangzhou/202509/t20250909_8520041.shtml",
+      "title": "古运河夜游2025路线线索",
+      "result": "完整打开，便益门出发/三湾线路尚为规划",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.jsxc.gov.cn/whwy/whcc/202607/t20260709_94164.shtml",
+      "title": "古运河夜游2026码头线索",
+      "result": "完整打开，东关古渡场景；保留与2025差异",
+      "decision": "used",
+      "verifiedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yzdyhwh.com/",
+      "title": "运河度假区已有餐饮目录",
+      "result": "官方索引正文可读，现有早茶数据大部重复且远离校园，未继续拆条",
+      "decision": "duplicate-or-outside-priority",
+      "verifiedAt": "2026-09-23"
+    }
+  ],
+  "coverageAdditions": [
+    {
+      "title": "扬州逛街聚餐：宝龙广场的名称和所在片区",
+      "newFacts": [
+        "项目完整名称和宝龙金轮名称关联",
+        "官方项目页的四至位置",
+        "购物中心、商业街及餐饮业态方向"
+      ],
+      "remainingUnknowns": [
+        "精确门牌和公众入口",
+        "游客客服及订位入口",
+        "当前入驻商户与经营状态"
+      ]
+    },
+    {
+      "title": "扬州邗江万达逛吃：商场名称、地址和快餐核对入口",
+      "newFacts": [
+        "万达官方项目目录中的邗江店名称",
+        "麦当劳2023地址：邗江中路302号",
+        "官方公示目录仍列该餐厅名称"
+      ],
+      "remainingUnknowns": [
+        "此刻营业状态、菜单及价格",
+        "万达游客电话",
+        "官方找餐厅页面本次未能加载，未实际查询门店"
+      ]
+    },
+    {
+      "title": "三湾逛完想吃饭喝咖啡：非遗园餐饮空间线索",
+      "newFacts": [
+        "非遗园一期位置语境为扬州三湾",
+        "四个餐饮空间名称",
+        "喜鹊餐厅露台咖啡用途"
+      ],
+      "remainingUnknowns": [
+        "各店精确入口、电话及公开订位渠道",
+        "最新菜单、预算、人均及营业状态"
+      ]
+    },
+    {
+      "title": "扬州逛商圈看夜景：环明月湖、京华城和星耀天地",
+      "newFacts": [
+        "新盛街道、环明月湖商圈名称",
+        "北岸文博场馆与南岸京华城/星耀天地的关系"
+      ],
+      "remainingUnknowns": [
+        "商圈具体活动日历",
+        "商场详细门牌及当前咨询电话",
+        "当日营业和餐饮店铺"
+      ]
+    },
+    {
+      "title": "扬州晚上坐船看演艺：大运扬州古运河夜游",
+      "newFacts": [
+        "夜游项目全称及体验形式",
+        "与已有御马头线为不同查询项目",
+        "历史码头描述存在差异，不能合并成现行固定登船点"
+      ],
+      "remainingUnknowns": [
+        "当前官方售票直链",
+        "实际订单码头、班次、票价、余票",
+        "是否开到三湾；2025报道仅为未来计划"
+      ]
+    },
+    {
+      "title": "今晚去哪逛夜市：扬州官方夜间文旅地图获取方式",
+      "newFacts": [
+        "电子地图名称",
+        "公众号与小程序名称及2025获取路径",
+        "夜市夜游等分类和导航功能的发布说明"
+      ],
+      "remainingUnknowns": [
+        "2026当前菜单及入口是否变化",
+        "今晚活动、开放、门票及余量"
+      ]
+    }
+  ],
+  "noNewRecordFor": [
+    {
+      "topic": "校门口、汇金谷餐馆和夜市",
+      "reason": "检索到地图POI、招租广告、点评和税务清单，未找到足以验证当前店铺/入口的运营方或政府消费指南。不用税务公开名单拼餐饮推荐。"
+    },
+    {
+      "topic": "已入库趣园、冶春、扬州宴、何园、宋夹城、博物馆",
+      "reason": "同一地点新闻和既有业态不重复拆条；没有新增可靠门店事实时停止。"
+    },
+    {
+      "topic": "三盛夏季夜市、历史苏超看球点",
+      "reason": "所见活动为特定历史日期，不能当2026-09常态夜市。"
+    },
+    {
+      "topic": "三湾二期商业、三湾夜游延线",
+      "reason": "报道属于签约或计划阶段，不据此认定已经开放。"
+    }
+  ],
+  "mustUseLiveMapOrCurrentOfficialChannel": [
+    {
+      "question": "学校门口走几分钟有什么便宜饭、奶茶、咖啡、夜宵？",
+      "needs": [
+        "确认出发校门与地图中心",
+        "实时POI名称与坐标",
+        "步行路网距离和入口",
+        "当前营业状态",
+        "具体菜单与预算"
+      ],
+      "reason": "静态市区文旅资料不能给出按距离排序的校门外店铺；地图无价格字段时需商户当前菜单。"
+    },
+    {
+      "question": "哪家现在开着、还送外卖、不排队？",
+      "needs": [
+        "商户实时营业与接单",
+        "配送范围",
+        "实时排队/余座"
+      ],
+      "reason": "地图营业时间也只是商户标注，是否即时接单/排队需商户或交易平台核对。"
+    },
+    {
+      "question": "宝龙具体从哪个门进，维扬路27号还是29号？",
+      "needs": [
+        "匹配购物中心POI而非写字楼/住宅",
+        "门牌和入口现场/地图核对"
+      ],
+      "reason": "官方项目只给四至，第三方页面门牌不一，未选一个猜入库。"
+    },
+    {
+      "question": "今晚的夜市在哪、是否下雨取消、怎么回学校？",
+      "needs": [
+        "当期主办方公告",
+        "活动场地位置",
+        "公交末班与返程路线"
+      ],
+      "reason": "2025电子地图说明不证明2026年同一活动仍举行。"
+    },
+    {
+      "question": "夜游从哪个码头上船，能不能到三湾？",
+      "needs": [
+        "当前官方票务订单",
+        "确切码头POI与入口",
+        "当日班次和天气停航"
+      ],
+      "reason": "不同年份报道码头不同，2025三湾延线仍是计划。"
+    },
+    {
+      "question": "三湾喜鹊/喜米在哪里，适合学生预算吗？",
+      "needs": [
+        "当前门店具体地址与入口",
+        "店方咨询/预约",
+        "当前菜单/人均及空位"
+      ],
+      "reason": "现场报道能证明名称与功能，但未公布这些经营字段。"
+    }
+  ],
+  "checks": [
+    "资料实质内容在前，来源和时效在后",
+    "不包含个人手机号码或私密账号",
+    "没有上传校内个人数据到外部来源",
+    "未调用商户下单、预约或支付",
+    "所有距离、实时状态、价格与未验预约直链均保留未知",
+    "14个主来源页面为定向核对清单；搜索结果中的无关候选未逐页打开或采集"
+  ],
+  "integration": {
+    "checkedAt": "2026-09-23T16:05:02.440Z",
+    "status": "reviewed_sources_integrated",
+    "verification": "verification-details-2026-09-23.json"
+  }
+}

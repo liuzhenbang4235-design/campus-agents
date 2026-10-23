@@ -1,0 +1,131 @@
+{
+  "batch": "yangzhou-services-2026-09-23",
+  "verifiedAt": "2026-09-23",
+  "checkedPageCount": 18,
+  "limit": 20,
+  "proposedDocs": 6,
+  "existingLifeDocsRead": 41,
+  "duplicates": [],
+  "checkedPages": [
+    {
+      "url": "https://apps.apple.com/cn/app/%E6%89%AC%E5%B7%9E%E6%8E%8C%E4%B8%8A%E5%85%AC%E4%BA%A4/id805299558",
+      "decision": "accepted",
+      "reason": "应用开发者公布的公交信息查询入口",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/ggjtjtjj",
+      "decision": "corroboration",
+      "reason": "确认集团关联公交官网；旧企业统计不用",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yzjtcyjt.com/joomla/",
+      "decision": "accepted",
+      "reason": "官方客服962003及公共信息入口",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj",
+      "decision": "corroboration",
+      "reason": "城市公交栏目；不是实时到站",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "http://www.yzgjgs.com",
+      "decision": "unavailable",
+      "reason": "集团明确链接的公交官网本次未能打开",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yzsmk.com/",
+      "decision": "unavailable",
+      "reason": "旧手册提及市民卡官网，但本次未取得可用页面",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj/2023-06-14-11-04-56",
+      "decision": "accepted-with-date",
+      "reason": "专用乘车码入口；不照搬旧菜单为现行界面保证",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj/2024-09-26-01-41-16",
+      "decision": "accepted-with-date",
+      "reason": "聚合支付试运行，不声称所有车辆已覆盖",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yzjtcyjt.com/joomla/index.php/jtjj/jtyw/2026-09-10-02-21-29",
+      "decision": "accepted",
+      "reason": "2026-09-10官方报道提及聚合扫码支付；检索快照",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.12306.cn/index/",
+      "decision": "accepted",
+      "reason": "铁路官方查询购票入口",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://kyfw.12306.cn/otn/gonggao/student.html",
+      "decision": "accepted",
+      "reason": "仅提炼学生核验入口，不写死票价、优惠次数或政策条件",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.moe.gov.cn/srcsite/A15/s7063/202306/t20230605_1062839.html",
+      "decision": "corroboration",
+      "reason": "2023文件佐证12306核验；不当作现行资格全部规则",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://yz.jszwfw.gov.cn/",
+      "decision": "accepted",
+      "reason": "政务办事公开入口；未访问登录",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://gjgx.jszwfw.gov.cn/",
+      "decision": "not-imported",
+      "reason": "较旧高新区介绍，银河路地址和公交信息未验证当前有效",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.yznbty.com/about.aspx",
+      "decision": "duplicate",
+      "reason": "已在district批次导入场馆与预订电话",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.jszwfw.gov.cn/art/2016/11/7/art_95371_133107.html",
+      "decision": "accepted-with-date",
+      "reason": "只作场馆基础线索，2016时间电话不当现行安排",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.sport.gov.cn/n20001280/n20001265/n20067708/c27015807/content.html",
+      "decision": "corroboration",
+      "reason": "2023官方报道支持预约能力，不提供未经验证直链",
+      "checkedAt": "2026-09-23"
+    },
+    {
+      "url": "https://www.cnsdc.org.cn/venue_booking/show-8990.html",
+      "decision": "not-imported",
+      "reason": "存在预订展示页与微信支付提示，但未核实当前运营方认领和交易入口，未访问支付",
+      "checkedAt": "2026-09-23"
+    }
+  ],
+  "excludedDetails": [
+    "没有读取个人手机号名单、用户评论或登录后数据",
+    "没有把旧市民卡网点和旧票价当现行信息",
+    "没有导入未经核实的校园周边公交班次/到站时间",
+    "公交应用采用开发者一手发布资料；没有声称它由政府直接开发",
+    "未拿到现行场馆预约直链的条目明确保留限制"
+  ],
+  "currentFailures": [
+    "部分官方主页超时，只能使用官方索引快照，已逐条标明",
+    "没有登录App或亲自完成下单，入口信息不代表整个交易流程已验证"
+  ],
+  "reviewConclusion": "Six concise new public-service reference records, no DB mutations. No claim of complete local-data coverage."
+}

@@ -1,0 +1,4381 @@
+{
+  "version": 1,
+  "source": "OpenStreetMap",
+  "attribution": "© OpenStreetMap contributors",
+  "license": "ODbL-1.0",
+  "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyrightUrl": "https://www.openstreetmap.org/copyright",
+  "collectedAt": "2026-09-23T17:16:51.010Z",
+  "dataTimestamp": "2026-09-23T17:15:03Z",
+  "scope": "扬州城区部分已标注地点，不含全市所有区县或商户",
+  "coordinateSystem": "WGS84",
+  "query": "[out:json][timeout:35][maxsize:67108864][bbox:32.25,119.25,32.5,119.55];(nwr[\"amenity\"~\"^(restaurant|cafe|fast_food|food_court|ice_cream|bar|pub|cinema|theatre|library|arts_centre|university)$\"][\"name\"];nwr[\"leisure\"~\"^(park|sports_centre|stadium|fitness_centre|water_park|garden)$\"][\"name\"];nwr[\"tourism\"~\"^(museum|gallery|attraction|zoo|aquarium|theme_park)$\"][\"name\"];nwr[\"shop\"~\"^(mall|bakery|tea)$\"][\"name\"];);out center tags;",
+  "endpoint": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+  "places": [
+    {
+      "id": "osm:node/2428777185",
+      "name": "文昌阁",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4282174,
+        "lat": 32.3963841
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2428777185",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2429079674",
+      "name": "五亭桥",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4161478,
+        "lat": 32.4097487
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2429079674",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2429845786",
+      "name": "个园",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4381972,
+        "lat": 32.4011638
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2429845786",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430137178",
+      "name": "何园",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4434663,
+        "lat": 32.3875792
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430137178",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430259732",
+      "name": "扬州大学医学院",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4262143,
+        "lat": 32.3891879
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430259732",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:node/2430259937",
+      "name": "瘦西湖公园南门",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4207185,
+        "lat": 32.4040133
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430259937",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430259940",
+      "name": "瘦西湖公园西门",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4096732,
+        "lat": 32.4086734
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430259940",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430259944",
+      "name": "秦朝瓦罐面",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4124708,
+        "lat": 32.381774
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430259944",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430259948",
+      "name": "万家福",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4289633,
+        "lat": 32.3968459
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430259948",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430289562",
+      "name": "富春茶社",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4367707,
+        "lat": 32.392524
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430289562",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430289580",
+      "name": "琼花观",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4436091,
+        "lat": 32.3975498
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430289580",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430289601",
+      "name": "汪氏小苑",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4417175,
+        "lat": 32.3977735
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430289601",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2430289602",
+      "name": "东关古渡",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4476973,
+        "lat": 32.399853
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2430289602",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2507925080",
+      "name": "扬州游泳馆",
+      "kind": "sports_centre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3580292,
+        "lat": 32.3916059
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2507925080",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2572511107",
+      "name": "文峰塔",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4275893,
+        "lat": 32.3737294
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2572511107",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2657537198",
+      "name": "凯德广场",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4107137,
+        "lat": 32.3997606
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2657537198",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2657537203",
+      "name": "海底捞火锅",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4104088,
+        "lat": 32.3999071
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2657537203",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/2715380969",
+      "name": "肯德基",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4281412,
+        "lat": 32.401203
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/2715380969",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/5311517023",
+      "name": "扬州中国雕版印刷博物馆",
+      "kind": "museum",
+      "address": "文昌西路 468",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3662674,
+        "lat": 32.3928523
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/5311517023",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/6663024196",
+      "name": "瘦西湖",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4089278,
+        "lat": 32.4088613
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/6663024196",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/8926054841",
+      "name": "中国大运河博物馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4219207,
+        "lat": 32.3646393
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/8926054841",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517034823",
+      "name": "朗月湖",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3982445,
+        "lat": 32.3443522
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517034823",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517034824",
+      "name": "问月湖",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3917187,
+        "lat": 32.3411062
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517034824",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517034825",
+      "name": "紫藤长廊",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3908754,
+        "lat": 32.3409848
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517034825",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517035331",
+      "name": "扬州大学校徽",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3975115,
+        "lat": 32.3423105
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517035331",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9517190162",
+      "name": "烧仙草",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3907062,
+        "lat": 32.3456481
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9517190162",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9518343044",
+      "name": "文体馆小剧场",
+      "kind": "theatre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3944694,
+        "lat": 32.3458986
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9518343044",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9518343045",
+      "name": "昭文馆报告厅",
+      "kind": "theatre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3977054,
+        "lat": 32.3435885
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9518343045",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9726747700",
+      "name": "小金山",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4199795,
+        "lat": 32.4098289
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9726747700",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9726747709",
+      "name": "钓鱼台",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4184808,
+        "lat": 32.4100242
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9726747709",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9730303999",
+      "name": "熙春台",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4106865,
+        "lat": 32.4093761
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9730303999",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/9735078273",
+      "name": "小盘谷",
+      "kind": "attraction",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4404753,
+        "lat": 32.3889739
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/9735078273",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11063147639",
+      "name": "田园肥牛府(印象田园店)",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4489627,
+        "lat": 32.3821568
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11063147639",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11064880641",
+      "name": "喜茶",
+      "kind": "cafe",
+      "address": "京华城路 8",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3762528,
+        "lat": 32.3865955
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11064880641",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11066937200",
+      "name": "牛肉板面王",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3809356,
+        "lat": 32.3979454
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11066937200",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11066963828",
+      "name": "龙门虾客",
+      "kind": "restaurant",
+      "address": "百祥路 125",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3830423,
+        "lat": 32.3966247
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11066963828",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11066972984",
+      "name": "老鸭粉丝汤馆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3872327,
+        "lat": 32.3878855
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11066972984",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11066997434",
+      "name": "吴辉群众烧烤地摊儿",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3899647,
+        "lat": 32.3885739
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11066997434",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11067001511",
+      "name": "客满堂重庆特色串串火锅",
+      "kind": "restaurant",
+      "address": "望月路 165",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3912594,
+        "lat": 32.3878864
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11067001511",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11067050329",
+      "name": "喜茶",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3930434,
+        "lat": 32.3823682
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11067050329",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11067050330",
+      "name": "蜜雪冰城",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3928001,
+        "lat": 32.3836723
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11067050330",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11069146533",
+      "name": "迪板潘师傅炸鸡(望月路店)",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3932299,
+        "lat": 32.389125
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11069146533",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11069207909",
+      "name": "水乡土菜馆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3977291,
+        "lat": 32.3902716
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11069207909",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11069207910",
+      "name": "药膳鸡",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3975351,
+        "lat": 32.390984
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11069207910",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11071101533",
+      "name": "大头老鹅馆",
+      "kind": "restaurant",
+      "address": "翠岗路 249-8",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3819194,
+        "lat": 32.397673
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11071101533",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11071138778",
+      "name": "一壶春茶叶",
+      "kind": "tea",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3837323,
+        "lat": 32.3951831
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11071138778",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11071221711",
+      "name": "潮汕私厨",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3833248,
+        "lat": 32.3971235
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11071221711",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11074476283",
+      "name": "野外咖",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.424341,
+        "lat": 32.3631134
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11074476283",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11074707365",
+      "name": "听沙茶楼",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4104713,
+        "lat": 32.3672684
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11074707365",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11074709878",
+      "name": "北疆饭店",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4108319,
+        "lat": 32.3667919
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11074709878",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11076593046",
+      "name": "麦当劳扬州京杭中路得来速餐厅",
+      "kind": "fast_food",
+      "address": "京杭中路 东侧的建筑物A区5号楼一楼A5-1和A5-1-2，二楼A5-2-1号商铺",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4829116,
+        "lat": 32.3954283
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11076593046",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11076593047",
+      "name": "蟹蟹江湖",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4845057,
+        "lat": 32.3956635
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11076593047",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/11121979169",
+      "name": "霸王茶姬",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3689631,
+        "lat": 32.3872825
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/11121979169",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/12220741573",
+      "name": "牧白手作",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3690094,
+        "lat": 32.3867358
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/12220741573",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/12243919409",
+      "name": "万顺大碗面",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4277259,
+        "lat": 32.4088492
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/12243919409",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/12444202777",
+      "name": "中国兰州拉面店",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4495695,
+        "lat": 32.3972856
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/12444202777",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/12485282347",
+      "name": "Yangzhou Concert Hall",
+      "kind": "theatre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3665546,
+        "lat": 32.3945268
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/12485282347",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13027618738",
+      "name": "朱自清故居",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4442434,
+        "lat": 32.3955573
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13027618738",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778366",
+      "name": "极白",
+      "kind": "tea",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3850661,
+        "lat": 32.3889136
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778366",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778368",
+      "name": "吴家粥铺",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3689193,
+        "lat": 32.3870124
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778368",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778371",
+      "name": "人来人往",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4418487,
+        "lat": 32.3908119
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778371",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778373",
+      "name": "无念茶社",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4316977,
+        "lat": 32.3910165
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778373",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778374",
+      "name": "称幸手作",
+      "kind": "bakery",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.427955,
+        "lat": 32.3907578
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778374",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778384",
+      "name": "云来民宿 咖啡茶饮",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4383724,
+        "lat": 32.3975063
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778384",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778388",
+      "name": "巷口烤串",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4428155,
+        "lat": 32.3996705
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778388",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778390",
+      "name": "皮包水",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4432661,
+        "lat": 32.399689
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778390",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778394",
+      "name": "贡茶",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4425566,
+        "lat": 32.3994215
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778394",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778396",
+      "name": "太白醉蟹",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4414539,
+        "lat": 32.399731
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778396",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071778398",
+      "name": "星巴克",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.43721,
+        "lat": 32.3996505
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071778398",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071799190",
+      "name": "趣茶手作",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4399043,
+        "lat": 32.3906698
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071799190",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071832156",
+      "name": "潘老板炸鸡",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4283091,
+        "lat": 32.3904453
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071832156",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13071842782",
+      "name": "萨莉亚",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3690127,
+        "lat": 32.387696
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13071842782",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13083811129",
+      "name": "M Stand",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4206179,
+        "lat": 32.3964742
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13083811129",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13083811130",
+      "name": "星巴克",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4196554,
+        "lat": 32.3964195
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13083811130",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13083920598",
+      "name": "مەمەتئابدۇلا كاۋاپخانېسې 新疆麦麦提烧烤",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3844365,
+        "lat": 32.3872069
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13083920598",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13083926803",
+      "name": "楓樂居",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3835255,
+        "lat": 32.3870927
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13083926803",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437649",
+      "name": "正宗淮南牛肉汤",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3836426,
+        "lat": 32.3830571
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437649",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437653",
+      "name": "星巴克",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3749278,
+        "lat": 32.3869028
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437653",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437654",
+      "name": "翼日式料理",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3742775,
+        "lat": 32.3868338
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437654",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437657",
+      "name": "红果实咖啡",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3698853,
+        "lat": 32.3872338
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437657",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437658",
+      "name": "春熙谢茶",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.36889,
+        "lat": 32.3868889
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437658",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437663",
+      "name": "小胖子大排档",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3806065,
+        "lat": 32.3865793
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437663",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437664",
+      "name": "大湖南",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3810478,
+        "lat": 32.3871492
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437664",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437665",
+      "name": "陈记药膳鸡",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3814024,
+        "lat": 32.3872005
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437665",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437669",
+      "name": "杨记",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3882026,
+        "lat": 32.3883804
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437669",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437670",
+      "name": "华莱士",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3831097,
+        "lat": 32.3874811
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437670",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437672",
+      "name": "桃山烟雨",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3874128,
+        "lat": 32.387717
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437672",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437673",
+      "name": "讨喜堡",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3881401,
+        "lat": 32.3884126
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437673",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437675",
+      "name": "东北烧烤",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3897876,
+        "lat": 32.3885436
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437675",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437676",
+      "name": "哈尔滨水饺",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3831684,
+        "lat": 32.3829551
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437676",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437677",
+      "name": "竹缘茶楼",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3863324,
+        "lat": 32.3880625
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437677",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437678",
+      "name": "蜜雪冰城",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.38846,
+        "lat": 32.3879347
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437678",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437679",
+      "name": "汉森熊",
+      "kind": "pub",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3877239,
+        "lat": 32.3882284
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437679",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437681",
+      "name": "LIN YOUNG",
+      "kind": "bar",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3773869,
+        "lat": 32.3871311
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437681",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13087437682",
+      "name": "汉库麻辣香锅",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.377292,
+        "lat": 32.3878103
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13087437682",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094057388",
+      "name": "秘境鹿语",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.388181,
+        "lat": 32.3942369
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094057388",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063528",
+      "name": "一个可颂",
+      "kind": "bakery",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4328025,
+        "lat": 32.3959894
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063528",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063529",
+      "name": "汉森熊精酿",
+      "kind": "pub",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.432932,
+        "lat": 32.396232
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063529",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063530",
+      "name": "滋奇火锅",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.432975,
+        "lat": 32.3962759
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063530",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063532",
+      "name": "鲍师傅",
+      "kind": "bakery",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4291668,
+        "lat": 32.3957502
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063532",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063534",
+      "name": "沪上阿姨",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4191476,
+        "lat": 32.3994637
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063534",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063535",
+      "name": "夜来香药膳鸡",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4270634,
+        "lat": 32.4048423
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063535",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063536",
+      "name": "夜来香药膳鸡",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4283143,
+        "lat": 32.4047024
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063536",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063537",
+      "name": "锦熙苏式面馆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4283279,
+        "lat": 32.4047786
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063537",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063541",
+      "name": "星巴克",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4207931,
+        "lat": 32.3930755
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063541",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063543",
+      "name": "东园小馆",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4209778,
+        "lat": 32.3918778
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063543",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063549",
+      "name": "袋鼠精酿啤酒屋",
+      "kind": "pub",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4210104,
+        "lat": 32.3908702
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063549",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063553",
+      "name": "古茗",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4171718,
+        "lat": 32.3876004
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063553",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063554",
+      "name": "兰州拉面",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4168007,
+        "lat": 32.3876129
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063554",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063557",
+      "name": "喜茶",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4159862,
+        "lat": 32.3876062
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063557",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063558",
+      "name": "越师傅越南法棍三明治",
+      "kind": "bakery",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4148956,
+        "lat": 32.3872579
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063558",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063561",
+      "name": "黄大囍面馆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4124351,
+        "lat": 32.3875993
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063561",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063563",
+      "name": "大明寺素食坊",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4119861,
+        "lat": 32.3874239
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063563",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063566",
+      "name": "熊猫别闹·会跳舞的蛋糕",
+      "kind": "bakery",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4116885,
+        "lat": 32.3859966
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063566",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063569",
+      "name": "库迪咖啡",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4119281,
+        "lat": 32.3819881
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063569",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063570",
+      "name": "必香居",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4111098,
+        "lat": 32.3810854
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063570",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063571",
+      "name": "钱亮亮123小火锅",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.411355,
+        "lat": 32.3803741
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063571",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063578",
+      "name": "老妈米线",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4258768,
+        "lat": 32.3996292
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063578",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13094063581",
+      "name": "BOBO匠酒馆",
+      "kind": "pub",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.411691,
+        "lat": 32.385096
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13094063581",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680623",
+      "name": "CoCo都可",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3937065,
+        "lat": 32.3704891
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680623",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680627",
+      "name": "平山宴",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3915585,
+        "lat": 32.3889058
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680627",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680629",
+      "name": "肯德基",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3945818,
+        "lat": 32.3736041
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680629",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680630",
+      "name": "星巴克",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3947216,
+        "lat": 32.3726135
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680630",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680633",
+      "name": "杨国福麻辣烫",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3939883,
+        "lat": 32.3713547
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680633",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680636",
+      "name": "Mao Master",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3937184,
+        "lat": 32.3706506
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680636",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680637",
+      "name": "蜜雪冰城",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3934565,
+        "lat": 32.3704478
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680637",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680641",
+      "name": "茶百道",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3938441,
+        "lat": 32.3712091
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680641",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680642",
+      "name": "星巴克",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3697622,
+        "lat": 32.4147878
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680642",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680643",
+      "name": "爷爷不泡茶",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3942351,
+        "lat": 32.3705584
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680643",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680644",
+      "name": "米村拌饭",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3942727,
+        "lat": 32.3707721
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680644",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680645",
+      "name": "LINLEE",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3944719,
+        "lat": 32.3709187
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680645",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680646",
+      "name": "星伦多海鲜自助",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3941672,
+        "lat": 32.3710917
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680646",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680647",
+      "name": "東北風",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3939994,
+        "lat": 32.3701965
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680647",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680648",
+      "name": "Dairy Queen",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3945137,
+        "lat": 32.3695871
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680648",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680649",
+      "name": "七分甜",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3947576,
+        "lat": 32.3696774
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680649",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680654",
+      "name": "淮左印象",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3944458,
+        "lat": 32.3791971
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680654",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680659",
+      "name": "比那多咖啡",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3929126,
+        "lat": 32.3830018
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680659",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680667",
+      "name": "瑞幸咖啡",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3700432,
+        "lat": 32.4160974
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680667",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680668",
+      "name": "古茗",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3698961,
+        "lat": 32.4159365
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680668",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680669",
+      "name": "茶百道",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3699413,
+        "lat": 32.4158311
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680669",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680670",
+      "name": "十三式",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3695921,
+        "lat": 32.4151819
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680670",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680671",
+      "name": "半天妖",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3694994,
+        "lat": 32.415117
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680671",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680672",
+      "name": "周大厨",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3693213,
+        "lat": 32.4156608
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680672",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13097680675",
+      "name": "景记药膳鸡",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3889652,
+        "lat": 32.3884527
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13097680675",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13437555829",
+      "name": "蒋家桥饺面馆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4351634,
+        "lat": 32.3993402
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13437555829",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13437555868",
+      "name": "蒋家桥饺面店",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3914762,
+        "lat": 32.3561984
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13437555868",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13437558028",
+      "name": "蒋家桥饺面店",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4430897,
+        "lat": 32.3908059
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13437558028",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13437891856",
+      "name": "家和豆浆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3952891,
+        "lat": 32.4368198
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13437891856",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13596741113",
+      "name": "上坡楼面馆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.360148,
+        "lat": 32.3847098
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13596741113",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13596741115",
+      "name": "达美乐比萨",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3695808,
+        "lat": 32.3860839
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13596741115",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13596741116",
+      "name": "麦当劳",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3694001,
+        "lat": 32.3860694
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13596741116",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13598331280",
+      "name": "喜满客国际影城",
+      "kind": "cinema",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3686748,
+        "lat": 32.3865806
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13598331280",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13603586891",
+      "name": "牙牙仔小排檔",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.371392,
+        "lat": 32.3862064
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13603586891",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13603586894",
+      "name": "幸会咖啡",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3726543,
+        "lat": 32.3856967
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13603586894",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13603586895",
+      "name": "镇江老鸭粉丝馆",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3729633,
+        "lat": 32.3857261
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13603586895",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13603586897",
+      "name": "红果实",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3735998,
+        "lat": 32.3866931
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13603586897",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13603586898",
+      "name": "隐泉京望日式料理",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3688004,
+        "lat": 32.3864101
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13603586898",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13606315728",
+      "name": "袁记云饺",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.43454,
+        "lat": 32.4090725
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13606315728",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13606322913",
+      "name": "地锅侠",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4736554,
+        "lat": 32.4055753
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13606322913",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13606322914",
+      "name": "越界游泳健身",
+      "kind": "fitness_centre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4733047,
+        "lat": 32.405384
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13606322914",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13607588238",
+      "name": "胡场老鸭汤",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3367873,
+        "lat": 32.4338104
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13607588238",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13607603262",
+      "name": "老虎山锅贴",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4352291,
+        "lat": 32.4142447
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13607603262",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13607603264",
+      "name": "高邮面馆",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4336497,
+        "lat": 32.4141616
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13607603264",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13607603267",
+      "name": "凤凰桥牛肉汤",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4297666,
+        "lat": 32.4147753
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13607603267",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13607603269",
+      "name": "COFFEE TIME",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4223379,
+        "lat": 32.4174589
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13607603269",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13610690483",
+      "name": "东鹏烤又",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3812055,
+        "lat": 32.3871854
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13610690483",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796227320",
+      "name": "帝一瑜伽",
+      "kind": "fitness_centre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4460869,
+        "lat": 32.4097542
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796227320",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796238474",
+      "name": "古茗",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3751683,
+        "lat": 32.3993549
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796238474",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796238481",
+      "name": "二斤皮",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3839747,
+        "lat": 32.3937231
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796238481",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796238484",
+      "name": "东园小馆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3832193,
+        "lat": 32.3977392
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796238484",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796259506",
+      "name": "扬州慢庙山野",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.287014,
+        "lat": 32.4003737
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796259506",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796277414",
+      "name": "爷爷不泡茶",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4983537,
+        "lat": 32.3986764
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796277414",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796277415",
+      "name": "(m)³",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.498368,
+        "lat": 32.3988345
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796277415",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796300937",
+      "name": "三麻虎 Sammaho",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.498764,
+        "lat": 32.398855
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796300937",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13796300938",
+      "name": "绿茶",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4994658,
+        "lat": 32.3986552
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13796300938",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13806710527",
+      "name": "香润园简餐超市",
+      "kind": "fast_food",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3463456,
+        "lat": 32.3914925
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13806710527",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13876182242",
+      "name": "家和豆浆",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4096335,
+        "lat": 32.3911169
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13876182242",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13876182243",
+      "name": "康乐大头炒饭",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4090326,
+        "lat": 32.3910128
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13876182243",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:node/13876182252",
+      "name": "蒋家桥饺面店",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4041894,
+        "lat": 32.3986045
+      },
+      "mapUrl": "https://www.openstreetmap.org/node/13876182252",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/234890972",
+      "name": "荷花池公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4237341,
+        "lat": 32.3854353
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/234890972",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/234905474",
+      "name": "个园",
+      "kind": "garden",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4382571,
+        "lat": 32.4009383
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/234905474",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/234905475",
+      "name": "何园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4435561,
+        "lat": 32.3875437
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/234905475",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/234905476",
+      "name": "金鹰国际购物中心",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4273534,
+        "lat": 32.3954534
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/234905476",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/234905477",
+      "name": "时代广场",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4263918,
+        "lat": 32.3953887
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/234905477",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/235461827",
+      "name": "宋夹城体育休闲公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4225034,
+        "lat": 32.4174037
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/235461827",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/235567110",
+      "name": "盆景园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4233092,
+        "lat": 32.4031887
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/235567110",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/235655875",
+      "name": "瘦西湖",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4150035,
+        "lat": 32.4125974
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/235655875",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/236715841",
+      "name": "茱萸湾公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.484208,
+        "lat": 32.4360055
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/236715841",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/236808921",
+      "name": "隋炀帝陵",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4222238,
+        "lat": 32.4646282
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/236808921",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/236808928",
+      "name": "来鹤台广场",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3895088,
+        "lat": 32.3946299
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/236808928",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/237327065",
+      "name": "京华城中城",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3699755,
+        "lat": 32.3873406
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/237327065",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/237347498",
+      "name": "力宝广场",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3941139,
+        "lat": 32.3729569
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/237347498",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/237617268",
+      "name": "M会员店",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4060885,
+        "lat": 32.3721023
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/237617268",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/248657877",
+      "name": "竹西公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.449082,
+        "lat": 32.4226339
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/248657877",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/250263225",
+      "name": "蜀岗西峰生态公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3986966,
+        "lat": 32.4186722
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/250263225",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/250911985",
+      "name": "市民广场",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3925742,
+        "lat": 32.3810479
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/250911985",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/250911991",
+      "name": "曲江公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4678931,
+        "lat": 32.3953812
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/250911991",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/265769244",
+      "name": "扬州大学江阳路北校区",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4153459,
+        "lat": 32.3797381
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/265769244",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/265769245",
+      "name": "扬州大学荷花池校区",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4169459,
+        "lat": 32.3845509
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/265769245",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/265935378",
+      "name": "扬州大学文汇路校区",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4168728,
+        "lat": 32.3917081
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/265935378",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/265935379",
+      "name": "扬州大学瘦西湖校区",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4170607,
+        "lat": 32.4018859
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/265935379",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/307826964",
+      "name": "扬州职业大学",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3741876,
+        "lat": 32.3960824
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/307826964",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/307835358",
+      "name": "扬州工业职业技术学院",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3956113,
+        "lat": 32.3374748
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/307835358",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/307835359",
+      "name": "许庄社区法治广场",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.377542,
+        "lat": 32.3431266
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/307835359",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/310350331",
+      "name": "体育馆",
+      "kind": "sports_centre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4133442,
+        "lat": 32.3826789
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/310350331",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/310496639",
+      "name": "玉盛公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.377567,
+        "lat": 32.3402585
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/310496639",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/310664863",
+      "name": "蝶湖公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4057084,
+        "lat": 32.3687514
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/310664863",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/311072544",
+      "name": "产业工人公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4392319,
+        "lat": 32.3270688
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/311072544",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/311380095",
+      "name": "扬州大学江阳路南校区",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4212304,
+        "lat": 32.376527
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/311380095",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/311381753",
+      "name": "扬州大学淮海路校区",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4253399,
+        "lat": 32.3889602
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/311381753",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/311500237",
+      "name": "廉政广场",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4050403,
+        "lat": 32.3945686
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/311500237",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/311905434",
+      "name": "扬州商城",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4049264,
+        "lat": 32.3743967
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/311905434",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/312883648",
+      "name": "李宁体育公园",
+      "kind": "sports_centre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.5052219,
+        "lat": 32.3950829
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/312883648",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/356068349",
+      "name": "橡宴",
+      "kind": "restaurant",
+      "address": "真州北路 2",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3528604,
+        "lat": 32.3909729
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/356068349",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/356235891",
+      "name": "引潮河公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3832337,
+        "lat": 32.3779483
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/356235891",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/357797289",
+      "name": "汇金广场",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4435853,
+        "lat": 32.3630417
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/357797289",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/360243344",
+      "name": "大润发",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3901865,
+        "lat": 32.3921868
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/360243344",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/361832955",
+      "name": "印象汇",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4109121,
+        "lat": 32.400008
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/361832955",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/361850923",
+      "name": "第二食堂",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3949743,
+        "lat": 32.3341456
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/361850923",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/361850972",
+      "name": "第一食堂",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3941795,
+        "lat": 32.3340699
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/361850972",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/363059957",
+      "name": "金连云商业中心",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4437794,
+        "lat": 32.3656268
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/363059957",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/363061710",
+      "name": "大润发（广陵店）",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4560505,
+        "lat": 32.3985844
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/363061710",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/363114885",
+      "name": "盆景园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4218063,
+        "lat": 32.4020674
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/363114885",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/491632679",
+      "name": "崔致远纪念馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4135365,
+        "lat": 32.4230013
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/491632679",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/642041633",
+      "name": "Huamao Shopping Mall",
+      "kind": "mall",
+      "address": "Yangzhou 大学北路",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4208149,
+        "lat": 32.3933765
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/642041633",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/755987763",
+      "name": "马可波罗花世界",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.5138844,
+        "lat": 32.4130445
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/755987763",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/755987784",
+      "name": "廖家沟公园·东园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.520691,
+        "lat": 32.4027505
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/755987784",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/791584640",
+      "name": "七里河公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4424063,
+        "lat": 32.3734299
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/791584640",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/791584655",
+      "name": "三湾湿地公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4245166,
+        "lat": 32.3580486
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/791584655",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/889907330",
+      "name": "三河六岸公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.5444001,
+        "lat": 32.4087637
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/889907330",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/960874501",
+      "name": "竹西好人园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4554861,
+        "lat": 32.4253403
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/960874501",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/960874511",
+      "name": "花都汇生态公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4372272,
+        "lat": 32.4284966
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/960874511",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/960874521",
+      "name": "学府社区公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3856476,
+        "lat": 32.4206541
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/960874521",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/960874522",
+      "name": "蜀冈生态体育公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3850269,
+        "lat": 32.412605
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/960874522",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/966209695",
+      "name": "大桥公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.5048872,
+        "lat": 32.3974109
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/966209695",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/966209696",
+      "name": "人才公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.5042725,
+        "lat": 32.3993583
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/966209696",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/966209697",
+      "name": "马拉松公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.5090196,
+        "lat": 32.3955801
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/966209697",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1017557844",
+      "name": "韩万河公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.5203513,
+        "lat": 32.4255471
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1017557844",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1017557845",
+      "name": "廖家沟公园·西园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.5074827,
+        "lat": 32.4051596
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1017557845",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1023448820",
+      "name": "扬州市图书馆",
+      "kind": "library",
+      "address": "文昌西路 466",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3667765,
+        "lat": 32.3941756
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1023448820",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1032897386",
+      "name": "昭文馆",
+      "kind": "library",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3972336,
+        "lat": 32.3439639
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1032897386",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1032897406",
+      "name": "润园",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3908416,
+        "lat": 32.3448986
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1032897406",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1032897451",
+      "name": "津园",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3957256,
+        "lat": 32.3461412
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1032897451",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1032915225",
+      "name": "扬州大学扬子津校区",
+      "kind": "university",
+      "address": "扬州市 华扬西路 196",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3947065,
+        "lat": 32.345117
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1032915225",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/1059561613",
+      "name": "史可法纪念馆",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.434273,
+        "lat": 32.4033639
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1059561613",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1059561615",
+      "name": "扬州佛教文化博物馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4325501,
+        "lat": 32.4036215
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1059561615",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1059561616",
+      "name": "冶春园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.430174,
+        "lat": 32.402784
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1059561616",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1060003356",
+      "name": "扬州中国大运河博物馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4228057,
+        "lat": 32.3642266
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1060003356",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1116025945",
+      "name": "南京邮电大学通达学院",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3947991,
+        "lat": 32.3338294
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1116025945",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/1259123067",
+      "name": "灯塔公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4620235,
+        "lat": 32.2764022
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1259123067",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1312528495",
+      "name": "隋炀帝陵遗址公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3918815,
+        "lat": 32.4227066
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1312528495",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1312530824",
+      "name": "文昌阁",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4281813,
+        "lat": 32.3963764
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1312530824",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1316612684",
+      "name": "半岛公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3792448,
+        "lat": 32.3741653
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1316612684",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1319392811",
+      "name": "隋炀帝陵遗址博物馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.390886,
+        "lat": 32.4235045
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1319392811",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1319392823",
+      "name": "隋炀帝陵遗址公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3951091,
+        "lat": 32.4213671
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1319392823",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1319465137",
+      "name": "唐城遗址",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4125837,
+        "lat": 32.4231332
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1319465137",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1326512477",
+      "name": "嘉都汇",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4647135,
+        "lat": 32.3929429
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1326512477",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1328603772",
+      "name": "风华汇",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4338058,
+        "lat": 32.4743953
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1328603772",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1328603780",
+      "name": "扬州梦幻之城",
+      "kind": "theme_park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4317989,
+        "lat": 32.4655453
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1328603780",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1328603796",
+      "name": "花都汇邻里中心",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4431544,
+        "lat": 32.4380495
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1328603796",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1328603797",
+      "name": "奥园邻里公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4432335,
+        "lat": 32.4368047
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1328603797",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1328603806",
+      "name": "瘦西湖生活广场",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4447881,
+        "lat": 32.4284424
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1328603806",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1329358151",
+      "name": "嘉境邻里公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4504469,
+        "lat": 32.4318086
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1329358151",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1332620575",
+      "name": "趣园茶社",
+      "kind": "restaurant",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4218159,
+        "lat": 32.4103321
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1332620575",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1338618420",
+      "name": "梅岭公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4364598,
+        "lat": 32.4144951
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1338618420",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1338618423",
+      "name": "江苏油田技师学院",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4403533,
+        "lat": 32.41527
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1338618423",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/1338618424",
+      "name": "五彩世界",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.377562,
+        "lat": 32.3875003
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1338618424",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1338618431",
+      "name": "蒋王师姑塔体育休闲公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3521099,
+        "lat": 32.362683
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1338618431",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1338618439",
+      "name": "润茂国际广场",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.369102,
+        "lat": 32.369907
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1338618439",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455120",
+      "name": "运河大剧院",
+      "kind": "theatre",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3691682,
+        "lat": 32.3952418
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455120",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455123",
+      "name": "江苏旅游职业学院",
+      "kind": "university",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4044506,
+        "lat": 32.3046153
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455123",
+      "centerOnly": true
+    },
+    {
+      "id": "osm:way/1339455125",
+      "name": "凤栖湖公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4112626,
+        "lat": 32.3064546
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455125",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455134",
+      "name": "扬州南部体育公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4213291,
+        "lat": 32.3130239
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455134",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455135",
+      "name": "九龙湖公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4222018,
+        "lat": 32.30319
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455135",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339455137",
+      "name": "扬子津生态中心",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4168534,
+        "lat": 32.3232073
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339455137",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1339852181",
+      "name": "京华城2期",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3745087,
+        "lat": 32.3871518
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1339852181",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1340005213",
+      "name": "汇鑫公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3476749,
+        "lat": 32.3584716
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1340005213",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1340005224",
+      "name": "吉安路体育休闲公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.382571,
+        "lat": 32.3417283
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1340005224",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1340527142",
+      "name": "树人公园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4158313,
+        "lat": 32.3057311
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1340527142",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1347930771",
+      "name": "万达广场",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3696174,
+        "lat": 32.4156149
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1347930771",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1412509523",
+      "name": "瓜洲古渡公园-北园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3862623,
+        "lat": 32.2553599
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1412509523",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1412509524",
+      "name": "瓜洲古渡公园-南园",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3858446,
+        "lat": 32.2514471
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1412509524",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1412509532",
+      "name": "瓜洲枢纽国家水利风景区",
+      "kind": "park",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3934468,
+        "lat": 32.2518625
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1412509532",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1423496585",
+      "name": "喜茶",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4278539,
+        "lat": 32.39555
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1423496585",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1423496586",
+      "name": "星巴克",
+      "kind": "cafe",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4278494,
+        "lat": 32.3953324
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1423496586",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1465079535",
+      "name": "万象汇(扬州店)",
+      "kind": "mall",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4201576,
+        "lat": 32.3970136
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1465079535",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1465079550",
+      "name": "张若虚纪念馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.3841874,
+        "lat": 32.2540281
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1465079550",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1465079593",
+      "name": "江泽民故居",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4387565,
+        "lat": 32.3977545
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1465079593",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1465118374",
+      "name": "扬州八怪纪念馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4260012,
+        "lat": 32.4008595
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1465118374",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1465118378",
+      "name": "江上青烈士史料陈列馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4290899,
+        "lat": 32.3921996
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1465118378",
+      "centerOnly": false
+    },
+    {
+      "id": "osm:way/1549029152",
+      "name": "汉广陵王墓博物馆",
+      "kind": "museum",
+      "address": "",
+      "city": "扬州城区采集范围",
+      "district": "",
+      "telephone": "",
+      "location": {
+        "lng": 119.4248635,
+        "lat": 32.4265787
+      },
+      "mapUrl": "https://www.openstreetmap.org/way/1549029152",
+      "centerOnly": false
+    }
+  ]
+}

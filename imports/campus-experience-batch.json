@@ -1,0 +1,122 @@
+{
+  "batch": "campus-experience-2026-09-24",
+  "status": "approved",
+  "importedAt": "2026-09-23T18:07:55.880Z",
+  "docs": [
+    {
+      "agent": "life",
+      "title": "通达学院：快递在哪拿、是否送上门（历史学生体验）",
+      "source": "大学生活质量指北｜历史学生体验｜https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+      "sourceUrl": "https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+      "publishedAt": "",
+      "collectedAt": "2026-09-24",
+      "sourceKind": "experience",
+      "content": "历史学生体验，非学校规定：来源为《大学生活质量指北》通达学院公开问卷，当前页面列出的回答来自2024年6月至2025年6月。页面生成于2026-09-21不代表体验更新。以下不能确认2026年现状。\n有受访者提到校内菜鸟驿站及校外取件点，各回答对数量与远近说法不同；曾有人反馈不送上门。具体快递应按取件短信或订单显示的站点领取，当前站点数量、营业时间和寄件价格尚未核实。\n整理与采集日期：2026-09-24。原文链接：https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/\n来源署名：大学生活质量指北及匿名问卷贡献者。原页面许可CC BY-NC-SA 4.0；本条为摘要改写，沿用该许可：https://creativecommons.org/licenses/by-nc-sa/4.0/ 。未收录答卷编号或个人身份。",
+      "questions": [
+        "通达快递在哪拿",
+        "学校快递送上门吗"
+      ],
+      "verification": {
+        "method": "完整公开HTML已读取；日期对应2024—2025问卷而非2026页面生成时间；保留冲突与不确定性",
+        "file": "work/campus-community/tongda.html",
+        "sha256": "0b410d1f155f0c9d9a15eb516dffa5f3a731dd00bb0aecbfe2bf6027e9c8e3e9",
+        "license": "CC BY-NC-SA 4.0",
+        "sourceGeneratedAt": "2026-09-21 18:01:31 UTC+8"
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：买生活用品、校内超市情况（历史学生体验）",
+      "source": "大学生活质量指北｜历史学生体验｜https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+      "sourceUrl": "https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+      "publishedAt": "",
+      "collectedAt": "2026-09-24",
+      "sourceKind": "experience",
+      "content": "历史学生体验，非学校规定：来源为《大学生活质量指北》通达学院公开问卷，当前页面列出的回答来自2024年6月至2025年6月。页面生成于2026-09-21不代表体验更新。以下不能确认2026年现状。\n受访者提到校内超市能购买基本生活用品，部分提到便利店配送；对数量和价格评价不一致。不能据此确定当前门店、配送服务、营业时间或商品价格。\n整理与采集日期：2026-09-24。原文链接：https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/\n来源署名：大学生活质量指北及匿名问卷贡献者。原页面许可CC BY-NC-SA 4.0；本条为摘要改写，沿用该许可：https://creativecommons.org/licenses/by-nc-sa/4.0/ 。未收录答卷编号或个人身份。",
+      "questions": [
+        "学校超市能买生活用品吗",
+        "通达有没有便利店"
+      ],
+      "verification": {
+        "method": "完整公开HTML已读取；日期对应2024—2025问卷而非2026页面生成时间；保留冲突与不确定性",
+        "file": "work/campus-community/tongda.html",
+        "sha256": "0b410d1f155f0c9d9a15eb516dffa5f3a731dd00bb0aecbfe2bf6027e9c8e3e9",
+        "license": "CC BY-NC-SA 4.0",
+        "sourceGeneratedAt": "2026-09-21 18:01:31 UTC+8"
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：外卖在哪里取、能否送到宿舍（历史学生体验）",
+      "source": "大学生活质量指北｜历史学生体验｜https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+      "sourceUrl": "https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+      "publishedAt": "",
+      "collectedAt": "2026-09-24",
+      "sourceKind": "experience",
+      "content": "历史学生体验，非学校规定：来源为《大学生活质量指北》通达学院公开问卷，当前页面列出的回答来自2024年6月至2025年6月。页面生成于2026-09-21不代表体验更新。以下不能确认2026年现状。\n部分受访者提到宿舍楼下或大厅的外卖柜，也有人提到部分订单需到西门取。不能保证所有商家均送楼下；下单前应核对订单配送范围和取餐位置，现行进校规则以学校通知为准。\n整理与采集日期：2026-09-24。原文链接：https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/\n来源署名：大学生活质量指北及匿名问卷贡献者。原页面许可CC BY-NC-SA 4.0；本条为摘要改写，沿用该许可：https://creativecommons.org/licenses/by-nc-sa/4.0/ 。未收录答卷编号或个人身份。",
+      "questions": [
+        "通达外卖在哪里拿",
+        "外卖能送到宿舍楼下吗"
+      ],
+      "verification": {
+        "method": "完整公开HTML已读取；日期对应2024—2025问卷而非2026页面生成时间；保留冲突与不确定性",
+        "file": "work/campus-community/tongda.html",
+        "sha256": "0b410d1f155f0c9d9a15eb516dffa5f3a731dd00bb0aecbfe2bf6027e9c8e3e9",
+        "license": "CC BY-NC-SA 4.0",
+        "sourceGeneratedAt": "2026-09-21 18:01:31 UTC+8"
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：宿舍洗衣机怎么找（历史学生体验）",
+      "source": "大学生活质量指北｜历史学生体验｜https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+      "sourceUrl": "https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+      "publishedAt": "",
+      "collectedAt": "2026-09-24",
+      "sourceKind": "experience",
+      "content": "历史学生体验，非学校规定：来源为《大学生活质量指北》通达学院公开问卷，当前页面列出的回答来自2024年6月至2025年6月。页面生成于2026-09-21不代表体验更新。以下不能确认2026年现状。\n多位受访者提到宿舍楼有洗衣机，其中一人明确提到付费使用。未核实每栋楼的设备位置、费用和运行状态，应向本楼宿管确认；不能保证每层都有或当前可用。\n整理与采集日期：2026-09-24。原文链接：https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/\n来源署名：大学生活质量指北及匿名问卷贡献者。原页面许可CC BY-NC-SA 4.0；本条为摘要改写，沿用该许可：https://creativecommons.org/licenses/by-nc-sa/4.0/ 。未收录答卷编号或个人身份。",
+      "questions": [
+        "宿舍有没有洗衣机",
+        "学校洗衣服去哪"
+      ],
+      "verification": {
+        "method": "完整公开HTML已读取；日期对应2024—2025问卷而非2026页面生成时间；保留冲突与不确定性",
+        "file": "work/campus-community/tongda.html",
+        "sha256": "0b410d1f155f0c9d9a15eb516dffa5f3a731dd00bb0aecbfe2bf6027e9c8e3e9",
+        "license": "CC BY-NC-SA 4.0",
+        "sourceGeneratedAt": "2026-09-21 18:01:31 UTC+8"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "cc35dca2-c8d1-473a-a9a4-4ab7b68809ef",
+      "title": "通达学院：快递在哪拿、是否送上门（历史学生体验）",
+      "agent": "life"
+    },
+    {
+      "id": "6a2bc3b7-e076-4d99-a9da-eb1964dc435e",
+      "title": "通达学院：买生活用品、校内超市情况（历史学生体验）",
+      "agent": "life"
+    },
+    {
+      "id": "7d2d74e2-ab6c-424b-9dd6-9d9c70a1827b",
+      "title": "通达学院：外卖在哪里取、能否送到宿舍（历史学生体验）",
+      "agent": "life"
+    },
+    {
+      "id": "dc155c8d-06f3-48d6-a291-33dec75ea4c6",
+      "title": "通达学院：宿舍洗衣机怎么找（历史学生体验）",
+      "agent": "life"
+    }
+  ],
+  "offlined": [],
+  "added": 4,
+  "totalDocs": 271,
+  "approvedByAgent": {
+    "life": 37,
+    "study": 78,
+    "affairs": 94,
+    "freshman": 0
+  }
+}

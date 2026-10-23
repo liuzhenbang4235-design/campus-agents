@@ -1,0 +1,1626 @@
+{
+  "checkedAt": "2026-09-23T15:44:01.007Z",
+  "scope": "4个院系下载栏目及完整分页、教务学生常用表格两页、3个重点附件页；非全站爬取。",
+  "pageLimit": 25,
+  "uniqueHtmlPagesRead": 11,
+  "previouslyDownloadedPagesRead": 4,
+  "newHtmlPagesFetched": 7,
+  "attachmentsDownloaded": 5,
+  "approvedDocsCompared": 156,
+  "sourceInventory": "outputs/campus-agent/imports/source-inventory.json",
+  "priorCollegeReview": "outputs/campus-agent/imports/campus-colleges-review.json",
+  "pagination": [
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "title": "通信下载专区",
+      "pages": 2,
+      "totalItems": 15,
+      "checkedPages": [
+        1,
+        2
+      ],
+      "conclusion": "第2页唯一项目为自主编级旧表，已有2026新版入口；无第三页。"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "title": "电子学生专区",
+      "pages": 1,
+      "totalItems": 8,
+      "checkedPages": [
+        1
+      ],
+      "conclusion": "下一页为javascript:void(0)，总页数1；核心附件已定位。"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "title": "计算机下载中心",
+      "pages": 1,
+      "totalItems": 7,
+      "checkedPages": [
+        1
+      ],
+      "conclusion": "总页数1，所列均为已覆盖同主题旧表。"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dqgcxy/1022/list.htm",
+      "title": "电气下载中心",
+      "pages": 1,
+      "totalItems": 4,
+      "checkedPages": [
+        1
+      ],
+      "conclusion": "总页数1，所列均为住宿、学生证、勤工助学同主题旧表。"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "title": "教务处学生常用表格",
+      "pages": 2,
+      "totalItems": 20,
+      "checkedPages": [
+        1,
+        2
+      ],
+      "conclusion": "第2页6项多为直接附件链接；已补上清单，发现证明书补办和回校重修两项空表。"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/521/list.htm",
+      "title": "教务处学籍管理",
+      "pages": 5,
+      "totalItems": 67,
+      "checkedPages": [
+        1
+      ],
+      "conclusion": "仅为核对新学期回校重修窗口读首屏；未见2026-2027第一学期通知，未读历史分页和学籍个人名单。"
+    }
+  ],
+  "items": [
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26161/page.htm",
+      "title": "学生宿舍调整申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "9ea72e5d-8de0-4fa0-b0c9-a79ae8ab066d"
+      ],
+      "existingTitles": [
+        "通达学院：校内调换宿舍流程（2025版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "9ea72e5d-8de0-4fa0-b0c9-a79ae8ab066d"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26159/page.htm",
+      "title": "学生校外住宿申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "a7791ab4-0f73-4976-8ef3-cdda9dc9e901",
+        "bdafae7d-e0fa-48fb-880d-50f6a7e7801f"
+      ],
+      "existingTitles": [
+        "通达学院：校外住宿申请流程（2025版）",
+        "通达学院：校外住宿条件与办理时间（2025版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "a7791ab4-0f73-4976-8ef3-cdda9dc9e901",
+        "bdafae7d-e0fa-48fb-880d-50f6a7e7801f"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26158/page.htm",
+      "title": "学费缓交申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P1",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "36a10e4f-f293-4f2a-978c-19703ef39c98"
+      ],
+      "existingTitles": [
+        "通达学院：学费缓交申请的材料与审批栏（2022公开版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [],
+      "previousTitles": [],
+      "documentIds": [
+        "36a10e4f-f293-4f2a-978c-19703ef39c98"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_ready"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26157/page.htm",
+      "title": "勤工助学岗位申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "2dcd8ebc-5bcf-4581-b655-c3f111d66a31",
+        "4bda53e9-7912-4b4e-ad86-e145d26d21af",
+        "dfeb3e12-236f-427d-b4ac-77da0f1a021b"
+      ],
+      "existingTitles": [
+        "通达学院：勤工助学岗位如何申请",
+        "通达学院：2025版勤工助学岗位申请表下载入口",
+        "通达学院：勤工助学岗前培训、酬金和工作安排（2019版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "2dcd8ebc-5bcf-4581-b655-c3f111d66a31",
+        "4bda53e9-7912-4b4e-ad86-e145d26d21af",
+        "dfeb3e12-236f-427d-b4ac-77da0f1a021b"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26162/page.htm",
+      "title": "学生证补换证申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "72f87a1a-b803-4ed2-adff-8778498fd129",
+        "ff583b6a-8790-42ae-be3c-7eac2a19bd31"
+      ],
+      "existingTitles": [
+        "通达学院：学生证补办（2025版官网摘要）",
+        "通达学院：学生事务中心位置与学生证补办时段"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "72f87a1a-b803-4ed2-adff-8778498fd129",
+        "ff583b6a-8790-42ae-be3c-7eac2a19bd31"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26148/page.htm",
+      "title": "转专业申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "159c3b7c-ee94-466b-9478-764e93c4e489",
+        "d05edcfc-aeaf-4880-99cb-6309eb4714b2"
+      ],
+      "existingTitles": [
+        "通达学院：转专业申请表填写、家长材料及版本差异（2023旧表）",
+        "通达学院：2026级新生转专业条件的招生FAQ说明"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "c9708f43-09e7-4031-8eec-4ac8f3435f0a",
+        "d05edcfc-aeaf-4880-99cb-6309eb4714b2"
+      ],
+      "previousTitles": [
+        "通达学院：学生转专业申请表（20230426）下载入口",
+        "通达学院：2026级新生转专业条件的招生FAQ说明"
+      ],
+      "documentIds": [
+        "159c3b7c-ee94-466b-9478-764e93c4e489",
+        "d05edcfc-aeaf-4880-99cb-6309eb4714b2"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26147/page.htm",
+      "title": "一般事务申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "00a1c8f9-333c-4137-a994-e98d0740bd22"
+      ],
+      "existingTitles": [
+        "通达学院：一般事务申请表适用事项与填写要求（2024版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "00a1c8f9-333c-4137-a994-e98d0740bd22"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26146/page.htm",
+      "title": "学生缓考申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "c26204db-8364-49fb-b07d-5a228b887349",
+        "d0b27eaf-c98a-483c-81de-81cc68152937",
+        "a2ff4857-e620-4dcf-b992-726c8f4d5aac"
+      ],
+      "existingTitles": [
+        "通达学院：因病申请缓考（考试规定第十一条）",
+        "通达学院：缓考申请表下载、填写和考前办理要求（2024版）",
+        "通达学院：缓考指南版本差异，比赛或亲属突发情况需先确认"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "c26204db-8364-49fb-b07d-5a228b887349",
+        "d0b27eaf-c98a-483c-81de-81cc68152937",
+        "a2ff4857-e620-4dcf-b992-726c8f4d5aac"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26145/page.htm",
+      "title": "学生办理出国成绩单申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "466326bd-50cf-4959-98df-62fdab5a4436"
+      ],
+      "existingTitles": [
+        "通达学院：出国中英文成绩单、均分和排名证明申请（2022版）"
+      ],
+      "previousInventoryStatus": "imported",
+      "documentIds": [
+        "466326bd-50cf-4959-98df-62fdab5a4436"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26144/page.htm",
+      "title": "休学申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "7e11440e-ad67-4128-81fb-dd67a36e8b76"
+      ],
+      "existingTitles": [
+        "通达学院：休学申请材料与已考课程成绩保留（2026版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "6abdaf3b-4291-4554-a8ae-d9bdf51a63d2"
+      ],
+      "previousTitles": [
+        "通达学院：学生休学申请表（20260310）下载入口"
+      ],
+      "documentIds": [
+        "7e11440e-ad67-4128-81fb-dd67a36e8b76"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26143/page.htm",
+      "title": "退学审批表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "d14629d1-6ec9-47d5-9885-076dc7b2e19f"
+      ],
+      "existingTitles": [
+        "通达学院：本人申请退学所需材料与离校手续（2026版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "5880df43-82f9-4fdf-9482-198b93139c24"
+      ],
+      "previousTitles": [
+        "通达学院：本科学生自动退学审批表（20260310）下载入口"
+      ],
+      "documentIds": [
+        "d14629d1-6ec9-47d5-9885-076dc7b2e19f"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26142/page.htm",
+      "title": "退选课程申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P3",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "727e0922-aa64-4924-887e-5d903f7441b3"
+      ],
+      "existingTitles": [
+        "通达学院：退选课程申请表填写项与审批栏（2022公开版）"
+      ],
+      "previousInventoryStatus": "imported",
+      "previousDocumentIds": [
+        "300341d6-57de-41e5-a910-86644193a7f0"
+      ],
+      "previousTitles": [
+        "通达学院：退选课程申请表下载入口（2022版未解析）"
+      ],
+      "documentIds": [
+        "727e0922-aa64-4924-887e-5d903f7441b3"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "assigned_to_root"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26141/page.htm",
+      "title": "提前修读课程申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "b494db3e-380d-4482-8965-b9be20e3c5f5"
+      ],
+      "existingTitles": [
+        "通达学院：提前修读课程申请表和选课提醒（2022版）"
+      ],
+      "previousInventoryStatus": "imported",
+      "documentIds": [
+        "b494db3e-380d-4482-8965-b9be20e3c5f5"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26140/page.htm",
+      "title": "复学申请表",
+      "sourceColumn": "下载专区（telecom-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "4875048d-4c27-4b57-9208-086c99b69aef"
+      ],
+      "existingTitles": [
+        "通达学院：休学期满复学的材料、选课与手续（2026版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "2384f454-85b4-488a-84ab-79a60a8214ce"
+      ],
+      "previousTitles": [
+        "通达学院：学生复学申请表（新）下载入口"
+      ],
+      "documentIds": [
+        "4875048d-4c27-4b57-9208-086c99b69aef"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26498/page.htm",
+      "title": "毕业设计（论文）相关文件和表格",
+      "sourceColumn": "学生专区（electronic-student）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "reasonNotCovered": "本轮核对RAR目录，含2013届规定、root处理的两种申请表和两份未解析的选题/检查表；不能把此包当最新毕设指南。",
+      "status": "archive_inventory_read",
+      "priority": "P2",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [],
+      "existingTitles": [],
+      "previousInventoryStatus": null
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26497/page.htm",
+      "title": "南京邮电大学通达学院毕业设计更换导师申请表",
+      "sourceColumn": "学生专区（electronic-student）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P3",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "2a2518b8-b7cf-44d0-a15e-4ca5110656c5"
+      ],
+      "existingTitles": [
+        "通达学院：毕设更换导师申请事由、意见栏和份数（2022公开版）"
+      ],
+      "previousInventoryStatus": "imported",
+      "previousDocumentIds": [
+        "f038ce43-d057-473b-ae1c-3776a05666c8"
+      ],
+      "previousTitles": [
+        "通达学院：毕业设计更换导师申请表入口（2022版未解析）"
+      ],
+      "documentIds": [
+        "2a2518b8-b7cf-44d0-a15e-4ca5110656c5"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "assigned_to_root"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26496/page.htm",
+      "title": "南京邮电大学通达学院学生外出毕业设计申请表",
+      "sourceColumn": "学生专区（electronic-student）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P3",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+      ],
+      "existingTitles": [
+        "通达学院：外出毕设申请材料、校内导师意见及打印要求（2022公开版）"
+      ],
+      "previousInventoryStatus": "imported",
+      "previousDocumentIds": [
+        "5471f978-befc-4743-ad83-77b35ea79edc"
+      ],
+      "previousTitles": [
+        "通达学院：到校外做毕业设计的申请表入口（2022版未解析）"
+      ],
+      "documentIds": [
+        "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "assigned_to_root"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26495/page.htm",
+      "title": "通达学院自主个性化学习分一览表",
+      "sourceColumn": "学生专区（electronic-student）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P2",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "ea311b49-be80-4d98-957d-624edccc3da6"
+      ],
+      "existingTitles": [
+        "通达学院：自主个性化学习分旧表与认定咨询（2022公开版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [],
+      "previousTitles": [],
+      "documentIds": [
+        "ea311b49-be80-4d98-957d-624edccc3da6"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_historical_only"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26484/page.htm",
+      "title": "南京邮电大学通达学院勤工助学岗位申请表",
+      "sourceColumn": "学生专区（electronic-student）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "2dcd8ebc-5bcf-4581-b655-c3f111d66a31",
+        "4bda53e9-7912-4b4e-ad86-e145d26d21af",
+        "dfeb3e12-236f-427d-b4ac-77da0f1a021b"
+      ],
+      "existingTitles": [
+        "通达学院：勤工助学岗位如何申请",
+        "通达学院：2025版勤工助学岗位申请表下载入口",
+        "通达学院：勤工助学岗前培训、酬金和工作安排（2019版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "2dcd8ebc-5bcf-4581-b655-c3f111d66a31",
+        "4bda53e9-7912-4b4e-ad86-e145d26d21af",
+        "dfeb3e12-236f-427d-b4ac-77da0f1a021b"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26483/page.htm",
+      "title": "南京邮电大学通达学院学生申请校外住宿审批表",
+      "sourceColumn": "学生专区（electronic-student）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "a7791ab4-0f73-4976-8ef3-cdda9dc9e901",
+        "bdafae7d-e0fa-48fb-880d-50f6a7e7801f"
+      ],
+      "existingTitles": [
+        "通达学院：校外住宿申请流程（2025版）",
+        "通达学院：校外住宿条件与办理时间（2025版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "a7791ab4-0f73-4976-8ef3-cdda9dc9e901",
+        "bdafae7d-e0fa-48fb-880d-50f6a7e7801f"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26482/page.htm",
+      "title": "南京邮电大学通达学院学生宿舍调整申请表",
+      "sourceColumn": "学生专区（electronic-student）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "9ea72e5d-8de0-4fa0-b0c9-a79ae8ab066d"
+      ],
+      "existingTitles": [
+        "通达学院：校内调换宿舍流程（2025版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "9ea72e5d-8de0-4fa0-b0c9-a79ae8ab066d"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26481/page.htm",
+      "title": "南京邮电大学通达学院学生证补换证申请表",
+      "sourceColumn": "学生专区（electronic-student）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "72f87a1a-b803-4ed2-adff-8778498fd129",
+        "ff583b6a-8790-42ae-be3c-7eac2a19bd31"
+      ],
+      "existingTitles": [
+        "通达学院：学生证补办（2025版官网摘要）",
+        "通达学院：学生事务中心位置与学生证补办时段"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "72f87a1a-b803-4ed2-adff-8778498fd129",
+        "ff583b6a-8790-42ae-be3c-7eac2a19bd31"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2022/0419/c960a26351/page.htm",
+      "title": "通达学院学生校外住宿申请表",
+      "sourceColumn": "下载中心（computer-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "a7791ab4-0f73-4976-8ef3-cdda9dc9e901",
+        "bdafae7d-e0fa-48fb-880d-50f6a7e7801f"
+      ],
+      "existingTitles": [
+        "通达学院：校外住宿申请流程（2025版）",
+        "通达学院：校外住宿条件与办理时间（2025版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "a7791ab4-0f73-4976-8ef3-cdda9dc9e901",
+        "bdafae7d-e0fa-48fb-880d-50f6a7e7801f"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2022/0419/c960a26348/page.htm",
+      "title": "一般事务申请表",
+      "sourceColumn": "下载中心（computer-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "00a1c8f9-333c-4137-a994-e98d0740bd22"
+      ],
+      "existingTitles": [
+        "通达学院：一般事务申请表适用事项与填写要求（2024版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "00a1c8f9-333c-4137-a994-e98d0740bd22"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2022/0419/c960a26349/page.htm",
+      "title": "学生缓考申请表",
+      "sourceColumn": "下载中心（computer-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "c26204db-8364-49fb-b07d-5a228b887349",
+        "d0b27eaf-c98a-483c-81de-81cc68152937",
+        "a2ff4857-e620-4dcf-b992-726c8f4d5aac"
+      ],
+      "existingTitles": [
+        "通达学院：因病申请缓考（考试规定第十一条）",
+        "通达学院：缓考申请表下载、填写和考前办理要求（2024版）",
+        "通达学院：缓考指南版本差异，比赛或亲属突发情况需先确认"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "c26204db-8364-49fb-b07d-5a228b887349",
+        "d0b27eaf-c98a-483c-81de-81cc68152937",
+        "a2ff4857-e620-4dcf-b992-726c8f4d5aac"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2022/0419/c960a26344/page.htm",
+      "title": "南京邮电大学学生退选课程申请表",
+      "sourceColumn": "下载中心（computer-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "reasonNotCovered": "同主题已由2022年院系公开附件正文摘要覆盖；本条旧副本未读取正文，不声称本副本版本或字段已经验证。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "727e0922-aa64-4924-887e-5d903f7441b3"
+      ],
+      "existingTitles": [
+        "通达学院：退选课程申请表填写项与审批栏（2022公开版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "300341d6-57de-41e5-a910-86644193a7f0"
+      ],
+      "previousTitles": [
+        "通达学院：退选课程申请表下载入口（2022版未解析）"
+      ],
+      "documentIds": [
+        "727e0922-aa64-4924-887e-5d903f7441b3"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "same_topic_reference_only",
+      "thisCopyParsed": false,
+      "previousStatus": "assigned_to_root"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2022/0419/c960a26345/page.htm",
+      "title": "南京邮电大学通达学院学生休学申请表",
+      "sourceColumn": "下载中心（computer-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "7e11440e-ad67-4128-81fb-dd67a36e8b76"
+      ],
+      "existingTitles": [
+        "通达学院：休学申请材料与已考课程成绩保留（2026版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "6abdaf3b-4291-4554-a8ae-d9bdf51a63d2"
+      ],
+      "previousTitles": [
+        "通达学院：学生休学申请表（20260310）下载入口"
+      ],
+      "documentIds": [
+        "7e11440e-ad67-4128-81fb-dd67a36e8b76"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2022/0419/c960a26346/page.htm",
+      "title": "南京邮电大学通达学院学生退学审批表",
+      "sourceColumn": "下载中心（computer-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "d14629d1-6ec9-47d5-9885-076dc7b2e19f"
+      ],
+      "existingTitles": [
+        "通达学院：本人申请退学所需材料与离校手续（2026版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "5880df43-82f9-4fdf-9482-198b93139c24"
+      ],
+      "previousTitles": [
+        "通达学院：本科学生自动退学审批表（20260310）下载入口"
+      ],
+      "documentIds": [
+        "d14629d1-6ec9-47d5-9885-076dc7b2e19f"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2022/0419/c960a26347/page.htm",
+      "title": "南京邮电大学通达学院学生复学申请表",
+      "sourceColumn": "下载中心（computer-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "4875048d-4c27-4b57-9208-086c99b69aef"
+      ],
+      "existingTitles": [
+        "通达学院：休学期满复学的材料、选课与手续（2026版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "2384f454-85b4-488a-84ab-79a60a8214ce"
+      ],
+      "previousTitles": [
+        "通达学院：学生复学申请表（新）下载入口"
+      ],
+      "documentIds": [
+        "4875048d-4c27-4b57-9208-086c99b69aef"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dqgcxy/2022/0420/c1023a26396/page.htm",
+      "title": "通达学院学生宿舍调整申请表（2021）",
+      "sourceColumn": "下载中心（electric-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dqgcxy/1022/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "9ea72e5d-8de0-4fa0-b0c9-a79ae8ab066d"
+      ],
+      "existingTitles": [
+        "通达学院：校内调换宿舍流程（2025版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "9ea72e5d-8de0-4fa0-b0c9-a79ae8ab066d"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dqgcxy/2022/0420/c1023a26395/page.htm",
+      "title": "通达学院学生证补换证申请表(2021)",
+      "sourceColumn": "下载中心（electric-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dqgcxy/1022/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "72f87a1a-b803-4ed2-adff-8778498fd129",
+        "ff583b6a-8790-42ae-be3c-7eac2a19bd31"
+      ],
+      "existingTitles": [
+        "通达学院：学生证补办（2025版官网摘要）",
+        "通达学院：学生事务中心位置与学生证补办时段"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "72f87a1a-b803-4ed2-adff-8778498fd129",
+        "ff583b6a-8790-42ae-be3c-7eac2a19bd31"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dqgcxy/2022/0420/c1023a26394/page.htm",
+      "title": "南京邮电大学勤工助学岗位申请表（2021)",
+      "sourceColumn": "下载中心（electric-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dqgcxy/1022/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "2dcd8ebc-5bcf-4581-b655-c3f111d66a31",
+        "4bda53e9-7912-4b4e-ad86-e145d26d21af",
+        "dfeb3e12-236f-427d-b4ac-77da0f1a021b"
+      ],
+      "existingTitles": [
+        "通达学院：勤工助学岗位如何申请",
+        "通达学院：2025版勤工助学岗位申请表下载入口",
+        "通达学院：勤工助学岗前培训、酬金和工作安排（2019版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "2dcd8ebc-5bcf-4581-b655-c3f111d66a31",
+        "4bda53e9-7912-4b4e-ad86-e145d26d21af",
+        "dfeb3e12-236f-427d-b4ac-77da0f1a021b"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/dqgcxy/2022/0420/c1023a26393/page.htm",
+      "title": "通达学院学生校外住宿申请表202109",
+      "sourceColumn": "下载中心（electric-download）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/dqgcxy/1022/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "a7791ab4-0f73-4976-8ef3-cdda9dc9e901",
+        "bdafae7d-e0fa-48fb-880d-50f6a7e7801f"
+      ],
+      "existingTitles": [
+        "通达学院：校外住宿申请流程（2025版）",
+        "通达学院：校外住宿条件与办理时间（2025版）"
+      ],
+      "previousInventoryStatus": null,
+      "documentIds": [
+        "a7791ab4-0f73-4976-8ef3-cdda9dc9e901",
+        "bdafae7d-e0fa-48fb-880d-50f6a7e7801f"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26150/page.htm",
+      "title": "自主编级审批表",
+      "sourceColumn": "下载专区（telecom-download-2）",
+      "sourceColumnUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list2.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "57235d4a-cbf0-407a-b9c5-b770116a556a"
+      ],
+      "existingTitles": [
+        "通达学院：自主编（跳）级申请及家长材料（2026版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "1df2d90d-706d-4268-bc1f-6be023abc37a"
+      ],
+      "previousTitles": [
+        "通达学院：自主编（跳）级申请表（新）下载入口"
+      ],
+      "documentIds": [
+        "57235d4a-cbf0-407a-b9c5-b770116a556a"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c337a50224/page.htm",
+      "title": "南京邮电大学通达学院学生毕业申请表（新）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P1",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "ed657bb1-1c37-42f5-98b4-921d634bc98f"
+      ],
+      "existingTitles": [
+        "通达学院：未在首批获得双证的学生毕业申请表（2026版）"
+      ],
+      "previousInventoryStatus": "covered",
+      "previousCoverageStatus": "entry_only_attachment_unread",
+      "replacementBatchFile": "work/campus-core-forms-replacements.json",
+      "replacementTitle": "通达学院：未在首批获得双证的学生毕业申请表（2026版）",
+      "parsedEvidenceFile": "work/campus-frontier/core-form-1.text.txt",
+      "keyLimitations": [
+        "不能当作全体毕业生通用申请要求",
+        "不含当前批次截止日或学位合格数值"
+      ],
+      "previousDocumentIds": [
+        "5dc55ee9-0243-48db-8398-20c5a94eed81"
+      ],
+      "previousTitles": [
+        "通达学院：学生毕业申请表（新）下载入口"
+      ],
+      "documentIds": [
+        "ed657bb1-1c37-42f5-98b4-921d634bc98f"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_pending_import"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c337a50223/page.htm",
+      "title": "南京邮电大学通达学院学生提前毕业（结业）申请表（新）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P1",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "2140e9e6-fa6d-4b8f-b544-b3cd29fb2c00"
+      ],
+      "existingTitles": [
+        "通达学院：提前毕业（结业）申请填写与成绩核查（2026版）"
+      ],
+      "previousInventoryStatus": "covered",
+      "previousCoverageStatus": "entry_only_attachment_unread",
+      "replacementBatchFile": "work/campus-core-forms-replacements.json",
+      "replacementTitle": "通达学院：提前毕业（结业）申请填写与成绩核查（2026版）",
+      "parsedEvidenceFile": "work/campus-frontier/core-form-2.text.txt",
+      "keyLimitations": [
+        "未提供最低在校年限或合格数值",
+        "未提供当期申请窗口"
+      ],
+      "previousDocumentIds": [
+        "afcd822a-4766-417a-944c-de984a79a947"
+      ],
+      "previousTitles": [
+        "通达学院：学生提前毕业（结业）申请表（新）下载入口"
+      ],
+      "documentIds": [
+        "2140e9e6-fa6d-4b8f-b544-b3cd29fb2c00"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_pending_import"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c337a50222/page.htm",
+      "title": "南京邮电大学通达学院自主编（跳）级申请表（新）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P1",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "57235d4a-cbf0-407a-b9c5-b770116a556a"
+      ],
+      "existingTitles": [
+        "通达学院：自主编（跳）级申请及家长材料（2026版）"
+      ],
+      "previousInventoryStatus": "covered",
+      "previousCoverageStatus": "entry_only_attachment_unread",
+      "replacementBatchFile": "work/campus-core-forms-replacements.json",
+      "replacementTitle": "通达学院：自主编（跳）级申请及家长材料（2026版）",
+      "parsedEvidenceFile": "work/campus-frontier/core-form-3.text.txt",
+      "keyLimitations": [
+        "不推定编级资格或实际编入班级",
+        "未提供当期截止日"
+      ],
+      "previousDocumentIds": [
+        "1df2d90d-706d-4268-bc1f-6be023abc37a"
+      ],
+      "previousTitles": [
+        "通达学院：自主编（跳）级申请表（新）下载入口"
+      ],
+      "documentIds": [
+        "57235d4a-cbf0-407a-b9c5-b770116a556a"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_pending_import"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c337a50221/page.htm",
+      "title": "南京邮电大学通达学院学生复学申请表（新）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P1",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "4875048d-4c27-4b57-9208-086c99b69aef"
+      ],
+      "existingTitles": [
+        "通达学院：休学期满复学的材料、选课与手续（2026版）"
+      ],
+      "previousInventoryStatus": "covered",
+      "previousCoverageStatus": "entry_only_attachment_unread",
+      "replacementBatchFile": "work/campus-core-forms-replacements.json",
+      "replacementTitle": "通达学院：休学期满复学的材料、选课与手续（2026版）",
+      "parsedEvidenceFile": "work/campus-frontier/core-form-4.text.txt",
+      "keyLimitations": [
+        "非因病休学复查要求需向部门确认",
+        "就餐卡、借书证等旧称不代表当前新增办卡要求"
+      ],
+      "previousDocumentIds": [
+        "2384f454-85b4-488a-84ab-79a60a8214ce"
+      ],
+      "previousTitles": [
+        "通达学院：学生复学申请表（新）下载入口"
+      ],
+      "documentIds": [
+        "4875048d-4c27-4b57-9208-086c99b69aef"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_pending_import"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0311/c337a48646/page.htm",
+      "title": "南京邮电大学通达学院本科学生自动退学审批表（20260310）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P1",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "d14629d1-6ec9-47d5-9885-076dc7b2e19f"
+      ],
+      "existingTitles": [
+        "通达学院：本人申请退学所需材料与离校手续（2026版）"
+      ],
+      "previousInventoryStatus": "covered",
+      "previousCoverageStatus": "entry_only_attachment_unread",
+      "replacementBatchFile": "work/campus-core-forms-replacements.json",
+      "replacementTitle": "通达学院：本人申请退学所需材料与离校手续（2026版）",
+      "parsedEvidenceFile": "work/campus-frontier/core-form-5.text.txt",
+      "keyLimitations": [
+        "填表不表示退学已经生效",
+        "不得将仅退学办理项目套用于休学"
+      ],
+      "previousDocumentIds": [
+        "5880df43-82f9-4fdf-9482-198b93139c24"
+      ],
+      "previousTitles": [
+        "通达学院：本科学生自动退学审批表（20260310）下载入口"
+      ],
+      "documentIds": [
+        "d14629d1-6ec9-47d5-9885-076dc7b2e19f"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_pending_import"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0311/c337a48645/page.htm",
+      "title": "南京邮电大学通达学院学生休学申请表（20260310）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P1",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "7e11440e-ad67-4128-81fb-dd67a36e8b76"
+      ],
+      "existingTitles": [
+        "通达学院：休学申请材料与已考课程成绩保留（2026版）"
+      ],
+      "previousInventoryStatus": "covered",
+      "previousCoverageStatus": "entry_only_attachment_unread",
+      "replacementBatchFile": "work/campus-core-forms-replacements.json",
+      "replacementTitle": "通达学院：休学申请材料与已考课程成绩保留（2026版）",
+      "parsedEvidenceFile": "work/campus-frontier/core-form-6.text.txt",
+      "keyLimitations": [
+        "表格原因选项不代表资格或获批",
+        "仅退学办理的通知单行不适用于所有休学学生"
+      ],
+      "previousDocumentIds": [
+        "6abdaf3b-4291-4554-a8ae-d9bdf51a63d2"
+      ],
+      "previousTitles": [
+        "通达学院：学生休学申请表（20260310）下载入口"
+      ],
+      "documentIds": [
+        "7e11440e-ad67-4128-81fb-dd67a36e8b76"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_pending_import"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/1219/c337a42471/page.htm",
+      "title": "南京邮电大学通达学院2025届本科毕业设计（论文）工作规定（文学类、经济学类、管理学类）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "与既有清单相同的2025届规则/模板，不适用当前届；未重新下载。",
+      "status": "outdated_cohort",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [],
+      "existingTitles": [],
+      "previousInventoryStatus": "expired_or_news"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/1219/c337a42470/page.htm",
+      "title": "南京邮电大学通达学院2025届本科毕业设计（论文）工作规定（工学类）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "与既有清单相同的2025届规则/模板，不适用当前届；未重新下载。",
+      "status": "outdated_cohort",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [],
+      "existingTitles": [],
+      "previousInventoryStatus": "expired_or_news"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/1219/c337a42463/page.htm",
+      "title": "2025届毕业设计(论文)模板(文学类、经济学类、管理学类)",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "与既有清单相同的2025届规则/模板，不适用当前届；未重新下载。",
+      "status": "outdated_cohort",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [],
+      "existingTitles": [],
+      "previousInventoryStatus": "expired_or_news"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/1219/c337a42462/page.htm",
+      "title": "2025届毕业设计(论文)模板(工学类)",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "与既有清单相同的2025届规则/模板，不适用当前届；未重新下载。",
+      "status": "outdated_cohort",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [],
+      "existingTitles": [],
+      "previousInventoryStatus": "expired_or_news"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/0927/c337a41494/page.htm",
+      "title": "南京邮电大学通达学院学生一般事务申请表",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "00a1c8f9-333c-4137-a994-e98d0740bd22"
+      ],
+      "existingTitles": [
+        "通达学院：一般事务申请表适用事项与填写要求（2024版）"
+      ],
+      "previousInventoryStatus": "covered",
+      "documentIds": [
+        "00a1c8f9-333c-4137-a994-e98d0740bd22"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/0906/c337a41322/page.htm",
+      "title": "南京邮电大学通达学院学生缓考申请表",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "同主题已由下列已审核条目或较新版处理；本轮不重复下载旧院系副本。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "d0b27eaf-c98a-483c-81de-81cc68152937",
+        "a2ff4857-e620-4dcf-b992-726c8f4d5aac"
+      ],
+      "existingTitles": [
+        "通达学院：缓考申请表下载、填写和考前办理要求（2024版）",
+        "通达学院：缓考指南版本差异，比赛或亲属突发情况需先确认"
+      ],
+      "previousInventoryStatus": "imported",
+      "documentIds": [
+        "d0b27eaf-c98a-483c-81de-81cc68152937",
+        "a2ff4857-e620-4dcf-b992-726c8f4d5aac"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2023/0427/c337a35658/page.htm",
+      "title": "南京邮电大学通达学院学生转专业申请表（20230426）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P2",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "159c3b7c-ee94-466b-9478-764e93c4e489"
+      ],
+      "existingTitles": [
+        "通达学院：转专业申请表填写、家长材料及版本差异（2023旧表）"
+      ],
+      "previousInventoryStatus": "covered",
+      "previousCoverageStatus": "entry_only_attachment_unread",
+      "replacementBatchFile": "work/campus-core-forms-replacements.json",
+      "replacementTitle": "通达学院：转专业申请表填写、家长材料及版本差异（2023旧表）",
+      "parsedEvidenceFile": "work/campus-frontier/core-form-7.text.txt",
+      "keyLimitations": [
+        "2023旧表一般5月不代表当前窗口",
+        "排名字段不能作为2026级转出门槛",
+        "FAQ日期与正文年份不一致，不能替代正式细则"
+      ],
+      "previousDocumentIds": [
+        "c9708f43-09e7-4031-8eec-4ac8f3435f0a"
+      ],
+      "previousTitles": [
+        "通达学院：学生转专业申请表（20230426）下载入口"
+      ],
+      "documentIds": [
+        "159c3b7c-ee94-466b-9478-764e93c4e489"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_pending_import"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/fa/1c/984bf9b74cdd8b362879696e6af8/9cec357f-7f17-458f-8f29-36a499f7f4f4.doc",
+      "title": "南京邮电大学通达学院本科生申请学位审批表（20200622更新）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P2",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "23fa9bd4-a93e-498a-95e4-175daf600ee1"
+      ],
+      "existingTitles": [
+        "通达学院：本科生申请学位审批表的用途与填写（2020旧表）"
+      ],
+      "previousInventoryStatus": "imported",
+      "previousCoverageStatus": "entry_only_attachment_unread",
+      "replacementBatchFile": "work/campus-core-forms-replacements.json",
+      "replacementTitle": "通达学院：本科生申请学位审批表的用途与填写（2020旧表）",
+      "parsedEvidenceFile": "work/campus-frontier/core-form-8.text.txt",
+      "keyLimitations": [
+        "旧绩点和处分情形不作为当前资格条件",
+        "未提供当前申请窗口和办结时限"
+      ],
+      "previousDocumentIds": [
+        "50f88c93-f13e-4e2d-9c69-3ca11c6a7e2b"
+      ],
+      "previousTitles": [
+        "通达学院：本科生申请学位审批表下载入口（2020版未解析）"
+      ],
+      "documentIds": [
+        "23fa9bd4-a93e-498a-95e4-175daf600ee1"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_pending_import"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/93/46/4efc59834466a6ff62ec0ba9010b/54aaa55f-ea06-46f8-b164-cab03dedd7b3.doc",
+      "title": "毕业生办理毕业证明书、学位证明书申请表（2019年4月28日更新）",
+      "sourceColumn": "学生常用表格（frontier-jwc-download-2）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list2.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P1",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "bae50226-dd55-460b-ae8a-816864c14861"
+      ],
+      "existingTitles": [
+        "通达学院：毕业证明书、学位证明书补办材料（2019公开版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [],
+      "previousTitles": [],
+      "documentIds": [
+        "bae50226-dd55-460b-ae8a-816864c14861"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_ready"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/65/24/8cb6847a4af59d3ba425a9f847a5/81a05a38-0eca-4c8a-b577-d605e4a851cf.doc",
+      "title": "南京邮电大学通达学院毕业设计更换导师申请表",
+      "sourceColumn": "学生常用表格（frontier-jwc-download-2）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list2.htm",
+      "reasonNotCovered": "同主题已由2022年院系公开附件正文摘要覆盖；本条旧副本未读取正文，不声称本副本版本或字段已经验证。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "2a2518b8-b7cf-44d0-a15e-4ca5110656c5"
+      ],
+      "existingTitles": [
+        "通达学院：毕设更换导师申请事由、意见栏和份数（2022公开版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [
+        "f038ce43-d057-473b-ae1c-3776a05666c8"
+      ],
+      "previousTitles": [
+        "通达学院：毕业设计更换导师申请表入口（2022版未解析）"
+      ],
+      "documentIds": [
+        "2a2518b8-b7cf-44d0-a15e-4ca5110656c5"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "same_topic_reference_only",
+      "thisCopyParsed": false,
+      "previousStatus": "assigned_to_root"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/e3/dd/7b232e184408b126d48266aa135e/ce4ff7a8-0450-4abd-a663-71827c16de95.doc",
+      "title": "南京邮电大学通达学院学生外出毕业设计申请表",
+      "sourceColumn": "学生常用表格（frontier-jwc-download-2）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list2.htm",
+      "reasonNotCovered": "同主题已由2022年院系公开附件正文摘要覆盖；本条旧副本未读取正文，不声称本副本版本或字段已经验证。",
+      "status": "covered_duplicate",
+      "priority": "P3",
+      "sameTopicDuplicate": true,
+      "existingDocumentIds": [
+        "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+      ],
+      "existingTitles": [
+        "通达学院：外出毕设申请材料、校内导师意见及打印要求（2022公开版）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [],
+      "previousTitles": [],
+      "documentIds": [
+        "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "same_topic_reference_only",
+      "thisCopyParsed": false,
+      "previousStatus": "assigned_to_root"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/b9/86/c92f9ce24511b939d5ed4b842c0b/f09e00a4-bfe3-4ef0-86a3-165691d3daad.doc",
+      "title": "南京邮电大学通达学院实验课程调（停）课申请表",
+      "sourceColumn": "学生常用表格（frontier-jwc-download-2）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list2.htm",
+      "reasonNotCovered": "目录标2014-09-09，题名为实验课程调停课表，可能是任课单位流程；未当成学生退课表导入。",
+      "status": "staff_form_not_read",
+      "priority": "P3",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [],
+      "existingTitles": [],
+      "previousInventoryStatus": null
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/74/65/b2f1ea3c44a98f6b490803168980/7247090e-fc5b-4f34-a488-43b250e2bc29.rar",
+      "title": "大学生科技创新文件表格汇总",
+      "sourceColumn": "学生常用表格（frontier-jwc-download-2）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list2.htm",
+      "reasonNotCovered": "目录2013-04-23历史资料包；较新的双创平台和制度已有专题，需先按当前制度查新表，未下载旧包。",
+      "status": "old_archive_not_read",
+      "priority": "P3",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [],
+      "existingTitles": [],
+      "previousInventoryStatus": null
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/fd/be/a883dbc34571800f6da12f8d94f1/7141de07-719d-4104-9778-b21d6ac882ad.doc",
+      "title": "毕业生、结业生回校重修课程申请表",
+      "sourceColumn": "学生常用表格（frontier-jwc-download-2）",
+      "sourceColumnUrl": "https://jwc.nytdc.edu.cn/337/list2.htm",
+      "reasonNotCovered": "公开附件正文摘要已审核入库，当前关联ID已用管理员只读状态核对；适用范围与历史版本限制保留在摘要中。",
+      "status": "imported",
+      "priority": "P2",
+      "sameTopicDuplicate": false,
+      "existingDocumentIds": [
+        "4ba14966-7c90-4ac2-ba1a-803310ff2500"
+      ],
+      "existingTitles": [
+        "通达学院：毕业生、结业生回校重修申请表字段（2013旧表）"
+      ],
+      "previousInventoryStatus": null,
+      "previousDocumentIds": [],
+      "previousTitles": [],
+      "documentIds": [
+        "4ba14966-7c90-4ac2-ba1a-803310ff2500"
+      ],
+      "approvedStateVerifiedAt": "2026-09-23T16:04:28.602944+00:00",
+      "coverageKind": "parsed_attachment_summary",
+      "previousStatus": "parsed_historical_only"
+    }
+  ],
+  "archive": {
+    "url": "https://www.nytdc.edu.cn/_upload/article/files/ec/f6/0b7a184848599bf92f33096088fd/8bba44c1-a42d-4ecd-9ef8-693bc02cee1f.rar",
+    "page": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26498/page.htm",
+    "listEvidence": "work/campus-frontier/archive-list.txt",
+    "members": [
+      {
+        "name": "2013届人文社科类毕业设计规定.doc",
+        "status": "outdated_cohort_not_read"
+      },
+      {
+        "name": "2013届理工类毕业设计规定.doc",
+        "status": "outdated_cohort_not_read"
+      },
+      {
+        "name": "外出毕设申请表.doc",
+        "status": "covered_duplicate",
+        "previousStatus": "duplicate_assigned_to_root_not_read",
+        "documentIds": [
+          "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+        ],
+        "reason": "同主题2022院系附件正文摘要已审核入库；该RAR内副本未读取正文，未核实其版本。",
+        "thisCopyParsed": false
+      },
+      {
+        "name": "毕业设计更换导师申请表.doc",
+        "status": "covered_duplicate",
+        "previousStatus": "duplicate_assigned_to_root_not_read",
+        "documentIds": [
+          "2a2518b8-b7cf-44d0-a15e-4ca5110656c5"
+        ],
+        "reason": "同主题2022院系附件正文摘要已审核入库；该RAR内副本未读取正文，未核实其版本。",
+        "thisCopyParsed": false
+      },
+      {
+        "name": "毕业设计选题简表.doc",
+        "status": "not_parsed",
+        "priority": "P2",
+        "reason": "仅核对包内文件名，未读字段；先核对当前毕设管理系统是否已有替代模板。"
+      },
+      {
+        "name": "毕业设计（论文）学期检查记录表.doc",
+        "status": "not_parsed",
+        "priority": "P2",
+        "reason": "仅核对包内文件名，未读字段；旧包版本不代表当前学期执行要求。"
+      }
+    ]
+  },
+  "readyBatchFile": "work/campus-extra-forms-batch.json",
+  "readyBatchCount": 0,
+  "remainingGaps": [
+    "2023转专业表与2020学位表的字段已入库，但不能证明当前各年级申请资格；现行正式条件和受理窗口仍需另核。",
+    "未找到当前届2026/2027毕设工作规定；2025届和RAR内2013届均不能替代。",
+    "自主个性化学习分当前适用标准、培养方案及学习分/课程学分转换规则未由2022旧附件证明。",
+    "教务学籍管理历史4页未遍历；已读最新首屏未发现当前重修窗口，不能证明全站没有。2013回校重修空表正文已入库。",
+    "毕设旧RAR两份选题/检查空表正文未解析，当前系统是否已有替代模板也未核实。"
+  ],
+  "privacy": "未抓教师名单、学生个人档案、校内IP或登录后数据；只读公开空白表和规则目录，未执行宏。目录中的个人名单标题未进入正文。",
+  "databaseOrAppChanged": false,
+  "statusCounts": {
+    "covered_duplicate": 32,
+    "imported": 15,
+    "archive_inventory_read": 1,
+    "outdated_cohort": 4,
+    "staff_form_not_read": 1,
+    "old_archive_not_read": 1
+  },
+  "coreFormsFollowup": {
+    "checkedAt": "2026-09-23T15:54:33.694997+00:00",
+    "scope": "仅追加阅读先前标记未读的8份核心表格，无新增栏目。",
+    "freshSourceHtmlPages": 7,
+    "previouslyReadDirectoryUsedForEighthForm": "https://jwc.nytdc.edu.cn/337/list.htm",
+    "attachmentsDownloadedAndParsed": 8,
+    "replacementBatchFile": "work/campus-core-forms-replacements.json",
+    "pendingImportCount": 0,
+    "appOrDatabaseChanged": false,
+    "verificationManifest": "work/campus-frontier/core-assets.json",
+    "importedCount": 8,
+    "importStatus": "approved",
+    "documentIds": [
+      "ed657bb1-1c37-42f5-98b4-921d634bc98f",
+      "2140e9e6-fa6d-4b8f-b544-b3cd29fb2c00",
+      "57235d4a-cbf0-407a-b9c5-b770116a556a",
+      "4875048d-4c27-4b57-9208-086c99b69aef",
+      "d14629d1-6ec9-47d5-9885-076dc7b2e19f",
+      "7e11440e-ad67-4128-81fb-dd67a36e8b76",
+      "159c3b7c-ee94-466b-9478-764e93c4e489",
+      "23fa9bd4-a93e-498a-95e4-175daf600ee1"
+    ],
+    "verifiedAt": "2026-09-23T16:04:28.602944+00:00"
+  },
+  "extraFormsImport": {
+    "batchFile": "work/campus-extra-forms-reviewed-batch.json",
+    "status": "approved",
+    "importedCount": 4,
+    "documentIds": [
+      "36a10e4f-f293-4f2a-978c-19703ef39c98",
+      "ea311b49-be80-4d98-957d-624edccc3da6",
+      "bae50226-dd55-460b-ae8a-816864c14861",
+      "4ba14966-7c90-4ac2-ba1a-803310ff2500"
+    ],
+    "verifiedAt": "2026-09-23T16:04:28.602944+00:00"
+  },
+  "legacyFormsImport": {
+    "batchFile": "work/legacy-forms-replacements.json",
+    "status": "approved",
+    "importedCount": 3,
+    "documentIds": [
+      "727e0922-aa64-4924-887e-5d903f7441b3",
+      "2a2518b8-b7cf-44d0-a15e-4ca5110656c5",
+      "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+    ],
+    "verifiedAt": "2026-09-23T16:04:28.602944+00:00"
+  },
+  "approvedStateSync": {
+    "checkedAt": "2026-09-23T16:04:28.602944+00:00",
+    "method": "独立管理员会话只读GET /api/state；没有调用action、模型或配置接口。",
+    "approvedCount": 156,
+    "matchedNewDocuments": 15,
+    "verifiedOfflineOldDocuments": 11,
+    "updatedFrontierItems": 26,
+    "oldIdReferencesReplaced": 21,
+    "pendingImportCount": 0,
+    "newExternalPagesFetched": 0,
+    "databaseOrAppChanged": false
+  },
+  "sourceInventorySyncRecommendations": [
+    {
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2022/0419/c960a26344/page.htm",
+      "title": "南京邮电大学学生退选课程申请表",
+      "status": "covered_duplicate",
+      "documentIds": [
+        "727e0922-aa64-4924-887e-5d903f7441b3"
+      ],
+      "existingDocumentIds": [
+        "727e0922-aa64-4924-887e-5d903f7441b3"
+      ],
+      "reason": "同主题已由2022年院系公开附件正文摘要覆盖；本条旧副本未读取正文，不声称本副本版本或字段已经验证。",
+      "thisCopyParsed": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/65/24/8cb6847a4af59d3ba425a9f847a5/81a05a38-0eca-4c8a-b577-d605e4a851cf.doc",
+      "title": "南京邮电大学通达学院毕业设计更换导师申请表",
+      "status": "covered_duplicate",
+      "documentIds": [
+        "2a2518b8-b7cf-44d0-a15e-4ca5110656c5"
+      ],
+      "existingDocumentIds": [
+        "2a2518b8-b7cf-44d0-a15e-4ca5110656c5"
+      ],
+      "reason": "同主题已由2022年院系公开附件正文摘要覆盖；本条旧副本未读取正文，不声称本副本版本或字段已经验证。",
+      "thisCopyParsed": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/e3/dd/7b232e184408b126d48266aa135e/ce4ff7a8-0450-4abd-a663-71827c16de95.doc",
+      "title": "南京邮电大学通达学院学生外出毕业设计申请表",
+      "status": "covered_duplicate",
+      "documentIds": [
+        "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+      ],
+      "existingDocumentIds": [
+        "16b3bedd-78bc-4b48-9c3b-b69b553051d6"
+      ],
+      "reason": "同主题已由2022年院系公开附件正文摘要覆盖；本条旧副本未读取正文，不声称本副本版本或字段已经验证。",
+      "thisCopyParsed": false
+    }
+  ],
+  "integration": {
+    "checkedAt": "2026-09-23T16:05:02.450Z",
+    "status": "reviewed_sources_integrated",
+    "verification": "verification-details-2026-09-23.json"
+  }
+}

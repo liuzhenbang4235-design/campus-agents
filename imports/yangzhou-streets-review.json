@@ -1,0 +1,137 @@
+{
+  "checkedAt": "2026-09-24",
+  "batchCount": 10,
+  "scope": "扬州古城街区、园林和文化场馆、青年优惠版本及主题巴士；不代表全市商户目录或实时营业数据。",
+  "sourceFiles": [
+    {
+      "url": "https://www.jsxc.gov.cn/whwy/whcc/202604/t20260420_92049.shtml",
+      "title": "“读城”行动：烟花三月读扬州 | 江苏宣传网",
+      "file": "work\\yangzhou-streets\\streets2026.html",
+      "sha256": "17263f9ef27f75d5b07dba120246033c737f682918d84c1870bfc553ea5f78c3",
+      "status": "reviewed",
+      "pageDate": "2026-04-20",
+      "relatedTitles": [
+        "扬州皮市街：周末逛文创、书店和喝咖啡的街区"
+      ]
+    },
+    {
+      "url": "https://www.ctnews.com.cn/dongtai/content/2024-05/23/content_160541.html",
+      "title": "漫步古街 品味扬州闲适文化-中国旅游新闻网",
+      "file": "work\\yangzhou-streets\\streets2024.html",
+      "sha256": "46e67c4077c2e284353ce11529800fabeeb7e89b244fdd607f288e0f6b1006ef",
+      "status": "reviewed",
+      "pageDate": "2024-05-23",
+      "relatedTitles": [
+        "扬州东关街：古街、园林和听扬州曲艺的线索"
+      ]
+    },
+    {
+      "url": "https://www.jiangsu.gov.cn/art/2023/10/13/art_88140_11042264.html",
+      "title": "江苏省人民政府 工作动态 扬州持续加大古城文旅消费集聚区建设",
+      "file": "work\\yangzhou-streets\\renfengli.html",
+      "sha256": "0d11d647e024d3fd63dcd1a586f89a6cb6adc38522b1ea422cfe7a6c7d2bbeb4",
+      "status": "reviewed",
+      "pageDate": "2023-10-13",
+      "relatedTitles": [
+        "扬州仁丰里：非遗、老街和民俗文化体验"
+      ]
+    },
+    {
+      "url": "https://www.jswx.gov.cn/yw/202406/t20240626_3425177.shtml",
+      "title": "【何以中国 运载千秋】江苏扬州：“漫”游运河场馆 品味运河文化 | 江苏网信网",
+      "file": "work\\yangzhou-streets\\heritage.html",
+      "sha256": "bb1057c43e83ad1909030d1eac3a8cdea5194a7b98541e685153dc62fd03f774",
+      "status": "reviewed",
+      "pageDate": "2024-06-26",
+      "relatedTitles": [
+        "扬州个园：地址、竹景和四季假山",
+        "扬州南河下看展：汪鲁门宅与大运河盐商文化展示馆",
+        "扬州美食文化参观：中国淮扬菜博物馆与卢氏盐商住宅",
+        "扬州京杭之心：广陵新城的运河水景空间"
+      ]
+    },
+    {
+      "url": "https://www.jstc.edu.cn/xgc/info/1033/13551.htm",
+      "title": "@在扬高校大学生，青年人才“青享码”190项开学福利“码”上领！-学工处--江苏旅游职业学院",
+      "file": "work\\yangzhou-streets\\qingxiang.html",
+      "sha256": "34940590fd276cfea4e25fb8e9d23b8987516d84de7ae7cf8369859ea57d19b3",
+      "status": "reviewed",
+      "pageDate": "2025-09-07",
+      "relatedTitles": [
+        "扬州青享码：在扬学生福利与2026寒暑假免票要区分"
+      ]
+    },
+    {
+      "url": "https://www.ctnews.com.cn/dongtai/content/2026-01/01/content_182688.html",
+      "title": "扬州国有A级收费景区寒暑假期间大学生可免费入园一次-中国旅游新闻网",
+      "file": "work\\yangzhou-streets\\holiday2026.html",
+      "sha256": "d5d815995494d13c367cef08b5032394450172570903908b9d9710e3ac21d4b7",
+      "status": "reviewed",
+      "pageDate": "2026-01-01",
+      "relatedTitles": [
+        "扬州青享码：在扬学生福利与2026寒暑假免票要区分"
+      ]
+    },
+    {
+      "url": "https://www.zgjssw.gov.cn/shixianchuanzhen/yangzhou/202605/t20260512_8572652.shtml",
+      "title": "扬州推动“公交+文旅”深度融合，解锁文旅新场景、释放消费新活力_中共江苏省委新闻网",
+      "file": "work\\yangzhou-streets\\bus2026.html",
+      "sha256": "4a47477a3f565114d8dfbe03e770dad6b112e464d0b5012d01826849943b7304",
+      "status": "reviewed",
+      "pageDate": "2026-05-12",
+      "relatedTitles": [
+        "扬州主题巴士：美食巴士和茶咖巴士是什么"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "url": "https://shouxihu.com/home.php",
+      "title": "扬州瘦西湖官网 扬州瘦西湖风景区",
+      "checkedAt": "2026-09-24",
+      "method": "浏览工具搜索索引显示官网标题、景区介绍及地址；直接HTTPS和HTTP读取失败",
+      "status": "search_index_only",
+      "limitations": [
+        "未核对当前票务、日夜场开放时间、优惠规则"
+      ]
+    },
+    {
+      "url": "https://qnzz.youth.cn/qckc/202607/t20260716_16767197.htm",
+      "status": "access_or_decode_failed",
+      "reason": "'utf-8' codec can't decode byte 0xd6 in position 275: invalid continuation byte",
+      "disposition": "浏览工具正文可读，但不新增重复的人才报道摘要。"
+    },
+    {
+      "url": "https://shouxihu.com/home.php",
+      "status": "access_or_decode_failed",
+      "reason": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>",
+      "disposition": "不绕过证书或访问限制；未从失败响应推断内容。"
+    },
+    {
+      "url": "https://www.ge-garden.net/",
+      "status": "access_or_decode_failed",
+      "reason": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.ge-garden.net'. (_ssl.c:1010)>",
+      "disposition": "不绕过证书或访问限制；未从失败响应推断内容。"
+    },
+    {
+      "url": "https://www.jstc.edu.cn/__local/F/32/73/60B0B3FC1C8D744AB05A070EEEE_83237C14_1A6874.png",
+      "status": "access_or_decode_failed",
+      "reason": "HTTP Error 403: Forbidden",
+      "disposition": "不绕过证书或访问限制；未从失败响应推断内容。"
+    }
+  ],
+  "privacy": "只采集公开地点和政策事实，不入库新闻受访者姓名、私人联系方式、个人表格或账号数据。",
+  "checks": {
+    "noInventedPrice": true,
+    "noInventedTravelDistance": true,
+    "noExpiredBenefitsAsCurrent": true,
+    "noExactTitleDuplicates": "to_be_checked_against_live_state"
+  },
+  "databaseChanged": false,
+  "integration": {
+    "checkedAt": "2026-09-23T17:08:11.548Z",
+    "inventory": "source-inventory.json",
+    "status": "sources_reconciled_with_approved_state",
+    "notice": "原始review的准备、排除和过期判定保留；当前入库状态以source-inventory各项及documentIds为准。"
+  }
+}

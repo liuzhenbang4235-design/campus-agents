@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-09-23T15:08:57.076Z",
+  "newRecords": 26,
+  "approvedByAgent": {
+    "life": 39,
+    "study": 6,
+    "affairs": 59
+  },
+  "checks": [
+    {
+      "agent": "life",
+      "question": "想游泳去哪",
+      "first": "扬州经开区运动：南部体育公园场馆与预约入口"
+    },
+    {
+      "agent": "life",
+      "question": "想参加社团",
+      "first": "通达学院：有哪些社团可以参加、招新在哪里看"
+    },
+    {
+      "agent": "affairs",
+      "question": "团员证丢了",
+      "first": "通达学院：团员证丢失补办材料（2026附件）"
+    },
+    {
+      "agent": "affairs",
+      "question": "就业协议书丢了",
+      "first": "通达学院：就业协议书、推荐表丢了或填错怎么补办"
+    },
+    {
+      "agent": "affairs",
+      "question": "2026级能转专业吗",
+      "first": "通达学院：2026级新生转专业条件的招生FAQ说明"
+    },
+    {
+      "agent": "study",
+      "question": "体育课怎么选",
+      "first": "通达学院：体育选课、退伍免修和康复保健班办理"
+    }
+  ],
+  "automatedTests": 29,
+  "mapIntegration": {
+    "implemented": true,
+    "actualConfigured": false,
+    "realProviderVerified": false,
+    "uiFlowVerifiedWithIsolatedMocks": true,
+    "steps": [
+      "find center",
+      "select public landmark",
+      "search radius",
+      "display result and straight-line distance",
+      "explicitly include result in AI context",
+      "display map citation"
+    ]
+  },
+  "remaining": [
+    "actual AMap key and live provider test",
+    "public sections and attachments still recorded as unchecked in source review",
+    "no exhaustive full-site or city coverage claim"
+  ],
+  "liveModelCheck": {
+    "question": "团员证丢了怎么补办？",
+    "status": 200,
+    "mode": "ai",
+    "source": "通达学院：团员证丢失补办材料（2026附件）",
+    "verifiedAt": "2026-09-23T15:09:44.793Z"
+  }
+}

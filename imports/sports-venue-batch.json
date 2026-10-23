@@ -1,0 +1,59 @@
+{
+  "batch": "campus-sports-venue-2026-09-23",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:59:17.067Z",
+  "docs": [
+    {
+      "agent": "life",
+      "title": "通达学院：体育场馆怎么申请使用（2024申请表）",
+      "source": "体育部｜2024-04-03｜https://www.nytdc.edu.cn/tyb/2024/0403/c1349a39853/page.htm",
+      "content": "体育部2024年4月3日发布《体育场馆使用申请表》。表内说明：使用单位或个人须提前2个工作日填写申请表进行预约。需要填写申请单位、活动人数、使用负责人及联系电话、活动名称、申请场地、使用日期和时间、申请事项说明等；另设总费用与收费标准栏。表格设有申请单位负责人意见、体育部意见、分管院领导意见，以及使用后管理员验收意见栏，使用结束后须由管理员检查验收场地。学生想申请使用场馆，可先下载这份表，并向体育部确认当前受理方式和适用审批要求；表中未单列学生申请资格，也不表示提交即可获批。\n校外单位租赁另须签订体育场馆租用协议，并将财务处收费票据附在申请单后，不能直接套用为所有校内学生活动都必须收费。公开表格未给受理房间、电话、在线提交入口、各场馆开放时段、具体收费和实时余场；这些需要向负责部门核对。2024表格仍是公开版本线索，未确认2026年是否有新版。\n\n原文：https://www.nytdc.edu.cn/tyb/2024/0403/c1349a39853/page.htm\n公开申请表：https://www.nytdc.edu.cn/_upload/article/files/f5/3b/1f25fc464ea1a63029b276afe5da/9b737c53-0f74-4e63-9cd0-fec4bb1ae6e9.pdf\n核对日期：2026-09-23。本条整理公开空白表格的申请要求。",
+      "oldId": null,
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "南京邮电大学通达学院体育部",
+        "url": "https://www.nytdc.edu.cn/tyb/2024/0403/c1349a39853/page.htm",
+        "publishedAt": "2024-04-03",
+        "verifiedAt": "2026-09-23",
+        "attachmentUrl": "https://www.nytdc.edu.cn/_upload/article/files/f5/3b/1f25fc464ea1a63029b276afe5da/9b737c53-0f74-4e63-9cd0-fec4bb1ae6e9.pdf",
+        "attachmentPages": 1,
+        "method": "官网正文已打开；公开PDF下载成功，pypdf提取文字，并使用Poppler渲染后视觉核对全页。",
+        "verifiedFields": [
+          "单位或个人提前2个工作日填表预约",
+          "表单申请字段",
+          "体育部等意见栏；不是经另外核实的当前提交顺序",
+          "使用后场地验收",
+          "仅校外单位租赁的协议和收费票据要求"
+        ],
+        "limitations": [
+          "未确认现行学生资格及不同用途审批要求",
+          "没有提交地点、专用电话或线上预约入口",
+          "没有实际收费数额、当前开放时间或余场",
+          "2024公开版本不能保证未有后续修订"
+        ]
+      },
+      "questions": [
+        "校内怎么约球场",
+        "学生办活动能申请体育馆吗",
+        "体育场馆申请需要填什么",
+        "提前几天申请场馆"
+      ]
+    }
+  ],
+  "imported": [
+    {
+      "id": "c1daac17-dc57-4e5e-a06d-4594f2c577c6",
+      "title": "通达学院：体育场馆怎么申请使用（2024申请表）",
+      "agent": "life"
+    }
+  ],
+  "offlined": [],
+  "added": 1,
+  "totalDocs": 176,
+  "approvedByAgent": {
+    "life": 52,
+    "study": 31,
+    "affairs": 73,
+    "freshman": 0
+  }
+}

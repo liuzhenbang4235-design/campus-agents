@@ -1,0 +1,173 @@
+{
+  "checkedAt": "2026-09-23T15:29:38.476Z",
+  "added": 26,
+  "replaced": 2,
+  "fictionOfflined": 1,
+  "totalDocs": 133,
+  "approved": 127,
+  "approvedByAgent": {
+    "life": 45,
+    "study": 12,
+    "affairs": 70,
+    "freshman": 0
+  },
+  "batchFiles": [
+    "campus-guides-batch.json",
+    "yangzhou-services-reviewed-batch.json",
+    "campus-colleges-batch.json",
+    "campus-office-replacement.json"
+  ],
+  "checks": [
+    {
+      "agent": "life",
+      "question": "食堂和操场在哪",
+      "first": "通达学院：官方校园手绘地图与食堂、宿舍、运动场位置",
+      "expected": "官方校园手绘地图",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "图书馆跟行政楼在哪",
+      "first": "通达学院：官方校园地图中行政楼、图书馆与活动中心怎么找",
+      "expected": "官方校园地图",
+      "passed": true
+    },
+    {
+      "agent": "study",
+      "question": "这学期体育课表在哪看",
+      "first": "通达学院：2026—2027学年秋季体育课表在哪里查",
+      "expected": "体育课表",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "赶不上考试因为要去参加比赛怎么办",
+      "first": "通达学院：缓考指南版本差异，比赛或亲属突发情况需先确认",
+      "expected": "缓考指南版本差异",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "报到证丢了怎么补办",
+      "first": "就业报到证已取消：不要照搬旧版毕业、档案和户口指南",
+      "expected": "就业报到证已取消",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "校园账号忘记密码了",
+      "first": "通达学院：教务、学工、邮箱、修改密码和VPN的官网入口",
+      "expected": "官网入口",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "招聘会在哪看",
+      "first": "通达学院：91job就业平台入口、招聘信息与学生操作手册",
+      "expected": "91job",
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "公交还有几分钟到在哪里查",
+      "first": "扬州公交怎么坐、还有多久到：掌上公交查询入口",
+      "expected": "掌上公交",
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "公交没零钱能扫码吗",
+      "first": "扬州公交没带零钱怎么办：扫码付款官方说明",
+      "expected": "扫码付款",
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "买学生票在哪里核验",
+      "first": "从扬州坐火车回家：12306查票和学生核验入口",
+      "expected": "学生核验",
+      "passed": true
+    },
+    {
+      "agent": "life",
+      "question": "在扬州办事材料哪里查",
+      "first": "在扬州办事要带什么：政务服务指南和便民入口",
+      "expected": "政务服务",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "商学院办公室在哪",
+      "first": "通达学院：通信工程学院办公室在哪里",
+      "expected": "商学院办公室",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "出国要英文成绩单怎么办",
+      "first": "通达学院：出国中英文成绩单、均分和排名证明申请（2022版）",
+      "expected": "出国中英文成绩单",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "想换毕设导师去哪找表",
+      "first": "通达学院：毕业设计更换导师申请表入口（2022版未解析）",
+      "expected": "更换导师",
+      "passed": true
+    },
+    {
+      "agent": "study",
+      "question": "想加入机器人或者数学建模基地",
+      "first": "通达学院：双创基地、机器人和数学建模实践室在哪里",
+      "expected": "双创基地",
+      "passed": true
+    },
+    {
+      "agent": "study",
+      "question": "大创项目去哪里申报",
+      "first": "通达学院：大创项目管理系统、项目招募和资料下载入口",
+      "expected": "大创项目",
+      "passed": true
+    },
+    {
+      "agent": "study",
+      "question": "比赛获奖能给多少奖励",
+      "first": "通达学院：比赛认定、创新实践与竞赛奖励制度查询入口",
+      "expected": "竞赛奖励制度",
+      "passed": true
+    },
+    {
+      "agent": "study",
+      "question": "今年外语大赛还能报名吗",
+      "first": "通达学院：2026外语大赛报名截止日与参赛方式",
+      "expected": "2026外语大赛",
+      "passed": true
+    },
+    {
+      "agent": "affairs",
+      "question": "创新创业学院办公室在哪",
+      "first": "通达学院：创新创业学院办公室位置和电话（官网楼名待核对）",
+      "expected": "官网楼名待核对",
+      "passed": true
+    }
+  ],
+  "realBrowserCheck": {
+    "question": "公交还有几分钟到，在哪里查？",
+    "answerMode": "豆包回答",
+    "source": "扬州公交怎么坐、还有多久到：掌上公交查询入口",
+    "citationModalVerified": true,
+    "sourceLinksVisible": true
+  },
+  "map": {
+    "configured": false,
+    "liveProviderVerified": false
+  },
+  "sourceInventory": 226,
+  "remaining": [
+    "独立高德Web服务Key尚未配置，实时地点搜索未实测。",
+    "91job分站403；个人/认证后数据未抓取。",
+    "三份旧DOC只核对下载入口；部分竞赛制度与课程详情尚未读取。",
+    "2020证件指南未作为现行流程导入；扬州体育公园预约直链未核实。"
+  ]
+}

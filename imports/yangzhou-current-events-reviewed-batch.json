@@ -1,0 +1,157 @@
+{
+  "batch": "yangzhou-current-events-2026-09-24",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:15:49.949Z",
+  "docs": [
+    {
+      "agent": "life",
+      "title": "中运博2026中秋国庆：哪些日期能逛到晚上、怎样预约",
+      "source": "中国大运河博物馆｜2026-09-16假期公告｜https://www.grandcanalmuseum.cn/yunboxinwen/1249.html",
+      "content": "2026年中秋、国庆想晚上逛中运博，可以按馆方公告选择：2026年9月25日至9月26日、2026年10月1日至10月6日，延时开放至20:00，19:00停止入馆；2026年9月27日和2026年10月7日开放时间为9:00—17:00，16:00停止入馆。该安排只适用于这些明确日期，不能据此认定每天都有夜场。\n馆方公告说明，可提前7天通过“中国大运河博物馆”官方微信公众号预约，按预约时段入馆：上午场9:00—12:00、下午场12:00—17:00；延时开放日期另有17:00—20:00夜场。这里没有查询实际可预约名额，也没有完成预约。出发前应在官方公众号查看所选日期和时段。官网公告也提示没有授权第三方代办门票。\n\n公告原文：https://www.grandcanalmuseum.cn/yunboxinwen/1249.html\n发布日：2026-09-16。核对日：2026-09-24。适用日期截止2026-10-07；临时变更和余量以官方最新信息为准。",
+      "event": {
+        "type": "holiday-opening",
+        "startDate": "2026-09-25",
+        "endDate": "2026-10-07",
+        "datesWithEveningOpening": [
+          [
+            "2026-09-25",
+            "2026-09-26"
+          ],
+          [
+            "2026-10-01",
+            "2026-10-06"
+          ]
+        ],
+        "reviewAfter": "2026-10-08"
+      },
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州中国大运河博物馆",
+        "url": "https://www.grandcanalmuseum.cn/yunboxinwen/1249.html",
+        "publishedAt": "2026-09-16",
+        "verifiedAt": "2026-09-24",
+        "method": "官方HTML正文打开成功；下载并视觉阅读正文第一张公告图片，图片落款为2026年9月16日。",
+        "imageUrl": "https://www.grandcanalmuseum.cn/uploads/20260917/9aa930594a06baadd74a9286cc8f3131.jpg",
+        "evidence": [
+          "2026-09-25至09-26、10-01至10-06延时到20:00，19:00停止入馆",
+          "2026-09-27、10-07为9:00至17:00，16:00停止入馆",
+          "提前7天、官方微信公众号、分时段预约"
+        ],
+        "limitations": [
+          "未查询名额、未预约",
+          "未将此表推广到未列日期",
+          "官网在线预约页只显示活动预约/运河剧场预约，不将它错称为普通入馆预约直链"
+        ]
+      },
+      "questions": [
+        "中秋中运博晚上开吗",
+        "国庆中运博几点关门",
+        "中运博夜场怎么约",
+        "明天中运博能逛到几点"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "中运博新展：景迈回响，2026年9月25日至2027年1月3日",
+      "source": "中国大运河博物馆｜2026-09-16新展预告｜https://www.grandcanalmuseum.cn/yunboxinwen/1249.html",
+      "content": "“景迈回响——人与山的千年契约”特展的官方公布展期为2026年9月25日至2027年1月3日，地点是中国大运河博物馆5号展厅。想找中秋、国庆期间的室内展览，或对茶文化、民族生活和人与自然关系感兴趣，可查看这项新展；截至本条核对日2026年9月24日，展览尚未到公布的开始日期。\n该展以景迈山古茶林及当地人的生活文化为内容，从人和环境、茶、社群、文化遗产之间的联系展开。参观前通过“中国大运河博物馆”官方微信公众号核对所选日期的入馆预约和展览安排；本次未核实本展是否单独收费、是否另需特展预约，也没有查询余量。\n\n官方预告：https://www.grandcanalmuseum.cn/yunboxinwen/1249.html\n发布日：2026-09-16。核对日：2026-09-24。展期不代表每天均开放，临时变更以馆方最新通知为准；2027-01-03之后不能继续作为在展推荐。",
+      "event": {
+        "type": "exhibition",
+        "startDate": "2026-09-25",
+        "endDate": "2027-01-03",
+        "reviewAfter": "2027-01-04"
+      },
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州中国大运河博物馆",
+        "url": "https://www.grandcanalmuseum.cn/yunboxinwen/1249.html",
+        "publishedAt": "2026-09-16",
+        "verifiedAt": "2026-09-24",
+        "method": "官方HTML正文打开成功；视觉阅读正文第2、13、14张图片，确认完整展期、展厅、主题。",
+        "imageUrls": [
+          "https://www.grandcanalmuseum.cn/uploads/20260917/b50629f5e8548020bef23194e37d71e3.jpg",
+          "https://www.grandcanalmuseum.cn/uploads/20260917/c9a347b87d97733f19c4dc51ac414e84.jpg",
+          "https://www.grandcanalmuseum.cn/uploads/20260917/d678fbff7c8bffc46e9c6e997bac1724.jpg"
+        ],
+        "evidence": [
+          "2026-09-25至2027-01-03",
+          "中国大运河博物馆5号展厅",
+          "茶林、世居民族、人与自然的主题"
+        ],
+        "limitations": [
+          "核对时尚未开幕，不能称已经开展",
+          "是否单独收费/特展预约未核实",
+          "展期内每日开馆状态与临时变化未查询"
+        ]
+      },
+      "questions": [
+        "中运博最近有什么新展",
+        "中秋去中运博看什么",
+        "有没有茶文化展",
+        "雨天室内能看什么展览"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "中运博在展：盛辉与尘光古希腊古罗马展，展期至2026年10月11日",
+      "source": "中国大运河博物馆｜临展特展｜https://www.grandcanalmuseum.cn/linzhantezhan/1210.html",
+      "content": "“盛辉与尘光——古希腊古罗马的文明印记”官方公布展期为2026年7月10日至2026年10月11日，地点是中国大运河博物馆11—12号展厅。2026年9月24日至10月8日位于该公布展期内；想在中秋、国庆看古希腊古罗马主题展，可以先核对这个项目。展览由馆方联合英国利物浦国家博物馆推出，以古典神话及相关艺术品呈现文明故事。\n官方展览页提供“在线购票”图片入口，临展列表还列出“中运博”微信小程序购票提示。请从官方展览详情页进入购票信息，在官方渠道确认价格、所选日期、余票和入馆要求；本次未进入支付或预约流程，不能保证仍有票，也不能因为博物馆常设展免费就认定本特展免费。\n\n官方详情及购票指引：https://www.grandcanalmuseum.cn/linzhantezhan/1210.html\n官方展览列表：https://www.grandcanalmuseum.cn/linzhantezhan.html\n核对日：2026-09-24。详情页未显示明确发布日期。展期不代表每日开馆，临时调整以官方最新公告为准；2026-10-11后不能继续作为在展推荐。",
+      "event": {
+        "type": "exhibition",
+        "startDate": "2026-07-10",
+        "endDate": "2026-10-11",
+        "reviewAfter": "2026-10-12"
+      },
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州中国大运河博物馆",
+        "url": "https://www.grandcanalmuseum.cn/linzhantezhan/1210.html",
+        "supportingUrl": "https://www.grandcanalmuseum.cn/linzhantezhan.html",
+        "publishedAt": null,
+        "verifiedAt": "2026-09-24",
+        "method": "官方展览列表与详情页正文均打开核对；没有扫码、登录或购票。",
+        "evidence": [
+          "2026-07-10至2026-10-11",
+          "11—12号展厅",
+          "详情页在线购票图、列表中运博微信小程序提示"
+        ],
+        "limitations": [
+          "票价、余票、当天开放及支付过程未核实",
+          "不复制动态小程序链接作为稳定Web购票直链"
+        ]
+      },
+      "questions": [
+        "国庆中运博有什么展",
+        "古希腊古罗马展什么时候结束",
+        "盛辉与尘光在哪个厅",
+        "中运博特展怎么买票"
+      ]
+    }
+  ],
+  "imported": [
+    {
+      "id": "0678543c-5d83-47ac-a044-429e2625bf42",
+      "title": "中运博2026中秋国庆：哪些日期能逛到晚上、怎样预约",
+      "agent": "life"
+    },
+    {
+      "id": "e046d919-e722-4a04-980c-0cba27d378ba",
+      "title": "中运博新展：景迈回响，2026年9月25日至2027年1月3日",
+      "agent": "life"
+    },
+    {
+      "id": "4d578687-1232-4be7-a972-f49939853cb5",
+      "title": "中运博在展：盛辉与尘光古希腊古罗马展，展期至2026年10月11日",
+      "agent": "life"
+    }
+  ],
+  "offlined": [],
+  "added": 3,
+  "totalDocs": 185,
+  "approvedByAgent": {
+    "life": 55,
+    "study": 32,
+    "affairs": 78,
+    "freshman": 0
+  }
+}

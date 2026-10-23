@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-23T17:26:52.806Z",
+  "count": 291,
+  "rawCount": 291,
+  "rawFile": "work/open-places-full.json",
+  "rawSha256": "79fe4846e58f625028ace11adc688626f510e6d1e1510d60a561ebd6e39485da",
+  "sourceUrl": "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+  "scope": "扬州城区部分已标注地点，不含全市所有区县或商户",
+  "license": "ODbL-1.0",
+  "privacy": "只保留公开场所名称、类别、地址和坐标；未保留网络SSID、账户、编辑者、私人电话或个人住址。",
+  "limitations": [
+    "社区采集快照，未逐店核对营业或公众准入",
+    "坐标是点位或多边形代表中心，不是入口，也不是步行距离",
+    "不声称全量最近、实时营业、价格或预约可用"
+  ],
+  "approvedFor": "本地公开地点查询，单独标注来源，不冒充学校审核知识库"
+}

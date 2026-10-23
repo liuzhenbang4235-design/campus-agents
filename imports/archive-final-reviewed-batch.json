@@ -1,0 +1,66 @@
+{
+  "batch": "旧资料包稳定空表字段候选",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:37:21.191Z",
+  "docs": [
+    {
+      "oldId": null,
+      "agent": "affairs",
+      "title": "通达学院：毕设选题简表和学期检查记录的填写内容（历史空表）",
+      "source": "电子工程学院｜2022-04-21公开旧包｜https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26498/page.htm",
+      "content": "电子工程学院2022年公开的毕设资料包包含历史空表，包内还附2013届规定；这里仅介绍旧表栏目，不能把它当作2026或2027届当前模板。\n选题简表记录专业、年级、毕设题目、内容与技术要求、课题类型、学生姓名学号，以及指导教师姓名、职称和所在单位，设指导单位签章栏。它可帮助准备与导师讨论的选题说明，但不证明题目已经获准。\n学期检查记录表记录题目、专业班级学号和指导教师信息；其中开题情况、原计划是否调整及原因、工作进度、每周接受指导的次数时间、过程检查记录、工作态度和存在问题及措施，明确属于指导教师填写区，另有导师签字和学院意见。学生不能把这一部分当成自己勾选就已通过的检查结果。\n原空表没有给出当届提交窗口、当前系统、地点、份数或新的合格标准。办理时先向本院毕设管理人员确认现用表格和平台，不把历史空表中的栏目视为当前全部必填要求。\n来源页面：https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26498/page.htm\n历史资料包：https://www.nytdc.edu.cn/_upload/article/files/ec/f6/0b7a184848599bf92f33096088fd/8bba44c1-a42d-4ecd-9ef8-693bc02cee1f.rar\n核对日期：2026-09-24。",
+      "verification": {
+        "sourcePage": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26498/page.htm",
+        "sourceDate": "2022-04-21",
+        "attachmentUrl": "https://www.nytdc.edu.cn/_upload/article/files/ec/f6/0b7a184848599bf92f33096088fd/8bba44c1-a42d-4ecd-9ef8-693bc02cee1f.rar",
+        "archiveFile": "work/campus-frontier/thesis-bundle.rar",
+        "attachmentSha256": "0659940c8a5d835177707ed14096196025f4daa5d97a4ff618b5f3601c6fa95e",
+        "method": "公开RAR只列目录，按精确成员名输出指定DOC到固定工作文件；只读主文，未执行宏或解压运行文件。",
+        "attachmentsRead": [
+          {
+            "file": "work\\archive-final\\thesis-topic.doc",
+            "evidenceFile": "work\\archive-final\\thesis-topic.text.txt",
+            "parseReport": "work\\archive-final\\thesis-topic.parse.json",
+            "sha256": "67fbed9a0a3ab39c6c200bbc0a614e2122e0fc7d872d9928ab7c9935ad93da64",
+            "mainStoryChars": 286,
+            "mainStoryLengthVerified": true,
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "blankFormConfirmed": true
+          },
+          {
+            "file": "work\\archive-final\\thesis-check.doc",
+            "evidenceFile": "work\\archive-final\\thesis-check.text.txt",
+            "parseReport": "work\\archive-final\\thesis-check.parse.json",
+            "sha256": "69ea4302d964e824a7365da5903939f986b45ea5d99a661bcd47475f276a2cfd",
+            "mainStoryChars": 424,
+            "mainStoryLengthVerified": true,
+            "layoutRendered": false,
+            "method": "MS-DOC piece table, main story only",
+            "blankFormConfirmed": true
+          }
+        ],
+        "readScope": "仅2份明确空表；其余4份按过期届次或重复主题排除。",
+        "versionLimit": "网页公开于2022年，包内包含2013届规定；文件时间戳不能证明现行效力。",
+        "deduplication": "现有资料覆盖外出毕设和更换导师，没有这两张空表的栏目及指导教师填写区说明。",
+        "importRecommendation": "optional_historical_fields_only"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "98cd6bcb-f2a9-44b3-aaff-14ecb9b8d129",
+      "title": "通达学院：毕设选题简表和学期检查记录的填写内容（历史空表）",
+      "agent": "affairs"
+    }
+  ],
+  "offlined": [],
+  "added": 1,
+  "totalDocs": 229,
+  "approvedByAgent": {
+    "life": 56,
+    "study": 55,
+    "affairs": 94,
+    "freshman": 0
+  }
+}

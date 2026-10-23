@@ -1,0 +1,163 @@
+{
+  "checkedAt": "2026-09-24",
+  "scope": "仅指定官方HTML及其一个正式PDF附件，未扩展目录、未访问登录项目数据；现库摘要从只读API比对。",
+  "htmlCount": 1,
+  "attachmentCount": 1,
+  "pdfPages": 9,
+  "allPdfPagesViewed": true,
+  "batchCount": 3,
+  "replacementCount": 2,
+  "batchFile": "work/innovation-current-rules-batch.json",
+  "replacementFile": "work/innovation-current-rules-replacements.json",
+  "sameTextRepost": false,
+  "sourceFiles": [
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+      "title": "南京邮电大学通达学院 大学生创新创业训练计划管理规定(修订)",
+      "pageDate": "2024-04-02",
+      "urlYearNotUsed": "2026路径为迁移结构，页面与文件均2024-04-02",
+      "status": "parsed_ready",
+      "file": "work/innovation-current/dachuang-current.html",
+      "relatedTitles": [
+        "通达学院：大创经费资助、可报项目及审批（2024修订）",
+        "通达学院：国家级及省级重点大创如何结题（2023年度起标准）",
+        "通达学院：省级一般、院级大创结题成果与共同要求（2023年度起）",
+        "通达学院：大创组队、变更、中期检查与结项的版本说明（2024修订）",
+        "通达学院：大创立项办事流程图及2024修订依据"
+      ]
+    }
+  ],
+  "attachments": [
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf",
+      "status": "fully_read",
+      "file": "work/innovation-current/dachuang-current.pdf",
+      "pages": 9,
+      "sha256": "289db7ecfaff51ff27d133501a52f45dbb7fc5e629133ca32d4d6fba38b9113d",
+      "parts": [
+        {
+          "pdfPages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "document": "教发〔2024〕3号，大创管理规定（修订）",
+          "publishedAt": "2024-04-02"
+        },
+        {
+          "pdfPages": [
+            7
+          ],
+          "document": "公文发文单",
+          "handling": "未转录手写签名、人员信息及审批栏；不作为学生办事材料"
+        },
+        {
+          "pdfPages": [
+            8,
+            9
+          ],
+          "document": "教发〔2024〕2号，大创项目结题验收标准（修订）",
+          "publishedAt": "2024-04-02",
+          "appliesTo": "备注明确从2023年度大创项目起"
+        }
+      ]
+    }
+  ],
+  "comparison": [
+    {
+      "topic": "废止范围",
+      "finding": "管理公告明确废止旧《大学生科技创新训练计划（STITP）管理规定（试行）》；未明说整体废止2023网站公开的《创新创业实践活动管理办法》。结题公告同时废止旧《大学生科技创新计划项目结题验收标准（修订）》；因此新条不声称2023综合活动办法全部失效。",
+      "pdfPages": [
+        1,
+        8
+      ]
+    },
+    {
+      "topic": "组队/月份/周期",
+      "existing": "2023公开综合办法3—5人，4月申报、次年4月结项、11月中期、最长2年",
+      "current": "2024指定管理规定只写负责人确定成员邀请导师、实施检查验收；未重述人数/固定月份/周期",
+      "decision": "替换旧专门摘要为2024职责与版本边界，旧数值仅明确标为历史对照，实际看当届通知"
+    },
+    {
+      "topic": "申报及组织流程",
+      "existing": "2021流程图有二级学院/实践教学科/教务专家评审及院级或省级项目",
+      "current": "第3—7条写领导小组/秘书组挂靠教务处，组织国家省院三级检查与结题答辩",
+      "decision": "原流程图未直接冲突，保留可用环节但补新依据和不止院/省级提示；不编造2024详细线上点击流程"
+    },
+    {
+      "topic": "变更/终止",
+      "current": "负责人书面申请说明理由，领导小组批准，中止项目资助所购资料/元器件等全部交所在二级学院",
+      "decision": "在替换摘要补齐，不附旧2013表为当前必用表，不把旧表主管院长意见当最终审批"
+    },
+    {
+      "topic": "经费",
+      "current": "院级重点1000/一般500；国家省级按规定；1:1配套一半经费、一半实验等形式；调研一般≤20%；有完整报销审批及不得超支",
+      "decision": "新增独立经费条，不认定个人奖金或报销实得额"
+    },
+    {
+      "topic": "结题",
+      "existing": "旧摘要省级须论文或专利",
+      "current": "2023年度起按国家级（省级重点）、省级一般、院级分别验收；除论文/专利还有软著、竞赛路径；全部项目参加当年度中国国际大学生创新大赛",
+      "decision": "按完整表格拆成两条，保留数量、署名、重复使用限制、项目关联和共同备注"
+    },
+    {
+      "topic": "PU学时",
+      "existingId": "956685a3-ec34-49c4-b0de-d7a723e9a4e2",
+      "decision": "不替换。2024附件规定项目结题与经费，不直接修改院团发〔2022〕11号PU认定表；不得从管理经费推算PU或课程学分。"
+    },
+    {
+      "topic": "官方系统入口",
+      "existingId": "0aecc8ab-8362-469d-8aee-e5e1bae16d3d",
+      "decision": "无需替换，本次未更改或重新登录系统，指定文件不否定原入口。"
+    }
+  ],
+  "replacementSuggestions": [
+    {
+      "oldId": "ecad0fb6-0515-40e4-a86c-9becd6390f17",
+      "newTitle": "通达学院：大创组队、变更、中期检查与结项的版本说明（2024修订）",
+      "file": "work/innovation-current-rules-replacements.json",
+      "reason": "补新正式依据、验收标准和旧流程适用边界"
+    },
+    {
+      "oldId": "c2545330-6c70-4916-a63e-e55f7a533b9b",
+      "newTitle": "通达学院：大创立项办事流程图及2024修订依据",
+      "file": "work/innovation-current-rules-replacements.json",
+      "reason": "补新正式依据、验收标准和旧流程适用边界"
+    }
+  ],
+  "remainingGaps": [
+    {
+      "area": "当届组队/申报/中期/结题时间及项目周期",
+      "reason": "本次限定文件未列具体数值和日期，不能用旧2023安排补成当前事实"
+    },
+    {
+      "area": "核心期刊具体名单",
+      "reason": "验收标准引用学院核心期刊ABC类认定标准，未在指定附件列出具体刊名；未扩大抓取"
+    },
+    {
+      "area": "当前变更、终止空表及线上步骤",
+      "reason": "指定附件仅制度和验收表，未提供这些当前空表或线上操作步骤"
+    },
+    {
+      "area": "2023年度以前项目如何衔接",
+      "reason": "新验收表明确从2023年度开始，未阐明更早项目的衔接处理"
+    }
+  ],
+  "privacyHandling": "仅保留制度、空白程序与公共标准，不转录扫描公文发文单手写签名和人员信息；未读取学生项目名单或账号。",
+  "checks": {
+    "titleMax80": true,
+    "sourceMax150": true,
+    "noPersonalMobilePattern": true,
+    "noExtractionDetailsInStudentCopy": true
+  },
+  "databaseOrAppChanged": false,
+  "integration": {
+    "checkedAt": "2026-09-23T17:08:11.548Z",
+    "inventory": "source-inventory.json",
+    "status": "sources_reconciled_with_approved_state",
+    "notice": "原始review的准备、排除和过期判定保留；当前入库状态以source-inventory各项及documentIds为准。"
+  }
+}

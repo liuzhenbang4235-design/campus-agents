@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-09-24",
+  "scope": "本輪公开来源整合后的处置，覆盖声明限定为实际核对范围。",
+  "items": [
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/74/65/b2f1ea3c44a98f6b490803168980/7247090e-fc5b-4f34-a488-43b250e2bc29.rar",
+      "title": "2013大创资料包：已盘点，历史空表未导入",
+      "status": "reviewed_legacy_not_imported",
+      "reason": "12份文件已盘点；调整、终止、归档3份空表主文已读。2024正式修订已核对入库，旧签字栏不能替代新领导小组审批；旧字段新增价值有限，候选摘要未导入，保留审计证据。",
+      "evidenceFile": "work/archive-final-review.json"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+      "title": "2024大创管理和结题标准已核对",
+      "status": "imported",
+      "reason": "解决campus-rules-review中此前discovered_not_read缺口：指定PDF9页已读，3条新资料及2条替换已审核入库，旧摘要已下线。",
+      "evidenceFile": "work/innovation-current-rules-review.json"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+      "title": "2024/2025级培养指导意见课程细节补充",
+      "status": "imported",
+      "reason": "本批净增20条已审核摘要；其中1条口语检索表述修订，旧记录下线保留。",
+      "evidenceFile": "curriculum-details-review.json"
+    }
+  ],
+  "resolvedGaps": [
+    "学籍管理5页67项及毕设论文2页26项公开索引已完整读取；个人公示和历史窗口分类保留。",
+    "两个旧资料包共18文件已盘点，5份空白表主文已核对；只新增一条历史毕设字段，2013大创候选不导入。",
+    "2024大创正式修订及结题标准已核对并替换相关旧摘要。",
+    "2024级培养指导意见20页已全部视觉核对；结合2025级22页公开意见新增20条课程细节，适用年级与指导性边界均随正文保存。",
+    "2026-09-24接入291个OpenStreetMap本地公开点位，附近搜索无需高德Key，43项测试及真实豆包引用已验证；数据为部分城区快照，不是实时营业或全量地图。"
+  ],
+  "remaining": [
+    "当前回校重修、毕设模板、图采补采窗口，以及专业提升具体折分细则，未在本次核对范围找到可确认的公开资料。",
+    "91job等访问受限来源未绕过；认证后资料和个人记录未采集。",
+    "未声称学校全站、全量历史新闻或扬州全市数据完整；2026级各专业最终培养方案与个人课表未纳入。"
+  ],
+  "integration": {
+    "checkedAt": "2026-09-23T16:59:04.468Z",
+    "inventory": "source-inventory.json",
+    "status": "sources_reconciled_with_approved_state",
+    "notice": "原始review的准备、排除和过期判定保留；当前入库状态以source-inventory各项及documentIds为准。"
+  }
+}

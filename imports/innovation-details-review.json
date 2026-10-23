@@ -1,0 +1,397 @@
+{
+  "checkedAt": "2026-09-23",
+  "scope": "双创4项制度正文及附件；课程目录剩余页与11个详情；沿制度引用补查2份教务处素拓规定。没有全站爬取。",
+  "htmlLimit": 25,
+  "newHtmlPages": 18,
+  "priorHtmlReused": [
+    "work/campus-broader/innovation-course.html"
+  ],
+  "allReadHtmlPagesIncludingReused": 19,
+  "batchCount": 18,
+  "replacementCount": 3,
+  "attachmentsDownloaded": 16,
+  "pdfPagesRead": 33,
+  "courseImageDetailsRead": 11,
+  "sourceFiles": [
+    {
+      "name": "policy1",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-3205-49c8-9183-27da40696e02",
+      "pageDate": "2025-03-24",
+      "status": "read",
+      "file": "work/innovation-details/policy1.html"
+    },
+    {
+      "name": "policy2",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-2e34-4305-880c-f2ef1601d279",
+      "pageDate": "2025-03-24",
+      "status": "read",
+      "file": "work/innovation-details/policy2.html"
+    },
+    {
+      "name": "policy3",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-2d1b-4e6f-a2b6-d25a64049a24",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/policy3.html"
+    },
+    {
+      "name": "policy4",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-302c-41ae-a7a4-88708a60a7d6",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/policy4.html"
+    },
+    {
+      "name": "course1",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0624-4aa3-bf80-62ac5eee2f06",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course1.html"
+    },
+    {
+      "name": "course2",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0722-4b8f-a7fc-f8e62138b26d",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course2.html"
+    },
+    {
+      "name": "course3",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0821-448f-bb1c-077dbe6aa3bd",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course3.html"
+    },
+    {
+      "name": "course4",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-090a-45bd-ba01-974116ac8324",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course4.html"
+    },
+    {
+      "name": "course5",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0932-4c3b-954a-65efbc54fe7d",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course5.html"
+    },
+    {
+      "name": "course6",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0a18-4a2b-8127-44b4fd57ea89",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course6.html"
+    },
+    {
+      "name": "course-page2",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/Index?PageIndex=2&CategoryCode=SCJY-sckc",
+      "pageDate": null,
+      "status": "read",
+      "file": "work/innovation-details/course-page2.html"
+    },
+    {
+      "name": "course7",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0a31-437e-b7f9-1e2308e3863b",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course7.html"
+    },
+    {
+      "name": "course8",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0b12-4e8b-97cc-9c3dc8c11345",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course8.html"
+    },
+    {
+      "name": "course9",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d01-4c70-80ad-e324bb1cc3dd",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course9.html"
+    },
+    {
+      "name": "course10",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d1a-4a02-95ec-0ec53fe56533",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course10.html"
+    },
+    {
+      "name": "course11",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d30-4052-80ad-b06ffd6ab28f",
+      "pageDate": "2023-03-10",
+      "status": "read",
+      "file": "work/innovation-details/course11.html"
+    },
+    {
+      "name": "credits-current",
+      "url": "https://jwc.nytdc.edu.cn/2022/1005/c514a31990/page.htm",
+      "pageDate": "2022-10-05",
+      "status": "read",
+      "file": "work/innovation-details/credits-current.html"
+    },
+    {
+      "name": "credits-contest",
+      "url": "https://jwc.nytdc.edu.cn/2021/0512/c514a18522/page.htm",
+      "pageDate": "2022-10-05",
+      "status": "read",
+      "file": "work/innovation-details/credits-contest.html"
+    }
+  ],
+  "attachments": [
+    {
+      "name": "policy1",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/System/ColumnManagement/DownloadFile4Index/e904030a-1938-4b06-ab13-830652bbc875",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/System/ColumnManagement/DownloadFile4Index/e904030a-1938-4b06-ab13-830652bbc875",
+      "file": "work\\innovation-details\\policy1-0.pdf",
+      "type": "pdf",
+      "bytes": 2500423,
+      "pages": 18
+    },
+    {
+      "name": "policy1",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2025-04-03/a481b495f8ac44c1882dde74702002b5.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2025-04-03/a481b495f8ac44c1882dde74702002b5.png",
+      "file": "work\\innovation-details\\policy1-1.png",
+      "type": "png",
+      "bytes": 728046
+    },
+    {
+      "name": "policy2",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/System/ColumnManagement/DownloadFile4Index/e904030a-1806-459f-a866-034762b51b22",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/System/ColumnManagement/DownloadFile4Index/e904030a-1806-459f-a866-034762b51b22",
+      "file": "work\\innovation-details\\policy2-0.pdf",
+      "type": "pdf",
+      "bytes": 2495590,
+      "pages": 10
+    },
+    {
+      "name": "policy2",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2025-04-03/03ef34073ab546459687dd72fcea7fe4.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2025-04-03/03ef34073ab546459687dd72fcea7fe4.png",
+      "file": "work\\innovation-details\\policy2-1.png",
+      "type": "png",
+      "bytes": 224807
+    },
+    {
+      "name": "course1",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/e4316ef111c14920987b536e890f096c.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/e4316ef111c14920987b536e890f096c.png",
+      "file": "work\\innovation-details\\course1-0.png",
+      "type": "png",
+      "bytes": 190557
+    },
+    {
+      "name": "course2",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/5b9e9400a1d24398a21222a249dbce12.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/5b9e9400a1d24398a21222a249dbce12.png",
+      "file": "work\\innovation-details\\course2-0.png",
+      "type": "png",
+      "bytes": 59477
+    },
+    {
+      "name": "course3",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/5f784d0d94fa4723b10e828680f5c1c9.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/5f784d0d94fa4723b10e828680f5c1c9.png",
+      "file": "work\\innovation-details\\course3-0.png",
+      "type": "png",
+      "bytes": 43783
+    },
+    {
+      "name": "course4",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/666c3031d95043bc8a1e2843b72ca9a8.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/666c3031d95043bc8a1e2843b72ca9a8.png",
+      "file": "work\\innovation-details\\course4-0.png",
+      "type": "png",
+      "bytes": 88413
+    },
+    {
+      "name": "course5",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/dd71fc529ee14af1a16ff6313afdaf32.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/dd71fc529ee14af1a16ff6313afdaf32.png",
+      "file": "work\\innovation-details\\course5-0.png",
+      "type": "png",
+      "bytes": 87615
+    },
+    {
+      "name": "course6",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/a2f93af25fb1402884c81884c2028e9a.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/a2f93af25fb1402884c81884c2028e9a.png",
+      "file": "work\\innovation-details\\course6-0.png",
+      "type": "png",
+      "bytes": 212668
+    },
+    {
+      "name": "course7",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/efa65337932f45a8b8d3620e190b12a3.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/efa65337932f45a8b8d3620e190b12a3.png",
+      "file": "work\\innovation-details\\course7-0.png",
+      "type": "png",
+      "bytes": 309823
+    },
+    {
+      "name": "course8",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/37c961a5777a423d8057cf8e15fcc891.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/37c961a5777a423d8057cf8e15fcc891.png",
+      "file": "work\\innovation-details\\course8-0.png",
+      "type": "png",
+      "bytes": 210746
+    },
+    {
+      "name": "course9",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/d0a485f2ad554b3bba0acf0e5e5e55e3.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/d0a485f2ad554b3bba0acf0e5e5e55e3.png",
+      "file": "work\\innovation-details\\course9-0.png",
+      "type": "png",
+      "bytes": 273897
+    },
+    {
+      "name": "course10",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/5e0f4ceac55041ea976786225d826369.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/5e0f4ceac55041ea976786225d826369.png",
+      "file": "work\\innovation-details\\course10-0.png",
+      "type": "png",
+      "bytes": 88467
+    },
+    {
+      "name": "course11",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/941341468de3493a951ee2dda4a427cf.png",
+      "status": 200,
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/FileResources/Summernote/2023-03-10/941341468de3493a951ee2dda4a427cf.png",
+      "file": "work\\innovation-details\\course11-0.png",
+      "type": "png",
+      "bytes": 201784
+    },
+    {
+      "name": "credits-current",
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/24/6a/f64bc8c145b7a20a53ababf8497d/41b14b4f-75e1-4505-afba-93811e10549d.pdf",
+      "status": 200,
+      "finalUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/24/6a/f64bc8c145b7a20a53ababf8497d/41b14b4f-75e1-4505-afba-93811e10549d.pdf",
+      "file": "work\\innovation-details\\credits-current-0.pdf",
+      "type": "pdf",
+      "bytes": 168121,
+      "pages": 5
+    }
+  ],
+  "catalog": {
+    "completeOfficialSequenceCount": 109,
+    "categoryCountsByOfficialSequence": {
+      "A": 5,
+      "B": 22,
+      "mixed": 1,
+      "C": 60,
+      "D": 21
+    },
+    "mixedRow": 28,
+    "mixedSubevents": 5,
+    "allSequenceNumbersAccountedFor": true,
+    "ambiguousRowsUnresolved": [],
+    "tableVerification": "PDF第2页首14行逐项图像读取，第3—9页文本提取与表格图像逐页核对；第28项子赛独立分类；第88项保留预赛/决赛脚注例外",
+    "structuredFile": "work/innovation-details/competition-catalog.json"
+  },
+  "versions": [
+    {
+      "source": "policy1",
+      "finding": "网页标题试行，实际18页附件为院教发〔2025〕2号修订版，2025-03-24印发；按附件写摘要"
+    },
+    {
+      "source": "policy2",
+      "finding": "10页修订目录院教发〔2025〕3号，2025-03-24；不是实时年度目录"
+    },
+    {
+      "source": "policy3",
+      "finding": "2023-03-10公开办法，年度4月/11月只是该版常规制度，不转写2026具体申报期"
+    },
+    {
+      "source": "policy4",
+      "finding": "2023-03-10奖励办法；2025管理规定仍引用同名办法；需同时适用2025目录与审批限制"
+    },
+    {
+      "source": "credits-current",
+      "finding": "院团发〔2022〕11号明确2022级起适用，2019—2021级按旧法，专转本不作要求；补充办法教发[2021]15号页面迁移日期2022-10-05"
+    }
+  ],
+  "replacementSuggestions": [
+    {
+      "oldId": "d5e8a293-52d2-479a-9772-906227f632ad",
+      "newTitle": "通达学院：比赛是否被认可、A/B/C/D类与参赛报备（2025修订）",
+      "file": "work/innovation-details-replacements.json",
+      "reason": "旧制度入口改为已核实2025修订要点"
+    },
+    {
+      "oldId": "ec8cfae1-f903-46d5-ba8d-5600cad48812",
+      "newTitle": "通达学院：2022级起PU素拓学时、模块要求与申报办理",
+      "file": "work/innovation-details-replacements.json",
+      "reason": "旧PU入口替换为2022级起规则，并保留旧年级边界"
+    },
+    {
+      "oldId": "4b1fe201-a6bd-451b-8326-fdf3a7cf5079",
+      "newTitle": "通达学院：双创课程完整目录、负责部门和选课信息缺口",
+      "file": "work/innovation-details-replacements.json",
+      "reason": "旧课程入口升级完整11课程及部门，明确详情无内容"
+    }
+  ],
+  "remainingGaps": [
+    {
+      "area": "2026及以后目录",
+      "status": "not_established",
+      "reason": "本次只有2025修订附件，未核实后续年度增补清单或获批赛事记录"
+    },
+    {
+      "area": "专业提升创新技能学分",
+      "status": "referenced_policy_not_found",
+      "reason": "2025管理规定引用专业提升课程模块成绩认定细则，但本轮检索未找到可直接核实的细则正文；不凭PU学时猜课程学分"
+    },
+    {
+      "area": "课程内容/学分/选课",
+      "status": "not_published_in_read_details",
+      "reason": "11个详情全部只有宣传横幅，无大纲、学分、面向对象、开课学期、选课日期和报名入口"
+    },
+    {
+      "area": "个人获奖发放/报销",
+      "status": "private_case_not_accessed",
+      "reason": "未读取个人记录；无法确认个人审核状态、到账日、队内分配和具体票据"
+    },
+    {
+      "area": "实践基地预约",
+      "status": "not_published",
+      "reason": "办法可确认实践活动免费开放和管理归口，未给时段/门禁/预约步骤"
+    },
+    {
+      "area": "2022素拓表其他证书条目",
+      "status": "read_but_not_imported",
+      "reason": "附件含历史证书类别，未把这些视为当前可报考证书推荐；本轮只采用与任务相关的学时规则"
+    }
+  ],
+  "accessIssues": [
+    {
+      "tool": "web.open",
+      "source": "policy2/policy4",
+      "status": "initial_fetch_failed_resolved",
+      "resolution": "官方公开URL经urllib实际GET成功，无登录或绕过权限"
+    }
+  ],
+  "privacyHandling": "只导入政策、空白申请表要点、目录和部门；未导入任何参与人名单、个人联系方式、账号凭据。",
+  "databaseOrAppChanged": false,
+  "integration": {
+    "checkedAt": "2026-09-23T16:05:02.421Z",
+    "status": "reviewed_sources_integrated",
+    "verification": "verification-details-2026-09-23.json"
+  }
+}

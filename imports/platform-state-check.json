@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-09-23T18:18:58.760Z",
+  "health": {
+    "version": 2,
+    "app": "campus-agent"
+  },
+  "approvedByAgent": {
+    "life": 37,
+    "study": 78,
+    "affairs": 94
+  },
+  "approvedTotal": 209,
+  "localPlaces": 59,
+  "modelConfigured": true,
+  "automatedTests": {
+    "total": 53,
+    "passed": 53
+  },
+  "browser": "connection_failed",
+  "socialPosts": [
+    {
+      "id": "33cef247-1e1c-48f9-b90a-a5d4feac8802",
+      "title": "待核实｜扬州渡江路萍姐姐0514小火锅抖音线索（2026-09-02）",
+      "status": "rejected",
+      "hasSourceUrl": true,
+      "hasPublishedAt": true
+    },
+    {
+      "id": "26424ee4-8809-485b-90ee-ce93bdfa1271",
+      "title": "待核实｜福禧牛扬州美食抖音线索（2026-09-02）",
+      "status": "rejected",
+      "hasSourceUrl": true,
+      "hasPublishedAt": true
+    }
+  ],
+  "incomplete": [
+    "抖音、小红书完整内容自动采集与实时更新",
+    "最新页面视觉复核",
+    "未证明通达周边全部商户或校园全量资料覆盖",
+    "当前是本机演示身份，不是真实校园登录或线上多人平台"
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "batch": "yangzhou-district-2026-09-23",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:02:59.734Z",
+  "docs": [
+    {
+      "agent": "life",
+      "title": "扬州城南散步：运河三湾生态文化公园",
+      "source": "江苏宣传网（来源：扬州市委宣传部）｜https://www.jsxc.gov.cn/llsk/yjcg/202601/t20260116_89663.shtml",
+      "content": "运河三湾生态文化公园位于扬州市区南部古运河畔的三湾片区。扬州市委宣传部2026年1月介绍其生态湿地、运河水工景观及文化休闲功能，可作为户外散步、了解运河文化和观察湿地景观的目的地。公园与中国大运河博物馆应分别查询：公园游览不代表已预约博物馆。未取得当天入口、开放时段和活动规则，不提供未经核实的校门出发距离或步行时间。\n\n原文：https://www.jsxc.gov.cn/llsk/yjcg/202601/t20260116_89663.shtml\n核对日期：2026-09-23；原文发布日期：2026-01-16。\n范围：扬州市内目的地或服务入口，不等于学校周边步行可达。资料来自公开页面快照，非实时营业、票务或路线查询。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "江苏宣传网（来源：扬州市委宣传部）",
+        "url": "https://www.jsxc.gov.cn/llsk/yjcg/202601/t20260116_89663.shtml",
+        "verifiedAt": "2026-09-23",
+        "publishedAt": "2026-01-16",
+        "method": "Official search result article body read; direct open timed out.",
+        "verifiedFields": [
+          "位置为市区南部古运河畔三湾片区",
+          "生态湿地及文化休闲主题",
+          "发布机关为扬州市委宣传部，发布日期2026-01-16"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "未查询实时开放或预约余量",
+          "没有距离与经纬度证据"
+        ]
+      },
+      "place": {
+        "name": "运河三湾生态文化公园",
+        "category": "公园湿地散步",
+        "address": "扬州市区南部古运河畔三湾片区（原文未列门牌）",
+        "telephone": null,
+        "searchKeywords": [
+          "三湾公园",
+          "运河三湾",
+          "散步",
+          "湿地",
+          "城南",
+          "周末",
+          "户外"
+        ],
+        "coordinates": null
+      }
+    },
+    {
+      "agent": "life",
+      "title": "扬州经开区运动：南部体育公园场馆与预约入口",
+      "source": "扬州南部体育公园官方站｜https://www.yznbty.com/about.aspx",
+      "content": "扬州南部体育公园在扬州经济技术开发区，官方描述其位置为扬子江南路西侧、定浦路北侧、马港河路东侧。官网列出游泳、篮球、健身、羽毛球、拳击、壁球等室内运动，以及户外足球、篮球、网球、轮滑和健身区域。场馆预订电话为0514-82062288。适合查找打球、游泳或雨天室内运动地点；具体场馆当日是否开放、余场、装备要求和费用，应通过预订入口核对，不承诺免费或现场一定有空位。\n\n原文：https://www.yznbty.com/about.aspx\n核对日期：2026-09-23；原文发布日期：未注明。\n范围：扬州市内目的地或服务入口，不等于学校周边步行可达。资料来自公开页面快照，非实时营业、票务或路线查询。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州南部体育公园官方站",
+        "url": "https://www.yznbty.com/about.aspx",
+        "verifiedAt": "2026-09-23",
+        "publishedAt": null,
+        "method": "Official search result full introduction read; web open and direct curl currently unavailable.",
+        "verifiedFields": [
+          "官网公园简介列出经开区位置和场馆配置",
+          "站头场馆预订电话0514-82062288",
+          "运营项目另有江苏省国资委介绍佐证"
+        ],
+        "supplementalSources": [
+          {
+            "url": "https://jsgzw.jiangsu.gov.cn/art/2019/12/10/art_11793_8840069.html",
+            "title": "苏体产业集团：建设国内一流体育产业集团 助力体育强省健康江苏建设",
+            "publishedAt": "2019-12-10",
+            "scope": "Only corroborates venue operation; not used as current timetable or fee evidence"
+          }
+        ],
+        "limitations": [
+          "未查询实时开放或预约余量",
+          "没有距离与经纬度证据"
+        ]
+      },
+      "place": {
+        "name": "南部体育公园场馆与预约入口",
+        "category": "公共体育场馆",
+        "address": "扬州经济技术开发区，扬子江南路西侧、定浦路北侧、马港河路东侧",
+        "telephone": "0514-82062288",
+        "searchKeywords": [
+          "南部体育公园",
+          "游泳",
+          "羽毛球",
+          "篮球",
+          "健身",
+          "室内",
+          "运动",
+          "经开区"
+        ],
+        "coordinates": null
+      }
+    },
+    {
+      "agent": "life",
+      "title": "扬州市图书馆：总馆地址和找书活动入口",
+      "source": "扬州市图书馆｜https://www.yzlib.cn/",
+      "content": "扬州市图书馆官网提供馆藏图书检索、服务指南、读者服务和文化活动公告，页面列出文昌西路466号的综合阅览室（二楼南侧平台）。可通过这个官方入口继续查找借书、读书、讲座和展览信息。它是市图书馆，不是通达学院校内图书馆，也不是文昌西路468号的扬州博物馆。分区开放、办证规则、预约及当前空位要以对应指南为准。\n\n原文：https://www.yzlib.cn/\n核对日期：2026-09-23；原文发布日期：未注明。\n范围：扬州市内目的地或服务入口，不等于学校周边步行可达。资料来自公开页面快照，非实时营业、票务或路线查询。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州市图书馆",
+        "url": "https://www.yzlib.cn/",
+        "verifiedAt": "2026-09-23",
+        "publishedAt": null,
+        "method": "Official website search-index text read; direct open timed out.",
+        "verifiedFields": [
+          "官网列出馆藏检索、服务指南及文化活动栏目",
+          "综合阅览室地址文昌西路466号、二楼南侧平台"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "未查询实时开放或预约余量",
+          "没有距离与经纬度证据"
+        ]
+      },
+      "place": {
+        "name": "总馆地址和找书活动入口",
+        "category": "公共图书馆",
+        "address": "扬州市文昌西路466号",
+        "telephone": null,
+        "searchKeywords": [
+          "扬州市图书馆",
+          "市图书馆",
+          "借书",
+          "看书",
+          "阅览",
+          "讲座",
+          "文昌西路466号"
+        ],
+        "coordinates": null
+      }
+    },
+    {
+      "agent": "life",
+      "title": "三湾公园里的阅读地点：三湾城市书房",
+      "source": "扬州市图书馆｜https://www.yzlib.cn/Cloud-App/index.html",
+      "content": "三湾城市书房由扬州市图书馆官网列出，位置是广陵区宝塔南路三湾湿地生态公园内。可作为在三湾游览时寻找阅读空间的线索。它与市图书馆总馆、宋城书坊不是同一个地点；当天开门时间、是否需证件、座位、借阅和消费规则尚未核实。不能因为部分其他城市书房名称含“24小时”，就声称三湾城市书房全天开放。\n\n原文：https://www.yzlib.cn/Cloud-App/index.html\n核对日期：2026-09-23；原文发布日期：未注明。\n范围：扬州市内目的地或服务入口，不等于学校周边步行可达。资料来自公开页面快照，非实时营业、票务或路线查询。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州市图书馆",
+        "url": "https://www.yzlib.cn/Cloud-App/index.html",
+        "verifiedAt": "2026-09-23",
+        "publishedAt": null,
+        "method": "Official website search-index directory read; direct page requires JavaScript.",
+        "verifiedFields": [
+          "官网城市书房目录明确名称和公园内地址",
+          "未将其他书房的24小时属性套用"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "未查询实时开放或预约余量",
+          "没有距离与经纬度证据"
+        ]
+      },
+      "place": {
+        "name": "三湾城市书房",
+        "category": "阅读休闲",
+        "address": "扬州市广陵区宝塔南路三湾湿地生态公园内",
+        "telephone": null,
+        "searchKeywords": [
+          "三湾城市书房",
+          "三湾",
+          "看书",
+          "书房",
+          "阅读",
+          "宝塔南路"
+        ],
+        "coordinates": null
+      }
+    },
+    {
+      "agent": "life",
+      "title": "扬州邗江阅读地点：明月湖城市书房",
+      "source": "扬州市图书馆｜https://www.yzlib.cn/Cloud-App/index.html",
+      "content": "扬州市图书馆目录列有“明月湖24小时城市书房”，地址为邗江区明月湖公园内。想在明月湖一带找阅读休闲空间，可以查询这个馆方入口。目录名称中的“24小时”不构成此刻开门或全年无例外开放的实时保证；出发前需核实当日公告、进门和借阅要求，也不保证有空座。这里没有核实到精确门牌或从学校出发的距离。\n\n原文：https://www.yzlib.cn/Cloud-App/index.html\n核对日期：2026-09-23；原文发布日期：未注明。\n范围：扬州市内目的地或服务入口，不等于学校周边步行可达。资料来自公开页面快照，非实时营业、票务或路线查询。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州市图书馆",
+        "url": "https://www.yzlib.cn/Cloud-App/index.html",
+        "verifiedAt": "2026-09-23",
+        "publishedAt": null,
+        "method": "Official website search-index directory read; direct page requires JavaScript.",
+        "verifiedFields": [
+          "官网名称明月湖24小时城市书房",
+          "官网地址为邗江区明月湖公园内"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "未查询实时开放或预约余量",
+          "没有距离与经纬度证据"
+        ]
+      },
+      "place": {
+        "name": "明月湖城市书房",
+        "category": "阅读休闲",
+        "address": "扬州市邗江区明月湖公园内",
+        "telephone": null,
+        "searchKeywords": [
+          "明月湖",
+          "城市书房",
+          "看书",
+          "阅读",
+          "邗江区"
+        ],
+        "coordinates": null
+      }
+    },
+    {
+      "agent": "life",
+      "title": "扬州邗江看演出：中国扬州运河大剧院",
+      "source": "中国扬州运河大剧院｜https://www.yzdjy.com.cn/",
+      "content": "中国扬州运河大剧院官网地址为扬州市邗江区国展路108号，位于明月湖北岸，官网设有演出购票、最新剧目和新闻动态入口。想找话剧、舞台演出等文化娱乐，可以查看当期演出页面。没有导入过往演出的日期和价格作为当前排期，也没有核实今天余票、学生优惠或票价。官网部分电话标注用于团购、租场等，不能一律当作散客售票电话。\n\n原文：https://www.yzdjy.com.cn/\n核对日期：2026-09-23；原文发布日期：未注明。\n范围：扬州市内目的地或服务入口，不等于学校周边步行可达。资料来自公开页面快照，非实时营业、票务或路线查询。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "中国扬州运河大剧院",
+        "url": "https://www.yzdjy.com.cn/",
+        "verifiedAt": "2026-09-23",
+        "publishedAt": null,
+        "method": "Official home page opened and text inspected.",
+        "verifiedFields": [
+          "官网正文定位明月湖北岸",
+          "页脚地址国展路108号",
+          "导航含演出购票和最新剧目栏目",
+          "电话各有团购租场用途，未误标散客热线"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "未查询实时开放或预约余量",
+          "没有距离与经纬度证据"
+        ]
+      },
+      "place": {
+        "name": "中国扬州运河大剧院",
+        "category": "演出剧院",
+        "address": "扬州市邗江区国展路108号",
+        "telephone": null,
+        "searchKeywords": [
+          "运河大剧院",
+          "看演出",
+          "剧院",
+          "话剧",
+          "室内",
+          "明月湖",
+          "国展路108号"
+        ],
+        "coordinates": null
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "1675a14f-7715-4703-b36b-7d333b9c33c5",
+      "title": "扬州城南散步：运河三湾生态文化公园",
+      "agent": "life"
+    },
+    {
+      "id": "c97bcad5-43f7-4c1c-a0d5-6f96237af36d",
+      "title": "扬州经开区运动：南部体育公园场馆与预约入口",
+      "agent": "life"
+    },
+    {
+      "id": "3f76d80b-2422-4add-b049-04794a57976a",
+      "title": "扬州市图书馆：总馆地址和找书活动入口",
+      "agent": "life"
+    },
+    {
+      "id": "598fca85-aa03-4d28-9149-f53b2bbca25b",
+      "title": "三湾公园里的阅读地点：三湾城市书房",
+      "agent": "life"
+    },
+    {
+      "id": "24290870-cfad-44d0-a2ff-740f91fbe4ca",
+      "title": "扬州邗江阅读地点：明月湖城市书房",
+      "agent": "life"
+    },
+    {
+      "id": "bbb0c9ad-ba5c-4bc5-b99b-cf700a2525d1",
+      "title": "扬州邗江看演出：中国扬州运河大剧院",
+      "agent": "life"
+    }
+  ],
+  "offlined": [],
+  "added": 6,
+  "totalDocs": 87,
+  "approvedByAgent": {
+    "life": 34,
+    "study": 3,
+    "affairs": 47,
+    "freshman": 0
+  }
+}

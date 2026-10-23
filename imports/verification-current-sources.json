@@ -1,0 +1,533 @@
+{
+  "checkedAt": "2026-09-23T17:08:11.548Z",
+  "inventoryCountBefore": 446,
+  "inventoryCountAfter": 457,
+  "approved": 238,
+  "verifiedManifestDocuments": [
+    {
+      "id": "542286ad-4e89-4b8f-9d26-55916cc22836",
+      "title": "通达学院：2026级普通本科各专业学费与住宿费",
+      "manifest": "campus-admission-current-batch.json"
+    },
+    {
+      "id": "bc91faae-4a20-4a12-923f-c36471e67069",
+      "title": "通达学院：学校性质、校址和毕业证学位证校名（2026章程）",
+      "manifest": "campus-admission-current-batch.json"
+    },
+    {
+      "id": "4a2403a8-0060-4182-ba61-9176f7cc05d4",
+      "title": "通达学院：2026录取新生延期报到和入校外语选择",
+      "manifest": "campus-admission-current-batch.json"
+    },
+    {
+      "id": "15c093c4-4259-47b8-9a45-05de2786e922",
+      "title": "通达学院：2026专转本入学材料、编班和转专业限制",
+      "manifest": "campus-admission-current-batch.json"
+    },
+    {
+      "id": "b80df34e-17a2-4289-a8fb-5cc8482ed8c7",
+      "title": "通达学院：2026专转本专业学费和住宿费",
+      "manifest": "campus-admission-current-batch.json"
+    },
+    {
+      "id": "0f2ce853-9442-4cc3-9e9e-767cbcf232cf",
+      "title": "通达学院：2026高考专业选科要求与版本提醒",
+      "manifest": "campus-admission-current-batch.json"
+    },
+    {
+      "id": "0678543c-5d83-47ac-a044-429e2625bf42",
+      "title": "中运博2026中秋国庆：哪些日期能逛到晚上、怎样预约",
+      "manifest": "yangzhou-current-events-reviewed-batch.json"
+    },
+    {
+      "id": "e046d919-e722-4a04-980c-0cba27d378ba",
+      "title": "中运博新展：景迈回响，2026年9月25日至2027年1月3日",
+      "manifest": "yangzhou-current-events-reviewed-batch.json"
+    },
+    {
+      "id": "4d578687-1232-4be7-a972-f49939853cb5",
+      "title": "中运博在展：盛辉与尘光古希腊古罗马展，展期至2026年10月11日",
+      "manifest": "yangzhou-current-events-reviewed-batch.json"
+    },
+    {
+      "id": "8fd51ca6-4a99-4e61-9816-44b3ac392b3d",
+      "title": "中运博9号、10号展厅暂停开放公告与出行前核对",
+      "manifest": "yangzhou-venue-status-batch.json"
+    },
+    {
+      "id": "f96354e7-e1dc-4dbf-877a-ad224fd085eb",
+      "title": "通达学院：转专业后的课程抵扣、补修与编级风险（2026公开附件）",
+      "manifest": "campus-academic-batch.json"
+    },
+    {
+      "id": "9f38667a-e2eb-49a6-9bef-6b548d73abbe",
+      "title": "通达学院：毕业图像采集码与江苏图采入口（2026指南）",
+      "manifest": "campus-academic-batch.json"
+    },
+    {
+      "id": "c43cffd8-a24d-422a-bacf-f8316dd80c46",
+      "title": "通达学院：毕业照片不合格、账号锁定与草稿箱处理（2026指南）",
+      "manifest": "campus-academic-batch.json"
+    },
+    {
+      "id": "37a36c4a-cd3a-42b7-9faa-01b79c1d99e0",
+      "title": "通达学院：网络与新媒体学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "7ff2d060-c2db-4d06-8f4a-cc002026de7f",
+      "title": "通达学院：人工智能学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "8cb0f0a3-571e-4ef8-a918-441a407e8020",
+      "title": "通达学院：金融工程学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "dc4f4ddc-0ace-4d83-91ce-92210095d1aa",
+      "title": "通达学院：广告学学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "c231074b-e233-4854-8f5d-a766af7bdbc7",
+      "title": "通达学院：财务管理学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "2cb4077f-50c9-4b6a-91c1-fbfa2c5a4623",
+      "title": "通达学院：大数据管理与应用学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "9afdce4c-5b8d-4e9a-9405-93779c524ef2",
+      "title": "通达学院：电气工程及其自动化学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "e4dfb0bd-d4cc-4bf3-8864-16329fbc4bfd",
+      "title": "通达学院：自动化学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "b3effe77-c226-455f-94b8-0747c5ac3234",
+      "title": "通达学院：集成电路设计与集成系统学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "c4be257e-be3a-4e0b-9181-938a1ca1c6e6",
+      "title": "通达学院：光电信息科学与工程学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "2e7356cb-ce45-4d32-8b08-7e527c103b58",
+      "title": "通达学院：电子科学与技术学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "1ba26f24-7b6d-4791-9091-123e5d699c6f",
+      "title": "通达学院：数字媒体技术学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "ec5d5ebb-407b-4e80-9785-ec1c8af69baf",
+      "title": "通达学院：物联网工程学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "82aaa092-65e3-4e0f-a6e0-2271e0db434e",
+      "title": "通达学院：数据科学与大数据技术学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "795bbcb4-6109-4b6d-be9e-91f64f8402c1",
+      "title": "通达学院：信息安全学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "5cad6fb5-e66d-460e-88ca-45cdf223c41a",
+      "title": "通达学院：软件工程学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "4430d5c3-8127-44df-8808-084971d750e0",
+      "title": "通达学院：计算机科学与技术学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "267f6448-2fa1-423a-80f4-addd0df6464c",
+      "title": "通达学院：信息工程学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "cd8ef4f0-aebb-4922-9931-e1dce734df2b",
+      "title": "通达学院：通信工程学什么",
+      "manifest": "campus-programs-reviewed-batch.json"
+    },
+    {
+      "id": "2f4df2cc-26a2-4677-968c-87c2f010de7d",
+      "title": "通达学院：学士学位基本条件及不授予情形（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "7e182561-2eb2-41cc-96b6-f6fce24661a9",
+      "title": "通达学院：绩点不够拿学位：个别审议和毕业后重修（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "553db977-d0a6-47c0-ab97-442c7bea9ed7",
+      "title": "通达学院：学位救济的适用处分、五类条件及办理（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "b3a9079a-5e11-4567-9ad3-dfa166977bde",
+      "title": "通达学院：学位救济认可哪些表彰荣誉（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "811a4d5b-0a30-44df-af6f-b4c777d0da9e",
+      "title": "通达学院：学位审核、公示和复核申诉流程（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "7a67b948-3f37-47a3-997a-1d464850eb16",
+      "title": "通达学院：新生入学、保留入学资格与学期注册（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "4f46958f-5476-427f-b6e9-a362153adf9a",
+      "title": "通达学院：最长可以读几年、休学时间算不算（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "dc89fa8c-31e4-46d7-91c6-d264ce5b9bde",
+      "title": "通达学院：平均学分绩点怎么计算、哪些成绩计入（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "f8f9aed9-6c4c-4e73-b142-d0ff7d65414a",
+      "title": "通达学院：挂科、缺考和缺课后能否补考或必须重修（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "d01de902-8a27-4b94-8bfb-700150f6aac4",
+      "title": "通达学院：自学课程免修的绩点、材料和考核条件（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "b06af775-933f-4f17-aea4-6fc834ca4145",
+      "title": "通达学院：降级编级与跳级的学分差额条件（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "9800bb83-1ce1-413d-81fe-64d3de72f3ca",
+      "title": "通达学院：休学适用情况、复学期限与表格差异（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "dd4c74b2-0d00-4399-aaa4-cd07f4cb50bb",
+      "title": "通达学院：毕业、结业和延期毕业怎样区分（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "ceb0c24e-6655-4dc3-b573-97520691f101",
+      "title": "通达学院：结业后如何重修换毕业证（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "a102794d-ec95-4dbb-bc8f-46ba1350181b",
+      "title": "通达学院：退学处理、离校和申诉的正式规定（2025施行）",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "5a1a08fa-e00f-4555-9a74-e2b4bbfdb687",
+      "title": "通达学院：2024/2025级专业提升模块：升学、就业及认定缺口",
+      "manifest": "campus-rules-batch.json"
+    },
+    {
+      "id": "e4e7609a-9f96-49be-9c43-437770d111eb",
+      "title": "通达学院：休学期满复学的材料、选课与手续（2026版）",
+      "manifest": "campus-rules-replacements.json"
+    },
+    {
+      "id": "80c7e629-0665-43e3-8389-c5222abcfa67",
+      "title": "通达学院：本人申请退学所需材料与离校手续（2026版）",
+      "manifest": "campus-rules-replacements.json"
+    },
+    {
+      "id": "5429767c-b075-4799-a504-718568f3ef6c",
+      "title": "通达学院：休学申请材料与已考课程成绩保留（2026版）",
+      "manifest": "campus-rules-replacements.json"
+    },
+    {
+      "id": "dc5f07ac-7ffc-4d6a-9898-aa73de1d4867",
+      "title": "通达学院：本科生申请学位审批表的用途与填写（2020旧表）",
+      "manifest": "campus-rules-replacements.json"
+    },
+    {
+      "id": "98cd6bcb-f2a9-44b3-aaff-14ecb9b8d129",
+      "title": "通达学院：毕设选题简表和学期检查记录的填写内容（历史空表）",
+      "manifest": "archive-final-reviewed-batch.json"
+    },
+    {
+      "id": "82666e82-fa21-43c4-aa54-3d3dc27cb333",
+      "title": "通达学院：大创经费资助、可报项目及审批（2024修订）",
+      "manifest": "innovation-current-rules-batch.json"
+    },
+    {
+      "id": "e068cbb7-f89e-4b89-81b5-d82f53e165c5",
+      "title": "通达学院：国家级及省级重点大创如何结题（2023年度起标准）",
+      "manifest": "innovation-current-rules-batch.json"
+    },
+    {
+      "id": "6e1f9bea-2aa3-4eb1-bf62-71fb81652c95",
+      "title": "通达学院：省级一般、院级大创结题成果与共同要求（2023年度起）",
+      "manifest": "innovation-current-rules-batch.json"
+    },
+    {
+      "id": "7d2dfb3c-4698-457a-8e25-34b16faa6dbb",
+      "title": "通达学院：大创组队、变更、中期检查与结项的版本说明（2024修订）",
+      "manifest": "innovation-current-rules-replacements.json"
+    },
+    {
+      "id": "837279b0-edee-49cc-bb77-bda6ae44cdbb",
+      "title": "通达学院：大创立项办事流程图及2024修订依据",
+      "manifest": "innovation-current-rules-replacements.json"
+    },
+    {
+      "id": "1439c7db-50ac-492a-a372-c08833a091e5",
+      "title": "通达学院：必修、限选和任选课怎么区分（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "48b4a0ea-dcfb-4e5b-a54c-54d1aa5b2664",
+      "title": "通达学院：课程号末尾S和C、考试和考查的区别（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "23fdde6f-4b39-49b3-8f2f-61c42b676642",
+      "title": "通达学院：16学时是不是都算1学分（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "c2718c4c-32c8-4d36-82a2-d069c688ce2e",
+      "title": "通达学院：155和145学分上限是否等于毕业门槛（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "04780a70-b7c3-4109-babc-700080adf9b0",
+      "title": "通达学院：英语分级、四级六级成绩与免修申请（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "2f40e3a4-9f91-4bd0-bb27-e5fb30bc6dfa",
+      "title": "通达学院：计算机基础课程、一级考试与校内能力测试（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "9b93a2b4-b72d-40fa-b814-1a618e490598",
+      "title": "通达学院：体育课是4学分还是6学分、心理健康课学分（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "275baf89-dfe2-4938-9be7-9db9860a9fb1",
+      "title": "通达学院：职业规划和就业创业指导在哪学期上（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "0af2827c-df59-40a6-948e-d0e9caacab12",
+      "title": "通达学院：劳动教育32学时、不计学分是否还要上（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "a450297f-e4ba-4354-b581-9841ae7496a5",
+      "title": "通达学院：创新创业必修课在理工和经管文专业的区别（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "1827096a-046e-4576-a784-6d92d8cf2ef6",
+      "title": "通达学院：综合素质选修至少5学分、与PU学时的区别（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "3d5bdf63-7cce-4ac0-b835-7ba7ad542349",
+      "title": "通达学院：高数A1和A2、理工科大学物理怎么区分（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "7e4aece8-fc3e-48ab-9ef3-cbe387b06895",
+      "title": "通达学院：经管和人文专业的数学物理课程（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "25d53158-a4a4-4df8-bdc6-0d5bcf3291e5",
+      "title": "通达学院：毕业设计论文的建议学分和周数（2024/2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "88b1ba5f-f2de-456f-b1c8-a71d6ef911e0",
+      "title": "通达学院：电路分析、电工电子技术基础的平台课程安排（2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "da29143c-2cb4-4c62-983c-2975320d4c1e",
+      "title": "通达学院：数字电路、模拟电子线路和信号与系统A/B版本（2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "393b2bee-51d8-48cd-b32f-eae343fdcf79",
+      "title": "通达学院：电工电子实验与电子电路课程设计（2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "1ee10685-5497-4a67-995b-a5d231add0ea",
+      "title": "通达学院：认识实习、生产实习、金工电装和制图安排（2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "e474ac5c-fda6-4207-a048-f7261ddcd524",
+      "title": "通达学院：财务管理、金融工程和大数据管理的经管平台课（2025级）",
+      "manifest": "curriculum-details-batch.json"
+    },
+    {
+      "id": "5d4ff564-8db0-4083-84df-41322408d821",
+      "title": "通达学院：培养方案、招生介绍和个人课表有什么区别（2024/2025级）",
+      "manifest": "curriculum-intro-replacement.json"
+    },
+    {
+      "id": "322b4a26-3762-44df-b903-37b5d01a705b",
+      "title": "扬州皮市街：周末逛文创、书店和喝咖啡的街区",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "4c74841b-7455-47ba-b3cc-025a3c87c73f",
+      "title": "扬州东关街：古街、园林和听扬州曲艺的线索",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "8b696d60-88ca-4092-b1f2-830679312008",
+      "title": "扬州仁丰里：非遗、老街和民俗文化体验",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "ba8fb7aa-9059-4388-ab7b-dd219d7fff96",
+      "title": "扬州个园：地址、竹景和四季假山",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "db1f89c2-c5a7-4665-ac60-35a6cab47bfc",
+      "title": "扬州南河下看展：汪鲁门宅与大运河盐商文化展示馆",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "e734553d-23fd-4779-adc7-24166d6600c1",
+      "title": "扬州美食文化参观：中国淮扬菜博物馆与卢氏盐商住宅",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "05dd8fe9-8d23-4ca0-bbcb-e1ac3b02ea87",
+      "title": "扬州京杭之心：广陵新城的运河水景空间",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "e7a53ce3-f538-4597-a4e3-0d2545d269c8",
+      "title": "扬州青享码：在扬学生福利与2026寒暑假免票要区分",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "ee494515-2934-4026-92f4-317b37db4964",
+      "title": "扬州主题巴士：美食巴士和茶咖巴士是什么",
+      "manifest": "yangzhou-streets-batch.json"
+    },
+    {
+      "id": "4d5d9292-ca21-4b79-8bcc-442890f5f225",
+      "title": "扬州瘦西湖：景区地址与官方信息入口",
+      "manifest": "yangzhou-streets-batch.json"
+    }
+  ],
+  "replacementCount": 7,
+  "statusCounts": {
+    "imported": 155,
+    "covered_by_newer_primary_summary": 6,
+    "covered": 27,
+    "covered_by_version_comparison": 1,
+    "outdated_cohort": 4,
+    "covered_duplicate": 32,
+    "reviewed_date_conflict_not_imported": 1,
+    "imported_limited_version": 4,
+    "personal_results_excluded": 33,
+    "reviewed_expired_window_not_imported": 3,
+    "historical_window_not_read": 31,
+    "expired_or_news": 41,
+    "excluded_credentials": 1,
+    "excluded_nonstudent_administration": 1,
+    "imported_entry_only": 2,
+    "index_reviewed": 27,
+    "access_failed": 4,
+    "old_calendar_index": 1,
+    "empty_public_content": 2,
+    "reviewed_legacy_not_imported": 2,
+    "reviewed_superseded_step_not_imported": 1,
+    "excluded_staff_system": 1,
+    "index-reviewed": 1,
+    "reviewed_homepage_fallback": 1,
+    "navigation_reviewed": 7,
+    "news_only": 2,
+    "outdated_only": 1,
+    "covered_conflict": 1,
+    "staff_workflow": 1,
+    "reviewed_not_imported": 2,
+    "corroboration": 5,
+    "unavailable": 2,
+    "accepted-with-date": 3,
+    "accepted": 1,
+    "not-imported": 2,
+    "duplicate": 1,
+    "read": 1,
+    "not-usable": 2,
+    "duplicate-or-outside-priority": 1,
+    "staff_form_not_read": 1,
+    "archive_inventory_and_selected_blank_forms_read": 1,
+    "reviewed_limited_access": 1,
+    "expired_not_imported": 1,
+    "reviewed": 2,
+    "news_only_not_read": 14,
+    "historical_cohort_not_read": 7,
+    "reviewed_historical_guidance_not_imported": 2,
+    "reviewed_directory": 4,
+    "superseded_reference_not_imported": 1,
+    "old_version_reference_not_imported": 1,
+    "expired_notice_with_rule_conflict_not_imported": 1,
+    "invalid_column": 1,
+    "news_reference_only_not_imported": 1,
+    "fully_read": 2,
+    "access_or_decode_failed": 3
+  },
+  "manifestFiles": [
+    "campus-admission-current-batch.json",
+    "yangzhou-current-events-reviewed-batch.json",
+    "yangzhou-venue-status-batch.json",
+    "campus-academic-batch.json",
+    "campus-programs-reviewed-batch.json",
+    "campus-rules-batch.json",
+    "campus-rules-replacements.json",
+    "archive-final-reviewed-batch.json",
+    "innovation-current-rules-batch.json",
+    "innovation-current-rules-replacements.json",
+    "curriculum-details-batch.json",
+    "curriculum-intro-replacement.json",
+    "yangzhou-streets-batch.json"
+  ],
+  "reviewFiles": [
+    "campus-admission-current-review.json",
+    "yangzhou-current-events-review.json",
+    "campus-academic-review.json",
+    "campus-programs-review.json",
+    "campus-rules-review.json",
+    "archive-final-review.json",
+    "innovation-current-rules-review.json",
+    "curriculum-details-review.json",
+    "yangzhou-streets-review.json"
+  ],
+  "noDatabaseMutation": true
+}

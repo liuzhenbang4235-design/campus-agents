@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-09-23T17:44:52.148Z",
+  "defaultCampusQueryVerified": true,
+  "activePlaces": 52,
+  "approvedLifeDocs": 33,
+  "nearbyRestaurants": [
+    {
+      "name": "第二食堂",
+      "distanceMeters": 39
+    },
+    {
+      "name": "第一食堂",
+      "distanceMeters": 64
+    },
+    {
+      "name": "润园",
+      "distanceMeters": 1286
+    },
+    {
+      "name": "津园",
+      "distanceMeters": 1372
+    },
+    {
+      "name": "蒋家桥饺面店",
+      "distanceMeters": 2507
+    }
+  ],
+  "distantTourismExcluded": true
+}

@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-09-23T18:08:25.909Z",
+  "checks": [
+    {
+      "question": "通达快递在哪拿",
+      "expectedTitle": "通达学院：快递在哪拿、是否送上门（历史学生体验）",
+      "matched": true
+    },
+    {
+      "question": "学校快递送上门吗",
+      "expectedTitle": "通达学院：快递在哪拿、是否送上门（历史学生体验）",
+      "matched": true
+    },
+    {
+      "question": "学校超市能买生活用品吗",
+      "expectedTitle": "通达学院：买生活用品、校内超市情况（历史学生体验）",
+      "matched": true
+    },
+    {
+      "question": "通达有没有便利店",
+      "expectedTitle": "通达学院：买生活用品、校内超市情况（历史学生体验）",
+      "matched": true
+    },
+    {
+      "question": "通达外卖在哪里拿",
+      "expectedTitle": "通达学院：外卖在哪里取、能否送到宿舍（历史学生体验）",
+      "matched": true
+    },
+    {
+      "question": "外卖能送到宿舍楼下吗",
+      "expectedTitle": "通达学院：外卖在哪里取、能否送到宿舍（历史学生体验）",
+      "matched": true
+    },
+    {
+      "question": "宿舍有没有洗衣机",
+      "expectedTitle": "通达学院：宿舍洗衣机怎么找（历史学生体验）",
+      "matched": true
+    },
+    {
+      "question": "学校洗衣服去哪",
+      "expectedTitle": "通达学院：宿舍洗衣机怎么找（历史学生体验）",
+      "matched": true
+    }
+  ],
+  "question": "通达外卖现在都能送到宿舍楼下吗？",
+  "message": {
+    "role": "assistant",
+    "text": "根据2024年6月至2025年6月的历史学生体验（非学校官方规定），部分受访者提到宿舍楼下或大厅有外卖柜，也有部分订单需要到西门取，不能保证所有商家都能将外卖送到宿舍楼下。2026年的实际配送情况无法依据该历史资料确认，下单前建议核对订单的配送范围和取餐位置，最终以学校当期进校规则为准。\n\n参考资料：[1]",
+    "sources": [
+      {
+        "docId": "7d2d74e2-ab6c-424b-9dd6-9d9c70a1827b",
+        "title": "通达学院：外卖在哪里取、能否送到宿舍（历史学生体验）",
+        "source": "大学生活质量指北｜历史学生体验｜https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+        "date": "2026-09-24",
+        "sourceUrl": "https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/",
+        "publishedAt": "",
+        "collectedAt": "2026-09-24",
+        "sourceKind": "experience",
+        "excerpt": "历史学生体验，非学校规定：来源为《大学生活质量指北》通达学院公开问卷，当前页面列出的回答来自2024年6月至2025年6月。页面生成于2026-09-21不代表体验更新。以下不能确认2026年现状。\n部分受访者提到宿舍楼下或大厅的外卖柜，也有人提到部分订单需到西门取。不能保证所有商家均送楼下；下单前应核对订单配送范围和取餐位置，现行进校规则以学校通知为准。\n整理与采集日期：2026-09-24。原文链接：https://collegeschat.github.io/universities/nan-jing-you-dian-da-xue-tong-da-xue-yuan/\n来源署名：大学生活质量指北及匿名问卷贡献者。原页面许可CC BY-NC-SA 4.0；本条为摘要改写，沿用该许可：https://creativecommons.org/licenses/by-nc-sa/4.0/ 。未收录答卷编号或个人身份。",
+        "chunk": 1,
+        "citation": 1
+      }
+    ],
+    "mode": "ai",
+    "time": "2026-09-23T18:08:25.885Z"
+  }
+}

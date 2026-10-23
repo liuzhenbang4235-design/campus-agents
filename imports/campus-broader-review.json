@@ -1,0 +1,764 @@
+{
+  "scope": "从学校首页导航扩展的定向公开服务采集，非全站抓取；未抓私人信息、认证后页面或内网IP。",
+  "checkedAt": "2026-09-23",
+  "newRecords": 20,
+  "byAgent": {
+    "affairs": 12,
+    "life": 5,
+    "study": 3
+  },
+  "channels": [
+    {
+      "name": "招生与新生",
+      "url": "https://zs.nytdc.edu.cn/",
+      "discoveredFrom": "https://www.nytdc.edu.cn/",
+      "status": "reviewed_public",
+      "coverage": "答考生问、联系方式、住宿交通、入伍与保留资格，未查所有历年录取/专业文章"
+    },
+    {
+      "name": "招生就业处",
+      "url": "https://zjc.nytdc.edu.cn/",
+      "discoveredFrom": "https://www.nytdc.edu.cn/72/list.htm",
+      "status": "reviewed_public",
+      "coverage": "公开科室职责、联系、办事与下载，未查询个人档案"
+    },
+    {
+      "name": "91job就业系统",
+      "url": "https://tdxynjupt.91job.org.cn/sub-station/home/13989",
+      "discoveredFrom": "https://zjc.nytdc.edu.cn/",
+      "status": "not_checked_dynamic_entry",
+      "coverage": "HTTP旧入口403；HTTPS入口仅确认官网链接，未登录或读取个人信息"
+    },
+    {
+      "name": "团委",
+      "url": "http://tw.nytdc.edu.cn",
+      "discoveredFrom": "https://www.nytdc.edu.cn/72/list.htm",
+      "status": "reviewed_public",
+      "coverage": "表格下载与栏目；不采集学生任免、表彰名单或活动照片"
+    },
+    {
+      "name": "体育部",
+      "url": "https://www.nytdc.edu.cn/tyb",
+      "discoveredFrom": "https://www.nytdc.edu.cn/73/list.htm",
+      "status": "reviewed_public",
+      "coverage": "选课说明、场馆栏目、当前课表入口；不读教师成绩系统"
+    },
+    {
+      "name": "保卫部（处）",
+      "url": "http://bwc.nytdc.edu.cn",
+      "discoveredFrom": "https://www.nytdc.edu.cn/72/list.htm",
+      "status": "reviewed_public",
+      "coverage": "报警电话、场地、空白调阅/出门证表，未采集安防布防或监控内容"
+    },
+    {
+      "name": "统一认证平台",
+      "url": "https://www.nytdc.edu.cn/tysfrz/list.htm",
+      "discoveredFrom": "https://www.nytdc.edu.cn/",
+      "status": "not_visited_auth_entry",
+      "coverage": "只记录入口；需要用户自行登录的业务未读取"
+    },
+    {
+      "name": "网络信息服务",
+      "url": null,
+      "discoveredFrom": "https://www.nytdc.edu.cn/72/list.htm",
+      "status": "not_found_in_this_navigation_pass",
+      "coverage": "本轮首页部门导航没有找到独立网信服务入口，未猜测子域或探查校内IP"
+    },
+    {
+      "name": "各二级学院、创新创业平台",
+      "url": "https://www.nytdc.edu.cn/73/list.htm",
+      "discoveredFrom": "https://www.nytdc.edu.cn/",
+      "status": "not_checked",
+      "coverage": "已发现链接，本轮未扩展，留作下一轮公开服务检查"
+    },
+    {
+      "name": "综合服务",
+      "url": "https://www.nytdc.edu.cn/21/list.htm",
+      "discoveredFrom": "https://www.nytdc.edu.cn/",
+      "status": "reviewed_public",
+      "coverage": "作息、交通、2026节假日；校历目录陈旧未当作现行"
+    }
+  ],
+  "items": [
+    {
+      "name": "home",
+      "url": "https://www.nytdc.edu.cn/",
+      "title": "南京邮电大学通达学院",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/home.html",
+      "status": "imported",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页",
+      "previousStatus": "index_reviewed",
+      "documentIds": [
+        "5c13c443-46e7-4419-b8b1-8cdf280804b9",
+        "a51b4c5d-f7c7-4afc-aa27-1fc8daa00c10",
+        "562bb767-4ee3-4952-b90a-19e13b761eab",
+        "789814ae-8606-4f36-805f-9df92c204d41"
+      ]
+    },
+    {
+      "name": "departments",
+      "url": "https://www.nytdc.edu.cn/72/list.htm",
+      "title": "党政群部门",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/departments.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "teaching",
+      "url": "https://www.nytdc.edu.cn/73/list.htm",
+      "title": "教学科研单位",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/teaching.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "direct",
+      "url": "https://www.nytdc.edu.cn/zsdw/list.htm",
+      "title": "直属单位",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/direct.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "admissions",
+      "url": "https://zs.nytdc.edu.cn/",
+      "title": "招生网",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admissions.html",
+      "status": "imported",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页",
+      "previousStatus": "index_reviewed",
+      "documentIds": [
+        "429c56d9-fe37-4b01-8ff5-d6fe67346270",
+        "9fc9b3f2-f7e5-4bd8-a3c9-2d25a16e4cd8",
+        "5c13c443-46e7-4419-b8b1-8cdf280804b9",
+        "daa4dddd-43d5-4591-b9a7-73fa734e4de6",
+        "670b229f-ce45-4b8b-84ec-4f5619076659",
+        "d05edcfc-aeaf-4880-99cb-6309eb4714b2",
+        "c11f9bb2-fc7a-4e49-a198-a59a4d4ce24f"
+      ]
+    },
+    {
+      "name": "jobs",
+      "url": "http://tdxynjupt.91job.org.cn/",
+      "title": "",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/jobs.html",
+      "status": "access_failed",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "name": "calendar",
+      "url": "https://www.nytdc.edu.cn/xyxl/list.htm",
+      "title": "学院校历",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/calendar.html",
+      "status": "old_calendar_index",
+      "reason": "已读栏目，所列校历截至2021-2022，不作为当前校历"
+    },
+    {
+      "name": "timetable",
+      "url": "https://www.nytdc.edu.cn/zxsj/list.htm",
+      "title": "作息时间",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/timetable.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "562bb767-4ee3-4952-b90a-19e13b761eab"
+      ]
+    },
+    {
+      "name": "traffic",
+      "url": "https://www.nytdc.edu.cn/107/list.htm",
+      "title": "地理交通",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/traffic.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "5c13c443-46e7-4419-b8b1-8cdf280804b9"
+      ]
+    },
+    {
+      "name": "holidays2026",
+      "url": "https://www.nytdc.edu.cn/2025/1211/c33a48143/page.htm",
+      "title": "关于2026年部分节假日放假安排的通知",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/holidays2026.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "789814ae-8606-4f36-805f-9df92c204d41"
+      ]
+    },
+    {
+      "name": "admit-faq",
+      "url": "https://zs.nytdc.edu.cn/211/list.htm",
+      "title": "答考生问 ",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-faq.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "admit-contact",
+      "url": "https://zs.nytdc.edu.cn/213/list.htm",
+      "title": "联系我们",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-contact.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "429c56d9-fe37-4b01-8ff5-d6fe67346270"
+      ]
+    },
+    {
+      "name": "admit-joinarmy",
+      "url": "https://zs.nytdc.edu.cn/2022/0812/c129a31458/page.htm",
+      "title": "关于应征入伍新生申请办理保留入学资格手续的通知",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-joinarmy.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "daa4dddd-43d5-4591-b9a7-73fa734e4de6"
+      ]
+    },
+    {
+      "name": "admit-new2026",
+      "url": "https://zs.nytdc.edu.cn/2024/0815/c129a41228/page.htm",
+      "title": "关于2026年本科招生录取工作后续相关事宜安排的通知",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-new2026.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "429c56d9-fe37-4b01-8ff5-d6fe67346270"
+      ]
+    },
+    {
+      "name": "admit-map",
+      "url": "https://zs.nytdc.edu.cn/557/list.htm",
+      "title": "校园地图",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-map.html",
+      "status": "map_collected_pending_interpretation",
+      "reason": "招生网官方校园地图图片已下载，未解析位置关系；不能凭缩略图生成导航"
+    },
+    {
+      "name": "admit-room",
+      "url": "https://zs.nytdc.edu.cn/220/list.htm",
+      "title": "住在通达",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-room.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "9fc9b3f2-f7e5-4bd8-a3c9-2d25a16e4cd8"
+      ]
+    },
+    {
+      "name": "admit-traffic",
+      "url": "https://zs.nytdc.edu.cn/563/list.htm",
+      "title": "交通出行",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-traffic.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "5c13c443-46e7-4419-b8b1-8cdf280804b9"
+      ]
+    },
+    {
+      "name": "admit-clubs",
+      "url": "https://zs.nytdc.edu.cn/222/list.htm",
+      "title": "社团文化",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-clubs.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "670b229f-ce45-4b8b-84ec-4f5619076659"
+      ]
+    },
+    {
+      "name": "youth",
+      "url": "http://tw.nytdc.edu.cn",
+      "title": "团委",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/youth.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "670b229f-ce45-4b8b-84ec-4f5619076659",
+        "e944cfdf-1187-426b-a7b1-074b8bcd0f8a",
+        "c58a538d-8010-4bfe-8eba-d171e6ee3a9a",
+        "b9d8c200-b4fb-46cb-ae1e-6492be08e875"
+      ]
+    },
+    {
+      "name": "sports",
+      "url": "http://www.nytdc.edu.cn/tyb",
+      "title": "",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/sports.html",
+      "status": "access_failed",
+      "reason": "HTTP Error 400: Bad Request"
+    },
+    {
+      "name": "zjc",
+      "url": "https://zjc.nytdc.edu.cn/",
+      "title": "南京邮电大学|招生就业网",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/zjc.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "429c56d9-fe37-4b01-8ff5-d6fe67346270",
+        "804081bc-f671-49db-b9ff-0240cc1a186e",
+        "978d21c8-eb9b-4b3a-8609-dc5cf9d17c57",
+        "3d62265d-3a6d-4047-8472-41aafd41f879"
+      ]
+    },
+    {
+      "name": "security",
+      "url": "http://bwc.nytdc.edu.cn",
+      "title": "南京邮电大学通达学院-保卫部（处）",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/security.html",
+      "status": "imported",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页",
+      "previousStatus": "index_reviewed",
+      "documentIds": [
+        "f1eec36c-0709-405e-8f36-97bab5d11212",
+        "bf6323b2-dd62-4547-a094-7ef71dd15177",
+        "8fdb3807-7c9c-4298-bdd9-aa5f961ee6d6",
+        "b8048390-025e-4fa8-a4f7-9e3b35f2522a"
+      ]
+    },
+    {
+      "name": "zjc-procedures",
+      "url": "https://zjc.nytdc.edu.cn/1172/list.htm",
+      "title": "办事流程",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/zjc-procedures.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "zjc-contact",
+      "url": "https://zjc.nytdc.edu.cn/1176/list.htm",
+      "title": "联系我们",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/zjc-contact.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "429c56d9-fe37-4b01-8ff5-d6fe67346270",
+        "3d62265d-3a6d-4047-8472-41aafd41f879"
+      ]
+    },
+    {
+      "name": "zjc-download",
+      "url": "https://zjc.nytdc.edu.cn/1175/list.htm",
+      "title": "下载中心",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/zjc-download.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "zjc-duties",
+      "url": "https://zjc.nytdc.edu.cn/kszz/list.htm",
+      "title": "科室职责",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/zjc-duties.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "3d62265d-3a6d-4047-8472-41aafd41f879"
+      ]
+    },
+    {
+      "name": "bw-services",
+      "url": "http://bwc.nytdc.edu.cn/1297/list.htm",
+      "title": "户籍管理",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-services.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "bw-contact",
+      "url": "http://bwc.nytdc.edu.cn/1299/list.htm",
+      "title": "联系我们",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-contact.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "f1eec36c-0709-405e-8f36-97bab5d11212"
+      ]
+    },
+    {
+      "name": "bw-cctv",
+      "url": "http://bwc.nytdc.edu.cn/1419/list.htm",
+      "title": "视频监控查阅申请",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-cctv.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "bf6323b2-dd62-4547-a094-7ef71dd15177"
+      ]
+    },
+    {
+      "name": "bw-stall",
+      "url": "http://bwc.nytdc.edu.cn/btsdsq/list.htm",
+      "title": "摆摊设点申请",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-stall.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "bw-hukou",
+      "url": "http://bwc.nytdc.edu.cn/1313/list.htm",
+      "title": "户籍管理",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-hukou.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "bw-goods",
+      "url": "http://bwc.nytdc.edu.cn/wpcmzsq/list.htm",
+      "title": "物品出门证申请",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-goods.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "8fdb3807-7c9c-4298-bdd9-aa5f961ee6d6"
+      ]
+    },
+    {
+      "name": "admit-transfer",
+      "url": "https://zs.nytdc.edu.cn/2020/1211/c211a12774/page.htm",
+      "title": "可否再转专业",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-transfer.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "d05edcfc-aeaf-4880-99cb-6309eb4714b2"
+      ]
+    },
+    {
+      "name": "admit-language",
+      "url": "https://zs.nytdc.edu.cn/2024/0607/c211a40913/page.htm",
+      "title": "小语种考生",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/admit-language.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "c11f9bb2-fc7a-4e49-a198-a59a4d4ce24f"
+      ]
+    },
+    {
+      "name": "tw-contact",
+      "url": "http://tw.nytdc.edu.cn/twgzrylxfs/list.htm",
+      "title": "联系方式",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/tw-contact.html",
+      "status": "empty_public_content",
+      "reason": "只有导航和页脚，未显示具体团委电话，不猜测"
+    },
+    {
+      "name": "tw-download",
+      "url": "http://tw.nytdc.edu.cn/443/list.htm",
+      "title": "下载专区",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/tw-download.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "tw-notices",
+      "url": "http://tw.nytdc.edu.cn/439/list.htm",
+      "title": "团委发文",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/tw-notices.html",
+      "status": "index_reviewed",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页"
+    },
+    {
+      "name": "sports-https",
+      "url": "https://www.nytdc.edu.cn/tyb",
+      "title": "南京邮电大学通达学院体育部",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/sports-https.html",
+      "status": "imported",
+      "reason": "已查可见导航并优先进入学生服务文章；未遍历所有新闻或分页",
+      "previousStatus": "index_reviewed",
+      "documentIds": [
+        "a51b4c5d-f7c7-4afc-aa27-1fc8daa00c10"
+      ]
+    },
+    {
+      "name": "job-replace",
+      "url": "https://zjc.nytdc.edu.cn/2026/0526/c1172a50109/page.htm",
+      "title": "【就业】关于毕业生补办就业材料的事项说明",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/job-replace.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "978d21c8-eb9b-4b3a-8609-dc5cf9d17c57"
+      ]
+    },
+    {
+      "name": "job-replace-form",
+      "url": "https://zjc.nytdc.edu.cn/2026/0526/c1175a50108/page.htm",
+      "title": "南京邮电大学通达学院毕业生就业材料丢失补办申请表",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/job-replace-form.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "978d21c8-eb9b-4b3a-8609-dc5cf9d17c57"
+      ]
+    },
+    {
+      "name": "new-retain",
+      "url": "https://zjc.nytdc.edu.cn/2022/0923/c1172a31852/page.htm",
+      "title": "【招生】新生保留恢复入学资格流程",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/new-retain.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "804081bc-f671-49db-b9ff-0240cc1a186e"
+      ]
+    },
+    {
+      "name": "job-91-manual",
+      "url": "https://zjc.nytdc.edu.cn/2022/1005/c1175a31992/page.htm",
+      "title": "江苏省91job智慧就业平台（学生中心）操作手册",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/job-91-manual.html",
+      "status": "public_attachment_not_parsed",
+      "reason": "只找到2022学生中心DOCX手册入口，本轮未下载，不能保证旧界面仍适用"
+    },
+    {
+      "name": "bw-id",
+      "url": "http://bwc.nytdc.edu.cn/2020/1027/c1313a36225/page.htm",
+      "title": "身份证办理流程",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-id.html",
+      "status": "public_guide_collected_not_imported",
+      "reason": "已下载流程图，本轮不导入未全面核实现行性的户籍/证件要求"
+    },
+    {
+      "name": "bw-residence",
+      "url": "http://bwc.nytdc.edu.cn/2020/1027/c1313a10920/page.htm",
+      "title": "居住证办理流程",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-residence.html",
+      "status": "public_guide_collected_not_imported",
+      "reason": "已下载流程图，本轮不导入未全面核实现行性的户籍/证件要求"
+    },
+    {
+      "name": "bw-hukou-guide",
+      "url": "http://bwc.nytdc.edu.cn/2020/1027/c1313a10918/page.htm",
+      "title": "学生户口迁入迁出",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-hukou-guide.html",
+      "status": "public_guide_collected_not_imported",
+      "reason": "已下载流程图，本轮不导入未全面核实现行性的户籍/证件要求"
+    },
+    {
+      "name": "bw-site-form",
+      "url": "http://bwc.nytdc.edu.cn/2021/0325/c1426a36159/page.htm",
+      "title": "活动场地使用审批表（校内单位用）",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-site-form.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "b8048390-025e-4fa8-a4f7-9e3b35f2522a"
+      ]
+    },
+    {
+      "name": "bw-stall-rule",
+      "url": "http://bwc.nytdc.edu.cn/2025/0327/c1416a44950/page.htm",
+      "title": "院保发【2025】12号《校内临时摆摊设点管理规定》",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/bw-stall-rule.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "b8048390-025e-4fa8-a4f7-9e3b35f2522a"
+      ]
+    },
+    {
+      "name": "tw-card",
+      "url": "http://tw.nytdc.edu.cn/2026/0525/c443a49968/page.htm",
+      "title": "团员证补办相关附件",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/tw-card.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "e944cfdf-1187-426b-a7b1-074b8bcd0f8a"
+      ]
+    },
+    {
+      "name": "tw-practice",
+      "url": "http://tw.nytdc.edu.cn/2023/0410/c443a35149/page.htm",
+      "title": "南京邮电大学通达学院社会实践活动登记表",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/tw-practice.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "c58a538d-8010-4bfe-8eba-d171e6ee3a9a"
+      ]
+    },
+    {
+      "name": "tw-poster",
+      "url": "http://tw.nytdc.edu.cn/2023/0407/c443a35108/page.htm",
+      "title": "学院张贴宣传品审批表",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/tw-poster.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "b9d8c200-b4fb-46cb-ae1e-6492be08e875"
+      ]
+    },
+    {
+      "name": "sports-selection",
+      "url": "https://www.nytdc.edu.cn/tyb/2025/0218/c1370a42733/page.htm",
+      "title": "关于体育课选课事宜的补充通知",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/sports-selection.html",
+      "status": "imported",
+      "reason": "已核对正文或注明附件范围，相关事实/局限已写入本批次",
+      "previousStatus": "ready_for_import",
+      "documentIds": [
+        "a51b4c5d-f7c7-4afc-aa27-1fc8daa00c10"
+      ]
+    },
+    {
+      "name": "sports-scores",
+      "url": "https://www.nytdc.edu.cn/tyb/2025/0324/c1340a44900/page.htm",
+      "title": "体育（测）成绩管理系统使用操作说明（教师版）",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/sports-scores.html",
+      "status": "excluded_staff_system",
+      "reason": "教师版成绩系统操作说明，不进入学生助手或收集账号信息"
+    },
+    {
+      "name": "sports-venues",
+      "url": "https://www.nytdc.edu.cn/tyb/1349/list.htm",
+      "title": "场馆安排",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/sports-venues.html",
+      "status": "index_only",
+      "reason": "仅发现2024场馆申请入口，未查到实时预约余量或开放时间"
+    },
+    {
+      "name": "sports-course2026",
+      "url": "https://www.nytdc.edu.cn/tyb/2026/0827/c1338a51082/page.htm",
+      "title": "2026-2027学年第一（秋季）学期体育课程教学任务安排表",
+      "checkedAt": "2026-09-23",
+      "evidenceFile": "work/campus-broader/sports-course2026.html",
+      "status": "public_attachment_not_parsed",
+      "reason": "当前学期课程表PDF已发现但未下载解析，不收集个人课表信息"
+    }
+  ],
+  "excludedDiscovered": [
+    {
+      "url": "http://tw.nytdc.edu.cn/2026/0901/c439a51105/page.htm",
+      "title": "学生任免或表彰名单（不采集）",
+      "status": "excluded_personal_list",
+      "discoveredFrom": "http://tw.nytdc.edu.cn/439/list.htm"
+    },
+    {
+      "url": "http://tw.nytdc.edu.cn/2026/0514/c439a49705/page.htm",
+      "title": "学生任免或表彰名单（不采集）",
+      "status": "excluded_personal_list",
+      "discoveredFrom": "http://tw.nytdc.edu.cn/439/list.htm"
+    },
+    {
+      "url": "http://tw.nytdc.edu.cn/2025/0701/c439a47110/page.htm",
+      "title": "学生任免或表彰名单（不采集）",
+      "status": "excluded_personal_list",
+      "discoveredFrom": "http://tw.nytdc.edu.cn/439/list.htm"
+    },
+    {
+      "url": "http://tw.nytdc.edu.cn/2025/0701/c439a47109/page.htm",
+      "title": "学生任免或表彰名单（不采集）",
+      "status": "excluded_personal_list",
+      "discoveredFrom": "http://tw.nytdc.edu.cn/439/list.htm"
+    },
+    {
+      "url": "http://tw.nytdc.edu.cn/2025/0429/c439a45542/page.htm",
+      "title": "学生任免或表彰名单（不采集）",
+      "status": "excluded_personal_list",
+      "discoveredFrom": "http://tw.nytdc.edu.cn/439/list.htm"
+    }
+  ],
+  "statusCounts": {
+    "imported": 31,
+    "index_reviewed": 11,
+    "access_failed": 2,
+    "old_calendar_index": 1,
+    "map_collected_pending_interpretation": 1,
+    "empty_public_content": 1,
+    "public_attachment_not_parsed": 2,
+    "public_guide_collected_not_imported": 3,
+    "excluded_staff_system": 1,
+    "index_only": 1
+  },
+  "notes": [
+    "有些URL年份不是页面日期；按页面和正文适用时间标注。",
+    "招生114/115位置冲突已保留；转专业FAQ日期与正文2026级范围不一致已披露。",
+    "不以尚未下载的附件标题推断内部字段。",
+    "原始HTML可能含官方页面的导航姓名，本批次与待查队列未导入个人名单、号码或凭据。"
+  ],
+  "importedAt": "2026-09-23T15:07:51.439Z"
+}

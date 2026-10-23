@@ -1,0 +1,106 @@
+{
+  "batch": "innovation-current-rules-batch.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:42:25.432Z",
+  "docs": [
+    {
+      "agent": "study",
+      "title": "通达学院：大创经费资助、可报项目及审批（2024修订）",
+      "source": "教务处｜2024-04-02修订｜https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+      "content": "版本：教发〔2024〕3号《大学生创新创业训练计划管理规定（修订）》，2024-04-02发布；公告同时废止旧STITP管理规定（试行）。\n2024管理规定第8—11条要求项目经费在财务处按项目编号设专门账户，专款专用；国家级、省级项目按规定资助，院级重点项目1000元、院级一般项目500元。这是项目经费额度，不是给每位成员的现金奖励。国家级、省级项目按规定予以1∶1配套，其中50%以经费配套体现，另50%以实验室、仪器设备、项目评审和指导教师业绩点等形式体现，不能把全部配套金额理解为可直接报销的现金。\n经费用途列调研费（一般不超过总经费20%）、资料购置、测试、软件和小型硬件购置，以及资料打印复印印刷、学生撰写的项目相关论文版面费等。各项结构应合理，项目经费不得超支，报销应提供实物清单。\n报销单由学生项目负责人签字，指导教师审核签字，二级学院教学院长审批、分管职能部门领导审核、教学院长签字后到财务处报销。具体票据和当年可用额度由学校确认，不能仅凭此清单认定任何购物或出差都能报销。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm\n正式附件：https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+        "sourceTitle": "南京邮电大学通达学院 大学生创新创业训练计划管理规定(修订)",
+        "pageDate": "2024-04-02",
+        "documentVersion": "教发〔2024〕3号《大学生创新创业训练计划管理规定（修订）》，2024-04-02发布；公告同时废止旧STITP管理规定（试行）",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/innovation-current/dachuang-current.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf",
+        "attachmentFile": "work/innovation-current/dachuang-current.pdf",
+        "attachmentSha256": "289db7ecfaff51ff27d133501a52f45dbb7fc5e629133ca32d4d6fba38b9113d",
+        "pdfPages": [
+          1,
+          5,
+          6
+        ],
+        "evidence": "第8—11条；表列国家/省级按规定资助、院级重点1000/一般500；1:1配套的50%经费/50%设施等非现金部分分开表述",
+        "verificationMethod": "唯一指定官方HTML及同页9页PDF全部目视核对；第9页另放大复核表格归属及署名要求，不按URL年份推断版本"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：国家级及省级重点大创如何结题（2023年度起标准）",
+      "source": "教务处｜2024-04-02修订｜https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+      "content": "版本：教发〔2024〕2号《大学生创新创业训练计划项目结题验收标准（修订）》，2024-04-02发布，备注明确从2023年度大创项目开始执行。\n国家级（省级重点）项目须满足以下成果条件之一：①学生以第一作者或唯一作者发表或录用论文2篇，至少1篇为核心期刊论文；指导教师第一、学生第二等同学生第一作者；一篇论文只用于一个项目验收。②学生申请实用新型专利2项、排名第一，指导教师第一且学生第二等同第一；须获专利局受理并取得受理号，一项专利只用于一个项目验收。③学生申请并获得软件著作权2项、排名第一。④在学院认可竞赛目录的A类竞赛获得国家级奖励，获奖内容与项目有关，排名前三；中国国际大学生创新大赛、挑战杯按团队前5名。\n备注还要求所有项目参加当年度中国国际大学生创新大赛；论文发表须注明由国家、省级或校级大学生创新创业训练计划支持；核心期刊以学院《核心期刊ABC类认定标准》为范围；竞赛须在学院认定分类目录内且与项目相关。本次未核对该核心期刊标准的具体期刊表。达到某项成果仍须提交材料并经学校结题验收，不代表系统自动结题；当批材料和答辩时间另按通知。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm\n正式附件：https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+        "sourceTitle": "南京邮电大学通达学院 大学生创新创业训练计划管理规定(修订)",
+        "pageDate": "2024-04-02",
+        "documentVersion": "教发〔2024〕2号《大学生创新创业训练计划项目结题验收标准（修订）》，2024-04-02发布，备注明确从2023年度大创项目开始执行",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/innovation-current/dachuang-current.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf",
+        "attachmentFile": "work/innovation-current/dachuang-current.pdf",
+        "attachmentSha256": "289db7ecfaff51ff27d133501a52f45dbb7fc5e629133ca32d4d6fba38b9113d",
+        "pdfPages": [
+          8,
+          9
+        ],
+        "evidence": "教发〔2024〕2号；PDF第9页表格首行国家级（省级重点）四类择一及全部备注；作者、专利首位及软件著作权条目未互相套用等同规则",
+        "verificationMethod": "唯一指定官方HTML及同页9页PDF全部目视核对；第9页另放大复核表格归属及署名要求，不按URL年份推断版本"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：省级一般、院级大创结题成果与共同要求（2023年度起）",
+      "source": "教务处｜2024-04-02修订｜https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+      "content": "版本：教发〔2024〕2号《大学生创新创业训练计划项目结题验收标准（修订）》，2024-04-02发布，备注明确从2023年度大创项目开始执行。\n省级一般项目满足以下条件之一：①学生以第一作者或唯一作者在省级及以上刊物发表或录用论文1篇，指导教师第一、学生第二等同学生第一作者；一篇论文只用于一个项目验收。②学生申请实用新型专利1项、排名第一，指导教师第一且学生第二等同第一；须获专利局受理并取得受理号，一项专利只用于一个项目验收。③学生申请并获得软件著作权1项、排名第一。④获得创新创业竞赛省级奖励，获奖内容与项目有关，排名前三；中国国际大学生创新大赛、挑战杯按团队前5名。竞赛范围为学院认可的创新创业竞赛分类目录。\n院级项目按照项目立项任务书的要求验收，不能直接套用省级一般的论文或专利数量。该标准备注要求所有项目参加当年度中国国际大学生创新大赛，论文发表注明相应国家、省级或校级大创计划支持。以上从2023年度大创项目开始执行；不同立项年度、项目层级及后续具体通知应由教务确认。旧版“省级必须论文或专利”的概括不完整，新表还列软件著作权和符合条件的竞赛获奖路径。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm\n正式附件：https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+        "sourceTitle": "南京邮电大学通达学院 大学生创新创业训练计划管理规定(修订)",
+        "pageDate": "2024-04-02",
+        "documentVersion": "教发〔2024〕2号《大学生创新创业训练计划项目结题验收标准（修订）》，2024-04-02发布，备注明确从2023年度大创项目开始执行",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/innovation-current/dachuang-current.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf",
+        "attachmentFile": "work/innovation-current/dachuang-current.pdf",
+        "attachmentSha256": "289db7ecfaff51ff27d133501a52f45dbb7fc5e629133ca32d4d6fba38b9113d",
+        "pdfPages": [
+          8,
+          9
+        ],
+        "evidence": "PDF第9页省级一般四类择一、院级按任务书、2023年度起与全部项目参赛备注",
+        "verificationMethod": "唯一指定官方HTML及同页9页PDF全部目视核对；第9页另放大复核表格归属及署名要求，不按URL年份推断版本"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "82666e82-fa21-43c4-aa54-3d3dc27cb333",
+      "title": "通达学院：大创经费资助、可报项目及审批（2024修订）",
+      "agent": "study"
+    },
+    {
+      "id": "e068cbb7-f89e-4b89-81b5-d82f53e165c5",
+      "title": "通达学院：国家级及省级重点大创如何结题（2023年度起标准）",
+      "agent": "study"
+    },
+    {
+      "id": "6e1f9bea-2aa3-4eb1-bf62-71fb81652c95",
+      "title": "通达学院：省级一般、院级大创结题成果与共同要求（2023年度起）",
+      "agent": "study"
+    }
+  ],
+  "offlined": [],
+  "added": 3,
+  "totalDocs": 232,
+  "approvedByAgent": {
+    "life": 56,
+    "study": 58,
+    "affairs": 94,
+    "freshman": 0
+  }
+}

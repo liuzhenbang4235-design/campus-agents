@@ -1,0 +1,478 @@
+{
+  "checkedAt": "2026-09-24",
+  "scope": "公开学生学籍、学位办法与2024/2025专业提升课程模块线索；13个HTML（含1个无效栏目响应）和4份关联PDF；未遍历全站。",
+  "htmlLimit": 20,
+  "newHtmlPages": 13,
+  "batchCount": 16,
+  "replacementCount": 4,
+  "batchFile": "work/campus-rules-batch.json",
+  "replacementFile": "work/campus-rules-replacements.json",
+  "approvedDocumentsAtInitialDedup": 165,
+  "approvedTitleSnapshot": "work/campus-rules/approved-titles.json",
+  "sourceInventoryRead": "outputs/campus-agent/imports/source-inventory.json",
+  "sourceFiles": [
+    {
+      "name": "rules-index",
+      "url": "https://jwc.nytdc.edu.cn/514/list.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/514/list.htm",
+      "title": "学院",
+      "pageDate": null,
+      "status": "reviewed_directory",
+      "file": "work/campus-rules/rules-index.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "student2021",
+      "url": "https://jwc.nytdc.edu.cn/2021/0512/c514a18523/pagem.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/2021/0512/c514a18523/pagem.htm",
+      "title": "南京邮电大学通达学院学生学籍管理办法",
+      "pageDate": "2021-05-12",
+      "status": "superseded_reference_not_imported",
+      "file": "work/campus-rules/student2021.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "degree2018",
+      "url": "https://jwc.nytdc.edu.cn/2021/0512/c514a18524/page.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/2021/0512/c514a18524/page.htm",
+      "title": "南京邮电大学通达学院本科毕业生学士学位授予办法（修订）",
+      "pageDate": "2021-05-12",
+      "status": "old_version_reference_not_imported",
+      "file": "work/campus-rules/degree2018.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "graduation2026sep",
+      "url": "https://jwc.nytdc.edu.cn/2026/0916/c308a51229/pagem.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/2026/0916/c308a51229/pagem.htm",
+      "title": "南京邮电大学通达学院关于2026年9月申请毕（结）业的通知",
+      "pageDate": "2026-09-16",
+      "status": "expired_notice_with_rule_conflict_not_imported",
+      "file": "work/campus-rules/graduation2026sep.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "degree-revised",
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+      "title": "南京邮电大学通达学院本科毕业生学士学位授予办法（修订）",
+      "pageDate": "2026-05-29",
+      "status": "parsed_ready",
+      "file": "work/campus-rules/degree-revised.html",
+      "relatedTitles": [
+        "通达学院：学士学位基本条件及不授予情形（2025施行）",
+        "通达学院：绩点不够拿学位：个别审议和毕业后重修（2025施行）",
+        "通达学院：学位救济的适用处分、五类条件及办理（2025施行）",
+        "通达学院：学位救济认可哪些表彰荣誉（2025施行）",
+        "通达学院：学位审核、公示和复核申诉流程（2025施行）"
+      ],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "student-revised",
+      "url": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "title": "南京邮电大学通达学院学生学籍管理办法（修订）",
+      "pageDate": "2024-07-06",
+      "status": "parsed_ready",
+      "file": "work/campus-rules/student-revised.html",
+      "relatedTitles": [
+        "通达学院：新生入学、保留入学资格与学期注册（2025施行）",
+        "通达学院：最长可以读几年、休学时间算不算（2025施行）",
+        "通达学院：平均学分绩点怎么计算、哪些成绩计入（2025施行）",
+        "通达学院：挂科、缺考和缺课后能否补考或必须重修（2025施行）",
+        "通达学院：自学课程免修的绩点、材料和考核条件（2025施行）",
+        "通达学院：降级编级与跳级的学分差额条件（2025施行）",
+        "通达学院：休学适用情况、复学期限与表格差异（2025施行）",
+        "通达学院：毕业、结业和延期毕业怎样区分（2025施行）",
+        "通达学院：结业后如何重修换毕业证（2025施行）",
+        "通达学院：退学处理、离校和申诉的正式规定（2025施行）"
+      ],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "rules-index2",
+      "url": "https://jwc.nytdc.edu.cn/514/list2.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/514/list2.htm",
+      "title": "学院",
+      "pageDate": null,
+      "status": "reviewed_directory",
+      "file": "work/campus-rules/rules-index2.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "rules-index3",
+      "url": "https://jwc.nytdc.edu.cn/514/list3.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/514/list3.htm",
+      "title": "学院",
+      "pageDate": null,
+      "status": "reviewed_directory",
+      "file": "work/campus-rules/rules-index3.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "curriculum-index",
+      "url": "https://jwc.nytdc.edu.cn/519/list.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/519/list.htm",
+      "title": "培养方案",
+      "pageDate": null,
+      "status": "reviewed_directory",
+      "file": "work/campus-rules/curriculum-index.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "xgc-rules-index",
+      "url": "https://xgc.nytdc.edu.cn/423/list.htm",
+      "finalUrl": "https://xgc.nytdc.edu.cn/423/list.psp",
+      "title": "提示信息",
+      "pageDate": null,
+      "status": "invalid_column",
+      "file": "work/campus-rules/xgc-rules-index.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "module-2025-report",
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/2025/0926/c961a47374/page.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/jsjgcxy/2025/0926/c961a47374/page.htm",
+      "title": "我院召开计算机工程学院2025级新生专业培养方案解读会",
+      "pageDate": "2025-09-24",
+      "status": "news_reference_only_not_imported",
+      "file": "work/campus-rules/module-2025-report.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "curriculum2025",
+      "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "title": "南京邮电大学通达学院制（修）订2025级本科专业培养方案指导性意见",
+      "pageDate": "2025-07-04",
+      "status": "parsed_ready",
+      "file": "work/campus-rules/curriculum2025.html",
+      "relatedTitles": [
+        "通达学院：2024/2025级专业提升模块：升学、就业及认定缺口"
+      ],
+      "previousInventoryMatches": []
+    },
+    {
+      "name": "curriculum2024",
+      "url": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+      "finalUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+      "title": "南京邮电大学通达学院制（修）订2024级本科专业培养方案指导性意见",
+      "pageDate": "2024-08-26",
+      "status": "target_sections_verified",
+      "file": "work/campus-rules/curriculum2024.html",
+      "relatedTitles": [],
+      "previousInventoryMatches": []
+    }
+  ],
+  "attachments": [
+    {
+      "name": "degree-revised",
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf",
+      "pages": 8,
+      "textLengths": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "file": "work/campus-rules/degree-revised.pdf",
+      "sha256": "e6c677e66dc36cf847130d11b543c64b1e0938ac22ceb9bca44b1eeb905497be",
+      "pagesReadVisually": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "allPagesRead": true,
+      "documentVersion": "院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号",
+      "status": "fully_read",
+      "note": "四份附件均为扫描件，pypdf未提取出文字；按渲染图像读取，仅在学生正文写事实和版本，不混入实现细节。"
+    },
+    {
+      "name": "student-revised",
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+      "pages": 18,
+      "textLengths": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "file": "work/campus-rules/student-revised.pdf",
+      "sha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+      "pagesReadVisually": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "allPagesRead": true,
+      "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+      "status": "fully_read",
+      "note": "四份附件均为扫描件，pypdf未提取出文字；按渲染图像读取，仅在学生正文写事实和版本，不混入实现细节。"
+    },
+    {
+      "name": "curriculum2025",
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+      "pages": 22,
+      "textLengths": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "file": "work/campus-rules/curriculum2025.pdf",
+      "sha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+      "pagesReadVisually": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "allPagesRead": true,
+      "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+      "status": "fully_read",
+      "note": "四份附件均为扫描件，pypdf未提取出文字；按渲染图像读取，仅在学生正文写事实和版本，不混入实现细节。"
+    },
+    {
+      "name": "curriculum2024",
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+      "pages": 20,
+      "textLengths": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "file": "work/campus-rules/curriculum2024.pdf",
+      "sha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+      "pagesReadVisually": [
+        1,
+        13,
+        14,
+        20
+      ],
+      "allPagesRead": false,
+      "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+      "status": "target_sections_read",
+      "note": "四份附件均为扫描件，pypdf未提取出文字；按渲染图像读取，仅在学生正文写事实和版本，不混入实现细节。"
+    }
+  ],
+  "pdfPagesTotal": 68,
+  "pdfPagesReadVisually": 52,
+  "replacementSuggestions": [
+    {
+      "oldId": "4875048d-4c27-4b57-9208-086c99b69aef",
+      "newTitle": "通达学院：休学期满复学的材料、选课与手续（2026版）",
+      "file": "work/campus-rules-replacements.json",
+      "reason": "保留空表办事字段，补充已核实正式版本及冲突边界，不推断整表失效"
+    },
+    {
+      "oldId": "d14629d1-6ec9-47d5-9885-076dc7b2e19f",
+      "newTitle": "通达学院：本人申请退学所需材料与离校手续（2026版）",
+      "file": "work/campus-rules-replacements.json",
+      "reason": "保留空表办事字段，补充已核实正式版本及冲突边界，不推断整表失效"
+    },
+    {
+      "oldId": "7e11440e-ad67-4128-81fb-dd67a36e8b76",
+      "newTitle": "通达学院：休学申请材料与已考课程成绩保留（2026版）",
+      "file": "work/campus-rules-replacements.json",
+      "reason": "保留空表办事字段，补充已核实正式版本及冲突边界，不推断整表失效"
+    },
+    {
+      "oldId": "23fa9bd4-a93e-498a-95e4-175daf600ee1",
+      "newTitle": "通达学院：本科生申请学位审批表的用途与填写（2020旧表）",
+      "file": "work/campus-rules-replacements.json",
+      "reason": "保留空表办事字段，补充已核实正式版本及冲突边界，不推断整表失效"
+    }
+  ],
+  "versionConflicts": [
+    {
+      "topic": "学籍正式版本",
+      "oldReference": "院发〔2021〕16号",
+      "newRule": "院发〔2024〕18号第48条，2025-01-01施行并废止2021旧办法",
+      "evidence": "student-revised-17.png",
+      "handling": "不导入2021旧规则为现行；2026退学表保留字段并补旧引用提示"
+    },
+    {
+      "topic": "复学期限",
+      "formText": "2026休学和复学表写开学一周内",
+      "ruleText": "2024修订正式第32条写开学两周内",
+      "evidence": "student-revised-13.png",
+      "handling": "两表replacement明确差异，办理前向学院/教务确认个人年级与批次，不保证宽期限受理"
+    },
+    {
+      "topic": "毕业、结业和延期",
+      "noticeText": "2026-09-16通知援引旧第37条：未达毕业作延期、可申请结业",
+      "ruleText": "2024修订第37条：一般结业，可经本人申请、家长同意及审批延期；仅差学位不得延期",
+      "evidence": "student-revised-15.png；graduation2026sep.html",
+      "handling": "本批新条并列差异；当前API未发现此通知已批准摘要，无对应oldId可替换。现有2026毕业/提前毕业空表摘要未主张自动延期。此通知截止2026-09-20 17:00已过，不作可报名入口"
+    },
+    {
+      "topic": "学位规则日期",
+      "pageDate": "2026-05-29",
+      "documentVersion": "院发〔2025〕11号，2025-06-11印发，2025-09-01施行并废止院发〔2024〕19号",
+      "evidence": "degree-revised-1.png；degree-revised-7.png；degree-revised-8.png",
+      "handling": "按正式文件正文区分授予、个别申请、重修、救济、申诉，不拿网页日当施行日"
+    },
+    {
+      "topic": "专业提升细则引用年份",
+      "finding": "2025级指导意见仍明确引用2024级专业提升课程模块成绩认定实施细则；2024/2025表内3学分及就业至少两个子模块一致。",
+      "evidence": "curriculum2025-14.png；curriculum2025-15.png；curriculum2024-13.png；curriculum2024-14.png",
+      "handling": "仅提供该两届指导意见范围，未认定2026级相同，未编造竞赛/PU换分"
+    }
+  ],
+  "remainingGaps": [
+    {
+      "area": "专业提升课程模块成绩认定实施细则及就业模块学习分标准一览表",
+      "status": "referenced_policy_not_found",
+      "evidenceUrls": [
+        "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+        "https://www.nytdc.edu.cn/jsjgcxy/2025/0926/c961a47374/page.htm"
+      ],
+      "reason": "已读指导意见和学院解读会新闻都引用细则；教务学院制度3页40项、培养方案栏目及定向官方域名搜索未找到细则正文或公开下载链接。不能给各类成果具体折分、材料、申报期。",
+      "followUp": "学院教秘提供本专业本年级正式细则；不要把PU素拓学时转换为专业提升课程学分"
+    },
+    {
+      "area": "当前回校重修/学位申请窗口",
+      "status": "not_established",
+      "reason": "当前读取9月毕结业通知已截止；同任务places_review检查学籍目录未见2026-2027第一学期重修新窗口。长期规则不代表报名开放。"
+    },
+    {
+      "area": "学生管理综合规定与最新申诉表",
+      "status": "not_established",
+      "reason": "本轮以学籍、学位正式办法覆盖对应审批与申诉；学工旧423栏目响应找不到栏目。未继续随机探测或进入登录区域，不声称已经覆盖所有学生纪律、申诉专项制度。"
+    },
+    {
+      "area": "2024培养指导意见其余章节",
+      "status": "not_fully_read",
+      "reason": "20页附件仅目视核对第1、13、14、20页，以确认版本和专业提升模块；其余章节不作为本批事实来源。"
+    },
+    {
+      "area": "2024大创管理修订",
+      "status": "discovered_not_read_out_of_scope",
+      "url": "https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+      "reason": "制度目录列2024-04-02修订版，现库有2023公开办法。尚未看该新附件，不能断言内容或废止关系，建议后续专门核对。"
+    }
+  ],
+  "officialSearchQueries": [
+    "site:nytdc.edu.cn 专业提升课程模块 实施细则",
+    "site:nytdc.edu.cn 专业提升 创新 学分 2024",
+    "site:nytdc.edu.cn 学生管理规定 通达",
+    "site:nytdc.edu.cn 专业提升课程 认定 2025"
+  ],
+  "privacyHandling": "未采集学生名单、个人联系方式、账号口令或私人信息；保留正式制度、公共业务范围和空表字段。原表个人字段只说明类型，不含任何已填写个人数据。",
+  "checks": {
+    "titleMax80": true,
+    "sourceMax150": true,
+    "noPersonalMobilePattern": true,
+    "noExtractionDetailsInStudentCopy": true,
+    "exactDuplicateTitlesAgainstApproved": []
+  },
+  "databaseOrAppChanged": false,
+  "integration": {
+    "checkedAt": "2026-09-23T17:08:11.548Z",
+    "inventory": "source-inventory.json",
+    "status": "sources_reconciled_with_approved_state",
+    "notice": "原始review的准备、排除和过期判定保留；当前入库状态以source-inventory各项及documentIds为准。"
+  }
+}

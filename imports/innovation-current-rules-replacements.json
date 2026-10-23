@@ -1,0 +1,104 @@
+{
+  "batch": "innovation-current-rules-replacements.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:42:26.595Z",
+  "docs": [
+    {
+      "agent": "study",
+      "title": "通达学院：大创组队、变更、中期检查与结项的版本说明（2024修订）",
+      "source": "教务处｜2024-04-02修订｜https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+      "content": "版本：教发〔2024〕3号《大学生创新创业训练计划管理规定（修订）》，2024-04-02发布；公告同时废止旧STITP管理规定（试行）。\n2024管理规定要求学生项目负责人填报项目资料、确定成员并邀请指导教师，具体实施项目、接受中期检查与验收，填写结题表和项目成果简介。需变更或中途终止时，须提出书面申请并说明理由，由学院大学生创新创业训练计划领导小组批准；中止项目用资助经费购置的资料、元器件等全部上交所在二级学院。项目经费在教师指导下使用，项目成果所有者为南京邮电大学通达学院。\n新版明确秘书组挂靠教务处，二级学院配合立项、中期检查、结题验收并收集保存成果。新规定没有写团队人数、每年申报/中期/结题固定月份、最长研究周期，也未附当前变更和终止申请空表。官网2023年公开的《创新创业实践活动管理办法》曾写3—5人、4月申报/次年4月结项、11月中期、最长2年；这些旧安排不能由2024文件推定仍适用于当前所有项目，必须查看当届通知。\n2024文件同一附件还公布教发〔2024〕2号结题标准，从2023年度项目起分国家级（省级重点）、省级一般、院级验收，省级一般不再只概括为论文或专利两种成果。当前项目级别、申请窗口、组队条件和验收材料请向指导教师、学院或教务核实。\n旧综合办法来源仅作版本对照：https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-2d1b-4e6f-a2b6-d25a64049a24\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm\n正式附件：https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+        "sourceTitle": "南京邮电大学通达学院 大学生创新创业训练计划管理规定(修订)",
+        "pageDate": "2024-04-02",
+        "documentVersion": "教发〔2024〕3号《大学生创新创业训练计划管理规定（修订）》，2024-04-02发布；公告同时废止旧STITP管理规定（试行）",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/innovation-current/dachuang-current.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf",
+        "attachmentFile": "work/innovation-current/dachuang-current.pdf",
+        "attachmentSha256": "289db7ecfaff51ff27d133501a52f45dbb7fc5e629133ca32d4d6fba38b9113d",
+        "pdfPages": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9
+        ],
+        "evidence": "第3—7、12条与同附结题标准；2023综合活动办法旧摘要对比，未将其整体宣告废止",
+        "verificationMethod": "唯一指定官方HTML及同页9页PDF全部目视核对；第9页另放大复核表格归属及署名要求，不按URL年份推断版本",
+        "oldSourceSnapshot": "work/innovation-current-existing.json",
+        "oldPublicPageReused": "work/innovation-details/policy3.html"
+      },
+      "oldId": "ecad0fb6-0515-40e4-a86c-9becd6390f17"
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：大创立项办事流程图及2024修订依据",
+      "source": "学校官网｜页面 2021-03-03｜https://jwc.nytdc.edu.cn/2021/0513/c340a18575/page.htm",
+      "content": "版本提示：下列流程图页面标注2021-03-03，仅用于了解立项办理环节。教务处另公开教发〔2024〕3号大创管理规定及教发〔2024〕2号结题验收标准；申报资格、组队人数、当年时间、层级和经费应结合修订制度及当期通知确认，不能由旧图直接判定。新版规定领导小组负责立项评审、中期检查、经费管理和国家级/省级/院级结题答辩，秘书组挂靠教务处、二级学院配合办理；图内未列国家级推荐环节，不等于现在只有院级和省级项目。\n想申报大学生创新创业训练计划：先看教务处发布的立项通知，填写立项申请表，由所在二级学院审核并汇总报实践教学科。教务处组织专家评审、公示及批准，之后公布院级项目或推荐省级项目。获批后填写立项书交二级学院审核，汇总报实践教学科；教务处按规定划拨经费，立项书返回二级学院存档。流程图未列当年的申报时间、经费数额、名额和项目条件，需要查看当期通知。\n来源：学生办事流程--大学生创新创业训练计划立项。页面标注日期：2021-03-03；采集核对日期：2026-09-24。这是2021公开流程图的办理线索；已知2024修订依据见本条开头，具体申报仍须以负责部门当期通知为准。\n原文：https://jwc.nytdc.edu.cn/2021/0513/c340a18575/page.htm\n2024正式修订原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+      "oldId": "c2545330-6c70-4916-a63e-e55f7a533b9b",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49558/page.htm",
+        "sourceTitle": "南京邮电大学通达学院 大学生创新创业训练计划管理规定(修订)",
+        "pageDate": "2024-04-02",
+        "documentVersion": "教发〔2024〕3号《大学生创新创业训练计划管理规定（修订）》，2024-04-02发布；公告同时废止旧STITP管理规定（试行）",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/innovation-current/dachuang-current.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/fd/24/a70a7a2246d4b5767b13c20a8f50/7d7aa0bc-0bf6-460d-8035-bca9e96bed79.pdf",
+        "attachmentFile": "work/innovation-current/dachuang-current.pdf",
+        "attachmentSha256": "289db7ecfaff51ff27d133501a52f45dbb7fc5e629133ca32d4d6fba38b9113d",
+        "pdfPages": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "evidence": "旧2021立项图保留办理线索，补2024管理制度及另附结题标准的版本关系；不宣告流程图废止",
+        "verificationMethod": "唯一指定官方HTML及同页9页PDF全部目视核对；第9页另放大复核表格归属及署名要求，不按URL年份推断版本",
+        "oldSourceSnapshot": "work/innovation-current-existing.json",
+        "oldFormCheckedAt": "2026-09-23"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "7d2dfb3c-4698-457a-8e25-34b16faa6dbb",
+      "title": "通达学院：大创组队、变更、中期检查与结项的版本说明（2024修订）",
+      "agent": "study"
+    },
+    {
+      "id": "837279b0-edee-49cc-bb77-bda6ae44cdbb",
+      "title": "通达学院：大创立项办事流程图及2024修订依据",
+      "agent": "study"
+    }
+  ],
+  "offlined": [],
+  "added": 2,
+  "totalDocs": 234,
+  "approvedByAgent": {
+    "life": 56,
+    "study": 58,
+    "affairs": 94,
+    "freshman": 0
+  },
+  "superseded": [
+    {
+      "oldId": "ecad0fb6-0515-40e4-a86c-9becd6390f17",
+      "newId": "7d2dfb3c-4698-457a-8e25-34b16faa6dbb",
+      "oldTitle": "通达学院：大创组队、中期检查与结项要求（2023公开办法）",
+      "title": "通达学院：大创组队、变更、中期检查与结项的版本说明（2024修订）"
+    },
+    {
+      "oldId": "c2545330-6c70-4916-a63e-e55f7a533b9b",
+      "newId": "837279b0-edee-49cc-bb77-bda6ae44cdbb",
+      "oldTitle": "通达学院：大创项目怎么申请立项（官网流程图）",
+      "title": "通达学院：大创立项办事流程图及2024修订依据"
+    }
+  ],
+  "supersededAt": "2026-09-23T16:42:27.565Z"
+}

@@ -1,0 +1,478 @@
+{
+  "batch": "campus-next-batch.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T14:46:57.327Z",
+  "docs": [
+    {
+      "agent": "affairs",
+      "title": "通达学院：学生保险、宿舍和资助问题分别找哪个部门",
+      "source": "学校官网｜页面 2022-11-03｜https://xgc.nytdc.edu.cn/2021/0511/c363a18258/page.htm",
+      "content": "学生事务中心承担学生证注册、乘车优惠卡办理、大学生医疗和商业保险申报理赔、宿舍分配调整等工作。奖助学金、困难认定、学费缓交减免、生源地贷款和勤工助学事项由学生资助管理中心负责。新生入学、毕业离校和违纪处分相关事务列在学生教育发展中心职责内。心理健康教育中心提供日常心理咨询。页面只有职责划分，未给出预约办法、报销比例、办理材料或固定处理时限，不能据此承诺业务结果。\n来源：机构职责。页面标注日期：2022-11-03；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2021/0511/c363a18258/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2021/0511/c363a18258/page.htm",
+        "sourceTitle": "机构职责",
+        "pageDate": "2022-11-03",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/1.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：大创项目怎么申请立项（官网流程图）",
+      "source": "学校官网｜页面 2021-03-03｜https://jwc.nytdc.edu.cn/2021/0513/c340a18575/page.htm",
+      "content": "想申报大学生创新创业训练计划：先看教务处发布的立项通知，填写立项申请表，由所在二级学院审核并汇总报实践教学科。教务处组织专家评审、公示及批准，之后公布院级项目或推荐省级项目。获批后填写立项书交二级学院审核，汇总报实践教学科；教务处按规定划拨经费，立项书返回二级学院存档。流程图未列当年的申报时间、经费数额、名额和项目条件，需要查看当期通知。\n来源：学生办事流程--大学生创新创业训练计划立项。页面标注日期：2021-03-03；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://jwc.nytdc.edu.cn/2021/0513/c340a18575/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2021/0513/c340a18575/page.htm",
+        "sourceTitle": "学生办事流程--大学生创新创业训练计划立项",
+        "pageDate": "2021-03-03",
+        "checkedAt": "2026-09-23",
+        "method": "官网流程图片逐项人工核对",
+        "sourceFile": "work/campus-raw/3.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": [
+          "work/campus-raw/asset-3-0.png"
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：参加比赛、生病或亲属突发情况怎么申请缓考",
+      "source": "学校官网｜页面 2015-04-03｜https://jwc.nytdc.edu.cn/2021/0513/c340a18577/page.htm",
+      "content": "页面标注2015-04-03的旧流程图列出三类情形：代表学校参加竞赛或重大活动，须组织单位签署明确意见；因病不能考试，须考前提交考试当日有效病假证明并经门诊部主任签章；直系亲属病危或亡故，须个人申请并提供材料。先从教务处网站下载或到辅导员办公室领取缓考表，填表后由辅导员及相关部门审核，最终由教务处签章备案并反馈是否批准。网址中2021年不能当作版本更新；审批栏后来已有2024版申请表，实际以学校当前表格和规定为准。\n来源：学生办事流程--缓考申请。页面标注日期：2015-04-03；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://jwc.nytdc.edu.cn/2021/0513/c340a18577/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2021/0513/c340a18577/page.htm",
+        "sourceTitle": "学生办事流程--缓考申请",
+        "pageDate": "2015-04-03",
+        "checkedAt": "2026-09-23",
+        "method": "官网流程图片逐项人工核对",
+        "sourceFile": "work/campus-raw/4.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": [
+          "work/campus-raw/asset-4-0.png"
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：缓考申请表下载、填写和考前办理要求（2024版）",
+      "source": "学校官网｜页面 2024-09-06｜https://jwc.nytdc.edu.cn/2024/0906/c337a41322/page.htm",
+      "content": "2024版缓考申请表可从原文下载。需要填写学年学期、学生基本信息、课程号、课程名称、考试时间、课程类型和缓考原因；申请事由区分正考缓考与重修缓考。表内有辅导员、医务部门、二级学院和教务处审核栏。附件说明：因病缓考须经门诊部主任同意并附医院诊断证明，申请者必须在考前办完手续。这里未收集任何填写后的学生表单；提交时按学校要求办理。\n来源：南京邮电大学通达学院学生缓考申请表。页面标注日期：2024-09-06；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://jwc.nytdc.edu.cn/2024/0906/c337a41322/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2024/0906/c337a41322/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生缓考申请表",
+        "pageDate": "2024-09-06",
+        "checkedAt": "2026-09-23",
+        "method": "已读取1页PDF文字并逐页渲染核对",
+        "sourceFile": "work/campus-raw/9.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": [
+          "work/campus-raw/asset-9-0.pdf"
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：三好学生、优秀学生干部如何申报（2021版）",
+      "source": "学校官网｜页面 2021-05-13｜https://xgc.nytdc.edu.cn/2021/0513/c423a18646/page.htm",
+      "content": "官网办法设置三好学生标兵、三好学生、优秀学生干部三类荣誉。流程为本人申请，结合学年小结，由班级考评、辅导员推荐，学工处审核后报批。办法从德育、学习、能力和体育等方面设条件；当学年受处分、课程不及格或恶意欠费者不得参评，参评者所在宿舍上学年须为文明宿舍。具体排名门槛、名额、奖励金额与当年度时间请核对当期评选通知，本摘要不把2021年的奖金作为当前标准。\n来源：南京邮电大学通达学院优秀学生评选办法。页面标注日期：2021-05-13；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2021/0513/c423a18646/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2021/0513/c423a18646/page.htm",
+        "sourceTitle": "南京邮电大学通达学院优秀学生评选办法",
+        "pageDate": "2021-05-13",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/24.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：先进班级评选的材料和组织流程（2021版）",
+      "source": "学校官网｜页面 2021-05-13｜https://xgc.nytdc.edu.cn/2021/0513/c423a18645/page.htm",
+      "content": "先进班级评选面向全院各班级，考察学风、文明、宿舍卫生、纪律、文体和班级管理等方面。按照该版办法，每学年评一次，通常在下一学年开学初评上一学年表现。由辅导员根据班级总结和平时考核资料组织推荐，先进事迹材料和相关备查资料交学工处审核后报批。省级及以上评选须在获得院级先进班级基础上推荐。当前名额、绩点等具体指标需再核对最新通知。\n来源：南京邮电大学通达学院先进班级创评办法。页面标注日期：2021-05-13；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2021/0513/c423a18645/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2021/0513/c423a18645/page.htm",
+        "sourceTitle": "南京邮电大学通达学院先进班级创评办法",
+        "pageDate": "2021-05-13",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/25.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：宿舍晚归、访客和用电规定（2021版）",
+      "source": "学校官网｜页面 2021-05-13｜https://xgc.nytdc.edu.cn/2021/0513/c423a18644/page.htm",
+      "content": "2021版住宿管理办法要求22:30前返宿；特殊情况晚归需说明原因，凭有效证件在楼管处登记。访客须出示证件、登记获准并由被访者带领，规定会客时段为8:00—11:30、14:00—17:00，一般不超过半小时。宿舍禁止私拉电线、明火及有安全隐患的电器，办法列有电饭锅、电水壶、电吹风等。不能未经允许换床位、留客或私配钥匙。门禁、访客和电器规则是否调整须向楼管核实。\n来源：南京邮电大学通达学院学生住宿管理办法。页面标注日期：2021-05-13；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2021/0513/c423a18644/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2021/0513/c423a18644/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生住宿管理办法",
+        "pageDate": "2021-05-13",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/26.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：寒暑假留宿、长期离宿和退宿怎么处理（2021版）",
+      "source": "学校官网｜页面 2021-05-13｜https://xgc.nytdc.edu.cn/2021/0513/c423a18644/page.htm",
+      "content": "2021版住宿办法说明：寒暑假特殊情况需留校，要先申请，经审核批准并办手续后集中住宿；因病、出国或实习离宿超过10天，离宿及归宿时应到宿管值班室登记。休学须办临时退宿，复学重新安排宿舍。毕业、退学等终止住宿资格后，按学校通知期限办理退宿。假期离开前关水、关灯、关窗并断电。未公布当前假期申请截止日，不能直接视为已获准留宿。\n来源：南京邮电大学通达学院学生住宿管理办法。页面标注日期：2021-05-13；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2021/0513/c423a18644/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2021/0513/c423a18644/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生住宿管理办法",
+        "pageDate": "2021-05-13",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/26.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：PU素质拓展学时如何申报（2017级起试行的旧版办法）",
+      "source": "学校官网｜页面 2018-03-14｜https://xgc.nytdc.edu.cn/2018/0314/c423a7183/page.htm",
+      "content": "这份2018年发布、从2017级本科生开始试行的办法，把素质拓展分为社会实践、志愿服务、课外活动参与、社会工作荣誉技能培训、竞赛成果五类。志愿服务和课外活动参与由PU按活动记录认定，其他类别在PU提交证明，由相关部门审核。旧版规定每学期开学前两周开放申报，转专业或编级后已获得学时正常计算，审核与备案由异动后二级学院负责。适用年级已明确，不能直接用旧版总学时、学分或申报窗口判断2026级的毕业资格，请核对本人培养方案及当前团委通知。\n来源：关于印发《南京邮电大学通达学院学生素质拓展学分认定管理办法》（试行）的通知。页面标注日期：2018-03-14；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2018/0314/c423a7183/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2018/0314/c423a7183/page.htm",
+        "sourceTitle": "关于印发《南京邮电大学通达学院学生素质拓展学分认定管理办法》（试行）的通知",
+        "pageDate": "2018-03-14",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/27.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：社团活动、摆摊或演出临时接电申请",
+      "source": "学校官网｜页面 2025-05-09｜https://hqc.nytdc.edu.cn/2025/0509/c480a45779/page.htm",
+      "content": "校内活动需要临时用电时，应先填写申请，由申请部门负责人审核盖章，再由后勤管理处负责人审核，校园管理科勘查后依现场情况接电。若需接入扬州市政供电线路，由校园管理科向供电公司办手续；不获同意时由校园管理科反馈。原文提供“临时用电申请流程.docx”下载。本次核对了页面流程正文，尚未解析DOCX中的表格字段；未查到办理提前量或费用，不能承诺当日办好。\n来源：学院各类活动临时用电申请流程。页面标注日期：2025-05-09；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://hqc.nytdc.edu.cn/2025/0509/c480a45779/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://hqc.nytdc.edu.cn/2025/0509/c480a45779/page.htm",
+        "sourceTitle": "学院各类活动临时用电申请流程",
+        "pageDate": "2025-05-09",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/49.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：一食堂、二食堂几点吃饭及食品问题投诉（2025版）",
+      "source": "学校官网｜页面 2025-05-09｜https://hqc.nytdc.edu.cn/2025/0509/c480a45774/page.htm",
+      "content": "官网2025版餐饮服务图：一食堂一楼和二楼、二食堂一楼，早午餐供应6:30—13:30，晚餐16:00—19:30；一食堂三楼午餐10:00—13:30、晚餐16:00—22:00；二食堂二楼午餐10:00—13:30、晚餐16:00—19:30。校园食品卫生安全监督投诉电话0514-89716095。未导入表中的联系人姓名和个人手机号。假期及当前档口营业时间可能调整，不能保证每个窗口在整个时段供应。\n来源：餐饮服务指南。页面标注日期：2025-05-09；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://hqc.nytdc.edu.cn/2025/0509/c480a45774/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://hqc.nytdc.edu.cn/2025/0509/c480a45774/page.htm",
+        "sourceTitle": "餐饮服务指南",
+        "pageDate": "2025-05-09",
+        "checkedAt": "2026-09-23",
+        "method": "官网餐饮图片逐行人工核对",
+        "sourceFile": "work/campus-raw/51.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": [
+          "work/campus-raw/asset-51-0.png"
+        ]
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：南京与扬州校际班车上车点和时刻表（2025版）",
+      "source": "学校官网｜页面 2025-05-09｜https://hqc.nytdc.edu.cn/2025/0509/c480a45773/page.htm",
+      "content": "这是学院班车，不是已核实向所有人开放的城市公交。2025版时刻表显示：南京往扬州，从三牌楼校区新模范马路南邮大厦路边，周一至周五7:00、11:50发车，另有周日至周四19:45班次；扬州往南京，从通达学院超市门前广场（一食堂路边），周一至周五12:30、17:40发车，周五另列一班17:40线路。沿途停靠安排不同，应查看原图并向后勤确认乘坐资格、预约和当天开行。未导入司机姓名、私人手机号和车辆号牌。\n来源：学院班车时刻表。页面标注日期：2025-05-09；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://hqc.nytdc.edu.cn/2025/0509/c480a45773/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://hqc.nytdc.edu.cn/2025/0509/c480a45773/page.htm",
+        "sourceTitle": "学院班车时刻表",
+        "pageDate": "2025-05-09",
+        "checkedAt": "2026-09-23",
+        "method": "官网班车图片逐行人工核对",
+        "sourceFile": "work/campus-raw/52.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": [
+          "work/campus-raw/asset-52-0.png"
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：2025版勤工助学岗位申请表下载入口",
+      "source": "学校官网｜页面 2025-03-01｜https://xgc.nytdc.edu.cn/2025/0508/c374a45682/page.htm",
+      "content": "申请校内勤工助学，可在学工处此页面下载“南京邮电大学通达学院勤工助学岗位申请表2025.doc”。页面标注日期为2025-03-01，虽然网址路径是2025/0508，资料日期以页面显示为准。本次确认了下载链接，尚未解析DOC表格内字段，不能据此列出全部申请材料或声称目前有空缺岗位。申请资格、当前岗位和提交办法请咨询辅导员或学生资助管理中心。\n来源：南京邮电大学通达学院勤工助学岗位申请表2025。页面标注日期：2025-03-01；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2025/0508/c374a45682/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2025/0508/c374a45682/page.htm",
+        "sourceTitle": "南京邮电大学通达学院勤工助学岗位申请表2025",
+        "pageDate": "2025-03-01",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/66.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：勤工助学岗前培训、酬金和工作安排（2019版）",
+      "source": "学校官网｜页面 2019-05-31｜https://xgc.nytdc.edu.cn/2019/0531/c374a5605/page.htm",
+      "content": "2019版勤工助学管理办法要求工作不能影响学业，上岗前接受中心和用人部门的教育培训，用人部门安排工作时间、强度和考核。酬金依据工时、工作性质及质量核算，岗位标准交中心审核，由勤工助学专项费用支付。该版没有给出统一的现行小时工资，因此不能用更早文件里的4元/小时回答当前薪酬。具体岗位、报酬及结算日期应向学生资助管理中心和用人部门确认。\n来源：勤工助学管理办法。页面标注日期：2019-05-31；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2019/0531/c374a5605/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2019/0531/c374a5605/page.htm",
+        "sourceTitle": "勤工助学管理办法",
+        "pageDate": "2019-05-31",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-raw/67.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": []
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：入伍学费补偿、助学贷款代偿申请步骤（2021版）",
+      "source": "学校官网｜页面 2021-12-02｜https://xgc.nytdc.edu.cn/2021/1202/c370a24614/page.htm",
+      "content": "2021年11月编印的官方流程：按类别在全国征兵网填写并打印资助申请表；入伍后由入伍地县级征兵办公室核验信息签章，申请助学贷款代偿的填写贷款情况；学校财务部门核对在校学费和缴费情况，再向学校学生资助管理部门提交申请表及入伍通知书等复印件，毕业生还需相关毕业和学位材料。学校审核后按流程申报。本摘要仅为旧版流程导航，当前金额、资格和时限须以当年政策核准。\n来源：应征入伍服兵役高等学校学生教育资助申请流程。页面标注日期：2021-12-02；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2021/1202/c370a24614/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2021/1202/c370a24614/page.htm",
+        "sourceTitle": "应征入伍服兵役高等学校学生教育资助申请流程",
+        "pageDate": "2021-12-02",
+        "checkedAt": "2026-09-23",
+        "method": "4页PDF逐页渲染核对，实际流程在第2页",
+        "sourceFile": "work/campus-raw/59.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": [
+          "work/campus-raw/asset-59-0.pdf"
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：退役复学或退役入学的资助材料流程（2021版）",
+      "source": "学校官网｜页面 2021-12-02｜https://xgc.nytdc.edu.cn/2021/1202/c370a24614/page.htm",
+      "content": "2021版流程要求按类别在全国征兵网填写并打印资助申请表；带申请表、入伍通知书和退出现役证，到退役安置地县级征兵办公室核验签章。退役后才入高校的申请人，还需按该流程取得退役安置地退役军人事务部门签章。学校财务核验在校学费缴费情况，再向校学生资助管理部门交申请表及所需证件复印件申请审核。当前资助类别、所需材料和经费标准应向学生资助中心再次核对，不保证旧流程仍无变化。\n来源：应征入伍服兵役高等学校学生教育资助申请流程。页面标注日期：2021-12-02；采集核对日期：2026-09-23。这是该版本官网指南的摘要，未向学校核实是否存在未公布的新版；实际办理以负责部门当期通知为准。\n原文：https://xgc.nytdc.edu.cn/2021/1202/c370a24614/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://xgc.nytdc.edu.cn/2021/1202/c370a24614/page.htm",
+        "sourceTitle": "应征入伍服兵役高等学校学生教育资助申请流程",
+        "pageDate": "2021-12-02",
+        "checkedAt": "2026-09-23",
+        "method": "4页PDF逐页渲染核对，实际流程在第3页",
+        "sourceFile": "work/campus-raw/59.html",
+        "validity": "公开指南的历史版本；未确认现行版本",
+        "attachmentsRead": [
+          "work/campus-raw/asset-59-0.pdf"
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：教务微信公众号官方扫码入口",
+      "source": "学校官网｜页面 2020-06-29｜https://jwc.nytdc.edu.cn/2020/0629/c259a4205/pagem.htm",
+      "content": "学校教务部门官网发布了微信公众号二维码，可打开原文后在微信中识别。原文标题是“南邮通达教务微信公众号”。本次已查看二维码图片，但没有解码目标，也没有登录或验证公众号当前菜单，不据此声称能够查成绩、缴费或预约。涉及账号和缴费时请从学校官网确认入口。页面标注日期：2020-06-29；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2020/0629/c259a4205/pagem.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2020/0629/c259a4205/pagem.htm",
+        "sourceTitle": "南邮通达教务微信公众号",
+        "pageDate": "2020-06-29",
+        "checkedAt": "2026-09-23",
+        "method": "已抓取官网页面并查看二维码原图；仅入口导引，未解码公众号目标",
+        "sourceFile": "work/campus-raw/0.html",
+        "attachmentsRead": [
+          "work/campus-raw/asset-0-0.jpg"
+        ],
+        "validity": "官方历史入口页面，未验证公众号实时菜单"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：财务微信公众号官方扫码入口",
+      "source": "学校官网｜页面 2020-06-30｜https://cwc.nytdc.edu.cn/2020/0630/c398a5756/page.htm",
+      "content": "学校财务部门官网发布了微信公众号二维码，可打开原文后在微信中识别。原文标题是“欢迎关注    南京邮电大学通达学院财务处     微信公众号”。本次已查看二维码图片，但没有解码目标，也没有登录或验证公众号当前菜单，不据此声称能够查成绩、缴费或预约。涉及账号和缴费时请从学校官网确认入口。页面标注日期：2020-06-30；核对日期：2026-09-23。\n原文：https://cwc.nytdc.edu.cn/2020/0630/c398a5756/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://cwc.nytdc.edu.cn/2020/0630/c398a5756/page.htm",
+        "sourceTitle": "欢迎关注    南京邮电大学通达学院财务处     微信公众号",
+        "pageDate": "2020-06-30",
+        "checkedAt": "2026-09-23",
+        "method": "已抓取官网页面并查看二维码原图；仅入口导引，未解码公众号目标",
+        "sourceFile": "work/campus-raw/2.html",
+        "attachmentsRead": [
+          "work/campus-raw/asset-2-0.png"
+        ],
+        "validity": "官方历史入口页面，未验证公众号实时菜单"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：本科生申请学位审批表下载入口（2020版未解析）",
+      "source": "教务处公开下载文件｜目录标注20200622更新｜https://jwc.nytdc.edu.cn/_upload/article/files/fa/1c/984bf9b74cdd8b362879696e6af8/9cec357f-7f17-458f-8f29-36a499f7f4f4.doc",
+      "content": "教务处学生表格目录提供“南京邮电大学通达学院本科生申请学位审批表（20200622更新）”DOC文件。2026-09-23已确认附件可下载，返回Word二进制文件，但尚未解析表格字段。2020版不代表当前仍适用；学位申请条件、审核标准和材料，应先向教务管理科确认并使用当期要求的表格。不能仅凭这份空表认定可以获得学位。\n下载：https://jwc.nytdc.edu.cn/_upload/article/files/fa/1c/984bf9b74cdd8b362879696e6af8/9cec357f-7f17-458f-8f29-36a499f7f4f4.doc",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/fa/1c/984bf9b74cdd8b362879696e6af8/9cec357f-7f17-458f-8f29-36a499f7f4f4.doc",
+        "sourceTitle": "南京邮电大学通达学院本科生申请学位审批表（20200622更新）",
+        "pageDate": null,
+        "versionDate": "2020-06-22（目录标注）",
+        "checkedAt": "2026-09-23",
+        "method": "HTTP 200，19968字节，OLE Word文件头；未解析正文",
+        "sourceFile": "work/campus-raw/degree-2020.doc",
+        "attachmentsRead": [],
+        "validity": "旧版空表下载入口；未核实当前适用性"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "江苏省：苏北基层就业学费补偿与学费减免适用范围（2025版）",
+      "source": "江苏省教育厅｜原文2025-04-29｜https://jyt.jiangsu.gov.cn/art/2025/4/29/art_60306_11555460.html",
+      "content": "江苏省教育厅2025版资助简介列出：赴苏北基层单位就业满3年以上的符合条件应届毕业生可申请返还最后学历期间实缴学费，本专科每生每年不超过8000元；不是毕业或入职就自动发放。学费减免条目另有省属高校、残疾学生或脱贫过渡期等适用条件，不能把学校2018版建档立卡的旧金额和材料要求直接当作现行标准。办理前应向学生资助中心、就业所在地资助部门核对资格、时限和材料；本条是政策导航，不保证获批。\n来源：江苏省教育厅，2025-04-29发布；2026-09-23核对。请以办理年度最新通知为准。\n原文：https://jyt.jiangsu.gov.cn/art/2025/4/29/art_60306_11555460.html",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jyt.jiangsu.gov.cn/art/2025/4/29/art_60306_11555460.html",
+        "sourceTitle": "江苏省学生资助政策简介（2025年版）",
+        "pageDate": "2025-04-29",
+        "checkedAt": "2026-09-23",
+        "method": "web工具成功读取官方全文；直接urllib访问403，未绕过；核对第107-116行",
+        "relevantFacts": "江苏省教育厅2025版资助简介列出：赴苏北基层单位就业满3年以上的符合条件应届毕业生可申请返还最后学历期间实缴学费，本专科每生每年不超过8000元；不是毕业或入职就自动发放。学费减免条目另有省属高校、残疾学生或脱贫过渡期等适用条件，不能把学校2018版建档立卡的旧金额和材料要求直接当作现行标准。办理前应向学生资助中心、就业所在地资助部门核对资格、时限和材料；本条是政策导航，不保证获批。",
+        "sourceFile": "work/campus-raw/jiangsu-aid-2025-evidence.json",
+        "attachmentsRead": [],
+        "validity": "省级2025版公开政策概览；个案资格及当前窗口须官方审核"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "496fa679-1cc0-43b8-98f5-7fff48528add",
+      "title": "通达学院：学生保险、宿舍和资助问题分别找哪个部门",
+      "agent": "affairs"
+    },
+    {
+      "id": "c2545330-6c70-4916-a63e-e55f7a533b9b",
+      "title": "通达学院：大创项目怎么申请立项（官网流程图）",
+      "agent": "study"
+    },
+    {
+      "id": "03ab18c2-0b36-4878-a09b-37d7ba17f50c",
+      "title": "通达学院：参加比赛、生病或亲属突发情况怎么申请缓考",
+      "agent": "affairs"
+    },
+    {
+      "id": "d0b27eaf-c98a-483c-81de-81cc68152937",
+      "title": "通达学院：缓考申请表下载、填写和考前办理要求（2024版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "858b9229-996e-48cf-b877-d132ad15c17a",
+      "title": "通达学院：三好学生、优秀学生干部如何申报（2021版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "2376a34d-1d22-4685-a79e-9817e6905168",
+      "title": "通达学院：先进班级评选的材料和组织流程（2021版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "e7ebe7c6-c43b-4214-b5a4-bf86bf4ae85d",
+      "title": "通达学院：宿舍晚归、访客和用电规定（2021版）",
+      "agent": "life"
+    },
+    {
+      "id": "c9d83699-bd33-423b-be2e-d9615b4114f3",
+      "title": "通达学院：寒暑假留宿、长期离宿和退宿怎么处理（2021版）",
+      "agent": "life"
+    },
+    {
+      "id": "ec8cfae1-f903-46d5-ba8d-5600cad48812",
+      "title": "通达学院：PU素质拓展学时如何申报（2017级起试行的旧版办法）",
+      "agent": "study"
+    },
+    {
+      "id": "c600cf6a-c4a5-4d44-b4a1-c117d072fa6a",
+      "title": "通达学院：社团活动、摆摊或演出临时接电申请",
+      "agent": "affairs"
+    },
+    {
+      "id": "fc3fd2a1-898b-4ec0-8bcc-c0f6a7344186",
+      "title": "通达学院：一食堂、二食堂几点吃饭及食品问题投诉（2025版）",
+      "agent": "life"
+    },
+    {
+      "id": "a309c526-eaeb-4a66-8fa1-d31e957f5fc5",
+      "title": "通达学院：南京与扬州校际班车上车点和时刻表（2025版）",
+      "agent": "life"
+    },
+    {
+      "id": "4bda53e9-7912-4b4e-ad86-e145d26d21af",
+      "title": "通达学院：2025版勤工助学岗位申请表下载入口",
+      "agent": "affairs"
+    },
+    {
+      "id": "dfeb3e12-236f-427d-b4ac-77da0f1a021b",
+      "title": "通达学院：勤工助学岗前培训、酬金和工作安排（2019版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "8656321e-dda1-4e22-80b4-6d02620973bc",
+      "title": "通达学院：入伍学费补偿、助学贷款代偿申请步骤（2021版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "6ba3b64d-f3ab-4c5d-8c0b-f7f132d6ac09",
+      "title": "通达学院：退役复学或退役入学的资助材料流程（2021版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "c45fd5e2-e2bd-4c25-96ca-3a5cca745c2e",
+      "title": "通达学院：教务微信公众号官方扫码入口",
+      "agent": "affairs"
+    },
+    {
+      "id": "fa1359d6-62fa-4d3b-912d-cabb61414020",
+      "title": "通达学院：财务微信公众号官方扫码入口",
+      "agent": "affairs"
+    },
+    {
+      "id": "50f88c93-f13e-4e2d-9c69-3ca11c6a7e2b",
+      "title": "通达学院：本科生申请学位审批表下载入口（2020版未解析）",
+      "agent": "affairs"
+    },
+    {
+      "id": "dff49f9b-50ee-4476-a3bb-21594deee972",
+      "title": "江苏省：苏北基层就业学费补偿与学费减免适用范围（2025版）",
+      "agent": "affairs"
+    }
+  ],
+  "offlined": [],
+  "added": 20,
+  "totalDocs": 81,
+  "approvedByAgent": {
+    "life": 28,
+    "study": 3,
+    "affairs": 47,
+    "freshman": 0
+  }
+}

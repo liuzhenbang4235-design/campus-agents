@@ -1,0 +1,48 @@
+{
+  "batch": "yangzhou-venue-status-batch.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:17:01.335Z",
+  "docs": [
+    {
+      "agent": "life",
+      "title": "中运博9号、10号展厅暂停开放公告与出行前核对",
+      "source": "中国大运河博物馆｜2026-08-27｜https://www.grandcanalmuseum.cn/yunbogonggao/1238.html",
+      "content": "中运博2026年8月25日落款、8月27日上网的公告说明，9号展厅“紫禁城与大运河”因展陈升级暂停开放，10号展厅“隋炀帝与大运河”同期暂停，恢复时间另行公告。该公告称改造期间其他展厅与公共服务正常，但这不保证之后每一天、每个项目都没有调整。\n2026年9月24日核对的官网公告列表首页仍列此通知，未在该列表首页见到恢复通知；这不是已电话确认的当天开放状态，也不能推定永不开放。专程参观上述两厅前，应查看官方最新公告或咨询官网服务台0514-82773088。中秋国庆全馆延时开放的通知不等于这两个展厅已恢复。\n原文：https://www.grandcanalmuseum.cn/yunbogonggao/1238.html\n公告列表：https://www.grandcanalmuseum.cn/yunbogonggao.html\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.grandcanalmuseum.cn/yunbogonggao/1238.html",
+        "sourceTitle": "关于9号、10号展厅暂停开放的公告",
+        "pageDate": "2026-08-27",
+        "documentDate": "2026-08-25",
+        "checkedAt": "2026-09-24",
+        "method": "web.open读取完整官方正文及公告列表首页；没有电话或现场确认",
+        "supportingSources": [
+          {
+            "url": "https://www.grandcanalmuseum.cn/yunbogonggao.html",
+            "scope": "公告首页"
+          }
+        ],
+        "limitations": [
+          "未核实实际恢复时间；仅报告公告及本次读取范围",
+          "不能以全馆假期营业推断全部展厅恢复"
+        ]
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "8fd51ca6-4a99-4e61-9816-44b3ac392b3d",
+      "title": "中运博9号、10号展厅暂停开放公告与出行前核对",
+      "agent": "life"
+    }
+  ],
+  "offlined": [],
+  "added": 1,
+  "totalDocs": 186,
+  "approvedByAgent": {
+    "life": 56,
+    "study": 32,
+    "affairs": 78,
+    "freshman": 0
+  }
+}

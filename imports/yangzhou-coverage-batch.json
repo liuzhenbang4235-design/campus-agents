@@ -1,0 +1,258 @@
+{
+  "batch": "yangzhou-coverage-2026-09-23",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:42:33.192Z",
+  "docs": [
+    {
+      "agent": "life",
+      "title": "扬州逛街聚餐：宝龙广场的名称和所在片区",
+      "source": "宝龙地产控股官方项目页｜https://www.powerlong.com/major/major-project%21projectYangzhou.action",
+      "content": "扬州宝龙广场的官方项目介绍包括购物中心、商业街、休闲美食和特色餐饮；旧项目页名为“江苏扬州宝龙金轮广场”，所述位置为东临扬子江路、西依维扬路、南靠开发路、北至江阳路。想找集中的逛街和吃饭去处，可按“扬州宝龙广场”查询具体入口与店铺。这是项目片区描述，没有核实到统一门牌、当前店铺名单或游客咨询电话，不能把开发商总部或招商电话当作餐厅订位电话。当天营业、人均消费与从润扬南路33号出发的路程仍需地图和商户确认。\n\n原文：https://www.powerlong.com/major/major-project%21projectYangzhou.action\n核对日期：2026-09-23；原文日期：未注明。\n范围：扬州市内片区或目的地线索，未测量距南京邮电大学通达学院（润扬南路33号）的路程，不能称为校门口或步行附近。资料是公开网页快照，营业、价格、导航与预约须当次核实。\n补充来源：https://www.powerlong.com/project/project%21toProject.action?projectId=yangzhou&request_locale=zh_CN",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "宝龙地产控股官方项目页",
+        "url": "https://www.powerlong.com/major/major-project%21projectYangzhou.action",
+        "publishedAt": null,
+        "verifiedAt": "2026-09-23",
+        "method": "两份宝龙官网项目正文通过搜索索引读取；直接打开失败。旧页含规划口吻，不据此承诺当前开业状态。",
+        "verifiedFields": [
+          "项目完整名称和宝龙金轮名称关联",
+          "官方项目页的四至位置",
+          "购物中心、商业街及餐饮业态方向"
+        ],
+        "supplementalSources": [
+          {
+            "url": "https://www.powerlong.com/project/project%21toProject.action?projectId=yangzhou&request_locale=zh_CN",
+            "publishedAt": null,
+            "title": "江苏扬州宝龙金轮广场项目概况"
+          }
+        ],
+        "limitations": [
+          "精确门牌和公众入口",
+          "游客客服及订位入口",
+          "当前入驻商户与经营状态"
+        ]
+      },
+      "questions": [
+        "学校出来想找商场吃饭去哪",
+        "宝龙广场和宝龙金轮是哪里",
+        "宝龙有什么逛吃方向"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "扬州邗江万达逛吃：商场名称、地址和快餐核对入口",
+      "source": "万达集团、麦当劳中国官网｜https://www.wanda.cn/index.php?a=lists&c=index&catid=90&m=content",
+      "content": "万达集团官网的江苏项目目录列有“扬州邗江万达广场”，应与扬州蜀冈万达、江都万达区分。麦当劳官网2023年名单把“扬州万达餐厅”列在邗江中路302号扬州万达广场，并列一、二层铺位；本次查看的麦当劳餐厅信息公示页仍列有该餐厅名称。想逛商场后吃快餐，可用这两个完整名称核对地图，并通过麦当劳官网“找餐厅”或官方点餐渠道确认对应门店。公示页不是当前营业、菜单或有座保证，2023年促销也已不作为现行优惠；未核实万达商场游客电话、营业时间和从学校到店的距离。\n\n原文：https://www.wanda.cn/index.php?a=lists&c=index&catid=90&m=content\n核对日期：2026-09-23；原文日期：未注明。\n范围：扬州市内片区或目的地线索，未测量距南京邮电大学通达学院（润扬南路33号）的路程，不能称为校门口或步行附近。资料是公开网页快照，营业、价格、导航与预约须当次核实。\n补充来源：https://www.mcdonalds.com.cn/news/20230629-LBS-Store；https://www.mcdonalds.com.cn/index/Quality/publicinfo/deliveryinfo?page=754；https://www.mcdonalds.com.cn/index/Quality/publicinfo/deliveryinfo",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "万达集团、麦当劳中国官网",
+        "url": "https://www.wanda.cn/index.php?a=lists&c=index&catid=90&m=content",
+        "publishedAt": null,
+        "verifiedAt": "2026-09-23",
+        "method": "万达集团官网目录已打开，原始链接指向邗江店子站但子站未能打开；麦当劳2023名单正文及公开餐厅目录第754页已打开。",
+        "verifiedFields": [
+          "万达官方项目目录中的邗江店名称",
+          "麦当劳2023地址：邗江中路302号",
+          "官方公示目录仍列该餐厅名称"
+        ],
+        "supplementalSources": [
+          {
+            "url": "https://www.mcdonalds.com.cn/news/20230629-LBS-Store",
+            "publishedAt": "2023-06-28",
+            "title": "2023活动名单，仅采用餐厅地址"
+          },
+          {
+            "url": "https://www.mcdonalds.com.cn/index/Quality/publicinfo/deliveryinfo?page=754",
+            "publishedAt": null,
+            "title": "餐厅信息公示，列麦当劳扬州万达餐厅"
+          },
+          {
+            "url": "https://www.mcdonalds.com.cn/index/Quality/publicinfo/deliveryinfo",
+            "publishedAt": null,
+            "title": "按城市查看餐厅信息公示"
+          }
+        ],
+        "limitations": [
+          "此刻营业状态、菜单及价格",
+          "万达游客电话",
+          "官方找餐厅页面本次未能加载，未实际查询门店"
+        ]
+      },
+      "questions": [
+        "扬州有几个万达别导航错了",
+        "邗江万达在哪",
+        "去万达能查哪里吃快餐吗"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "三湾逛完想吃饭喝咖啡：非遗园餐饮空间线索",
+      "source": "中国江苏网（新华日报·交汇点现场报道）｜https://jsnews.jschina.com.cn/jsyw/202603/t20260308_s69acb795e4b09187ac9bd413.shtml",
+      "content": "2026年3月的现场报道介绍，扬州三湾的大运河非物质文化遗产园一期有“喜鹊”“喜米”“运河宴”“虹料理”等餐饮空间，还包括玉雕手作、茶文化等体验空间；报道写到喜鹊餐厅的露台咖啡场景。逛完三湾、想继续吃饭或喝咖啡时，可把这些完整名称加“扬州三湾”作为检索线索。本条新增的是非遗园餐饮空间，并非重复公园简介，也不是馆内“庭圆咖啡”。资料未给各店精确门牌、订位电话、价格或营业时间，不能承诺便宜、有空位或当前仍按报道经营。\n\n原文：https://jsnews.jschina.com.cn/jsyw/202603/t20260308_s69acb795e4b09187ac9bd413.shtml\n核对日期：2026-09-23；原文日期：2026-03-08。\n范围：扬州市内片区或目的地线索，未测量距南京邮电大学通达学院（润扬南路33号）的路程，不能称为校门口或步行附近。资料是公开网页快照，营业、价格、导航与预约须当次核实。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "中国江苏网（新华日报·交汇点现场报道）",
+        "url": "https://jsnews.jschina.com.cn/jsyw/202603/t20260308_s69acb795e4b09187ac9bd413.shtml",
+        "publishedAt": "2026-03-08",
+        "verifiedAt": "2026-09-23",
+        "method": "2026-03-08报道完整打开；只提取已落地的一期场景，不纳入二期未来商业建设。",
+        "verifiedFields": [
+          "非遗园一期位置语境为扬州三湾",
+          "四个餐饮空间名称",
+          "喜鹊餐厅露台咖啡用途"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "各店精确入口、电话及公开订位渠道",
+          "最新菜单、预算、人均及营业状态"
+        ]
+      },
+      "questions": [
+        "三湾玩完哪里喝咖啡",
+        "大运河博物馆外面哪里吃饭",
+        "三湾除了公园还有什么店"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "扬州逛商圈看夜景：环明月湖、京华城和星耀天地",
+      "source": "江苏省人民政府（来源：新华日报）｜https://www.js.gov.cn/art/2024/2/26/art_89285_11161006.html",
+      "content": "环明月湖文旅商圈位于扬州市邗江区新盛街道。政府网站介绍明月湖北岸分布双博馆、运河大剧院和文化艺术中心等场馆，南岸有京华城、星耀天地等商场。想把逛街、吃饭、湖边休闲和看演出安排在同一片区，可以从这些不同地点分别查询；明月湖城市书房只是其中一种去处。旧报道中的音乐节、夜跑和市集不是每天都会举行的固定项目，不能据此说今晚有夜市，也未核实商场门牌、店铺、消费或关门时间。学校同在邗江区，不代表可步行到达这个商圈。\n\n原文：https://www.js.gov.cn/art/2024/2/26/art_89285_11161006.html\n核对日期：2026-09-23；原文日期：2024-02-26。\n范围：扬州市内片区或目的地线索，未测量距南京邮电大学通达学院（润扬南路33号）的路程，不能称为校门口或步行附近。资料是公开网页快照，营业、价格、导航与预约须当次核实。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "江苏省人民政府（来源：新华日报）",
+        "url": "https://www.js.gov.cn/art/2024/2/26/art_89285_11161006.html",
+        "publishedAt": "2024-02-26",
+        "verifiedAt": "2026-09-23",
+        "method": "江苏省政府2024-02-26文章完整打开，地点布局明确；仅提取稳定商圈名称与地理关系。",
+        "verifiedFields": [
+          "新盛街道、环明月湖商圈名称",
+          "北岸文博场馆与南岸京华城/星耀天地的关系"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "商圈具体活动日历",
+          "商场详细门牌及当前咨询电话",
+          "当日营业和餐饮店铺"
+        ]
+      },
+      "questions": [
+        "周末想逛街顺便看夜景",
+        "明月湖旁边有什么商场",
+        "京华城和星耀天地在什么片区"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "扬州晚上坐船看演艺：大运扬州古运河夜游",
+      "source": "江苏宣传网（来源：新华日报）、中共江苏省委新闻网｜https://www.jsxc.gov.cn/whwy/whcc/202607/t20260709_94164.shtml",
+      "content": "“大运扬州”古运河行进式游船演艺把游船、岸线灯光和实景表演结合起来，适合想晚上坐船看运河文化演出的查询方向。它不是资料库已有的“御马头至大明寺”水上游览线。2025年现场报道从便益门广场码头出发，在南门遗址码头转向；2026年报道提到东关古渡码头的夜游场景，因此这里不把任一码头写成当前所有班次的固定上船点。应通过“扬州文旅”官方夜游指引查找对应项目，再以具体订单的登船码头、日期和班次为准。本次未验证当前购票直链、票价、余票和晚班返校交通。\n\n原文：https://www.jsxc.gov.cn/whwy/whcc/202607/t20260709_94164.shtml\n核对日期：2026-09-23；原文日期：2026-07-09。\n范围：扬州市内片区或目的地线索，未测量距南京邮电大学通达学院（润扬南路33号）的路程，不能称为校门口或步行附近。资料是公开网页快照，营业、价格、导航与预约须当次核实。\n补充来源：https://www.zgjssw.gov.cn/shixianchuanzhen/yangzhou/202509/t20250909_8520041.shtml；https://zgjssw.jschina.com.cn/shixianchuanzhen/yangzhou/202507/t20250705_8501949.shtml",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "江苏宣传网（来源：新华日报）、中共江苏省委新闻网",
+        "url": "https://www.jsxc.gov.cn/whwy/whcc/202607/t20260709_94164.shtml",
+        "publishedAt": "2026-07-09",
+        "verifiedAt": "2026-09-23",
+        "method": "2025-09-09与2026-07-09官方承载的现场报道均完整打开；明确保留不同年份码头描述差异。",
+        "verifiedFields": [
+          "夜游项目全称及体验形式",
+          "与已有御马头线为不同查询项目",
+          "历史码头描述存在差异，不能合并成现行固定登船点"
+        ],
+        "supplementalSources": [
+          {
+            "url": "https://www.zgjssw.gov.cn/shixianchuanzhen/yangzhou/202509/t20250909_8520041.shtml",
+            "publishedAt": "2025-09-09",
+            "title": "古运河行进式游船现场体验"
+          },
+          {
+            "url": "https://zgjssw.jschina.com.cn/shixianchuanzhen/yangzhou/202507/t20250705_8501949.shtml",
+            "publishedAt": "2025-07-05",
+            "title": "官方夜间文旅电子地图获取方式"
+          }
+        ],
+        "limitations": [
+          "当前官方售票直链",
+          "实际订单码头、班次、票价、余票",
+          "是否开到三湾；2025报道仅为未来计划"
+        ]
+      },
+      "questions": [
+        "晚上能不能坐船逛运河",
+        "大运扬州夜游在哪上船",
+        "三湾有没有夜游船到东关街"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "今晚去哪逛夜市：扬州官方夜间文旅地图获取方式",
+      "source": "中共江苏省委新闻网（来源：扬州日报，市文广旅局发布说明）｜https://zgjssw.jschina.com.cn/shixianchuanzhen/yangzhou/202507/t20250705_8501949.shtml",
+      "content": "扬州市文广旅局2025年推出“二分明月夜扬州·夜间文旅消费电子地图”，覆盖夜间商圈、夜市夜游、夜读夜演等分类。公开说明给出的获取方式是“扬州文旅”微信公众号菜单，或“下扬州”小程序首页滚动栏；地图包含导览、简介和交通导航。想问“晚上去哪玩”“今天有没有夜市”，可先用这个官方入口找当期项目，再确认活动日期与地点。本条只核实2025年发布的入口说明，没有打开微信小程序，也没有确认2026年的菜单名称或今晚活动；不能把去年的苏超直播点和夏季市集当成长期营业场所。\n\n原文：https://zgjssw.jschina.com.cn/shixianchuanzhen/yangzhou/202507/t20250705_8501949.shtml\n核对日期：2026-09-23；原文日期：2025-07-05。\n范围：扬州市内片区或目的地线索，未测量距南京邮电大学通达学院（润扬南路33号）的路程，不能称为校门口或步行附近。资料是公开网页快照，营业、价格、导航与预约须当次核实。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "中共江苏省委新闻网（来源：扬州日报，市文广旅局发布说明）",
+        "url": "https://zgjssw.jschina.com.cn/shixianchuanzhen/yangzhou/202507/t20250705_8501949.shtml",
+        "publishedAt": "2025-07-05",
+        "verifiedAt": "2026-09-23",
+        "method": "2025-07-05原报道完整打开；该页面引用市文广旅局获取说明，未登录微信或测试小程序。",
+        "verifiedFields": [
+          "电子地图名称",
+          "公众号与小程序名称及2025获取路径",
+          "夜市夜游等分类和导航功能的发布说明"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "2026当前菜单及入口是否变化",
+          "今晚活动、开放、门票及余量"
+        ]
+      },
+      "questions": [
+        "今天晚上有什么夜市",
+        "夜游官方地图哪里看",
+        "想看夜景看戏去哪查"
+      ]
+    }
+  ],
+  "imported": [
+    {
+      "id": "fe1a2275-eed1-4450-99fe-648e9716b279",
+      "title": "扬州逛街聚餐：宝龙广场的名称和所在片区",
+      "agent": "life"
+    },
+    {
+      "id": "dcf2e8ea-f569-4543-b0e4-c480bf5d9570",
+      "title": "扬州邗江万达逛吃：商场名称、地址和快餐核对入口",
+      "agent": "life"
+    },
+    {
+      "id": "51a64b72-2e45-453d-81d2-1b9e672250bb",
+      "title": "三湾逛完想吃饭喝咖啡：非遗园餐饮空间线索",
+      "agent": "life"
+    },
+    {
+      "id": "e571bd42-2a33-499f-9e1b-a3c73fc00c5d",
+      "title": "扬州逛商圈看夜景：环明月湖、京华城和星耀天地",
+      "agent": "life"
+    },
+    {
+      "id": "c9c57acc-5fb9-4a6f-babf-0e29c22be988",
+      "title": "扬州晚上坐船看演艺：大运扬州古运河夜游",
+      "agent": "life"
+    },
+    {
+      "id": "de8e70c4-24c5-4cd1-b8d6-f22574496ffa",
+      "title": "今晚去哪逛夜市：扬州官方夜间文旅地图获取方式",
+      "agent": "life"
+    }
+  ],
+  "offlined": [],
+  "added": 6,
+  "totalDocs": 142,
+  "approvedByAgent": {
+    "life": 51,
+    "study": 12,
+    "affairs": 70,
+    "freshman": 0
+  }
+}

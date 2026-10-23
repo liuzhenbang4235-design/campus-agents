@@ -1,0 +1,542 @@
+{
+  "batch": "campus-rules-batch.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T16:31:22.704Z",
+  "docs": [
+    {
+      "agent": "affairs",
+      "title": "通达学院：学士学位基本条件及不授予情形（2025施行）",
+      "source": "教务处｜2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+      "content": "版本：院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号。\n本科毕业生申请学士学位，须拥护中国共产党的领导和社会主义制度、守法守纪；按本专业培养方案修满学分并经考核准予毕业，具备相应学科知识和能力；按学籍办法计算的平均学分绩点达到3.40及以上，毕业设计（论文）成绩不计入这一平均绩点。拿到毕业证和满足学位条件是两项审核。\n第3条列明不授予情形：违反四项基本原则经教育仍不悔改并受处分；因考试作弊或其他学术不端受留校察看及以上处分；因考试违纪或其他不诚信行为受两次及以上记过及以上处分；其他违反校规校纪受记过及以上处分且毕业评议无明显改进；毕业或结业后回校重修期间考试作弊或其他违法违纪，取消授予资格。符合特定条件能否申请个别审议、补修或学位救济，须分别按第5至10条核查，不能仅凭一个绩点数保证获得学位。\n官方原文：https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+        "sourceTitle": "南京邮电大学通达学院本科毕业生学士学位授予办法（修订）",
+        "pageDate": "2026-05-29",
+        "documentVersion": "院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/degree-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf",
+        "attachmentFile": "work/campus-rules/degree-revised.pdf",
+        "attachmentSha256": "e6c677e66dc36cf847130d11b543c64b1e0938ac22ceb9bca44b1eeb905497be",
+        "evidence": "第1—3条；第14条明确施行日及废止文件",
+        "pdfPages": [
+          1,
+          2,
+          3,
+          7
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：绩点不够拿学位：个别审议和毕业后重修（2025施行）",
+      "source": "教务处｜2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+      "content": "版本：院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号。\n第5条允许两类情况向学院学位评定委员会提出申请，由委员会决定是否授予学位：一是平均学分绩点在3.35（含）至3.40（不含）之间，毕业设计（论文）优秀，并经学位评定委员会秘书单位确认；二是在校期间因考试违纪受记过处分一次，毕业时经学院组织评议有明显改进。符合这些条件也不是自动授予。\n第6条针对因未达到第2条第3款绩点要求而未获学位、且平均学分绩点达到3.25及以上的毕业生：可在毕业离校后一年内申请回校重修绩点系数低于3.4的课程（含集中实践性教学环节）或毕业设计（论文），重修总学分不得超过30学分；达到授予规定后再申请学位。这里的一年和30学分不是所有结业生或其他原因未获学位者的统一规则。具体报名批次、表格与选课经教务确认，本规定不等于当前报名窗口已经开放。\n官方原文：https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+        "sourceTitle": "南京邮电大学通达学院本科毕业生学士学位授予办法（修订）",
+        "pageDate": "2026-05-29",
+        "documentVersion": "院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/degree-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf",
+        "attachmentFile": "work/campus-rules/degree-revised.pdf",
+        "attachmentSha256": "e6c677e66dc36cf847130d11b543c64b1e0938ac22ceb9bca44b1eeb905497be",
+        "evidence": "第5、6条；第2条第3款平均绩点不计毕业设计（论文）",
+        "pdfPages": [
+          2,
+          4,
+          7
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：学位救济的适用处分、五类条件及办理（2025施行）",
+      "source": "教务处｜2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+      "content": "版本：院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号。\n学位救济适用于第3条第（二）、（三）款涉及的考试作弊/学术不端处分、考试违纪/其他不诚信行为多次处分情况，不是所有未获学位原因的通用豁免。可在毕业时、学院规定最长学习年限内或结业一年内，经考察确已改正错误、进步显著，并符合下列一项条件后申请：①考取境内外硕士研究生，境外高校须为教育部留学服务中心认证的国（境）外高校；②平均学分绩点位列本专业同年级前30%；③获规定范围内院级及以上表彰且绩点位列本专业同年级前50%；④作为主要成员参加学院认可目录中A、B、C类学科竞赛并取得国家级奖项；⑤在见义勇为、助人为乐、三支一扶等精神文明建设方面，在院级及以上范围产生较大影响。\n由本人申请，所在二级学院研究并提交评议报告，学院学位评定委员会秘书单位审核后报院学位评定委员会审议，通过后方可授予。因考试作弊或其他学术不端受两次及以上留校察看处分者，不适用该救济制度。参赛获奖本身不能自动消除处分或替代其他学位条件；申请材料和当批截止日向学院教秘及教务确认。\n官方原文：https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+        "sourceTitle": "南京邮电大学通达学院本科毕业生学士学位授予办法（修订）",
+        "pageDate": "2026-05-29",
+        "documentVersion": "院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/degree-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf",
+        "attachmentFile": "work/campus-rules/degree-revised.pdf",
+        "attachmentSha256": "e6c677e66dc36cf847130d11b543c64b1e0938ac22ceb9bca44b1eeb905497be",
+        "evidence": "第7条五项条件及办理主体；第10条排除两次及以上留校察看；第14条版本",
+        "pdfPages": [
+          4,
+          5,
+          7
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：学位救济认可哪些表彰荣誉（2025施行）",
+      "source": "教务处｜2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+      "content": "版本：院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号。\n第7条第（三）项的“院级及以上表彰”必须同时满足平均学分绩点位列本专业同年级前50%，且以规定的荣誉范围审核。第8条列出通达学院的三好学生标兵、三好学生、优秀学生干部、综合类奖学金（一、二、三等奖学金）、优秀共青团员、优秀共青团员标兵、优秀团干部、十佳团支书、优秀社团干部；南京邮电大学的优秀共青团员、优秀团干部；以及教育部、团中央、教育厅、团省委、团市委等教育行政主管部门授予的综合性表彰荣誉。\n荣誉项目增加或调整须按第9条由相关部门组成评议小组、提出建议并经学院规定程序审定。不能把任何社团证书、商业比赛奖状或其他未列荣誉自行视为符合此项。还须符合第7条适用处分、改正进步等条件并经过学位委员会审议；两次及以上因作弊或其他学术不端受留校察看处分者不适用。\n官方原文：https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+        "sourceTitle": "南京邮电大学通达学院本科毕业生学士学位授予办法（修订）",
+        "pageDate": "2026-05-29",
+        "documentVersion": "院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/degree-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf",
+        "attachmentFile": "work/campus-rules/degree-revised.pdf",
+        "attachmentSha256": "e6c677e66dc36cf847130d11b543c64b1e0938ac22ceb9bca44b1eeb905497be",
+        "evidence": "第7条第（三）项，第8条完整荣誉范围，第9、10条",
+        "pdfPages": [
+          4,
+          5
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：学位审核、公示和复核申诉流程（2025施行）",
+      "source": "教务处｜2026-05-29｜https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+      "content": "版本：院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号。\n第4条规定：学位评定分委员会逐个审核毕业生思想表现、学业成绩及毕业资格，报学院学位评定委员会秘书单位复核；拟授予名单公示3天，公示期间有异议可提出申诉；公示期满后提交院学位评定委员会审查。\n第11条规定，对不授予或撤销学位的审核意见，申请人可向二级学院提出复核申请，原则上限于审核内容，且本人只能申请复核一次。二级学院收到申请书后向所在学位评定分委员会和学院学位评定委员会秘书单位上报，组织调查并形成书面结果报院学位评定委员会处理；自受理复核申请之日起30日内须完成调查并作出复核决定反馈。对学位授予工作有关事项有异议，也可向秘书单位提出书面复核申请。\n严重学位论文抄袭、篡改、伪造、代写或买卖等可按规定撤销学位；撤销决定须送达或书面通知当事人。30日从“受理”计算，不是提出咨询后保证拿到证书的期限。\n官方原文：https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm",
+        "sourceTitle": "南京邮电大学通达学院本科毕业生学士学位授予办法（修订）",
+        "pageDate": "2026-05-29",
+        "documentVersion": "院发〔2025〕11号，2025-06-11印发，2025-09-01施行；适用于本院普通高等教育本科毕业生申请学士学位；废止院发〔2024〕19号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/degree-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/82/4a/86dbba1b4d3a8eabc6957d67013c/62b508b9-9176-44f2-aa79-fcf8be28e4e8.pdf",
+        "attachmentFile": "work/campus-rules/degree-revised.pdf",
+        "attachmentSha256": "e6c677e66dc36cf847130d11b543c64b1e0938ac22ceb9bca44b1eeb905497be",
+        "evidence": "第4、11—13条。第11条（五）为受理之日起三十日内复核调查及反馈",
+        "pdfPages": [
+          3,
+          5,
+          6,
+          7
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：新生入学、保留入学资格与学期注册（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n新生按录取通知书及规定证件到校办理入学；不能按期入学须向学院请假，假期不得超过两周，未请假或逾期且无不可抗力等正当事由，视为放弃入学资格。因疾病或受伤不能正常学习，经二级甲等及以上医院诊断、本人申请并获学院批准，可保留入学资格1年；保留入学资格期间不具有学籍。录取后依法应征入伍的新生，可提交申请和证明保留资格至退役后2年；恢复入学须按第3、4条接受资格审核，不是直接恢复在校身份。\n在校生每学期开学须按规定注册，不能如期注册须履行暂缓注册手续。未请假逾期两周不报到注册，除不可抗力等正当事由外，按自动退学处理。家庭经济困难学生可申请助学贷款或其他资助，办手续后注册；未注册期间学分暂不认可，完成注册后可确认。具体报到日期与手续以本学期通知为准。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第1—5条；第48条施行与适用范围",
+        "pdfPages": [
+          2,
+          3,
+          4,
+          17
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：最长可以读几年、休学时间算不算（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n第6条规定：本科标准学制四年，自入学取得学籍起，普通本科学习年限最长六年，包含休学时间、参军入伍除外；专转本最长三年，含休学。若在校需要休学创业，须本人提出申请、提供证明，由学院组织专家审核认定，可再延长两年，普通本科最长八年、专转本最长五年，不能仅以“想创业”自行延长。\n第30条规定休学一般以一学年为限，学期结束前开始休学的，该学期按休学计算；一般累计休学不得超过两学年。休学创业时，普通本科累计休学不超过四学年、专转本不超过三学年。休学、保留学籍以及转专业转学均须结合最长学习年限办理；以上不是批准每名学生都延期到上限的承诺。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第6、24条（三）、29—30条；第48条",
+        "pdfPages": [
+          4,
+          10,
+          12,
+          13,
+          17
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：平均学分绩点怎么计算、哪些成绩计入（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n第10条按培养方案要求的必修课（不含毕业设计、论文）及学生选定的限制性选修课计算累计学分和平均学分绩点。课程学分绩点＝课程学分×绩点系数；平均学分绩点＝所修课程学分绩点之和÷所修课程学分数之和。不要直接把各门分数或绩点不加权平均。\n百分制对应区间：90—100分为4.5—5.0；80—89分为4.0—4.45；70—79分为3.5—3.95；60—69分为3.0—3.45；0—59分为0。五级制对应：优秀4.75、良好4.25、中等3.75、及格3.25、不及格0。具体单个百分分数的换算、重复修读计入方式应以教务正式成绩记录为准，本表未另给所有逐分换算条目。\n第12、21条说明补考、缓考、重修、自学免修取得的成绩应作相应标注；补考通过按及格记，不应把补考卷面高分直接当作普通考试高绩点。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第10条绩点表及公式；第12、21条成绩标注",
+        "pdfPages": [
+          5,
+          6,
+          8
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：挂科、缺考和缺课后能否补考或必须重修（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n课程考核不及格可参加补考，补考通过按及格记、未通过按不及格记；补考不及格学生和其他学生均可报名重修。补考、缓考和重修的具体报名安排还应按实施细则及当期通知办理。旷考记为旷考；旷考、违纪、作弊课程不能补考或免修，必须重修。平时测验违纪或作弊，该课程平时成绩以零分计。\n未经批准缺席教学活动按规定处理；无故旷课累计超过课程学时三分之一，或无故缺交作业、缺做实验超过三分之一，不得参加该课程考核，必须重修。因病或特殊情况不能参加考试须事先按规定申请缓考并获得批准，不能仅缺席后补一张请假说明。\n第14条另规定每学年须参加一次国家学生体质健康标准测试，不及格可补测一次；补测仍不及格则该学年不及格；毕业时该测试成绩达不到50分按结业处理。个别免测、免修资格须另依相应规定审核，不能从此条自行推定。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第12、14—16、18条；第18条病假证明及审批另按实施细则",
+        "pdfPages": [
+          6,
+          7,
+          8
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：自学课程免修的绩点、材料和考核条件（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n自学确已掌握培养方案课程，可申请免修考核，但政治理论课、思想品德课、体育课和集中实践性教学环节除外，重修课程也不得免修。每学期申请门数原则上不超过应修课程门数的四分之一；须已取得先修课程学分，且前两个学期平均学分绩点达到4.25。\n应在开课一周内提交《自学课程免修申请表》、自学资料、习题作业；任课教师审核学习能力和掌握情况达到良好以上，经开课学院教学院长批准、教务处审核批准后，方可参加免修考核。考核要求与该课正常考核相同，成绩达到75分及以上准予免修，记录为该课成绩并标注“自学免修”。\n考核一般在开课三周内进行，规定时间缺考不另行安排；尚未批准前仍须正常修读。免修申请不等于免考，也不等于填表后可以直接停课。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第17条全部申请条件及考核程序",
+        "pdfPages": [
+          7
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：降级编级与跳级的学分差额条件（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n每学年结束作学籍处理：该学年已获必修、限选课学分，与所在年级当学年专业培养方案要求总学分的差距小于24学分者可升级，差距达到24学分者编入下一年级；按历年累计必修、限选课学分比较时，差距小于30学分者可升级，差距达到30学分者编入下一年级。两项是年度与历年累计的不同检查，不能把其中一个当作全部条件。编级后按编入年级培养方案修读；已获学分课程可申请免修，未申请视为重修并标注。\n学习有困难者，每学期开学一个月内可本人申请，经教务审核批准后编入低年级。每学年结束后申请跳级：二年级学生历年累计必修、限选学分距高一年级培养方案应完成总学分不超过8学分；三年级学生的相应差距不超过16学分。符合数值后仍须本人申请并获教务批准，不能自行改年级。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第25—27条；年度与累计24/30、跳级8/16分别核对",
+        "pdfPages": [
+          11
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：休学适用情况、复学期限与表格差异（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n第29条包括这些应予休学情况：因病伤经二级甲等及以上医院诊断，停课治疗休养超过一学期总学时三分之一；按考勤一学期请假缺课超过总学时三分之一；短期工作、休学创业等特殊原因经本人申请学院认可，或学院认为必须休学。本人填申请并提供证明，经批准办理；休学期间保留学籍，但不享受在校学习学生待遇，不得擅自参加教学活动。\n第32条写明：休学或保留学籍期满应于开学两周内，经学生处签字确认及学院所在地二级甲等及以上医疗机构复查合格后申请复学，并持材料到教务办理；未办理前不得先上课，完成后尽快注册和按培养方案学习。保留学籍期满后一个月内无故不办复学的，按该条取消学籍。\n期限存在公开来源差异：2026年发布的休学表和复学表说明写“开学一周内”，正式办法第32条写“两周内”。应在开学前联系所在学院教秘、辅导员和教务确认本人年级、休学原因及本批期限，不承诺按较宽的两周期限一定受理，也不据此认定整张2026表失效。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第29—32条；与已审核入库2026休学/复学空表说明交叉比对",
+        "pdfPages": [
+          12,
+          13
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages",
+        "conflictingFormIds": [
+          "4875048d-4c27-4b57-9208-086c99b69aef",
+          "7e11440e-ad67-4128-81fb-dd67a36e8b76"
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：毕业、结业和延期毕业怎样区分（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n第37条规定，具有学籍的学生修完培养方案全部内容，德、体合格并达到毕业学分要求，准予毕业。未达到毕业要求但未超过最长学习年限者，一般按结业处理；也可本人申请，经家长同意并完成申请审批，作延期毕业处理。达到最长年限仍未满足毕业要求，符合结业条件按结业，不符合按清退和注销学籍处理。已达到毕业要求、只差学士学位授予条件者，不允许申请延期毕业。延期毕业者在最长学习年限内仍按原培养方案学习；提前修完规定内容并获毕业学分可申请提前毕业。\n公开来源存在差异：2026-09-16的当月毕（结）业通知所引第37条仍写“未达毕业作延期，可申请结业”，与已于2025-01-01施行的修订原件不同；该通知9月20日17:00的截止日已过。不能把旧引文或过期窗口当作当前自动延期规则，应由所在学院教秘、教务按个人年级和审批批次确认适用。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第37—39条（PDF第15页，印刷页14）；与2026-09-16通知明确冲突",
+        "pdfPages": [
+          15,
+          17
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages",
+        "conflictSourceUrl": "https://jwc.nytdc.edu.cn/2026/0916/c308a51229/pagem.htm",
+        "expiredNoticeDeadline": "2026-09-20T17:00:00+08:00"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：结业后如何重修换毕业证（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n第40条针对因课程未取得学分而结业者：可在结业后一年或最长学习年限内，凭结业证书复印件申请回校重修，每门课程仅限一次；因毕业设计（论文）不及格而结业者，在同样范围内可申请回校补做一次。课程重修或毕设补做及格后，本人提出书面申请，教务复核后换发毕业证书；同时符合学士学位条件才发学位证书，签发日期按实际发证日期填写。重修或补做不及格、或逾期不申请，以后不再安排。\n毕业与结业时自动取消学籍。结业后申请换毕业证和已毕业但绩点不够申请学位重修，是不同依据；学位重修另看院发〔2025〕11号第6条的3.25、毕业离校后一年、30学分等限制。当前报名时间、课程开放和审批材料须向教务按当期回校重修通知确认，不能只凭旧申请表判断报名已经开始。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第40—41条；学位重修第6条仅作关联说明",
+        "pdfPages": [
+          16
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages",
+        "relatedSourceUrl": "https://jwc.nytdc.edu.cn/2026/0529/c514a50225/page.htm"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：退学处理、离校和申诉的正式规定（2025施行）",
+      "source": "教务处｜2024-07-06｜https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+      "content": "版本：院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号。\n第33条列明应予退学情况：超过最长学习年限（休学计入、参军入伍除外）；休学或保留学籍期满未按期申请复学或复查不合格；经学院指定医院诊断不能继续在校学习；未经批准连续两周未参加规定教学活动；无正当理由超过注册期限且未办暂缓；按规定应休学而未休学；本人申请退学。实际是否构成这些情形须由学校审核，不能由助手仅据学生描述判定。\n退学处理须书面说明原因，二级学院签署意见、教务审核、主管教学领导签署意见后由党政联席会议研究决定。获批退学须一周内办理离校，档案和户口按规定退回。对退学处理有异议可向学院学生申诉处理委员会申诉；第34条对超学习年限清退、注销学籍的相关流程写有10日内申诉要求，不应套作所有事项的统一期限。\n2026退学空表仍引用院发〔2021〕16号，但本办法第48条明确该旧办法已废止。表格填写字段可作为公开材料线索；应向教务确认当前适用依据、通知与程序，不能推断整张表已经作废或提交后自动退学。\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c514a49562/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生学籍管理办法（修订）",
+        "pageDate": "2024-07-06",
+        "documentVersion": "院发〔2024〕18号，2024-07-06印发，2025-01-01施行；适用于本院普通高等教育全日制本科学生；废止院发〔2021〕16号",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/student-revised.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/b8/d5/d4f0b76946f7a555ef3743428705/ab988fb0-bb39-45bc-a075-b0d01c0626c3.pdf",
+        "attachmentFile": "work/campus-rules/student-revised.pdf",
+        "attachmentSha256": "b3ae6dd1218a91eaab2ae15efbbddfe3ff478e6413a8b8d69ed4cddc35477143",
+        "evidence": "第33—36、48条；2026退学表旧文件号与新规则交叉核对",
+        "pdfPages": [
+          14,
+          15,
+          17
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages",
+        "conflictingFormId": "d14629d1-6ec9-47d5-9885-076dc7b2e19f"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：2024/2025级专业提升模块：升学、就业及认定缺口",
+      "source": "教务处｜2025-07-04｜https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+      "content": "版本：院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见。\n2024级、2025级本科培养方案指导性意见均将专业提升课程列为3学分，设国内升学、出国（境）升学、就业三个方向供学生选择。国内升学方向开设数学、英语、专业课进阶课程，按全国硕士研究生统一招生考试成绩认定相应学分及成绩；出国（境）方向开设相关英语进阶课程，按出国（境）升学认定学分及成绩。两类进阶课面向全院开设、性质为任选课，修得相关学分可冲抵综合素质课程学分，具体规则以对应实施细则为准。\n就业方向设置基本技能、职业技能、创新技能三个子模块，学生至少选择其中两个学习；这不是“三个方向都各修3学分”，也不能据此认定三个就业子模块必须平均分配学分。\n两份指导意见均引用《南京邮电大学通达学院2024级本科生培养方案专业提升课程模块成绩认定实施细则》及就业模块学习分考核标准一览表，但本次未找到这些细则/表的公开正文。尚不能确认竞赛获奖、证书、大创、论文等各换多少课程学分、折算分数及申报材料；已知PU素拓学时不可直接换算为专业提升学分。应向本专业教秘索取本人年级实施细则；2026级是否相同尚未确认。\n2024级对应原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm\n官方原文：https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm\n正式文件：https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf\n核对日期：2026-09-24。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49579/page.htm",
+        "sourceTitle": "南京邮电大学通达学院制（修）订2025级本科专业培养方案指导性意见",
+        "pageDate": "2025-07-04",
+        "documentVersion": "院教发〔2025〕6号，2025-07-04印发，2025级本科专业培养方案指导性意见",
+        "checkedAt": "2026-09-24",
+        "sourceFile": "work/campus-rules/curriculum2025.html",
+        "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/08/03/6522b7614b31955f44e102a9eef6/a17b9b65-a003-409d-a207-039d0e815f7f.pdf",
+        "attachmentFile": "work/campus-rules/curriculum2025.pdf",
+        "attachmentSha256": "cbfc7d5ec633c47b8a42cd6406a1f5e1ebd5697e1ea581a1b380d68e02518e5e",
+        "evidence": "2025文件PDF第14—15页表2、2024文件PDF第13—14页表2，页1及末页核版本；2025第9页结构图",
+        "pdfPages": [
+          1,
+          9,
+          14,
+          15,
+          22
+        ],
+        "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+        "readScope": "all_pages",
+        "additionalVerification": {
+          "official": true,
+          "sourceUrl": "https://jwc.nytdc.edu.cn/2026/0506/c519a49578/page.htm",
+          "sourceTitle": "南京邮电大学通达学院制（修）订2024级本科专业培养方案指导性意见",
+          "pageDate": "2024-08-26",
+          "documentVersion": "院教发〔2024〕10号，2024-08-26印发，2024级本科专业培养方案指导性意见",
+          "checkedAt": "2026-09-24",
+          "sourceFile": "work/campus-rules/curriculum2024.html",
+          "attachmentUrl": "https://jwc.nytdc.edu.cn/_upload/article/files/da/8e/8f62ba664c629d76e5f2a118f889/7bc44c63-6499-4c69-8670-d1f2ae96db23.pdf",
+          "attachmentFile": "work/campus-rules/curriculum2024.pdf",
+          "attachmentSha256": "3eae4458d590ed4570f509fd162aaefe06f122b253e083def2ff05921402ff81",
+          "evidence": "第13—14页表2专业提升课程要求；第1/20页版本",
+          "pdfPages": [
+            1,
+            13,
+            14,
+            20
+          ],
+          "verificationMethod": "公开原件逐页图像核对，制度号与施行条款以附件为准；不按URL推断日期",
+          "readScope": "PDF第1、13、14、20页，未通读其余页"
+        },
+        "scopeBoundary": "指导性意见，不代替各专业最终培养方案或未公开的成绩认定实施细则"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "2f4df2cc-26a2-4677-968c-87c2f010de7d",
+      "title": "通达学院：学士学位基本条件及不授予情形（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "7e182561-2eb2-41cc-96b6-f6fce24661a9",
+      "title": "通达学院：绩点不够拿学位：个别审议和毕业后重修（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "553db977-d0a6-47c0-ab97-442c7bea9ed7",
+      "title": "通达学院：学位救济的适用处分、五类条件及办理（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "b3a9079a-5e11-4567-9ad3-dfa166977bde",
+      "title": "通达学院：学位救济认可哪些表彰荣誉（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "811a4d5b-0a30-44df-af6f-b4c777d0da9e",
+      "title": "通达学院：学位审核、公示和复核申诉流程（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "7a67b948-3f37-47a3-997a-1d464850eb16",
+      "title": "通达学院：新生入学、保留入学资格与学期注册（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "4f46958f-5476-427f-b6e9-a362153adf9a",
+      "title": "通达学院：最长可以读几年、休学时间算不算（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "dc89fa8c-31e4-46d7-91c6-d264ce5b9bde",
+      "title": "通达学院：平均学分绩点怎么计算、哪些成绩计入（2025施行）",
+      "agent": "study"
+    },
+    {
+      "id": "f8f9aed9-6c4c-4e73-b142-d0ff7d65414a",
+      "title": "通达学院：挂科、缺考和缺课后能否补考或必须重修（2025施行）",
+      "agent": "study"
+    },
+    {
+      "id": "d01de902-8a27-4b94-8bfb-700150f6aac4",
+      "title": "通达学院：自学课程免修的绩点、材料和考核条件（2025施行）",
+      "agent": "study"
+    },
+    {
+      "id": "b06af775-933f-4f17-aea4-6fc834ca4145",
+      "title": "通达学院：降级编级与跳级的学分差额条件（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "9800bb83-1ce1-413d-81fe-64d3de72f3ca",
+      "title": "通达学院：休学适用情况、复学期限与表格差异（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "dd4c74b2-0d00-4399-aaa4-cd07f4cb50bb",
+      "title": "通达学院：毕业、结业和延期毕业怎样区分（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "ceb0c24e-6655-4dc3-b573-97520691f101",
+      "title": "通达学院：结业后如何重修换毕业证（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "a102794d-ec95-4dbb-bc8f-46ba1350181b",
+      "title": "通达学院：退学处理、离校和申诉的正式规定（2025施行）",
+      "agent": "affairs"
+    },
+    {
+      "id": "5a1a08fa-e00f-4555-9a74-e2b4bbfdb687",
+      "title": "通达学院：2024/2025级专业提升模块：升学、就业及认定缺口",
+      "agent": "study"
+    }
+  ],
+  "offlined": [],
+  "added": 16,
+  "totalDocs": 224,
+  "approvedByAgent": {
+    "life": 56,
+    "study": 55,
+    "affairs": 93,
+    "freshman": 0
+  }
+}

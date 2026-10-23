@@ -1,0 +1,272 @@
+{
+  "batch": "campus-programs-2026-09-24",
+  "verifiedAt": "2026-09-24",
+  "status": "prepared-not-imported",
+  "databaseMutated": false,
+  "configurationMutated": false,
+  "externalFetches": 0,
+  "inputFiles": [
+    "work/program-details.json",
+    "work/admission-current/programs-links.json",
+    "work/admission-current/programs.html",
+    "work/admission-current/programs2.html"
+  ],
+  "expectedPrograms": 19,
+  "preparedDocs": 19,
+  "agent": "study",
+  "existingStudy": {
+    "source": "GET http://127.0.0.1:4173/api/state",
+    "snapshot": "work/programs-existing-study.json",
+    "count": 32,
+    "filter": "agent === 'study' && status === 'approved' && cloudAllowed === true",
+    "note": "任务描述31条，读取时根代理已补入2026选科要求，实际32条；无专业介绍重复。"
+  },
+  "duplicateTitles": [],
+  "duplicateSources": [],
+  "linkMismatch": [],
+  "coverage": "招生目录两页共19专业，每专业1条；与19详情和19目录URL一一匹配。当前库的竞赛、双创和选科信息用途不同，不替换。",
+  "dates": {
+    "detailPagesWithVisibleDate": 0,
+    "detailPagesWithoutVisibleDate": 19,
+    "directoryPagesWithExplicitDates": 2,
+    "explicitDateElement": "span.Article_PublishDate",
+    "urlDateMismatchCount": 17,
+    "note": "专业页面日期取目录实际显示值，而非根据URL推断。17条目录日期晚于旧URL日期；这说明地址沿用，不能将正文一概标成2020等旧版本。仍不把2025招生介绍称为2026级正式培养方案。",
+    "countByDirectoryDate": {
+      "2026-05-20": 1,
+      "2025-05-30": 1,
+      "2025-05-06": 4,
+      "2025-04-30": 13
+    }
+  },
+  "sourceCaveats": [
+    {
+      "program": "人工智能",
+      "caveat": "原文“专业方向及特色”段出现“计算机科学与技术专业宽口径专业课程体系”字样；本摘要采用人工智能培养目标与明确课程，未据此把专业改称计算机科学与技术。"
+    },
+    {
+      "program": "物联网工程",
+      "caveat": "原文方向段出现“网络工程专业技术人才”字样；页面标题和课程为物联网工程，本条未据此另造网络工程专业。"
+    }
+  ],
+  "nameNormalization": [
+    {
+      "original": "自 动 化",
+      "normalized": "自动化",
+      "reason": "招生目录视觉排版空格，未改变专业名。"
+    }
+  ],
+  "checkedPrograms": [
+    {
+      "program": "网络与新媒体",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2026/0520/c138a49849/pagem.htm",
+      "pageDate": "2026-05-20",
+      "urlDate": "2026-05-20",
+      "dateMismatch": false,
+      "selectedCourses": 8,
+      "practiceEvidenceMatches": 2,
+      "sourceCaveat": null
+    },
+    {
+      "program": "人工智能",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2025/0530/c138a46159/pagem.htm",
+      "pageDate": "2025-05-30",
+      "urlDate": "2025-05-30",
+      "dateMismatch": false,
+      "selectedCourses": 8,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": "原文“专业方向及特色”段出现“计算机科学与技术专业宽口径专业课程体系”字样；本摘要采用人工智能培养目标与明确课程，未据此把专业改称计算机科学与技术。"
+    },
+    {
+      "program": "金融工程",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3732/pagem.htm",
+      "pageDate": "2025-05-06",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 8,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": null
+    },
+    {
+      "program": "广告学",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3714/pagem.htm",
+      "pageDate": "2025-05-06",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 8,
+      "practiceEvidenceMatches": 2,
+      "sourceCaveat": null
+    },
+    {
+      "program": "财务管理",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3740/pagem.htm",
+      "pageDate": "2025-05-06",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 8,
+      "practiceEvidenceMatches": 2,
+      "sourceCaveat": null
+    },
+    {
+      "program": "大数据管理与应用",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2023/0529/c138a36316/pagem.htm",
+      "pageDate": "2025-05-06",
+      "urlDate": "2023-05-29",
+      "dateMismatch": true,
+      "selectedCourses": 10,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": null
+    },
+    {
+      "program": "电气工程及其自动化",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3874/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 9,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": null
+    },
+    {
+      "program": "自动化",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3871/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 8,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": null
+    },
+    {
+      "program": "集成电路设计与集成系统",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2023/0516/c138a36005/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2023-05-16",
+      "dateMismatch": true,
+      "selectedCourses": 7,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": null
+    },
+    {
+      "program": "光电信息科学与工程",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3958/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 7,
+      "practiceEvidenceMatches": 1,
+      "sourceCaveat": null
+    },
+    {
+      "program": "电子科学与技术",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3959/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 7,
+      "practiceEvidenceMatches": 1,
+      "sourceCaveat": null
+    },
+    {
+      "program": "数字媒体技术",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3957/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 9,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": null
+    },
+    {
+      "program": "物联网工程",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3956/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 8,
+      "practiceEvidenceMatches": 2,
+      "sourceCaveat": "原文方向段出现“网络工程专业技术人才”字样；页面标题和课程为物联网工程，本条未据此另造网络工程专业。"
+    },
+    {
+      "program": "数据科学与大数据技术",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2021/0531/c138a19429/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2021-05-31",
+      "dateMismatch": true,
+      "selectedCourses": 9,
+      "practiceEvidenceMatches": 2,
+      "sourceCaveat": null
+    },
+    {
+      "program": "信息安全",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2024/0529/c138a40763/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2024-05-29",
+      "dateMismatch": true,
+      "selectedCourses": 9,
+      "practiceEvidenceMatches": 1,
+      "sourceCaveat": null
+    },
+    {
+      "program": "软件工程",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3917/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 10,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": null
+    },
+    {
+      "program": "计算机科学与技术",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3876/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 9,
+      "practiceEvidenceMatches": 3,
+      "sourceCaveat": null
+    },
+    {
+      "program": "信息工程",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3882/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 7,
+      "practiceEvidenceMatches": 1,
+      "sourceCaveat": null
+    },
+    {
+      "program": "通信工程",
+      "sourceUrl": "https://zs.nytdc.edu.cn/2020/0629/c138a3900/pagem.htm",
+      "pageDate": "2025-04-30",
+      "urlDate": "2020-06-29",
+      "dateMismatch": true,
+      "selectedCourses": 7,
+      "practiceEvidenceMatches": 2,
+      "sourceCaveat": null
+    }
+  ],
+  "validation": [
+    "19专业和URL完整覆盖",
+    "全部所选课程名称能逐字匹配规范化原文",
+    "全部实践证据能匹配规范化原文",
+    "每条带sourceUrl/sourceFile/pageDate及目录日期依据",
+    "不复制师生名单、履历或宣传统计",
+    "不推定就业保证、当前课表、学分或开课学期",
+    "无公开实践项目的专业明确说明缺口"
+  ],
+  "notEstablished": [
+    "2026级正式培养方案及修订版本",
+    "各年级当前课程、学分和考核方式",
+    "实验室/实训/实习的报名时间、资格、场地和名额",
+    "转专业课程衔接或学分替换关系"
+  ],
+  "integration": {
+    "checkedAt": "2026-09-23T17:08:11.548Z",
+    "inventory": "source-inventory.json",
+    "status": "sources_reconciled_with_approved_state",
+    "notice": "原始review的准备、排除和过期判定保留；当前入库状态以source-inventory各项及documentIds为准。"
+  }
+}

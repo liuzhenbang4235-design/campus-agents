@@ -1,0 +1,1323 @@
+{
+  "scope": "仅对原source-inventory的120条链接全量分类，并另核对1条省教育厅政策；不等于全校数据齐全。83个剩余HTML已抓取。按实际证据区分正文摘要、图片核对、仅附件入口；未读取的附件未冒称已读。",
+  "checkedAt": "2026-09-23",
+  "newRecords": 20,
+  "fetchedHtmlPages": 83,
+  "statusCounts": {
+    "imported": 17,
+    "covered": 40,
+    "expired_or_news": 54,
+    "excluded_personal_or_news": 5,
+    "excluded_credentials": 1,
+    "excluded_nonstudent_administration": 1,
+    "covered_by_newer_primary_summary": 2
+  },
+  "items": [
+    {
+      "url": "https://jwc.nytdc.edu.cn/2020/0629/c259a4205/pagem.htm",
+      "title": "南邮通达教务微信公众号",
+      "previousStatus": "unclassified",
+      "status": "imported",
+      "reason": "已查看官网二维码原图，整理官方页面扫码入口；不声称已验证二维码目标或公众号功能",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/0.html",
+      "pageDate": "2020-06-29",
+      "documentIds": [
+        "c45fd5e2-e2bd-4c25-96ca-3a5cca745c2e"
+      ]
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/0511/c363a18258/page.htm",
+      "title": "机构职责",
+      "previousStatus": "unclassified",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/1.html",
+      "pageDate": "2022-11-03",
+      "documentIds": [
+        "496fa679-1cc0-43b8-98f5-7fff48528add"
+      ]
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/eb/55/a1a7a5c64c33b2bf447fd045f04a/3c3c186b-3a01-41cd-a00e-ed66055468b0.doc",
+      "title": "附件4：学生毕业申请表（新）.doc",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/73/ce/3ac3491f483b81d6d1d85e99fece/628b1b2a-2beb-40b6-8b95-166eba99cd60.doc",
+      "title": "附件3：学生提前毕业（结业）申请表（新）.doc",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/49/24/7ae319b045f8a316c4859ed2ec4d/c4a5b511-f5ea-4d6c-8ce0-0c31b0a7f7c1.docx",
+      "title": "附件2：自主编（跳）级申请表（新）.docx",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/40/ca/684d089845eab65c1b3ed4d2ade4/c86c9428-3600-4452-bd25-f89ea7edee69.docx",
+      "title": "附件1：学生复学申请表（新）.docx",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/53/ec/e74f204341f2b25af003eefd88f7/3900f09e-4a1d-4d14-aed7-ae7cf8713b63.docx",
+      "title": "南京邮电大学通达学院本科学生自动退学审批表（20260310）.docx",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/57/3f/aa19b3d24cd4b1c1541a961ad289/96528b4e-2cfd-4328-8260-437f32f74bf6.docx",
+      "title": "南京邮电大学通达学院学生休学申请表（20260310）.docx",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/_upload/article/files/01/42/5a9587ca478a8ff8cb5896c4b708/3702573d-1d86-48ac-afe5-7df7909e7e8c.docx",
+      "title": "南京邮电大学通达学院学生校外住宿审批表（2025版）.docx",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/2020/0630/c398a5756/page.htm",
+      "title": "欢迎关注    南京邮电大学通达学院财务处     微信公众号",
+      "previousStatus": "unclassified",
+      "status": "imported",
+      "reason": "已查看官网二维码原图，整理官方页面扫码入口；不声称已验证二维码目标或公众号功能",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/2.html",
+      "pageDate": "2020-06-30",
+      "documentIds": [
+        "fa1359d6-62fa-4d3b-912d-cabb61414020"
+      ]
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/_upload/article/files/82/7b/4d7b15c6458a8d40f95088917f58/6a1a6df8-63c6-4acd-be33-bb8fee449e45.pdf",
+      "title": "校园一卡通操作指南.pdf",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/_upload/article/files/8c/fb/e77d9f3b493a86a57dbb9f5109da/f06e9638-9e16-45ff-8f55-186abd139d17.pdf",
+      "title": "学生活动费报销指南.pdf",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/1f/55/bd596b5d4d8eadf2cc7cd24d2e0a/eac6f7b6-bfa2-4f7f-b8be-36e253f45888.pdf",
+      "title": "南京邮电大学通达学院学生一般事务申请表2024.9.26.pdf",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/06/aa/3d9381f94801ba1afcf41aa6a229/28c8e110-2ae9-403b-8b5c-c2cafd118bed.doc",
+      "title": "南京邮电大学通达学院学生转专业申请表（20230426）.doc",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2021/0513/c340a18575/page.htm",
+      "title": "学生办事流程--大学生创新创业训练计划立项",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/3.html",
+      "pageDate": "2021-03-03",
+      "documentIds": [
+        "c2545330-6c70-4916-a63e-e55f7a533b9b"
+      ]
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2021/0513/c340a18577/page.htm",
+      "title": "学生办事流程--缓考申请",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/4.html",
+      "pageDate": "2015-04-03",
+      "documentIds": [
+        "03ab18c2-0b36-4878-a09b-37d7ba17f50c"
+      ]
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c337a50224/page.htm",
+      "title": "南京邮电大学通达学院学生毕业申请表（新）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c337a50223/page.htm",
+      "title": "南京邮电大学通达学院学生提前毕业（结业）申请表（新）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c337a50222/page.htm",
+      "title": "南京邮电大学通达学院自主编（跳）级申请表（新）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0529/c337a50221/page.htm",
+      "title": "南京邮电大学通达学院学生复学申请表（新）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0311/c337a48646/page.htm",
+      "title": "南京邮电大学通达学院本科学生自动退学审批表（20260310）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0311/c337a48645/page.htm",
+      "title": "南京邮电大学通达学院学生休学申请表（20260310）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/1219/c337a42471/page.htm",
+      "title": "南京邮电大学通达学院2025届本科毕业设计（论文）工作规定（文学类、经济学类、管理学类）",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "仅适用于2025届毕业设计，不能作为当前届通用规则；附件未解析",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/5.html",
+      "pageDate": "2024-12-19"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/1219/c337a42470/page.htm",
+      "title": "南京邮电大学通达学院2025届本科毕业设计（论文）工作规定（工学类）",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "仅适用于2025届毕业设计，不能作为当前届通用规则；附件未解析",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/6.html",
+      "pageDate": "2024-12-19"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/1219/c337a42463/page.htm",
+      "title": "2025届毕业设计(论文)模板(文学类、经济学类、管理学类)",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "仅适用于2025届毕业设计，不能作为当前届通用规则；附件未解析",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/7.html",
+      "pageDate": "2024-12-19"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/1219/c337a42462/page.htm",
+      "title": "2025届毕业设计(论文)模板(工学类)",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "仅适用于2025届毕业设计，不能作为当前届通用规则；附件未解析",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/8.html",
+      "pageDate": "2024-12-19"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/0927/c337a41494/page.htm",
+      "title": "南京邮电大学通达学院学生一般事务申请表",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2024/0906/c337a41322/page.htm",
+      "title": "南京邮电大学通达学院学生缓考申请表",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/9.html",
+      "pageDate": "2024-09-06",
+      "documentIds": [
+        "d0b27eaf-c98a-483c-81de-81cc68152937"
+      ]
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2023/0427/c337a35658/page.htm",
+      "title": "南京邮电大学通达学院学生转专业申请表（20230426）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/_upload/article/files/fa/1c/984bf9b74cdd8b362879696e6af8/9cec357f-7f17-458f-8f29-36a499f7f4f4.doc",
+      "title": "南京邮电大学通达学院本科生申请学位审批表（20200622更新）",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "公开DOC下载已验证，仅导入旧版下载入口且明确未解析字段；不得推断学位资格",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/degree-2020.doc",
+      "documentIds": [
+        "50f88c93-f13e-4e2d-9c69-3ca11c6a7e2b"
+      ]
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2023/0331/c521a34930/page.htm",
+      "title": "南京邮电大学通达学院关于做好2022-2023学年第二学期学生转专业工作的通知",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/10.html",
+      "pageDate": "2026-05-06"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0427/c521a49479/page.htm",
+      "title": "南京邮电大学通达学院关于做好2027届毕业生图像信息采集工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "2027届图像采集时间为2026-05-06至05-08，已结束；班级时间附件未采集",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/11.html",
+      "pageDate": "2026-04-27"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0413/c521a49345/page.htm",
+      "title": "南京邮电大学通达学院2025-2026学年第二学期学生学籍异动情况的通知",
+      "previousStatus": "excluded_personal_or_news",
+      "status": "excluded_personal_or_news",
+      "reason": "原清单已排除个人名单或新闻，本轮未抓取",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0413/c521a49346/page.htm",
+      "title": "南京邮电大学通达学院关于做好2025-2026学年第二学期学生转专业工作的通知",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "2025-2026第二学期转专业申请截至2026-04-16，已结束；旧名额不作为当前标准",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/12.html",
+      "pageDate": "2026-04-10"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0303/c521a48557/page.htm",
+      "title": "南京邮电大学通达学院关于2025-2026学年第二学期拟申请学位救济学生回校重修课程的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "本学期申请窗口在2026年3月，已结束；回校重修需当前学期新通知",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/13.html",
+      "pageDate": "2026-03-02"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2026/0303/c521a48556/page.htm",
+      "title": "南京邮电大学通达学院关于2025-2026学年第二学期毕业生、结业生回校重修课程的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "本学期申请窗口在2026年3月，已结束；回校重修需当前学期新通知",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/14.html",
+      "pageDate": "2026-03-02"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2025/1226/c521a48350/page.htm",
+      "title": "南京邮电大学通达学院2025届拟第四批毕（结）业学生名单公示",
+      "previousStatus": "excluded_personal_or_news",
+      "status": "excluded_personal_or_news",
+      "reason": "原清单已排除个人名单或新闻，本轮未抓取",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2025/1216/c521a48186/page.htm",
+      "title": "南京邮电大学通达学院关于2025年12月申请毕（结）业的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/15.html",
+      "pageDate": "2025-12-15"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2025/1017/c521a47495/page.htm",
+      "title": "南京邮电大学通达学院2025-2026学年第一学期学生学籍异动情况的通知",
+      "previousStatus": "excluded_personal_or_news",
+      "status": "excluded_personal_or_news",
+      "reason": "原清单已排除个人名单或新闻，本轮未抓取",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2025/0905/c521a47244/page.htm",
+      "title": "南京邮电大学通达学院关于2025-2026学年第一学期拟申请学位救济学生回校重修课程的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/16.html",
+      "pageDate": "2025-09-05"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2025/0728/c521a47175/page.htm",
+      "title": "南京邮电大学通达学院2025届拟第三批毕（结）业学生名单公示",
+      "previousStatus": "excluded_personal_or_news",
+      "status": "excluded_personal_or_news",
+      "reason": "原清单已排除个人名单或新闻，本轮未抓取",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2025/0703/c521a47133/page.htm",
+      "title": "南京邮电大学通达学院2025届拟第二批毕（结）业学生名单公示",
+      "previousStatus": "excluded_personal_or_news",
+      "status": "excluded_personal_or_news",
+      "reason": "原清单已排除个人名单或新闻，本轮未抓取",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2025/0617/c521a46990/page.htm",
+      "title": "南京邮电大学通达学院关于2025年第二批毕业申请的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/17.html",
+      "pageDate": "2025-06-17"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2025/0425/c521a45476/page.htm",
+      "title": "南京邮电大学通达学院关于做好2026届毕业生图像信息采集工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/18.html",
+      "pageDate": "2025-04-25"
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/2022/0802/c808a31451/page.htm",
+      "title": "新生网上缴费使用指南",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/2022/0608/c808a33081/page.htm",
+      "title": "关于2022届毕业生校园卡销户退费的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/19.html",
+      "pageDate": "2022-06-08"
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/2021/0528/c808a18875/page.htm",
+      "title": "关于2021届毕业生校园卡销户退费的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/20.html",
+      "pageDate": "2021-05-28"
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/2020/0916/c808a12243/page.htm",
+      "title": "2020级新生网上缴费使用指南",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/21.html",
+      "pageDate": "2020-09-16"
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/_upload/article/files/71/b7/12bbee6a4f8bafaf757209dbb234/139a52ea-9ef0-43df-a74a-1485fefbcd8d.pdf",
+      "title": "关于2020-2021学年老生缴费有关事项的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "2020-2021学年缴费附件；未下载旧版，不作现行指南",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://cwc.nytdc.edu.cn/2020/0617/c808a5467/page.htm",
+      "title": "关于办理2020届毕业生校园一卡通销户的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/22.html",
+      "pageDate": "2020-06-17"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2025/0506/c423a45587/page.htm",
+      "title": "学生证补办规定及流程（2025版）",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/23.html",
+      "pageDate": "2025-05-06"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2025/0506/c423a45586/page.htm",
+      "title": "办理校内外住宿流程图（2025版）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2025/0506/c423a45585/page.htm",
+      "title": "通达学院关于学生在校外住宿的规定（2025版）",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/0513/c423a18646/page.htm",
+      "title": "南京邮电大学通达学院优秀学生评选办法",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/24.html",
+      "pageDate": "2021-05-13",
+      "documentIds": [
+        "858b9229-996e-48cf-b877-d132ad15c17a"
+      ]
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/0513/c423a18645/page.htm",
+      "title": "南京邮电大学通达学院先进班级创评办法",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/25.html",
+      "pageDate": "2021-05-13",
+      "documentIds": [
+        "2376a34d-1d22-4685-a79e-9817e6905168"
+      ]
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/0513/c423a18644/page.htm",
+      "title": "南京邮电大学通达学院学生住宿管理办法",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/26.html",
+      "pageDate": "2021-05-13",
+      "documentIds": [
+        "e7ebe7c6-c43b-4214-b5a4-bf86bf4ae85d",
+        "c9d83699-bd33-423b-be2e-d9615b4114f3"
+      ]
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2018/0314/c423a7183/page.htm",
+      "title": "关于印发《南京邮电大学通达学院学生素质拓展学分认定管理办法》（试行）的通知",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/27.html",
+      "pageDate": "2018-03-14",
+      "documentIds": [
+        "ec8cfae1-f903-46d5-ba8d-5600cad48812"
+      ]
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2026/0911/c487a51196/page.htm",
+      "title": "尊师重教见行动 暖心服务显真情 ---后勤管...",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/28.html",
+      "pageDate": "2026-09-11"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2026/0629/c487a50942/page.htm",
+      "title": "同过政治生日，牢记入党初心——后勤保卫党支...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/29.html",
+      "pageDate": "2026-06-29"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2026/0623/c487a50901/page.htm",
+      "title": "学院开展吸烟的危害专题讲座活动",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/30.html",
+      "pageDate": "2026-06-17"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2026/0611/c487a50442/page.htm",
+      "title": "“棕”夏毕业季，“食”光致青春 ——学院举...",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/31.html",
+      "pageDate": "2026-06-11"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2026/0525/c487a49983/page.htm",
+      "title": "我处召开校内商铺安全稳定专题座谈会",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/32.html",
+      "pageDate": "2026-05-25"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2026/0430/c487a49543/page.htm",
+      "title": "后勤保卫党支部开展“业务合作促交流・支部...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/33.html",
+      "pageDate": "2026-04-30"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2026/0420/c487a49426/page.htm",
+      "title": "后勤管理处组织食堂食品安全知识考试筑牢校...",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/34.html",
+      "pageDate": "2026-04-20"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2026/0401/c487a49230/page.htm",
+      "title": "扬州中瑞酒店职业学院一行到我院调研学生宿...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/35.html",
+      "pageDate": "2026-04-01"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0414/c495a45082/page.htm",
+      "title": "南京邮电大学通达学院南门西侧区域...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/36.html",
+      "pageDate": "2025-04-10"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0403/c495a45021/page.htm",
+      "title": "南京邮电大学通达学院项目询价通知...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/37.html",
+      "pageDate": "2025-04-03"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0403/c495a45020/page.htm",
+      "title": "通达学院南门西侧区域树木移植工程...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/38.html",
+      "pageDate": "2025-04-03"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0328/c495a44983/page.htm",
+      "title": "南京邮电大学通达学院项目询价通知...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/39.html",
+      "pageDate": "2025-03-28"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2024/1018/c495a41762/page.htm",
+      "title": "10月16日起南京邮电大学通达学院班...",
+      "previousStatus": "unclassified",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/40.html",
+      "pageDate": "2024-10-18"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2024/0925/c495a41464/page.htm",
+      "title": "关于规范粘贴固定资产标签的通知",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/41.html",
+      "pageDate": "2024-09-25"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2024/0909/c495a41341/page.htm",
+      "title": "后勤管理处关于开展教师节活动的通...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/42.html",
+      "pageDate": "2024-09-09"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2024/1129/c1243a42271/page.htm",
+      "title": "南京邮电大学通达学院一批废旧物...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/43.html",
+      "pageDate": "2024-11-29"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2024/1129/c1243a42270/page.htm",
+      "title": "南京邮电大学通达学院别克机动资...",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/44.html",
+      "pageDate": "2024-11-29"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2023/1008/c1243a37835/page.htm",
+      "title": "关于开展固定资产处置的通知",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/45.html",
+      "pageDate": "2023-10-08"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2023/0322/c1243a34816/page.htm",
+      "title": "通达学院闲置资产调剂公告",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/46.html",
+      "pageDate": "2023-03-22"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2023/0309/c1243a33677/page.htm",
+      "title": "关于学院闲置资产调剂的公告",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "活动报道、采购资产类公告或已结束教师节活动，非当前学生办事指南",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/47.html",
+      "pageDate": "2023-03-09"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0512/c480a45829/page.htm",
+      "title": "班车定位使用说明",
+      "previousStatus": "needs_review",
+      "status": "excluded_credentials",
+      "reason": "页面含共享账号、口令，不入库；仅记录官方入口存在",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/48.html",
+      "pageDate": "2025-05-12"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0512/c480a45828/page.htm",
+      "title": "后勤服务热线",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0509/c480a45779/page.htm",
+      "title": "学院各类活动临时用电申请流程",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/49.html",
+      "pageDate": "2025-05-09",
+      "documentIds": [
+        "c600cf6a-c4a5-4d44-b4a1-c117d072fa6a"
+      ]
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0509/c480a45778/page.htm",
+      "title": "大校共建学院固定资产办理流程",
+      "previousStatus": "needs_review",
+      "status": "excluded_nonstudent_administration",
+      "reason": "正文已核对，为项目固定资产验收入库和财务报销的行政办理，暂不进入学生校园助手；相关DOCX未解析",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/50.html",
+      "pageDate": "2025-05-09"
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0509/c480a45775/page.htm",
+      "title": "小型维修申请流程",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0509/c480a45774/page.htm",
+      "title": "餐饮服务指南",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/51.html",
+      "pageDate": "2025-05-09",
+      "documentIds": [
+        "fc3fd2a1-898b-4ec0-8bcc-c0f6a7344186"
+      ]
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/2025/0509/c480a45773/page.htm",
+      "title": "学院班车时刻表",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/52.html",
+      "pageDate": "2025-05-09",
+      "documentIds": [
+        "a309c526-eaeb-4a66-8fa1-d31e957f5fc5"
+      ]
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2025/0508/c370a45744/page.htm",
+      "title": "2025年南京邮电大学通达学院学生资助政策简介",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2023/0404/c370a34985/page.htm",
+      "title": "江苏省高校毕业生学费补偿政策解读2023",
+      "previousStatus": "needs_review",
+      "status": "covered_by_newer_primary_summary",
+      "reason": "已核对旧文件并对照省教育厅2025资助政策；旧金额/资格不作为当前结论，新批次提供较新官方政策导引",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/53.html",
+      "pageDate": "2023-03-30",
+      "newerSource": "https://jyt.jiangsu.gov.cn/art/2025/4/29/art_60306_11555460.html"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2022/0526/c370a29953/page.htm",
+      "title": "江苏省高校毕业生学费补偿政策解读2022",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/54.html",
+      "pageDate": "2022-05-26"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2022/0520/c370a29870/page.htm",
+      "title": "2022年江苏省高校本专科学生资助政策简介",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/55.html",
+      "pageDate": "2022-05-20"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2022/0519/c370a29854/page.htm",
+      "title": "生源地信用助学贷款申请指南-2022版",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/56.html",
+      "pageDate": "2022-05-19"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2022/0502/c370a29753/page.htm",
+      "title": "关于开展2022年度学生资助诚信教育主题活动的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/57.html",
+      "pageDate": "2022-05-02"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2022/0424/c370a29754/page.htm",
+      "title": "关于开展2022年“苏乡永助”资助育人主题活动的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/58.html",
+      "pageDate": "2022-04-24"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/1202/c370a24614/page.htm",
+      "title": "应征入伍服兵役高等学校学生教育资助申请流程",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/59.html",
+      "pageDate": "2021-12-02",
+      "documentIds": [
+        "8656321e-dda1-4e22-80b4-6d02620973bc",
+        "6ba3b64d-f3ab-4c5d-8c0b-f7f132d6ac09"
+      ]
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/1202/c370a24612/page.htm",
+      "title": "江苏省高校毕业生学费补偿政策解读",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/60.html",
+      "pageDate": "2021-12-02"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2020/0703/c370a12105/page.htm",
+      "title": "2020年高校资助政策问答",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/61.html",
+      "pageDate": "2020-07-03"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2019/0910/c370a5578/page.htm",
+      "title": "关于2019-2020学年义务兵学费补偿国家助学贷款代偿和减免工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/62.html",
+      "pageDate": "2019-09-10"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2019/0701/c370a29732/page.htm",
+      "title": "关于做好2019年暑期和新生入学期间资助宣传及“绿色通道”开通工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/63.html",
+      "pageDate": "2019-07-01"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2018/1122/c370a5576/page.htm",
+      "title": "建档立卡家庭经济特别困难学生学费减免实施办法（试行）",
+      "previousStatus": "needs_review",
+      "status": "covered_by_newer_primary_summary",
+      "reason": "已核对旧文件并对照省教育厅2025资助政策；旧金额/资格不作为当前结论，新批次提供较新官方政策导引",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/64.html",
+      "pageDate": "2018-11-22",
+      "newerSource": "https://jyt.jiangsu.gov.cn/art/2025/4/29/art_60306_11555460.html"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2018/0911/c370a5574/page.htm",
+      "title": "关于2018-2019学年义务兵学费补偿国家助学贷款代偿和减免工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/65.html",
+      "pageDate": "2018-09-11"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2025/0508/c374a45682/page.htm",
+      "title": "南京邮电大学通达学院勤工助学岗位申请表2025",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/66.html",
+      "pageDate": "2025-03-01",
+      "documentIds": [
+        "4bda53e9-7912-4b4e-ad86-e145d26d21af"
+      ]
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2019/0531/c374a5606/page.htm",
+      "title": "勤工助学工作实施细则",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2019/0531/c374a5605/page.htm",
+      "title": "勤工助学管理办法",
+      "previousStatus": "needs_review",
+      "status": "imported",
+      "reason": "已逐条核对，整理在 campus-next-batch.json；尚未写入应用数据库",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/67.html",
+      "pageDate": "2019-05-31",
+      "documentIds": [
+        "dfeb3e12-236f-427d-b4ac-77da0f1a021b"
+      ]
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/_upload/article/files/2c/fb/f27eb69d4fe3b0f82b30d7a15510/f73b22b5-dc4c-47c5-9ae7-4bb43a3b690f.doc",
+      "title": "南京邮电大学通达学院勤工助学岗位申请表",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有2025版申请表入口，本旧DOC不重复导入且未解析",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2013/0428/c374a5603/page.htm",
+      "title": "勤工助学工作实施细则",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/68.html",
+      "pageDate": "2013-04-28"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2013/0428/c374a5602/page.htm",
+      "title": "勤工助学管理办法",
+      "previousStatus": "needs_review",
+      "status": "covered",
+      "reason": "已有已导入的新版本、同类指引或本批次更适合的公开指南；不重复导入旧版",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/69.html",
+      "pageDate": "2013-04-28"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2025/0508/c373a45743/page.htm",
+      "title": "2025年生源地信用助学贷款申请还款指南",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2025/0430/c373a45549/page.htm",
+      "title": "关于开展2025届毕业生生源地信用助学贷款毕业确认工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/70.html",
+      "pageDate": "2025-04-28"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2025/0508/c373a45745/page.htm",
+      "title": "关于做好2024年度国家开发银行生源地信用助学贷款预申请工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/71.html",
+      "pageDate": "2024-06-19"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2023/0607/c373a36465/page.htm",
+      "title": "我院举办2023届毕业生生源地信用助学贷款毕业确认暨诚信教育大会",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/72.html",
+      "pageDate": "2023-06-07"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2022/0831/c373a34984/page.htm",
+      "title": "关于开展2022-2023学年国家开发银行信用助学贷款回执校验码收取工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/73.html",
+      "pageDate": "2022-08-29"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2022/0602/c373a34983/page.htm",
+      "title": "关于做好2022年度国家开发银行生源地信用助学贷款预申请工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/74.html",
+      "pageDate": "2022-06-02"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/0624/c373a29745/page.htm",
+      "title": "关于开展2021年度外省学生生源地信用助学贷款工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/75.html",
+      "pageDate": "2021-06-24"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/0624/c373a29746/page.htm",
+      "title": "关于做好2021年度江苏省生源地信用助学贷款预申请工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/76.html",
+      "pageDate": "2021-06-24"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/0512/c373a29743/page.htm",
+      "title": "关于开展2021届毕业生生源地信用助学贷款毕业确认工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/77.html",
+      "pageDate": "2021-05-12"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2021/0511/c373a29744/page.htm",
+      "title": "关于组织开展2021年春季学期国家助学金受助学生资格复核工作的通知",
+      "previousStatus": "unclassified",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/78.html",
+      "pageDate": "2021-05-11"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2020/0904/c373a29740/page.htm",
+      "title": "关于2020-2021学年义务兵学费补偿国家助学贷款代偿和减免工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/79.html",
+      "pageDate": "2020-09-04"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2020/0610/c373a29736/page.htm",
+      "title": "关于开展2020年度外省学生生源地信用助学贷款工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/80.html",
+      "pageDate": "2020-06-10"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2020/0610/c373a29737/page.htm",
+      "title": "关于做好2020年度江苏省生源地信用助学贷款预申请工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/81.html",
+      "pageDate": "2020-06-10"
+    },
+    {
+      "url": "https://xgc.nytdc.edu.cn/2020/0603/c373a29738/page.htm",
+      "title": "关于开展2020届毕业生生源地信用助学贷款毕业确认工作的通知",
+      "previousStatus": "needs_review",
+      "status": "expired_or_news",
+      "reason": "已核对页面正文：特定旧年度通知、已结束活动或历史申请窗口，不当作当前可办理信息",
+      "checkedAt": "2026-09-23",
+      "fetched": true,
+      "evidenceFile": "work/campus-raw/82.html",
+      "pageDate": "2020-06-03"
+    },
+    {
+      "url": "https://tsg.nytdc.edu.cn/2021/0425/c79a16863/page.htm",
+      "title": "本馆概况",
+      "previousStatus": "imported_summary_or_link",
+      "status": "covered",
+      "reason": "原清单标为已导入摘要或入口；本轮未重复导入",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    },
+    {
+      "url": "https://hqc.nytdc.edu.cn/_upload/article/files/48/45/aa28aadd4c118838a651f4b1efa6/11e218d5-3ac6-471b-a8f1-96e98cce29c3.docx",
+      "title": "零星维修工程项目联系单.docx",
+      "previousStatus": "unclassified",
+      "status": "covered",
+      "reason": "所属小型维修页面已有摘要；此DOCX未解析，不补充未经核对的字段",
+      "checkedAt": "2026-09-23",
+      "fetched": false
+    }
+  ],
+  "additionalSources": [
+    "https://jyt.jiangsu.gov.cn/art/2025/4/29/art_60306_11555460.html"
+  ],
+  "importedAt": "2026-09-23T14:47:49.972Z"
+}

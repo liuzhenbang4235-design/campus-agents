@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "agents": [
+    {
+      "id": "life",
+      "name": "校园生活助手",
+      "category": "校园生活",
+      "description": "食堂、图书馆、校园设施，帮你快速找到校园生活的小答案。",
+      "team": "t1",
+      "status": "published",
+      "icon": "home",
+      "color": "teal",
+      "rules": "根据已审核的校园生活资料回答；没有资料时说明暂无依据。"
+    },
+    {
+      "id": "study",
+      "name": "学长学姐学习库",
+      "category": "学习资料",
+      "description": "找到课程学习方法与复习建议，让每一份经验都有迹可循。",
+      "team": "t2",
+      "status": "published",
+      "icon": "book",
+      "color": "orange",
+      "rules": "引用已授权的学习经验；区分经验分享与官方要求。"
+    },
+    {
+      "id": "affairs",
+      "name": "校园办事助手",
+      "category": "学校事务",
+      "description": "补办证件、办事材料、服务窗口，把复杂流程整理清楚。",
+      "team": "t1",
+      "status": "published",
+      "icon": "brief",
+      "color": "",
+      "rules": "仅使用已审核资料，附上来源；不编造办理地点和时间。"
+    },
+    {
+      "id": "freshman",
+      "name": "新生入学助手",
+      "category": "校园生活",
+      "description": "帮助新同学了解报到准备和校园生活。",
+      "team": "t1",
+      "status": "pending",
+      "icon": "home",
+      "color": "teal",
+      "rules": "只根据公开的新生指南回答。"
+    }
+  ],
+  "docs": [
+    {
+      "id": "d1",
+      "title": "图书馆借阅指南（虚构示例）",
+      "agent": "life",
+      "source": "演示资料 · 非真实学校规定",
+      "content": "【虚构示例】图书馆开放时间为周一至周日 08:00—22:00。凭校园卡入馆，每人可借阅 5 本图书，借期 30 天。实际安排请查看所在学校的正式通知。",
+      "status": "approved",
+      "owner": "student",
+      "date": "2026-09-23",
+      "filename": "图书馆借阅指南.txt",
+      "cloudAllowed": true
+    },
+    {
+      "id": "d2",
+      "title": "课程复习建议（虚构示例）",
+      "agent": "study",
+      "source": "学习互助组 · 演示资料",
+      "content": "【虚构示例】复习时先梳理课程目录，再按章节整理概念和典型例题。建议建立错题记录，每周回顾一次。本资料为学习方法示例，不包含真实试题。",
+      "status": "approved",
+      "owner": "team2",
+      "date": "2026-09-23",
+      "filename": "课程复习建议.txt",
+      "cloudAllowed": true
+    },
+    {
+      "id": "d3",
+      "title": "学生证补办流程（虚构示例）",
+      "agent": "affairs",
+      "source": "校园共创组 · 演示资料",
+      "content": "【虚构示例】学生证补办：1. 准备本人证件照片与补办申请表；2. 前往示例学生服务中心提交申请；3. 审核通过后按通知领取。本流程仅用于展示产品，请勿据此办理真实事务。",
+      "status": "approved",
+      "owner": "student",
+      "date": "2026-09-23",
+      "filename": "学生证补办流程.txt",
+      "cloudAllowed": true
+    },
+    {
+      "id": "d4",
+      "title": "校园失物招领说明（虚构示例）",
+      "agent": "life",
+      "source": "学生贡献 · 演示资料",
+      "content": "【虚构示例】拾到物品后可交给示例服务台。发布招领信息时，不展示身份证号码、住址等个人信息。",
+      "status": "pending",
+      "owner": "student",
+      "date": "2026-09-23",
+      "filename": "失物招领说明.txt",
+      "cloudAllowed": true
+    }
+  ],
+  "audit": [],
+  "chats": {},
+  "usage": {}
+}

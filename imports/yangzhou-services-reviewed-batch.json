@@ -1,0 +1,218 @@
+{
+  "batch": "yangzhou-services-2026-09-23",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:22:23.921Z",
+  "docs": [
+    {
+      "agent": "life",
+      "title": "扬州公交怎么坐、还有多久到：掌上公交查询入口",
+      "source": "扬州掌上公交开发者在Apple App Store发布的应用信息｜https://apps.apple.com/cn/app/%E6%89%AC%E5%B7%9E%E6%8E%8C%E4%B8%8A%E5%85%AC%E4%BA%A4/id805299558",
+      "content": "想查“公交还有多久到”“哪站上车”“怎么换乘”，可使用名称完整为“扬州掌上公交”的应用。开发者说明列有电子站牌、车辆到离站提醒、线路和乘车方案查询功能；App Store页面开发者为海信网络科技公司。查询时先确认自己所在校门或站台，再填目的地并检查乘车方向。本资料只提供入口，尚未取得此刻到站信息，不能由静态校园资料推算下一班车或末班车。\n\n原文：https://apps.apple.com/cn/app/%E6%89%AC%E5%B7%9E%E6%8E%8C%E4%B8%8A%E5%85%AC%E4%BA%A4/id805299558\n核对日期：2026-09-23；原文日期：未注明。\n这是公开服务入口或历史说明摘要，不是实时公交、余票、余场或路程查询结果。\n补充来源：https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/ggjtjtjj",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州掌上公交开发者在Apple App Store发布的应用信息",
+        "url": "https://apps.apple.com/cn/app/%E6%89%AC%E5%B7%9E%E6%8E%8C%E4%B8%8A%E5%85%AC%E4%BA%A4/id805299558",
+        "publishedAt": null,
+        "verifiedAt": "2026-09-23",
+        "method": "App Store官方页面完整打开；开发者说明及copyright与公交集团官网列示域名互相对应。",
+        "verifiedFields": [
+          "完整应用名、开发者",
+          "电子站牌、线路、换乘功能，不含实时查询结果"
+        ],
+        "supplementalSources": [
+          {
+            "url": "https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/ggjtjtjj",
+            "title": "公交集团简介（链接公交集团官网）",
+            "publishedAt": "2020-02-24"
+          }
+        ],
+        "limitations": [
+          "未查询到站、票务或场馆余量",
+          "未推测从学校出发的距离",
+          "不导入个人手机号码、账号或办件记录"
+        ]
+      },
+      "questions": [
+        "公交还有几分钟到",
+        "从学校怎么换乘公交",
+        "附近站台怎么查"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "扬州公交没带零钱怎么办：扫码付款官方说明",
+      "source": "扬州市交通产业集团有限责任公司｜https://www.yzjtcyjt.com/joomla/index.php/jtjj/jtyw/2026-09-10-02-21-29",
+      "content": "扬州交通产业集团2026年9月介绍公交已提供聚合扫码支付。此前2024年说明列举微信、支付宝等付款码接入聚合支付；2023年指南另介绍支付宝“扬州电子公交卡”和微信“扬州交通码”。没带零钱时，可先查看上车处的支付标识或向司机确认当前支持的码，再按手机官方页面办理。普通付款码与专用乘车码不是同一个入口；不能把2024年“计划全面上线”的消息当作每辆车、每条线和每种优惠都适用的保证。本条不收录票价或优惠金额。\n\n原文：https://www.yzjtcyjt.com/joomla/index.php/jtjj/jtyw/2026-09-10-02-21-29\n核对日期：2026-09-23；原文日期：2026-09-10。\n这是公开服务入口或历史说明摘要，不是实时公交、余票、余场或路程查询结果。\n补充来源：https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj/2024-09-26-01-41-16；https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj/2023-06-14-11-04-56",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州市交通产业集团有限责任公司",
+        "url": "https://www.yzjtcyjt.com/joomla/index.php/jtjj/jtyw/2026-09-10-02-21-29",
+        "publishedAt": "2026-09-10",
+        "verifiedAt": "2026-09-23",
+        "method": "2026官方文章检索正文已读，直接打开超时；2023、2024官方文章完整打开核对。",
+        "verifiedFields": [
+          "2026报道聚合支付",
+          "2024为试运行和后续计划，未夸大为全线保证",
+          "2023公布两个专用乘车码入口"
+        ],
+        "supplementalSources": [
+          {
+            "url": "https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj/2024-09-26-01-41-16",
+            "title": "扫码乘车新变革 便捷出行再升级",
+            "publishedAt": "2024-09-26"
+          },
+          {
+            "url": "https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj/2023-06-14-11-04-56",
+            "title": "超方便！轻轻一扫，“码”上出发",
+            "publishedAt": "2023-04-28"
+          }
+        ],
+        "limitations": [
+          "未查询到站、票务或场馆余量",
+          "未推测从学校出发的距离",
+          "不导入个人手机号码、账号或办件记录"
+        ]
+      },
+      "questions": [
+        "公交没零钱怎么办",
+        "公交能用支付宝吗",
+        "公交刷哪个码"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "扬州公交线路变了或需要咨询：官方信息与客服入口",
+      "source": "扬州市交通产业集团有限责任公司｜https://www.yzjtcyjt.com/joomla/",
+      "content": "扬州市交通产业集团官网设有“城市公交”信息栏目，网站公开客服热线为962003。当静态攻略和站台信息不一致、线路疑似改道，或不知道该向哪个交通单位咨询时，可通过该集团官方入口继续查询或咨询。集团官网新闻不是实时到站查询，962003是集团客服号码，未核实专门失物招领受理范围与接听时段；不能保证立即接通或找回遗失物品。\n\n原文：https://www.yzjtcyjt.com/joomla/\n核对日期：2026-09-23；原文日期：未注明。\n这是公开服务入口或历史说明摘要，不是实时公交、余票、余场或路程查询结果。\n补充来源：https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "扬州市交通产业集团有限责任公司",
+        "url": "https://www.yzjtcyjt.com/joomla/",
+        "publishedAt": null,
+        "verifiedAt": "2026-09-23",
+        "method": "集团首页检索正文与已打开的城市公交栏目、集团简介页脚共同核对公开热线。",
+        "verifiedFields": [
+          "集团公开客服热线962003",
+          "城市公交官方栏目存在"
+        ],
+        "supplementalSources": [
+          {
+            "url": "https://www.yzjtcyjt.com/joomla/index.php/xsqy/ggjtjt/csgj",
+            "title": "城市公交栏目",
+            "publishedAt": null
+          }
+        ],
+        "limitations": [
+          "未查询到站、票务或场馆余量",
+          "未推测从学校出发的距离",
+          "不导入个人手机号码、账号或办件记录"
+        ]
+      },
+      "questions": [
+        "公交路线改了吗",
+        "公交问题问谁",
+        "公交东西丢了先问哪里"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "从扬州坐火车回家：12306查票和学生核验入口",
+      "source": "中国铁路12306｜https://www.12306.cn/index/",
+      "content": "想查从扬州出发的火车、高铁余票、车次或退改签，可使用中国铁路12306官网和“铁路12306”App，以查询结果中的出发站和日期为准，不把“扬州站”和“扬州东站”混用。买学生票前可查看12306“学生优惠资质核验专区”及官方学生常见问题，按本人实际情况核验。材料、适用条件、价格和余票由12306当次页面确定；本助手没有代办核验、下单或读取个人车票，也不要求用户在聊天中提供身份证号、账号密码。\n\n原文：https://www.12306.cn/index/\n核对日期：2026-09-23；原文日期：未注明。\n这是公开服务入口或历史说明摘要，不是实时公交、余票、余场或路程查询结果。\n补充来源：https://kyfw.12306.cn/otn/gonggao/student.html",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "中国铁路12306",
+        "url": "https://www.12306.cn/index/",
+        "publishedAt": null,
+        "verifiedAt": "2026-09-23",
+        "method": "12306首页与学生常见问题页面均完整打开。",
+        "verifiedFields": [
+          "12306官方购票查询入口",
+          "学生优惠资质核验专区官方说明"
+        ],
+        "supplementalSources": [
+          {
+            "url": "https://kyfw.12306.cn/otn/gonggao/student.html",
+            "title": "出行指南：学生常见问题",
+            "publishedAt": null
+          }
+        ],
+        "limitations": [
+          "未查询到站、票务或场馆余量",
+          "未推测从学校出发的距离",
+          "不导入个人手机号码、账号或办件记录"
+        ]
+      },
+      "questions": [
+        "我要坐高铁回家哪里买票",
+        "学生票怎么核验",
+        "扬州火车票去哪查"
+      ]
+    },
+    {
+      "agent": "life",
+      "title": "在扬州办事要带什么：政务服务指南和便民入口",
+      "source": "江苏政务服务网·扬州市｜https://yz.jszwfw.gov.cn/",
+      "content": "不清楚在扬州办理某项手续需要什么材料、找哪个部门，可先在扬州市政务服务网选择地区，再按事项名称查找“个人服务”或“便民服务”。首页还有办事进度查询、公共服务事项清单和12345在线服务平台入口。应以对应事项的最新办事指南为准；学校位于邗江区不代表任何事务都只能由邗江区受理，须按事项和个人实际情况核对。本资料只保存公开入口，不采集登录后的办件记录。\n\n原文：https://yz.jszwfw.gov.cn/\n核对日期：2026-09-23；原文日期：未注明。\n这是公开服务入口或历史说明摘要，不是实时公交、余票、余场或路程查询结果。",
+      "sourceVerification": {
+        "primary": true,
+        "publisher": "江苏政务服务网·扬州市",
+        "url": "https://yz.jszwfw.gov.cn/",
+        "publishedAt": null,
+        "verifiedAt": "2026-09-23",
+        "method": "官方主页检索正文已读；直接打开未成功。",
+        "verifiedFields": [
+          "地区选择、个人服务与便民服务栏目",
+          "办事进度、公共服务清单、12345在线入口"
+        ],
+        "supplementalSources": [],
+        "limitations": [
+          "未查询到站、票务或场馆余量",
+          "未推测从学校出发的距离",
+          "不导入个人手机号码、账号或办件记录"
+        ]
+      },
+      "questions": [
+        "在扬州办事材料哪里查",
+        "不知道找哪个部门",
+        "怎么查办事进度"
+      ]
+    }
+  ],
+  "imported": [
+    {
+      "id": "bbbc125c-7933-461b-86b4-679612991252",
+      "title": "扬州公交怎么坐、还有多久到：掌上公交查询入口",
+      "agent": "life"
+    },
+    {
+      "id": "25ce1631-f409-4f81-b1c8-379e6e6ce4a6",
+      "title": "扬州公交没带零钱怎么办：扫码付款官方说明",
+      "agent": "life"
+    },
+    {
+      "id": "165c37d3-6416-437a-adef-e1bde008eb4f",
+      "title": "扬州公交线路变了或需要咨询：官方信息与客服入口",
+      "agent": "life"
+    },
+    {
+      "id": "43a5f1f1-a219-42ab-90ea-4950c49001c7",
+      "title": "从扬州坐火车回家：12306查票和学生核验入口",
+      "agent": "life"
+    },
+    {
+      "id": "3ca4de1a-5b3f-4362-9865-703eaabd1c29",
+      "title": "在扬州办事要带什么：政务服务指南和便民入口",
+      "agent": "life"
+    }
+  ],
+  "offlined": [],
+  "added": 5,
+  "totalDocs": 119,
+  "approvedByAgent": {
+    "life": 45,
+    "study": 6,
+    "affairs": 63,
+    "freshman": 0
+  }
+}

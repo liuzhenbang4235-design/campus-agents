@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "provider": "doubao",
+  "model": "",
+  "apiKey": "",
+  "endpoint": "",
+  "dailyLimit": 50,
+  "places": {
+    "enabled": false,
+    "apiKey": "",
+    "dailyLimit": 50
+  }
+}

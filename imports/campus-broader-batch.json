@@ -1,0 +1,522 @@
+{
+  "batch": "campus-broader-batch.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:05:09.913Z",
+  "docs": [
+    {
+      "agent": "affairs",
+      "title": "通达学院：招生办公室电话和位置冲突提醒",
+      "source": "学校官网｜未注日期｜https://zs.nytdc.edu.cn/213/list.htm",
+      "content": "招生网公开电话为0514-89716166，邮箱td@njupt.edu.cn，学校地址为扬州市润扬南路33号。办公房间存在冲突：招生网写大学生活动中心115室，招生就业处联系方式写招生科114室，两页都没标更新日期。因此只确认在大学生活动中心，去之前请电话核对，不保证114或115哪一个现用。2026年7月28日通知另称7月29日起暂停接听招生咨询电话，未写恢复日，可从招生官网查看咨询渠道；不保证电话目前有人接听。\n来源页面：联系我们。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zs.nytdc.edu.cn/213/list.htm\n对照来源：https://zjc.nytdc.edu.cn/1176/list.htm；https://zs.nytdc.edu.cn/2024/0815/c129a41228/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zs.nytdc.edu.cn/213/list.htm",
+        "sourceTitle": "联系我们",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/admit-contact.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节",
+        "supportingSources": [
+          {
+            "url": "https://zjc.nytdc.edu.cn/1176/list.htm",
+            "file": "work/campus-broader/zjc-contact.html"
+          },
+          {
+            "url": "https://zs.nytdc.edu.cn/2024/0815/c129a41228/page.htm",
+            "file": "work/campus-broader/admit-new2026.html"
+          }
+        ]
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：宿舍有没有空调、独卫和热水",
+      "source": "学校官网｜未注日期｜https://zs.nytdc.edu.cn/220/list.htm",
+      "content": "招生网介绍学生公寓通常为四人间，上床下桌，配独立书桌和衣柜，有空调、卫生间与热水淋浴。另介绍两类布局：带阳台的走廊式；四室一厅式，其中三个小寝室各住4人、一个住2人。这里是学校公开设施介绍，不表示新生可自由选房或保证每个房间一致；宿舍分配、设备实际状况与洗浴收费需向宿管确认。\n来源页面：住在通达。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zs.nytdc.edu.cn/220/list.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zs.nytdc.edu.cn/220/list.htm",
+        "sourceTitle": "住在通达",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/admit-room.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：从扬州站、扬州东站坐公交怎么到学校",
+      "source": "学校官网｜未注日期｜https://zs.nytdc.edu.cn/563/list.htm",
+      "content": "招生网交通表列出的到校参考：扬州火车站、汽车西站乘16路至南邮通达学院站；扬州东站（高铁站）、汽车客运东站乘57路至南邮通达学院站。主站旧地理交通页对57路下车点写法不同，因此本条采用招生网交通表并保留差异。公交线路和站名可能调整，出发前应在公交或地图应用查询当天运行，不把这份未标更新时间的页面当实时导航。\n来源页面：交通出行。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zs.nytdc.edu.cn/563/list.htm\n对照来源：https://www.nytdc.edu.cn/107/list.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zs.nytdc.edu.cn/563/list.htm",
+        "sourceTitle": "交通出行",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/admit-traffic.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节",
+        "supportingSources": [
+          {
+            "url": "https://www.nytdc.edu.cn/107/list.htm",
+            "file": "work/campus-broader/traffic.html"
+          }
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：2026入伍新生保留入学资格材料与截止日",
+      "source": "学校官网｜2026-07-28｜https://zs.nytdc.edu.cn/2022/0812/c129a31458/page.htm",
+      "content": "仅限2026年被学院正式录取并应征入伍的新生：通知要求材料在2026年9月25日前寄达招生就业处，仅收邮政EMS。材料包括县级征兵办盖章、贴照片的保留入学资格申请表两份原件，入伍通知书、录取通知书和身份证复印件，以及县级征兵办详细收件信息。通知提醒提前报备，录取通知书原件妥善保管供以后入学使用；符合该通知的新生可不必缴费、不到校报到。逾期或材料情况请直接联系招生就业处，不能当作已获批准。该网页路径含2022，但页面日期和正文为2026。\n来源页面：关于应征入伍新生申请办理保留入学资格手续的通知。页面标注日期：2026-07-28；核对日期：2026-09-23。本条仅适用于所述年度/时间，截止或适用结束日为2026-09-25，不能用于其他年度。\n原文：https://zs.nytdc.edu.cn/2022/0812/c129a31458/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zs.nytdc.edu.cn/2022/0812/c129a31458/page.htm",
+        "sourceTitle": "关于应征入伍新生申请办理保留入学资格手续的通知",
+        "pageDate": "2026-07-28",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/admit-joinarmy.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节",
+        "expiresAt": "2026-09-25"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：保留后如何恢复新生入学资格",
+      "source": "学校官网｜2022-09-23｜https://zjc.nytdc.edu.cn/2022/0923/c1172a31852/page.htm",
+      "content": "2022版办事流程：保留入学资格需下载申请表，说明原因并附证明材料，招生就业处初审后报学院审批；因病申请需二甲以上医院证明。恢复入学资格时，提交以前的保留申请及录取通知书照片，因病保留者还需持医院证明、病历到学院卫生所签署意见，再由招生就业处审核确认。原文提供两份DOC空表，但本次只读取流程正文，未解析DOC字段；入伍新生另有专门通知，不能把两种情况混为同一材料清单。\n来源页面：【招生】新生保留恢复入学资格流程。页面标注日期：2022-09-23；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zjc.nytdc.edu.cn/2022/0923/c1172a31852/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zjc.nytdc.edu.cn/2022/0923/c1172a31852/page.htm",
+        "sourceTitle": "【招生】新生保留恢复入学资格流程",
+        "pageDate": "2022-09-23",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/new-retain.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：就业协议书、推荐表丢了或填错怎么补办",
+      "source": "学校官网｜2024-04-24｜https://zjc.nytdc.edu.cn/2026/0526/c1172a50109/page.htm",
+      "content": "2024年4月说明将就业协议书和就业推荐表的遗失、填错破损、解约及延期毕业更换分别处理。一般先填就业材料补办申请表，经二级学院审核签章，由辅导员统一带原件到招生就业处。解约需原单位解除协议证明；填错或破损应交回原材料；遗失事项该版要求登报声明，具体报纸与格式先联系辅导员。说明原则上只受理毕业两年内学生。附件表单可在招生就业处下载中心获取。该文件涉及旧版纸质材料程序，当前电子签约或登报要求应向就业科核实，不能自动认定必须重新签约。\n来源页面：【就业】关于毕业生补办就业材料的事项说明。页面标注日期：2024-04-24；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zjc.nytdc.edu.cn/2026/0526/c1172a50109/page.htm\n对照来源：https://zjc.nytdc.edu.cn/2026/0526/c1175a50108/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zjc.nytdc.edu.cn/2026/0526/c1172a50109/page.htm",
+        "sourceTitle": "【就业】关于毕业生补办就业材料的事项说明",
+        "pageDate": "2024-04-24",
+        "checkedAt": "2026-09-23",
+        "method": "2页扫描PDF逐页阅读及申请表DOCX字段核对",
+        "sourceFile": "work/campus-broader/job-replace.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\job-replace-0.pdf"
+        ],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节",
+        "supportingSources": [
+          {
+            "url": "https://zjc.nytdc.edu.cn/2026/0526/c1175a50108/page.htm",
+            "file": "work/campus-broader/job-replace-form.html"
+          }
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：就业档案寄送、查询和就业咨询找哪里",
+      "source": "学校官网｜未注日期｜https://zjc.nytdc.edu.cn/1176/list.htm",
+      "content": "招生就业处公开联系表：就业科在大学生活动中心113室，电话0514-89716199；国际交流合作在大学生活动中心112室，电话0514-89716009。科室职责明确就业科负责毕业生档案管理、寄送、查询，以及招聘信息、就业指导等服务。官网另提供91job档案查询入口，但本次未读取任何个人档案，也未验证查询系统登录后的功能。档案实际寄往哪里须本人通过学校正式查询渠道核实。\n来源页面：联系我们。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zjc.nytdc.edu.cn/1176/list.htm\n对照来源：https://zjc.nytdc.edu.cn/kszz/list.htm；https://zjc.nytdc.edu.cn/",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zjc.nytdc.edu.cn/1176/list.htm",
+        "sourceTitle": "联系我们",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/zjc-contact.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节",
+        "supportingSources": [
+          {
+            "url": "https://zjc.nytdc.edu.cn/kszz/list.htm",
+            "file": "work/campus-broader/zjc-duties.html"
+          },
+          {
+            "url": "https://zjc.nytdc.edu.cn/",
+            "file": "work/campus-broader/zjc.html"
+          }
+        ]
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：有哪些社团可以参加、招新在哪里看",
+      "source": "学校官网｜未注日期｜https://zs.nytdc.edu.cn/222/list.htm",
+      "content": "招生网社团介绍列有科协、艺术团、广播台、英语协会、志愿者协会、辩论队、街舞、羽毛球、乒乓球、健身、滑板、电竞、篮球、足球、摄影等组织，并介绍社团巡礼节、科技文化节等活动。可从团委官网查看校园文化和下载专区。页面列的是社团类型，不能据此保证每个社团本学期都在招新，也没有提供已核实的报名二维码、费用或招新截止时间；具体报名请看团委或社团当期公告。\n来源页面：社团文化。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zs.nytdc.edu.cn/222/list.htm\n对照来源：http://tw.nytdc.edu.cn",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zs.nytdc.edu.cn/222/list.htm",
+        "sourceTitle": "社团文化",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/admit-clubs.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节",
+        "supportingSources": [
+          {
+            "url": "http://tw.nytdc.edu.cn",
+            "file": "work/campus-broader/youth.html"
+          }
+        ]
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：团员证丢失补办材料（2026附件）",
+      "source": "学校官网｜2026-05-25｜http://tw.nytdc.edu.cn/2026/0525/c443a49968/page.htm",
+      "content": "团委2026年公开附件含补办团员证申请表、团员证遗失证明和补办信息汇总空表。填表说明要求准备两张一寸照片，一张贴表、一张用于证件；团员证编号只有确定无误才填写，不确定不要填写。申请表有团支部、分团委、校团委意见栏，遗失证明有辅导员签字栏。没有查到当前集中办理时间和工本费，先向辅导员或分团委确认递交方式。本次读取的是空白表格，不含学生名单。\n来源页面：团员证补办相关附件。页面标注日期：2026-05-25；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：http://tw.nytdc.edu.cn/2026/0525/c443a49968/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "http://tw.nytdc.edu.cn/2026/0525/c443a49968/page.htm",
+        "sourceTitle": "团员证补办相关附件",
+        "pageDate": "2026-05-25",
+        "checkedAt": "2026-09-23",
+        "method": "已解析DOCX正文与空表字段",
+        "sourceFile": "work/campus-broader/tw-card.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\tw-card-0.docx"
+        ],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：社会实践活动登记表和报告要求（2023版）",
+      "source": "学校官网｜2023-04-10｜http://tw.nytdc.edu.cn/2023/0410/c443a35149/page.htm",
+      "content": "团委公开的社会实践活动登记空表填写实践单位、起止日期、实践天数和实践内容，并有实践单位鉴定签章及学院考核栏；表内注明另附2000字以上的详细报告。该表是材料模板，本身不能证明活动已获学时、学分或认定，也不包含当前暑期立项和提交截止日期。先核对团委当期通知，再按要求保留单位鉴定和实践证明。\n来源页面：南京邮电大学通达学院社会实践活动登记表。页面标注日期：2023-04-10；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：http://tw.nytdc.edu.cn/2023/0410/c443a35149/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "http://tw.nytdc.edu.cn/2023/0410/c443a35149/page.htm",
+        "sourceTitle": "南京邮电大学通达学院社会实践活动登记表",
+        "pageDate": "2023-04-10",
+        "checkedAt": "2026-09-23",
+        "method": "已解析DOCX正文与空表字段",
+        "sourceFile": "work/campus-broader/tw-practice.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\tw-practice-0.docx"
+        ],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：社团海报、横幅张贴审批与撤除（2023版）",
+      "source": "学校官网｜2023-04-07｜http://tw.nytdc.edu.cn/2023/0407/c443a35108/page.htm",
+      "content": "2023版宣传品审批表说明：原则上至少在计划悬挂日3天前提交书面申请，审核通过后才能悬挂，内容应与申请一致且不含商业宣传。活动宣传附策划，展板提供最终图案备案；批准范围内在指定位置展示，期限届满或活动结束后1天内自行清除。该版写向党委办公室申请，表格有部门及主管部门审批栏；当前归口部门或尺寸要求是否调整需先确认，不能直接贴到校门、行政楼前等未经特批的位置。\n来源页面：学院张贴宣传品审批表。页面标注日期：2023-04-07；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：http://tw.nytdc.edu.cn/2023/0407/c443a35108/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "http://tw.nytdc.edu.cn/2023/0407/c443a35108/page.htm",
+        "sourceTitle": "学院张贴宣传品审批表",
+        "pageDate": "2023-04-07",
+        "checkedAt": "2026-09-23",
+        "method": "已解析DOCX说明与空表字段",
+        "sourceFile": "work/campus-broader/tw-poster.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\tw-poster-0.docx"
+        ],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：校内安全问题和保卫处报警电话",
+      "source": "学校官网｜未注日期｜http://bwc.nytdc.edu.cn/1299/list.htm",
+      "content": "保卫部（处）官网“联系我们”公布校园110、119报警中心电话：0514-89716110。这是学校公开的校园报警中心号码，不是个人手机号；遇到校内安全问题可联系校园报警中心。页面未列日常证件办理时间或一般业务办公室地址，因此不能据此给出户籍窗口位置和办公时段。\n来源页面：联系我们。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：http://bwc.nytdc.edu.cn/1299/list.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "http://bwc.nytdc.edu.cn/1299/list.htm",
+        "sourceTitle": "联系我们",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/bw-contact.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：丢东西后申请调阅监控需要哪些信息",
+      "source": "学校官网｜未注日期｜http://bwc.nytdc.edu.cn/1419/list.htm",
+      "content": "保卫处公开的视频监控录像调阅申请空表，要求填写申请人信息、所属单位、联系方式、事由和调阅点位。表格分为保卫处留存的申请部分与许可单，许可单须有审批人签章和有效期。可下载官方空表并向保卫处提出申请；本资料只说明申请渠道，不能保证获批，也不提供摄像头实时画面、覆盖位置或未经批准的录像。页面未给处理时限。\n来源页面：视频监控查阅申请。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：http://bwc.nytdc.edu.cn/1419/list.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "http://bwc.nytdc.edu.cn/1419/list.htm",
+        "sourceTitle": "视频监控查阅申请",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "1页PDF文字及渲染核对",
+        "sourceFile": "work/campus-broader/bw-cctv.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\bw-cctv-0.pdf"
+        ],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：物品搬出学校如何办理出门证",
+      "source": "学校官网｜未注日期｜http://bwc.nytdc.edu.cn/wpcmzsq/list.htm",
+      "content": "保卫处公开的携带物品出门申请单，填写离校原因、日期、车辆信息、物品清单和申请人联系方式，由业务主管单位签章。配套出门证列明有效期、物品清单及审批签章，证件联交门卫。是否需要为具体物品办理、审批由谁受理，应先向保卫处或业务主管单位确认；不能把空白表当作所有行李都必须办证的规定。\n来源页面：物品出门证申请。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：http://bwc.nytdc.edu.cn/wpcmzsq/list.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "http://bwc.nytdc.edu.cn/wpcmzsq/list.htm",
+        "sourceTitle": "物品出门证申请",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "1页PDF文字及渲染核对",
+        "sourceFile": "work/campus-broader/bw-goods.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\bw-goods-0.pdf"
+        ],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：社团活动场地与临时摆摊申请（2026表格）",
+      "source": "学校官网｜2026-04-15｜http://bwc.nytdc.edu.cn/2021/0325/c1426a36159/page.htm",
+      "content": "2026版场地表需说明活动、场地、时间、布置彩排、人数及设备需求，设指导老师、团委审批和保卫备案栏。表中限定用于学生活动，不得借给校外培训机构；活动后应恢复设备和清洁。另有2025临时摆摊规定：单位或已注册学生社团按申请、主管单位、场地部门、保卫审批后领取许可；学生个人不得在校内开展商业外场活动。两份材料适用范围不同，场地获批不等于商业摆摊已获批。具体使用区域、时段与审批结果以许可证为准。\n来源页面：活动场地使用审批表（校内单位用）。页面标注日期：2026-04-15；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：http://bwc.nytdc.edu.cn/2021/0325/c1426a36159/page.htm\n对照来源：http://bwc.nytdc.edu.cn/2025/0327/c1416a44950/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "http://bwc.nytdc.edu.cn/2021/0325/c1426a36159/page.htm",
+        "sourceTitle": "活动场地使用审批表（校内单位用）",
+        "pageDate": "2026-04-15",
+        "checkedAt": "2026-09-23",
+        "method": "1页场地表PDF及4页摆摊规定PDF逐页核对",
+        "sourceFile": "work/campus-broader/bw-site-form.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\bw-site-form-0.pdf"
+        ],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节",
+        "supportingSources": [
+          {
+            "url": "http://bwc.nytdc.edu.cn/2025/0327/c1416a44950/page.htm",
+            "file": "work/campus-broader/bw-stall-rule.html"
+          }
+        ]
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：体育选课、退伍免修和康复保健班办理",
+      "source": "学校官网｜2025-02-18｜https://www.nytdc.edu.cn/tyb/2025/0218/c1370a42733/page.htm",
+      "content": "体育部2025版说明：第2、4学期原则上延续上一学期体育项目，大二一般不要重复大一项目。退伍复学学生可在教务系统“报名申请—教学项目报名—免修免考”提交退役证明并勾选体育课程。康复保健班每学期重新申请，通常在开学两周内提交一般事务申请表及符合要求的证明，由相关部门审核；不要自行根据病名判断已经获得免测。咨询体育部：体育馆二楼202室，0514-89710021。页面里的部分申请表为校内网地址，本次没有访问或导出个人成绩。\n来源页面：关于体育课选课事宜的补充通知。页面标注日期：2025-02-18；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://www.nytdc.edu.cn/tyb/2025/0218/c1370a42733/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/tyb/2025/0218/c1370a42733/page.htm",
+        "sourceTitle": "关于体育课选课事宜的补充通知",
+        "pageDate": "2025-02-18",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/sports-selection.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：2026级新生转专业条件的招生FAQ说明",
+      "source": "学校官网｜2020-12-11｜https://zs.nytdc.edu.cn/2020/1211/c211a12774/page.htm",
+      "content": "招生FAQ正文明确自2026级新生起实行转出零门槛、转入有考核；一般每学年第二学期办理，本科一、二年级在籍学生可申请，正文称没有排名和原录取专业组限制。页面仍标2020-12-11，正文却说明2026级政策，更新时间不一致。因此这条只作2026级政策咨询线索，不把它套用到往届学生，也不保证转入或替代当年的教务处正式细则、名额和考核通知。申请前向教务管理科确认本人年级适用规则。\n来源页面：可否再转专业。页面标注日期：2020-12-11；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zs.nytdc.edu.cn/2020/1211/c211a12774/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zs.nytdc.edu.cn/2020/1211/c211a12774/page.htm",
+        "sourceTitle": "可否再转专业",
+        "pageDate": "2020-12-11",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/admit-transfer.html",
+        "attachmentsRead": [],
+        "validity": "正文明确2026级起；页面日期明显早于正文适用年级，必须核对正式实施细则"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：小语种考生入学后如何选择外语课程",
+      "source": "学校官网｜2024-06-07｜https://zs.nytdc.edu.cn/2024/0607/c211a40913/page.htm",
+      "content": "招生网2024-06-07的“小语种考生”FAQ称，高考外语为日语、俄语等语种可报考学院专业；入学后可在日语班与零基础英语C班之间二选一，FAQ还写毕业无需取得四六级证书。这是招生咨询页面的说明，具体学生的课程安排、毕业和学位要求须以入学年级培养方案及正式规定为准，不能据此免除外语课程学习或保证获得学位。\n来源页面：小语种考生。页面标注日期：2024-06-07；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://zs.nytdc.edu.cn/2024/0607/c211a40913/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://zs.nytdc.edu.cn/2024/0607/c211a40913/page.htm",
+        "sourceTitle": "小语种考生",
+        "pageDate": "2024-06-07",
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/admit-language.html",
+        "attachmentsRead": [],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节"
+      }
+    },
+    {
+      "agent": "life",
+      "title": "通达学院：第一节课、午休、晚课和宿舍熄灯参考表",
+      "source": "学校官网｜未注日期｜https://www.nytdc.edu.cn/zxsj/list.htm",
+      "content": "学校“作息时间”图片列出：第一节7:50—8:35，第二节8:40—9:25；第3至5节分别9:40—10:25、10:30—11:15、11:20—12:05。午餐午休12:05—13:50，第6节14:00—14:45、第7节14:50—15:35、第8节15:45—16:30、第9节16:35—17:20。晚课第10至12节18:30—19:15、19:20—20:05、20:10—20:55。图中另列22:30宿舍及校门关闭、23:00宿舍熄灯。该表未标版本日期，不等同于本人课表；节假日和当前门禁熄灯安排须另核对。\n来源页面：作息时间。页面标注日期：未注明；核对日期：2026-09-23。具体办理请以负责部门最新通知为准。\n原文：https://www.nytdc.edu.cn/zxsj/list.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/zxsj/list.htm",
+        "sourceTitle": "作息时间",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网作息表图片逐行核对",
+        "sourceFile": "work/campus-broader/timetable.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\timetable-0.png"
+        ],
+        "validity": "静态无日期作息图；不保证当前每个场所仍按此执行"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：2026中秋国庆放假及调课安排",
+      "source": "学校官网｜2025-12-11｜https://www.nytdc.edu.cn/2025/1211/c33a48143/page.htm",
+      "content": "学校2026节假日通知规定：中秋9月25日至27日放假3天；国庆10月1日至7日放假调休7天。9月20日上班、按10月6日教学活动安排；10月10日上班、按10月7日教学活动安排。通知称特殊情况调整另行通知。本条按2025年12月10日印发、12月11日网页发布的学校文件整理，不能用国家日历替代学校具体课表；仅用于2026年。\n来源页面：关于2026年部分节假日放假安排的通知。页面标注日期：2025-12-11；核对日期：2026-09-23。本条仅适用于所述年度/时间，截止或适用结束日为2026-12-31，不能用于其他年度。\n原文：https://www.nytdc.edu.cn/2025/1211/c33a48143/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/2025/1211/c33a48143/page.htm",
+        "sourceTitle": "关于2026年部分节假日放假安排的通知",
+        "pageDate": "2025-12-11",
+        "checkedAt": "2026-09-23",
+        "method": "2页扫描PDF逐页核对",
+        "sourceFile": "work/campus-broader/holidays2026.html",
+        "attachmentsRead": [
+          "work\\campus-broader\\holidays2026-0.pdf"
+        ],
+        "validity": "该页面公开版本的摘要；未电话核实现行实施细节",
+        "expiresAt": "2026-12-31"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "429c56d9-fe37-4b01-8ff5-d6fe67346270",
+      "title": "通达学院：招生办公室电话和位置冲突提醒",
+      "agent": "affairs"
+    },
+    {
+      "id": "9fc9b3f2-f7e5-4bd8-a3c9-2d25a16e4cd8",
+      "title": "通达学院：宿舍有没有空调、独卫和热水",
+      "agent": "life"
+    },
+    {
+      "id": "5c13c443-46e7-4419-b8b1-8cdf280804b9",
+      "title": "通达学院：从扬州站、扬州东站坐公交怎么到学校",
+      "agent": "life"
+    },
+    {
+      "id": "daa4dddd-43d5-4591-b9a7-73fa734e4de6",
+      "title": "通达学院：2026入伍新生保留入学资格材料与截止日",
+      "agent": "affairs"
+    },
+    {
+      "id": "804081bc-f671-49db-b9ff-0240cc1a186e",
+      "title": "通达学院：保留后如何恢复新生入学资格",
+      "agent": "affairs"
+    },
+    {
+      "id": "978d21c8-eb9b-4b3a-8609-dc5cf9d17c57",
+      "title": "通达学院：就业协议书、推荐表丢了或填错怎么补办",
+      "agent": "affairs"
+    },
+    {
+      "id": "3d62265d-3a6d-4047-8472-41aafd41f879",
+      "title": "通达学院：就业档案寄送、查询和就业咨询找哪里",
+      "agent": "affairs"
+    },
+    {
+      "id": "670b229f-ce45-4b8b-84ec-4f5619076659",
+      "title": "通达学院：有哪些社团可以参加、招新在哪里看",
+      "agent": "life"
+    },
+    {
+      "id": "e944cfdf-1187-426b-a7b1-074b8bcd0f8a",
+      "title": "通达学院：团员证丢失补办材料（2026附件）",
+      "agent": "affairs"
+    },
+    {
+      "id": "c58a538d-8010-4bfe-8eba-d171e6ee3a9a",
+      "title": "通达学院：社会实践活动登记表和报告要求（2023版）",
+      "agent": "study"
+    },
+    {
+      "id": "b9d8c200-b4fb-46cb-ae1e-6492be08e875",
+      "title": "通达学院：社团海报、横幅张贴审批与撤除（2023版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "f1eec36c-0709-405e-8f36-97bab5d11212",
+      "title": "通达学院：校内安全问题和保卫处报警电话",
+      "agent": "life"
+    },
+    {
+      "id": "bf6323b2-dd62-4547-a094-7ef71dd15177",
+      "title": "通达学院：丢东西后申请调阅监控需要哪些信息",
+      "agent": "affairs"
+    },
+    {
+      "id": "8fdb3807-7c9c-4298-bdd9-aa5f961ee6d6",
+      "title": "通达学院：物品搬出学校如何办理出门证",
+      "agent": "affairs"
+    },
+    {
+      "id": "b8048390-025e-4fa8-a4f7-9e3b35f2522a",
+      "title": "通达学院：社团活动场地与临时摆摊申请（2026表格）",
+      "agent": "affairs"
+    },
+    {
+      "id": "a51b4c5d-f7c7-4afc-aa27-1fc8daa00c10",
+      "title": "通达学院：体育选课、退伍免修和康复保健班办理",
+      "agent": "study"
+    },
+    {
+      "id": "d05edcfc-aeaf-4880-99cb-6309eb4714b2",
+      "title": "通达学院：2026级新生转专业条件的招生FAQ说明",
+      "agent": "affairs"
+    },
+    {
+      "id": "c11f9bb2-fc7a-4e49-a198-a59a4d4ce24f",
+      "title": "通达学院：小语种考生入学后如何选择外语课程",
+      "agent": "study"
+    },
+    {
+      "id": "562bb767-4ee3-4952-b90a-19e13b761eab",
+      "title": "通达学院：第一节课、午休、晚课和宿舍熄灯参考表",
+      "agent": "life"
+    },
+    {
+      "id": "789814ae-8606-4f36-805f-9df92c204d41",
+      "title": "通达学院：2026中秋国庆放假及调课安排",
+      "agent": "affairs"
+    }
+  ],
+  "offlined": [],
+  "added": 20,
+  "totalDocs": 107,
+  "approvedByAgent": {
+    "life": 39,
+    "study": 6,
+    "affairs": 59,
+    "freshman": 0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-09-23T16:38:11.151Z",
+  "question": "学校附近有便宜的餐馆吗？走过去要多久？",
+  "agentId": "life",
+  "status": 200,
+  "mode": "ai_general",
+  "answer": "暂无相关资料可确认学校附近便宜餐馆的信息及步行所需时间，无法为您提供准确答复。",
+  "sources": [],
+  "aiVerified": true,
+  "review": {
+    "passed": true,
+    "reason": "无距离、价格或实时地图证据时明确无法确认，没有编造附近商家或步行时间。"
+  }
+}

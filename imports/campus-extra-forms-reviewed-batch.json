@@ -1,0 +1,98 @@
+{
+  "batch": "院系及教务遗漏公开表格正文",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:46:28.630Z",
+  "docs": [
+    {
+      "agent": "affairs",
+      "title": "通达学院：学费缓交申请的材料与审批栏（2022公开版）",
+      "source": "学校官网｜通信工程学院2022-04-16公开表格｜https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26158/page.htm",
+      "content": "2022年公开的学费缓交空白申请表要求写明欠费原因、曾申请何种贷款及缓交还款计划，列出应交、已交和申请缓交金额，并由学生承诺缴清日期。表内设辅导员联系学生及家长确认、二级学院初审、学生工作处审核和学院审批栏。附注要求家长身份证复印件并签字确认；按该旧表，新学期两周内交至学院，复印2份分别供学生资助管理中心和辅导员留存。这里的两周期限仅是2022旧表说明，不能视作2026当前仍开放或保证获批，也不等于学费减免。办理前先向辅导员或资助中心确认本学期表格和时间。身份证、家庭住址和完整申请应直接交学校，不上传聊天。\n来源页面发布日期：2022-04-16；核对日期：2026-09-23。依据公开空白申请表整理。\n原文：https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26158/page.htm\n附件：https://www.nytdc.edu.cn/_upload/article/files/33/55/1e3efbd24665a58a4e34d8c65eaf/bf0d0823-be3e-4b6d-b9da-4d75919d52c3.pdf",
+      "verification": {
+        "method": "PDF text plus rendered page inspection",
+        "pages": 1,
+        "evidenceFile": "work/campus-frontier/fee-defer.pdf",
+        "preview": "work/campus-frontier/fee-defer-0.png",
+        "sourceDate": "2022-04-16",
+        "currentValidity": "not_confirmed"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：自主个性化学习分旧表与认定咨询（2022公开版）",
+      "source": "学校官网｜电子工程学院2022-04-21公开XLS｜https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26495/page.htm",
+      "content": "电子工程学院公开XLS含“考核标准及代码一览表”和“代码规则”两张表，主表按活动、级别、标准、学习分、覆盖标记和备注列项目。代码规则把项目分为各类竞赛、发表论文、科技成果、科技创新活动、证书认证；表中还含通达补充项目，以及只计最高分、不可重复统计等旧标记。主表446个编号条目不是446名学生。网页发布于2022-04-21，部分备注仍写2010年补充，当前适用年级、转换办法和审核窗口未说明。因此只能用于理解旧表栏目和准备咨询，不导入旧分值作2026认定标准；不能把“学习分”直接等同课程学分、PU学时或已取得毕业资格。现行比赛/证书是否认可及具体计分，须核对本人培养方案、教务/双创部门当期目录。\n核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26495/page.htm\n附件：https://www.nytdc.edu.cn/_upload/article/files/21/3b/30612ea74afabbff559624a02dcf/f465e149-a6ed-4973-8866-47afe7f78a5c.xls",
+      "verification": {
+        "method": "xlrd read-only XLS cell extraction; no macros",
+        "worksheets": 2,
+        "mainSheetRows": 448,
+        "numberedItems": 446,
+        "evidenceFile": "work/campus-frontier/personal-credit-cells.json",
+        "sourceDate": "2022-04-21",
+        "historicalNotes": "2010年1月/4月/6月补充",
+        "currentValidity": "not_confirmed; historical scores intentionally omitted"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：毕业证明书、学位证明书补办材料（2019公开版）",
+      "source": "学校教务处学生常用表格｜2019-04-28更新｜https://jwc.nytdc.edu.cn/337/list2.htm",
+      "content": "教务处公开的毕业证明书、学位证明书申请表要求填写毕业/学位证书编号、申请理由及真实性承诺，设教务部门、学生处、主管教学工作领导意见和领取签收栏。2019版材料清单列身份证原件及复印件、2寸蓝底照片两张及电子照片；委托别人办理时另有委托书和相关身份证件要求，证件的具体角色和携带方式请按原表向教务核实。这是办理“证明书”的表格，不是补发原毕业证或自动重新授予学位；没有说明费用、办结时间及现行递交地点。先向教务管理科确认目前表格与材料，不把个人身份证或证书扫描件上传聊天。\n目录标注更新日期：2019-04-28；核对日期：2026-09-23。上述为公开空表列出的材料及意见栏，不据此推定当前完整审批顺序。\n官方目录：https://jwc.nytdc.edu.cn/337/list2.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/93/46/4efc59834466a6ff62ec0ba9010b/54aaa55f-ea06-46f8-b164-cab03dedd7b3.doc",
+      "verification": {
+        "method": "MS-DOC main story piece-table extraction, no macros; full main-story length check",
+        "mainStoryChars": 604,
+        "layoutRendered": false,
+        "evidenceFile": "work/campus-frontier/graduation-replacement.text.txt",
+        "parseReport": "work/campus-frontier/graduation-replacement.parse.json",
+        "sourceDate": "2019-04-28",
+        "currentValidity": "not_confirmed"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：毕业生、结业生回校重修申请表字段（2013旧表）",
+      "source": "学校教务处学生常用表格｜目录2013-04-23｜https://jwc.nytdc.edu.cn/337/list2.htm",
+      "content": "教务处目录中的回校重修空白表记录毕业或结业证书编号、原平均学分绩点、联系方式，以及拟申请课程的学年学期、课程号、课程名、学分、跟读班级、任课教师和原成绩；另有是否符合报名资格、审核人及教务处意见栏。学生承诺跟班重修并主动关注考试信息。表内没有规定谁一定符合资格、当期报名日期或重修费用，不能仅填写表格就视为获准重修或可获学位。目录日期为2013-04-23，表内还保留旧网站地址；只用于识别旧表栏目，须向教务确认当前表格与本学期通知。2026-09-23核对学籍管理目录首屏只见2025-2026第二学期等旧批次，未找到2026-2027第一学期窗口，不能把旧通知当作当前可报名。\n以上为公开空白申请表的栏目说明。\n官方目录：https://jwc.nytdc.edu.cn/337/list2.htm\n通知栏目：https://jwc.nytdc.edu.cn/521/list.htm\n附件：https://jwc.nytdc.edu.cn/_upload/article/files/fd/be/a883dbc34571800f6da12f8d94f1/7141de07-719d-4104-9778-b21d6ac882ad.doc",
+      "verification": {
+        "method": "MS-DOC main story piece-table extraction, no macros; full main-story length check",
+        "mainStoryChars": 484,
+        "layoutRendered": false,
+        "evidenceFile": "work/campus-frontier/return-retake.text.txt",
+        "parseReport": "work/campus-frontier/return-retake.parse.json",
+        "sourceDate": "2013-04-23",
+        "currentValidity": "historical form only; current application window not found in checked index"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "36a10e4f-f293-4f2a-978c-19703ef39c98",
+      "title": "通达学院：学费缓交申请的材料与审批栏（2022公开版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "ea311b49-be80-4d98-957d-624edccc3da6",
+      "title": "通达学院：自主个性化学习分旧表与认定咨询（2022公开版）",
+      "agent": "study"
+    },
+    {
+      "id": "bae50226-dd55-460b-ae8a-816864c14861",
+      "title": "通达学院：毕业证明书、学位证明书补办材料（2019公开版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "4ba14966-7c90-4ac2-ba1a-803310ff2500",
+      "title": "通达学院：毕业生、结业生回校重修申请表字段（2013旧表）",
+      "agent": "affairs"
+    }
+  ],
+  "offlined": [],
+  "added": 4,
+  "totalDocs": 146,
+  "approvedByAgent": {
+    "life": 51,
+    "study": 13,
+    "affairs": 73,
+    "freshman": 0
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "checkedAt": "2026-09-23",
+  "scope": "官网教学机构目录所指向的6个院系/教学部和创新创业门户；本轮30个独立HTML页面及其7个附件；不是全站覆盖",
+  "sourceDirectory": "https://www.nytdc.edu.cn/73/list.htm",
+  "htmlPageLimit": 30,
+  "htmlPagesRead": 30,
+  "attachmentsDownloaded": 7,
+  "recordsReady": 13,
+  "deduplication": {
+    "existingTitlesChecked": 119,
+    "inventoryRead": "outputs/campus-agent/imports/source-inventory.json",
+    "method": "标题去重并按主题对照，跳过旧版同事项及新闻；source-inventory仅作已知覆盖参考"
+  },
+  "statusCounts": {
+    "navigation_reviewed": 7,
+    "ready_for_import": 13,
+    "covered": 3,
+    "partially_reviewed": 2,
+    "news_only": 2,
+    "outdated_only": 1,
+    "covered_conflict": 1,
+    "staff_workflow": 1
+  },
+  "pages": [
+    {
+      "name": "college-telecom",
+      "url": "https://www.nytdc.edu.cn/txgcxy",
+      "finalUrl": "https://www.nytdc.edu.cn:443/txgcxy/",
+      "title": "南京邮电大学通达学院-通信工程学院",
+      "pageDates": [],
+      "status": "navigation_reviewed",
+      "reason": "院系首页导航已核验；未导入宣传新闻、个人信息与名单",
+      "rawFile": "work/campus-broader/college-telecom.html"
+    },
+    {
+      "name": "college-electronic",
+      "url": "https://www.nytdc.edu.cn/dzgcxy",
+      "finalUrl": "https://www.nytdc.edu.cn:443/dzgcxy/",
+      "title": "南京邮电大学通达大学-电子工程学院",
+      "pageDates": [],
+      "status": "navigation_reviewed",
+      "reason": "院系首页导航已核验；未导入宣传新闻、个人信息与名单",
+      "rawFile": "work/campus-broader/college-electronic.html"
+    },
+    {
+      "name": "college-computer",
+      "url": "https://www.nytdc.edu.cn/jsjgcxy",
+      "finalUrl": "https://www.nytdc.edu.cn:443/jsjgcxy/",
+      "title": "南京邮电大学通达学院-计算机工程学院",
+      "pageDates": [],
+      "status": "navigation_reviewed",
+      "reason": "院系首页导航已核验；未导入宣传新闻、个人信息与名单",
+      "rawFile": "work/campus-broader/college-computer.html"
+    },
+    {
+      "name": "college-electric",
+      "url": "https://www.nytdc.edu.cn/dqgcxy",
+      "finalUrl": "https://www.nytdc.edu.cn:443/dqgcxy/",
+      "title": "电气工程学院",
+      "pageDates": [],
+      "status": "navigation_reviewed",
+      "reason": "院系首页导航已核验；未导入宣传新闻、个人信息与名单",
+      "rawFile": "work/campus-broader/college-electric.html"
+    },
+    {
+      "name": "college-business",
+      "url": "https://www.nytdc.edu.cn/sxy",
+      "finalUrl": "https://www.nytdc.edu.cn:443/sxy/",
+      "title": "南京邮电大学通达学院商学院",
+      "pageDates": [],
+      "status": "navigation_reviewed",
+      "reason": "院系首页导航已核验；未导入宣传新闻、个人信息与名单",
+      "rawFile": "work/campus-broader/college-business.html"
+    },
+    {
+      "name": "college-basic",
+      "url": "https://www.nytdc.edu.cn/jcjxb",
+      "finalUrl": "https://www.nytdc.edu.cn:443/jcjxb/",
+      "title": "南京邮电大学通达学院-基础教学部",
+      "pageDates": [],
+      "status": "navigation_reviewed",
+      "reason": "院系首页导航已核验；未导入宣传新闻、个人信息与名单",
+      "rawFile": "work/campus-broader/college-basic.html"
+    },
+    {
+      "name": "college-innovation",
+      "url": "http://sczx.nytdc.edu.cn/xxmh/Index",
+      "finalUrl": "https://sczx.nytdc.edu.cn:443/xxmh/Index",
+      "title": "首页 | 创新创业信息门户系统",
+      "pageDates": [],
+      "status": "navigation_reviewed",
+      "reason": "院系首页导航已核验；未导入宣传新闻、个人信息与名单",
+      "rawFile": "work/campus-broader/college-innovation.html"
+    },
+    {
+      "name": "telecom-contact",
+      "url": "https://www.nytdc.edu.cn/txgcxy/lxwm/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/txgcxy/lxwm/list.htm",
+      "title": "联系我们",
+      "pageDates": [],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/telecom-contact.html"
+    },
+    {
+      "name": "telecom-procedure",
+      "url": "https://www.nytdc.edu.cn/txgcxy/1075/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/txgcxy/1075/list.htm",
+      "title": "办事流程",
+      "pageDates": [],
+      "status": "covered",
+      "reason": "所列学生证、调宿、校外住宿已有更近官网版本入库",
+      "rawFile": "work/campus-broader/telecom-procedure.html"
+    },
+    {
+      "name": "telecom-download",
+      "url": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/txgcxy/1076/list.htm",
+      "title": "下载专区",
+      "pageDates": [],
+      "status": "partially_reviewed",
+      "reason": "核验3份新增表格；其余多为重复表格，学费缓交及后续分页未读取",
+      "rawFile": "work/campus-broader/telecom-download.html"
+    },
+    {
+      "name": "electronic-student",
+      "url": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/dzgcxy/1102/list.htm",
+      "title": "学生专区",
+      "pageDates": [],
+      "status": "partially_reviewed",
+      "reason": "核验毕设更换导师、外出毕设；自主个性化学分和其他毕设材料尚未读取",
+      "rawFile": "work/campus-broader/electronic-student.html"
+    },
+    {
+      "name": "computer-download",
+      "url": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/jsjgcxy/960/list.htm",
+      "title": "下载中心",
+      "pageDates": [],
+      "status": "covered",
+      "reason": "所列学生办事表多与现有库或本轮通信学院表重复；未继续逐份下载",
+      "rawFile": "work/campus-broader/computer-download.html"
+    },
+    {
+      "name": "electric-download",
+      "url": "https://www.nytdc.edu.cn/dqgcxy/1022/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/dqgcxy/1022/list.htm",
+      "title": "下载中心",
+      "pageDates": [],
+      "status": "covered",
+      "reason": "列表所见住宿、学生证、勤工助学已有库覆盖",
+      "rawFile": "work/campus-broader/electric-download.html"
+    },
+    {
+      "name": "business-contact",
+      "url": "https://www.nytdc.edu.cn/sxy/880/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/sxy/880/list.htm",
+      "title": "联系我们",
+      "pageDates": [],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/business-contact.html"
+    },
+    {
+      "name": "business-service",
+      "url": "https://www.nytdc.edu.cn/sxy/895/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/sxy/895/list.htm",
+      "title": "学生事务",
+      "pageDates": [],
+      "status": "news_only",
+      "reason": "学生事务栏目所见为2026班会新闻，不构建办事条目",
+      "rawFile": "work/campus-broader/business-service.html"
+    },
+    {
+      "name": "basic-service",
+      "url": "https://www.nytdc.edu.cn/jcjxb/1216/list.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/jcjxb/1216/list.htm",
+      "title": "教学日历 ",
+      "pageDates": [],
+      "status": "outdated_only",
+      "reason": "教学日历可见最新2025—2026第二学期，已结束；未发现2026—2027秋季校历",
+      "rawFile": "work/campus-broader/basic-service.html"
+    },
+    {
+      "name": "innovation-contact",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/XYGK-lxfs",
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/XYGK-lxfs",
+      "title": "联系方式 - 详情 | 创新创业信息门户系统",
+      "pageDates": [],
+      "status": "covered_conflict",
+      "reason": "同办公室与现有记录重复；旧教务页科创楼103、新门户双创楼103，电话一致，楼名需确认",
+      "rawFile": "work/campus-broader/innovation-contact.html"
+    },
+    {
+      "name": "innovation-rules",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd",
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd",
+      "title": "学院制度 | 创新创业信息门户系统",
+      "pageDates": [],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/innovation-rules.html"
+    },
+    {
+      "name": "innovation-maker",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-ckkj",
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-ckkj",
+      "title": "创客空间 - 详情 | 创新创业信息门户系统",
+      "pageDates": [],
+      "status": "news_only",
+      "reason": "2022—2023揭牌报道；未给现行开放、预约或加入条件",
+      "rawFile": "work/campus-broader/innovation-maker.html"
+    },
+    {
+      "name": "innovation-base",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-scjd",
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-scjd",
+      "title": "双创基地 - 详情 | 创新创业信息门户系统",
+      "pageDates": [],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/innovation-base.html"
+    },
+    {
+      "name": "innovation-course",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc",
+      "finalUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc",
+      "title": "双创课程 | 创新创业信息门户系统",
+      "pageDates": [],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/innovation-course.html"
+    },
+    {
+      "name": "telecom-withdraw",
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26142/page.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26142/page.htm",
+      "title": "退选课程申请表",
+      "pageDates": [
+        "2022-04-16"
+      ],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/telecom-withdraw.html"
+    },
+    {
+      "name": "telecom-earlycourse",
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26141/page.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26141/page.htm",
+      "title": "提前修读课程申请表",
+      "pageDates": [
+        "2022-04-16"
+      ],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/telecom-earlycourse.html"
+    },
+    {
+      "name": "telecom-transcript",
+      "url": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26145/page.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26145/page.htm",
+      "title": "学生办理出国成绩单申请表",
+      "pageDates": [
+        "2022-04-16"
+      ],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/telecom-transcript.html"
+    },
+    {
+      "name": "electronic-tutor",
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26497/page.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26497/page.htm",
+      "title": "南京邮电大学通达学院毕业设计更换导师申请表",
+      "pageDates": [
+        "2022-04-21"
+      ],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/electronic-tutor.html"
+    },
+    {
+      "name": "electronic-offsite",
+      "url": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26496/page.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26496/page.htm",
+      "title": "南京邮电大学通达学院学生外出毕业设计申请表",
+      "pageDates": [
+        "2022-04-21"
+      ],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/electronic-offsite.html"
+    },
+    {
+      "name": "basic-language-contest",
+      "url": "https://www.nytdc.edu.cn/jcjxb/2026/0910/c1218a51174/page.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/jcjxb/2026/0910/c1218a51174/page.htm",
+      "title": "2026“理解当代中国”全国大学生外语能力大赛（校赛通知）",
+      "pageDates": [
+        "2026-09-07"
+      ],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/basic-language-contest.html"
+    },
+    {
+      "name": "electric-activity",
+      "url": "https://www.nytdc.edu.cn/dqgcxy/2022/0424/c1028a26661/page.htm",
+      "finalUrl": "https://www.nytdc.edu.cn/dqgcxy/2022/0424/c1028a26661/page.htm",
+      "title": "南京邮电大学通达学院大型活动筹办流程",
+      "pageDates": [
+        "2022-04-24"
+      ],
+      "status": "staff_workflow",
+      "reason": "已查看流程图，主要是承办单位会场/车辆/领导讲话协调，不是学生报名或场地审批规则，未导入",
+      "rawFile": "work/campus-broader/electric-activity.html"
+    },
+    {
+      "name": "innovation-training-entry",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/Index-Index-ZXT-Links/e7020f0d-2d2c-48ba-8df5-c9263f4e9bf6",
+      "finalUrl": "https://sczx.nytdc.edu.cn/cxxl",
+      "title": "首页 - 大学生创新创业训练计划管理系统",
+      "pageDates": [],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/innovation-training-entry.html"
+    },
+    {
+      "name": "innovation-contest-entry",
+      "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/Index-Index-ZXT-Links/e7020f0d-2f05-47e3-ac7a-6fdcf7a5bab9",
+      "finalUrl": "https://sczx.nytdc.edu.cn/xkjs",
+      "title": "首页 - 学科竞赛管理系统",
+      "pageDates": [],
+      "status": "ready_for_import",
+      "reason": "已整理新增摘要，范围限制见条目",
+      "rawFile": "work/campus-broader/innovation-contest-entry.html"
+    }
+  ],
+  "attachments": [
+    {
+      "name": "telecom-withdraw",
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/2d/1a/b81d1eaa40e6b10d5743f825d13a/2d246865-9712-4dc2-95c9-4fba12717d67.doc",
+      "finalUrl": "https://www.nytdc.edu.cn/_upload/article/files/2d/1a/b81d1eaa40e6b10d5743f825d13a/2d246865-9712-4dc2-95c9-4fba12717d67.doc",
+      "status": 200,
+      "file": "work\\campus-colleges\\telecom-withdraw-0.doc",
+      "bytes": 17408,
+      "type": "doc",
+      "parseStatus": "not_parsed",
+      "oleHeaderValid": true,
+      "text": ""
+    },
+    {
+      "name": "telecom-earlycourse",
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/4b/bc/300159e64d4e9b543a61e69231a6/dfd59a27-c8ee-4afb-9a7a-85298cb6aff6.pdf",
+      "finalUrl": "https://www.nytdc.edu.cn/_upload/article/files/4b/bc/300159e64d4e9b543a61e69231a6/dfd59a27-c8ee-4afb-9a7a-85298cb6aff6.pdf",
+      "status": 200,
+      "file": "work\\campus-colleges\\telecom-earlycourse-0.pdf",
+      "bytes": 60012,
+      "type": "pdf",
+      "pages": 1,
+      "text": ""
+    },
+    {
+      "name": "telecom-transcript",
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/fb/8d/9ba099b24f0e9d4675555d2183b3/ed3ff7ea-7ef1-4f81-a4a2-6a62c7b3a516.pdf",
+      "finalUrl": "https://www.nytdc.edu.cn/_upload/article/files/fb/8d/9ba099b24f0e9d4675555d2183b3/ed3ff7ea-7ef1-4f81-a4a2-6a62c7b3a516.pdf",
+      "status": 200,
+      "file": "work\\campus-colleges\\telecom-transcript-0.pdf",
+      "bytes": 72551,
+      "type": "pdf",
+      "pages": 1,
+      "text": ""
+    },
+    {
+      "name": "electronic-tutor",
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/41/10/6227f2d6450f856791916a4780f5/89d408bb-6313-4c20-92be-25296ae8b49b.doc",
+      "finalUrl": "https://www.nytdc.edu.cn/_upload/article/files/41/10/6227f2d6450f856791916a4780f5/89d408bb-6313-4c20-92be-25296ae8b49b.doc",
+      "status": 200,
+      "file": "work\\campus-colleges\\electronic-tutor-0.doc",
+      "bytes": 27648,
+      "type": "doc",
+      "parseStatus": "not_parsed",
+      "oleHeaderValid": true,
+      "text": ""
+    },
+    {
+      "name": "electronic-offsite",
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/e8/04/e7997cae469a9bd80a2b3c56f57a/f15b2b15-5b30-40fe-8f7d-b42f8ccfd5c8.doc",
+      "finalUrl": "https://www.nytdc.edu.cn/_upload/article/files/e8/04/e7997cae469a9bd80a2b3c56f57a/f15b2b15-5b30-40fe-8f7d-b42f8ccfd5c8.doc",
+      "status": 200,
+      "file": "work\\campus-colleges\\electronic-offsite-0.doc",
+      "bytes": 39936,
+      "type": "doc",
+      "parseStatus": "not_parsed",
+      "oleHeaderValid": true,
+      "text": ""
+    },
+    {
+      "name": "basic-language-contest",
+      "url": "https://www.nytdc.edu.cn/_upload/article/files/4e/93/dde87e4948f08fd8d8eea15487b2/47b4e683-de23-4660-81ef-fcb9504d426c.pdf",
+      "finalUrl": "https://www.nytdc.edu.cn/_upload/article/files/4e/93/dde87e4948f08fd8d8eea15487b2/47b4e683-de23-4660-81ef-fcb9504d426c.pdf",
+      "status": 200,
+      "file": "work\\campus-colleges\\basic-language-contest-0.pdf",
+      "bytes": 137555,
+      "type": "pdf",
+      "pages": 3,
+      "text": ""
+    },
+    {
+      "name": "electric-activity",
+      "url": "https://www.nytdc.edu.cn/_upload/article/images/3d/47/8080ebe44673a6ea5615d642b5e5/0d10727e-f9cf-4907-b346-ced272e003d4.png",
+      "finalUrl": "https://www.nytdc.edu.cn/_upload/article/images/3d/47/8080ebe44673a6ea5615d642b5e5/0d10727e-f9cf-4907-b346-ced272e003d4.png",
+      "status": 200,
+      "file": "work\\campus-colleges\\electric-activity-0.png",
+      "bytes": 34223,
+      "type": "png",
+      "text": ""
+    }
+  ],
+  "updateSuggestion": [
+    {
+      "existingTitle": "通达学院：创新创业学院办公室位置和电话",
+      "existingSource": "https://jwc.nytdc.edu.cn/509/listm.htm",
+      "newSource": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/XYGK-lxfs",
+      "issue": "旧页写科创楼103室，新门户写双创楼103室；电话相同0514-89710017。两页均未标更新时间，不擅自认定哪个楼名现用。",
+      "suggestedText": "创新创业学院办公室：教务处联系页写科创楼103室，双创门户写双创楼103室，电话均为0514-89710017。双创门户另公布公共邮箱scxy@nytdc.edu.cn。去之前可电话核对楼名及位置。",
+      "mutatedDatabase": false
+    }
+  ],
+  "remainingPublicGaps": [
+    {
+      "area": "竞赛制度正文",
+      "status": "public_not_read",
+      "reason": "已读制度目录；4份竞赛认定、动态分类目录、创新实践和奖励细则未打开，本轮30页已达上限",
+      "urls": [
+        "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-3205-49c8-9183-27da40696e02",
+        "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-2e34-4305-880c-f2ef1601d279",
+        "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-2d1b-4e6f-a2b6-d25a64049a24",
+        "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-302c-41ae-a7a4-88708a60a7d6"
+      ]
+    },
+    {
+      "area": "课程详细说明",
+      "status": "public_not_read",
+      "reason": "双创课程仅目录第一页，未核对各课学分、开课计划和第二页；本轮页面预算限制"
+    },
+    {
+      "area": "剩余学院办事附件",
+      "status": "public_not_read",
+      "reason": "学费缓交、自主个性化学习学分、毕业设计其他文档及下载专区后续分页未读取；已有大量重复材料优先去重"
+    },
+    {
+      "area": "3份旧DOC申请表",
+      "status": "attachment_unparsed",
+      "reason": "退选课程、毕设更换导师、外出毕设DOC可公开下载但未解析，条目只提供官方入口"
+    },
+    {
+      "area": "账号内学工/项目/竞赛服务",
+      "status": "authentication_required",
+      "reason": "只核验公开首页和入口，未登录；没有读取个人项目、学生数据和名单",
+      "urls": [
+        "http://xgstu.nytdc.edu.cn/login.aspx",
+        "https://sczx.nytdc.edu.cn/cxxl/Login",
+        "https://sczx.nytdc.edu.cn/xkjs/Login"
+      ]
+    },
+    {
+      "area": "基地使用规则",
+      "status": "not_published_in_read_pages",
+      "reason": "基地页公开房间及学院，未公开开放时间、预约、进入条件和安全培训要求，不能补造"
+    },
+    {
+      "area": "2026—2027秋季教学日历",
+      "status": "not_found_in_read_section",
+      "reason": "基础教学部日历栏目只见2025—2026第二学期及更早资料，不能替代本学期校历"
+    },
+    {
+      "area": "其他院系栏目",
+      "status": "not_exhaustive",
+      "reason": "未穷举所有培养方案、竞赛新闻、教学通知；思政与更多教学栏目本轮未扩展。公共联系人未电话确认，页面无日期者不判断为刚更新。"
+    }
+  ],
+  "privacyHandling": "入库摘要排除老师个人邮箱/姓名、个人手机号、QQ群号、学生名单与任何凭据；公共办公室座机保留。原始网页仅作本地核对依据，禁止把整页个人名单原样入库。",
+  "databaseOrAppChanged": false
+}

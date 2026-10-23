@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-09-23",
+  "scope": "已收集地图及未完成指南的定向复核；未读取认证后或个人信息；不声称全站覆盖。",
+  "items": [
+    {
+      "url": "https://zs.nytdc.edu.cn/557/list.htm",
+      "title": "校园地图",
+      "status": "imported",
+      "reason": "已查看官方地图原图，记录2024-12-10制图版本、建筑标签和相邻关系；不推算方位、距离和步行路线。",
+      "evidenceFile": "work/campus-broader/admit-map-0.jpg"
+    },
+    {
+      "url": "https://zjc.nytdc.edu.cn/2022/1005/c1175a31992/page.htm",
+      "title": "91job学生中心操作手册",
+      "status": "imported_limited_version",
+      "reason": "附件已下载并提取正文，封面2021年11月。只提供公开入口与功能概览，旧报到证字段明确对照2023取消政策，不导入账号样例和截图个人字段。",
+      "evidenceFile": "work/extra-guides/job-manual-text.txt"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/tyb/2026/0827/c1338a51082/page.htm",
+      "title": "2026—2027第一学期体育课表",
+      "status": "imported_entry_only",
+      "reason": "重新读取公开页面，核对本学期标题及两种PDF排序入口；仅提供查询入口，不抽取教师行程和个人课表。",
+      "evidenceFile": "work/extra-guides/sports-course.html"
+    },
+    {
+      "url": "http://bwc.nytdc.edu.cn/2020/1027/c1313a36225/page.htm",
+      "title": "办理身份证指南",
+      "status": "reviewed_legacy_not_imported",
+      "reason": "已查看2020流程图；未取得当前受理机关材料要求的核对证据，不把旧图作为现行身份证办理流程。",
+      "evidenceFile": "work/campus-broader/bw-id-0.jpg"
+    },
+    {
+      "url": "http://bwc.nytdc.edu.cn/2020/1027/c1313a10920/page.htm",
+      "title": "办理居住证指南",
+      "status": "reviewed_legacy_not_imported",
+      "reason": "已查看2020流程图；未核对当前学生适用条件和受理规则，暂不作为现行指南导入。",
+      "evidenceFile": "work/campus-broader/bw-residence-0.jpg"
+    },
+    {
+      "url": "http://bwc.nytdc.edu.cn/2020/1027/c1313a10918/page.htm",
+      "title": "学生户口迁入迁出流程",
+      "status": "reviewed_superseded_step_not_imported",
+      "reason": "图中毕业环节要求就业报到证，与2023取消政策不一致；不导入旧办理步骤，另收录取消政策及核对提醒。",
+      "evidenceFile": "work/campus-broader/bw-hukou-guide-0.png"
+    },
+    {
+      "url": "https://tdxynjupt.91job.org.cn/sub-station/home/13989",
+      "title": "91job学校分站",
+      "status": "access_failed",
+      "reason": "重新读取官方链接仍返回403；未尝试规避限制、登录或读取个人记录。",
+      "evidenceFile": "work/extra-guides/fetch-report.json"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/tysfrz/list.htm",
+      "title": "统一认证导航候选页",
+      "status": "reviewed_homepage_fallback",
+      "reason": "访问后实际标题和主体为学校主页，没有独立统一认证指南；仅以首页可见导航整理公共系统入口。",
+      "evidenceFile": "work/extra-guides/auth-entry.html"
+    },
+    {
+      "url": "https://www.nytdc.edu.cn/",
+      "title": "学校官网首页系统入口",
+      "status": "imported_entry_only",
+      "reason": "仅记录首页已公布的修改密码、邮箱、教务、学工、图书馆、VPN入口名称；不复刻登录流程，不访问校内IP。",
+      "evidenceFile": "work/campus-broader/home.html"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2021/0513/c340a18577/page.htm",
+      "title": "2015缓考申请流程",
+      "status": "covered_by_version_comparison",
+      "reason": "重新核对旧流程，并用对照2022规定和2024表格的摘要替换旧单独指南；不自行宣布废止或保证非病假获批。",
+      "evidenceFile": "work/extra-guides/deferral-old.html"
+    },
+    {
+      "url": "https://jwc.nytdc.edu.cn/2021/0512/c514a18529/page.htm",
+      "title": "考试管理规定第十一条",
+      "status": "covered",
+      "reason": "重新核对原文“除病假外原则上不得请假”，现有2022规定摘要保留，并与新增版本差异提示共同使用。",
+      "evidenceFile": "work/extra-guides/exam-2022.html"
+    },
+    {
+      "url": "https://www.moe.gov.cn/jyb_xxgk/moe_1777/moe_1779/202310/t20231020_1086568.html",
+      "title": "取消普通高校毕业生就业报到证有关衔接通知",
+      "status": "imported",
+      "reason": "教育部官方搜索结果完整正文可读并核对人社部发〔2023〕26号；直接请求403、浏览器服务打开重定向失败，未绕过。摘要只保留报到证取消及与学校旧指南对照。",
+      "evidenceMethod": "official search result body"
+    }
+  ],
+  "remainingLimits": [
+    "91job受限内容未采集；没有个人档案、成绩、账号或内网数据。",
+    "2020身份证及居住证图仅完成历史材料核对，当前受理材料仍需向学校/受理机关确认。",
+    "地图不包含坐标和路线，实际地图地点查询仍取决于管理员配置独立地图Key。"
+  ]
+}

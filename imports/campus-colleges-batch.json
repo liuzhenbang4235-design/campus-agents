@@ -1,0 +1,344 @@
+{
+  "batch": "campus-colleges-batch.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:26:24.708Z",
+  "docs": [
+    {
+      "agent": "affairs",
+      "title": "通达学院：通信工程学院办公室在哪里",
+      "source": "学校官网｜未注日期｜https://www.nytdc.edu.cn/txgcxy/lxwm/list.htm",
+      "content": "通信工程学院“联系我们”页把统筹协调办公室工作及分管教学工作的办公地址均写为“扬实2403”。想咨询本院办公事务，可先从该官方联系页核对位置；这里保留学校原始房间代码，没有把它推测成某号楼某层。页面没有列公共咨询电话、接待时间或更新时间，去之前应向学院确认。未收录个人姓名、辅导员带班名单。\n来源页面：联系我们。页面标注日期：未注明；核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/txgcxy/lxwm/list.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/txgcxy/lxwm/list.htm",
+        "sourceTitle": "联系我们",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/telecom-contact.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [],
+        "validity": "该公开页面的版本摘要；未电话核实现行办理细节"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：商学院办公室位置和公共电话",
+      "source": "学校官网｜未注日期｜https://www.nytdc.edu.cn/sxy/880/list.htm",
+      "content": "商学院办公室公开地址为二号实验楼301，联系电话0514-89716055。官网职责表说明该办公室协调学院办公事务，教学秘书处理教学运行及考试组织协调，科研秘书处理实验实践教学、双创教育与科研申报组织等事项。此处只提供公共办公室渠道，不提供个人联系方式。页面未注明办公时间和更新日期，假期或临时调整请先电话确认。\n来源页面：联系我们。页面标注日期：未注明；核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/sxy/880/list.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/sxy/880/list.htm",
+        "sourceTitle": "联系我们",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/business-contact.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [],
+        "validity": "该公开页面的版本摘要；未电话核实现行办理细节"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：双创基地、机器人和数学建模实践室在哪里",
+      "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-scjd",
+      "content": "双创门户公布的基地位置：电子设计创新基地在双创207、208室；程序设计209室、软件开发210室，归计算机工程学院；机器人222室、无人机220室、电气工程219室，归电气工程学院；融媒体广告205室，归商学院；数学建模206室、物理实验216室，归基础教学部；文创中心在双创1楼西大厅，归创新创业学院。电子设计基地归电子工程学院。想做机器人、无人机、编程或数学建模实践，可按方向向所属学院询问。该页只提供地点与负责学院，没有开放时段、预约流程或加入条件，不能据此直接认定可以自由进入使用。\n来源页面：双创基地 - 详情 | 创新创业信息门户系统。页面标注日期：未注明；核对日期：2026-09-23。\n原文：https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-scjd",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCPT-scjd",
+        "sourceTitle": "双创基地 - 详情 | 创新创业信息门户系统",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/innovation-base.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [],
+        "validity": "公开基地目录；无页面日期，位置未现场核验，非门禁或预约授权"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：大创项目管理系统、项目招募和资料下载入口",
+      "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/cxxl",
+      "content": "学校创新创业门户链接到“大学生创新创业训练计划管理系统”：https://sczx.nytdc.edu.cn/cxxl 。公开首页有通知公告、项目招募、项目公示、资料下载和用户登录入口。想找大创项目报名系统、项目组招募或材料，可从此官方系统进入；本次只核对公开首页，首页栏目未呈现具体项目条目，未登录或读取个人项目。不能据此保证当期正在申报、还有招募名额，或给出未核实的截止日期。\n来源页面：首页 - 大学生创新创业训练计划管理系统。页面标注日期：未注明；核对日期：2026-09-23。\n原文：https://sczx.nytdc.edu.cn/cxxl",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://sczx.nytdc.edu.cn/cxxl",
+        "sourceTitle": "首页 - 大学生创新创业训练计划管理系统",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/innovation-training-entry.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [],
+        "validity": "仅核验官方公开入口；个人项目及申报操作需本人合法账号，未登录核验",
+        "discoveredUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/Index-Index-ZXT-Links/e7020f0d-2d2c-48ba-8df5-c9263f4e9bf6"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：学科竞赛管理系统官方入口",
+      "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xkjs",
+      "content": "学校创新创业门户链接到“学科竞赛管理系统”：https://sczx.nytdc.edu.cn/xkjs 。公开首页提供通知公告、竞赛宣传、成果展示、下载专区及登录入口。想查看学校的比赛信息或找竞赛材料，可以从该入口开始。本次未登录，首页栏目未显示具体事项正文，不能推断登录后有哪些报名、报销或学分认定功能，也不把入口本身当作参赛已报名成功。\n来源页面：首页 - 学科竞赛管理系统。页面标注日期：未注明；核对日期：2026-09-23。\n原文：https://sczx.nytdc.edu.cn/xkjs",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://sczx.nytdc.edu.cn/xkjs",
+        "sourceTitle": "首页 - 学科竞赛管理系统",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网正文核对",
+        "sourceFile": "work/campus-broader/innovation-contest-entry.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [],
+        "validity": "仅核验官方公开系统首页；未访问登录后数据",
+        "discoveredUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/Index-Index-ZXT-Links/e7020f0d-2f05-47e3-ac7a-6fdcf7a5bab9"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：比赛认定、创新实践与竞赛奖励制度查询入口",
+      "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd",
+      "content": "创新创业门户“学院制度”栏目列出：2025年3月24日发布的学生创新创业竞赛管理规定（试行）、竞赛项目认定及分类目录（动态更新），以及2023年3月10日的创新创业实践活动管理办法、科技创新和就业创业大赛获奖学生奖励办法。想问比赛认不认、属于哪类、获奖能否奖励，应先从该官方栏目打开相应制度并核对版本。本条只核对栏目标题和日期，未读四份制度正文，不能据此给出竞赛等级、奖励金额、学分或报销承诺。\n来源页面：学院制度 | 创新创业信息门户系统。页面标注日期：未注明；核对日期：2026-09-23。\n原文：https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd",
+        "sourceTitle": "学院制度 | 创新创业信息门户系统",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "官网制度目录核对，未读取各制度详情",
+        "sourceFile": "work/campus-broader/innovation-rules.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [],
+        "validity": "仅作制度检索入口；条款正文尚未解析，目录日期不代表每项规则当前适用"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：双创课程目录在哪里看",
+      "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc",
+      "content": "创新创业门户的“双创课程”公开目录首页列有初识机器人、创新创业概论、创新创业竞赛指导与实践、电子设计与创新基础A/B、机器人技术等课程。想了解学校有哪些双创或机器人入门课，可从该栏目查看课程介绍；本次仅读取目录第一页，没有读取每门课详情。目录不等于当学期选课清单，未提供已核实的开课学期、学分、名额或报名截止日；实际能否选课应查当期教务通知。\n来源页面：双创课程 | 创新创业信息门户系统。页面标注日期：未注明；核对日期：2026-09-23。\n原文：https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc",
+        "sourceTitle": "双创课程 | 创新创业信息门户系统",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "公开课程目录第一页核对",
+        "sourceFile": "work/campus-broader/innovation-course.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [],
+        "validity": "课程介绍入口，不代表2026秋季开课或选课资格"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：退选课程申请表下载入口（2022版未解析）",
+      "source": "学校官网｜2022-04-16｜https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26142/page.htm",
+      "content": "通信工程学院下载专区公开了“南京邮电大学通达学院学生退选课程申请表.doc”，可从原文附件下载。适合先找“选错课了怎么退课”的办理材料入口。本次确认附件可下载且为DOC文件，但没有解析表格字段；无法据此判断退课条件、审批人、是否收费或截止日。页面为2022年版本，办理前请向所在学院或教务处确认是否仍用此表以及本学期安排。\n来源页面：退选课程申请表。页面标注日期：2022-04-16；核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26142/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26142/page.htm",
+        "sourceTitle": "退选课程申请表",
+        "pageDate": "2022-04-16",
+        "checkedAt": "2026-09-23",
+        "method": "官网附件名称、HTTP200与DOC文件头核对；未解析DOC内容",
+        "sourceFile": "work/campus-broader/telecom-withdraw.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [
+          {
+            "url": "https://www.nytdc.edu.cn/_upload/article/files/2d/1a/b81d1eaa40e6b10d5743f825d13a/2d246865-9712-4dc2-95c9-4fba12717d67.doc",
+            "file": "work\\campus-colleges\\telecom-withdraw-0.doc",
+            "reason": "旧版DOC二进制格式；只核验公开下载与文件头，未解析内容"
+          }
+        ],
+        "validity": "2022年公开表格入口；现行适用性与表内规则未核验"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：提前修读课程申请表和选课提醒（2022版）",
+      "source": "学校官网｜2022-04-16｜https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26141/page.htm",
+      "content": "想提前学后面学期的课，可参考官网2022年公开的学生提前修读课程申请空表。表格填写拟修课程的课程号、课程名、学分、跟读班级和已过先修课程，并设二级学院意见、教务处审核签章栏；末尾明确“必须在规定选课时间内上网选课”。这是表格提供的材料要求，不能保证满足资格或审批通过。该表没有给出当前申请条件、当期日期或具体受理窗口，先向本院教学事务人员确认现行流程。\n来源页面：提前修读课程申请表。页面标注日期：2022-04-16；核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26141/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26141/page.htm",
+        "sourceTitle": "提前修读课程申请表",
+        "pageDate": "2022-04-16",
+        "checkedAt": "2026-09-23",
+        "method": "PDF文字提取及1页完整渲染核对",
+        "sourceFile": "work/campus-broader/telecom-earlycourse.html",
+        "attachmentsRead": [
+          "work\\campus-colleges\\telecom-earlycourse-0.pdf"
+        ],
+        "attachmentsNotParsed": [],
+        "validity": "2022年公开空表；现行条件及本学期选课时间未确认"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：出国中英文成绩单、均分和排名证明申请（2022版）",
+      "source": "学校官网｜2022-04-16｜https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26145/page.htm",
+      "content": "出国申请材料可参考官网“学生办理出国成绩单申请表”。2022年公开空表可勾选中英文成绩单、在读证明、毕业证书、学位证书、均分证明、绩点说明和专业排名，并填写份数、事由；在读证明适用于在校生，毕业及学位证书材料适用于往届生。在校生有辅导员意见栏，另有教务处意见与领取签收栏。签收说明提醒带离教务处后不补盖密封封口章，所以需要密封材料应在领取时核对。表中未写办理时长、费用、线上申请方式或当前窗口，请先向教务处确认现行版本。\n来源页面：学生办理出国成绩单申请表。页面标注日期：2022-04-16；核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26145/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/txgcxy/2022/0416/c1076a26145/page.htm",
+        "sourceTitle": "学生办理出国成绩单申请表",
+        "pageDate": "2022-04-16",
+        "checkedAt": "2026-09-23",
+        "method": "PDF文字提取及1页完整渲染核对",
+        "sourceFile": "work/campus-broader/telecom-transcript.html",
+        "attachmentsRead": [
+          "work\\campus-colleges\\telecom-transcript-0.pdf"
+        ],
+        "attachmentsNotParsed": [],
+        "validity": "2022年公开空表版本；不承诺当期材料范围、时限或费用"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：毕业设计更换导师申请表入口（2022版未解析）",
+      "source": "学校官网｜2022-04-21｜https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26497/page.htm",
+      "content": "电子工程学院学生下载专区提供“南京邮电大学通达学院毕业设计更换导师申请表.doc”。想换毕业设计指导老师，可先到原文下载该官方附件，再向本院毕业设计管理人员确认办理条件。本次仅核验公开附件可下载和DOC文件格式，没有解析表内字段，不能断言需要哪些签字、什么理由一定批准或何时截止。公开页面为2022年版本，是否仍适用当前毕业届次需先确认。\n来源页面：南京邮电大学通达学院毕业设计更换导师申请表。页面标注日期：2022-04-21；核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26497/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26497/page.htm",
+        "sourceTitle": "南京邮电大学通达学院毕业设计更换导师申请表",
+        "pageDate": "2022-04-21",
+        "checkedAt": "2026-09-23",
+        "method": "官网附件名称、HTTP200与DOC文件头核对；未解析DOC内容",
+        "sourceFile": "work/campus-broader/electronic-tutor.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [
+          {
+            "url": "https://www.nytdc.edu.cn/_upload/article/files/41/10/6227f2d6450f856791916a4780f5/89d408bb-6313-4c20-92be-25296ae8b49b.doc",
+            "file": "work\\campus-colleges\\electronic-tutor-0.doc",
+            "reason": "旧版DOC二进制格式；只核验公开下载与文件头，未解析内容"
+          }
+        ],
+        "validity": "2022年公开表格入口；适用届次和审批规则未核验"
+      }
+    },
+    {
+      "agent": "affairs",
+      "title": "通达学院：到校外做毕业设计的申请表入口（2022版未解析）",
+      "source": "学校官网｜2022-04-21｜https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26496/page.htm",
+      "content": "电子工程学院学生下载专区提供“南京邮电大学通达学院学生外出毕业设计申请表.doc”。想在校外单位或异地完成毕设，可从原文找官方申请材料，并先向本院毕业设计管理人员确认能否申请。本次只核验附件可下载及DOC格式，没有解析表内要求；不得据此认定外出毕设等于获准离校、免除考勤或自动认可实习单位。页面为2022年版本，当前届次的条件、审批、返校和提交要求尚未核实。\n来源页面：南京邮电大学通达学院学生外出毕业设计申请表。页面标注日期：2022-04-21；核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26496/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/dzgcxy/2022/0421/c1102a26496/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生外出毕业设计申请表",
+        "pageDate": "2022-04-21",
+        "checkedAt": "2026-09-23",
+        "method": "官网附件名称、HTTP200与DOC文件头核对；未解析DOC内容",
+        "sourceFile": "work/campus-broader/electronic-offsite.html",
+        "attachmentsRead": [],
+        "attachmentsNotParsed": [
+          {
+            "url": "https://www.nytdc.edu.cn/_upload/article/files/e8/04/e7997cae469a9bd80a2b3c56f57a/f15b2b15-5b30-40fe-8f7d-b42f8ccfd5c8.doc",
+            "file": "work\\campus-colleges\\electronic-offsite-0.doc",
+            "reason": "旧版DOC二进制格式；只核验公开下载与文件头，未解析内容"
+          }
+        ],
+        "validity": "2022年公开表格入口；当前外出毕设要求未核验"
+      }
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：2026外语大赛报名截止日与参赛方式",
+      "source": "学校官网｜2026-09-07｜https://www.nytdc.edu.cn/jcjxb/2026/0910/c1218a51174/page.htm",
+      "content": "仅适用2026“外研社·国才杯”“理解当代中国”校赛，面向本校2023—2026级在校本科生，通知写明不收参赛费。官网报名入口为ucc.fltrp.com的“选手报名/参赛”。英语演讲报名已于2026年9月20日23:59结束；英语综合能力、笔译、短视频报名截至2026年10月4日23:59，不能把演讲报名继续推荐给用户。综合能力初赛安排10月11日13:30—15:00，笔译16:00—18:00，均为指定地点集中参加的线上初赛，具体地点查看赛事通知。短视频主题“数说中国”，原创视频不超过3分钟、配中英双语字幕，可个人或不超过5人组队，团队由队长报名，作品也需10月4日23:59前按要求提交。后续调整以主办部门通知为准；10月4日后不能回答为仍可报名，不推广通知中的个人邮箱或群号。\n来源页面：2026“理解当代中国”全国大学生外语能力大赛（校赛通知）。页面标注日期：2026-09-07；核对日期：2026-09-23。\n原文：https://www.nytdc.edu.cn/jcjxb/2026/0910/c1218a51174/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://www.nytdc.edu.cn/jcjxb/2026/0910/c1218a51174/page.htm",
+        "sourceTitle": "2026“理解当代中国”全国大学生外语能力大赛（校赛通知）",
+        "pageDate": "2026-09-07",
+        "checkedAt": "2026-09-23",
+        "method": "赛事通知PDF文字提取及3页完整渲染核对",
+        "sourceFile": "work/campus-broader/basic-language-contest.html",
+        "attachmentsRead": [
+          "work\\campus-colleges\\basic-language-contest-0.pdf"
+        ],
+        "attachmentsNotParsed": [],
+        "validity": "2026年度赛事；演讲报名已截止，其余3赛项报名截至2026-10-04 23:59，赛程仅作该年度参考",
+        "expiresAt": "2026-10-04T23:59:00+08:00"
+      }
+    }
+  ],
+  "imported": [
+    {
+      "id": "349ff51f-d897-496f-b1b5-f946773d0069",
+      "title": "通达学院：通信工程学院办公室在哪里",
+      "agent": "affairs"
+    },
+    {
+      "id": "cd946bfb-3ff8-40ef-9ce9-d269cafdd89d",
+      "title": "通达学院：商学院办公室位置和公共电话",
+      "agent": "affairs"
+    },
+    {
+      "id": "be2c9f5a-47df-4fd3-878c-5ff37a1c08f9",
+      "title": "通达学院：双创基地、机器人和数学建模实践室在哪里",
+      "agent": "study"
+    },
+    {
+      "id": "0aecc8ab-8362-469d-8aee-e5e1bae16d3d",
+      "title": "通达学院：大创项目管理系统、项目招募和资料下载入口",
+      "agent": "study"
+    },
+    {
+      "id": "bb1c8cb1-0912-4291-95ae-1a355feebc7b",
+      "title": "通达学院：学科竞赛管理系统官方入口",
+      "agent": "study"
+    },
+    {
+      "id": "d5e8a293-52d2-479a-9772-906227f632ad",
+      "title": "通达学院：比赛认定、创新实践与竞赛奖励制度查询入口",
+      "agent": "study"
+    },
+    {
+      "id": "4b1fe201-a6bd-451b-8326-fdf3a7cf5079",
+      "title": "通达学院：双创课程目录在哪里看",
+      "agent": "study"
+    },
+    {
+      "id": "300341d6-57de-41e5-a910-86644193a7f0",
+      "title": "通达学院：退选课程申请表下载入口（2022版未解析）",
+      "agent": "affairs"
+    },
+    {
+      "id": "b494db3e-380d-4482-8965-b9be20e3c5f5",
+      "title": "通达学院：提前修读课程申请表和选课提醒（2022版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "466326bd-50cf-4959-98df-62fdab5a4436",
+      "title": "通达学院：出国中英文成绩单、均分和排名证明申请（2022版）",
+      "agent": "affairs"
+    },
+    {
+      "id": "f038ce43-d057-473b-ae1c-3776a05666c8",
+      "title": "通达学院：毕业设计更换导师申请表入口（2022版未解析）",
+      "agent": "affairs"
+    },
+    {
+      "id": "5471f978-befc-4743-ad83-77b35ea79edc",
+      "title": "通达学院：到校外做毕业设计的申请表入口（2022版未解析）",
+      "agent": "affairs"
+    },
+    {
+      "id": "39c2a7ab-e108-468e-ad87-47cf00daa2d0",
+      "title": "通达学院：2026外语大赛报名截止日与参赛方式",
+      "agent": "study"
+    }
+  ],
+  "offlined": [],
+  "added": 13,
+  "totalDocs": 132,
+  "approvedByAgent": {
+    "life": 45,
+    "study": 12,
+    "affairs": 70,
+    "freshman": 0
+  }
+}

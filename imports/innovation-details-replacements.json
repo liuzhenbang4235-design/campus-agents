@@ -1,0 +1,185 @@
+{
+  "batch": "innovation-details-replacements.json",
+  "status": "approved",
+  "importedAt": "2026-09-23T15:58:18.931Z",
+  "docs": [
+    {
+      "agent": "study",
+      "title": "通达学院：比赛是否被认可、A/B/C/D类与参赛报备（2025修订）",
+      "source": "学校官网｜2025-03-24｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-3205-49c8-9183-27da40696e02",
+      "content": "2025年3月24日修订规定要求竞赛实行“一赛一报”，由承办二级学院在赛前向教务处（创新创业学院）报批；未经报备的竞赛不予认可，未经学院同意的竞赛不予资助和奖励。学生报名时先问承办学院该比赛是否已列入本年度目录并获批，不要仅凭比赛名称含“全国”判断学校认可。竞赛层级分国家级、省级、校级，A/B/C/D是另一套重要性分类，两者不能混同；具体类别查学校当年目录。原则上参加省级以上竞赛须经过校赛选拔，有预赛的赛事可替代校赛。承办单位负责组织报名、培训、成绩统计和总结；附件中的校级、省级及以上竞赛申请表是承办单位报批用表，不能当作每名学生的报名表。网页标题仍写“试行”，该页附件明确为2025修订版；2026或以后若有增补目录、调整通知应优先核对。\n来源：大学生创新创业竞赛管理规定（修订），院教发〔2025〕2号；页面日期：2025-03-24；核对日期：2026-09-23。\n原文：https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-3205-49c8-9183-27da40696e02",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/GZZD-xyzd/e7030a10-3205-49c8-9183-27da40696e02",
+        "sourceTitle": "大学生创新创业竞赛管理规定（修订），院教发〔2025〕2号",
+        "pageDate": "2025-03-24",
+        "documentVersion": "院教发〔2025〕2号，2025-03-24发布并实施",
+        "checkedAt": "2026-09-23",
+        "sourceFile": "work/innovation-details/policy1.html",
+        "method": "官网正文与PDF逐页核对",
+        "attachmentsRead": [
+          "work\\innovation-details\\policy1-0.pdf",
+          "work\\innovation-details\\policy1-1.png"
+        ],
+        "validity": "仅代表所列公开版本；具体适用年级、年度赛事目录及当期通知须同时核对，未电话核实"
+      },
+      "oldId": "d5e8a293-52d2-479a-9772-906227f632ad"
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：2022级起PU素拓学时、模块要求与申报办理",
+      "source": "学校官网｜2022-10-05｜https://jwc.nytdc.edu.cn/2022/1005/c514a31990/page.htm",
+      "content": "教务处公布的院团发〔2022〕11号明确从2022级本科生起实行：素质拓展共6学分，对应192实践学时；还须同时满足社会实践至少32、劳动教育32、志愿服务10、课外活动参与48学时。课外活动参与由PU按活动记录认定，其余类别在PU提交证明并选择对应部门审核，教务处最终审定。该版常规申报窗口为每学期开学后前两周，部门在第八周前审核；实际系统开放仍看当期通知。第八学期第五周前单项均达标且总学时达192计良好，达250计优秀；此后补足原则上计及格，成绩变动须本人申请、负责部门审核、教务处批准。专转本学生不作该项要求；2019—2021级按原办法，2017年前另按自主个性化办法。2017级起的旧版五模块规则不能直接用于2022级及以后；本人学籍异动或新版培养方案有差异时应由团委、教务处确认。\n来源：南京邮电大学通达学院学生素质拓展学分认定管理办法；页面日期：2022-10-05；核对日期：2026-09-23。\n原文：https://jwc.nytdc.edu.cn/2022/1005/c514a31990/page.htm",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://jwc.nytdc.edu.cn/2022/1005/c514a31990/page.htm",
+        "sourceTitle": "南京邮电大学通达学院学生素质拓展学分认定管理办法",
+        "pageDate": "2022-10-05",
+        "documentVersion": "院团发〔2022〕11号；从2022级本科生起实行",
+        "checkedAt": "2026-09-23",
+        "sourceFile": "work/innovation-details/credits-current.html",
+        "method": "官网正文与PDF逐页核对",
+        "attachmentsRead": [
+          "work\\innovation-details\\credits-current-0.pdf"
+        ],
+        "validity": "仅代表所列公开版本；具体适用年级、年度赛事目录及当期通知须同时核对，未电话核实"
+      },
+      "oldId": "ec8cfae1-f903-46d5-ba8d-5600cad48812"
+    },
+    {
+      "agent": "study",
+      "title": "通达学院：双创课程完整目录、负责部门和选课信息缺口",
+      "source": "学校官网｜未注日期｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc?PageIndex=2&CategoryCode=SCJY-sckc",
+      "content": "已核对双创课程两页目录及全部11个详情页。详情宣传图片对应的课程与单位为：初识机器人—电气工程学院；创新创业概论—商学院；创新创业竞赛指导与实践—通信工程学院；电子设计与创新基础A—电子工程学院；电子设计与创新基础B—电子工程学院；机器人技术—电气工程学院；机器人技术基础—电气工程学院；就业与创业指导—招生就业处；数学建模—基础教学部；算法竞赛入门—计算机工程学院；无人机技术—电气工程学院。11个详情页均标注2023年3月10日，正文只见课程名称和负责单位的宣传横幅，没有课程大纲、学分学时、先修条件、授课安排或报名方法。因此可以用本条找课程名称和咨询归口，不能回答为这些课2026秋季一定开设，也不能凭名称编写课程内容。想选某门课，请向对应单位核对当期教务选课通知、课程号和面向年级。\n来源：双创课程 | 创新创业信息门户系统；页面日期：未注明；核对日期：2026-09-23。\n原文：https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc?PageIndex=2&CategoryCode=SCJY-sckc\n对照来源：https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0624-4aa3-bf80-62ac5eee2f06；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0722-4b8f-a7fc-f8e62138b26d；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0821-448f-bb1c-077dbe6aa3bd；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-090a-45bd-ba01-974116ac8324；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0932-4c3b-954a-65efbc54fe7d；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0a18-4a2b-8127-44b4fd57ea89；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0a31-437e-b7f9-1e2308e3863b；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0b12-4e8b-97cc-9c3dc8c11345；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d01-4c70-80ad-e324bb1cc3dd；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d1a-4a02-95ec-0ec53fe56533；https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d30-4052-80ad-b06ffd6ab28f",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc?PageIndex=2&CategoryCode=SCJY-sckc",
+        "sourceTitle": "双创课程 | 创新创业信息门户系统",
+        "pageDate": null,
+        "documentVersion": "目录两页及11个2023-03-10课程详情快照",
+        "checkedAt": "2026-09-23",
+        "sourceFile": "work/innovation-details/course-page2.html",
+        "method": "两页目录、11个详情页和11幅正文横幅逐一核对",
+        "attachmentsRead": [
+          "work\\innovation-details\\course1-0.png",
+          "work\\innovation-details\\course2-0.png",
+          "work\\innovation-details\\course3-0.png",
+          "work\\innovation-details\\course4-0.png",
+          "work\\innovation-details\\course5-0.png",
+          "work\\innovation-details\\course6-0.png",
+          "work\\innovation-details\\course7-0.png",
+          "work\\innovation-details\\course8-0.png",
+          "work\\innovation-details\\course9-0.png",
+          "work\\innovation-details\\course10-0.png",
+          "work\\innovation-details\\course11-0.png"
+        ],
+        "validity": "仅代表所列公开版本；具体适用年级、年度赛事目录及当期通知须同时核对，未电话核实",
+        "supportingSources": [
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0624-4aa3-bf80-62ac5eee2f06",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course1.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0722-4b8f-a7fc-f8e62138b26d",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course2.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0821-448f-bb1c-077dbe6aa3bd",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course3.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-090a-45bd-ba01-974116ac8324",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course4.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0932-4c3b-954a-65efbc54fe7d",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course5.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0a18-4a2b-8127-44b4fd57ea89",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course6.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0a31-437e-b7f9-1e2308e3863b",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course7.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0b12-4e8b-97cc-9c3dc8c11345",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course8.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d01-4c70-80ad-e324bb1cc3dd",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course9.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d1a-4a02-95ec-0ec53fe56533",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course10.html"
+          },
+          {
+            "url": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/SCJY-sckc/e7030a0f-0d30-4052-80ad-b06ffd6ab28f",
+            "pageDate": "2023-03-10",
+            "sourceFile": "work/innovation-details/course11.html"
+          }
+        ]
+      },
+      "oldId": "4b1fe201-a6bd-451b-8326-fdf3a7cf5079"
+    }
+  ],
+  "imported": [
+    {
+      "id": "de21a72e-f71f-43f4-9661-450a3662181f",
+      "title": "通达学院：比赛是否被认可、A/B/C/D类与参赛报备（2025修订）",
+      "agent": "study"
+    },
+    {
+      "id": "c4211773-7263-48bb-adf5-70f77d37dd50",
+      "title": "通达学院：2022级起PU素拓学时、模块要求与申报办理",
+      "agent": "study"
+    },
+    {
+      "id": "1981a5d2-c2a6-4499-8f67-c0d998c5545a",
+      "title": "通达学院：双创课程完整目录、负责部门和选课信息缺口",
+      "agent": "study"
+    }
+  ],
+  "offlined": [],
+  "added": 3,
+  "totalDocs": 175,
+  "approvedByAgent": {
+    "life": 51,
+    "study": 31,
+    "affairs": 73,
+    "freshman": 0
+  },
+  "superseded": [
+    {
+      "oldId": "d5e8a293-52d2-479a-9772-906227f632ad",
+      "newId": "de21a72e-f71f-43f4-9661-450a3662181f",
+      "oldTitle": "通达学院：比赛认定、创新实践与竞赛奖励制度查询入口",
+      "title": "通达学院：比赛是否被认可、A/B/C/D类与参赛报备（2025修订）"
+    },
+    {
+      "oldId": "ec8cfae1-f903-46d5-ba8d-5600cad48812",
+      "newId": "c4211773-7263-48bb-adf5-70f77d37dd50",
+      "oldTitle": "通达学院：PU素质拓展学时如何申报（2017级起试行的旧版办法）",
+      "title": "通达学院：2022级起PU素拓学时、模块要求与申报办理"
+    },
+    {
+      "oldId": "4b1fe201-a6bd-451b-8326-fdf3a7cf5079",
+      "newId": "1981a5d2-c2a6-4499-8f67-c0d998c5545a",
+      "oldTitle": "通达学院：双创课程目录在哪里看",
+      "title": "通达学院：双创课程完整目录、负责部门和选课信息缺口"
+    }
+  ],
+  "supersededAt": "2026-09-23T15:58:19.895Z"
+}

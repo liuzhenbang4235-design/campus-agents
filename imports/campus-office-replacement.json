@@ -1,0 +1,44 @@
+{
+  "batch": "办公室双来源核对",
+  "importedAt": "2026-09-23T15:27:39.937Z",
+  "added": 1,
+  "docs": [
+    {
+      "oldId": "79bcee7d-417c-4d52-8bf8-ba85ae61e46f",
+      "agent": "affairs",
+      "title": "通达学院：创新创业学院办公室位置和电话（官网楼名待核对）",
+      "source": "学校官网双来源核对｜https://sczx.nytdc.edu.cn/xxmh/PublicColumn/XYGK-lxfs",
+      "content": "创新创业学院办公室的两个官方联系页面写法不同：教务处联系页写“扬州校区科创楼103室”，双创门户联系页写“扬州校区双创楼103室”；两页办公电话均为0514-89710017。双创门户另公布公共邮箱scxy@nytdc.edu.cn。两页都未标注更新时间，未确认“科创楼”和“双创楼”是否指同一栋楼，也没有现场或电话核实，因此不能据此给出确定楼栋导航。去办公室之前请用上述公共电话核对所在楼名、位置和接待时间。\n来源一：教务处联系页 https://jwc.nytdc.edu.cn/509/listm.htm\n来源二：创新创业门户联系方式 https://sczx.nytdc.edu.cn/xxmh/PublicColumn/XYGK-lxfs\n两页日期：均未标注；核对日期：2026-09-23。",
+      "verification": {
+        "official": true,
+        "sourceUrl": "https://sczx.nytdc.edu.cn/xxmh/PublicColumn/XYGK-lxfs",
+        "sourceTitle": "创新创业门户：联系方式",
+        "pageDate": null,
+        "checkedAt": "2026-09-23",
+        "method": "双创门户公开正文与现有已核验教务处来源条目交叉核对",
+        "sourceFile": "work/campus-broader/innovation-contact.html",
+        "supportingSources": [
+          {
+            "url": "https://jwc.nytdc.edu.cn/509/listm.htm",
+            "previousDocumentId": "79bcee7d-417c-4d52-8bf8-ba85ae61e46f",
+            "contentConfirmed": "扬州校区科创楼103室；0514-89710017"
+          }
+        ],
+        "validity": "保留官方来源差异，尚未确认是否同楼；本条待根任务替换原条目。"
+      },
+      "databaseOrAppChanged": false
+    }
+  ],
+  "imported": [
+    {
+      "id": "9d247166-4c69-4109-bd7e-f855d21d1bd1",
+      "title": "通达学院：创新创业学院办公室位置和电话（官网楼名待核对）",
+      "agent": "affairs"
+    }
+  ],
+  "replaced": {
+    "oldId": "79bcee7d-417c-4d52-8bf8-ba85ae61e46f",
+    "newId": "9d247166-4c69-4109-bd7e-f855d21d1bd1"
+  },
+  "reason": "两个官方页面楼名不同，保留差异；旧记录保留为下线状态。"
+}

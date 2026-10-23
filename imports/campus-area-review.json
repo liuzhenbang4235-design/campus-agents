@@ -1,0 +1,169 @@
+{
+  "checkedAt": "2026-09-23T18:14:08.822Z",
+  "rawFile": "work/campus-boundaries.json",
+  "notice": "仅按公开地图代表点与已采集校园边界推测位置归属；不代表官方校界、门禁或服务可用性。未匹配不等于校外。",
+  "matches": [
+    {
+      "id": "osm:node/9516645481",
+      "name": "教育超市",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9516645482",
+      "name": "菜鸟驿站",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9516645491",
+      "name": "菜鸟驿站",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9517034823",
+      "name": "朗月湖",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9517034824",
+      "name": "问月湖",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9517034825",
+      "name": "紫藤长廊",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9517035331",
+      "name": "扬州大学校徽",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9517190162",
+      "name": "烧仙草",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9518343044",
+      "name": "文体馆小剧场",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9518343045",
+      "name": "昭文馆报告厅",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9518474569",
+      "name": "扬子津汇文文印",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/9518509141",
+      "name": "快递中心",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:node/10207586538",
+      "name": "菜鸟驿站",
+      "hint": {
+        "name": "南京邮电大学通达学院",
+        "sourceUrl": "https://www.openstreetmap.org/way/1116025945",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:way/361850923",
+      "name": "第二食堂",
+      "hint": {
+        "name": "南京邮电大学通达学院",
+        "sourceUrl": "https://www.openstreetmap.org/way/1116025945",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:way/361850972",
+      "name": "第一食堂",
+      "hint": {
+        "name": "南京邮电大学通达学院",
+        "sourceUrl": "https://www.openstreetmap.org/way/1116025945",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:way/1032897386",
+      "name": "昭文馆",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:way/1032897406",
+      "name": "润园",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    },
+    {
+      "id": "osm:way/1032897451",
+      "name": "津园",
+      "hint": {
+        "name": "扬州大学扬子津校区",
+        "sourceUrl": "https://www.openstreetmap.org/way/1032915225",
+        "checkedAt": "2026-09-23T18:14:08.822Z"
+      }
+    }
+  ]
+}
