@@ -10,6 +10,22 @@
 @media(max-width:460px){.identity .avatar{display:none}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
+.nav-link.quiet{color:#9aa6c0;font-size:.875rem}
+.nav-link.quiet:hover,.nav-link.quiet.active{color:#fff}
+.nav-link.nav-section{margin-top:18px}
+.sidebar-note{font-size:.8rem;color:#95a5c5;margin:0;line-height:1.55}
+.more-menu{position:relative}
+.more-menu summary{list-style:none;cursor:pointer;border:1px solid var(--line);background:#fafbfe;border-radius:8px;padding:6px 12px;font-size:.8125rem;color:var(--muted);font-weight:600}
+.more-menu summary::-webkit-details-marker{display:none}
+.more-panel{position:absolute;right:0;top:calc(100% + 8px);z-index:30;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;min-width:232px;box-shadow:0 16px 40px #1624541f;display:flex;flex-direction:column;gap:10px;align-items:stretch}
+.more-panel .btn{width:100%}
+.more-label{font-size:.75rem;color:var(--muted);margin:0}
+.more-panel select,.student-identity select{max-width:none;width:100%}
+.identity .btn.text{padding:6px 2px}
+.chat-layout.solo{grid-template-columns:minmax(0,1fr)}
+.chat-layout.solo .message{max-width:min(720px,100%)}
+.brand small{letter-spacing:.04em;font-size:.8rem}
+
 .city-discovery{background:#f1faf6;border:1px solid #d4e9df;border-radius:12px;padding:18px 22px;margin-bottom:22px;display:flex;flex-direction:column;gap:12px}.city-map{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.city-map input{min-width:0;flex:1;border:1px solid #c9ddd4;border-radius:7px;padding:8px 10px;max-width:380px}.resource-list{max-height:520px;overflow-y:auto;overflow-wrap:anywhere}.source-links{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.source-links a{color:var(--blue)}
 @media(max-width:520px){.city-map{align-items:stretch}.city-map label{width:100%}.city-map input{width:100%}.city-discovery{padding:16px}}
 
