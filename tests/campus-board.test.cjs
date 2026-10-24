@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),vm=require('node:vm');
 const {createApp}=require('../lib/backend.cjs');
 const {createBoard}=require('../lib/campus-board.cjs');
 
@@ -168,4 +168,50 @@ test('互助通达 replaces 校园信息 in the student UI',()=>{
  assert.match(app,/board-accept/);
  assert.doesNotMatch(app,/data-action="board-contact"|action==='board-contact'/);
  assert.match(app,/board-suggest/);
+ assert.doesNotMatch(app,/MUTUAL AID|CAMPUS AGENTS|本地资料问答|我同意将当前问题|和信息发出者聊聊|cloud-consent/);
+});
+
+test('student shell hides staff tools, consent checkbox and knowledge sidebar',()=>{
+ const document={addEventListener(){},getElementById(){return {innerHTML:'',classList:{add(){},remove(){}},setAttribute(){},scrollTop:0}},querySelectorAll(){return []}};
+ const location={hash:'',origin:'http://127.0.0.1:4173'};
+ const ctx=vm.createContext({document,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location,history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}}});
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8')+`
+currentProfile='student';
+account=null;
+ai={ready:true,verified:true,provider:'doubao',enabled:true,hasKey:true,model:'ep-demo',dailyLimit:50,usedToday:0,configIssue:''};
+state={version:2,agents:[{id:'affairs',name:'校园办事助手',status:'published',team:'t1',category:'学校事务',description:'办事',rules:'只依据资料',icon:'brief',color:''}],docs:[{id:'d1',title:'学生证补办',status:'approved',agent:'affairs',owner:'student',source:'学生工作处',date:'2026-09-23',content:'c',chunkCount:1}],audit:[],chats:{}};
+location.hash='';
+globalThis.__page=route().page;
+globalThis.__home=shell(boardPage());
+location.hash='#chat/affairs';
+globalThis.__chat=shell(chat());
+currentProfile='team';
+location.hash='#team';
+globalThis.__team=shell(team());
+currentProfile='admin';
+location.hash='#chat/affairs';
+globalThis.__adminChat=shell(chat());
+location.hash='#admin';
+globalThis.__admin=shell('<div></div>');
+`,ctx);
+ assert.equal(ctx.__page,'board');
+ const home=ctx.__home;
+ assert.match(home,/互助通达/);
+ assert.match(home,/找助手/);
+ assert.match(home,/学号登录/);
+ assert.match(home,/more-menu/);
+ assert.doesNotMatch(home,/团队工作台|审核管理|重置演示数据|本地资料问答|CAMPUS AGENTS|MUTUAL AID/);
+ assert.doesNotMatch(home,/<label for="profile">演示身份<\/label>/);
+ const chat=ctx.__chat;
+ assert.match(chat,/chat-layout solo/);
+ assert.doesNotMatch(chat,/cloud-consent|已审核知识库|火山方舟|我同意将当前问题/);
+ assert.match(chat,/id="chat-form"/);
+ const team=ctx.__team;
+ assert.match(team,/团队工作台/);
+ assert.match(team,/审核管理/);
+ assert.doesNotMatch(team,/重置演示数据/);
+ assert.match(ctx.__admin,/重置演示数据/);
+ assert.match(ctx.__admin,/审核管理/);
+ assert.match(ctx.__adminChat,/已审核知识库/);
+ assert.doesNotMatch(ctx.__adminChat,/cloud-consent/);
 });
