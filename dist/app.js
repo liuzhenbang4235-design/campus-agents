@@ -29,7 +29,7 @@ function formatBubble(text){
 }
 function sourceMarkup(s){
  if(s.sourceType==='campus_board'){
-  return '<button class="source-btn" data-action="board-offer" data-id="'+esc(s.listingId)+'" data-title="'+esc(s.rawTitle||s.title||'同学登记')+'" data-owner="'+esc(s.ownerName||'')+'" data-type="'+esc(s.type||'')+'" data-expires="'+esc(s.expiresAt||'')+'">['+s.citation+'] '+esc(s.title||'同学登记')+' · 是否开聊</button>';
+  return '<button class="source-btn" data-action="board-offer" data-id="'+esc(s.listingId)+'" data-title="'+esc(s.display||s.rawTitle||s.title||'同学登记')+'" data-owner="'+esc(s.ownerName||'')+'" data-type="'+esc(s.type||'')+'" data-expires="'+esc(s.windowText||s.expiresAt||'')+'">['+s.citation+'] '+esc(s.title||'同学登记')+' · 是否开聊</button>';
  }
  if(s.sourceType==='map'){
   let url;try{url=new URL(s.sourceUrl);if(url.protocol!=='https:'||!((url.hostname==='uri.amap.com'&&url.pathname==='/search')||(url.hostname==='www.openstreetmap.org'&&/^\/(node|way|relation)\/\d+$/.test(url.pathname)))||url.username||url.password)return ''}catch{return ''}
@@ -55,8 +55,8 @@ const AI_PROVIDERS={
 let draftProvider='qwen',draftConfig={model:'',dailyLimit:'',enabled:false};
 const providerMeta=id=>AI_PROVIDERS[id]||AI_PROVIDERS.qwen;
 const providerShort=()=>providerMeta(ai.provider).short;
-function aiConfigLabel(){const s=providerShort();return ai.configIssue?'配置需修正':ai.verified?s+'已连接':ai.ready?s+'待验证':'配置模型'}
-function aiStatusNote(){const s=providerShort();return ai.configIssue?'模型 ID 需修正':ai.verified?s+'已连接':ai.ready?'配置待验证':'模型待配置'}
+function aiConfigLabel(){const s=providerShort();return ai.configIssue?'配置需修正':ai.verified?s+'已连接':ai.ready?s+'已配置':'配置模型'}
+function aiStatusNote(){const s=providerShort();return ai.configIssue?'模型 ID 需修正':ai.verified?s+'已连接':ai.ready?s+'已配置':'模型待配置'}
 
 let state={version:2,agents:[],docs:[],audit:[],chats:{},account:null};
 let account=null,boardListings=[],boardBusy=false,boardNeedsRefresh=true,dmListingId=null,boardQuestion='',boardAnswer=null,boardAsking=false,boardPublishOpen=false;
@@ -110,26 +110,41 @@ function shell(content){
 }
 function heading(eye,title,sub,action=''){return `<div class="page-heading"><div>${eye?`<div class="eyebrow">${eye}</div>`:''}<h1>${title}</h1><p>${sub}</p></div>${action}</div>`}
 function gallery(){const items=state.agents.filter(a=>a.status==='published'&&(category==='全部'||a.category===category)&&(!query||[a.name,a.description,teamName(a.team)].some(v=>v.includes(query))));return `${heading('','你的校园问题，从这里开始','挑一个校园助手，直接问就行。',`<button class="btn" data-action="nav" data-page="upload">${icon('plus')}贡献一份资料</button>`)}<section class="hero"><div class="hero-main"><div class="eyebrow">本周推荐 · 学校事务</div><h2>办事前，先问问校园办事助手</h2><p>准备哪些材料、下一步怎么做？<br>从有来源的资料中，找到清楚的答案。</p><button class="btn" data-action="chat" data-id="affairs">开始对话 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>团队共创<small>每个助手都有维护团队</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section><div class="toolbar"><div class="chips" role="group" aria-label="助手分类">${['全部','校园生活','学习资料','学校事务'].map(c=>`<button class="chip ${category===c?'active':''}" data-action="category" data-value="${c}">${c==='全部'?'全部助手':c}</button>`).join('')}</div><label class="search">${icon('search')}<input id="search" aria-label="搜索助手或团队" placeholder="搜索助手或团队" value="${esc(query)}"></label></div><div class="section-heading"><h2>发现校园助手</h2><span>${items.length} 个已上线助手</span></div><div class="cards">${items.map(a=>`<article class="agent-card"><div class="card-top"><div class="agent-icon ${a.color}">${icon(a.icon)}</div><span class="tag green">已审核上线</span></div><h3>${esc(a.name)}</h3><p>${esc(a.description)}</p><div><span class="tag">${a.category}</span></div><div class="team-line">${icon('team')}${teamName(a.team)}</div><div class="card-foot"><small>${state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length} 份已审核资料</small><button class="btn text small" data-action="chat" data-id="${a.id}">开始对话 ${icon('arrow')}</button></div></article>`).join('')}</div>${!items.length?'<div class="empty"><p>没有找到相关助手，试试其他分类或关键词。</p></div>':''}<div class="bottom-note"><span>${icon('shield')} 回答会标出来源</span><span>${isStudent()?'公开资料会注明出处':'公开资料与演示资料均有标注 · '+aiStatusNote()}</span></div>`}
+function clockInputValue(ms){
+ try{
+  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(ms)).filter(p=>p.type!=='literal').map(p=>[p.type,p.value]));
+  return parts.year+'-'+parts.month+'-'+parts.day+'T'+parts.hour+':'+parts.minute;
+ }catch(e){
+  const d=new Date(ms+8*3600000),p=n=>String(n).padStart(2,'0');
+  return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes());
+ }
+}
+function listingHeadline(l){return l.display||[l.type,l.title].filter(Boolean).join(' · ')||l.type||'同学登记'}
+function listingWhen(l){return l.windowText||(l.longTerm?'长期':(l.expiresAt?'有效至 '+String(l.expiresAt).slice(0,16).replace('T',' '):''))}
+function roleTag(role){return role==='offer'?'我来帮忙':role==='need'?'我需要':''}
 function boardPage(){
  const logged=!!account;
  const mine=(Array.isArray(boardListings)?boardListings:[]).filter(l=>logged&&l.ownerStudentId===account.studentId);
  const answer=boardAnswer;
- const suggestions=['今天下午有没有人代取快递？','有没有人收高数教材？','有没有代购？'];
- return heading('','互助通达','直接用一句话问就行。例如有没有代购、代取快递，或有没有人收高数教材。')+
- '<section class="panel board-ask"><h2>想找同学帮忙？直接问</h2><p class="hint">互助通达会在同学登记里找还在有效期内、时间也对得上的信息。不用自己翻列表。</p>'+
- '<form id="board-ask-form"><textarea name="question" aria-label="向互助通达提问" required maxlength="500" rows="3" placeholder="例如：今天下午有没有人代取快递？有没有人收高数教材？">'+esc(boardQuestion)+'</textarea>'+
+ const suggestions=['今天下午有没有人代取快递？','谁能接一下陪诊？','有没有人出闲置显示器？'];
+ const startAt=clockInputValue(Date.now()),endAt=clockInputValue(Date.now()+2*3600000);
+ return heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
+ '<section class="panel board-ask"><h2>想找同学，或看看谁在接活？直接问</h2><p class="hint">互助通达按意思去对同学登记，不限固定类别。只会用正处在生效时段里的信息。「接……」表示对方来帮忙。</p>'+
+ '<form id="board-ask-form"><textarea name="question" aria-label="向互助通达提问" required maxlength="500" rows="3" placeholder="例如：今天下午有没有人代取快递？谁能接一下陪诊？有没有人出闲置显示器？">'+esc(boardQuestion)+'</textarea>'+
  '<div class="board-ask-bar"><div class="board-chips">'+suggestions.map(s=>'<button type="button" data-action="board-suggest" data-value="'+esc(s)+'">'+esc(s)+'</button>').join('')+'</div>'+
  '<button class="btn primary" type="submit"'+(boardAsking?' disabled':'')+'>'+(boardAsking?'正在查找…':'提问')+'</button></div></form>'+
- (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>':'<div class="empty" style="margin-top:16px"><p>还没提问。在上面输入你想找的帮助，例如代购、代取快递或收教材。</p></div>')+
+ (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>':'<div class="empty" style="margin-top:16px"><p>还没提问。想找人帮忙，或看看谁在接活，直接写在上面。</p></div>')+
  '</section>'+
  '<details class="panel board-publish" id="board-publish"'+(boardPublishOpen?' open':'')+'><summary>登记一条互助信息</summary>'+
- '<p class="small muted">这是补充登记的入口，方便同学继续往互助通达里放数据。找人帮忙请用上面的提问框。发布需要学号登录。</p>'+
+ '<p class="small muted">登记你能提供的帮助，或你的需求。类型自己写。「接……」表示你来做这件事。发布需要学号登录。</p>'+
  (logged
   ?('<p class="muted small" style="margin:12px 0">当前学号：'+esc(account.studentId)+(account.displayName?' · '+esc(account.displayName):'')+'</p>'+
-    '<form id="board-form"><div class="form-grid"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><select id="board-type" name="type" required><option>代课</option><option>代购</option><option>二手书</option><option>其他</option></select></div><div class="field"><label for="board-days">有效期</label><select id="board-days" name="days"><option value="3">3 天</option><option value="7" selected>7 天</option><option value="14">14 天</option></select></div></div><div class="field"><label for="board-title">标题 <span class="required">*</span></label><input id="board-title" name="title" required maxlength="60" placeholder="例如：出一套高数教材"></div><div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清能帮忙的时间，例如今天下午、周三晚上。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开） <span class="required">*</span></label><input id="board-contact" name="contact" required maxlength="80" placeholder="例如 QQ / 微信 / 手机号"></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
+    '<form id="board-form"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><input id="board-type" name="type" type="text" required maxlength="30" placeholder="自己写，例如：代取快递、陪诊、出闲置、接摄影"></div>'+
+    '<fieldset class="alarm-window"><legend>'+icon('clock')+' 生效时段</legend><label class="check alarm-long"><input id="board-long" name="longTerm" type="checkbox"><span>长期有效，直到我下架</span></label><div class="alarm-range" id="board-range"><div class="alarm-face" aria-hidden="true"></div><div class="field"><label for="board-start">开始（北京时间）</label><input id="board-start" name="windowStart" type="datetime-local" required value="'+esc(startAt)+'"></div><div class="field alarm-end"><label for="board-end">结束（北京时间）</label><input id="board-end" name="windowEnd" type="datetime-local" required value="'+esc(endAt)+'"></div><p class="small muted alarm-note">像设闹钟一样，写清这段互助从何时到何时有效。超过 90 天请改选长期。</p></div></fieldset>'+
+    '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开） <span class="required">*</span></label><input id="board-contact" name="contact" required maxlength="80" placeholder="例如 QQ / 微信 / 手机号"></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
     '<h3 style="margin-top:8px">我的有效登记 <span class="count">'+mine.length+'</span></h3>'+
-    (mine.length?mine.map(l=>'<article class="record"><div><p><span class="tag blue">'+esc(l.type)+'</span> '+esc(l.title)+'</p><small>'+esc(l.description)+'</small><small>有效至 '+esc(String(l.expiresAt||'').slice(0,10))+'</small><div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">下架</button></div></div></article>').join(''):'<p class="small muted">你还没有有效登记。</p>'))
-  :('<form id="auth-form"><div class="field"><label for="auth-id">学号</label><input id="auth-id" name="studentId" required pattern="\\d{8,12}" maxlength="12" placeholder="8—12 位数字学号"></div><div class="field"><label for="auth-name">昵称（注册时可选）</label><input id="auth-name" name="displayName" maxlength="20" placeholder="例如：小陈"></div><div class="field"><label for="auth-pass">密码</label><input id="auth-pass" name="password" type="password" required minlength="6" maxlength="72" autocomplete="new-password"></div><div class="actions"><button class="btn primary" type="submit" data-auth="login">登录</button><button class="btn" type="submit" data-auth="register">注册学号账号</button></div><p class="small muted" style="margin-top:12px">提问不用登录。登记和开聊需要学号账号。</p></form>'))+
+    (mine.length?mine.map(l=>'<article class="record"><div><p><span class="tag blue">'+esc(l.type)+'</span> '+(roleTag(l.role)?'<span class="tag">'+esc(roleTag(l.role))+'</span> ':'')+esc(listingHeadline(l))+'</p><small>'+esc(l.description)+'</small><small>'+esc(listingWhen(l))+'</small><div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">下架</button></div></div></article>').join(''):'<p class="small muted">你还没有正在生效的登记。</p>'))
+  :('<form id="auth-form"><div class="field"><label for="auth-id">学号</label><input id="auth-id" name="studentId" required pattern="\\d{8}" maxlength="8" minlength="8" inputmode="numeric" placeholder="8 位数字学号"></div><div class="field"><label for="auth-name">昵称（注册时可选）</label><input id="auth-name" name="displayName" maxlength="20" placeholder="例如：小陈"></div><div class="field"><label for="auth-pass">密码</label><input id="auth-pass" name="password" type="password" required minlength="6" maxlength="72" autocomplete="new-password"></div><div class="actions"><button class="btn primary" type="submit" data-auth="login">登录</button><button class="btn" type="submit" data-auth="register">注册学号账号</button></div><p class="small muted" style="margin-top:12px">提问不用登录。登记和开聊需要 8 位学号。</p></form>'))+
  '</details>';
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}
@@ -141,7 +156,7 @@ function team(){if(me().role!=='team')return guard('team');const agents=state.ag
 function chatBanner(){
  if(ai.configIssue)return esc(ai.configIssue);
  if(!ai.ready)return '还没接上云端模型，也可以查已有资料和周边地点。';
- return (ai.verified?providerShort()+'已接上。':'模型已保存，还没验证连接。')+'直接提问就行，有依据时会标出来源。';
+ return (ai.verified?providerShort()+'已接上。':providerShort()+'已配置。')+'直接提问就行，有依据时会标出来源。';
 }
 function chatAside(a,docs){
  if(isStudent())return '';
@@ -170,10 +185,10 @@ function openOfferModal(offers){
  const list=Array.isArray(offers)?offers.filter(o=>o&&o.listingId):[];
  if(!list.length)return;
  const one=list.length===1;
- const cards=list.map(o=>'<article class="offer-card"><p><span class="tag blue">'+esc(o.type||'互助')+'</span> '+esc(o.title||'')+'</p><small class="muted">'+esc(o.ownerName||'登记同学')+(o.expiresAt?' · 有效至 '+esc(String(o.expiresAt).slice(0,10)):'')+'</small>'+(one?'':'<div class="modal-actions"><button class="btn primary" type="button" data-action="board-accept" data-id="'+esc(o.listingId)+'">同意开聊</button></div>')+'</article>').join('');
+ const cards=list.map(o=>'<article class="offer-card"><p><span class="tag blue">'+esc(o.type||'互助')+'</span> '+(roleTag(o.role)?'<span class="tag">'+esc(roleTag(o.role))+'</span> ':'')+esc(listingHeadline(o))+'</p><small class="muted">'+esc(o.ownerName||'登记同学')+(listingWhen(o)?' · '+esc(listingWhen(o)):'')+'</small>'+(one?'':'<div class="modal-actions"><button class="btn primary" type="button" data-action="board-accept" data-id="'+esc(o.listingId)+'">同意开聊</button></div>')+'</article>').join('');
  const lead=one
-  ?'<p>找到同学「'+esc(list[0].ownerName||'登记同学')+'」登记的「'+esc(list[0].title||'')+'」。同意后打开一对一对话；考虑一下就留在当前结果，不会建聊。</p>'
-  :'<p>找到 '+list.length+' 条时间对得上的登记。选一位开聊，或先考虑一下（不会建聊）。</p>';
+  ?'<p>找到同学「'+esc(list[0].ownerName||'登记同学')+'」登记的「'+esc(listingHeadline(list[0]))+'」。同意后打开一对一对话；考虑一下就留在当前结果，不会建聊。</p>'
+  :'<p>找到 '+list.length+' 条意思和时间对得上的登记。选一位开聊，或先考虑一下（不会建聊）。</p>';
  const actions=one
   ?'<div class="modal-actions"><button class="btn primary" type="button" data-action="board-accept" data-id="'+esc(list[0].listingId)+'">同意开聊</button><button class="btn" type="button" data-action="board-decline">考虑一下</button></div>'
   :'<div class="modal-actions"><button class="btn" type="button" data-action="board-decline">考虑一下</button></div>';
@@ -195,7 +210,7 @@ async function askBoard(question){
 function openDmModal(data,listingId){
  dmListingId=listingId;
  const msgs=(data.messages||[]).map(m=>'<div class="message '+(account&&m.from===account.studentId?'user':'')+'"><div class="bubble">'+esc(m.text)+'<br><small>'+esc(String(m.time||'').replace('T',' ').slice(0,16))+'</small></div></div>').join('');
- modal('与 '+esc(data.peer?.displayName||'登记同学')+' 交流','<p class="small muted" style="margin-bottom:12px">关于：'+esc(data.listing?.title||'')+' · 对方联系方式：'+esc(data.listing?.contact||'未填写')+'</p><div class="messages" style="min-height:180px;max-height:280px;border:1px solid var(--line);border-radius:10px;margin-bottom:12px">'+(msgs||'<div class="empty"><p>还没有消息，打个招呼吧。</p></div>')+'</div><form id="dm-form" data-id="'+esc(listingId)+'"><div class="field"><label for="dm-text">消息</label><textarea id="dm-text" name="text" required maxlength="500" rows="3" placeholder="礼貌说明来意"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">关闭</button><button class="btn primary" type="submit">发送</button></div></form>');
+ modal('与 '+esc(data.peer?.displayName||'登记同学')+' 交流','<p class="small muted" style="margin-bottom:12px">关于：'+esc(listingHeadline(data.listing||{}))+' · '+esc(listingWhen(data.listing||{}))+' · 对方联系方式：'+esc(data.listing?.contact||'未填写')+'</p><div class="messages" style="min-height:180px;max-height:280px;border:1px solid var(--line);border-radius:10px;margin-bottom:12px">'+(msgs||'<div class="empty"><p>还没有消息，打个招呼吧。</p></div>')+'</div><form id="dm-form" data-id="'+esc(listingId)+'"><div class="field"><label for="dm-text">消息</label><textarea id="dm-text" name="text" required maxlength="500" rows="3" placeholder="礼貌说明来意"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">关闭</button><button class="btn primary" type="submit">发送</button></div></form>');
 }
 function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=`${titles[r.page]} · 校集`;document.getElementById('app').innerHTML=shell(({gallery,board:boardPage,upload,team,chat,admin}[r.page])());if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy()}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
@@ -229,7 +244,12 @@ function configDialog(keepDraft){
  if(!keepDraft){draftProvider=AI_PROVIDERS[ai.provider]?ai.provider:'qwen';draftConfig={model:ai.model||'',dailyLimit:String(ai.dailyLimit||50),enabled:ai.enabled===true}}
  const p=providerMeta(draftProvider);
  const chips=Object.values(AI_PROVIDERS).map(x=>`<button type="button" class="chip ${draftProvider===x.id?'active':''}" data-action="config-provider" data-value="${x.id}">${x.short}${ai.keys?.[x.id]?' <small>已存 Key</small>':''}</button>`).join('');
- modal('接入'+p.name,`<form id="config-form"><input type="hidden" name="provider" value="${p.id}"><p class="small muted">密钥仅交给本机后台保存，不返回到网页。每家服务商单独保存自己的密钥，留空保留当前所选那家的密钥。</p><div class="field"><label>选择模型服务</label><div class="chips" role="group" aria-label="模型服务">${chips}</div></div><div class="inline-notice">${esc(p.notice)}</div><div class="field"><label for="model-id">模型 ID</label><input id="model-id" name="model" maxlength="150" value="${esc(draftConfig.model)}" placeholder="${esc(p.placeholder)}"><small>${esc(p.hint)}</small></div><div class="field"><label for="api-key">${esc(p.short)} API Key</label><input id="api-key" name="apiKey" type="password" autocomplete="new-password" maxlength="1000" placeholder="${ai.keys?.[p.id]?'已保存'+esc(p.short)+'密钥，留空保留':'仅在这里输入，不要发到聊天里'}"></div><div class="field"><label for="daily-limit">本机每日最多调用次数</label><input id="daily-limit" name="dailyLimit" type="number" min="1" max="500" value="${esc(draftConfig.dailyLimit||'50')}" required></div><label class="check"><input name="enabled" type="checkbox" ${draftConfig.enabled?'checked':''}>启用云端 AI（不勾选时只使用本地检索）</label><label class="check"><input name="consent" type="checkbox">我确认启用后，问题、助手规则及相关资料片段将发送至${esc(p.vendor)}；已检查免费额度与计费设置。</label><label class="check"><input name="clearKey" type="checkbox">清除已保存的${esc(p.short)}密钥</label><p class="small"><a href="${esc(p.console)}" target="_blank" rel="noopener noreferrer">${esc(p.consoleLabel)} ↗</a> · <a href="${esc(p.docs)}" target="_blank" rel="noopener noreferrer">${esc(p.docsLabel)} ↗</a></p><p class="small muted" style="margin-top:10px">仅保存配置，不自动发送测试请求。启用后，可在校园办事助手中提问验证。</p><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn primary" type="submit">保存配置</button></div><p id="config-error" class="reason hidden" role="alert"></p></form>`);
+ const savedKeep=draftConfig.enabled&&ai.keys?.[p.id]===true;
+ const consentCopy='我确认启用后，问题、助手规则及相关资料片段将发送至'+esc(p.vendor)+'；已检查免费额度与计费设置。';
+ const consentField=savedKeep
+  ?'<p class="small muted" id="saved-key-note">已保存密钥，继续使用无需重填</p><label class="check hidden" id="config-consent"><input name="consent" type="checkbox">'+consentCopy+'</label>'
+  :'<label class="check" id="config-consent"><input name="consent" type="checkbox">'+consentCopy+'</label>';
+ modal('接入'+p.name,`<form id="config-form"><input type="hidden" name="provider" value="${p.id}"><p class="small muted">密钥仅交给本机后台保存，不返回到网页。每家服务商单独保存自己的密钥，留空保留当前所选那家的密钥。</p><div class="field"><label>选择模型服务</label><div class="chips" role="group" aria-label="模型服务">${chips}</div></div><div class="inline-notice">${esc(p.notice)}</div><div class="field"><label for="model-id">模型 ID</label><input id="model-id" name="model" maxlength="150" value="${esc(draftConfig.model)}" placeholder="${esc(p.placeholder)}"><small>${esc(p.hint)}</small></div><div class="field"><label for="api-key">${esc(p.short)} API Key</label><input id="api-key" name="apiKey" type="password" autocomplete="new-password" maxlength="1000" placeholder="${ai.keys?.[p.id]?'已保存'+esc(p.short)+'密钥，留空保留':'仅在这里输入，不要发到聊天里'}"></div><div class="field"><label for="daily-limit">本机每日最多调用次数</label><input id="daily-limit" name="dailyLimit" type="number" min="1" max="500" value="${esc(draftConfig.dailyLimit||'50')}" required></div><label class="check"><input name="enabled" type="checkbox" ${draftConfig.enabled?'checked':''}>启用云端 AI（不勾选时只使用本地检索）</label>${consentField}<label class="check"><input name="clearKey" type="checkbox">清除已保存的${esc(p.short)}密钥</label><p class="small"><a href="${esc(p.console)}" target="_blank" rel="noopener noreferrer">${esc(p.consoleLabel)} ↗</a> · <a href="${esc(p.docs)}" target="_blank" rel="noopener noreferrer">${esc(p.docsLabel)} ↗</a></p><p class="small muted" style="margin-top:10px">仅保存配置，不自动发送测试请求。启用后，可在校园办事助手中提问验证。</p><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn primary" type="submit">保存配置</button></div><p id="config-error" class="reason hidden" role="alert"></p></form>`);
 }
 document.addEventListener('change',async e=>{
  if(e.target.id==='profile')return switchProfile(e.target.value);
@@ -271,7 +291,7 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='suggest')return sendChat(a.value);
  if(a.action==='board-suggest')return askBoard(a.value);
  if(a.action==='board-reoffer'){if(boardAnswer?.offers?.length)openOfferModal(boardAnswer.offers);return}
- if(a.action==='board-offer'){openOfferModal([{listingId:a.id,title:a.title,ownerName:a.owner,type:a.type,expiresAt:a.expires}]);return}
+ if(a.action==='board-offer'){openOfferModal([{listingId:a.id,title:a.title,display:a.title,ownerName:a.owner,type:a.type,windowText:a.expires}]);return}
  if(a.action==='board-accept'){
   if(!account){closeModal();boardPublishOpen=true;if(route().page!=='board')go('board');else render();return toast('请先用学号登录，再和对方开聊。')}
   try{const data=await api('board/open',{listingId:a.id});openDmModal(data.thread,a.id)}catch(err){toast(err.message)}
@@ -300,7 +320,10 @@ document.addEventListener('submit',async e=>{
   return;
  }
  if(f.id==='board-form'){
-  try{applyResult(await api('board/create',{type:get('type'),title:get('title'),description:get('description'),contact:get('contact'),days:Number(get('days')||7)}));toast('已登记，有效期内可被互助通达匹配');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
+  const longTerm=fd.has('longTerm');
+  if(account&&!/^\d{8}$/.test(account.studentId||''))return toast('学号应为 8 位数字。');
+  if(!longTerm&&(!get('windowStart')||!get('windowEnd')))return toast('请设定生效时段，或勾选长期。');
+  try{applyResult(await api('board/create',{type:get('type'),description:get('description'),contact:get('contact'),longTerm,windowStart:get('windowStart'),windowEnd:longTerm?'':get('windowEnd')}));toast(longTerm?'已登记，长期有效，直到你下架':'已登记，只会在设定的时段内被匹配');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
   return;
  }
  if(f.id==='dm-form'){
@@ -311,7 +334,7 @@ document.addEventListener('submit',async e=>{
  if(f.id==='places-config-form')return savePlacesForm(f);
  if(f.id==='config-form'){
   const b=f.querySelector('button[type=submit]');b.disabled=true;
-  try{applyResult(await api('config',{provider:get('provider')||draftProvider,model:get('model'),apiKey:get('apiKey'),dailyLimit:Number(get('dailyLimit')),enabled:fd.has('enabled'),consent:fd.has('consent'),clearKey:fd.has('clearKey')}));chatError='';f.elements.apiKey.value='';closeModal();render();toast(ai.ready?providerShort()+'配置已保存，尚未验证连接。请提问测试。':'配置已保存，目前仅使用本地检索。')}
+  try{applyResult(await api('config',{provider:get('provider')||draftProvider,model:get('model'),apiKey:get('apiKey'),dailyLimit:Number(get('dailyLimit')),enabled:fd.has('enabled'),consent:fd.has('consent'),clearKey:fd.has('clearKey')}));chatError='';f.elements.apiKey.value='';closeModal();render();toast(ai.ready?providerShort()+'已配置，可以直接提问。':'配置已保存，目前仅使用本地检索。')}
   catch(error){const notice=document.getElementById('config-error');notice.textContent=error.message;notice.classList.remove('hidden');b.disabled=false}return;
  }
  if(f.id==='upload-form')return perform({action:'upload',title:get('title'),agent:get('agent'),source:get('source'),sourceUrl:get('sourceUrl'),publishedAt:get('publishedAt'),collectedAt:get('collectedAt'),sourceKind:get('sourceKind'),content:get('content'),filename:f.querySelector('input[type=file]').files[0]?.name||'',cloudAllowed:fd.has('consent')},'已提交到本机后台，等待审核。');
@@ -323,9 +346,29 @@ document.addEventListener('keydown',e=>{if((e.target.matches('#chat-form textare
 function searchInput(e){
  if(e.target.id!=='search'||e.isComposing)return;const pos=e.target.selectionStart;query=e.target.value;render();const el=document.getElementById('search');el.focus();el.setSelectionRange(pos,pos)
 }
-document.addEventListener('input',e=>{if(e.target.id==='city-keyword')document.getElementById('city-map-link').href=cityMapUrl(e.target.value);if(e.target.matches?.('#board-ask-form textarea'))boardQuestion=e.target.value});
+document.addEventListener('input',e=>{
+ if(e.target.id==='city-keyword')document.getElementById('city-map-link').href=cityMapUrl(e.target.value);
+ if(e.target.matches?.('#board-ask-form textarea'))boardQuestion=e.target.value;
+ if(e.target.id==='api-key'){
+  const box=document.getElementById('config-consent'),note=document.getElementById('saved-key-note');
+  if(!box||!note)return;
+  const typed=String(e.target.value||'').trim();
+  const input=box.querySelector('input');
+  if(typed){box.classList.remove('hidden');note.classList.add('hidden');if(input)input.checked=false}
+  else{box.classList.add('hidden');note.classList.remove('hidden');if(input)input.checked=false}
+ }
+});
 document.addEventListener('input',searchInput);document.addEventListener('compositionend',searchInput);
 document.addEventListener('toggle',e=>{if(e.target.id==='board-publish')boardPublishOpen=e.target.open},true);
+document.addEventListener('change',e=>{
+ if(e.target.id!=='board-long')return;
+ const on=e.target.checked;
+ const range=document.getElementById('board-range');
+ if(range)range.classList.toggle('is-long',on);
+ const start=document.getElementById('board-start'),end=document.getElementById('board-end');
+ if(start)start.required=!on;
+ if(end)end.required=!on;
+});
 window.addEventListener('hashchange',()=>{if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'list_campus_agents',title:'查看已上线校园助手',description:'只读列出当前本地平台已上线的助手与已审核资料数。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute(input){if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('不接受参数');return state.agents.filter(a=>a.status==='published').map(a=>({id:a.id,name:a.name,documents:state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length}))}},{signal:lifecycle.signal})).catch(()=>{})}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})}

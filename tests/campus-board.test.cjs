@@ -4,6 +4,11 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),vm=require('node:vm');
 const {createApp}=require('../lib/backend.cjs');
 const {createBoard}=require('../lib/campus-board.cjs');
+const {generate}=require('../lib/provider.cjs');
+
+function windowFields(days=7,now=Date.now()){
+ return {windowStart:new Date(now-60*1000).toISOString(),windowEnd:new Date(now+days*86400000).toISOString()};
+}
 
 async function setup(t){
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-board-test-'));
@@ -23,6 +28,8 @@ async function setup(t){
 test('studentId register and login failures',async t=>{
  const {request}=await setup(t);
  assert.equal((await request('auth/register',{studentId:'abc',password:'secret1'})).status,400);
+ assert.equal((await request('auth/register',{studentId:'2021000',password:'secret1'})).status,400);
+ assert.equal((await request('auth/register',{studentId:'202100011',password:'secret1'})).status,400);
  assert.equal((await request('auth/register',{studentId:'20210001',password:'123'})).status,400);
  let r=await request('auth/register',{studentId:'20210001',password:'secret1',displayName:'甲同学'});
  assert.equal(r.status,200);assert.equal(r.account.studentId,'20210001');
@@ -32,17 +39,25 @@ test('studentId register and login failures',async t=>{
  assert.equal(r.status,401);
  r=await request('auth/login',{studentId:'20210001',password:'secret1'});
  assert.equal(r.status,200);assert.equal(r.account.displayName,'甲同学');
- assert.equal((await request('board/create',{type:'二手书',title:'高数教材',description:'大一高数上下册，八成新',contact:'微信 demo-only',days:7})).status,200);
+ const made=await request('board/create',{type:'二手教材',description:'大一高数上下册，八成新',contact:'微信 demo-only',...windowFields(7)});
+ assert.equal(made.status,200);
+ assert.equal(made.listing.type,'二手教材');
+ assert.equal(made.listing.title,undefined);
+ assert.equal(made.listing.longTerm,false);
+ assert.ok(made.listing.windowStart&&made.listing.windowEnd);
+ assert.equal((await request('board/create',{type:'',description:'没有类型',contact:'微信 a',...windowFields(3)})).status,400);
 });
 
 test('expired listings are hidden from board list and chat retrieval',async t=>{
  const {request,opts}=await setup(t);
  await request('auth/register',{studentId:'20220001',password:'secret1',displayName:'乙'});
- const created=await request('board/create',{type:'代课',title:'高数代课',description:'周三下午高等数学代课',contact:'QQ 10001',days:3});
+ const created=await request('board/create',{type:'代课',description:'周三下午高等数学代课',contact:'QQ 10001',...windowFields(3)});
  assert.equal(created.status,200);
  const id=created.listing.id;
  const board=JSON.parse(fs.readFileSync(opts.boardFile,'utf8'));
- board.listings.find(l=>l.id===id).expiresAt=new Date(Date.now()-3600000).toISOString();
+ const past=new Date(Date.now()-3600000).toISOString();
+ const row=board.listings.find(l=>l.id===id);
+ row.expiresAt=past;row.windowEnd=past;
  fs.writeFileSync(opts.boardFile,JSON.stringify(board,null,2));
  // reload app from disk
  const app2=createApp(opts);
@@ -53,7 +68,7 @@ test('expired listings are hidden from board list and chat retrieval',async t=>{
 test('chat retrieval hits active campus board listings as peer sources',async t=>{
  const {request}=await setup(t);
  await request('auth/register',{studentId:'20230001',password:'secret1',displayName:'丙'});
- assert.equal((await request('board/create',{type:'二手书',title:'出高数教材',description:'高等数学教材转让，成色良好',contact:'微信 peer-only',days:7})).status,200);
+ assert.equal((await request('board/create',{type:'二手教材',description:'出高数教材，高等数学教材转让，成色良好',contact:'微信 peer-only',...windowFields(7)})).status,200);
  await request('auth/logout',{});
  await request('auth/register',{studentId:'20230002',password:'secret1',displayName:'丁'});
  const chat=await request('chat',{agentId:'life',question:'有没有二手高数教材'});
@@ -71,7 +86,7 @@ test('chat retrieval hits active campus board listings as peer sources',async t=
 
 test('board create requires student account',async t=>{
  const {request}=await setup(t);
- const r=await request('board/create',{type:'代购',title:'帮带奶茶',description:'下午帮带一杯奶茶',contact:'手机 13800000000',days:3});
+ const r=await request('board/create',{type:'代购',description:'下午帮带一杯奶茶',contact:'手机 13800000000',...windowFields(3)});
  assert.equal(r.status,401);
 });
 
@@ -80,14 +95,28 @@ test('unit: matchListings scores topical campus intents',()=>{
  const file=path.join(dir,'board.json');
  const board=createBoard({file});
  board.register({studentId:'20240001',password:'secret1',displayName:'戊'});
- board.createListing({studentId:'20240001'},{type:'二手书',title:'线性代数',description:'线代教材出闲置',contact:'c',days:7});
+ const book=board.createListing({studentId:'20240001'},{type:'二手书',description:'线代教材出闲置',contact:'c',...windowFields(7)});
+ assert.equal(book.title,undefined);
  assert.ok(board.matchListings('有没有二手线性代数').length);
  assert.deepEqual(board.matchListings('宇宙黑洞'),[]);
+ const ride=board.createListing({studentId:'20240001'},{type:'搬运',description:'我可以接搬运，帮搬宿舍',contact:'c',longTerm:true,windowStart:new Date(Date.now()-60*1000).toISOString()});
+ assert.equal(ride.role,'offer');
+ assert.equal(ride.longTerm,true);
+ assert.equal(ride.expiresAt,null);
+ assert.ok(board.matchListings('谁能帮我搬宿舍').some(x=>x.listingId===ride.id));
+ const escort=board.createListing({studentId:'20240001'},{type:'陪诊',description:'接一下去医院',contact:'c',...windowFields(2)});
+ assert.ok(board.matchListings('有没有人接陪诊').some(x=>x.listingId===escort.id));
+ assert.throws(()=>board.createListing({studentId:'20240001'},{type:'代课',description:'只写了说明但没时段',contact:'c'}),/生效时段|长期/);
  fs.rmSync(dir,{recursive:true,force:true});
 });
 
 function fixtureListing(over){
- return {id:over.id,type:over.type||'其他',title:over.title,description:over.description||over.title,contact:over.contact||'微信 a',ownerStudentId:over.ownerStudentId||'20240001',ownerName:over.ownerName||'戊',status:'active',createdAt:over.createdAt,expiresAt:over.expiresAt,...(over.windowEnd?{windowEnd:over.windowEnd}:{})};
+ const row={id:over.id,type:over.type||'其他',description:over.description||over.title,contact:over.contact||'微信 a',ownerStudentId:over.ownerStudentId||'20240001',ownerName:over.ownerName||'戊',status:'active',createdAt:over.createdAt,expiresAt:over.expiresAt};
+ if(over.title)row.title=over.title;
+ if(over.windowStart)row.windowStart=over.windowStart;
+ if(over.windowEnd)row.windowEnd=over.windowEnd;
+ if(over.longTerm)row.longTerm=true;
+ return row;
 }
 test('time-aligned listings outrank vague ones and miss the window when they do not overlap',()=>{
  const now=Date.parse('2026-10-23T04:00:00.000Z');
@@ -104,14 +133,18 @@ test('time-aligned listings outrank vague ones and miss the window when they do 
   fixtureListing({id:'book-week',type:'二手书',title:'收高数教材',description:'收高等数学教材，成色不限',createdAt:created,expiresAt:new Date(now+7*day).toISOString()}),
   fixtureListing({id:'wed',type:'代课',title:'高数代课',description:'周三下午可以代高数课',createdAt:created,expiresAt:new Date(now+14*day).toISOString()}),
   fixtureListing({id:'fri-am',type:'代课',title:'高数代课',description:'周五上午可以代高数课',createdAt:created,expiresAt:new Date(now+14*day).toISOString()}),
-  fixtureListing({id:'closed-window',type:'其他',title:'代取快递',description:'代取快递仍在公示期',createdAt:created,expiresAt:new Date(now+7*day).toISOString(),windowEnd:new Date(now-1000).toISOString()})
+  fixtureListing({id:'closed-window',type:'其他',title:'代取快递',description:'代取快递仍在公示期',createdAt:created,expiresAt:new Date(now+7*day).toISOString(),windowEnd:new Date(now-1000).toISOString()}),
+  fixtureListing({id:'milk-long',type:'代购奶茶',description:'长期可以代购奶茶',createdAt:created,longTerm:true,windowStart:created,expiresAt:null}),
+  fixtureListing({id:'alarm-pm',type:'代取快递',description:'南门可以代取快递',createdAt:created,windowStart:new Date(now+30*60*1000).toISOString(),windowEnd:new Date(now+3*3600000).toISOString(),expiresAt:new Date(now+3*3600000).toISOString()})
  ]},null,2));
  const board=createBoard({file});
- const afternoon=board.matchListings('今天下午有没有人代取快递',3,now);
+ const afternoon=board.matchListings('今天下午有没有人代取快递',4,now);
  assert.equal(afternoon[0].listingId,'afternoon');
  assert.ok(afternoon.some(x=>x.listingId==='anytime'));
+ assert.ok(afternoon.some(x=>x.listingId==='alarm-pm'));
  assert.ok(!afternoon.some(x=>x.listingId==='tomorrow-am'||x.listingId==='closed-window'));
- assert.deepEqual(board.matchListings('下个月有没有代购奶茶',3,now),[]);
+ assert.ok(!board.matchListings('今天上午有没有人代取快递',8,now).some(x=>x.listingId==='alarm-pm'));
+ assert.deepEqual(board.matchListings('下个月有没有代购奶茶',3,now).map(x=>x.listingId),['milk-long']);
  const tomorrowBook=board.matchListings('明天有没有人收高数教材',3,now);
  assert.deepEqual(tomorrowBook.map(x=>x.listingId),['book-week']);
  const wed=board.matchListings('周三下午有没有高数代课',3,now);
@@ -122,6 +155,7 @@ test('time-aligned listings outrank vague ones and miss the window when they do 
  assert.match(asked.text,/https:\/\/example\.com\/pickup/);
  assert.equal(asked.offers[0].listingId,'afternoon');
  assert.equal(asked.offers[0].title,'代取快递');
+ assert.match(asked.offers[0].windowText,/–|有效至|长期/);
  assert.deepEqual(board.db.threads,{});
  fs.rmSync(dir,{recursive:true,force:true});
 });
@@ -129,13 +163,16 @@ test('time-aligned listings outrank vague ones and miss the window when they do 
 test('ask does not open a chat until the student accepts',async t=>{
  const {request,app}=await setup(t);
  await request('auth/register',{studentId:'20250001',password:'secret1',displayName:'己'});
- assert.equal((await request('board/create',{type:'其他',title:'代取快递',description:'今天下午可以代取快递',contact:'微信 noon',days:7})).status,200);
+ assert.equal((await request('board/create',{type:'代取快递',description:'今天下午可以代取快递',contact:'微信 noon',...windowFields(7)})).status,200);
  await request('auth/logout',{});
  const asked=await request('board/ask',{question:'今天下午有没有人代取快递'});
  assert.equal(asked.status,200);
  assert.match(asked.text,/互助通达/);
  assert.match(asked.text,/• /);
  assert.ok(asked.offers.length);
+ assert.equal(asked.offers[0].title,'');
+ assert.match(asked.offers[0].display,/代取快递/);
+ assert.match(asked.offers[0].windowText,/–/);
  assert.deepEqual(app.board.db.threads,{});
  const id=asked.offers[0].listingId;
  assert.equal((await request('board/dm?listingId='+encodeURIComponent(id))).status,401);
@@ -193,12 +230,19 @@ location.hash='#chat/affairs';
 globalThis.__adminChat=shell(chat());
 location.hash='#admin';
 globalThis.__admin=shell('<div></div>');
+account={studentId:'20261024',displayName:'测'};
+boardPublishOpen=true;
+boardListings=[{id:'old',type:'二手书',title:'旧标题仍可显示',description:'以前登记过标题',ownerStudentId:'20261024',expiresAt:'2026-12-01T00:00:00.000Z',status:'active'}];
+globalThis.__form=boardPage();
 `,ctx);
  assert.equal(ctx.__page,'board');
  const home=ctx.__home;
  assert.match(home,/互助通达/);
  assert.match(home,/找助手/);
  assert.match(home,/学号登录/);
+ assert.match(home,/8 位数字学号/);
+ assert.doesNotMatch(home,/8—12/);
+ assert.match(home,/接摄影|接一下陪诊/);
  assert.match(home,/more-menu/);
  assert.doesNotMatch(home,/团队工作台|审核管理|重置演示数据|本地资料问答|CAMPUS AGENTS|MUTUAL AID/);
  assert.doesNotMatch(home,/<label for="profile">演示身份<\/label>/);
@@ -214,4 +258,35 @@ globalThis.__admin=shell('<div></div>');
  assert.match(ctx.__admin,/审核管理/);
  assert.match(ctx.__adminChat,/已审核知识库/);
  assert.doesNotMatch(ctx.__adminChat,/cloud-consent/);
+ const form=ctx.__form;
+ assert.match(form,/id="board-type"/);
+ assert.match(form,/type="text"/);
+ assert.match(form,/datetime-local/);
+ assert.match(form,/长期有效/);
+ assert.match(form,/旧标题仍可显示/);
+ assert.doesNotMatch(form,/id="board-title"|id="board-days"|<select id="board-type"/);
+});
+
+test('open C2C prompt is attached for doubao, qwen and deepseek when the board is in play',async()=>{
+ const backend=fs.readFileSync(path.join(__dirname,'../lib/backend.cjs'),'utf8');
+ const note=(backend.match(/const BOARD_ASK_NOTE='([^']+)'/)||[])[1];
+ assert.match(note,/帮助方/);
+ assert.match(note,/长期/);
+ assert.match(note,/不限于代购/);
+ assert.doesNotMatch(note,/请选择有效类型/);
+ const source={citation:1,sourceType:'campus_board',title:'[同学提供] 代取',source:'同学提供，非官方',excerpt:'接代取快递',type:'代取',role:'offer',longTerm:true,windowText:'长期',windowStart:'2026-10-24T04:00:00.000Z',windowEnd:null};
+ for(const provider of ['doubao','qwen','deepseek']){
+  let sent;
+  await generate({provider,model:'test-model',apiKey:'test'},{name:'校园生活助手',rules:'依据资料'},'谁能接代取',[source],async(_url,init)=>{
+   sent=JSON.parse(init.body);
+   return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify({answer:'可以看看这条同学登记。[1]',citations:[1]})}}]}),{status:200});
+  },note);
+  assert.match(sent.messages[0].content,/帮助方/);
+  assert.match(sent.messages[0].content,/长期/);
+  const user=JSON.parse(sent.messages[1].content);
+  assert.equal(user.sources[0].kind,'campus_board');
+  assert.equal(user.sources[0].role,'offer');
+  assert.equal(user.sources[0].longTerm,true);
+  assert.equal(user.sources[0].windowText,'长期');
+ }
 });

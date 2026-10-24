@@ -46,7 +46,7 @@
 
 公开来源与导入记录在imports目录。旧的全扬州地点快照保留为归档，当前生活助手使用通达周边数据；较远生活资料已下架。
 
-知识库保存在data/store.json，地图资料保存在lib/places-osm.json，校园区域资料在lib/campus-areas.json。模型密钥由本机config.local.json保存，不要将该文件公开分享。备份知识资料时可先停止服务，再复制data、lib与imports目录。
+知识库保存在data/store.json，地图资料保存在lib/places-osm.json，校园区域资料在lib/campus-areas.json。模型密钥由本机 config.local.json 保存，这是本地机密，不要公开分享，也不要提交到仓库。同步或更新只覆盖程序文件（dist/、lib/、tests/ 等），不要覆盖、删除或改写 config.local.json；启动脚本也不会动它。服务重启后，已经保存的密钥仍然有效，不必重新填写。备份知识资料时可先停止服务，再复制 data、lib 与 imports 目录，密钥文件单独保管。
 
 不要随意点击「重置演示数据」：它会恢复初始演示资料，并清除后续导入内容，不是刷新页面。
 
