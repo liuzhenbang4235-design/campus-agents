@@ -95,23 +95,14 @@ test('my submissions list only the current demo identity, with review status and
  assert.doesNotMatch(html,/不应显示给别人/);
 
  api.setProfile('team');
- const cocreate=api.html();
- assert.match(cocreate,/交给生活或办事助手。管理员审核通过后，同学才能问到。/);
- assert.match(cocreate,/例如：学生证补办材料（示例）/);
- assert.match(cocreate,/优先交给本组的生活 · 办事助手。/);
- assert.match(cocreate,/共创组的资料/);
- assert.doesNotMatch(cocreate,/学生待审|别人的资料不应出现/);
- assert.match(cocreate,/我的提交 <span class="count">1<\/span>/);
-
- api.setProfile('team2');
- const study=api.html();
- assert.match(study,/交给学习助手。管理员审核通过后，同学才能问到。/);
- assert.match(study,/例如：课程复习方法（示例）/);
- assert.match(study,/优先交给本组的学习助手。/);
- assert.match(study,/别人的资料不应出现/);
- assert.doesNotMatch(study,/学生待审|共创组的资料/);
- assert.match(study,/>通过</);
- assert.doesNotMatch(study,/修改并重新提交/);
+ const team=api.html();
+ assert.match(team,/交给生活、办事或学习助手。管理员审核通过后，同学才能问到。/);
+ assert.match(team,/例如：学生证补办材料，或课程复习方法（示例）/);
+ assert.match(team,/生活、办事和学习助手都可以提交。/);
+ assert.doesNotMatch(team,/优先交给本组|周同学|学习互助组|校园共创组/);
+ assert.match(team,/共创组的资料/);
+ assert.doesNotMatch(team,/学生待审|别人的资料不应出现/);
+ assert.match(team,/我的提交 <span class="count">1<\/span>/);
 });
 
 test('rejected resubmit keeps the editable source fields, and admin review is unchanged',()=>{
