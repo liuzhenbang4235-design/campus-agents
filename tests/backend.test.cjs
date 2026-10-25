@@ -70,7 +70,7 @@ test('retrieval bullets expose source URLs as plain http(s) lines',async t=>{
  const up=await request('action',{action:'upload',agent:'affairs',title:'证卡补办链接说明',source:'演示官网',content:'学生证补办可先在示例窗口提交申请，再到服务中心领取。',sourceUrl:'https://example.com/campus/student-id',publishedAt:'2026-09-01',collectedAt:'2026-09-20',sourceKind:'official',cloudAllowed:true});
  const d=up.state.docs.find(x=>x.title==='证卡补办链接说明');
  await request('session',{profile:'admin'});
- assert.equal((await request('action',{action:'review',kind:'doc',id:d.id,decision:'approve'})).status,200);
+ assert.equal((await request('action',{action:'review',kind:'doc',id:d.id,decision:'approve',reason:'来源清楚，可以入库'})).status,200);
  await request('session',{profile:'student'});
  const r=await request('chat',{agentId:'affairs',question:'证卡补办链接说明怎么弄'});
  assert.equal(r.message.mode,'retrieval');
@@ -102,7 +102,7 @@ test('server owns review status; student cannot approve and pending records are 
  const d=upload.state.docs.find(d=>d.title==='打印指南');assert.equal(d.status,'pending');assert.equal(d.owner,'student');
  assert.equal((await request('action',{action:'review',kind:'doc',id:d.id,decision:'approve'})).status,403);
  assert.equal((await request('chat',{agentId:'life',question:'打印'})).message.mode,'no_evidence');
- await request('session',{profile:'admin'});assert.equal((await request('action',{action:'review',kind:'doc',id:d.id,decision:'approve'})).status,200);
+ await request('session',{profile:'admin'});assert.equal((await request('action',{action:'review',kind:'doc',id:d.id,decision:'approve',reason:'来源清楚，可以入库'})).status,200);
  assert.equal((await request('chat',{agentId:'life',question:'打印'})).message.sources[0].docId,d.id);
  const reopened=createApp(opts);assert.equal(reopened.stateFor('student').docs.find(x=>x.id===d.id).status,'approved');
  await request('action',{action:'offline',kind:'doc',id:d.id});const after=await request('chat',{agentId:'life',question:'打印'});assert.equal(after.message.mode,'no_evidence');assert.ok(!JSON.stringify(after.state.chats).includes('打印需要交给'));
@@ -116,7 +116,7 @@ test('one team identity maintains life, affairs and study agents; students canno
  assert.ok(r.state.agents.some(a=>a.id==='life'&&a.team==='t1'));assert.ok(r.state.agents.some(a=>a.id==='affairs'));assert.ok(r.state.agents.some(a=>a.id==='freshman'));
  r=await request('action',{action:'saveAgent',name:'测试助手',description:'测试说明',rules:'只引用资料',category:'校园生活'});const a=r.state.agents.find(a=>a.name==='测试助手');assert.equal(a.status,'draft');assert.equal(a.team,'t1');
  await request('session',{profile:'student'});r=await request('action',{action:'saveAgent',id:a.id,name:'篡改',description:'修改',rules:'修改',category:'校园生活'});assert.equal(r.status,403);
- assert.ok(!(await request('state')).state.agents.some(x=>x.id===a.id));await request('session',{profile:'team'});await request('action',{action:'submitAgent',id:a.id});await request('session',{profile:'admin'});assert.equal((await request('action',{action:'review',kind:'agent',id:a.id,decision:'approve'})).status,200);await request('session',{profile:'student'});assert.equal((await request('state')).state.agents.find(x=>x.id===a.id).status,'published');
+ assert.ok(!(await request('state')).state.agents.some(x=>x.id===a.id));await request('session',{profile:'team'});await request('action',{action:'submitAgent',id:a.id});await request('session',{profile:'admin'});assert.equal((await request('action',{action:'review',kind:'agent',id:a.id,decision:'approve',reason:'规则清楚，可以上线'})).status,200);await request('session',{profile:'student'});assert.equal((await request('state')).state.agents.find(x=>x.id===a.id).status,'published');
 });
 test('a stored second team folds into the single team id',async t=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-agent-test-'));
@@ -136,6 +136,29 @@ test('a stored second team folds into the single team id',async t=>{
 });
 test('reject, edit and resubmit preserves ownership and requires reapproval',async t=>{
  const {request}=await setup(t);await request('session',{profile:'admin'});await request('action',{action:'review',kind:'doc',id:'d4',decision:'reject',reason:'请补充来源'});await request('session',{profile:'student'});const r=await request('action',{action:'editDoc',id:'d4',title:'失物招领说明',source:'虚构',content:'示例失物招领说明。'});assert.equal(r.state.docs.find(d=>d.id==='d4').status,'pending');
+});
+test('review requires a non-empty reason and writes it into the audit log',async t=>{
+ const {request}=await setup(t);await request('session',{profile:'admin'});
+ const missing=await request('action',{action:'review',kind:'doc',id:'d4',decision:'approve'});
+ assert.equal(missing.status,400);assert.match(missing.error,/原因/);
+ const blank=await request('action',{action:'review',kind:'doc',id:'d4',decision:'reject',reason:'   '});
+ assert.equal(blank.status,400);assert.match(blank.error,/原因/);
+ assert.equal((await request('state')).state.docs.find(d=>d.id==='d4').status,'pending');
+ assert.equal((await request('state')).state.audit.filter(a=>a.title.includes('失物招领')).length,0);
+ const approved=await request('action',{action:'review',kind:'doc',id:'d4',decision:'approve',reason:' 来源清楚，可以入库 '});
+ assert.equal(approved.status,200);
+ const doc=approved.state.docs.find(d=>d.id==='d4');
+ assert.equal(doc.status,'approved');assert.equal(doc.reason,'来源清楚，可以入库');
+ const docAudit=approved.state.audit.find(a=>a.action==='资料入库'&&a.title===doc.title);
+ assert.equal(docAudit.reason,'来源清楚，可以入库');
+ const noAgent=await request('action',{action:'review',kind:'agent',id:'freshman',decision:'reject'});
+ assert.equal(noAgent.status,400);assert.match(noAgent.error,/原因/);
+ const rejected=await request('action',{action:'review',kind:'agent',id:'freshman',decision:'reject',reason:'规则过简，请补充依据'});
+ assert.equal(rejected.status,200);
+ const agent=rejected.state.agents.find(a=>a.id==='freshman');
+ assert.equal(agent.status,'rejected');assert.equal(agent.reason,'规则过简，请补充依据');
+ const agentAudit=rejected.state.audit.find(a=>a.action==='驳回'&&a.title==='新生入学助手');
+ assert.equal(agentAudit.reason,'规则过简，请补充依据');
 });
 test('Doubao adapter sends only selected approved fragments and never exposes key',async t=>{
  let payload,url,headers;const {request,base}=await setup(t,async(u,init)=>{url=u;headers=init.headers;payload=JSON.parse(init.body);return modelResponse()});await enable(request);
@@ -389,6 +412,51 @@ globalThis.__html=admin();
  assert.match(html,/学长学姐学习库<\/p><small>Agent · 已下架<\/small><\/div><button class="btn small" data-action="online" data-kind="agent" data-id="study">重新上架<\/button>/);
  assert.doesNotMatch(html,/data-id="d3">下架/);
  assert.doesNotMatch(html,/data-id="study">下架/);
+ assert.match(html,/<details class="published-fold">/);
+ assert.doesNotMatch(html,/<details class="published-fold" open/);
+ assert.doesNotMatch(html,/data-value="published"/);
+});
+test('admin review opens on the pending queue and keeps published items folded',()=>{
+ const document={addEventListener(){},getElementById(){return {innerHTML:'',classList:{add(){},remove(){}},setAttribute(){}}},querySelectorAll(){return []}};
+ const ctx=vm.createContext({document,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location:{hash:'#admin',origin:'http://127.0.0.1:4173'},history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}}});
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8')+`
+currentProfile='admin';reviewTab='docs';
+state={version:2,agents:[{id:'life',name:'校园生活助手',status:'published',team:'t1',category:'校园生活',description:'d',rules:'r',icon:'home',color:''},{id:'freshman',name:'新生入学助手',status:'pending',team:'t1',category:'校园生活',description:'报到准备',rules:'r',icon:'home',color:'teal'}],docs:[{id:'d1',title:'图书馆借阅指南',status:'approved',agent:'life',owner:'student',source:'s',date:'2026-09-23',content:'c'},{id:'d4',title:'校园失物招领说明',status:'pending',agent:'life',owner:'student',source:'学生贡献',date:'2026-09-23',content:'c'}],audit:[{action:'资料入库',title:'图书馆借阅指南',reason:'来源清楚',time:'2026/10/25'}],chats:{}};
+ai={ready:false,provider:'doubao',dailyLimit:50,usedToday:0};
+globalThis.__html=admin();
+reviewTab='agents';
+globalThis.__agents=admin();
+const dialogEl={innerHTML:'',open:false,setAttribute(){},showModal(){this.open=true}};
+document.getElementById=id=>id==='modal'?dialogEl:{innerHTML:'',classList:{add(){},remove(){}},setAttribute(){}};
+viewDoc('d4');
+globalThis.__doc=dialogEl.innerHTML;
+reviewReasonForm('doc','d4','approve');
+globalThis.__approve=dialogEl.innerHTML;
+reviewReasonForm('agent','freshman','reject');
+globalThis.__reject=dialogEl.innerHTML;
+`,ctx);
+ const html=ctx.__html;
+ const pending=html.split('published-fold')[0];
+ const fold=html.split('published-fold').slice(1).join('published-fold');
+ assert.match(pending,/校园失物招领说明/);
+ assert.match(pending,/查看内容并审核/);
+ assert.doesNotMatch(pending,/图书馆借阅指南/);
+ assert.match(html,/<details class="published-fold">/);
+ assert.doesNotMatch(html,/<details class="published-fold" open/);
+ assert.match(fold,/图书馆借阅指南<\/p><small>资料 · 已入库<\/small><\/div><button class="btn danger small" data-action="offline" data-kind="doc" data-id="d1">下架<\/button>/);
+ assert.match(html,/原因：来源清楚/);
+ assert.match(ctx.__agents,/新生入学助手/);
+ assert.match(ctx.__agents,/查看配置并审核/);
+ assert.doesNotMatch(ctx.__doc,/id="review-form"/);
+ assert.match(ctx.__doc,/data-action="approve"/);
+ assert.match(ctx.__doc,/data-action="reject"/);
+ assert.match(ctx.__approve,/id="review-form"/);
+ assert.match(ctx.__approve,/data-decision="approve"/);
+ assert.match(ctx.__approve,/name="reason"[^>]*required/);
+ assert.match(ctx.__approve,/id="review-reason-error"[^>]*hidden/);
+ assert.match(ctx.__approve,/确认通过/);
+ assert.match(ctx.__reject,/data-decision="reject"/);
+ assert.match(ctx.__reject,/确认驳回/);
 });
 test('offlining an already offline document does not append another audit log',async t=>{
  const {request}=await setup(t);
