@@ -107,11 +107,32 @@ test('server owns review status; student cannot approve and pending records are 
  const reopened=createApp(opts);assert.equal(reopened.stateFor('student').docs.find(x=>x.id===d.id).status,'approved');
  await request('action',{action:'offline',kind:'doc',id:d.id});const after=await request('chat',{agentId:'life',question:'打印'});assert.equal(after.message.mode,'no_evidence');assert.ok(!JSON.stringify(after.state.chats).includes('打印需要交给'));
 });
-test('team separation and agent draft-review-publish flow',async t=>{
- const {request}=await setup(t);await request('session',{profile:'team'});
- let r=await request('action',{action:'saveAgent',name:'测试助手',description:'测试说明',rules:'只引用资料',category:'校园生活'});const a=r.state.agents.find(a=>a.name==='测试助手');assert.equal(a.status,'draft');
- await request('session',{profile:'team2'});r=await request('action',{action:'saveAgent',id:a.id,name:'篡改',description:'修改',rules:'修改',category:'校园生活'});assert.equal(r.status,403);
- assert.ok(!(await request('state')).state.agents.some(x=>x.id===a.id));await request('session',{profile:'team'});await request('action',{action:'submitAgent',id:a.id});await request('session',{profile:'admin'});await request('action',{action:'review',kind:'agent',id:a.id,decision:'approve'});await request('session',{profile:'student'});assert.equal((await request('state')).state.agents.find(x=>x.id===a.id).status,'published');
+test('one team identity maintains life, affairs and study agents; students cannot edit them',async t=>{
+ const {request}=await setup(t);
+ let r=await request('session',{profile:'team2'});assert.equal(r.status,400);
+ await request('session',{profile:'team'});
+ r=await request('action',{action:'saveAgent',id:'study',name:'学长学姐学习库',description:'找到课程学习方法与复习建议，让每一份经验都有迹可循。',rules:'引用已授权的学习经验；区分经验分享与官方要求。',category:'学习资料'});
+ assert.equal(r.status,200);assert.equal(r.state.agents.find(a=>a.id==='study').team,'t1');assert.equal(r.state.agents.find(a=>a.id==='study').status,'draft');
+ assert.ok(r.state.agents.some(a=>a.id==='life'&&a.team==='t1'));assert.ok(r.state.agents.some(a=>a.id==='affairs'));assert.ok(r.state.agents.some(a=>a.id==='freshman'));
+ r=await request('action',{action:'saveAgent',name:'测试助手',description:'测试说明',rules:'只引用资料',category:'校园生活'});const a=r.state.agents.find(a=>a.name==='测试助手');assert.equal(a.status,'draft');assert.equal(a.team,'t1');
+ await request('session',{profile:'student'});r=await request('action',{action:'saveAgent',id:a.id,name:'篡改',description:'修改',rules:'修改',category:'校园生活'});assert.equal(r.status,403);
+ assert.ok(!(await request('state')).state.agents.some(x=>x.id===a.id));await request('session',{profile:'team'});await request('action',{action:'submitAgent',id:a.id});await request('session',{profile:'admin'});assert.equal((await request('action',{action:'review',kind:'agent',id:a.id,decision:'approve'})).status,200);await request('session',{profile:'student'});assert.equal((await request('state')).state.agents.find(x=>x.id===a.id).status,'published');
+});
+test('a stored second team folds into the single team id',async t=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-agent-test-'));
+ const dataDir=path.join(dir,'data');fs.mkdirSync(dataDir);
+ const store=structuredClone(seed);store.agents.find(a=>a.id==='study').team='t2';store.docs.find(d=>d.id==='d2').owner='team2';
+ fs.writeFileSync(path.join(dataDir,'store.json'),JSON.stringify(store));
+ const app=createApp({dataDir,configFile:path.join(dir,'config.json')});
+ await new Promise(r=>app.server.listen(0,'127.0.0.1',r));
+ t.after(async()=>{app.server.closeAllConnections();await new Promise(r=>app.server.close(r));fs.rmSync(dir,{recursive:true,force:true})});
+ const state=app.stateFor('team');
+ assert.equal(state.agents.find(a=>a.id==='study').team,'t1');
+ assert.equal(state.docs.find(d=>d.id==='d2').owner,'team');
+ const saved=JSON.parse(fs.readFileSync(path.join(dataDir,'store.json'),'utf8'));
+ assert.equal(saved.agents.find(a=>a.id==='study').team,'t1');
+ assert.equal(saved.docs.find(d=>d.id==='d2').owner,'team');
+ assert.equal(app.stateFor('student').agents.find(a=>a.id==='study').status,'published');
 });
 test('reject, edit and resubmit preserves ownership and requires reapproval',async t=>{
  const {request}=await setup(t);await request('session',{profile:'admin'});await request('action',{action:'review',kind:'doc',id:'d4',decision:'reject',reason:'请补充来源'});await request('session',{profile:'student'});const r=await request('action',{action:'editDoc',id:'d4',title:'失物招领说明',source:'虚构',content:'示例失物招领说明。'});assert.equal(r.state.docs.find(d=>d.id==='d4').status,'pending');
