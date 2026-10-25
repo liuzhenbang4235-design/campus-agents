@@ -255,7 +255,9 @@ globalThis.__form=boardPage();
  assert.doesNotMatch(chat,/豆包已接上|还没接上云端|份已审核资料|查看来源|Enter 发送|Shift \+ Enter/);
  const team=ctx.__team;
  assert.match(team,/团队工作台/);
- assert.match(team,/审核管理/);
+ assert.match(team,/校园共创组/);
+ assert.doesNotMatch(team,/审核管理/);
+ assert.doesNotMatch(team,/校园共创平台/);
  assert.doesNotMatch(team,/重置演示数据/);
  assert.match(ctx.__admin,/重置演示数据/);
  assert.match(ctx.__admin,/审核管理/);
@@ -272,6 +274,74 @@ globalThis.__form=boardPage();
  assert.match(form,/长期有效/);
  assert.match(form,/旧标题仍可显示/);
  assert.doesNotMatch(form,/id="board-title"|id="board-days"|<select id="board-type"/);
+});
+
+test('team identities keep their own workspace and do not share the co-creation shell',()=>{
+ const document={addEventListener(){},getElementById(){return {innerHTML:'',classList:{add(){},remove(){}},setAttribute(){},scrollTop:0}},querySelectorAll(){return []}};
+ const location={hash:'#team',origin:'http://127.0.0.1:4173'};
+ const ctx=vm.createContext({document,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location,history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}},cityDiscovery:()=>''});
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8')+`
+state={version:2,agents:[
+ {id:'life',name:'校园生活助手',status:'published',team:'t1',category:'校园生活',description:'生活',rules:'只依据资料',icon:'home',color:'teal'},
+ {id:'study',name:'学长学姐学习库',status:'published',team:'t2',category:'学习资料',description:'学习',rules:'引用经验',icon:'book',color:'orange'},
+ {id:'affairs',name:'校园办事助手',status:'published',team:'t1',category:'学校事务',description:'办事',rules:'只依据资料',icon:'brief',color:''},
+ {id:'freshman',name:'新生入学助手',status:'pending',team:'t1',category:'校园生活',description:'新生',rules:'只根据指南',icon:'home',color:'teal'}
+],docs:[{id:'d2',title:'课程复习建议',status:'approved',agent:'study',owner:'team2',source:'学习互助组',date:'2026-09-23',content:'c',chunkCount:1},{id:'d3',title:'学生证补办',status:'approved',agent:'affairs',owner:'student',source:'校园共创组',date:'2026-09-23',content:'c',chunkCount:1}],audit:[],chats:{}};
+ai={ready:true,verified:true,provider:'doubao',enabled:true,hasKey:true,model:'ep-demo',dailyLimit:50,usedToday:1,configIssue:''};
+currentProfile='team';location.hash='#team';
+globalThis.__co=shell(team());
+location.hash='#gallery';
+globalThis.__coHome=gallery();
+location.hash='#chat/affairs';
+globalThis.__coChat=chat();
+currentProfile='team2';location.hash='#team';
+globalThis.__study=shell(team());
+location.hash='#gallery';
+globalThis.__studyHome=gallery();
+location.hash='#upload';
+globalThis.__studyUpload=upload();
+location.hash='#chat/study';
+globalThis.__studyChat=shell(chat());
+currentProfile='admin';
+globalThis.__lock=team();
+currentProfile='student';location.hash='#chat/affairs';
+globalThis.__studentChat=chat();
+`,ctx);
+ const co=ctx.__co,study=ctx.__study;
+ assert.match(co,/校园共创组 <span>\/ 团队工作台/);
+ assert.match(co,/生活 · 办事助手/);
+ assert.match(co,/打开校园生活助手/);
+ assert.match(co,/打开校园办事助手/);
+ assert.match(co,/待处理草稿 1/);
+ assert.match(co,/学生证怎么补办/);
+ assert.match(co,/贡献生活 \/ 办事资料/);
+ assert.doesNotMatch(co,/审核管理|校园共创平台|后台按当前演示身份/);
+ assert.match(ctx.__coHome,/本组 · 生活与办事/);
+ assert.doesNotMatch(ctx.__coHome,/复习前，先问问学长学姐学习库/);
+ assert.match(ctx.__coChat,/已审核知识库/);
+ assert.match(ctx.__coChat,/贡献生活 \/ 办事资料/);
+ assert.match(ctx.__coChat,/本组资料在本机/);
+ assert.doesNotMatch(ctx.__coChat,/豆包已接上|Enter 发送|知识库和检索保存在本机|<div class="banner">/);
+ assert.match(study,/学习互助组 <span>\/ 团队工作台/);
+ assert.match(study,/打开学长学姐学习库/);
+ assert.match(study,/课程复习怎么安排/);
+ assert.match(study,/这份经验算官方要求吗/);
+ assert.match(study,/贡献学习资料/);
+ assert.doesNotMatch(study,/审核管理|校园共创平台|切换为校园共创组成员|待处理草稿|后台按当前演示身份/);
+ assert.match(ctx.__studyHome,/本组 · 学习资料/);
+ assert.match(ctx.__studyHome,/复习前，先问问学长学姐学习库/);
+ assert.match(ctx.__studyUpload,/课程复习方法/);
+ assert.match(ctx.__studyUpload,/value="study" selected/);
+ assert.doesNotMatch(ctx.__studyUpload,/学生证补办材料/);
+ assert.match(ctx.__studyChat,/学习互助组 <span>/);
+ assert.match(ctx.__studyChat,/已审核知识库/);
+ assert.match(ctx.__studyChat,/贡献学习资料/);
+ assert.doesNotMatch(ctx.__studyChat,/豆包已接上|Enter 发送|校园共创平台|审核管理|<div class="banner">/);
+ assert.match(ctx.__lock,/切换为校园共创组成员/);
+ assert.match(ctx.__lock,/切换为学习互助组成员/);
+ assert.doesNotMatch(ctx.__lock,/校园共创平台/);
+ assert.doesNotMatch(ctx.__studentChat,/豆包已接上|份已审核资料|Enter 发送|已审核知识库|<div class="banner">/);
+ assert.match(ctx.__studentChat,/chat-layout solo/);
 });
 
 test('open C2C prompt is attached for doubao, qwen and deepseek when the board is in play',async()=>{
