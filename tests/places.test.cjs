@@ -134,7 +134,7 @@ test('source provenance survives reject and resubmit and is sent to the model on
  let r=await request('action',body);assert.equal(r.status,200);let d=r.state.docs.find(d=>d.title===body.title);assert.equal(d.status,'pending');
  await request('action',{action:'review',kind:'doc',id:d.id,decision:'reject',reason:'补充说明'});
  r=await request('action',{action:'editDoc',id:d.id,title:body.title,source:body.source,content:body.content});d=r.state.docs.find(x=>x.id===d.id);assert.equal(d.sourceUrl,body.sourceUrl);assert.equal(d.sourceKind,'merchant');assert.equal(d.status,'pending');
- await request('action',{action:'review',kind:'doc',id:d.id,decision:'approve'});
+ await request('action',{action:'review',kind:'doc',id:d.id,decision:'approve',reason:'来源已补充，可以入库'});
  await request('config',{apiKey:'test-only',model:'ep-test',enabled:true,dailyLimit:50,consent:true});
  r=await request('chat',{agentId:'life',question:'旧年测试餐馆活动',cloudConsent:true});assert.equal(r.status,200);const s=sent.sources.find(s=>s.title===body.title);assert.equal(s.publishedAt,'2025-09-01');assert.equal(s.collectedAt,'2026-09-24');assert.equal(s.sourceKind,'merchant');assert.equal(s.url,body.sourceUrl);
 });

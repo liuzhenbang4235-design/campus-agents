@@ -13,7 +13,7 @@ const records=[
  try {await api('session',{profile:'admin'});const report=[];
  for(const [title,text] of records){let {state}=await api('state');if(state.docs.some(d=>d.title===title)){report.push({title,skipped:true});continue;}
  const result=await api('action',{action:'upload',agent:'affairs',title,source:'通达学院教务处公开通知 · 2026-08-31',sourceUrl:url,publishedAt:'2026-08-31',collectedAt:'2026-10-10',sourceKind:'official',cloudAllowed:true,filename:'官网摘要',content:text+'\n适用范围：2026—2027学年第一学期通知，不能套用于其他学期；办理时核对后续通知。\n原文：'+url});
- const d=result.state.docs.find(d=>d.title===title);await api('action',{action:'review',kind:'doc',id:d.id,decision:'approve'});report.push({id:d.id,title,status:'approved'});}
+ const d=result.state.docs.find(d=>d.title===title);await api('action',{action:'review',kind:'doc',id:d.id,decision:'approve',reason:'公开通知核对后入库'});report.push({id:d.id,title,status:'approved'});}
  const final=await api('state');fs.writeFileSync(__dirname+'/selection-20261010-report.json',JSON.stringify({sourceUrl:url,collectedAt:'2026-10-10',records:report,approvedTotal:final.state.docs.filter(d=>d.status==='approved').length},null,2));console.log(JSON.stringify(report));
  }finally{server.close();}
 })().catch(e=>{console.error(e.message);process.exitCode=1});
