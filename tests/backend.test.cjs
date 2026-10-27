@@ -328,9 +328,42 @@ test('switching demo identity returns the new profile so the page does not snap 
  const {request}=await setup(t);
  let r=await request('session',{profile:'admin'});
  assert.equal(r.status,200);assert.equal(r.profile,'admin');
+ assert.equal(r.demoIdentities,true);
  assert.equal((await request('state')).profile,'admin');
  r=await request('session',{profile:'student'});
  assert.equal(r.profile,'student');assert.equal((await request('state')).profile,'student');
+});
+test('publicMode or demoIdentities false blocks demo identity switching',async t=>{
+ async function boot(config){
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-agent-test-'));
+  const configFile=path.join(dir,'config.json');
+  fs.writeFileSync(configFile,JSON.stringify({enabled:false,provider:'doubao',dailyLimit:50,...config}));
+  const app=createApp({dataDir:path.join(dir,'data'),configFile});
+  await new Promise(r=>app.server.listen(0,'127.0.0.1',r));
+  const base='http://127.0.0.1:'+app.server.address().port;let cookie='';
+  t.after(async()=>{app.server.closeAllConnections();await new Promise(r=>app.server.close(r));fs.rmSync(dir,{recursive:true,force:true})});
+  async function request(route,body){
+   const res=await fetch(base+'/api/'+route,{method:body?'POST':'GET',headers:{...(body?{'Content-Type':'application/json','X-Campus-Client':'1'}:{}),Cookie:cookie},body:body?JSON.stringify(body):undefined});
+   if(res.headers.get('set-cookie'))cookie=res.headers.get('set-cookie').split(';')[0];
+   const data=await res.json();
+   return {status:res.status,...data};
+  }
+  return {request};
+ }
+ for(const config of [{publicMode:true},{demoIdentities:false},{publicMode:true,demoIdentities:true}]){
+  const {request}=await boot(config);
+  const state=await request('state');
+  assert.equal(state.status,200);
+  assert.equal(state.demoIdentities,false);
+  assert.equal(state.ai.demoIdentities,false);
+  assert.equal(state.profile,'student');
+  for(const profile of ['admin','team','student']){
+   const switched=await request('session',{profile});
+   assert.equal(switched.status,403);
+   assert.match(switched.error,/不能切换演示身份/);
+   assert.equal((await request('state')).profile,'student');
+  }
+ }
 });
 test('resaving an already enabled provider with an empty apiKey keeps the key and does not require consent',async t=>{
  const {request,opts}=await setup(t,async()=>modelResponse());
