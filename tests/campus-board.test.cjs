@@ -90,6 +90,31 @@ test('board create requires student account',async t=>{
  assert.equal(r.status,401);
 });
 
+test('board contact is optional and a filled contact is still saved',async t=>{
+ const {request}=await setup(t);
+ await request('auth/register',{studentId:'20261027',password:'secret1',displayName:'辛'});
+ const missing=await request('board/create',{type:'代取快递',description:'南门可以代取，联系方式稍后在开聊里说',...windowFields(3)});
+ assert.equal(missing.status,200);
+ assert.equal(missing.listing.contact,'');
+ assert.equal(missing.listing.type,'代取快递');
+ const blank=await request('board/create',{type:'陪诊',description:'下午可以陪去校医院',contact:'   ',longTerm:true,windowStart:new Date(Date.now()-60*1000).toISOString()});
+ assert.equal(blank.status,200);
+ assert.equal(blank.listing.contact,'');
+ assert.equal(blank.listing.longTerm,true);
+ const filled=await request('board/create',{type:'出闲置',description:'出一台闲置显示器，九成新',contact:'微信 optional-ok',...windowFields(5)});
+ assert.equal(filled.status,200);
+ assert.equal(filled.listing.contact,'微信 optional-ok');
+ const tooLong=await request('board/create',{type:'代购',description:'可以帮忙代购',contact:'微'.repeat(81),...windowFields(2)});
+ assert.equal(tooLong.status,400);
+ const app=fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8');
+ const field=app.match(/<label for="board-contact">[\s\S]*?<\/label><input id="board-contact"[^>]*>/);
+ assert.ok(field);
+ assert.match(field[0],/自愿公开/);
+ assert.match(field[0],/可选/);
+ assert.doesNotMatch(field[0],/\brequired\b/);
+ assert.doesNotMatch(field[0],/class="required"/);
+});
+
 test('unit: matchListings scores topical campus intents',()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-board-unit-'));
  const file=path.join(dir,'board.json');
