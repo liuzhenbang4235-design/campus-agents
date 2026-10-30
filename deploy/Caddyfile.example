@@ -1,0 +1,70 @@
+# =============================================================================
+# 校集 Campus Agent — Caddy 反向代理示例（自动 HTTPS）
+# 放置：/etc/caddy/Caddyfile（或 /etc/caddy/conf.d/ 下，按发行版）
+# 使用前替换：campus.example.com、邮箱、日志目录
+#
+# 重要：
+#   1) header_up Host {host} 必须保留，否则应用返回 403「无效的访问地址。」
+#   2) 应用已自行下发 CSP / X-Frame-Options / X-Content-Type-Options /
+#      Referrer-Policy，这里不要重复添加。
+#   3) 上游固定为 127.0.0.1:4173，不要改成 0.0.0.0。
+#   4) 启动应用时必须带 CAMPUS_ORIGINS=https://campus.example.com
+# =============================================================================
+
+{
+	# 证书到期通知邮箱（可选，建议填写）
+	# email admin@example.com
+
+	# 如果本机前面还有一层负载均衡/CDN，取消注释并填入其出口网段，
+	# 让 Caddy 正确识别客户端 IP；否则保持注释。
+	# servers {
+	# 	trusted_proxies static 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16
+	# }
+}
+
+campus.example.com {
+	# Caddy 默认自动申请/续期证书，并自动把 HTTP 80 跳转到 HTTPS。
+
+	encode zstd gzip
+
+	# 应用把 JSON 上限卡在 100000 字节；128KB 给应用留出返回结构化 413 的空间。
+	# 该指令需要 Caddy 2.10+；旧版本删除本块（应用仍会在 100000 字节处拒绝）。
+	request_body {
+		max_size 128KB
+	}
+
+	reverse_proxy 127.0.0.1:4173 {
+		# 原样转发浏览器 Host（关键）
+		header_up Host {host}
+		# 告诉应用这是 https（同时用于 Secure Cookie 判断）
+		header_up X-Forwarded-Proto {scheme}
+		# 客户端 IP，便于排障；应用当前按 TCP 对端限流，不读此头
+		header_up X-Real-IP {remote_host}
+
+		# 模型回答可能较慢；应用接收请求超时 70000ms，给代理留足余量
+		transport http {
+			dial_timeout 5s
+			response_header_timeout 75s
+			keepalive 30s
+		}
+	}
+
+	# 访问日志（JSON）。目录需属于 caddy 用户：
+	#   sudo install -d -o caddy -g caddy -m 0750 /var/log/caddy
+	# 使用 Caddy 内置轮转后，无需再用 logrotate 管这个文件。
+	log {
+		output file /var/log/caddy/campus-agent.access.log {
+			roll_size 50MiB
+			roll_keep 8
+			roll_keep_for 720h
+		}
+		format json
+	}
+
+	# HSTS：确认 HTTPS 长期稳定后再取消注释。应用本身不发 HSTS。
+	# 若还有子域未上 HTTPS，不要加 includeSubDomains。
+	# header Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+	# 不要在这里加 CSP / X-Frame-Options / nosniff / Referrer-Policy，
+	# 应用已下发，重复会造成策略叠加/冲突。
+}

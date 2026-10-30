@@ -1,0 +1,65 @@
+[Unit]
+Description=Campus Agent (校集) - local Node app on 127.0.0.1:4173
+Documentation=file:/opt/campus-agent/deploy/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=campus-agent
+Group=campus-agent
+WorkingDirectory=/opt/campus-agent
+
+# 使用 /usr/bin/env 查找 node；若用 nvm/n 安装，改成绝对路径，例如 /usr/local/bin/node
+ExecStart=/usr/bin/env node server.cjs
+
+Environment=NODE_ENV=production
+Environment=PORT=4173
+# 必须与用户浏览器地址栏的 origin 完全一致（https、无尾斜杠、443 不写端口）
+Environment=CAMPUS_ORIGINS=https://campus.example.com
+# 可选：开启互助登记发布前审核（默认关闭，登记即时生效）
+# Environment=BOARD_REVIEW=1
+# 可选：追加内容安全本地词表；BOARD_MODERATION=0 可关闭检查
+# Environment=BOARD_BLOCK_KEYWORDS=词1,词2
+# Environment=BOARD_MODERATION=0
+
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+KillSignal=SIGTERM
+SyslogIdentifier=campus-agent
+StandardOutput=journal
+StandardError=journal
+UMask=0077
+
+# ---- 沙箱加固 ---------------------------------------------------------------
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+# 项目不在 /opt 或放在 /home 时：同步修改 WorkingDirectory / ReadWritePaths，
+# 并把 ProtectHome 改为 read-only（否则服务读不到项目文件）。
+ProtectHome=yes
+# 需要写 data/ 与 config.local.json；配置保存是「.tmp 写入 + rename」，
+# 因此必须放开整个项目目录，只给 data/ 会导致保存模型配置失败。
+ReadWritePaths=/opt/campus-agent
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+SystemCallArchitectures=native
+# 若启动报 syscall 被拒，先看 journalctl -u campus-agent，再放宽这一行。
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target

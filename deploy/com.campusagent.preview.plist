@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  校集 Campus Agent — macOS launchd 用户代理（预览/内网使用）
+
+  使用前：
+    1. 替换所有 /Users/Shared/campus-agent 为实际项目绝对路径；
+    2. 替换 https://campus.example.com 为实际公网/内网域名；
+    3. 先创建日志目录（launchd 不会自动创建）：
+         mkdir -p /Users/Shared/campus-agent/logs
+    4. 安装并启动：
+         cp deploy/com.campusagent.preview.plist ~/Library/LaunchAgents/
+         launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.campusagent.preview.plist
+         launchctl kickstart -k gui/$(id -u)/com.campusagent.preview
+       停止/卸载：
+         launchctl bootout gui/$(id -u)/com.campusagent.preview
+
+  说明：
+    - 这是登录用户级代理，注销即停止，不是系统守护进程；
+    - ProgramArguments 用 /usr/bin/env 查找 node，PATH 已含 Homebrew；
+      更稳妥可把 <string>node</string> 换成 `which node` 的绝对路径；
+    - 日志是普通文件，不会自动轮转（macOS 用 newsyslog），请留意磁盘占用。
+-->
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.campusagent.preview</string>
+
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/env</string>
+		<string>node</string>
+		<string>server.cjs</string>
+	</array>
+
+	<key>WorkingDirectory</key>
+	<string>/Users/Shared/campus-agent</string>
+
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PORT</key>
+		<string>4173</string>
+		<key>CAMPUS_ORIGINS</key>
+		<string>https://campus.example.com</string>
+		<key>PATH</key>
+		<string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
+
+	<key>RunAtLoad</key>
+	<true/>
+
+	<key>KeepAlive</key>
+	<true/>
+
+	<key>ThrottleInterval</key>
+	<integer>10</integer>
+
+	<key>ProcessType</key>
+	<string>Background</string>
+
+	<key>StandardOutPath</key>
+	<string>/Users/Shared/campus-agent/logs/preview.out.log</string>
+
+	<key>StandardErrorPath</key>
+	<string>/Users/Shared/campus-agent/logs/preview.err.log</string>
+</dict>
+</plist>
