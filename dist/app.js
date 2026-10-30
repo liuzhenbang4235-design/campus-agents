@@ -88,7 +88,7 @@ function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='co
 function go(page,id){const hash='#'+page+(id?'/'+id:'');if(location.hash===hash)render();else location.hash=hash}
 const titles={gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理'};
 function profileSelect(){return `<select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select>`}
-function accountControls(){return account?`<span class="tag blue">学号 ${esc(account.studentId)}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" data-action="auth-open">学号登录</button>`}
+function accountControls(){return account?`<span class="tag blue">学号 ${esc(account.studentId)}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">学号登录</button>`}
 function configButton(){return `<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button>`}
 function navLinks(page){
  const items=[['board','board','互助通达',false],['chat','chat','与助手对话',false],['gallery','grid','找助手',true],['upload','upload','资料贡献',true]];
@@ -128,6 +128,10 @@ function clockInputValue(ms){
 function listingHeadline(l){return l.display||[l.type,l.title].filter(Boolean).join(' · ')||l.type||'同学登记'}
 function listingWhen(l){return l.windowText||(l.longTerm?'长期':(l.expiresAt?'有效至 '+String(l.expiresAt).slice(0,16).replace('T',' '):''))}
 function roleTag(role){return role==='offer'?'我来帮忙':role==='need'?'我需要':''}
+function authFormHtml(prefix='auth',opts={}){
+ const focus=opts.autofocus?' autofocus':'';
+ return '<form id="'+prefix+'-form" data-auth-form="1"><div class="field"><label for="'+prefix+'-id">学号</label><input id="'+prefix+'-id" name="studentId" required pattern="\\d{8}" maxlength="8" minlength="8" inputmode="numeric" placeholder="8 位数字学号"'+focus+'></div><div class="field"><label for="'+prefix+'-name">昵称（注册时可选）</label><input id="'+prefix+'-name" name="displayName" maxlength="20" placeholder="例如：小陈"></div><div class="field"><label for="'+prefix+'-pass">密码</label><input id="'+prefix+'-pass" name="password" type="password" required minlength="6" maxlength="72" autocomplete="new-password"></div><div class="actions"><button class="btn primary" type="submit" data-auth="login">登录</button><button class="btn" type="submit" data-auth="register">注册学号账号</button></div><p class="small muted" style="margin-top:12px">提问不用登录。登记和开聊需要 8 位学号。</p></form>';
+}
 function boardPage(){
  const logged=!!account;
  const mine=Array.isArray(boardMine)?boardMine:[];
@@ -151,7 +155,7 @@ function boardPage(){
     '<h3 style="margin-top:8px">我的有效登记 <span class="count">'+mine.length+'</span></h3>'+
     '<h3 style="margin-top:8px">我发布的登记 <span class="count">'+mine.length+'</span></h3>'+
     (mine.length?mine.map(l=>{const st=l.status||'active';const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';const act=st==='taken_down'?'':'<div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';return '<article class="record"><div><p>'+tag+' <span class="tag blue">'+esc(l.type)+'</span> '+esc(listingHeadline(l))+'</p><small>'+esc(l.description)+'</small><small>'+esc(listingWhen(l))+'</small>'+(l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'')+act+'</div></article>';}).join(''):'<p class="small muted">你还没有发布过登记。</p>'))
-  :('<form id="auth-form"><div class="field"><label for="auth-id">学号</label><input id="auth-id" name="studentId" required pattern="\\d{8}" maxlength="8" minlength="8" inputmode="numeric" placeholder="8 位数字学号"></div><div class="field"><label for="auth-name">昵称（注册时可选）</label><input id="auth-name" name="displayName" maxlength="20" placeholder="例如：小陈"></div><div class="field"><label for="auth-pass">密码</label><input id="auth-pass" name="password" type="password" required minlength="6" maxlength="72" autocomplete="new-password"></div><div class="actions"><button class="btn primary" type="submit" data-auth="login">登录</button><button class="btn" type="submit" data-auth="register">注册学号账号</button></div><p class="small muted" style="margin-top:12px">提问不用登录。登记和开聊需要 8 位学号。</p></form>'))+
+  :(authFormHtml()))+
  '</details>';
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}
@@ -283,6 +287,7 @@ function boardReviewModal(listingId){
 }
 function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=`${titles[r.page]} · 校集`;document.getElementById('app').innerHTML=shell(({gallery,board:boardPage,upload,team,chat,admin}[r.page])());if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy()}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
+function openAuthDialog(){modal('学号登录',authFormHtml('dialog-auth',{autofocus:true}))}
 function closeModal(){document.getElementById('modal').close()}
 function id(prefix){return prefix+'-'+(globalThis.crypto?.randomUUID?.()||Date.now()+'-'+Math.random().toString(36).slice(2))}
 
@@ -335,7 +340,7 @@ document.addEventListener('click',async e=>{
  const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset;
  if(a.action==='close'||a.action==='board-decline')return closeModal();
  if(a.action==='nav')return go(a.page);
- if(a.action==='auth-open'){boardPublishOpen=true;return go('board')}
+ if(a.action==='auth-open'){if(!account)openAuthDialog();return}
  if(a.action==='chat'){chatPrefill='';chatError='';return go('chat',a.id)}
  if(a.action==='prefill-chat'){chatPrefill=a.value||'';chatError='';return go('chat',a.id)}
  if(a.action==='category'){category=a.value;return render()}
@@ -385,13 +390,13 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='confirm-reset'){await perform({action:'reset'},'已恢复初始资料。');go('gallery')}
 });
 document.addEventListener('submit',async e=>{
- const f=e.target;if(!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','board-form','board-ask-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!['auth-form','board-form','board-ask-form','dm-form'].includes(f.id))return;
+ const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','board-form','board-ask-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','board-form','board-ask-form','dm-form'].includes(f.id))return;
  const fd=new FormData(f),get=n=>String(fd.get(n)||'').trim();
  if(f.id==='chat-form')return sendChat(get('question'));
  if(f.id==='board-ask-form')return askBoard(get('question'));
- if(f.id==='auth-form'){
+ if(authForm){
   const mode=e.submitter?.dataset?.auth||'login';
-  try{applyResult(await api('auth/'+mode,{studentId:get('studentId'),password:get('password'),displayName:get('displayName')}));toast(mode==='register'?'注册成功，已登录':'登录成功');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
+  try{applyResult(await api('auth/'+mode,{studentId:get('studentId'),password:get('password'),displayName:get('displayName')}));if(f.closest?.('dialog')&&document.getElementById('modal')?.open)closeModal();toast(mode==='register'?'注册成功，已登录':'登录成功');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
   return;
  }
  if(f.id==='board-form'){
