@@ -168,4 +168,55 @@ test('admin report queue and unread polling are wired in the web app',()=>{
  assert.match(app,/board-approve-listing/);
  assert.match(app,/board-review-form/);
  assert.match(app,/boardReviewMode/);
+ assert.match(app,/已生效互助登记/);
+ assert.match(app,/board-admin-takedown/);
+ assert.match(app,/confirm-board-admin-takedown/);
+ assert.match(app,/api\('board\/takedown',\{id:a\.id,asAdmin:true\}\)/);
+ assert.match(app,/api\('board\/takedown',\{id:a\.id\}\)/);
+});
+
+test('admin can take down an active listing without a report when asAdmin is set',async t=>{
+ const {request}=await setup(t);
+ await request('auth/register',{studentId:'20250081',password:'secret1',displayName:'甲'});
+ const created=await request('board/create',{type:'代取快递',description:'现在可以代取快递',contact:'微信 a',...windowFields(7)});
+ assert.equal(created.status,200);
+ const id=created.listing.id;
+ const own=await request('board/create',{type:'陪诊',description:'我可以陪一下去医院',contact:'微信 b',...windowFields(7)});
+ assert.equal(own.status,200);
+
+ await request('auth/logout',{});
+ await request('auth/register',{studentId:'20250082',password:'secret1',displayName:'乙'});
+ assert.equal((await request('board/takedown',{id,asAdmin:true})).status,403);
+ assert.equal((await request('board/takedown',{id})).status,403);
+ assert.deepEqual((await request('state')).state.boardActiveListings,[]);
+
+ await request('auth/logout',{});
+ const switched=await request('session',{profile:'admin'});
+ assert.equal(switched.status,200);
+ assert.equal(switched.state.boardReports.length,0);
+ assert.equal(switched.state.boardActiveListings.some(l=>l.id===id),true);
+ assert.equal(switched.state.boardActiveListings.some(l=>l.id===own.listing.id),true);
+ assert.equal(JSON.stringify(switched.state.boardActiveListings).includes('2025008'),false);
+ assert.equal((await request('board/takedown',{id})).status,401);
+ assert.equal((await request('board/takedown',{id,asAdmin:false})).status,401);
+ const down=await request('board/takedown',{id,asAdmin:true});
+ assert.equal(down.status,200);
+ assert.equal(down.listing.status,'taken_down');
+ assert.equal(down.state.boardReports.length,0);
+ assert.equal(down.state.boardActiveListings.some(l=>l.id===id),false);
+ assert.equal(down.state.boardActiveListings.some(l=>l.id===own.listing.id),true);
+ const board=await request('board');
+ assert.equal(board.listings.some(l=>l.id===id),false);
+ assert.equal(board.listings.some(l=>l.id===own.listing.id),true);
+ const asked=await request('board/ask',{question:'现在有没有人代取快递'});
+ assert.equal(asked.offers.some(o=>o.listingId===id),false);
+
+ await request('auth/login',{studentId:'20250081',password:'secret1'});
+ const withdrawn=await request('board/takedown',{id:own.listing.id});
+ assert.equal(withdrawn.status,200);
+ assert.equal(withdrawn.profile,'admin');
+ assert.equal(withdrawn.listing.status,'taken_down');
+ const mine=await request('board');
+ assert.equal(mine.listings.some(l=>l.id===own.listing.id),false);
+ assert.equal(mine.mine.find(l=>l.id===own.listing.id).status,'taken_down');
 });
