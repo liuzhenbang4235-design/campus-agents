@@ -262,7 +262,7 @@ globalThis.__form=boardPage();
  assert.match(chat,/id="chat-form"/);
  assert.match(chat,/https:\/\/xgc\.nytdc\.edu\.cn\/guide/);
  assert.match(chat,/是否开聊/);
- assert.doesNotMatch(chat,/豆包已接上|还没接上云端|份已审核资料|查看来源|Enter 发送|Shift \+ Enter/);
+ assert.doesNotMatch(chat,/豆包已接上|还没接上云端|份已审核资料|查看来源|Enter 发送|Shift \+ Enter|今日云端调用/);
  const team=ctx.__team;
  assert.match(team,/团队工作台/);
  assert.match(team,/校集团队/);
@@ -286,6 +286,7 @@ globalThis.__form=boardPage();
  assert.match(ctx.__adminChat,/份已审核资料/);
  assert.match(ctx.__adminChat,/查看来源/);
  assert.match(ctx.__adminChat,/Enter 发送/);
+ assert.doesNotMatch(ctx.__adminChat,/今日云端调用|次（本机限制）/);
  assert.match(ctx.__adminChat,/豆包已接上/);
  assert.doesNotMatch(ctx.__adminChat,/cloud-consent/);
  const form=ctx.__form;
@@ -354,14 +355,14 @@ globalThis.__studentSelect=profileSelect();
  assert.match(ctx.__chat,/已审核知识库/);
  assert.match(ctx.__chat,/贡献资料/);
  assert.match(ctx.__chat,/团队资料在本机/);
- assert.doesNotMatch(ctx.__chat,/豆包已接上|Enter 发送|知识库和检索保存在本机|<div class="banner">/);
+ assert.doesNotMatch(ctx.__chat,/豆包已接上|Enter 发送|知识库和检索保存在本机|<div class="banner">|今日云端调用/);
  assert.match(ctx.__lock,/切换为校集团队成员/);
  assert.equal((ctx.__lock.match(/data-action="switch"/g)||[]).length,1);
  assert.doesNotMatch(ctx.__lock,/切换为校园共创组成员|切换为学习互助组成员/);
  assert.match(ctx.__adminSelect,/校集团队 · 陈同学/);
  assert.doesNotMatch(ctx.__adminSelect,/周同学|学习互助组|校园共创/);
  assert.equal((ctx.__studentSelect.match(/<option /g)||[]).length,3);
- assert.doesNotMatch(ctx.__studentChat,/豆包已接上|份已审核资料|Enter 发送|已审核知识库|<div class="banner">/);
+ assert.doesNotMatch(ctx.__studentChat,/豆包已接上|份已审核资料|Enter 发送|已审核知识库|<div class="banner">|今日云端调用/);
  assert.match(ctx.__studentChat,/chat-layout solo/);
 });
 
@@ -461,4 +462,38 @@ test('listing owner receives DM threads and can reply without seeing student IDs
 
  await request('auth/register',{studentId:'20250023',password:'secret1',displayName:'南'});
  assert.equal((await request('board/thread?threadId='+encodeURIComponent(threadId))).status,403);
+});
+
+test('chat footer omits the daily cloud quota line for every agent and profile',()=>{
+ const document={addEventListener(){},getElementById(){return {innerHTML:'',classList:{add(){},remove(){}},setAttribute(){},scrollTop:0}},querySelectorAll(){return []}};
+ const location={hash:'#chat/life',origin:'http://127.0.0.1:4173'};
+ const ctx=vm.createContext({document,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location,history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}}});
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8')+`
+function cityDiscovery(){return ''}
+state={version:2,agents:[
+ {id:'life',name:'校园生活助手',status:'published',team:'t1',category:'校园生活',description:'生活',rules:'只依据资料',icon:'home',color:'teal'},
+ {id:'affairs',name:'校园办事助手',status:'published',team:'t1',category:'学校事务',description:'办事',rules:'只依据资料',icon:'brief',color:''},
+ {id:'study',name:'学长学姐学习库',status:'published',team:'t1',category:'学习资料',description:'学习',rules:'引用经验',icon:'book',color:'orange'}
+],docs:[],audit:[],chats:{}};
+ai={ready:true,verified:true,provider:'doubao',enabled:true,hasKey:true,model:'ep-demo',dailyLimit:80,usedToday:3,configIssue:''};
+globalThis.__pages={};
+for (const profile of ['student','team','admin']) {
+ currentProfile=profile;
+ for (const id of ['life','affairs','study']) {
+  location.hash='#chat/'+id;
+  globalThis.__pages[profile+':'+id]=shell(chat());
+ }
+}
+`,ctx);
+ for (const profile of ['student','team','admin']) {
+  for (const id of ['life','affairs','study']) {
+   const html=ctx.__pages[profile+':'+id];
+   assert.equal(typeof html,'string',profile+' '+id);
+   assert.doesNotMatch(html,/今日云端调用/);
+   assert.doesNotMatch(html,/次（本机限制）/);
+   assert.doesNotMatch(html,/3\s*\/\s*80/);
+   if (profile==='admin') assert.match(html,/Enter 发送，Shift \+ Enter 换行/);
+   else assert.doesNotMatch(html,/Enter 发送/);
+  }
+ }
 });
