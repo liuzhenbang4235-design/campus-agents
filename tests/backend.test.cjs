@@ -2,7 +2,7 @@ const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),vm=require('node:vm');
 const {createApp}=require('../lib/backend.cjs');
-const {retrieve,chunks}=require('../lib/retrieval.cjs');
+const {retrieve,chunks,canteenMenuIntent}=require('../lib/retrieval.cjs');
 const {generate}=require('../lib/provider.cjs');
 const seed=require('../lib/seed.json');
 async function setup(t,fetchImpl){
@@ -59,7 +59,8 @@ test('unconfigured retrieval summary stays readable and light on dates',async t=
  const {request}=await setup(t,()=>{throw Error('must not call')});
  const r=await request('chat',{agentId:'affairs',question:'学生证怎么补办？'});
  assert.equal(r.message.mode,'retrieval');
- assert.match(r.message.text,/供你参考/);
+ assert.match(r.message.text,/资料里和这个问题相关的是这些/);
+ assert.doesNotMatch(r.message.text,/供你参考|根据提供的资料|根据已审核资料|可参考以下内容/);
  assert.match(r.message.text,/• /);
  assert.match(r.message.text,/请再核对官方最新通知/);
  if(r.message.sources[0].date)assert.ok(!r.message.text.includes(r.message.sources[0].date),'student summary should not stack source dates');
@@ -499,6 +500,106 @@ test('offlining an already offline document does not append another audit log',a
  assert.equal(r.status,200);
  assert.equal(r.state.agents.find(a=>a.id==='study').status,'published');
  assert.equal(r.state.audit.filter(a=>a.action==='重新上架'&&a.title==='学长学姐学习库').length,1);
+});
+const MENU_CONTENT='食堂菜单价格照片 OCR 整理（第 1 组）\n拍摄日期：2026-10-11\n资料状态：OCR 初稿，价格与菜名必须人工核对后才能作为正式推荐。\n【照片 1｜menu.jpeg】\n东坡肉（识别置信度 0.996）；6元（识别置信度 0.998）；精品快餐（识别置信度 0.999）；上海酱鸭（识别置信度 0.992）；6元（识别置信度 0.999）；椒麻口水鸡（识别置信度 0.998）；6元（识别置信度 0.998）；\n';
+function menuDoc(){return {id:'menu1',agent:'life',status:'approved',cloudAllowed:true,title:'通达学院食堂菜单价格照片 OCR 初稿（第1组）',content:MENU_CONTENT,source:'食堂现场照片',date:'2026-10-11'}}
+test('canteen wording hits menu dishes while each agent still retrieves its own materials',()=>{
+ const menu=menuDoc();
+ const restaurant={id:'rest',agent:'life',status:'approved',cloudAllowed:true,title:'淮扬菜馆',content:'适合下馆子聚餐的淮扬菜和美食。'};
+ const docs=[...seed.docs,menu,restaurant];
+ assert.equal(canteenMenuIntent('食堂有什么好吃的'),true);
+ assert.equal(canteenMenuIntent('食堂今天有什么好吃的菜'),true);
+ assert.equal(canteenMenuIntent('学生证怎么补办'),false);
+ assert.equal(canteenMenuIntent('课程复习怎么安排'),false);
+ assert.equal(canteenMenuIntent('图书馆几点开放'),false);
+ assert.equal(canteenMenuIntent('食堂晚上几点关门'),false);
+ const colloquial=retrieve(docs,'life','食堂今天有什么好吃的菜');
+ assert.equal(colloquial[0].docId,'menu1');
+ assert.match(colloquial[0].excerpt,/东坡肉/);
+ assert.match(colloquial[0].excerpt,/6元/);
+ assert.ok(!colloquial.some(s=>s.docId==='rest'));
+ assert.equal(retrieve(docs,'life','食堂有什么好吃的')[0].docId,'menu1');
+ assert.equal(retrieve(docs,'life','图书馆几点开放')[0].docId,'d1');
+ assert.equal(retrieve(docs,'affairs','学生证怎么补办')[0].docId,'d3');
+ assert.equal(retrieve(docs,'study','课程复习怎么安排')[0].docId,'d2');
+ assert.ok(!retrieve(docs,'affairs','食堂有什么好吃的').some(s=>s.docId==='menu1'));
+ assert.ok(!retrieve(docs,'study','食堂有什么好吃的').some(s=>s.docId==='menu1'));
+});
+test('life, affairs and study chats cite their own materials, and any agent can surface the life canteen menu',async t=>{
+ let calls=0;
+ const {request}=await setup(t,async(_url,opts)=>{
+  calls++;
+  const body=JSON.parse(opts.body);
+  const system=body.messages[0].content;
+  const user=JSON.parse(body.messages[1].content);
+  assert.match(system,/不要用「根据提供的资料」/);
+  assert.match(system,/没有可引用的食堂相关菜品信息/);
+  assert.doesNotMatch(system,/publicMode/);
+  if(String(user.question).includes('食堂')){
+   assert.ok(user.sources.some(s=>/食堂菜单/.test(s.title)));
+   assert.match(system,/本次已附上食堂菜单摘录/);
+   if(String(user.question).includes('直接引用'))return modelResponse('窗口有东坡肉 6元、上海酱鸭 6元。[1]',[1]);
+   return modelResponse('当前没有可引用的食堂相关菜品信息',[]);
+  }
+  assert.equal(user.sources.length,1);
+  return modelResponse('按资料说明一下。[1]',[1]);
+ });
+ const before=await request('chat',{agentId:'affairs',question:'食堂有什么好吃的'});
+ assert.equal(before.message.mode,'no_evidence');
+ assert.match(before.message.text,/校园生活助手/);
+ assert.doesNotMatch(before.message.text,/没有可引用的食堂/);
+ assert.equal(calls,0);
+ const up=await request('action',{action:'upload',agent:'life',title:'通达学院食堂菜单价格照片 OCR 初稿（第1组）',source:'本人提供的食堂现场照片',content:MENU_CONTENT,sourceKind:'merchant',publishedAt:'2026-10-11',collectedAt:'2026-10-11',cloudAllowed:true});
+ const menuId=up.state.docs.find(d=>d.title.includes('食堂菜单')).id;
+ assert.equal((await request('chat',{agentId:'life',question:'食堂有什么好吃的'})).message.mode,'no_evidence');
+ await request('session',{profile:'admin'});
+ assert.equal((await request('action',{action:'review',kind:'doc',id:menuId,decision:'approve',reason:'菜单照片可以入库'})).status,200);
+ const domain={life:['图书馆几点开放？','d1'],affairs:['学生证怎么补办？','d3'],study:['课程复习怎么安排？','d2']};
+ for(const profile of ['student','team','admin']){
+  await request('session',{profile});
+  for(const [agentId,[question,docId]] of Object.entries(domain)){
+   const r=await request('chat',{agentId,question});
+   assert.equal(r.message.mode,'retrieval',profile+' '+agentId);
+   assert.equal(r.message.sources[0].docId,docId,profile+' '+agentId);
+   assert.doesNotMatch(r.message.text,/根据提供的资料|可参考以下内容|供你参考/);
+  }
+  for(const agentId of ['life','affairs','study']){
+   const r=await request('chat',{agentId,question:'食堂有什么好吃的'});
+   assert.equal(r.message.mode,'retrieval',profile+' '+agentId+' canteen');
+   assert.ok(r.message.sources.some(s=>s.docId===menuId));
+   assert.match(r.message.text,/东坡肉/);
+   assert.match(r.message.text,/6元/);
+   assert.match(r.message.text,/上海酱鸭/);
+   assert.doesNotMatch(r.message.text,/没有可引用的食堂|根据提供的资料|可参考以下内容/);
+  }
+ }
+ assert.equal(calls,0);
+ await enable(request);
+ for(const profile of ['student','team','admin']){
+  await request('session',{profile});
+  for(const agentId of ['life','affairs','study']){
+   const denied=await request('chat',{agentId,question:'食堂有什么好吃的',cloudConsent:true});
+   assert.equal(denied.message.mode,'retrieval',profile+' '+agentId);
+   assert.match(denied.message.text,/东坡肉/);
+   assert.match(denied.message.text,/椒麻口水鸡/);
+   assert.doesNotMatch(denied.message.text,/没有可引用的食堂/);
+   assert.ok(denied.message.sources.some(s=>s.docId===menuId));
+   const cited=await request('chat',{agentId,question:'请直接引用食堂菜单',cloudConsent:true});
+   assert.equal(cited.message.mode,'ai');
+   assert.match(cited.message.text,/东坡肉 6元/);
+   assert.ok(cited.message.sources.some(s=>s.docId===menuId));
+  }
+  const affairs=await request('chat',{agentId:'affairs',question:'学生证怎么补办？',cloudConsent:true});
+  assert.equal(affairs.message.mode,'ai');
+  assert.equal(affairs.message.sources[0].docId,'d3');
+  const study=await request('chat',{agentId:'study',question:'课程复习怎么安排？',cloudConsent:true});
+  assert.equal(study.message.mode,'ai');
+  assert.equal(study.message.sources[0].docId,'d2');
+  const life=await request('chat',{agentId:'life',question:'图书馆几点开放？',cloudConsent:true});
+  assert.equal(life.message.mode,'ai');
+  assert.equal(life.message.sources[0].docId,'d1');
+ }
+ assert.ok(calls>=9);
 });
 test('legacy single apiKey/model config migrates only to the saved provider',async t=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-agent-test-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
