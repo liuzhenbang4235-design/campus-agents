@@ -1,0 +1,80 @@
+# Render 部署（临时共享密码）
+
+核对对象：零依赖 Node 应用 `node server.cjs`。这是买到自定义域名、改用 Cloudflare Access 之前的过渡，不是正式登录。
+
+演示身份切换（`POST /api/session`）仍然没有真实权限。共享密码只挡住「谁都能打开页面」，挡不住已经知道密码的人切换管理员。上线前把密码只发给需要试用的人。域名和 Cloudflare Access 就绪后，清空 `ACCESS_USER` 和 `ACCESS_PASSWORD` 再部署，避免两道门叠在一起，并把 `CAMPUS_ORIGINS` 改成 `https://你的域名`。
+
+TLS 在 Render 边缘终止，进程只收 HTTP。不要在应用里再开 HTTPS。
+
+## 监听地址
+
+| 条件 | 绑定 |
+| --- | --- |
+| 设置了 `HOST` | 用 `HOST`（Blueprint 写 `0.0.0.0`） |
+| 没设 `HOST`，且 `RENDER=true` | `0.0.0.0` |
+| 其他情况（本机预览、systemd） | `127.0.0.1` |
+
+只设置 `PORT` **不会**改成 `0.0.0.0`。本机和 `deploy/campus-agent.service` 继续只监听回环。自建 nginx/Caddy 不要设 `HOST=0.0.0.0`。
+
+Render 会注入 `PORT`（常见默认 10000）。Blueprint 不写死 `PORT`。
+
+## 操作者要填的环境变量
+
+`render.yaml` 里这三项是 `sync: false`，只在第一次用 Blueprint 创建时向 Dashboard 要值，之后同步不会覆盖。不要把值写进仓库。
+
+| 变量 | 填什么 |
+| --- | --- |
+| `CAMPUS_ORIGINS` | 完整 origin：`https://<服务名>.onrender.com`。只要 scheme + 主机，不要路径、尾斜杠、查询串。以后有自定义域名就改成那个 `https://` 地址，多个用英文逗号隔开。 |
+| `ACCESS_USER` | 共享账号 |
+| `ACCESS_PASSWORD` | 共享密码。两者都非空才启用门；只填一个时门保持关闭，并在日志里警告。 |
+
+另外 Blueprint 已经写好：
+
+- `HOST=0.0.0.0`
+- `SKIP_INSTALL_DEPS=true`（没有 npm 依赖，跳过 install）
+
+`PORT` 由 Render 注入，不用自己设。
+
+应用还会接受平台注入的 `RENDER_EXTERNAL_URL`（同样是 `https://<服务名>.onrender.com`）。因此健康检查用的 Host（无自定义域名时就是 `onrender.com` 主机名）在你还没把同一地址写进 `CAMPUS_ORIGINS` 时也能通过。浏览器要稳定使用，仍请把 `CAMPUS_ORIGINS` 设成地址栏里的 origin。一旦验证了自定义域名，Render 的 HTTP 健康检查会改用该域名做 Host，这时 `CAMPUS_ORIGINS` 必须包含它，否则探针收到 403，部署失败。
+
+## 共享密码的范围
+
+`ACCESS_USER` 和 `ACCESS_PASSWORD` 都设置后，除 `GET /api/health` 以外的请求都要 HTTP Basic Auth。比对是定长、timing-safe 的。密码里可以有冒号（只按第一个冒号拆用户名和密码）。
+
+- 未带或错误的 `Authorization`：401，并带 `WWW-Authenticate: Basic realm="Campus Agent"`
+- `GET /api/health`：不要求密码，供 Render 探针。仍走 Host 白名单
+- 其他方法打到 `/api/health`：不豁免
+
+健康检查路径在 Blueprint 里是 `/api/health`。探针要在 5 秒内拿到 2xx。
+
+## 数据
+
+Free 实例不能挂持久磁盘，本 Blueprint 也不挂。磁盘只在付费实例上可用，而且会变成单实例、没有零停机部署。
+
+`data/` 和 `config.local.json` 不在 Git 里。云上第一次启动用仓库里的 `lib/seed.json`，不是你电脑上的完整知识库。运行中写入的互助数据、上传和模型密钥在重新部署、重启或实例替换时丢失。需要完整资料时再单独同步，不要把 `config.local.json` 或 `data/` 提交上来。
+
+## Free 计划
+
+`plan: free` 会在一段时间没有请求后休眠，下一次访问要冷启动。这是刻意的，不为了「一直开着」去改付费计划。区域默认 Oregon；创建后不能改。若要新加坡等更近的区域，在第一次同步前自己写上 `region`。
+
+## 创建后自检
+
+把 `<服务名>` 换成 Dashboard 里的 onrender 主机名。
+
+```bash
+curl -fsS "https://<服务名>.onrender.com/api/health"
+# => {"version":2,"app":"campus-agent"}
+
+curl -sS -o /dev/null -w '%{http_code}\n' "https://<服务名>.onrender.com/"
+# => 401
+
+curl -fsS -u '<ACCESS_USER>:<ACCESS_PASSWORD>' -o /dev/null -w '%{http_code}\n' \
+  "https://<服务名>.onrender.com/"
+# => 200
+```
+
+浏览器打开首页时应弹出基本认证框。通过之后，页面里的接口请求会带上同一组凭据。
+
+## 本目录其他文件
+
+自建 TLS 反向代理、systemd 和备份仍以 [README.md](README.md) 为准。那条路径默认监听 `127.0.0.1`，与这里的 `HOST=0.0.0.0` 不要混用。

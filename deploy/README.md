@@ -15,6 +15,8 @@
 
 因此：**只允许内网访问，或放在 SSO / VPN / 零信任网关之后。** 在接入真实认证与权限之前，不要做公网端口映射、不要挂公网域名做“先上线再说”。本指南余下内容默认你已接受“仅内网 / 受控访问”的前提。
 
+Render 上的临时做法见 [render.md](render.md)：进程监听 `0.0.0.0`，前面加一层共享密码，等自定义域名和 Cloudflare Access。那不是把演示身份切换直接放到公网，也代替不了本节的自建反向代理。自建 nginx / Caddy 仍然不要设置 `HOST`。
+
 ---
 
 ## 1. 架构
@@ -24,7 +26,7 @@
                         （TLS 终止）        仅回环，不对外
 ```
 
-- `server.cjs` 固定监听 `127.0.0.1`，**不要改成 `0.0.0.0`**，否则绕过代理直接暴露明文端口。
+- `server.cjs` 默认监听 `127.0.0.1`。自建反向代理不要设置 `HOST=0.0.0.0`，否则绕过代理直接暴露明文端口。只有 Render 这种平台代理在进程外面时才绑定 `0.0.0.0`（见 [render.md](render.md)）。只设置 `PORT` 不会改变监听地址。
 - 应用对每个请求做 Host 白名单校验：默认只接受 `127.0.0.1:4173`、`localhost:4173`。
 - 启动时设置 `CAMPUS_ORIGINS=https://<域名>` 后：该 origin 的 Host / Origin 被接受，会话 Cookie 追加 `Secure`。
 - 代理必须**原样转发浏览器 Host**（nginx `$host`、Caddy `{host}`），并设置 `X-Forwarded-Proto: https`。代理若把 Host 改成 `127.0.0.1:4173`，应用会返回 403。
@@ -313,7 +315,7 @@ sudo systemctl start campus-agent
 
 ## 13. 防火墙与网络
 
-- **只开放 80/443**。4173 绝不能出现在公网安全组/防火墙里：应用只监听 `127.0.0.1`，这是第二道保险。
+- **只开放 80/443**。4173 绝不能出现在公网安全组/防火墙里：自建部署不要设置 `HOST`，应用只监听 `127.0.0.1`，这是第二道保险。Render 的监听规则不同，见 [render.md](render.md)。
 - 验证监听地址：`ss -ltnp | grep 4173` 应显示 `127.0.0.1:4173`，不是 `0.0.0.0:4173` 或 `[::]:4173`。
 - ufw 示例：
 
@@ -372,7 +374,8 @@ sudo ufw enable
 
 | 文件 | 用途 |
 | --- | --- |
-| `README.md` | 本文档 |
+| `README.md` | 本文档（自建 TLS 反向代理） |
+| `render.md` | Render 临时部署：`HOST=0.0.0.0` 与共享密码 |
 | `nginx.conf.example` | nginx TLS 站点（80 跳转 + 443 反代） |
 | `Caddyfile.example` | Caddy 等价配置（自动 HTTPS） |
 | `campus-agent.service` | Linux systemd 单元（journald + 加固） |
