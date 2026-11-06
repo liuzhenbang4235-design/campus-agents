@@ -15,7 +15,7 @@
 
 因此：**只允许内网访问，或放在 SSO / VPN / 零信任网关之后。** 在接入真实认证与权限之前，不要做公网端口映射、不要挂公网域名做“先上线再说”。本指南余下内容默认你已接受“仅内网 / 受控访问”的前提。
 
-Render 上的临时做法见 [render.md](render.md)：进程监听 `0.0.0.0`，前面加一层共享密码，等自定义域名和 Cloudflare Access。那不是把演示身份切换直接放到公网，也代替不了本节的自建反向代理。自建 nginx / Caddy 仍然不要设置 `HOST`。
+Render 上的临时做法见 [render.md](render.md)：进程监听 `0.0.0.0`，前面加一层共享密码，等自定义域名和 Cloudflare Access。云端模型 Key 放在 `CAMPUS_AI_*` 环境变量里，免费实例重启后仍在，不要写进仓库。那不是把演示身份切换直接放到公网，也代替不了本节的自建反向代理。自建 nginx / Caddy 仍然不要设置 `HOST`。
 
 ---
 
@@ -375,7 +375,7 @@ sudo ufw enable
 | 文件 | 用途 |
 | --- | --- |
 | `README.md` | 本文档（自建 TLS 反向代理） |
-| `render.md` | Render 临时部署：`HOST=0.0.0.0` 与共享密码 |
+| `render.md` | Render 临时部署：监听地址、共享密码、云端模型环境变量 |
 | `nginx.conf.example` | nginx TLS 站点（80 跳转 + 443 反代） |
 | `Caddyfile.example` | Caddy 等价配置（自动 HTTPS） |
 | `campus-agent.service` | Linux systemd 单元（journald + 加固） |
