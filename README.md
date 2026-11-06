@@ -70,6 +70,8 @@
 
 本机演示版只监听 127.0.0.1，不要直接暴露到公网。需要给校内使用时，按 [deploy/README.md](deploy/README.md) 配置 TLS 反向代理：代理保留浏览器原始 Host、转发 `X-Forwarded-Proto`，应用启动时设置 `CAMPUS_ORIGINS=https://你的域名`（应用据此校验 Host/Origin，并给会话 Cookie 加 `Secure`）。`deploy/` 里还有 systemd / launchd 启动文件与备份脚本。
 
+临时放到 Render 时按 [deploy/render.md](deploy/render.md)：`HOST=0.0.0.0`，并用 `ACCESS_USER` / `ACCESS_PASSWORD` 加一层共享密码。这是自定义域名和 Cloudflare Access 之前的过渡，不是正式认证。未设置 `HOST` 且不在 Render 上时，监听地址仍是 127.0.0.1。
+
 注意：当前 `/api/session` 仍可一键切换管理员演示身份，未接真实登录前只建议放在内网，或在最外层再加 SSO/VPN。限流是进程内内存计数；经反向代理后客户端 IP 统一显示为本机，限流会退化为全局限制，重启服务后清零。
 
 ## 尚未完成

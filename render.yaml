@@ -1,0 +1,31 @@
+# Campus Agent web service.
+# Free instances spin down after inactivity (about 15 minutes) and cold-start
+# on the next request. Do not switch this plan just to keep the process awake.
+# No persistent disk: free web services cannot attach one. data/ is gitignored,
+# so a new instance starts from lib/seed.json. Writes under data/ and
+# config.local.json disappear on restart or redeploy.
+services:
+  - type: web
+    name: campus-agents
+    runtime: node
+    plan: free
+    # Zero dependencies. Skip npm install; the start script is `node server.cjs`.
+    buildCommand: node --check server.cjs
+    startCommand: node server.cjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: "true"
+      # Render's proxy is outside the process. Loopback would fail health checks.
+      - key: HOST
+        value: "0.0.0.0"
+      # Operator fills https://<service>.onrender.com (and later the custom domain).
+      # sync:false is prompted once at Blueprint creation and is not overwritten later.
+      - key: CAMPUS_ORIGINS
+        sync: false
+      # Shared password until Cloudflare Access is in front of a custom domain.
+      # Both must be set or the gate stays off. Never put the values in git.
+      - key: ACCESS_USER
+        sync: false
+      - key: ACCESS_PASSWORD
+        sync: false

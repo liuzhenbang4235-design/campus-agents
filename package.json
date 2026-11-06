@@ -1,0 +1,7 @@
+{
+  "name": "campus-agents",
+  "private": true,
+  "scripts": {
+    "start": "node server.cjs"
+  }
+}
