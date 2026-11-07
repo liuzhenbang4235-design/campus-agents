@@ -29,7 +29,7 @@ function formatBubble(text){
 }
 function sourceMarkup(s){
  if(s.sourceType==='campus_board'){
-  return '<button class="source-btn" data-action="board-offer" data-id="'+esc(s.listingId)+'" data-title="'+esc(s.display||s.rawTitle||s.title||'同学登记')+'" data-owner="'+esc(s.ownerName||'')+'" data-type="'+esc(s.type||'')+'" data-expires="'+esc(s.windowText||s.expiresAt||'')+'">['+s.citation+'] '+esc(s.title||'同学登记')+' · 是否开聊</button>';
+  return '<button class="source-btn" data-action="board-offer" data-id="'+esc(s.listingId)+'" data-title="'+esc(s.display||s.rawTitle||s.title||'同学登记')+'" data-owner="'+esc(s.ownerName||'')+'" data-type="'+esc(s.type||'')+'" data-expires="'+esc(s.windowText||s.expiresAt||'')+'" data-image="'+esc(listingImageUrl(s))+'">['+s.citation+'] '+esc(s.title||'同学登记')+' · 是否开聊</button>';
  }
  if(s.sourceType==='map'){
   let url;try{url=new URL(s.sourceUrl);if(url.protocol!=='https:'||!((url.hostname==='uri.amap.com'&&url.pathname==='/search')||(url.hostname==='www.openstreetmap.org'&&/^\/(node|way|relation)\/\d+$/.test(url.pathname)))||url.username||url.password)return ''}catch{return ''}
@@ -123,14 +123,60 @@ function shell(content){
 function heading(eye,title,sub,action=''){return `<div class="page-heading"><div>${eye?`<div class="eyebrow">${eye}</div>`:''}<h1>${title}</h1><p>${sub}</p></div>${action}</div>`}
 function galleryHero(){const pack=teamPack();if(!pack)return `<section class="hero"><div class="hero-main"><div class="eyebrow">本周推荐 · 学校事务</div><h2>办事前，先问问校园办事助手</h2><p>准备哪些材料、下一步怎么做？<br>从有来源的资料中，找到清楚的答案。</p><button class="btn" data-action="chat" data-id="affairs">开始对话 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>校集团队<small>每个助手都有维护团队</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`;return `<section class="hero"><div class="hero-main"><div class="eyebrow">${esc(pack.heroEye)}</div><h2>${esc(pack.heroTitle)}</h2><p>${esc(pack.heroBody)}</p><button class="btn" data-action="nav" data-page="team">进入团队工作台 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>生活 · 办事 · 学习<small>${esc(pack.name)}统一维护</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`}
 function gallery(){const pack=teamPack();const items=state.agents.filter(a=>a.status==='published'&&(category==='全部'||a.category===category)&&(!query||[a.name,a.description,teamName(a.team)].some(v=>v.includes(query))));return `${heading('','你的校园问题，从这里开始',pack?`${esc(pack.home)} 也可以先挑一个已上线助手。`:'挑一个校园助手，直接问就行。',`<button class="btn" data-action="nav" data-page="upload">${icon('plus')}${pack?esc(pack.contribute):'贡献一份资料'}</button>`)}${galleryHero()}<div class="toolbar"><div class="chips" role="group" aria-label="助手分类">${['全部','校园生活','学习资料','学校事务'].map(c=>`<button class="chip ${category===c?'active':''}" data-action="category" data-value="${c}">${c==='全部'?'全部助手':c}</button>`).join('')}</div><label class="search">${icon('search')}<input id="search" aria-label="搜索助手或团队" placeholder="搜索助手或团队" value="${esc(query)}"></label></div><div class="section-heading"><h2>发现校园助手</h2><span>${items.length} 个已上线助手</span></div><div class="cards">${items.map(a=>`<article class="agent-card"><div class="card-top"><div class="agent-icon ${a.color}">${icon(a.icon)}</div><span class="tag green">已审核上线</span></div><h3>${esc(a.name)}</h3><p>${esc(a.description)}</p><div><span class="tag">${a.category}</span></div><div class="team-line">${icon('team')}${teamName(a.team)}</div><div class="card-foot"><small>${state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length} 份已审核资料</small><button class="btn text small" data-action="chat" data-id="${a.id}">开始对话 ${icon('arrow')}</button></div></article>`).join('')}</div>${!items.length?`<div class="empty"><p>${pack?esc(pack.emptySearch):'没有找到相关助手，试试其他分类或关键词。'}</p></div>`:''}<div class="bottom-note"><span>${icon('shield')} 回答会标出来源</span><span>${isStudent()?'公开资料会注明出处':'公开资料与演示资料均有标注 · '+aiStatusNote()}</span></div>`}
-function clockInputValue(ms){
+function shanghaiParts(ms){
  try{
   const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(ms)).filter(p=>p.type!=='literal').map(p=>[p.type,p.value]));
-  return parts.year+'-'+parts.month+'-'+parts.day+'T'+parts.hour+':'+parts.minute;
+  return {year:parts.year,month:parts.month,day:parts.day,hour:parts.hour,minute:parts.minute};
  }catch(e){
   const d=new Date(ms+8*3600000),p=n=>String(n).padStart(2,'0');
-  return d.getUTCFullYear()+'-'+p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+'T'+p(d.getUTCHours())+':'+p(d.getUTCMinutes());
+  return {year:String(d.getUTCFullYear()),month:p(d.getUTCMonth()+1),day:p(d.getUTCDate()),hour:p(d.getUTCHours()),minute:p(d.getUTCMinutes())};
  }
+}
+function clockInputValue(ms){const p=shanghaiParts(ms);return p.year+'-'+p.month+'-'+p.day+'T'+p.hour+':'+p.minute}
+function dateKeyPlus(key,days){
+ const [y,m,d]=String(key||'').split('-').map(Number);
+ const dt=new Date(Date.UTC(y,m-1,d)+days*86400000),p=n=>String(n).padStart(2,'0');
+ return dt.getUTCFullYear()+'-'+p(dt.getUTCMonth()+1)+'-'+p(dt.getUTCDate());
+}
+function listingImageUrl(value){
+ const url=String(value&&typeof value==='object'?value.image:value||'');
+ return /^\/api\/board\/images\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.(?:jpg|png|gif|webp)$/.test(url)?url:'';
+}
+function listingThumb(value){
+ const url=listingImageUrl(value);
+ if(!url)return '';
+ return '<a class="listing-shot" href="'+esc(url)+'" target="_blank" rel="noopener"><img class="listing-thumb" src="'+esc(url)+'" alt="登记图片"></a>';
+}
+function setBoardDay(value){
+ const hidden=document.getElementById('board-window-day');
+ if(hidden)hidden.value=value;
+ document.querySelectorAll('[data-action="board-day"]').forEach(btn=>btn.classList.toggle('active',btn.dataset.value===value));
+ const date=document.getElementById('board-date');
+ if(date)date.value=(value==='today'||value==='tomorrow')?'':value;
+}
+function setBoardMode(mode){
+ const long=mode==='long';
+ const span=document.getElementById('board-span');
+ if(span)span.classList.toggle('hidden',long);
+ ['board-start-time','board-end-time'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.required=!long;
+  el.disabled=long;
+ });
+}
+function applyBoardHours(n){
+ const hours=+n;
+ if(![2,4,8,24].includes(hours))return;
+ setBoardMode('span');
+ const radio=document.querySelector('#board-form input[name="windowMode"][value="span"]');
+ if(radio)radio.checked=true;
+ const start=Date.now(),end=start+hours*3600000;
+ const s=shanghaiParts(start),e=shanghaiParts(end);
+ const startEl=document.getElementById('board-start-time'),endEl=document.getElementById('board-end-time');
+ if(startEl)startEl.value=s.hour+':'+s.minute;
+ if(endEl)endEl.value=e.hour+':'+e.minute;
+ setBoardDay('today');
 }
 function listingHeadline(l){return l.display||[l.type,l.title].filter(Boolean).join(' · ')||l.type||'同学登记'}
 function listingWhen(l){return l.windowText||(l.longTerm?'长期':(l.expiresAt?'有效至 '+String(l.expiresAt).slice(0,16).replace('T',' '):''))}
@@ -144,15 +190,22 @@ function boardPage(){
  const mine=Array.isArray(boardMine)?boardMine:[];
  const answer=boardAnswer;
  const suggestions=['今天下午有没有人代取快递？','谁能接一下陪诊？','有没有人出闲置显示器？'];
- const startAt=clockInputValue(Date.now()),endAt=clockInputValue(Date.now()+2*3600000);
+ const nowParts=shanghaiParts(Date.now()),laterParts=shanghaiParts(Date.now()+2*3600000);
+ const startClock=nowParts.hour+':'+nowParts.minute,endClock=laterParts.hour+':'+laterParts.minute;
  const register='<section class="panel board-register" id="board-register"><h2>互助登记</h2><p class="small muted">登记你能提供的帮助，或你的需求。类型自己写。「接……」表示你来做这件事。发布需要学号登录。</p>'+
  (logged
   ?('<p class="muted small" style="margin:12px 0">当前学号：'+esc(account.studentId)+(account.displayName?' · '+esc(account.displayName):'')+'</p>'+
     '<form id="board-form"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><input id="board-type" name="type" type="text" required maxlength="30" placeholder="自己写，例如：代取快递、陪诊、出闲置、接摄影"></div>'+
-    '<fieldset class="alarm-window"><legend>'+icon('clock')+' 生效时段</legend><label class="check alarm-long"><input id="board-long" name="longTerm" type="checkbox"><span>长期有效，直到我下架</span></label><div class="alarm-range" id="board-range"><div class="alarm-face" aria-hidden="true"></div><div class="field"><label for="board-start">开始（北京时间）</label><input id="board-start" name="windowStart" type="datetime-local" required value="'+esc(startAt)+'"></div><div class="field alarm-end"><label for="board-end">结束（北京时间）</label><input id="board-end" name="windowEnd" type="datetime-local" required value="'+esc(endAt)+'"></div><p class="small muted alarm-note">像设闹钟一样，写清这段互助从何时到何时有效。超过 90 天请改选长期。</p></div></fieldset>'+
-    '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
+    '<fieldset class="alarm-window"><legend>'+icon('clock')+' 生效时段</legend>'+
+    '<div class="window-mode" role="radiogroup" aria-label="生效时段"><label class="window-choice"><input type="radio" name="windowMode" value="long"><span>长期有效</span></label><label class="window-choice"><input type="radio" name="windowMode" value="span" checked><span>指定时段</span></label></div>'+
+    '<div id="board-span"><div class="window-days" role="group" aria-label="哪一天"><button type="button" class="chip active" data-action="board-day" data-value="today">今天</button><button type="button" class="chip" data-action="board-day" data-value="tomorrow">明天</button><label class="chip window-pick" for="board-date">选一天</label></div>'+
+    '<input id="board-date" name="windowDate" type="date" aria-label="选一天"><input type="hidden" id="board-window-day" name="windowDay" value="today">'+
+    '<div class="form-grid window-clocks"><div class="field"><label for="board-start-time">开始</label><input id="board-start-time" name="windowStartTime" type="time" required value="'+esc(startClock)+'"></div><div class="field"><label for="board-end-time">结束</label><input id="board-end-time" name="windowEndTime" type="time" required value="'+esc(endClock)+'"></div></div>'+
+    '<p class="small muted alarm-note">时间为北京时间。结束不晚于开始时，算到第二天。超过 90 天请改选长期有效。</p>'+
+    '<div class="window-hours"><span class="small muted">从现在起</span><button type="button" data-action="board-hours" data-value="2">2 小时</button><button type="button" data-action="board-hours" data-value="4">4 小时</button><button type="button" data-action="board-hours" data-value="8">8 小时</button><button type="button" data-action="board-hours" data-value="24">24 小时</button></div></div></fieldset>'+
+    '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><div class="field"><label for="board-image">放图片（可选）</label><input id="board-image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><img id="board-image-preview" class="listing-thumb hidden" alt="图片预览"><small id="board-image-note">最多 1 张，JPEG / PNG / WebP / GIF，4 MB 以内。不要上传证件、人脸特写等敏感个人信息。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
     '<h3 style="margin-top:8px">我发布的登记 <span class="count">'+mine.length+'</span></h3>'+
-    (mine.length?mine.map(l=>{const st=l.status||'active';const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';const act=st==='taken_down'?'':'<div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';return '<article class="record"><div><p>'+tag+' <span class="tag blue">'+esc(l.type)+'</span> '+esc(listingHeadline(l))+'</p><small>'+esc(l.description)+'</small><small>'+esc(listingWhen(l))+'</small>'+(l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'')+act+'</div></article>';}).join(''):'<p class="small muted">你还没有发布过登记。</p>'))
+    (mine.length?mine.map(l=>{const st=l.status||'active';const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';const act=st==='taken_down'?'':'<div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';return '<article class="record board-card">'+listingThumb(l)+'<div><p>'+tag+' <span class="tag blue">'+esc(l.type)+'</span> '+esc(listingHeadline(l))+'</p><small>'+esc(l.description)+'</small><small>'+esc(listingWhen(l))+'</small>'+(l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'')+act+'</div></article>';}).join(''):'<p class="small muted">你还没有发布过登记。</p>'))
   :(authFormHtml()))+
  '</section>';
  const ask='<section class="panel board-ask"><h2>问别人</h2><p class="hint">互助通达按意思去对同学登记，不限固定类别。只会用正处在生效时段里的信息。「接……」表示对方来帮忙。</p>'+
@@ -163,7 +216,12 @@ function boardPage(){
  '</section>';
  const inbox=logged&&boardInbox.length?'<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record"><div><p><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'</p><small>'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</small><small>'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</small></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>':'';
  return heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
- '<div class="board-split">'+register+ask+'</div>'+inbox;
+ '<div class="board-split">'+register+ask+'</div>'+inbox+boardListSection();
+}
+function boardListSection(){
+ const list=Array.isArray(boardListings)?boardListings:[];
+ const body=list.length?list.map(l=>'<article class="record board-card">'+listingThumb(l)+'<div><p><span class="tag blue">'+esc(l.type||'互助')+'</span> '+(roleTag(l.role)?'<span class="tag">'+esc(roleTag(l.role))+'</span> ':'')+esc(listingHeadline(l))+'</p><small>'+esc(l.description||'')+'</small><small>'+esc(l.ownerName||'同学')+(listingWhen(l)?' · '+esc(listingWhen(l)):'')+'</small></div></article>').join(''):'<p class="small muted">暂无正在生效的登记。</p>';
+ return '<section class="panel board-list" id="board-list"><h2>正在生效 <span class="count">'+list.length+'</span></h2>'+body+'</section>';
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}
 function guard(kind){const admin=kind==='admin';const button=demoIdentities?(admin?'<button class="btn primary" data-action="switch" data-value="admin">切换为管理员</button>':'<button class="btn primary" data-action="switch" data-value="team">切换为校集团队成员</button>'):'<p class="small muted">公开访问不提供演示身份。</p>';const note=demoIdentities?'此处为演示身份切换，不是真实登录认证。':'公开访问不能切换演示身份。';if(admin)return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>管理员审核空间</h1><p>审核管理仅对管理员演示身份开放。<br>${note}</p>${button}</div>`;return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>团队创作空间</h1><p>请切换为校集团队成员，统一管理生活、办事和学习助手。<br>${note}</p>${button}</div>`}
@@ -240,7 +298,7 @@ function chat(){
  '<form id="chat-form"><textarea name="question" aria-label="输入问题" placeholder="'+askPlaceholder+'" rows="1" required maxlength="500">'+esc(prefill)+'</textarea><button class="btn primary" type="submit">发送 '+icon('arrow')+'</button></form>'+(me().role==='admin'?'<p>Enter 发送，Shift + Enter 换行。</p>':'')+'</div></section>'+
  chatAside(a,docs)+'</div>';
 }
-function admin(){if(me().role!=='admin')return guard('admin');const docs=state.docs.filter(d=>d.status==='pending');const agents=state.agents.filter(a=>a.status==='pending');const queue=reviewTab==='agents'?'agents':'docs';const reports=state.boardReports||[];const pendingListings=state.boardPendingListings||[];const pendingListingBody=pendingListings.length?pendingListings.map(l=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(l.type)+'</h3><span class="tag amber">待审核</span></div><p>'+esc(l.description)+'</p><p class="small muted">发布者：'+esc(l.ownerName||'—')+' · '+esc(l.windowText||'')+' · 联系方式：'+esc(l.contact||'—')+'</p><div class="actions"><button class="btn primary small" data-action="board-approve-listing" data-id="'+esc(l.id)+'">通过上线</button><button class="btn danger small" data-action="board-reject-listing" data-id="'+esc(l.id)+'">驳回</button></div></article>').join(''):'<p class="small muted">暂无待审核的互助登记。</p>';const reportBody=reports.length?reports.map(r=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(r.listing?.display||'登记已不存在')+'</h3><span class="tag amber">待处理</span></div><p>举报原因：'+esc(r.reason)+'</p><p class="small muted">登记说明：'+esc(r.listing?.description||'（已不存在）')+'</p><p class="small muted">发布者：'+esc(r.listing?.ownerName||'—')+' · 举报人：'+esc(r.reporter?.displayName||'同学')+' · '+esc(String(r.createdAt||'').replace('T',' ').slice(0,16))+'</p><div class="actions"><button class="btn danger small" data-action="board-report-resolve" data-id="'+esc(r.id)+'" data-decision="take_down">下架登记</button><button class="btn small" data-action="board-report-resolve" data-id="'+esc(r.id)+'" data-decision="dismiss">忽略举报</button></div></article>').join(''):'<p class="small muted">暂无待处理举报。</p>';const pendingPanel=(boardReviewMode||pendingListings.length)?'<section class="panel"><h2>互助登记审核 <span class="count">'+pendingListings.length+'</span></h2>'+pendingListingBody+'</section>':'';const activeListings=state.boardActiveListings||[];const activeListingBody=activeListings.length?activeListings.map(l=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(l.display||l.type||'互助登记')+'</h3><span class="tag green">已生效</span></div><p>'+esc(l.description||'')+'</p><p class="small muted">发布者：'+esc(l.ownerName||'—')+' · '+esc(l.type||'')+' · '+esc(l.windowText||'')+' · 联系方式：'+esc(l.contact||'—')+'</p><div class="actions"><button class="btn danger small" data-action="board-admin-takedown" data-id="'+esc(l.id)+'">主动下架</button></div></article>').join(''):'<p class="small muted">暂无已生效的互助登记。</p>';const activePanel='<section class="panel"><h2>已生效互助登记 <span class="count">'+activeListings.length+'</span></h2><p class="small muted fold-note">没有待处理举报时也可以主动下架。确认后不再出现在有效列表和匹配里。</p>'+activeListingBody+'</section>';const published=[...state.docs.filter(d=>d.status==='approved'||d.status==='offline').map(d=>({kind:'doc',data:d})),...state.agents.filter(a=>a.status==='published'||a.status==='offline').map(a=>({kind:'agent',data:a}))];const pendingBody=queue==='docs'?(docs.length?docs.map(d=>`<article class="review-card"><div class="review-card-head"><h3>${esc(d.title)}</h3>${badge(d.status)}</div><p>提交人：${profiles[d.owner]?.name||'演示用户'} · ${d.date}</p><p>目标助手：${esc(state.agents.find(a=>a.id===d.agent)?.name||'已不可用')}</p><p>来源：${esc(d.source)}</p><div class="actions"><button class="btn small" data-action="view-doc" data-id="${d.id}">查看内容并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('资料已处理完，暂无待审核内容。')):(agents.length?agents.map(a=>`<article class="review-card"><div class="review-card-head"><h3>${esc(a.name)}</h3>${badge(a.status)}</div><p>${teamName(a.team)} · ${a.category}</p><p>${esc(a.description)}</p><div class="actions"><button class="btn small" data-action="review-agent" data-id="${a.id}">查看配置并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('暂无待审核的 Agent。'));const publishedBody=published.length?published.map(({kind,data:d})=>`<div class="record"><div><p>${esc(d.title||d.name)}</p><small>${kind==='doc'?'资料':'Agent'} · ${statusLabel[d.status]}</small></div>${d.status==='offline'?`<button class="btn small" data-action="online" data-kind="${kind}" data-id="${d.id}">重新上架</button>`:`<button class="btn danger small" data-action="offline" data-kind="${kind}" data-id="${d.id}">下架</button>`}</div>`).join(''):'<p class="small muted fold-note">暂无已发布或已下架内容。</p>';const auditBody=state.audit.length?state.audit.slice().reverse().slice(0,8).map(a=>`<div class="audit-line"><strong>${esc(a.action)}</strong> · ${esc(a.title)}${a.reason?`<br>原因：${esc(a.reason)}`:''}<br>${esc(a.time)}</div>`).join(''):'<p class="small muted" style="margin-top:15px">操作完成后会记录在这里。</p>';return `${heading('','审核管理','先处理待审资料和 Agent。已发布内容默认收起，下架前会再确认。')}<div class="stats"><div class="stat"><span>待审核资料</span><strong>${docs.length}</strong></div><div class="stat"><span>待上线 Agent</span><strong>${agents.length}</strong></div><div class="stat"><span>本次审核记录</span><strong>${state.audit.length}</strong></div></div><div class="two-col"><section class="panel"><div class="review-tabs" role="group" aria-label="待审队列"><button data-action="review-tab" data-value="docs" class="${queue==='docs'?'active':''}">待审资料 <span class="count">${docs.length}</span></button><button data-action="review-tab" data-value="agents" class="${queue==='agents'?'active':''}">待审 Agent <span class="count">${agents.length}</span></button></div>${pendingBody}<details class="published-fold"><summary>查看已发布（${published.length}）</summary><p class="small muted fold-note">已入库资料和已上线 Agent 收在这里。下架会先确认，确认后不再参与检索。</p>${publishedBody}</details></section><aside class="stack"><section class="panel"><h2>审核要点</h2><ul class="info-list"><li>内容是否适合目标助手？</li><li>来源是否清楚，是否有分享权限？</li><li>是否包含个人信息或过期内容？</li><li>通过和驳回都要填写原因，原因会写入审核记录。</li></ul><div class="inline-notice">这里演示的是人工审核流程，不代表已经通过真实安全审查。</div></section>${pendingPanel}${activePanel}<section class="panel"><h2>互助举报 <span class="count">${reports.length}</span></h2>${reportBody}</section><section class="panel"><h2>最近操作</h2>${auditBody}</section></aside></div>`}
+function admin(){if(me().role!=='admin')return guard('admin');const docs=state.docs.filter(d=>d.status==='pending');const agents=state.agents.filter(a=>a.status==='pending');const queue=reviewTab==='agents'?'agents':'docs';const reports=state.boardReports||[];const pendingListings=state.boardPendingListings||[];const pendingListingBody=pendingListings.length?pendingListings.map(l=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(l.type)+'</h3><span class="tag amber">待审核</span></div>'+listingThumb(l)+'<p>'+esc(l.description)+'</p><p class="small muted">发布者：'+esc(l.ownerName||'—')+' · '+esc(l.windowText||'')+' · 联系方式：'+esc(l.contact||'—')+'</p><div class="actions"><button class="btn primary small" data-action="board-approve-listing" data-id="'+esc(l.id)+'">通过上线</button><button class="btn danger small" data-action="board-reject-listing" data-id="'+esc(l.id)+'">驳回</button></div></article>').join(''):'<p class="small muted">暂无待审核的互助登记。</p>';const reportBody=reports.length?reports.map(r=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(r.listing?.display||'登记已不存在')+'</h3><span class="tag amber">待处理</span></div><p>举报原因：'+esc(r.reason)+'</p><p class="small muted">登记说明：'+esc(r.listing?.description||'（已不存在）')+'</p><p class="small muted">发布者：'+esc(r.listing?.ownerName||'—')+' · 举报人：'+esc(r.reporter?.displayName||'同学')+' · '+esc(String(r.createdAt||'').replace('T',' ').slice(0,16))+'</p><div class="actions"><button class="btn danger small" data-action="board-report-resolve" data-id="'+esc(r.id)+'" data-decision="take_down">下架登记</button><button class="btn small" data-action="board-report-resolve" data-id="'+esc(r.id)+'" data-decision="dismiss">忽略举报</button></div></article>').join(''):'<p class="small muted">暂无待处理举报。</p>';const pendingPanel=(boardReviewMode||pendingListings.length)?'<section class="panel"><h2>互助登记审核 <span class="count">'+pendingListings.length+'</span></h2>'+pendingListingBody+'</section>':'';const activeListings=state.boardActiveListings||[];const activeListingBody=activeListings.length?activeListings.map(l=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(l.display||l.type||'互助登记')+'</h3><span class="tag green">已生效</span></div>'+listingThumb(l)+'<p>'+esc(l.description||'')+'</p><p class="small muted">发布者：'+esc(l.ownerName||'—')+' · '+esc(l.type||'')+' · '+esc(l.windowText||'')+' · 联系方式：'+esc(l.contact||'—')+'</p><div class="actions"><button class="btn danger small" data-action="board-admin-takedown" data-id="'+esc(l.id)+'">主动下架</button></div></article>').join(''):'<p class="small muted">暂无已生效的互助登记。</p>';const activePanel='<section class="panel"><h2>已生效互助登记 <span class="count">'+activeListings.length+'</span></h2><p class="small muted fold-note">没有待处理举报时也可以主动下架。确认后不再出现在有效列表和匹配里。</p>'+activeListingBody+'</section>';const published=[...state.docs.filter(d=>d.status==='approved'||d.status==='offline').map(d=>({kind:'doc',data:d})),...state.agents.filter(a=>a.status==='published'||a.status==='offline').map(a=>({kind:'agent',data:a}))];const pendingBody=queue==='docs'?(docs.length?docs.map(d=>`<article class="review-card"><div class="review-card-head"><h3>${esc(d.title)}</h3>${badge(d.status)}</div><p>提交人：${profiles[d.owner]?.name||'演示用户'} · ${d.date}</p><p>目标助手：${esc(state.agents.find(a=>a.id===d.agent)?.name||'已不可用')}</p><p>来源：${esc(d.source)}</p><div class="actions"><button class="btn small" data-action="view-doc" data-id="${d.id}">查看内容并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('资料已处理完，暂无待审核内容。')):(agents.length?agents.map(a=>`<article class="review-card"><div class="review-card-head"><h3>${esc(a.name)}</h3>${badge(a.status)}</div><p>${teamName(a.team)} · ${a.category}</p><p>${esc(a.description)}</p><div class="actions"><button class="btn small" data-action="review-agent" data-id="${a.id}">查看配置并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('暂无待审核的 Agent。'));const publishedBody=published.length?published.map(({kind,data:d})=>`<div class="record"><div><p>${esc(d.title||d.name)}</p><small>${kind==='doc'?'资料':'Agent'} · ${statusLabel[d.status]}</small></div>${d.status==='offline'?`<button class="btn small" data-action="online" data-kind="${kind}" data-id="${d.id}">重新上架</button>`:`<button class="btn danger small" data-action="offline" data-kind="${kind}" data-id="${d.id}">下架</button>`}</div>`).join(''):'<p class="small muted fold-note">暂无已发布或已下架内容。</p>';const auditBody=state.audit.length?state.audit.slice().reverse().slice(0,8).map(a=>`<div class="audit-line"><strong>${esc(a.action)}</strong> · ${esc(a.title)}${a.reason?`<br>原因：${esc(a.reason)}`:''}<br>${esc(a.time)}</div>`).join(''):'<p class="small muted" style="margin-top:15px">操作完成后会记录在这里。</p>';return `${heading('','审核管理','先处理待审资料和 Agent。已发布内容默认收起，下架前会再确认。')}<div class="stats"><div class="stat"><span>待审核资料</span><strong>${docs.length}</strong></div><div class="stat"><span>待上线 Agent</span><strong>${agents.length}</strong></div><div class="stat"><span>本次审核记录</span><strong>${state.audit.length}</strong></div></div><div class="two-col"><section class="panel"><div class="review-tabs" role="group" aria-label="待审队列"><button data-action="review-tab" data-value="docs" class="${queue==='docs'?'active':''}">待审资料 <span class="count">${docs.length}</span></button><button data-action="review-tab" data-value="agents" class="${queue==='agents'?'active':''}">待审 Agent <span class="count">${agents.length}</span></button></div>${pendingBody}<details class="published-fold"><summary>查看已发布（${published.length}）</summary><p class="small muted fold-note">已入库资料和已上线 Agent 收在这里。下架会先确认，确认后不再参与检索。</p>${publishedBody}</details></section><aside class="stack"><section class="panel"><h2>审核要点</h2><ul class="info-list"><li>内容是否适合目标助手？</li><li>来源是否清楚，是否有分享权限？</li><li>是否包含个人信息或过期内容？</li><li>通过和驳回都要填写原因，原因会写入审核记录。</li></ul><div class="inline-notice">这里演示的是人工审核流程，不代表已经通过真实安全审查。</div></section>${pendingPanel}${activePanel}<section class="panel"><h2>互助举报 <span class="count">${reports.length}</span></h2>${reportBody}</section><section class="panel"><h2>最近操作</h2>${auditBody}</section></aside></div>`}
 async function loadBoard(){try{const data=await api('board');boardListings=data.listings||[];boardMine=Array.isArray(data.mine)?data.mine:[];boardInbox=Array.isArray(data.inbox)?data.inbox:[];if('reviewMode' in data)boardReviewMode=data.reviewMode===true;if('account' in data)account=data.account}catch(e){toast(e.message)}}
 function boardUnreadTotal(){return (Array.isArray(boardInbox)?boardInbox:[]).reduce((n,t)=>n+(Number(t.unread)||0),0)}
 async function refreshBoardQuietly(){
@@ -267,7 +325,7 @@ function openOfferModal(offers){
  const list=Array.isArray(offers)?offers.filter(o=>o&&o.listingId):[];
  if(!list.length)return;
  const one=list.length===1;
- const cards=list.map(o=>'<article class="offer-card"><p><span class="tag blue">'+esc(o.type||'互助')+'</span> '+(roleTag(o.role)?'<span class="tag">'+esc(roleTag(o.role))+'</span> ':'')+esc(listingHeadline(o))+'</p><small class="muted">'+esc(o.ownerName||'登记同学')+(listingWhen(o)?' · '+esc(listingWhen(o)):'')+'</small>'+(one?'':'<div class="modal-actions"><button class="btn primary" type="button" data-action="board-accept" data-id="'+esc(o.listingId)+'">同意开聊</button><button class="btn small" type="button" data-action="board-report" data-id="'+esc(o.listingId)+'">举报</button></div>')+'</article>').join('');
+ const cards=list.map(o=>'<article class="offer-card">'+listingThumb(o)+'<p><span class="tag blue">'+esc(o.type||'互助')+'</span> '+(roleTag(o.role)?'<span class="tag">'+esc(roleTag(o.role))+'</span> ':'')+esc(listingHeadline(o))+'</p><small class="muted">'+esc(o.ownerName||'登记同学')+(listingWhen(o)?' · '+esc(listingWhen(o)):'')+'</small>'+(one?'':'<div class="modal-actions"><button class="btn primary" type="button" data-action="board-accept" data-id="'+esc(o.listingId)+'">同意开聊</button><button class="btn small" type="button" data-action="board-report" data-id="'+esc(o.listingId)+'">举报</button></div>')+'</article>').join('');
  const lead=one
   ?'<p>找到同学「'+esc(list[0].ownerName||'登记同学')+'」登记的「'+esc(listingHeadline(list[0]))+'」。同意后打开一对一对话；考虑一下就留在当前结果，不会建聊。</p>'
   :'<p>找到 '+list.length+' 条意思和时间对得上的登记。选一位开聊，或先考虑一下（不会建聊）。</p>';
@@ -292,7 +350,7 @@ async function askBoard(question){
 function openDmModal(data,listingId,threadId){
  dmListingId=listingId;
  const msgs=(data.messages||[]).map(m=>'<div class="message '+(m.mine===true||(account&&m.from===account.studentId)?'user':'')+'"><div class="bubble">'+esc(m.text)+'<br><small>'+esc(String(m.time||'').replace('T',' ').slice(0,16))+'</small></div></div>').join('');
- modal('与 '+esc(data.peer?.displayName||'登记同学')+' 交流','<p class="small muted" style="margin-bottom:12px">关于：'+esc(listingHeadline(data.listing||{}))+' · '+esc(listingWhen(data.listing||{}))+(data.listing?.contact?' · 对方联系方式：'+esc(data.listing.contact):'')+'</p><div class="messages" style="min-height:180px;max-height:280px;border:1px solid var(--line);border-radius:10px;margin-bottom:12px">'+(msgs||'<div class="empty"><p>还没有消息，打个招呼吧。</p></div>')+'</div><form id="dm-form" data-id="'+esc(listingId||'')+'"'+(threadId?' data-thread="'+esc(threadId)+'"':'')+'><div class="field"><label for="dm-text">消息</label><textarea id="dm-text" name="text" required maxlength="500" rows="3" placeholder="礼貌说明来意"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">关闭</button><button class="btn primary" type="submit">发送</button></div></form>');
+ modal('与 '+esc(data.peer?.displayName||'登记同学')+' 交流',listingThumb(data.listing)+'<p class="small muted" style="margin-bottom:12px">关于：'+esc(listingHeadline(data.listing||{}))+' · '+esc(listingWhen(data.listing||{}))+(data.listing?.contact?' · 对方联系方式：'+esc(data.listing.contact):'')+'</p><div class="messages" style="min-height:180px;max-height:280px;border:1px solid var(--line);border-radius:10px;margin-bottom:12px">'+(msgs||'<div class="empty"><p>还没有消息，打个招呼吧。</p></div>')+'</div><form id="dm-form" data-id="'+esc(listingId||'')+'"'+(threadId?' data-thread="'+esc(threadId)+'"':'')+'><div class="field"><label for="dm-text">消息</label><textarea id="dm-text" name="text" required maxlength="500" rows="3" placeholder="礼貌说明来意"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">关闭</button><button class="btn primary" type="submit">发送</button></div></form>');
 }
 function reportModal(listingId){
  modal('举报这条登记','<form id="board-report-form" data-id="'+esc(listingId)+'"><p class="small muted">举报会交给管理员处理；同一条登记只能举报一次，滥用举报会受限。</p><div class="field"><label for="report-reason">举报原因 *</label><textarea id="report-reason" name="reason" required minlength="2" maxlength="300" rows="3" placeholder="例如：联系方式是广告，或内容与描述不符"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn danger" type="submit">提交举报</button></div></form>');
@@ -342,6 +400,15 @@ function configDialog(keepDraft){
 document.addEventListener('change',async e=>{
  if(e.target.id==='profile')return switchProfile(e.target.value);
  if(e.target.id==='chat-agent'){chatError='';go('chat',e.target.value);return}
+ if(e.target.id==='board-image'){
+  const input=e.target,file=input.files&&input.files[0],note=document.getElementById('board-image-note'),preview=document.getElementById('board-image-preview');
+  const clearPreview=()=>{if(preview){preview.removeAttribute('src');preview.classList.add('hidden')}};
+  if(!file){clearPreview();if(note)note.textContent='最多 1 张，JPEG / PNG / WebP / GIF，4 MB 以内。不要上传证件、人脸特写等敏感个人信息。';return}
+  if(!['image/jpeg','image/png','image/webp','image/gif'].includes(file.type)||file.size>4*1024*1024){input.value='';clearPreview();return toast('图片请使用 JPEG、PNG、WebP 或 GIF，且小于 4 MB。')}
+  if(note)note.textContent='已选择 1 张。不要上传证件或人脸特写。';
+  if(preview&&typeof FileReader!=='undefined'){const reader=new FileReader();reader.onload=()=>{if(input.isConnected&&typeof reader.result==='string'){preview.src=reader.result;preview.classList.remove('hidden')}};reader.readAsDataURL(file)}
+  return;
+ }
  if(e.target.id==='doc-file'){
   const input=e.target,file=input.files[0];if(!file)return;const ext=file.name.split('.').pop().toLowerCase();
   if(file.size>2*1024*1024||!['txt','md','pdf','docx'].includes(ext)){input.value='';return toast('请选择 2 MB 以内的 TXT、MD、PDF 或 DOCX 文件。')}
@@ -379,8 +446,10 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='reject')return reviewReasonForm(a.kind,a.id,'reject');
  if(a.action==='suggest')return sendChat(a.value);
  if(a.action==='board-suggest')return askBoard(a.value);
+ if(a.action==='board-day'){setBoardDay(a.value==='tomorrow'?'tomorrow':'today');return}
+ if(a.action==='board-hours'){applyBoardHours(a.value);return}
  if(a.action==='board-reoffer'){if(boardAnswer?.offers?.length)openOfferModal(boardAnswer.offers);return}
- if(a.action==='board-offer'){openOfferModal([{listingId:a.id,title:a.title,display:a.title,ownerName:a.owner,type:a.type,windowText:a.expires}]);return}
+ if(a.action==='board-offer'){openOfferModal([{listingId:a.id,title:a.title,display:a.title,ownerName:a.owner,type:a.type,windowText:a.expires,image:a.image}]);return}
  if(a.action==='board-thread'){try{const data=await api('board/thread?threadId='+encodeURIComponent(a.thread));applyResult(data);openDmModal(data.thread,null,a.thread)}catch(err){toast(err.message)}return}
  if(a.action==='board-refresh'){loadBoard().then(()=>{if(route().page==='board')render()});return}
  if(a.action==='board-report'){reportModal(a.id);return}
@@ -417,10 +486,39 @@ document.addEventListener('submit',async e=>{
   return;
  }
  if(f.id==='board-form'){
-  const longTerm=fd.has('longTerm');
+  const longTerm=get('windowMode')==='long';
   if(account&&!/^\d{8}$/.test(account.studentId||''))return toast('学号应为 8 位数字。');
-  if(!longTerm&&(!get('windowStart')||!get('windowEnd')))return toast('请设定生效时段，或勾选长期。');
-  try{applyResult(await api('board/create',{type:get('type'),description:get('description'),contact:get('contact'),longTerm,windowStart:get('windowStart'),windowEnd:longTerm?'':get('windowEnd')}));toast(boardReviewMode?'已提交，等待管理员审核通过后才会生效':(longTerm?'已登记，长期有效，直到你下架':'已登记，只会在设定的时段内被匹配'));boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
+  if(!longTerm){
+   const day=get('windowDay')||'today';
+   if(day!=='today'&&day!=='tomorrow'&&!/^\d{4}-\d{2}-\d{2}$/.test(day))return toast('请选择今天、明天或某一天。');
+   if(!get('windowStartTime')||!get('windowEndTime'))return toast('请设定开始和结束时刻，或改选长期有效。');
+   if(/^\d{4}-\d{2}-\d{2}$/.test(day)){
+    const today=shanghaiParts(Date.now());
+    if(day>dateKeyPlus(today.year+'-'+today.month+'-'+today.day,90))return toast('时段最长 90 天；更久请改选长期有效。');
+   }
+  }
+  const button=f.querySelector('button[type=submit]');
+  if(button)button.disabled=true;
+  try{
+   let image='';
+   const file=f.querySelector('#board-image')?.files?.[0];
+   if(file){
+    const ok=['image/jpeg','image/png','image/webp','image/gif'].includes(file.type);
+    if(!ok||file.size>4*1024*1024)throw new Error('图片请使用 JPEG、PNG、WebP 或 GIF，且小于 4 MB。');
+    const up=await fetch('/api/board/image',{method:'POST',headers:{'Content-Type':file.type,'X-Campus-Client':'1'},body:file});
+    let uploaded={};try{uploaded=await up.json()}catch{uploaded={}}
+    if(!up.ok)throw new Error(uploaded.error||'图片上传失败。');
+    image=listingImageUrl(uploaded.image&&uploaded.image.url);
+    if(!image)throw new Error('图片上传失败。');
+   }
+   const payload={type:get('type'),description:get('description'),contact:get('contact'),longTerm,windowMode:longTerm?'long':'span'};
+   if(image)payload.image=image;
+   if(!longTerm){payload.windowDay=get('windowDay')||'today';payload.windowStartTime=get('windowStartTime');payload.windowEndTime=get('windowEndTime')}
+   applyResult(await api('board/create',payload));
+   toast(boardReviewMode?'已提交，等待管理员审核通过后才会生效':(longTerm?'已登记，长期有效，直到你下架':'已登记，只会在设定的时段内被匹配'));
+   boardNeedsRefresh=true;render();
+  }catch(err){toast(err.message)}
+  finally{if(button&&button.isConnected)button.disabled=false}
   return;
  }
  if(f.id==='dm-form'){
@@ -473,13 +571,11 @@ document.addEventListener('input',e=>{
 document.addEventListener('input',searchInput);document.addEventListener('compositionend',searchInput);
 document.addEventListener('toggle',e=>{if(e.target.id==='board-publish')boardPublishOpen=e.target.open},true);
 document.addEventListener('change',e=>{
- if(e.target.id!=='board-long')return;
- const on=e.target.checked;
- const range=document.getElementById('board-range');
- if(range)range.classList.toggle('is-long',on);
- const start=document.getElementById('board-start'),end=document.getElementById('board-end');
- if(start)start.required=!on;
- if(end)end.required=!on;
+ if(e.target.name==='windowMode')return setBoardMode(e.target.value);
+ if(e.target.id!=='board-date')return;
+ const value=String(e.target.value||'');
+ if(/^\d{4}-\d{2}-\d{2}$/.test(value))setBoardDay(value);
+ else setBoardDay('today');
 });
 window.addEventListener('hashchange',()=>{if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();

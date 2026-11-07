@@ -22,7 +22,14 @@ async function setup(t){
   const data=await res.json();
   return {status:res.status,...data};
  }
- return {request,app,opts,dir};
+ async function send(route,{method='GET',body,headers={}}={}){
+  const res=await fetch(base+'/api/'+route,{method,headers:{'X-Campus-Client':'1',Cookie:cookie,...headers},body});
+  if(res.headers.get('set-cookie'))cookie=res.headers.get('set-cookie').split(';')[0];
+  const type=res.headers.get('content-type')||'';
+  if(type.includes('application/json')){const data=await res.json();return {status:res.status,type,...data}}
+  return {status:res.status,type,body:Buffer.from(await res.arrayBuffer())};
+ }
+ return {request,send,app,opts,dir};
 }
 
 test('studentId register and login failures',async t=>{
@@ -345,7 +352,17 @@ globalThis.__form=boardPage();
  assert.match(form,/待审核/);
  assert.match(form,/id="board-type"/);
  assert.match(form,/type="text"/);
- assert.match(form,/datetime-local/);
+ assert.match(form,/指定时段/);
+ assert.match(form,/今天/);
+ assert.match(form,/明天/);
+ assert.match(form,/选一天/);
+ assert.match(form,/type="time"/);
+ assert.match(form,/北京时间/);
+ assert.match(form,/从现在起/);
+ assert.match(form,/放图片/);
+ assert.match(form,/证件/);
+ assert.match(form,/id="board-list"/);
+ assert.doesNotMatch(form,/datetime-local/);
  assert.match(form,/长期有效/);
  assert.match(form,/旧标题仍可显示/);
  assert.match(form,/data-action="board-takedown"/);
@@ -608,4 +625,142 @@ for (const profile of ['student','team','admin']) {
    else assert.doesNotMatch(html,/Enter 发送/);
   }
  }
+});
+
+function shanghaiParts(ms){
+ const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(ms)).filter(p=>p.type!=='literal').map(p=>[p.type,p.value]));
+ return parts;
+}
+function plusDate(key,days){
+ const [y,m,d]=key.split('-').map(Number);
+ const dt=new Date(Date.UTC(y,m-1,d)+days*86400000),p=n=>String(n).padStart(2,'0');
+ return dt.getUTCFullYear()+'-'+p(dt.getUTCMonth()+1)+'-'+p(dt.getUTCDate());
+}
+function atBeijing(day,hm){return Date.parse(day+'T'+hm+':00+08:00')}
+
+test('lighter window maps onto the existing listing window',async t=>{
+ const {request}=await setup(t);
+ await request('auth/register',{studentId:'20261107',password:'secret1',displayName:'窗'});
+ const lasting=await request('board/create',{type:'出闲置',description:'长期出一本闲置高数',windowMode:'long'});
+ assert.equal(lasting.status,200);
+ assert.equal(lasting.listing.longTerm,true);
+ assert.equal(lasting.listing.windowEnd,null);
+ assert.equal(lasting.listing.image,'');
+ assert.match(lasting.listing.windowText,/长期/);
+ const parts=shanghaiParts(Date.now());
+ const today=parts.year+'-'+parts.month+'-'+parts.day;
+ const start=parts.hour+':'+parts.minute;
+ const end=String((+parts.hour+2)%24).padStart(2,'0')+':'+parts.minute;
+ const endDay=end<=start?plusDate(today,1):today;
+ const todayWindow=await request('board/create',{type:'代取快递',description:'今天这段时间可以代取快递',windowDay:'today',windowStartTime:start,windowEndTime:end});
+ assert.equal(todayWindow.status,200);
+ assert.equal(todayWindow.listing.longTerm,false);
+ assert.equal(Date.parse(todayWindow.listing.windowStart),atBeijing(today,start));
+ assert.equal(Date.parse(todayWindow.listing.windowEnd),atBeijing(endDay,end));
+ assert.match(todayWindow.listing.windowText,/–/);
+ assert.equal(todayWindow.listing.image,'');
+ const quick=await request('board/create',{type:'陪诊',description:'从现在起两小时可以陪诊',windowHours:2});
+ assert.equal(quick.status,200);
+ assert.equal(Date.parse(quick.listing.windowEnd)-Date.parse(quick.listing.windowStart),2*3600000);
+ const tooLong=await request('board/create',{type:'代取快递',description:'时段拉得太长的登记',windowStart:new Date(Date.now()-1000).toISOString(),windowEnd:new Date(Date.now()+91*86400000).toISOString()});
+ assert.equal(tooLong.status,400);
+ assert.match(tooLong.error,/长期/);
+ const far=await request('board/create',{type:'代取快递',description:'日期太远的短时段',windowDay:plusDate(today,100),windowStartTime:'10:00',windowEndTime:'12:00'});
+ assert.equal(far.status,400);
+ assert.match(far.error,/长期/);
+ await request('auth/logout',{});
+ const asked=await request('board/ask',{question:'现在有没有人代取快递'});
+ assert.equal(asked.status,200);
+ assert.ok(asked.offers.some(o=>o.listingId===todayWindow.listing.id&&/–/.test(o.windowText)));
+});
+
+test('optional listing image is stored and served without secrets',async t=>{
+ const {request,send,opts,dir}=await setup(t);
+ await request('auth/register',{studentId:'20261108',password:'secret1',displayName:'图'});
+ const plain=await request('board/create',{type:'搬运',description:'不带图片也可以帮忙搬运',longTerm:true});
+ assert.equal(plain.status,200);
+ assert.equal(plain.listing.image,'');
+ const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==','base64');
+ const gif=Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7','base64');
+ const webp=Buffer.concat([Buffer.from('RIFF'),Buffer.from([4,0,0,0]),Buffer.from('WEBP')]);
+ const jpg=Buffer.concat([Buffer.from([0xff,0xd8,0xff]),Buffer.alloc(12,0)]);
+ for(const [body,type,ext] of [[gif,'image/gif','gif'],[webp,'image/webp','webp'],[jpg,'image/jpeg','jpg']]){
+  const sniffed=await send('board/image',{method:'POST',body,headers:{'Content-Type':type}});
+  assert.equal(sniffed.status,200);
+  assert.match(sniffed.image.url,new RegExp('\\.'+ext+'$'));
+  assert.equal(JSON.stringify(sniffed).includes(dir),false);
+ }
+ const uploaded=await send('board/image',{method:'POST',body:png,headers:{'Content-Type':'image/png'}});
+ assert.equal(uploaded.status,200);
+ assert.match(uploaded.image.url,/^\/api\/board\/images\/[0-9a-f-]{36}\.png$/);
+ assert.equal(uploaded.image.mime,'image/png');
+ assert.equal(JSON.stringify(uploaded).includes(dir),false);
+ assert.equal(JSON.stringify(uploaded).includes('secret1'),false);
+ const parts=shanghaiParts(Date.now());
+ const start=parts.hour+':'+parts.minute;
+ const end=String((+parts.hour+2)%24).padStart(2,'0')+':'+parts.minute;
+ const made=await request('board/create',{type:'出闲置',description:'附上一张闲置显示器的照片',image:uploaded.image.url,windowDay:'today',windowStartTime:start,windowEndTime:end});
+ assert.equal(made.status,200);
+ assert.equal(made.listing.image,uploaded.image.url);
+ assert.equal(JSON.stringify(made.listing).includes(dir),false);
+ assert.equal(JSON.stringify(made.listing).includes('secret1'),false);
+ const disk=JSON.parse(fs.readFileSync(opts.boardFile,'utf8'));
+ const row=disk.listings.find(l=>l.id===made.listing.id);
+ assert.equal(row.image,uploaded.image.url);
+ assert.equal(JSON.stringify(row).includes(dir),false);
+ const board=await request('board');
+ assert.equal(board.listings.find(l=>l.id===made.listing.id).image,uploaded.image.url);
+ assert.equal(board.mine.find(l=>l.id===made.listing.id).image,uploaded.image.url);
+ const got=await send('board/images/'+uploaded.image.url.split('/').pop());
+ assert.equal(got.status,200);
+ assert.match(got.type,/image\/png/);
+ assert.ok(got.body.equals(png));
+ const missing=await send('board/images/not-a-real-file.png');
+ assert.equal(missing.status,404);
+ const escaped=await send('board/images/..%2F..%2Fconfig.local.json');
+ assert.equal(escaped.status,404);
+ const junk=await send('board/image',{method:'POST',body:Buffer.from('<html></html>'),headers:{'Content-Type':'image/png'}});
+ assert.equal(junk.status,400);
+ assert.match(junk.error,/JPEG|PNG|WebP|GIF/);
+ const forged=await request('board/create',{type:'代取快递',description:'伪造图片路径不应被接受',image:'/etc/passwd',longTerm:true});
+ assert.equal(forged.status,400);
+ const huge=await send('board/image',{method:'POST',body:Buffer.alloc(4*1024*1024+1),headers:{'Content-Type':'application/octet-stream'}});
+ assert.equal(huge.status,413);
+ const admin=await request('session',{profile:'admin'});
+ assert.equal(admin.state.boardActiveListings.find(l=>l.id===made.listing.id).image,uploaded.image.url);
+ await request('auth/logout',{});
+ const anon=await send('board/image',{method:'POST',body:png,headers:{'Content-Type':'image/png'}});
+ assert.equal(anon.status,401);
+});
+
+test('listing image renders on the board list, own card and admin views',()=>{
+ const modalBox={innerHTML:'',open:false,setAttribute(){},showModal(){this.open=true},classList:{add(){},remove(){}}};
+ const document={addEventListener(){},getElementById(id){return id==='modal'?modalBox:{innerHTML:'',classList:{add(){},remove(){}},setAttribute(){},scrollTop:0}},querySelectorAll(){return []}};
+ const location={hash:'#board',origin:'http://127.0.0.1:4173'};
+ const ctx=vm.createContext({document,modalBox,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location,history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}}});
+ const image='/api/board/images/11111111-1111-4111-8111-111111111111.png';
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8')+`
+account={studentId:'20261108',displayName:'图'};
+currentProfile='student';
+boardListings=[{id:'img1',type:'出闲置',description:'闲置显示器',ownerName:'图',windowText:'11-07 10:00 – 11-07 12:00',image:${JSON.stringify(image)},role:'offer',display:'出闲置 · 闲置显示器'}];
+boardMine=[{id:'img1',type:'出闲置',description:'闲置显示器',status:'active',mine:true,windowText:'11-07 10:00 – 11-07 12:00',image:${JSON.stringify(image)}}];
+location.hash='#board';
+globalThis.__board=boardPage();
+openOfferModal([{listingId:'img1',type:'出闲置',display:'出闲置',ownerName:'图',windowText:'11-07 10:00 – 11-07 12:00',image:${JSON.stringify(image)}}]);
+globalThis.__offer=document.getElementById('modal').innerHTML;
+state.boardPendingListings=[{id:'p9',type:'出闲置',description:'待审核的图片登记',ownerName:'图',contact:'',windowText:'长期',image:${JSON.stringify(image)}}];
+state.boardActiveListings=[{id:'img1',type:'出闲置',description:'闲置显示器',display:'出闲置',ownerName:'图',contact:'',windowText:'长期',status:'active',image:${JSON.stringify(image)}}];
+currentProfile='admin';
+location.hash='#admin';
+globalThis.__admin=admin();
+`,ctx);
+ assert.match(ctx.__board,/id="board-list"/);
+ assert.match(ctx.__board,/class="listing-thumb"/);
+ assert.equal((ctx.__board.match(new RegExp(image.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length>=2,true);
+ assert.match(ctx.__offer,/class="listing-thumb"/);
+ assert.match(ctx.__offer,new RegExp(image.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+ assert.match(ctx.__admin,/待审核的图片登记/);
+ assert.match(ctx.__admin,/class="listing-thumb"/);
+ assert.doesNotMatch(ctx.__board,/\/data\/board-images\//);
+ assert.doesNotMatch(ctx.__admin,/\/etc\/passwd|config\.local/);
 });
