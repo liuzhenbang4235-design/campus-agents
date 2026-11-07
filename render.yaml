@@ -3,7 +3,8 @@
 # on the next request. Do not switch this plan just to keep the process awake.
 # No persistent disk: free web services cannot attach one. data/ is gitignored,
 # so a new instance starts from lib/seed.json. Writes under data/ and
-# config.local.json disappear on restart or redeploy.
+# config.local.json disappear on restart or redeploy. Cloud model keys belong
+# in CAMPUS_AI_* so a free-tier restart still has them. Never commit key values.
 services:
   - type: web
     name: campus-agents
@@ -28,4 +29,16 @@ services:
       - key: ACCESS_USER
         sync: false
       - key: ACCESS_PASSWORD
+        sync: false
+      # Cloud model. Values stay in the Dashboard and survive free-tier restarts.
+      # Leave CAMPUS_AI_DAILY_LIMIT empty to keep the default of 50.
+      - key: CAMPUS_AI_ENABLED
+        sync: false
+      - key: CAMPUS_AI_PROVIDER
+        sync: false
+      - key: CAMPUS_AI_API_KEY
+        sync: false
+      - key: CAMPUS_AI_MODEL
+        sync: false
+      - key: CAMPUS_AI_DAILY_LIMIT
         sync: false
