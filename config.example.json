@@ -5,6 +5,8 @@
   "apiKey": "",
   "endpoint": "",
   "dailyLimit": 50,
+  "publicMode": false,
+  "demoIdentities": true,
   "places": {
     "enabled": false,
     "apiKey": "",

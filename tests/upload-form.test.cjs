@@ -96,10 +96,10 @@ test('my submissions list only the current demo identity, with review status and
 
  api.setProfile('team');
  const team=api.html();
- assert.match(team,/交给生活、办事或学习助手。管理员审核通过后，同学才能问到。/);
+ assert.match(team,/交给生活、办事和学习助手。管理员审核通过后，同学才能问到。/);
  assert.match(team,/例如：学生证补办材料，或课程复习方法（示例）/);
  assert.match(team,/生活、办事和学习助手都可以提交。/);
- assert.doesNotMatch(team,/优先交给本组|周同学|学习互助组|校园共创组/);
+ assert.doesNotMatch(team,/交给生活、办事或学习|优先交给本组|周同学|学习互助组|校园共创组/);
  assert.match(team,/共创组的资料/);
  assert.doesNotMatch(team,/学生待审|别人的资料不应出现/);
  assert.match(team,/我的提交 <span class="count">1<\/span>/);
