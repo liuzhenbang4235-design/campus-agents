@@ -55,10 +55,13 @@ const AI_PROVIDERS={
 let draftProvider='qwen',draftConfig={model:'',dailyLimit:'',enabled:false};
 const providerMeta=id=>AI_PROVIDERS[id]||AI_PROVIDERS.qwen;
 const providerShort=()=>providerMeta(ai.provider).short;
-function aiConfigLabel(){const s=providerShort();return ai.configIssue?'配置需修正':ai.verified?s+'已连接':ai.ready?s+'已配置':'配置模型'}
+function staffModelLabel(){const s=providerShort();return ai.configIssue?'配置需修正':ai.verified?s+'已连接':ai.ready?s+'已配置':'配置模型'}
+function studentModelLabel(){if(ai.configIssue)return '配置需修正';if(ai.verified)return '模型已连接';if(ai.ready)return '模型已配置';return '配置模型'}
+function aiConfigLabel(){return isStudent()?studentModelLabel():staffModelLabel()}
 function aiStatusNote(){const s=providerShort();return ai.configIssue?'模型 ID 需修正':ai.verified?s+'已连接':ai.ready?s+'已配置':'模型待配置'}
+function studentModelChip(){const label=esc(studentModelLabel());if(!demoIdentities)return `<span class="tag model-chip" role="status">${label}</span>`;return `<button class="btn small model-chip" type="button" data-action="configure">${icon('spark')}${label}</button>`}
 
-let state={version:2,agents:[],docs:[],audit:[],chats:{},account:null,boardReports:[]};
+let state={version:2,agents:[],docs:[],audit:[],chats:{},account:null,boardReports:[]},demoIdentities=true;
 let account=null,boardListings=[],boardMine=[],boardInbox=[],boardReviewMode=false,boardBusy=false,boardNeedsRefresh=true,dmListingId=null,boardQuestion='',boardAnswer=null,boardAsking=false,boardPublishOpen=false;
 let ai={ready:false,hasKey:false,model:'',dailyLimit:50,usedToday:0},busy=false,pendingChat=null,chatError='';
 async function api(path,body){
@@ -66,11 +69,11 @@ async function api(path,body){
  let data;try{data=await response.json()}catch{throw new Error('当前运行的仍是旧版预览，请关闭旧预览并重新启动。')}
  if(!response.ok)throw new Error(data.error||'请求失败，请重试。');return data;
 }
-function applyResult(data){if(data.state)state=data.state;if(data.ai)ai=data.ai;if(data.profile)currentProfile=data.profile;if('account' in data)account=data.account;else if(data.state&&'account' in data.state)account=data.state.account;if('inbox' in data)boardInbox=Array.isArray(data.inbox)?data.inbox:[];if('mine' in data)boardMine=Array.isArray(data.mine)?data.mine:[];if('reviewMode' in data)boardReviewMode=data.reviewMode===true;else if(data.state&&'boardReviewMode' in data.state)boardReviewMode=data.state.boardReviewMode===true}
+function applyResult(data){if(data.state)state=data.state;if(data.ai)ai=data.ai;if(typeof data.demoIdentities==='boolean')demoIdentities=data.demoIdentities;else if(data.ai&&typeof data.ai.demoIdentities==='boolean')demoIdentities=data.ai.demoIdentities;if(data.profile)currentProfile=data.profile;if('account' in data)account=data.account;else if(data.state&&'account' in data.state)account=data.state.account;if('inbox' in data)boardInbox=Array.isArray(data.inbox)?data.inbox:[];if('mine' in data)boardMine=Array.isArray(data.mine)?data.mine:[];if('reviewMode' in data)boardReviewMode=data.reviewMode===true;else if(data.state&&'boardReviewMode' in data.state)boardReviewMode=data.state.boardReviewMode===true}
 async function perform(body,message){if(busy)return;busy=true;try{const data=await api('action',body);applyResult(data);closeModal();render();toast(message)}catch(e){const notice=document.getElementById('review-reason-error');if(notice){notice.textContent=e.message;notice.classList.remove('hidden')}toast(e.message)}finally{busy=false;updateBusy()}}
 function updateBusy(){document.querySelectorAll('#profile,#chat-agent,#chat-form button,#chat-form textarea,.suggestions button,#places-form input,#places-form select,#places-form button').forEach(el=>el.disabled=busy||(el.closest('#places-form')&&el.tagName==='BUTTON'&&!(placesUi.provider==='local'?ai.places?.localReady:ai.places?.ready)))}
-async function switchProfile(value){if(busy)return;try{chatPrefill='';applyResult(await api('session',{profile:value}));resetPlaces();closeModal();render();toast('已切换至'+me().label)}catch(e){toast(e.message);render()}}
-async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile');if(wanted&&Object.hasOwn(profiles,wanted)){applyResult(await api('session',{profile:wanted}));const page=params.get('page');if(page&&['gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}applyResult(await api('state'));if(!location.hash||location.hash==='#')history.replaceState(null,'','#'+homePage());startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
+async function switchProfile(value){if(!demoIdentities){toast('当前为公开访问，不能切换演示身份。');return}if(busy)return;try{chatPrefill='';applyResult(await api('session',{profile:value}));resetPlaces();closeModal();render();toast('已切换至'+me().label)}catch(e){toast(e.message);render()}}
+async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#'+homePage());startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
 
 let currentProfile='student',category='全部',query='',reviewTab='docs',teamTab='agents',chatPrefill='';
 const me=()=>profiles[currentProfile];
@@ -87,7 +90,7 @@ function toast(t){const el=document.getElementById('toast');el.textContent=t;el.
 function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['gallery','board','chat','upload','team','admin'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
 function go(page,id){const hash='#'+page+(id?'/'+id:'');if(location.hash===hash)render();else location.hash=hash}
 const titles={gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理'};
-function profileSelect(){return `<select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select>`}
+function profileSelect(){if(!demoIdentities)return '';return `<select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select>`}
 function accountControls(){return account?`<span class="tag blue">学号 ${esc(account.studentId)}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">学号登录</button>`}
 function configButton(){return `<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button>`}
 function navLinks(page){
@@ -106,7 +109,11 @@ function sidebarFoot(){
 }
 function identityBar(){
  const avatar=`<span class="avatar" aria-hidden="true">${esc(me().name[0])}</span>`;
- if(isStudent())return `<div class="identity student-identity">${accountControls()}<details class="more-menu"><summary>更多</summary><div class="more-panel"><p class="more-label">演示身份</p>${profileSelect()}${configButton()}</div></details>${avatar}</div>`;
+ if(isStudent()){
+  const demo=demoIdentities?`<details class="more-menu"><summary>更多</summary><div class="more-panel"><p class="more-label">演示身份</p>${profileSelect()}</div></details>`:'';
+  return `<div class="identity student-identity">${accountControls()}${studentModelChip()}${demo}${avatar}</div>`;
+ }
+ if(!demoIdentities)return `<div class="identity">${accountControls()}${avatar}</div>`;
  return `<div class="identity">${accountControls()}${configButton()}<label for="profile">演示身份</label>${profileSelect()}${avatar}</div>`;
 }
 function shell(content){
@@ -138,28 +145,28 @@ function boardPage(){
  const answer=boardAnswer;
  const suggestions=['今天下午有没有人代取快递？','谁能接一下陪诊？','有没有人出闲置显示器？'];
  const startAt=clockInputValue(Date.now()),endAt=clockInputValue(Date.now()+2*3600000);
- return heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
- '<section class="panel board-ask"><h2>想找同学，或看看谁在接活？直接问</h2>'+
- '<form id="board-ask-form"><textarea name="question" aria-label="向互助通达提问" required maxlength="500" rows="3" placeholder="例如：今天下午有没有人代取快递？谁能接一下陪诊？有没有人出闲置显示器？">'+esc(boardQuestion)+'</textarea>'+
- '<div class="board-ask-bar"><div class="board-chips">'+suggestions.map(s=>'<button type="button" data-action="board-suggest" data-value="'+esc(s)+'">'+esc(s)+'</button>').join('')+'</div>'+
- '<button class="btn primary" type="submit"'+(boardAsking?' disabled':'')+'>'+(boardAsking?'正在查找…':'提问')+'</button></div></form>'+
- (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>':'<div class="empty" style="margin-top:16px"><p>还没提问。想找人帮忙，或看看谁在接活，直接写在上面。</p></div>')+
- '</section>'+
- (logged&&boardInbox.length?'<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record"><div><p><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'</p><small>'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</small><small>'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</small></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>':'')+
- '<details class="panel board-publish" id="board-publish"'+(boardPublishOpen?' open':'')+'><summary>登记一条互助信息</summary>'+
+ const register='<section class="panel board-register" id="board-register"><h2>互助登记</h2><p class="small muted">登记你能提供的帮助，或你的需求。类型自己写。「接……」表示你来做这件事。发布需要学号登录。</p>'+
  (logged
   ?('<p class="muted small" style="margin:12px 0">当前学号：'+esc(account.studentId)+(account.displayName?' · '+esc(account.displayName):'')+'</p>'+
     '<form id="board-form"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><input id="board-type" name="type" type="text" required maxlength="30" placeholder="自己写，例如：代取快递、陪诊、出闲置、接摄影"></div>'+
     '<fieldset class="alarm-window"><legend>'+icon('clock')+' 生效时段</legend><label class="check alarm-long"><input id="board-long" name="longTerm" type="checkbox"><span>长期有效，直到我下架</span></label><div class="alarm-range" id="board-range"><div class="alarm-face" aria-hidden="true"></div><div class="field"><label for="board-start">开始（北京时间）</label><input id="board-start" name="windowStart" type="datetime-local" required value="'+esc(startAt)+'"></div><div class="field alarm-end"><label for="board-end">结束（北京时间）</label><input id="board-end" name="windowEnd" type="datetime-local" required value="'+esc(endAt)+'"></div><p class="small muted alarm-note">像设闹钟一样，写清这段互助从何时到何时有效。超过 90 天请改选长期。</p></div></fieldset>'+
     '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
-    '<h3 style="margin-top:8px">我的有效登记 <span class="count">'+mine.length+'</span></h3>'+
     '<h3 style="margin-top:8px">我发布的登记 <span class="count">'+mine.length+'</span></h3>'+
     (mine.length?mine.map(l=>{const st=l.status||'active';const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';const act=st==='taken_down'?'':'<div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';return '<article class="record"><div><p>'+tag+' <span class="tag blue">'+esc(l.type)+'</span> '+esc(listingHeadline(l))+'</p><small>'+esc(l.description)+'</small><small>'+esc(listingWhen(l))+'</small>'+(l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'')+act+'</div></article>';}).join(''):'<p class="small muted">你还没有发布过登记。</p>'))
   :(authFormHtml()))+
- '</details>';
+ '</section>';
+ const ask='<section class="panel board-ask"><h2>问别人</h2><p class="hint">互助通达按意思去对同学登记，不限固定类别。只会用正处在生效时段里的信息。「接……」表示对方来帮忙。</p>'+
+ '<form id="board-ask-form"><textarea name="question" aria-label="向互助通达提问" required maxlength="500" rows="3" placeholder="例如：今天下午有没有人代取快递？谁能接一下陪诊？有没有人出闲置显示器？">'+esc(boardQuestion)+'</textarea>'+
+ '<div class="board-ask-bar"><div class="board-chips">'+suggestions.map(s=>'<button type="button" data-action="board-suggest" data-value="'+esc(s)+'">'+esc(s)+'</button>').join('')+'</div>'+
+ '<button class="btn primary" type="submit"'+(boardAsking?' disabled':'')+'>'+(boardAsking?'正在查找…':'提问')+'</button></div></form>'+
+ (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>':'<div class="empty" style="margin-top:16px"><p>还没提问。想找人帮忙，或看看谁在接活，直接写在上面。</p></div>')+
+ '</section>';
+ const inbox=logged&&boardInbox.length?'<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record"><div><p><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'</p><small>'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</small><small>'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</small></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>':'';
+ return heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
+ '<div class="board-split">'+register+ask+'</div>'+inbox;
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}
-function guard(kind){if(kind==='admin')return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>管理员审核空间</h1><p>审核管理仅对管理员演示身份开放。<br>此处为演示身份切换，不是真实登录认证。</p><button class="btn primary" data-action="switch" data-value="admin">切换为管理员</button></div>`;return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>团队创作空间</h1><p>请切换为校集团队成员，统一管理生活、办事和学习助手。<br>此处为演示身份切换，不是真实登录认证。</p><button class="btn primary" data-action="switch" data-value="team">切换为校集团队成员</button></div>`}
+function guard(kind){const admin=kind==='admin';const button=demoIdentities?(admin?'<button class="btn primary" data-action="switch" data-value="admin">切换为管理员</button>':'<button class="btn primary" data-action="switch" data-value="team">切换为校集团队成员</button>'):'<p class="small muted">公开访问不提供演示身份。</p>';const note=demoIdentities?'此处为演示身份切换，不是真实登录认证。':'公开访问不能切换演示身份。';if(admin)return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>管理员审核空间</h1><p>审核管理仅对管理员演示身份开放。<br>${note}</p>${button}</div>`;return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>团队创作空间</h1><p>请切换为校集团队成员，统一管理生活、办事和学习助手。<br>${note}</p>${button}</div>`}
 function sourceFields(d={},prefix='source-meta',opts={}){const fields=`<div class="field"><label for="${prefix}-url">原文链接</label><input id="${prefix}-url" name="sourceUrl" type="url" maxlength="2000" value="${esc(d.sourceUrl||'')}" placeholder="粘贴抖音、小红书或官网原文链接"><small>仅保存链接，不会自动读取网页。内容摘要仍需填写并审核。</small></div><div class="form-grid"><div class="field"><label for="${prefix}-published">发布时间</label><input id="${prefix}-published" name="publishedAt" type="date" value="${esc(d.publishedAt||'')}"><small>不知道可留空，不要用今天代替。</small></div><div class="field"><label for="${prefix}-collected">采集日</label><input id="${prefix}-collected" name="collectedAt" type="date" value="${esc(d.collectedAt||'')}"></div></div><div class="field"><label for="${prefix}-kind">内容性质</label><select id="${prefix}-kind" name="sourceKind">${Object.entries({unknown:'未确认',official:'官方通知',experience:'个人体验',merchant:'商家宣传'}).map(([k,v])=>`<option value="${k}" ${(d.sourceKind||'unknown')===k?'selected':''}>${v}</option>`).join('')}</select></div>`;if(!opts.collapsed)return fields;return `<details class="optional-meta"><summary>补充信息（可选）</summary><p class="small muted optional-meta-note">原文链接、发布时间、采集日和内容性质都可以留空。填写后会随资料一起提交。</p>${fields}</details>`}
 function contributeStatus(d){const map={pending:['amber','待审'],approved:['green','通过'],rejected:['red','驳回']};const hit=map[d.status];return hit?`<span class="tag ${hit[0]}">${hit[1]}</span>`:badge(d.status)}
 function sourceDetails(d){return '<p class="small muted">原文发布：'+esc(d.publishedAt||'未填写')+' · 采集：'+esc(d.collectedAt||'未填写')+' · 入库/提交：'+esc(d.date)+'</p><p class="small muted">内容性质：'+esc(({official:'官方通知（提交者标注）',experience:'个人体验',merchant:'商家宣传',unknown:'未确认'})[d.sourceKind]||'未确认')+'</p>'}
@@ -321,7 +328,7 @@ async function sendChat(question){
  catch(e){chatError=e.message;try{const latest=await api('config');if(currentProfile===profile)applyResult(latest)}catch{}toast(e.message)}finally{busy=false;pendingChat=null;render();const input=document.querySelector('#chat-form textarea');if(input&&route().id===aid){if(chatError)input.value=q;input.focus()}}
 }
 function configDialog(keepDraft){
- if(me().role!=='admin')return modal('配置云端模型', '<p>请先切换为平台管理员，在本机填写 API Key 和模型 ID。</p><p class="inline-notice">没有账号也能先体验本地资料检索。聊天应用账号不能直接代替各平台的 API Key。</p><button class="btn primary" data-action="config-admin">切换管理员并配置</button>');
+ if(me().role!=='admin')return modal('配置云端模型', demoIdentities?'<p>请先切换为平台管理员，在本机填写 API Key 和模型 ID。</p><p class="inline-notice">没有账号也能先体验本地资料检索。聊天应用账号不能直接代替各平台的 API Key。</p><button class="btn primary" data-action="config-admin">切换管理员并配置</button>':'<p>模型配置仅在本机演示的管理员身份下开放。公开访问不能切换演示身份。</p>');
  if(!keepDraft){draftProvider=AI_PROVIDERS[ai.provider]?ai.provider:'qwen';draftConfig={model:ai.model||'',dailyLimit:String(ai.dailyLimit||50),enabled:ai.enabled===true}}
  const p=providerMeta(draftProvider);
  const chips=Object.values(AI_PROVIDERS).map(x=>`<button type="button" class="chip ${draftProvider===x.id?'active':''}" data-action="config-provider" data-value="${x.id}">${x.short}${ai.keys?.[x.id]?' <small>已存 Key</small>':''}</button>`).join('');
@@ -353,13 +360,13 @@ document.addEventListener('click',async e=>{
  if(a.action==='prefill-chat'){chatPrefill=a.value||'';chatError='';return go('chat',a.id)}
  if(a.action==='category'){category=a.value;return render()}
  if(busy)return toast('请求处理中，请稍等。');
- if(a.action==='switch')return switchProfile(a.value);
+ if(a.action==='switch'){if(!demoIdentities)return toast('当前为公开访问，不能切换演示身份。');return switchProfile(a.value)}
  if(a.action==='configure')return configDialog(false);
 if(a.action==='config-provider'){const form=document.getElementById('config-form');if(form){draftConfig={model:ai.models?.[a.value]||'',dailyLimit:form.elements.dailyLimit?.value||'50',enabled:!!form.elements.enabled?.checked}}draftProvider=a.value;return configDialog(true)}
  if(a.action==='places-config')return placesConfigDialog();
- if(a.action==='places-admin'){await switchProfile('admin');return placesConfigDialog()}
+ if(a.action==='places-admin'){if(!demoIdentities)return toast('当前为公开访问，不能切换演示身份。');await switchProfile('admin');return placesConfigDialog()}
  if(a.action==='places-centers')return searchPlaces(true);
- if(a.action==='config-admin'){await switchProfile('admin');return configDialog()}
+ if(a.action==='config-admin'){if(!demoIdentities)return toast('当前为公开访问，不能切换演示身份。');await switchProfile('admin');return configDialog()}
  if(a.action==='team-tab'){teamTab=a.value;return render()}
  if(a.action==='review-tab'){reviewTab=a.value;return render()}
  if(a.action==='new-agent')return agentForm();
