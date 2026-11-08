@@ -183,7 +183,7 @@ sudo systemctl reload caddy
 - 不要缓存 `/api/*`，不要改写 `Set-Cookie`；应用已发 `Cache-Control: no-store`。
 - 不要在代理上终止 Cookie 或加 `Domain`；应用 Cookie 是 host-only + `SameSite=Strict`。
 - 不要启用 `proxy_protocol`：应用不解析 PROXY protocol，开启后 HTTP 解析会坏。
-- 反向代理后，应用看到的 TCP 对端都是 `127.0.0.1`。当前版本的部分防滥用限流按 TCP 对端地址计数（登录 10 次/10 分钟、注册 20 次/小时、发帖 15 次/小时等），**多人经代理访问时会变成全站共享额度**。小范围内网可接受；面向较多用户前，需要在应用层改为信任 `X-Real-IP`（属于代码改动，不在本部署包范围）。不要用 nginx `real_ip` 来“修”，应用读的是 socket 地址，不是 `X-Forwarded-For`。
+- 反向代理后，应用看到的 TCP 对端都是 `127.0.0.1`。防滥用限流按已登录学号、Cloudflare Access 身份或 `campus_session` 分桶。没有这些身份、且对端是回环/内网或 `RENDER=true` 时，才采用 `X-Forwarded-For` / `X-Real-IP` 里第一个公网地址。计数在进程内存，重启清零。不要用 nginx `real_ip` 去改 socket 地址。
 
 ---
 
@@ -366,7 +366,7 @@ sudo ufw enable
 | 页面能开但接口全挂 | 代理重复加 CSP，`connect-src` 取交集 | 删除代理层 CSP |
 | Caddy 证书失败 | 80/443 被占、DNS 未生效、云安全组未放行 | `journalctl -u caddy`；检查 DNS 与端口 |
 | launchd 起不来 | `logs/` 不存在、Node 不在 PATH、路径含空格 | 先手动运行同一条命令；改用 Node 绝对路径 |
-| 多人登录频繁 429 | 代理后所有请求同源 IP，限流全站共享 | 小范围内网使用；或改应用信任 `X-Real-IP` |
+| 登录频繁 429 | 同一会话对同一学号的失败次数达到 10 次/10 分钟 | 等窗口过去，或换一个会话再试 |
 
 ---
 

@@ -47,6 +47,10 @@ Render 会注入 `PORT`（常见默认 10000）。Blueprint 不写死 `PORT`。
 
 健康检查路径在 Blueprint 里是 `/api/health`。探针要在 5 秒内拿到 2xx。
 
+## 频率限制
+
+注册、登录、互助提问和举报按调用方分桶。顺序是：已登录学号，Cloudflare Access 身份（`Cf-Access-Authenticated-User-Email`，否则是 `Cf-Access-Jwt-Assertion` 里能直接解出的 email 或 sub），然后是这次请求已经带上的 `campus_session`。这几项都没有时，才用来源地址：直连对端是回环或内网，或者 `RENDER=true`，才取 `X-Forwarded-For` / `X-Real-IP` 里第一个公网地址。计数在进程内存里。免费实例是单进程；多实例时要换成共享存储，否则各进程各计各的。
+
 ## 数据
 
 Free 实例不能挂持久磁盘，本 Blueprint 也不挂。磁盘只在付费实例上可用，而且会变成单实例、没有零停机部署。

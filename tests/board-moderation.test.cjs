@@ -35,6 +35,7 @@ function raw(port,{path:route='/api/health',headers={}}={}){
 
 test('login attempts are throttled per account',async t=>{
  const {request}=await setup(t);
+ await request('state');
  let last;
  for(let i=0;i<10;i++)last=await request('auth/login',{studentId:'20250031',password:'wrong-pass'});
  assert.equal(last.status,401);
