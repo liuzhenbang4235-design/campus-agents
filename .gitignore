@@ -9,6 +9,8 @@ config.json
 data/
 # campus board may contain student contacts — never commit real PII
 data/campus-board.json
+# listing photos are user content, stored only on disk
+data/board-images/
 node_modules/
 
 # OS / editor
