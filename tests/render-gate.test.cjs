@@ -20,6 +20,13 @@ function raw(port,{method='GET',route='/api/health',headers={}}={}){
 }
 async function close(server){server.closeAllConnections();await new Promise(r=>server.close(r))}
 
+test('Blueprint defaults PUBLIC_MODE to 1 so a synced public site disables demo identities',()=>{
+ const yaml=fs.readFileSync(path.join(__dirname,'..','render.yaml'),'utf8');
+ const entry=yaml.match(/\n +- key: PUBLIC_MODE\n +value: "1"\n/);
+ assert.ok(entry,'render.yaml sets PUBLIC_MODE to the literal "1"');
+ assert.doesNotMatch(entry[0],/sync:/);
+});
+
 test('listen host stays on loopback unless HOST or RENDER=true says otherwise',()=>{
  assert.equal(resolveListenHost({}),'127.0.0.1');
  assert.equal(resolveListenHost({HOST:'  '}),'127.0.0.1');

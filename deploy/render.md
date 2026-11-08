@@ -28,12 +28,17 @@ Render 会注入 `PORT`（常见默认 10000）。Blueprint 不写死 `PORT`。
 | `ACCESS_USER` | 共享账号 |
 | `ACCESS_PASSWORD` | 共享密码。两者都非空才启用门；只填一个时门保持关闭，并在日志里警告。 |
 
-另外 Blueprint 已经写好：
+另外 Blueprint 已经用字面量写好这些非机密项。同步 Blueprint 时会把它们写成下表的值（和上面的 `sync: false` 不同，之后的同步也会改已有值）。
 
-- `HOST=0.0.0.0`
-- `SKIP_INSTALL_DEPS=true`（没有 npm 依赖，跳过 install）
+| 变量 | 值 | 说明 |
+| --- | --- | --- |
+| `HOST` | `0.0.0.0` | 见上文「监听地址」 |
+| `SKIP_INSTALL_DEPS` | `true` | 没有 npm 依赖，跳过 install |
+| `PUBLIC_MODE` | `1` | 正式共享站点关闭演示身份切换，见下 |
 
 `PORT` 由 Render 注入，不用自己设。
+
+`PUBLIC_MODE` 去掉首尾空白、不区分大小写后，等于 `1`、`true`、`yes`、`on` 之一，就打开公开模式：`demoIdentitiesEnabled()` 为 false，页面没有演示身份下拉，`POST /api/session` 被拒绝，访问固定在同学端。未设置，或设成 `0`、`false`、`no`、`off` 以及其他值时，这个环境变量本身不关演示身份。正式共享站点应保持 `1`。Mac 本机预览（http://127.0.0.1:4173）不要设置 `PUBLIC_MODE`，或设为 `0`，演示身份仍可切换。已经在 Dashboard 里写过同名变量的服务仍然兼容，进程读的就是这个环境变量。某个私有预览可以在 Dashboard 改成 `0`；下次同步这份 Blueprint 会再写成 `1`，所以正式站点不会停在可切换演示身份。不要把 `publicMode` 写进仓库里的 `config.local.json`。
 
 应用还会接受平台注入的 `RENDER_EXTERNAL_URL`（同样是 `https://<服务名>.onrender.com`）。因此健康检查用的 Host（无自定义域名时就是 `onrender.com` 主机名）在你还没把同一地址写进 `CAMPUS_ORIGINS` 时也能通过。浏览器要稳定使用，仍请把 `CAMPUS_ORIGINS` 设成地址栏里的 origin。一旦验证了自定义域名，Render 的 HTTP 健康检查会改用该域名做 Host，这时 `CAMPUS_ORIGINS` 必须包含它，否则探针收到 403，部署失败。
 
