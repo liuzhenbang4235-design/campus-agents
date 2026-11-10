@@ -7,6 +7,9 @@ config.json
 
 # local knowledge / usage (keep private)
 data/
+# Licensed homepage posters. Operators drop 01.jpg, 02.jpg, and an optional
+# manifest.json here. Do not commit those files.
+data/homepage-posters/
 # campus board may contain student contacts — never commit real PII
 data/campus-board.json
 # listing photos are user content, stored only on disk

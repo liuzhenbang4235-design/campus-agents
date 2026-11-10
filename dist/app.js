@@ -1,5 +1,5 @@
 'use strict';
-const icons={grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',chat:'<path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-6a9 9 0 1 1 18-5Z"/><path d="M7 10h10M7 14h6"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/>',team:'<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/>',shield:'<path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z"/><path d="m8 12 3 3 5-6"/>',book:'<path d="M12 5v16M3 3c4-1 7 0 9 2 2-2 5-3 9-2v16c-4-1-7 0-9 2-2-2-5-3-9-2V3Z"/>',home:'<path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Z"/>',brief:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18m-9-2v4"/>',search:'<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',plus:'<path d="M12 4v16M4 12h16"/>',file:'<path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',check:'<path d="m4 12 5 5L20 6"/>',lock:'<rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3"/>',spark:'<path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',board:'<path d="M8 4h8v4H8zM5 8h14v12H5z"/><path d="M9 12h6M9 16h4"/>'};
+const icons={grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',chat:'<path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-6a9 9 0 1 1 18-5Z"/><path d="M7 10h10M7 14h6"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/>',team:'<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/>',shield:'<path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z"/><path d="m8 12 3 3 5-6"/>',book:'<path d="M12 5v16M3 3c4-1 7 0 9 2 2-2 5-3 9-2v16c-4-1-7 0-9 2-2-2-5-3-9-2V3Z"/>',home:'<path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Z"/>',brief:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18m-9-2v4"/>',search:'<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',plus:'<path d="M12 4v16M4 12h16"/>',file:'<path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',check:'<path d="m4 12 5 5L20 6"/>',lock:'<rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3"/>',spark:'<path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',board:'<path d="M8 4h8v4H8zM5 8h14v12H5z"/><path d="M9 12h6M9 16h4"/>',menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',chev:'<path d="m15 6-6 6 6 6"/>'};
 const icon=n=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${icons[n]||icons.spark}</svg>`;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function linkifyEscaped(escaped){
@@ -73,7 +73,7 @@ function applyResult(data){if(data.state)state=data.state;if(data.ai)ai=data.ai;
 async function perform(body,message){if(busy)return;busy=true;try{const data=await api('action',body);applyResult(data);closeModal();render();toast(message)}catch(e){const notice=document.getElementById('review-reason-error');if(notice){notice.textContent=e.message;notice.classList.remove('hidden')}toast(e.message)}finally{busy=false;updateBusy()}}
 function updateBusy(){document.querySelectorAll('#profile,#chat-agent,#chat-form button,#chat-form textarea,.suggestions button,#places-form input,#places-form select,#places-form button').forEach(el=>el.disabled=busy||(el.closest('#places-form')&&el.tagName==='BUTTON'&&!(placesUi.provider==='local'?ai.places?.localReady:ai.places?.ready)))}
 async function switchProfile(value){if(!demoIdentities){toast('当前为公开访问，不能切换演示身份。');return}if(busy)return;try{chatPrefill='';applyResult(await api('session',{profile:value}));resetPlaces();closeModal();render();toast('已切换至'+me().label)}catch(e){toast(e.message);render()}}
-async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#'+homePage());startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
+async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['home','gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#home');startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
 
 let currentProfile='student',category='全部',query='',reviewTab='docs',teamTab='agents',chatPrefill='';
 const me=()=>profiles[currentProfile];
@@ -87,9 +87,9 @@ const productCrumb=()=>me().role==='team'?teamProfile.name:'校集';
 const statusLabel={draft:'草稿',pending:'待审核',published:'已上线',approved:'已入库',rejected:'已驳回',offline:'已下架'};
 const badge=s=>`<span class="tag ${['published','approved'].includes(s)?'green':s==='pending'?'amber':s==='rejected'?'red':''}">${statusLabel[s]||s}</span>`;
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('visible');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('visible'),3500)}
-function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['gallery','board','chat','upload','team','admin'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
+function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['home','gallery','board','chat','upload','team','admin'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
 function go(page,id){const hash='#'+page+(id?'/'+id:'');if(location.hash===hash)render();else location.hash=hash}
-const titles={gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理'};
+const titles={home:'校集',gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理'};
 function profileSelect(){if(!demoIdentities)return '';return `<select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select>`}
 function accountControls(){return account?`<span class="tag blue">学号 ${esc(account.studentId)}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">学号登录</button>`}
 function configButton(){return `<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button>`}
@@ -116,9 +116,138 @@ function identityBar(){
  if(!demoIdentities)return `<div class="identity">${accountControls()}${avatar}</div>`;
  return `<div class="identity">${accountControls()}${configButton()}<label for="profile">演示身份</label>${profileSelect()}${avatar}</div>`;
 }
+let menuOpen=false;
+function setMenu(open){
+ menuOpen=!!open;
+ const shellEl=document.querySelector?.('.shell');
+ const aside=document.getElementById('site-menu');
+ const btn=document.querySelector?.('.menu-square');
+ if(shellEl)shellEl.classList.toggle('menu-open',menuOpen);
+ if(aside){aside.classList.toggle('is-open',menuOpen);aside.setAttribute('aria-hidden',menuOpen?'false':'true')}
+ if(btn){btn.setAttribute('aria-expanded',menuOpen?'true':'false');btn.setAttribute('aria-label',menuOpen?'收起菜单':'打开菜单')}
+ if(menuOpen&&aside?.querySelector){const closeBtn=aside.querySelector('.menu-close');if(closeBtn?.focus)closeBtn.focus()}
+}
+function menuButton(){
+ return `<button type="button" class="menu-square" data-action="menu" aria-expanded="${menuOpen?'true':'false'}" aria-controls="site-menu" aria-label="${menuOpen?'收起菜单':'打开菜单'}">${icon('menu')}</button>`;
+}
+// Homepage photographs are not shipped with the app. Operators place licensed
+// images in data/homepage-posters/ (gitignored), for example 01.jpg and 02.jpg.
+// Optional manifest.json can set title, line, and credit:
+// { "posters": [{ "file": "01.jpg", "title": "", "line": "", "credit": "" }] }
+// Leave credit blank when the photographer is unknown. Missing files use the
+// gradient frames below. Do not commit contest photographs.
+const POSTER_FALLBACK=[
+ {file:'01.jpg',title:'你的难题不必独自面对',line:'在校园里，让一次举手之劳，成为彼此的光。',tone:'dawn'},
+ {file:'02.jpg',title:'身边有人，就不算独自',line:'一道身影，一次停留，都是校园里给彼此的光。',tone:'river'}
+];
+let posterCatalog=null,posterIndex=0,posterToken=0;
+function posterFileUrl(file){
+ const name=String(file||'').trim();
+ if(!/^[A-Za-z0-9][A-Za-z0-9._-]{0,80}$/.test(name)||name.includes('..')||!/\.(jpe?g|png|webp|gif)$/i.test(name))return '';
+ return '/homepage-posters/'+name;
+}
+function normalizePoster(item,index){
+ const base=POSTER_FALLBACK[index]||{file:'',title:'在校园里，善意会相遇',line:'一次举手之劳，就是给彼此的光。',tone:index%2?'river':'dawn'};
+ const title=String(item?.title??'').trim().slice(0,80)||base.title;
+ const line=String(item?.line??'').trim().slice(0,160)||base.line;
+ const credit=String(item?.credit??'').trim().slice(0,120);
+ const tone=item?.tone==='river'||item?.tone==='dawn'?item.tone:base.tone;
+ return {title,line,credit,image:posterFileUrl(item?.file||base.file),tone:tone==='river'?'river':'dawn'};
+}
+function activePosters(){return posterCatalog?.length?posterCatalog:POSTER_FALLBACK.map(normalizePoster)}
+function posterSlot(index,delta,length){if(!length)return 0;return ((index+delta)%length+length)%length}
+async function ensurePosters(){
+ if(posterCatalog)return posterCatalog;
+ let items=POSTER_FALLBACK;
+ try{
+  const res=await fetch('/homepage-posters/manifest.json',{cache:'no-store'});
+  if(res.ok){
+   const data=await res.json();
+   if(data&&Array.isArray(data.posters)&&data.posters.length)items=data.posters;
+  }
+ }catch{}
+ posterCatalog=items.map(normalizePoster).filter(item=>item.title);
+ if(!posterCatalog.length)posterCatalog=POSTER_FALLBACK.map(normalizePoster);
+ if(posterIndex>=posterCatalog.length)posterIndex=0;
+ if(typeof Image!=='undefined')for(const item of posterCatalog)if(item.image){const preload=new Image();preload.src=item.image}
+ return posterCatalog;
+}
+function pad2(n){return String(n).padStart(2,'0')}
+function motionReduced(){try{return !!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)}catch{return false}}
+function watchPosterImage(img,frame,src){
+ const miss=()=>{frame.classList.add('is-fallback');frame.classList.remove('is-ready')};
+ const hit=()=>{frame.classList.remove('is-fallback');frame.classList.add('is-ready')};
+ img.onload=()=>{if(img.getAttribute('src')===src)hit()};
+ img.onerror=()=>{if(!src||img.getAttribute('src')===src)miss()};
+ if(!src){img.removeAttribute('src');miss();return}
+ if(img.getAttribute('src')!==src)img.src=src;
+ else if(img.complete){if(img.naturalWidth>0)hit();else miss()}
+}
+function paintPoster(){
+ const stage=document.querySelector?.('.poster-stage');
+ if(!stage)return;
+ const list=activePosters();
+ if(!list.length)return;
+ if(posterIndex>=list.length)posterIndex=0;
+ const item=list[posterIndex];
+ const frame=stage.querySelector('.poster-frame');
+ if(!frame)return;
+ const fading=frame.classList.contains('is-fading');
+ frame.className='poster-frame tone-'+item.tone+(fading?' is-fading':'');
+ const title=stage.querySelector('.poster-title');
+ const line=stage.querySelector('.poster-line');
+ if(title)title.textContent=item.title;
+ if(line)line.textContent=item.line;
+ let credit=stage.querySelector('.poster-credit');
+ if(item.credit){
+  if(!credit){credit=document.createElement('p');credit.className='poster-credit';stage.querySelector('.poster-copy')?.appendChild(credit)}
+  credit.textContent=item.credit;
+ }else if(credit)credit.remove();
+ const count=stage.querySelector('.poster-count');
+ if(count)count.textContent=pad2(posterIndex+1)+' / '+pad2(list.length);
+ stage.querySelectorAll('.poster-dot').forEach((dot,i)=>{
+  const on=i===posterIndex;
+  dot.classList.toggle('is-current',on);
+  if(on)dot.setAttribute('aria-current','true');else dot.removeAttribute('aria-current');
+ });
+ const img=stage.querySelector('.poster-photo');
+ if(img)watchPosterImage(img,frame,item.image);
+}
+function shiftPoster(delta){
+ const list=activePosters();
+ if(!list.length)return;
+ posterIndex=posterSlot(posterIndex,delta,list.length);
+ const frame=document.getElementById('poster-frame');
+ if(!frame||motionReduced()){paintPoster();return}
+ const token=++posterToken;
+ frame.classList.add('is-fading');
+ setTimeout(()=>{
+  if(token!==posterToken)return;
+  paintPoster();
+  const next=document.getElementById('poster-frame');
+  if(!next)return;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>next.classList.remove('is-fading')));
+ },220);
+}
+function goPoster(index){
+ const list=activePosters();
+ if(!Number.isInteger(index)||index<0||index>=list.length||index===posterIndex)return;
+ shiftPoster(index-posterIndex);
+}
+function homePoster(){
+ const list=activePosters();
+ const item=list[posterIndex]||list[0];
+ const dots=list.map((_,i)=>`<button type="button" class="poster-dot${i===posterIndex?' is-current':''}" data-action="poster-go" data-index="${i}" aria-label="第 ${i+1} 张"${i===posterIndex?' aria-current="true"':''}></button>`).join('');
+ const credit=item.credit?`<p class="poster-credit">${esc(item.credit)}</p>`:'';
+ return `<section class="poster-stage" aria-roledescription="轮播" aria-label="校集首页"><div class="poster-frame tone-${item.tone}" id="poster-frame"><img class="poster-photo" alt="" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="poster-next" aria-label="下一张"></button><div class="poster-copy"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-switch"><p class="poster-hint">点击画面，切换下一张</p><div class="poster-dots" role="group" aria-label="海报">${dots}</div></div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
+}
 function shell(content){
  const r=route();
- return `<div class="shell"><aside class="sidebar"><a class="brand" href="#${homePage()}"><span class="brand-mark">集</span><div><strong>校集</strong><small>同学互助</small></div></a><div class="nav-title">${isStudent()?'常用':'导航'}</div><nav class="nav" aria-label="主导航">${navLinks(r.page)}</nav>${sidebarFoot()}</aside><div class="main"><header class="topbar"><div class="breadcrumb">${productCrumb()} <span>/ ${titles[r.page]}</span></div>${identityBar()}</header><main class="content" id="main-content">${content}</main></div></div>`;
+ const home=r.page==='home';
+ const aside=`<aside class="sidebar${menuOpen?' is-open':''}" id="site-menu" aria-hidden="${menuOpen?'false':'true'}" aria-label="校集菜单"><div class="menu-head"><a class="brand" href="#home" title="回到首页"><span class="brand-mark">集</span><div><strong>校集</strong><small>同学互助</small></div></a><button type="button" class="menu-close" data-action="menu-close" aria-label="关闭菜单">${icon('close')}</button></div><div class="nav-title">${isStudent()?'常用':'导航'}</div><nav class="nav" aria-label="主导航">${navLinks(r.page)}</nav>${sidebarFoot()}</aside>`;
+ const top=home?'':`<header class="topbar"><div class="breadcrumb">${productCrumb()} <span>/ ${titles[r.page]}</span></div>${identityBar()}</header>`;
+ const mark=home?'<span class="home-mark">校集</span>':'';
+ return `<div class="shell${home?' shell-home':''}${menuOpen?' menu-open':''}">${menuButton()}${mark}${aside}<div class="main">${top}<main class="content" id="main-content">${content}</main></div></div>`;
 }
 function heading(eye,title,sub,action=''){return `<div class="page-heading"><div>${eye?`<div class="eyebrow">${eye}</div>`:''}<h1>${title}</h1><p>${sub}</p></div>${action}</div>`}
 function galleryHero(){const pack=teamPack();if(!pack)return `<section class="hero"><div class="hero-main"><div class="eyebrow">本周推荐 · 学校事务</div><h2>办事前，先问问校园办事助手</h2><p>准备哪些材料、下一步怎么做？<br>从有来源的资料中，找到清楚的答案。</p><button class="btn" data-action="chat" data-id="affairs">开始对话 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>校集团队<small>每个助手都有维护团队</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`;return `<section class="hero"><div class="hero-main"><div class="eyebrow">${esc(pack.heroEye)}</div><h2>${esc(pack.heroTitle)}</h2><p>${esc(pack.heroBody)}</p><button class="btn" data-action="nav" data-page="team">进入团队工作台 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>生活 · 办事 · 学习<small>${esc(pack.name)}统一维护</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`}
@@ -358,7 +487,7 @@ function reportModal(listingId){
 function boardReviewModal(listingId){
  modal('驳回这条登记','<form id="board-review-form" data-id="'+esc(listingId)+'"><p class="small muted">驳回原因会显示给发布者，请写清楚需要修改的地方。</p><div class="field"><label for="board-review-reason">驳回原因 *</label><textarea id="board-review-reason" name="reason" required minlength="2" maxlength="300" rows="3"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn danger" type="submit">确认驳回</button></div></form>');
 }
-function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=`${titles[r.page]} · 校集`;document.getElementById('app').innerHTML=shell(({gallery,board:boardPage,upload,team,chat,admin}[r.page])());if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy()}
+function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:homePoster,gallery,board:boardPage,upload,team,chat,admin}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home'||!posterCatalog)return;const dots=document.querySelectorAll?.('.poster-dot');if(!dots)return;if(dots.length!==posterCatalog.length)document.getElementById('app').innerHTML=shell(homePoster());paintPoster()}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy()}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
 function openAuthDialog(){modal('学号登录',authFormHtml('dialog-auth',{autofocus:true}))}
 function closeModal(){document.getElementById('modal').close()}
@@ -419,7 +548,16 @@ document.addEventListener('change',async e=>{
  }
 });
 document.addEventListener('click',async e=>{
+ const menuBtn=e.target.closest?.('.menu-square');
+ const inMenu=e.target.closest?.('#site-menu');
+ if(menuOpen&&!menuBtn&&!inMenu){setMenu(false);if(e.target.closest?.('.poster-stage'))return}
+ if(inMenu&&e.target.closest?.('a[href^="#"]'))setMenu(false);
  const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset;
+ if(a.action==='menu'){setMenu(!menuOpen);return}
+ if(a.action==='menu-close'){setMenu(false);return}
+ if(a.action==='poster-next'){shiftPoster(1);return}
+ if(a.action==='poster-prev'){shiftPoster(-1);return}
+ if(a.action==='poster-go'){goPoster(Number(a.index));return}
  if(a.action==='close'||a.action==='board-decline')return closeModal();
  if(a.action==='nav')return go(a.page);
  if(a.action==='auth-open'){if(!account)openAuthDialog();return}
@@ -552,7 +690,14 @@ document.addEventListener('submit',async e=>{
  if(f.id==='review-form'){const reason=get('reason');const notice=document.getElementById('review-reason-error');if(!reason){if(notice){notice.textContent='请填写审核原因。';notice.classList.remove('hidden')}return toast('请填写审核原因。')}const decision=f.dataset.decision==='approve'?'approve':'reject';const kind=f.dataset.kind;return perform({action:'review',kind,id:f.dataset.id,decision,reason},decision==='reject'?'已驳回并记录原因。':kind==='doc'?'资料已审核入库，并记下通过原因。':'Agent 已上线，并记下通过原因。');}
  if(f.id==='edit-doc-form')return perform({action:'editDoc',id:f.dataset.id,title:get('title'),source:get('source'),sourceUrl:get('sourceUrl'),publishedAt:get('publishedAt'),collectedAt:get('collectedAt'),sourceKind:get('sourceKind'),content:get('content')},'已修改并重新提交。');
 });
-document.addEventListener('keydown',e=>{if((e.target.matches('#chat-form textarea')||e.target.matches('#board-ask-form textarea'))&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'&&menuOpen){setMenu(false);return}
+ if((e.target.matches?.('#chat-form textarea')||e.target.matches?.('#board-ask-form textarea'))&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}
+ if(route().page!=='home'||menuOpen||document.getElementById('modal')?.open)return;
+ if(e.target.closest?.('input,textarea,select'))return;
+ if(e.key==='ArrowRight')shiftPoster(1);
+ if(e.key==='ArrowLeft')shiftPoster(-1);
+});
 function searchInput(e){
  if(e.target.id!=='search'||e.isComposing)return;const pos=e.target.selectionStart;query=e.target.value;render();const el=document.getElementById('search');el.focus();el.setSelectionRange(pos,pos)
 }
@@ -577,7 +722,7 @@ document.addEventListener('change',e=>{
  if(/^\d{4}-\d{2}-\d{2}$/.test(value))setBoardDay(value);
  else setBoardDay('today');
 });
-window.addEventListener('hashchange',()=>{if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
+window.addEventListener('hashchange',()=>{menuOpen=false;if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'list_campus_agents',title:'查看已上线校园助手',description:'只读列出当前本地平台已上线的助手与已审核资料数。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute(input){if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('不接受参数');return state.agents.filter(a=>a.status==='published').map(a=>({id:a.id,name:a.name,documents:state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length}))}},{signal:lifecycle.signal})).catch(()=>{})}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})}
 
