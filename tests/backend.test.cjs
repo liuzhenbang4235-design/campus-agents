@@ -366,6 +366,46 @@ test('publicMode or demoIdentities false blocks demo identity switching',async t
   }
  }
 });
+test('PUBLIC_MODE=1 disables demo identity switching and does not write publicMode to disk',async t=>{
+ async function boot(env){
+  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-agent-test-'));
+  const configFile=path.join(dir,'config.json');
+  fs.writeFileSync(configFile,JSON.stringify({enabled:false,provider:'doubao',dailyLimit:50,demoIdentities:true}));
+  const app=createApp({dataDir:path.join(dir,'data'),configFile,env});
+  await new Promise(r=>app.server.listen(0,'127.0.0.1',r));
+  const base='http://127.0.0.1:'+app.server.address().port;let cookie='';
+  t.after(async()=>{app.server.closeAllConnections();await new Promise(r=>app.server.close(r));fs.rmSync(dir,{recursive:true,force:true})});
+  async function request(route,body){
+   const res=await fetch(base+'/api/'+route,{method:body?'POST':'GET',headers:{...(body?{'Content-Type':'application/json','X-Campus-Client':'1'}:{}),Cookie:cookie},body:body?JSON.stringify(body):undefined});
+   if(res.headers.get('set-cookie'))cookie=res.headers.get('set-cookie').split(';')[0];
+   const data=await res.json();
+   return {status:res.status,...data};
+  }
+  return {request,configFile};
+ }
+ for(const PUBLIC_MODE of ['1','true','YES',' on ']){
+  const {request,configFile}=await boot({PUBLIC_MODE});
+  const state=await request('state');
+  assert.equal(state.status,200);
+  assert.equal(state.demoIdentities,false);
+  assert.equal(state.ai.demoIdentities,false);
+  assert.equal(state.profile,'student');
+  const switched=await request('session',{profile:'admin'});
+  assert.equal(switched.status,403);
+  assert.match(switched.error,/不能切换演示身份/);
+  assert.equal((await request('state')).profile,'student');
+  assert.notEqual(JSON.parse(fs.readFileSync(configFile,'utf8')).publicMode,true);
+ }
+ for(const env of [{},{PUBLIC_MODE:'0'},{PUBLIC_MODE:'false'},{PUBLIC_MODE:'no'},{PUBLIC_MODE:'off'}]){
+  const {request}=await boot(env);
+  const state=await request('state');
+  assert.equal(state.demoIdentities,true,JSON.stringify(env));
+  const switched=await request('session',{profile:'team'});
+  assert.equal(switched.status,200);
+  assert.equal(switched.profile,'team');
+  assert.equal(switched.demoIdentities,true);
+ }
+});
 test('resaving an already enabled provider with an empty apiKey keeps the key and does not require consent',async t=>{
  const {request,opts}=await setup(t,async()=>modelResponse());
  await request('session',{profile:'admin'});

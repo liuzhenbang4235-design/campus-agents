@@ -20,6 +20,11 @@ services:
       # Render's proxy is outside the process. Loopback would fail health checks.
       - key: HOST
         value: "0.0.0.0"
+      # Literal value, not sync:false, so a Blueprint sync turns public mode on.
+      # Local preview omits this env and keeps demo-identity switching.
+      # Dashboard can still override to 0 for a private preview service.
+      - key: PUBLIC_MODE
+        value: "1"
       # Operator fills https://<service>.onrender.com (and later the custom domain).
       # sync:false is prompted once at Blueprint creation and is not overwritten later.
       - key: CAMPUS_ORIGINS
