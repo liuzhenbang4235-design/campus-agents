@@ -118,6 +118,7 @@ function identityBar(){
 }
 let menuOpen=false;
 function setMenu(open){
+ const was=menuOpen;
  menuOpen=!!open;
  const shellEl=document.querySelector?.('.shell');
  const aside=document.getElementById('site-menu');
@@ -126,6 +127,7 @@ function setMenu(open){
  if(aside){aside.classList.toggle('is-open',menuOpen);aside.setAttribute('aria-hidden',menuOpen?'false':'true')}
  if(btn){btn.setAttribute('aria-expanded',menuOpen?'true':'false');btn.setAttribute('aria-label',menuOpen?'收起菜单':'打开菜单')}
  if(menuOpen&&aside?.querySelector){const closeBtn=aside.querySelector('.menu-close');if(closeBtn?.focus)closeBtn.focus()}
+ else if(was&&btn?.focus)btn.focus();
 }
 function menuButton(){
  return `<button type="button" class="menu-square" data-action="menu" aria-expanded="${menuOpen?'true':'false'}" aria-controls="site-menu" aria-label="${menuOpen?'收起菜单':'打开菜单'}">${icon('menu')}</button>`;
@@ -239,15 +241,14 @@ function homePoster(){
  const item=list[posterIndex]||list[0];
  const dots=list.map((_,i)=>`<button type="button" class="poster-dot${i===posterIndex?' is-current':''}" data-action="poster-go" data-index="${i}" aria-label="第 ${i+1} 张"${i===posterIndex?' aria-current="true"':''}></button>`).join('');
  const credit=item.credit?`<p class="poster-credit">${esc(item.credit)}</p>`:'';
- return `<section class="poster-stage" aria-roledescription="轮播" aria-label="校集首页"><div class="poster-frame tone-${item.tone}" id="poster-frame"><img class="poster-photo" alt="" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="poster-next" aria-label="下一张"></button><div class="poster-copy"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-switch"><p class="poster-hint">点击画面，切换下一张</p><div class="poster-dots" role="group" aria-label="海报">${dots}</div></div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
+ return `<section class="poster-stage" aria-roledescription="轮播" aria-label="首页"><div class="poster-frame tone-${item.tone}" id="poster-frame"><img class="poster-photo" alt="" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="poster-next" aria-label="下一张"></button><div class="poster-copy"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-dots" role="group" aria-label="海报">${dots}</div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
 }
 function shell(content){
  const r=route();
  const home=r.page==='home';
- const aside=`<aside class="sidebar${menuOpen?' is-open':''}" id="site-menu" aria-hidden="${menuOpen?'false':'true'}" aria-label="校集菜单"><div class="menu-head"><a class="brand" href="#home" title="回到首页"><span class="brand-mark">集</span><div><strong>校集</strong><small>同学互助</small></div></a><button type="button" class="menu-close" data-action="menu-close" aria-label="关闭菜单">${icon('close')}</button></div><div class="nav-title">${isStudent()?'常用':'导航'}</div><nav class="nav" aria-label="主导航">${navLinks(r.page)}</nav>${sidebarFoot()}</aside>`;
+ const aside=`<aside class="sidebar${menuOpen?' is-open':''}" id="site-menu" aria-hidden="${menuOpen?'false':'true'}" aria-label="菜单"><div class="menu-head"><a class="brand" href="#home" aria-label="回到首页"><span class="brand-mark" aria-hidden="true">集</span><small>同学互助</small></a><button type="button" class="menu-close" data-action="menu-close" aria-label="关闭菜单">${icon('close')}</button></div><div class="nav-title">${isStudent()?'常用':'导航'}</div><nav class="nav" aria-label="主导航">${navLinks(r.page)}</nav>${sidebarFoot()}</aside>`;
  const top=home?'':`<header class="topbar"><div class="breadcrumb">${productCrumb()} <span>/ ${titles[r.page]}</span></div>${identityBar()}</header>`;
- const mark=home?'<span class="home-mark">校集</span>':'';
- return `<div class="shell${home?' shell-home':''}${menuOpen?' menu-open':''}">${menuButton()}${mark}${aside}<div class="main">${top}<main class="content" id="main-content">${content}</main></div></div>`;
+ return `<div class="shell${home?' shell-home':''}${menuOpen?' menu-open':''}">${menuButton()}${aside}<div class="main">${top}<main class="content" id="main-content">${content}</main></div></div>`;
 }
 function heading(eye,title,sub,action=''){return `<div class="page-heading"><div>${eye?`<div class="eyebrow">${eye}</div>`:''}<h1>${title}</h1><p>${sub}</p></div>${action}</div>`}
 function galleryHero(){const pack=teamPack();if(!pack)return `<section class="hero"><div class="hero-main"><div class="eyebrow">本周推荐 · 学校事务</div><h2>办事前，先问问校园办事助手</h2><p>准备哪些材料、下一步怎么做？<br>从有来源的资料中，找到清楚的答案。</p><button class="btn" data-action="chat" data-id="affairs">开始对话 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>校集团队<small>每个助手都有维护团队</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`;return `<section class="hero"><div class="hero-main"><div class="eyebrow">${esc(pack.heroEye)}</div><h2>${esc(pack.heroTitle)}</h2><p>${esc(pack.heroBody)}</p><button class="btn" data-action="nav" data-page="team">进入团队工作台 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>生活 · 办事 · 学习<small>${esc(pack.name)}统一维护</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`}

@@ -168,7 +168,10 @@ test('poster homepage is a click-through frame and the menu starts closed',()=>{
  assert.match(home,/class="menu-square"/);
  assert.match(home,/aria-expanded="false"/);
  assert.match(home,/aria-hidden="true"/);
- assert.match(home,/点击画面，切换下一张/);
+ assert.doesNotMatch(home,/点击画面，切换下一张/);
+ assert.doesNotMatch(home,/校集|home-mark/);
+ assert.match(home,/aria-label="回到首页"/);
+ assert.match(home,/brand-mark/);
  assert.match(home,/01 \/ 02/);
  assert.match(home,/aria-label="上一张"/);
  assert.match(home,/aria-label="下一张"/);
@@ -183,6 +186,13 @@ test('poster homepage is a click-through frame and the menu starts closed',()=>{
  assert.doesNotMatch(home,/class="topbar"/);
  assert.doesNotMatch(home,/poster-credit/);
  assert.doesNotMatch(home,/sidebar is-open|menu-open/);
+ const css=fs.readFileSync(path.join(__dirname,'../dist/styles.css'),'utf8');
+ assert.match(css,/\.poster-photo\{[^}]*object-fit:cover/);
+ assert.doesNotMatch(css,/\.poster-photo\{[^}]*object-fit:contain/);
+ assert.match(css,/\.menu-square\{[^}]*width:56px;height:56px/);
+ assert.match(css,/\.shell>\.sidebar\{[^}]*transform:translateX\(-100%\)/);
+ assert.match(css,/\.shell>\.sidebar\.is-open\{[^}]*transform:translateX\(16px\)/);
+ assert.match(css,/prefers-reduced-motion:reduce\)\{[\s\S]*?\.shell>\.sidebar\{transition:none\}/);
 });
 
 test('the menu square toggles without advancing the poster, and the poster loops',async()=>{
