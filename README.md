@@ -74,7 +74,7 @@
 
 临时放到 Render 时按 [deploy/render.md](deploy/render.md)：`HOST=0.0.0.0`，并用 `ACCESS_USER` / `ACCESS_PASSWORD` 加一层共享密码。云端模型 Key 放在 Dashboard 的 `CAMPUS_AI_API_KEY` 等环境变量里，不要写进仓库。这是自定义域名和 Cloudflare Access 之前的过渡，不是正式认证。未设置 `HOST` 且不在 Render 上时，监听地址仍是 127.0.0.1。正式共享站点的 `PUBLIC_MODE`（Blueprint 默认 `1`，关掉演示身份切换；本机预览不要设置）见 [deploy/render.md](deploy/render.md)。
 
-注意：当前 `/api/session` 仍可一键切换管理员演示身份，未接真实登录前只建议放在内网，或在最外层再加 SSO/VPN。限流是进程内内存计数；经反向代理后客户端 IP 统一显示为本机，限流会退化为全局限制，重启服务后清零。
+注意：当前 `/api/session` 仍可一键切换管理员演示身份，未接真实登录前只建议放在内网，或在最外层再加 SSO/VPN。限流是进程内内存计数，按已登录学号、Cloudflare Access 身份或 `campus_session` 分桶；没有这些身份时才看来源地址。重启服务后清零。
 
 ## 尚未完成
 
