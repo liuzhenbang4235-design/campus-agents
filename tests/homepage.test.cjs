@@ -190,8 +190,11 @@ test('poster homepage is a click-through frame and the menu starts closed',()=>{
  assert.match(css,/\.poster-photo\{[^}]*object-fit:cover/);
  assert.doesNotMatch(css,/\.poster-photo\{[^}]*object-fit:contain/);
  assert.match(css,/\.menu-square\{[^}]*width:56px;height:56px/);
+ assert.match(css,/\.shell>\.sidebar\{[^}]*height:100dvh/);
+ assert.match(css,/\.shell>\.sidebar\{[^}]*border-radius:0/);
  assert.match(css,/\.shell>\.sidebar\{[^}]*transform:translateX\(-100%\)/);
- assert.match(css,/\.shell>\.sidebar\.is-open\{[^}]*transform:translateX\(16px\)/);
+ assert.match(css,/\.shell>\.sidebar\.is-open\{[^}]*transform:translateX\(0\)/);
+ assert.doesNotMatch(css,/\.shell>\.sidebar\.is-open\{[^}]*translateX\(16px\)/);
  assert.match(css,/prefers-reduced-motion:reduce\)\{[\s\S]*?\.shell>\.sidebar\{transition:none\}/);
 });
 
@@ -248,6 +251,19 @@ test('a local manifest can add a photographer credit and cannot point outside th
  assert.equal(vm.runInContext('posterSlot(0,1,2)',blank.context),1);
  assert.equal(vm.runInContext('posterSlot(1,1,2)',blank.context),0);
  assert.equal(vm.runInContext('posterSlot(0,-1,2)',blank.context),1);
+});
+
+test('a manifest may list six posters and the carousel still loops',async()=>{
+ const files=['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg'];
+ const loaded=loadApp({hash:'#home',manifest:{posters:files.map((file,i)=>({file,title:'第'+(i+1)+'张',line:'短句',credit:i===3?'署名':''}))}});
+ const after=await vm.runInContext('ensurePosters()',loaded.context);
+ assert.equal(after.length,6);
+ assert.deepEqual(after.map(item=>item.image),files.map(file=>'/homepage-posters/'+file));
+ assert.equal(after[3].credit,'署名');
+ assert.equal(vm.runInContext('posterSlot(5,1,6)',loaded.context),0);
+ const html=loaded.context.__at(5);
+ assert.match(html,/06 \/ 06/);
+ assert.equal((html.match(/class="poster-dot(?: |")/g)||[]).length,6);
 });
 
 test('gitignored poster files are served locally and missing files do not break the app',async t=>{

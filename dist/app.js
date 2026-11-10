@@ -133,8 +133,8 @@ function menuButton(){
  return `<button type="button" class="menu-square" data-action="menu" aria-expanded="${menuOpen?'true':'false'}" aria-controls="site-menu" aria-label="${menuOpen?'收起菜单':'打开菜单'}">${icon('menu')}</button>`;
 }
 // Homepage photographs are not shipped with the app. Operators place licensed
-// images in data/homepage-posters/ (gitignored), for example 01.jpg and 02.jpg.
-// Optional manifest.json can set title, line, and credit:
+// images in data/homepage-posters/ (gitignored). A manifest may list any count,
+// for example 01.jpg through 06.jpg. Optional manifest.json can set title, line, and credit:
 // { "posters": [{ "file": "01.jpg", "title": "", "line": "", "credit": "" }] }
 // Leave credit blank when the photographer is unknown. Missing files use the
 // gradient frames below. Do not commit contest photographs.
