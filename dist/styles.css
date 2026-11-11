@@ -206,42 +206,34 @@ body:has(.shell-home){background:#07090f;overflow:hidden}
 @media(min-width:1400px){
  .poster-frame.focus-right .poster-photo{object-position:62% 42%}
 }
-.board-page .page-heading h1,.board-page .board-register h2,.board-page .board-ask h2,.board-page .board-list h2,.board-page .board-inbox h2{font-family:"Iowan Old Style","Palatino Linotype","Songti SC","STSong",serif;font-weight:540;letter-spacing:.01em}
-.board-page{display:flex;flex-direction:column;gap:28px}
+.board-page{display:flex;flex-direction:column}
 .board-page .board-split{display:contents}
 .board-page .board-ask{order:1}
 .board-page .board-list{order:2}
 .board-page .board-inbox{order:3}
 .board-page .board-register{order:4}
-.board-page .panel{background:transparent;border:0;box-shadow:none;padding:0}
-.board-page .page-heading{margin-bottom:0}
-.board-page .page-heading h1{font-size:1.05rem;letter-spacing:.14em;font-weight:650}
-.board-page .board-ask h2{font-size:clamp(1.85rem,3.2vw,2.45rem);line-height:1.25;margin-bottom:8px}
-.board-page .board-ask textarea{min-height:128px;font-size:1.05rem;border-radius:16px;border-color:#e3ddd0;background:#fff;padding:16px 18px}
-.board-page .board-ask .btn.primary{background:#243044;border-color:#243044}
-.board-page .board-ask .btn.primary:hover{background:#1b2633}
-.board-page .board-quiet{margin:14px 0 0;color:#6f6a60;font-size:.95rem}
-.board-page .board-list h2{font-size:1.35rem}
-.board-page .board-fold{border-top:1px solid #e6e1d4;padding-top:16px}
-.board-page .board-fold summary{cursor:pointer;list-style:none;font-weight:650;color:#3c4250}
+.board-page .board-ask.panel,.board-page .board-list.panel,.board-page .board-inbox.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:25px}
+.board-page .board-register.panel{background:transparent;border:0;padding:0;box-shadow:none}
+.board-page .board-quiet{margin:14px 0 0;color:var(--muted);font-size:.875rem}
+.board-page .board-fold{border-top:1px solid var(--line);padding-top:16px}
+.board-page .board-fold summary{cursor:pointer;list-style:none;font-weight:650;color:var(--ink)}
 .board-page .board-fold summary::-webkit-details-marker{display:none}
-.board-page .board-fold[open]{background:#fbfbf8;border:1px solid #e6e1d4;border-radius:16px;padding:18px 20px 8px}
-.board-page .board-mine-title{margin-top:18px;font-size:1rem}
+.board-page .board-fold[open]{background:#fff;border:1px solid var(--line);border-radius:12px;padding:25px}
 .board-page .board-fold[open] summary{margin-bottom:12px}
-.board-page .board-ask .hint,.board-page .board-register>.small{max-width:42em}
-.board-page .board-card,.board-page .board-thread{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 16px;align-items:start;padding:16px 0;border-bottom:1px solid #ebe6da}
+.board-page .board-mine-title{margin-top:18px;font-size:1.05rem}
+.board-page .board-card,.board-page .board-thread{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 16px;align-items:start;padding:16px 0;border-bottom:1px solid var(--line)}
 .board-page .board-thread{grid-template-columns:minmax(0,1fr) auto}
 .board-page .board-card:last-child,.board-page .board-thread:last-child{border-bottom:0}
 .board-page .board-card-kicker{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
-.board-page .board-when{margin-left:auto;font-size:.75rem;letter-spacing:.04em;color:#6f6a60}
+.board-page .board-when{margin-left:auto;font-size:.75rem;color:var(--muted)}
 .board-page .board-card-title{font-size:1.05rem;font-weight:650;margin-top:6px;line-height:1.4}
-.board-page .board-card-text{margin-top:4px;color:#3c4250;font-size:.92rem;line-height:1.6}
-.board-page .board-card-who{margin-top:6px;font-size:.8rem;color:#7a7468}
+.board-page .board-card-text{margin-top:4px;color:var(--ink);font-size:.875rem;line-height:1.6}
+.board-page .board-card-who{margin-top:6px;font-size:.8rem;color:var(--muted)}
 .board-page .board-card-actions{margin-top:10px}
 .board-page .board-list h2,.board-page .board-inbox h2{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
-.board-page .board-ask textarea{background:#fff;border-color:#e3ddd0}
-.board-page .board-ask .btn.primary,.board-page .board-register .btn.primary{min-width:5.5rem}
 @media(max-width:760px){
+ .board-page .board-ask-bar{flex-direction:column;align-items:stretch}
+ .board-page .board-ask-bar .btn.primary{align-self:flex-start}
  .board-page .board-when{margin-left:0}
  .board-page .board-thread{grid-template-columns:minmax(0,1fr)}
 }
