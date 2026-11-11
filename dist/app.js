@@ -133,11 +133,40 @@ function menuButton(){
  return `<button type="button" class="menu-square" data-action="menu" aria-expanded="${menuOpen?'true':'false'}" aria-controls="site-menu" aria-label="${menuOpen?'收起菜单':'打开菜单'}">${icon('menu')}</button>`;
 }
 // Homepage photographs are not shipped with the app. Operators place licensed
-// images in data/homepage-posters/ (gitignored). A manifest may list any count,
-// for example 01.jpg through 06.jpg. Optional manifest.json can set title, line, and credit:
-// { "posters": [{ "file": "01.jpg", "title": "", "line": "", "credit": "" }] }
+// images in data/homepage-posters/ (gitignored). A manifest may list any count.
+// Optional fields, omitted values keep the quiet per-photo default:
+//   align:   left | right | center          (default rotates by photo)
+//   place:   bottom | middle | top          (default bottom; narrow screens pin middle/top down)
+//   measure: narrow | regular | wide        (default regular)
+//   focus:   center | left | right | top | bottom
+// Example, do not replace an existing manifest's text, order, or credits:
+// { "posters": [
+//   { "file": "01.jpg", "title": "…", "line": "…", "credit": "", "align": "left", "place": "bottom", "measure": "regular", "focus": "center" },
+//   { "file": "02.jpg", "title": "…", "line": "…", "credit": "", "align": "right", "place": "bottom", "measure": "narrow", "focus": "right" },
+//   { "file": "03.jpg", "title": "…", "line": "…", "credit": "", "align": "left", "place": "bottom", "measure": "wide", "focus": "left" },
+//   { "file": "04.jpg", "title": "…", "line": "…", "credit": "", "align": "center", "place": "bottom", "measure": "narrow", "focus": "center" },
+//   { "file": "05.jpg", "title": "…", "line": "…", "credit": "", "align": "left", "place": "middle", "measure": "regular", "focus": "center" },
+//   { "file": "06.jpg", "title": "…", "line": "…", "credit": "", "align": "right", "place": "bottom", "measure": "regular", "focus": "right" }
+// ] }
 // Leave credit blank when the photographer is unknown. Missing files use the
 // gradient frames below. Do not commit contest photographs.
+const POSTER_LAYOUTS=[
+ {align:'left',place:'bottom',measure:'regular',focus:'center'},
+ {align:'right',place:'bottom',measure:'regular',focus:'right'},
+ {align:'left',place:'bottom',measure:'wide',focus:'left'},
+ {align:'center',place:'bottom',measure:'narrow',focus:'center'},
+ {align:'left',place:'middle',measure:'regular',focus:'center'},
+ {align:'right',place:'bottom',measure:'regular',focus:'right'}
+];
+const POSTER_ALIGN=new Set(['left','right','center']);
+const POSTER_PLACE=new Set(['top','middle','bottom']);
+const POSTER_MEASURE=new Set(['narrow','regular','wide']);
+const POSTER_FOCUS=new Set(['center','left','right','top','bottom']);
+function posterLayout(item,index){
+ const base=POSTER_LAYOUTS[index%POSTER_LAYOUTS.length];
+ const pick=(key,allowed)=>allowed.has(item?.[key])?item[key]:base[key];
+ return {align:pick('align',POSTER_ALIGN),place:pick('place',POSTER_PLACE),measure:pick('measure',POSTER_MEASURE),focus:pick('focus',POSTER_FOCUS)};
+}
 const POSTER_FALLBACK=[
  {file:'01.jpg',title:'你的难题不必独自面对',line:'在校园里，让一次举手之劳，成为彼此的光。',tone:'dawn'},
  {file:'02.jpg',title:'身边有人，就不算独自',line:'一道身影，一次停留，都是校园里给彼此的光。',tone:'river'}
@@ -154,7 +183,7 @@ function normalizePoster(item,index){
  const line=String(item?.line??'').trim().slice(0,160)||base.line;
  const credit=String(item?.credit??'').trim().slice(0,120);
  const tone=item?.tone==='river'||item?.tone==='dawn'?item.tone:base.tone;
- return {title,line,credit,image:posterFileUrl(item?.file||base.file),tone:tone==='river'?'river':'dawn'};
+ return {title,line,credit,image:posterFileUrl(item?.file||base.file),tone:tone==='river'?'river':'dawn',...posterLayout(item,index)};
 }
 function activePosters(){return posterCatalog?.length?posterCatalog:POSTER_FALLBACK.map(normalizePoster)}
 function posterSlot(index,delta,length){if(!length)return 0;return ((index+delta)%length+length)%length}
@@ -195,7 +224,11 @@ function paintPoster(){
  const frame=stage.querySelector('.poster-frame');
  if(!frame)return;
  const fading=frame.classList.contains('is-fading');
- frame.className='poster-frame tone-'+item.tone+(fading?' is-fading':'');
+ frame.className='poster-frame tone-'+item.tone+' focus-'+item.focus+(fading?' is-fading':'');
+ const copy=stage.querySelector('.poster-copy');
+ if(copy)copy.className='poster-copy align-'+item.align+' place-'+item.place+' measure-'+item.measure;
+ const veil=stage.querySelector('.poster-veil');
+ if(veil)veil.className='poster-veil place-'+item.place+' align-'+item.align;
  const title=stage.querySelector('.poster-title');
  const line=stage.querySelector('.poster-line');
  if(title)title.textContent=item.title;
@@ -241,7 +274,7 @@ function homePoster(){
  const item=list[posterIndex]||list[0];
  const dots=list.map((_,i)=>`<button type="button" class="poster-dot${i===posterIndex?' is-current':''}" data-action="poster-go" data-index="${i}" aria-label="第 ${i+1} 张"${i===posterIndex?' aria-current="true"':''}></button>`).join('');
  const credit=item.credit?`<p class="poster-credit">${esc(item.credit)}</p>`:'';
- return `<section class="poster-stage" aria-roledescription="轮播" aria-label="首页"><div class="poster-frame tone-${item.tone}" id="poster-frame"><img class="poster-photo" alt="" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="poster-next" aria-label="下一张"></button><div class="poster-copy"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-dots" role="group" aria-label="海报">${dots}</div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
+ return `<section class="poster-stage" aria-roledescription="轮播" aria-label="首页"><div class="poster-frame tone-${item.tone} focus-${item.focus}" id="poster-frame"><img class="poster-photo" alt="" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil place-${item.place} align-${item.align}" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="poster-next" aria-label="下一张"></button><div class="poster-copy align-${item.align} place-${item.place} measure-${item.measure}"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-dots" role="group" aria-label="海报">${dots}</div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
 }
 function shell(content){
  const r=route();
@@ -308,6 +341,21 @@ function applyBoardHours(n){
  if(endEl)endEl.value=e.hour+':'+e.minute;
  setBoardDay('today');
 }
+function listingCard(l,mode){
+ const when=esc(listingWhen(l));
+ const type=esc(l.type||'互助');
+ const headline=esc(listingHeadline(l));
+ const text=esc(l.description||'');
+ if(mode==='mine'){
+  const st=l.status||'active';
+  const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';
+  const act=st==='taken_down'?'':'<div class="board-card-actions"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';
+  const reason=l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'';
+  return '<article class="record board-card">'+listingThumb(l)+'<div class="board-card-copy"><div class="board-card-kicker">'+tag+'<span class="tag blue">'+type+'</span><span class="board-when">'+when+'</span></div><h3 class="board-card-title">'+headline+'</h3><p class="board-card-text">'+text+'</p>'+reason+act+'</div></article>';
+ }
+ const role=roleTag(l.role);
+ return '<article class="record board-card">'+listingThumb(l)+'<div class="board-card-copy"><div class="board-card-kicker"><span class="tag blue">'+type+'</span>'+(role?'<span class="tag">'+esc(role)+'</span>':'')+'<span class="board-when">'+when+'</span></div><h3 class="board-card-title">'+headline+'</h3>'+(text?'<p class="board-card-text">'+text+'</p>':'')+'<p class="board-card-who">'+esc(l.ownerName||'同学')+'</p></div></article>';
+}
 function listingHeadline(l){return l.display||[l.type,l.title].filter(Boolean).join(' · ')||l.type||'同学登记'}
 function listingWhen(l){return l.windowText||(l.longTerm?'长期':(l.expiresAt?'有效至 '+String(l.expiresAt).slice(0,16).replace('T',' '):''))}
 function roleTag(role){return role==='offer'?'我来帮忙':role==='need'?'我需要':''}
@@ -335,7 +383,7 @@ function boardPage(){
     '<div class="window-hours"><span class="small muted">从现在起</span><button type="button" data-action="board-hours" data-value="2">2 小时</button><button type="button" data-action="board-hours" data-value="4">4 小时</button><button type="button" data-action="board-hours" data-value="8">8 小时</button><button type="button" data-action="board-hours" data-value="24">24 小时</button></div></div></fieldset>'+
     '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><div class="field"><label for="board-image">放图片（可选）</label><input id="board-image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><img id="board-image-preview" class="listing-thumb hidden" alt="图片预览"><small id="board-image-note">最多 1 张，JPEG / PNG / WebP / GIF，4 MB 以内。不要上传证件、人脸特写等敏感个人信息。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
     '<h3 style="margin-top:8px">我发布的登记 <span class="count">'+mine.length+'</span></h3>'+
-    (mine.length?mine.map(l=>{const st=l.status||'active';const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';const act=st==='taken_down'?'':'<div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';return '<article class="record board-card">'+listingThumb(l)+'<div><p>'+tag+' <span class="tag blue">'+esc(l.type)+'</span> '+esc(listingHeadline(l))+'</p><small>'+esc(l.description)+'</small><small>'+esc(listingWhen(l))+'</small>'+(l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'')+act+'</div></article>';}).join(''):'<p class="small muted">你还没有发布过登记。</p>'))
+    (mine.length?mine.map(l=>listingCard(l,'mine')).join(''):'<p class="small muted">你还没有发布过登记。</p>'))
   :(authFormHtml()))+
  '</section>';
  const ask='<section class="panel board-ask"><h2>问别人</h2><p class="hint">互助通达按意思去对同学登记，不限固定类别。只会用正处在生效时段里的信息。「接……」表示对方来帮忙。</p>'+
@@ -344,13 +392,13 @@ function boardPage(){
  '<button class="btn primary" type="submit"'+(boardAsking?' disabled':'')+'>'+(boardAsking?'正在查找…':'提问')+'</button></div></form>'+
  (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>':'<div class="empty" style="margin-top:16px"><p>还没提问。想找人帮忙，或看看谁在接活，直接写在上面。</p></div>')+
  '</section>';
- const inbox=logged&&boardInbox.length?'<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record"><div><p><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'</p><small>'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</small><small>'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</small></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>':'';
- return heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
- '<div class="board-split">'+register+ask+'</div>'+inbox+boardListSection();
+ const inbox=logged&&boardInbox.length?'<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record board-thread"><div class="board-card-copy"><div class="board-card-kicker"><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'<span class="board-when">'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</span></div><p class="board-card-text">'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</p></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>':'';
+ return '<div class="board-page">'+heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
+ '<div class="board-split">'+register+ask+'</div>'+inbox+boardListSection()+'</div>';
 }
 function boardListSection(){
  const list=Array.isArray(boardListings)?boardListings:[];
- const body=list.length?list.map(l=>'<article class="record board-card">'+listingThumb(l)+'<div><p><span class="tag blue">'+esc(l.type||'互助')+'</span> '+(roleTag(l.role)?'<span class="tag">'+esc(roleTag(l.role))+'</span> ':'')+esc(listingHeadline(l))+'</p><small>'+esc(l.description||'')+'</small><small>'+esc(l.ownerName||'同学')+(listingWhen(l)?' · '+esc(listingWhen(l)):'')+'</small></div></article>').join(''):'<p class="small muted">暂无正在生效的登记。</p>';
+ const body=list.length?list.map(l=>listingCard(l,'public')).join(''):'<p class="small muted">暂无正在生效的登记。</p>';
  return '<section class="panel board-list" id="board-list"><h2>正在生效 <span class="count">'+list.length+'</span></h2>'+body+'</section>';
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}

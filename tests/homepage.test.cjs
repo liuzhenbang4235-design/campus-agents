@@ -266,6 +266,36 @@ test('a manifest may list six posters and the carousel still loops',async()=>{
  assert.equal((html.match(/class="poster-dot(?: |")/g)||[]).length,6);
 });
 
+test('poster layout fields override the rotation and invalid values fall back',async()=>{
+ const loaded=loadApp({hash:'#home',manifest:{posters:[
+  {file:'01.jpg',title:'甲',line:'一',align:'right',place:'top',measure:'narrow',focus:'left'},
+  {file:'02.jpg',title:'乙',line:'二',align:'diagonal',place:'',focus:'nope'},
+  {file:'03.jpg',title:'丙',line:'三'}
+ ]}});
+ const after=await vm.runInContext('ensurePosters()',loaded.context);
+ assert.deepEqual([after[0].align,after[0].place,after[0].measure,after[0].focus],['right','top','narrow','left']);
+ assert.equal(after[1].align,'right');
+ assert.equal(after[1].place,'bottom');
+ assert.equal(after[1].focus,'right');
+ assert.equal(after[2].align,'left');
+ assert.equal(after[2].focus,'left');
+ const html=loaded.context.__at(0);
+ assert.match(html,/align-right/);
+ assert.match(html,/place-top/);
+ assert.match(html,/measure-narrow/);
+ assert.match(html,/focus-left/);
+ const card=vm.runInContext(`listingCard({id:'a1',type:'代取快递',description:'南门代取',display:'代取快递',ownerName:'甲',windowText:'今天 14:00–16:00',status:'active',role:'offer'},'public')`,loaded.context);
+ assert.match(card,/board-card-title/);
+ assert.match(card,/board-when/);
+ assert.match(card,/今天 14:00–16:00/);
+ assert.match(card,/南门代取/);
+ assert.match(card,/我来帮忙/);
+ const mine=vm.runInContext(`listingCard({id:'a1',type:'陪诊',description:'已生效的陪诊登记',display:'陪诊',windowText:'长期',status:'active'},'mine')`,loaded.context);
+ assert.match(mine,/已生效/);
+ assert.match(mine,/data-action="board-takedown"/);
+ assert.match(mine,/下架/);
+});
+
 test('gitignored poster files are served locally and missing files do not break the app',async t=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-posters-'));
  const dataDir=path.join(dir,'data');
