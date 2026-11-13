@@ -128,6 +128,7 @@ function setMenu(open){
  if(btn){btn.setAttribute('aria-expanded',menuOpen?'true':'false');btn.setAttribute('aria-label',menuOpen?'收起菜单':'打开菜单')}
  if(menuOpen&&aside?.querySelector){const closeBtn=aside.querySelector('.menu-close');if(closeBtn?.focus)closeBtn.focus()}
  else if(was&&btn?.focus)btn.focus();
+ syncPosterAutoplay(false);
 }
 function menuButton(){
  return `<button type="button" class="menu-square" data-action="menu" aria-expanded="${menuOpen?'true':'false'}" aria-controls="site-menu" aria-label="${menuOpen?'收起菜单':'打开菜单'}">${icon('menu')}</button>`;
@@ -171,7 +172,8 @@ const POSTER_FALLBACK=[
  {file:'01.jpg',title:'你的难题不必独自面对',line:'在校园里，让一次举手之劳，成为彼此的光。',tone:'dawn'},
  {file:'02.jpg',title:'身边有人，就不算独自',line:'一道身影，一次停留，都是校园里给彼此的光。',tone:'river'}
 ];
-let posterCatalog=null,posterIndex=0,posterToken=0;
+let posterCatalog=null,posterIndex=0,posterToken=0,posterAutoplayTimer=0;
+const POSTER_AUTOPLAY_MS=6000;
 function posterFileUrl(file){
  const name=String(file||'').trim();
  if(!/^[A-Za-z0-9][A-Za-z0-9._-]{0,80}$/.test(name)||name.includes('..')||!/\.(jpe?g|png|webp|gif)$/i.test(name))return '';
@@ -248,12 +250,33 @@ function paintPoster(){
  const img=stage.querySelector('.poster-photo');
  if(img)watchPosterImage(img,frame,item.image);
 }
+function posterAutoplayHeld(){
+ if(route().page!=='home'||menuOpen)return true;
+ if(document.hidden||document.visibilityState==='hidden')return true;
+ return activePosters().length<2;
+}
+function stopPosterAutoplay(){
+ if(!posterAutoplayTimer)return;
+ clearTimeout(posterAutoplayTimer);
+ posterAutoplayTimer=0;
+}
+function syncPosterAutoplay(restart){
+ if(route().page!=='home'){posterToken++;stopPosterAutoplay();return}
+ if(posterAutoplayHeld()){stopPosterAutoplay();return}
+ if(posterAutoplayTimer&&!restart)return;
+ stopPosterAutoplay();
+ posterAutoplayTimer=setTimeout(()=>{
+  posterAutoplayTimer=0;
+  if(posterAutoplayHeld())return;
+  shiftPoster(1);
+ },POSTER_AUTOPLAY_MS);
+}
 function shiftPoster(delta){
  const list=activePosters();
  if(!list.length)return;
  posterIndex=posterSlot(posterIndex,delta,list.length);
  const frame=document.getElementById('poster-frame');
- if(!frame||motionReduced()){paintPoster();return}
+ if(!frame||motionReduced()){paintPoster();syncPosterAutoplay(true);return}
  const token=++posterToken;
  frame.classList.add('is-fading');
  setTimeout(()=>{
@@ -263,6 +286,7 @@ function shiftPoster(delta){
   if(!next)return;
   requestAnimationFrame(()=>requestAnimationFrame(()=>next.classList.remove('is-fading')));
  },220);
+ syncPosterAutoplay(true);
 }
 function goPoster(index){
  const list=activePosters();
@@ -274,7 +298,7 @@ function homePoster(){
  const item=list[posterIndex]||list[0];
  const dots=list.map((_,i)=>`<button type="button" class="poster-dot${i===posterIndex?' is-current':''}" data-action="poster-go" data-index="${i}" aria-label="第 ${i+1} 张"${i===posterIndex?' aria-current="true"':''}></button>`).join('');
  const credit=item.credit?`<p class="poster-credit">${esc(item.credit)}</p>`:'';
- return `<section class="poster-stage" aria-roledescription="轮播" aria-label="首页"><div class="poster-frame tone-${item.tone} focus-${item.focus}" id="poster-frame"><img class="poster-photo" alt="" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil place-${item.place} align-${item.align}" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="poster-next" aria-label="下一张"></button><div class="poster-copy align-${item.align} place-${item.place} measure-${item.measure}"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-dots" role="group" aria-label="海报">${dots}</div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
+ return `<section class="poster-stage" aria-roledescription="轮播" aria-label="首页"><div class="poster-frame tone-${item.tone} focus-${item.focus}" id="poster-frame"><img class="poster-photo" alt="" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil place-${item.place} align-${item.align}" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="home-menu" aria-controls="site-menu" aria-label="打开菜单"></button><div class="poster-copy align-${item.align} place-${item.place} measure-${item.measure}"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-dots" role="group" aria-label="海报">${dots}</div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
 }
 function shell(content){
  const r=route();
@@ -535,7 +559,7 @@ function reportModal(listingId){
 function boardReviewModal(listingId){
  modal('驳回这条登记','<form id="board-review-form" data-id="'+esc(listingId)+'"><p class="small muted">驳回原因会显示给发布者，请写清楚需要修改的地方。</p><div class="field"><label for="board-review-reason">驳回原因 *</label><textarea id="board-review-reason" name="reason" required minlength="2" maxlength="300" rows="3"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn danger" type="submit">确认驳回</button></div></form>');
 }
-function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:homePoster,gallery,board:boardPage,upload,team,chat,admin}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home'||!posterCatalog)return;const dots=document.querySelectorAll?.('.poster-dot');if(!dots)return;if(dots.length!==posterCatalog.length)document.getElementById('app').innerHTML=shell(homePoster());paintPoster()}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy()}
+function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:homePoster,gallery,board:boardPage,upload,team,chat,admin}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home'||!posterCatalog)return;const dots=document.querySelectorAll?.('.poster-dot');if(dots&&dots.length!==posterCatalog.length){document.getElementById('app').innerHTML=shell(homePoster());paintPoster()}syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
 function openAuthDialog(){modal('学号登录',authFormHtml('dialog-auth',{autofocus:true}))}
 function closeModal(){document.getElementById('modal').close()}
@@ -595,14 +619,33 @@ document.addEventListener('change',async e=>{
   if(input.isConnected&&!form.elements.title.value)form.elements.title.value=file.name.replace(/\.[^.]+$/,'').slice(0,80);
  }
 });
+function posterTextSelected(){
+ try{
+  const sel=window.getSelection?.();
+  if(!sel||(typeof sel.isCollapsed==='boolean'&&sel.isCollapsed))return false;
+  return !!String(sel).trim();
+ }catch{return false}
+}
+function posterClickOpensMenu(e){
+ if(e.defaultPrevented||route().page!=='home'||menuOpen)return false;
+ if(!e.target.closest?.('.poster-stage'))return false;
+ if(e.target.closest?.('a'))return false;
+ const action=e.target.closest?.('[data-action]')?.dataset?.action||'';
+ if(action==='poster-next'||action==='poster-prev'||action==='poster-go'||action==='menu'||action==='menu-close')return false;
+ if(posterTextSelected())return false;
+ setMenu(true);
+ return true;
+}
 document.addEventListener('click',async e=>{
  const menuBtn=e.target.closest?.('.menu-square');
  const inMenu=e.target.closest?.('#site-menu');
  if(menuOpen&&!menuBtn&&!inMenu){setMenu(false);if(e.target.closest?.('.poster-stage'))return}
- if(inMenu&&e.target.closest?.('a[href^="#"]'))setMenu(false);
+ if(inMenu&&e.target.closest?.('a[href^="#"]')){setMenu(false);return}
+ if(posterClickOpensMenu(e))return;
  const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset;
  if(a.action==='menu'){setMenu(!menuOpen);return}
  if(a.action==='menu-close'){setMenu(false);return}
+ if(a.action==='home-menu')return;
  if(a.action==='poster-next'){shiftPoster(1);return}
  if(a.action==='poster-prev'){shiftPoster(-1);return}
  if(a.action==='poster-go'){goPoster(Number(a.index));return}
@@ -770,6 +813,7 @@ document.addEventListener('change',e=>{
  if(/^\d{4}-\d{2}-\d{2}$/.test(value))setBoardDay(value);
  else setBoardDay('today');
 });
+document.addEventListener('visibilitychange',()=>syncPosterAutoplay(false));
 window.addEventListener('hashchange',()=>{menuOpen=false;if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'list_campus_agents',title:'查看已上线校园助手',description:'只读列出当前本地平台已上线的助手与已审核资料数。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute(input){if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('不接受参数');return state.agents.filter(a=>a.status==='published').map(a=>({id:a.id,name:a.name,documents:state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length}))}},{signal:lifecycle.signal})).catch(()=>{})}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})}

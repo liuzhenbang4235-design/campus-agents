@@ -24,6 +24,7 @@ function matches(node,sel){
  if(sel==='.menu-square')return node.classList.contains('menu-square');
  if(sel==='.poster-stage')return node.classList.contains('poster-stage');
  if(sel==='#site-menu')return node.id==='site-menu';
+ if(sel==='a'||sel==='a[href]')return node.tag==='a';
  if(sel==='a[href^="#"]')return node.tag==='a'&&String(node.href||'').startsWith('#');
  if(sel.startsWith('.'))return node.classList.contains(sel.slice(1));
  return false;
@@ -92,7 +93,7 @@ function loadApp({hash='#home',manifest}={}){
  const count=node('poster-count',{text:'01 / 02'});
  const dots=[0,1].map(index=>node('poster-dot'+(index===0?' is-current':''),{tag:'button',dataset:{action:'poster-go',index:String(index)}}));
  const copy=node('poster-copy');
- const hit=node('poster-hit',{tag:'button',dataset:{action:'poster-next'}});
+ const hit=node('poster-hit',{tag:'button',dataset:{action:'home-menu'}});
  const prev=node('poster-arrow prev',{tag:'button',dataset:{action:'poster-prev'}});
  const next=node('poster-arrow next',{tag:'button',dataset:{action:'poster-next'}});
  copy.appendChild(title);copy.appendChild(line);
@@ -102,8 +103,11 @@ function loadApp({hash='#home',manifest}={}){
  stage.appendChild(frame);stage.appendChild(prev);stage.appendChild(next);stage.appendChild(dotWrap);stage.appendChild(count);
  menu.appendChild(close);menu.appendChild(brand);
  shell.appendChild(button);shell.appendChild(menu);shell.appendChild(stage);
- const byId={app:node('app'),'site-menu':menu,'poster-frame':frame,modal:{open:false,innerHTML:'',classList:classList(),setAttribute(){},close(){this.open=false}}};
+ const byId={app:node('app'),'site-menu':menu,'poster-frame':frame,toast:node('toast'),modal:{open:false,innerHTML:'',classList:classList(),setAttribute(){},close(){this.open=false}}};
+ const clock=fakeClock();
  const document={
+  hidden:false,
+  visibilityState:'visible',
   addEventListener(type,fn){(listeners[type]||=[]).push(fn)},
   getElementById(id){return byId[id]||null},
   querySelector(sel){
@@ -116,11 +120,16 @@ function loadApp({hash='#home',manifest}={}){
  };
  const location={hash,origin:'http://127.0.0.1:4173',pathname:'/'};
  const context={
-  document,location,console,setTimeout,clearTimeout,URL,URLSearchParams,AbortController,Promise,
+  document,location,console,setTimeout:clock.setTimeout,clearTimeout:clock.clearTimeout,URL,URLSearchParams,AbortController,Promise,
   requestAnimationFrame(fn){fn()},
   navigator:{platform:'Linux',userAgent:'node'},
   history:{replaceState(){}},
-  window:{addEventListener(){},scrollTo(){},matchMedia(){return {matches:true}}},
+  window:{
+   addEventListener(type,fn){(listeners[type]||=[]).push(fn)},
+   scrollTo(){},
+   matchMedia(){return {matches:true}},
+   getSelection(){return {isCollapsed:true,toString(){return ''}}}
+  },
   fetch:async url=>{
    if(manifest&&String(url).includes('/homepage-posters/manifest.json'))return {ok:true,json:async()=>manifest};
    return {ok:false,json:async()=>({})};
@@ -133,7 +142,21 @@ function loadApp({hash='#home',manifest}={}){
 globalThis.__state=()=>({menu:menuOpen,index:posterIndex,page:route().page,home:shell(homePoster()),catalog:posterCatalog});
 globalThis.__at=index=>{posterIndex=index;return homePoster()};
 `,context);
- return {context,listeners,button,stage,menu,brand,frame,title,line,count,dots,photo,hit,prev};
+ return {context,listeners,clock,button,stage,menu,brand,frame,title,line,count,dots,photo,hit,prev,next};
+}
+function fakeClock(){
+ const pending=new Map();
+ let seq=1;
+ return {
+  setTimeout(fn,ms){const id=seq++;pending.set(id,{fn,ms:Number(ms)||0});return id},
+  clearTimeout(id){pending.delete(id)},
+  count(ms){let n=0;for(const item of pending.values())if(ms===undefined||item.ms===ms)n++;return n},
+  async fire(ms){
+   const hits=[...pending.entries()].filter(([,item])=>item.ms===ms);
+   for(const [id,item] of hits){pending.delete(id);await item.fn()}
+   return hits.length;
+  }
+ };
 }
 
 function raw(port,route,method='GET'){
@@ -173,8 +196,11 @@ test('poster homepage is a click-through frame and the menu starts closed',()=>{
  assert.match(home,/aria-label="回到首页"/);
  assert.match(home,/brand-mark/);
  assert.match(home,/01 \/ 02/);
+ assert.match(home,/class="poster-hit" data-action="home-menu"/);
+ assert.match(home,/aria-controls="site-menu" aria-label="打开菜单"/);
  assert.match(home,/aria-label="上一张"/);
  assert.match(home,/aria-label="下一张"/);
+ assert.match(appSource,/const POSTER_AUTOPLAY_MS=6000/);
  assert.match(home,/互助通达/);
  assert.match(home,/与助手对话/);
  assert.match(home,/找助手/);
@@ -199,7 +225,7 @@ test('poster homepage is a click-through frame and the menu starts closed',()=>{
 });
 
 test('the menu square toggles without advancing the poster, and the poster loops',async()=>{
- const {context,listeners,button,stage,menu,hit,prev}=loadApp({hash:'#home'});
+ const {context,listeners,button,stage,menu,hit,prev,title}=loadApp({hash:'#home'});
  const click=target=>listeners.click[0]({target});
  assert.equal(context.__state().index,0);
  await click(button);
@@ -209,22 +235,135 @@ test('the menu square toggles without advancing the poster, and the poster loops
  assert.equal(context.__state().menu,false);
  assert.equal(context.__state().index,0);
  await click(hit);
- assert.equal(context.__state().index,1);
+ assert.equal(context.__state().menu,true);
+ assert.equal(context.__state().index,0);
+ await click(hit);
+ assert.equal(context.__state().menu,false);
+ assert.equal(context.__state().index,0);
  await click(button);
  assert.equal(context.__state().menu,true);
- assert.equal(context.__state().index,1);
+ assert.equal(context.__state().index,0);
  await click(button);
  assert.equal(context.__state().menu,false);
+ assert.equal(context.__state().index,0);
+ await click(prev);
  assert.equal(context.__state().index,1);
+ assert.equal(context.__state().menu,false);
  await click(prev);
  assert.equal(context.__state().index,0);
- await click(hit);
- await click(hit);
+ await click(title);
+ assert.equal(context.__state().menu,true);
  assert.equal(context.__state().index,0);
- await click(button);
  await click(menu.querySelector('.menu-close'));
  assert.equal(context.__state().menu,false);
  assert.equal(context.__state().index,0);
+});
+
+test('homepage autoplay keeps each title with its photo and pauses without stacking timers',async()=>{
+ const files=['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg'];
+ const loaded=loadApp({hash:'#home',manifest:{posters:files.map((file,i)=>({file,title:'第'+(i+1)+'张',line:'短句'+(i+1)}))}});
+ const {context,listeners,clock,button,stage,menu,brand,title,hit,next}=loaded;
+ const click=target=>listeners.click[0]({target});
+ await vm.runInContext('ensurePosters()',context);
+ vm.runInContext('paintPoster();syncPosterAutoplay(false)',context);
+ assert.equal(title.textContent,'第1张');
+ assert.equal(clock.count(6000),1);
+ await clock.fire(6000);
+ assert.equal(context.__state().index,1);
+ assert.equal(title.textContent,'第2张');
+ assert.equal(clock.count(6000),1);
+ await clock.fire(6000);
+ await clock.fire(6000);
+ await clock.fire(6000);
+ await clock.fire(6000);
+ assert.equal(context.__state().index,5);
+ assert.equal(title.textContent,'第6张');
+ assert.equal(clock.count(6000),1);
+ await clock.fire(6000);
+ assert.equal(context.__state().index,0);
+ assert.equal(title.textContent,'第1张');
+ assert.equal(clock.count(6000),1);
+
+ await click(button);
+ assert.equal(context.__state().menu,true);
+ assert.equal(context.__state().index,0);
+ assert.equal(clock.count(6000),0);
+ await clock.fire(6000);
+ assert.equal(context.__state().index,0);
+ await listeners.keydown[0]({key:'ArrowRight',target:stage});
+ assert.equal(context.__state().index,0);
+ await listeners.keydown[0]({key:'Escape',target:stage});
+ assert.equal(context.__state().menu,false);
+ assert.equal(context.__state().index,0);
+ assert.equal(clock.count(6000),1);
+
+ await click(hit);
+ assert.equal(context.__state().menu,true);
+ await click(stage);
+ assert.equal(context.__state().menu,false);
+ assert.equal(context.__state().index,0);
+ await click(next);
+ assert.equal(context.__state().menu,false);
+ assert.equal(context.__state().index,1);
+ assert.equal(title.textContent,'第2张');
+ assert.equal(clock.count(6000),1);
+ await click(stage.querySelectorAll('.poster-dot')[0]);
+ assert.equal(context.__state().menu,false);
+ assert.equal(context.__state().index,0);
+
+ context.document.hidden=true;
+ context.document.visibilityState='hidden';
+ listeners.visibilitychange[0]();
+ assert.equal(clock.count(6000),0);
+ await clock.fire(6000);
+ assert.equal(context.__state().index,0);
+ listeners.visibilitychange[0]();
+ assert.equal(clock.count(6000),0);
+ context.document.hidden=false;
+ context.document.visibilityState='visible';
+ listeners.visibilitychange[0]();
+ listeners.visibilitychange[0]();
+ assert.equal(clock.count(6000),1);
+
+ context.window.getSelection=()=>({isCollapsed:false,toString(){return '第1张'}});
+ await click(title);
+ assert.equal(context.__state().menu,false);
+ context.window.getSelection=()=>({isCollapsed:true,toString(){return ''}});
+ const link=node('poster-link',{tag:'a',href:'#gallery'});
+ stage.appendChild(link);
+ await click(link);
+ assert.equal(context.__state().menu,false);
+ assert.equal(context.__state().index,0);
+
+ await click(button);
+ await click(brand);
+ assert.equal(context.__state().menu,false);
+ assert.equal(context.__state().index,0);
+ const nav=node('nav-link',{tag:'a',href:'#board'});
+ menu.appendChild(nav);
+ await click(button);
+ await click(nav);
+ assert.equal(context.__state().menu,false);
+ context.location.hash='#board';
+ await listeners.hashchange[0]();
+ assert.equal(context.__state().page,'board');
+ assert.equal(clock.count(6000),0);
+ await clock.fire(6000);
+ assert.equal(context.__state().index,0);
+ context.location.hash='#home';
+ await listeners.hashchange[0]();
+ assert.equal(context.__state().page,'home');
+ assert.equal(clock.count(6000),1);
+ await clock.fire(6000);
+ assert.equal(context.__state().index,1);
+ assert.equal(title.textContent,'第2张');
+ assert.equal(clock.count(6000),1);
+ await click(button);
+ await click(button);
+ await click(button);
+ await click(button);
+ assert.equal(context.__state().menu,false);
+ assert.equal(clock.count(6000),1);
 });
 
 test('a local manifest can add a photographer credit and cannot point outside the poster directory',async()=>{
