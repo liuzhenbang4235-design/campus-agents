@@ -173,7 +173,7 @@ const POSTER_FALLBACK=[
  {file:'02.jpg',title:'身边有人，就不算独自',line:'一道身影，一次停留，都是校园里给彼此的光。',tone:'river'}
 ];
 let posterCatalog=null,posterIndex=0,posterToken=0,posterAutoplayTimer=0;
-const POSTER_AUTOPLAY_MS=6000;
+const POSTER_AUTOPLAY_MS=5000;
 function posterFileUrl(file){
  const name=String(file||'').trim();
  if(!/^[A-Za-z0-9][A-Za-z0-9._-]{0,80}$/.test(name)||name.includes('..')||!/\.(jpe?g|png|webp|gif)$/i.test(name))return '';
