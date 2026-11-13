@@ -129,6 +129,7 @@ span.model-chip{padding:4px 10px}
 .shell>.sidebar .nav-link.active{box-shadow:inset 3px 0 0 #d9f887,inset 0 0 0 1px rgba(217,248,135,.72)}
 .shell>.sidebar .menu-head,.shell>.sidebar .nav-title,.shell>.sidebar .sidebar-bottom{flex-shrink:0}
 .topbar{padding-left:92px}
+.shell:not(.shell-home) .topbar{position:sticky;top:0;z-index:40;background:#fff}
 .shell-home{background:#07090f;min-height:100vh;min-height:100dvh}
 .shell-home .main{min-height:100vh;min-height:100dvh}
 .shell-home .content{max-width:none;margin:0;padding:0}
