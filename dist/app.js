@@ -87,11 +87,11 @@ const productCrumb=()=>me().role==='team'?teamProfile.name:'校集';
 const statusLabel={draft:'草稿',pending:'待审核',published:'已上线',approved:'已入库',rejected:'已驳回',offline:'已下架'};
 const badge=s=>`<span class="tag ${['published','approved'].includes(s)?'green':s==='pending'?'amber':s==='rejected'?'red':''}">${statusLabel[s]||s}</span>`;
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('visible');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('visible'),3500)}
-function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['home','gallery','board','chat','upload','team','admin'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
+function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['home','gallery','board','chat','upload','team','admin','login'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
 function go(page,id){const hash='#'+page+(id?'/'+id:'');if(location.hash===hash)render();else location.hash=hash}
-const titles={home:'校集',gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理'};
+const titles={home:'校集',gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理',login:'登录'};
 function profileSelect(){if(!demoIdentities)return '';return `<select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select>`}
-function accountControls(){return account?`<span class="tag blue">学号 ${esc(account.studentId)}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">学号登录</button>`}
+function accountControls(){return account?`<span class="tag blue">${esc(account.displayName||'同学')}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">登录</button>`}
 function configButton(){return `<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button>`}
 function navLinks(page){
  const items=[['board','board','互助通达',false],['chat','chat','与助手对话',false],['gallery','grid','找助手',true],['upload','upload','资料贡献',true]];
@@ -383,9 +383,42 @@ function listingCard(l,mode){
 function listingHeadline(l){return l.display||[l.type,l.title].filter(Boolean).join(' · ')||l.type||'同学登记'}
 function listingWhen(l){return l.windowText||(l.longTerm?'长期':(l.expiresAt?'有效至 '+String(l.expiresAt).slice(0,16).replace('T',' '):''))}
 function roleTag(role){return role==='offer'?'我来帮忙':role==='need'?'我需要':''}
-function authFormHtml(prefix='auth',opts={}){
- const focus=opts.autofocus?' autofocus':'';
- return '<form id="'+prefix+'-form" data-auth-form="1"><div class="field"><label for="'+prefix+'-id">学号</label><input id="'+prefix+'-id" name="studentId" required pattern="\\d{8}" maxlength="8" minlength="8" inputmode="numeric" placeholder="8 位数字学号"'+focus+'></div><div class="field"><label for="'+prefix+'-name">昵称（注册时可选）</label><input id="'+prefix+'-name" name="displayName" maxlength="20" placeholder="例如：小陈"></div><div class="field"><label for="'+prefix+'-pass">密码</label><input id="'+prefix+'-pass" name="password" type="password" required minlength="6" maxlength="72" autocomplete="new-password"></div><div class="actions"><button class="btn primary" type="submit" data-auth="login">登录</button><button class="btn" type="submit" data-auth="register">注册学号账号</button></div><p class="small muted" style="margin-top:12px">提问不用登录。登记和开聊需要 8 位学号。</p></form>';
+let authMode='login',authForgot=false,authShowPassword=false;
+function safeAuthReturn(value){
+ const hash=String(value||'');
+ if(!/^#(home|gallery|board|chat|upload|team|admin)(\/[A-Za-z0-9_-]{1,40})?$/.test(hash))return '';
+ return hash;
+}
+function rememberAuthReturn(){
+ try{
+  const next=safeAuthReturn(location.hash);
+  if(next)sessionStorage.setItem('campus-auth-next',next);
+ }catch{}
+}
+function takeAuthReturn(){
+ try{
+  const next=safeAuthReturn(sessionStorage.getItem('campus-auth-next')||'');
+  sessionStorage.removeItem('campus-auth-next');
+  return next;
+ }catch{return ''}
+}
+function goLogin(){
+ rememberAuthReturn();
+ if(route().page==='login')return render();
+ go('login');
+}
+function authNote(){
+ return '<div class="auth-note"><span class="auth-note-mark" aria-hidden="true">i</span><div><strong>用账号登录，用昵称认识彼此</strong><p>昵称可以修改，不影响登录账号</p></div></div>';
+}
+function loginPage(){
+ if(account){
+  return '<div class="auth-page"><section class="auth-card"><p class="auth-kicker">账号</p><h1>已登录</h1><p class="hint">当前昵称是别人看到的名字。登录账号不会因此改变。</p><form id="nick-form"><div class="field"><label for="nick-name">昵称</label><input id="nick-name" name="displayName" maxlength="20" value="'+esc(account.displayName||'')+'" placeholder="例如：小陈"></div><button class="btn primary auth-submit" type="submit">保存昵称</button></form>'+authNote()+'</section></div>';
+ }
+ const register=authMode==='register';
+ const type=authShowPassword?'text':'password';
+ const nick=register?'<div class="field"><label for="auth-name">昵称（可选）</label><input id="auth-name" name="displayName" maxlength="20" placeholder="不填也会有一个不暴露账号的昵称" autocomplete="nickname"></div>':'';
+ const forgot=authForgot?'<p class="small" role="status">暂时不能自助找回密码。这里没有短信或邮箱验证，也不会只凭登录账号重置密码。</p>':'';
+ return '<div class="auth-page"><section class="auth-card"><p class="auth-kicker">'+(register?'注册':'登录')+'</p><h1>'+(register?'创建账号':'欢迎回来')+'</h1><div class="auth-tabs" role="tablist"><button type="button" class="auth-tab'+(register?'':' is-current')+'" data-action="auth-tab" data-value="login" role="tab" aria-selected="'+(register?'false':'true')+'">登录</button><button type="button" class="auth-tab'+(register?' is-current':'')+'" data-action="auth-tab" data-value="register" role="tab" aria-selected="'+(register?'true':'false')+'">注册</button></div><form id="auth-page-form" data-mode="'+(register?'register':'login')+'"><div class="field"><label for="auth-user">登录账号</label><input id="auth-user" name="username" required minlength="3" maxlength="20" autocomplete="username" placeholder="'+(register?'字母、数字或下划线':'请输入登录账号')+'" autofocus></div>'+nick+'<div class="field auth-pass"><label for="auth-pass">密码</label><div class="auth-pass-line"><input id="auth-pass" name="password" type="'+type+'" required minlength="6" maxlength="72" autocomplete="'+(register?'new-password':'current-password')+'" placeholder="请输入密码"><button type="button" class="auth-peek" data-action="auth-peek">'+(authShowPassword?'隐藏':'显示')+'</button></div></div><div class="auth-row"><label class="check auth-keep"><input name="remember" type="checkbox" checked><span>保持登录<small>公共电脑请取消勾选</small></span></label>'+(register?'':'<button type="button" class="btn text small" data-action="auth-forgot">忘记密码？</button>')+'</div>'+forgot+'<button class="btn primary auth-submit" type="submit">'+(register?'注册':'登录')+'</button></form>'+authNote()+'<p class="auth-foot">'+(register?'已有账号？ <button type="button" class="btn text small" data-action="auth-tab" data-value="login">去登录</button>':'还没有账号？ <button type="button" class="btn text small" data-action="auth-tab" data-value="register">去注册</button>')+'</p></section></div>';
 }
 function boardPage(){
  const logged=!!account;
@@ -394,9 +427,9 @@ function boardPage(){
  const suggestions=['今天下午有没有人代取快递？','谁能接一下陪诊？','有没有人出闲置显示器？'];
  const nowParts=shanghaiParts(Date.now()),laterParts=shanghaiParts(Date.now()+2*3600000);
  const startClock=nowParts.hour+':'+nowParts.minute,endClock=laterParts.hour+':'+laterParts.minute;
- const register='<section class="panel board-register" id="board-register"><details class="board-publish board-fold" id="board-publish"'+(boardPublishOpen?' open':'')+'><summary>'+(logged?'登记一条互助':'登录后登记互助')+'</summary><h2>互助登记</h2><p class="small muted">登记你能提供的帮助，或你的需求。类型自己写。「接……」表示你来做这件事。发布需要学号登录。</p>'+
+ const register='<section class="panel board-register" id="board-register"><details class="board-publish board-fold" id="board-publish"'+(boardPublishOpen?' open':'')+'><summary>'+(logged?'登记一条互助':'登录后登记互助')+'</summary><h2>互助登记</h2><p class="small muted">登记你能提供的帮助，或你的需求。类型自己写。「接……」表示你来做这件事。发布需要登录。</p>'+
  (logged
-  ?('<p class="muted small" style="margin:12px 0">当前学号：'+esc(account.studentId)+(account.displayName?' · '+esc(account.displayName):'')+'</p>'+
+  ?('<p class="muted small" style="margin:12px 0">当前昵称：'+esc(account.displayName||'同学')+'</p>'+
     '<form id="board-form"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><input id="board-type" name="type" type="text" required maxlength="30" placeholder="自己写，例如：代取快递、陪诊、出闲置、接摄影"></div>'+
     '<fieldset class="alarm-window"><legend>'+icon('clock')+' 生效时段</legend>'+
     '<div class="window-mode" role="radiogroup" aria-label="生效时段"><label class="window-choice"><input type="radio" name="windowMode" value="long"><span>长期有效</span></label><label class="window-choice"><input type="radio" name="windowMode" value="span" checked><span>指定时段</span></label></div>'+
@@ -408,7 +441,7 @@ function boardPage(){
     '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><div class="field"><label for="board-image">放图片（可选）</label><input id="board-image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><img id="board-image-preview" class="listing-thumb hidden" alt="图片预览"><small id="board-image-note">最多 1 张，JPEG / PNG / WebP / GIF，4 MB 以内。不要上传证件、人脸特写等敏感个人信息。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
     '</details><h3 class="board-mine-title">我发布的登记 <span class="count">'+mine.length+'</span></h3>'+
     (mine.length?mine.map(l=>listingCard(l,'mine')).join(''):'<p class="board-quiet">你还没有发布过登记。</p>')+'</section>')
-  :(authFormHtml()))+(logged?'':'</details></section>');
+  :('<p class="board-quiet">提问不用登录。登记和开聊需要登录。</p><p><button class="btn primary" type="button" data-action="auth-open">去登录</button></p>'))+(logged?'':'</details></section>');
  const ask='<section class="panel board-ask"><h2>问别人</h2><p class="hint">不用登录。互助通达按意思去对同学登记，不限固定类别。只会用正处在生效时段里的信息。「接……」表示对方来帮忙。</p>'+
  '<form id="board-ask-form"><textarea name="question" aria-label="向互助通达提问" required maxlength="500" rows="3" placeholder="例如：今天下午有没有人代取快递？谁能接一下陪诊？有没有人出闲置显示器？">'+esc(boardQuestion)+'</textarea>'+
  '<div class="board-ask-bar"><div class="board-chips">'+suggestions.map(s=>'<button type="button" data-action="board-suggest" data-value="'+esc(s)+'">'+esc(s)+'</button>').join('')+'</div>'+
@@ -559,9 +592,9 @@ function reportModal(listingId){
 function boardReviewModal(listingId){
  modal('驳回这条登记','<form id="board-review-form" data-id="'+esc(listingId)+'"><p class="small muted">驳回原因会显示给发布者，请写清楚需要修改的地方。</p><div class="field"><label for="board-review-reason">驳回原因 *</label><textarea id="board-review-reason" name="reason" required minlength="2" maxlength="300" rows="3"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn danger" type="submit">确认驳回</button></div></form>');
 }
-function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:homePoster,gallery,board:boardPage,upload,team,chat,admin}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home'||!posterCatalog)return;const dots=document.querySelectorAll?.('.poster-dot');if(dots&&dots.length!==posterCatalog.length){document.getElementById('app').innerHTML=shell(homePoster());paintPoster()}syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
+function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:homePoster,gallery,board:boardPage,upload,team,chat,admin,login:loginPage}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home'||!posterCatalog)return;const dots=document.querySelectorAll?.('.poster-dot');if(dots&&dots.length!==posterCatalog.length){document.getElementById('app').innerHTML=shell(homePoster());paintPoster()}syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
-function openAuthDialog(){modal('学号登录',authFormHtml('dialog-auth',{autofocus:true}))}
+function openAuthDialog(){goLogin()}
 function closeModal(){document.getElementById('modal').close()}
 function id(prefix){return prefix+'-'+(globalThis.crypto?.randomUUID?.()||Date.now()+'-'+Math.random().toString(36).slice(2))}
 
@@ -651,7 +684,10 @@ document.addEventListener('click',async e=>{
  if(a.action==='poster-go'){goPoster(Number(a.index));return}
  if(a.action==='close'||a.action==='board-decline')return closeModal();
  if(a.action==='nav')return go(a.page);
- if(a.action==='auth-open'){if(!account)openAuthDialog();return}
+ if(a.action==='auth-open'){if(!account)goLogin();return}
+ if(a.action==='auth-tab'){authMode=a.value==='register'?'register':'login';authForgot=false;return render()}
+ if(a.action==='auth-peek'){authShowPassword=!authShowPassword;return render()}
+ if(a.action==='auth-forgot'){authForgot=true;return render()}
  if(a.action==='chat'){chatPrefill='';chatError='';return go('chat',a.id)}
  if(a.action==='prefill-chat'){chatPrefill=a.value||'';chatError='';return go('chat',a.id)}
  if(a.action==='category'){category=a.value;return render()}
@@ -686,7 +722,7 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='board-reject-listing'){boardReviewModal(a.id);return}
  if(a.action==='board-report-resolve'){try{const data=await api('board/report-resolve',{id:a.id,decision:a.decision});applyResult(data);closeModal();render();toast(a.decision==='take_down'?'已下架该登记':'已忽略举报')}catch(err){toast(err.message)}return}
  if(a.action==='board-accept'){
-  if(!account){closeModal();boardPublishOpen=true;if(route().page!=='board')go('board');else render();return toast('请先用学号登录，再和对方开聊。')}
+  if(!account){closeModal();goLogin();return toast('请先登录，再和对方开聊。')}
   try{const data=await api('board/open',{listingId:a.id});openDmModal(data.thread,a.id)}catch(err){toast(err.message)}
   return;
  }
@@ -705,18 +741,34 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='confirm-reset'){await perform({action:'reset'},'已恢复初始资料。');go('gallery')}
 });
 document.addEventListener('submit',async e=>{
- const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','board-form','board-ask-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','board-form','board-ask-form','dm-form'].includes(f.id))return;
+ const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form'||f.id==='auth-page-form'||f.id==='nick-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','auth-page-form','nick-form','board-form','board-ask-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','auth-page-form','nick-form','board-form','board-ask-form','dm-form'].includes(f.id))return;
  const fd=new FormData(f),get=n=>String(fd.get(n)||'').trim();
  if(f.id==='chat-form')return sendChat(get('question'));
  if(f.id==='board-ask-form')return askBoard(get('question'));
- if(authForm){
-  const mode=e.submitter?.dataset?.auth||'login';
-  try{applyResult(await api('auth/'+mode,{studentId:get('studentId'),password:get('password'),displayName:get('displayName')}));if(f.closest?.('dialog')&&document.getElementById('modal')?.open)closeModal();toast(mode==='register'?'注册成功，已登录':'登录成功');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
-  return;
- }
+ if(f.id==='auth-page-form'){
+   const mode=f.dataset.mode==='register'?'register':'login';
+   try{
+    applyResult(await api('auth/'+mode,{username:get('username'),password:get('password'),displayName:get('displayName'),remember:fd.has('remember')}));
+    const next=takeAuthReturn();
+    toast(mode==='register'?'注册成功，已登录':'登录成功');
+    boardNeedsRefresh=true;
+    if(next)location.hash=next;else location.hash='#board';
+    render();
+   }catch(err){toast(err.message)}
+   return;
+  }
+  if(f.id==='nick-form'){
+   try{applyResult(await api('auth/nickname',{displayName:get('displayName')}));toast('昵称已保存');render()}catch(err){toast(err.message)}
+   return;
+  }
+  if(authForm){
+   const mode=e.submitter?.dataset?.auth||'login';
+   try{applyResult(await api('auth/'+mode,{studentId:get('studentId'),password:get('password'),displayName:get('displayName')}));if(f.closest?.('dialog')&&document.getElementById('modal')?.open)closeModal();toast(mode==='register'?'注册成功，已登录':'登录成功');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
+   return;
+  }
  if(f.id==='board-form'){
   const longTerm=get('windowMode')==='long';
-  if(account&&!/^\d{8}$/.test(account.studentId||''))return toast('学号应为 8 位数字。');
+  if(!account)return toast('请先登录后再登记。');
   if(!longTerm){
    const day=get('windowDay')||'today';
    if(day!=='today'&&day!=='tomorrow'&&!/^\d{4}-\d{2}-\d{2}$/.test(day))return toast('请选择今天、明天或某一天。');
