@@ -1,5 +1,5 @@
 'use strict';
-const icons={grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',chat:'<path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-6a9 9 0 1 1 18-5Z"/><path d="M7 10h10M7 14h6"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/>',team:'<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/>',shield:'<path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z"/><path d="m8 12 3 3 5-6"/>',book:'<path d="M12 5v16M3 3c4-1 7 0 9 2 2-2 5-3 9-2v16c-4-1-7 0-9 2-2-2-5-3-9-2V3Z"/>',home:'<path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Z"/>',brief:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18m-9-2v4"/>',search:'<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',plus:'<path d="M12 4v16M4 12h16"/>',file:'<path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',check:'<path d="m4 12 5 5L20 6"/>',lock:'<rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3"/>',spark:'<path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',board:'<path d="M8 4h8v4H8zM5 8h14v12H5z"/><path d="M9 12h6M9 16h4"/>'};
+const icons={grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',chat:'<path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-6a9 9 0 1 1 18-5Z"/><path d="M7 10h10M7 14h6"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/>',team:'<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/>',shield:'<path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z"/><path d="m8 12 3 3 5-6"/>',book:'<path d="M12 5v16M3 3c4-1 7 0 9 2 2-2 5-3 9-2v16c-4-1-7 0-9 2-2-2-5-3-9-2V3Z"/>',home:'<path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Z"/>',brief:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18m-9-2v4"/>',search:'<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',plus:'<path d="M12 4v16M4 12h16"/>',file:'<path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',check:'<path d="m4 12 5 5L20 6"/>',lock:'<rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3"/>',spark:'<path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',board:'<path d="M8 4h8v4H8zM5 8h14v12H5z"/><path d="M9 12h6M9 16h4"/>',menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',chev:'<path d="m15 6-6 6 6 6"/>'};
 const icon=n=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${icons[n]||icons.spark}</svg>`;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function linkifyEscaped(escaped){
@@ -73,7 +73,7 @@ function applyResult(data){if(data.state)state=data.state;if(data.ai)ai=data.ai;
 async function perform(body,message){if(busy)return;busy=true;try{const data=await api('action',body);applyResult(data);closeModal();render();toast(message)}catch(e){const notice=document.getElementById('review-reason-error');if(notice){notice.textContent=e.message;notice.classList.remove('hidden')}toast(e.message)}finally{busy=false;updateBusy()}}
 function updateBusy(){document.querySelectorAll('#profile,#chat-agent,#chat-form button,#chat-form textarea,.suggestions button,#places-form input,#places-form select,#places-form button').forEach(el=>el.disabled=busy||(el.closest('#places-form')&&el.tagName==='BUTTON'&&!(placesUi.provider==='local'?ai.places?.localReady:ai.places?.ready)))}
 async function switchProfile(value){if(!demoIdentities){toast('当前为公开访问，不能切换演示身份。');return}if(busy)return;try{chatPrefill='';applyResult(await api('session',{profile:value}));resetPlaces();closeModal();render();toast('已切换至'+me().label)}catch(e){toast(e.message);render()}}
-async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#'+homePage());startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
+async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['home','gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#home');startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
 
 let currentProfile='student',category='全部',query='',reviewTab='docs',teamTab='agents',chatPrefill='';
 const me=()=>profiles[currentProfile];
@@ -87,11 +87,11 @@ const productCrumb=()=>me().role==='team'?teamProfile.name:'校集';
 const statusLabel={draft:'草稿',pending:'待审核',published:'已上线',approved:'已入库',rejected:'已驳回',offline:'已下架'};
 const badge=s=>`<span class="tag ${['published','approved'].includes(s)?'green':s==='pending'?'amber':s==='rejected'?'red':''}">${statusLabel[s]||s}</span>`;
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('visible');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('visible'),3500)}
-function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['gallery','board','chat','upload','team','admin'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
+function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['home','gallery','board','chat','upload','team','admin','login'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
 function go(page,id){const hash='#'+page+(id?'/'+id:'');if(location.hash===hash)render();else location.hash=hash}
-const titles={gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理'};
+const titles={home:'校集',gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理',login:'登录'};
 function profileSelect(){if(!demoIdentities)return '';return `<select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select>`}
-function accountControls(){return account?`<span class="tag blue">学号 ${esc(account.studentId)}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">学号登录</button>`}
+function accountControls(){return account?`<span class="tag blue">${esc(account.displayName||'同学')}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">登录</button>`}
 function configButton(){return `<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button>`}
 function navLinks(page){
  const items=[['board','board','互助通达',false],['chat','chat','与助手对话',false],['gallery','grid','找助手',true],['upload','upload','资料贡献',true]];
@@ -116,9 +116,196 @@ function identityBar(){
  if(!demoIdentities)return `<div class="identity">${accountControls()}${avatar}</div>`;
  return `<div class="identity">${accountControls()}${configButton()}<label for="profile">演示身份</label>${profileSelect()}${avatar}</div>`;
 }
+let menuOpen=false;
+function setMenu(open){
+ const was=menuOpen;
+ menuOpen=!!open;
+ const shellEl=document.querySelector?.('.shell');
+ const aside=document.getElementById('site-menu');
+ const btn=document.querySelector?.('.menu-square');
+ if(shellEl)shellEl.classList.toggle('menu-open',menuOpen);
+ if(aside){aside.classList.toggle('is-open',menuOpen);aside.setAttribute('aria-hidden',menuOpen?'false':'true')}
+ if(btn){btn.setAttribute('aria-expanded',menuOpen?'true':'false');btn.setAttribute('aria-label',menuOpen?'收起菜单':'打开菜单')}
+ if(menuOpen&&aside?.querySelector){const closeBtn=aside.querySelector('.menu-close');if(closeBtn?.focus)closeBtn.focus()}
+ else if(was&&btn?.focus)btn.focus();
+ syncPosterAutoplay(false);
+}
+function menuButton(){
+ return `<button type="button" class="menu-square" data-action="menu" aria-expanded="${menuOpen?'true':'false'}" aria-controls="site-menu" aria-label="${menuOpen?'收起菜单':'打开菜单'}">${icon('menu')}</button>`;
+}
+// Homepage photographs are not shipped with the app. Operators place licensed
+// images in data/homepage-posters/ (gitignored). A manifest may list any count.
+// Optional fields, omitted values keep the quiet per-photo default:
+//   align:   left | right | center          (default rotates by photo)
+//   place:   bottom | middle | top          (default bottom; narrow screens pin middle/top down)
+//   measure: narrow | regular | wide        (default regular)
+//   focus:   center | left | right | top | bottom
+// Example, do not replace an existing manifest's text, order, or credits:
+// { "posters": [
+//   { "file": "01.jpg", "title": "…", "line": "…", "credit": "", "align": "left", "place": "bottom", "measure": "regular", "focus": "center" },
+//   { "file": "02.jpg", "title": "…", "line": "…", "credit": "", "align": "right", "place": "bottom", "measure": "narrow", "focus": "right" },
+//   { "file": "03.jpg", "title": "…", "line": "…", "credit": "", "align": "left", "place": "bottom", "measure": "wide", "focus": "left" },
+//   { "file": "04.jpg", "title": "…", "line": "…", "credit": "", "align": "center", "place": "bottom", "measure": "narrow", "focus": "center" },
+//   { "file": "05.jpg", "title": "…", "line": "…", "credit": "", "align": "left", "place": "middle", "measure": "regular", "focus": "center" },
+//   { "file": "06.jpg", "title": "…", "line": "…", "credit": "", "align": "right", "place": "bottom", "measure": "regular", "focus": "right" }
+// ] }
+// Leave credit blank when the photographer is unknown. Missing files use the
+// gradient frames below. Do not commit contest photographs.
+const POSTER_LAYOUTS=[
+ {align:'left',place:'bottom',measure:'regular',focus:'center'},
+ {align:'right',place:'bottom',measure:'regular',focus:'right'},
+ {align:'left',place:'bottom',measure:'wide',focus:'left'},
+ {align:'center',place:'bottom',measure:'narrow',focus:'center'},
+ {align:'left',place:'middle',measure:'regular',focus:'center'},
+ {align:'right',place:'bottom',measure:'regular',focus:'right'}
+];
+const POSTER_ALIGN=new Set(['left','right','center']);
+const POSTER_PLACE=new Set(['top','middle','bottom']);
+const POSTER_MEASURE=new Set(['narrow','regular','wide']);
+const POSTER_FOCUS=new Set(['center','left','right','top','bottom']);
+function posterLayout(item,index){
+ const base=POSTER_LAYOUTS[index%POSTER_LAYOUTS.length];
+ const pick=(key,allowed)=>allowed.has(item?.[key])?item[key]:base[key];
+ return {align:pick('align',POSTER_ALIGN),place:pick('place',POSTER_PLACE),measure:pick('measure',POSTER_MEASURE),focus:pick('focus',POSTER_FOCUS)};
+}
+const POSTER_FALLBACK=[
+ {file:'01.jpg',title:'你的难题不必独自面对',line:'在校园里，让一次举手之劳，成为彼此的光。',tone:'dawn'},
+ {file:'02.jpg',title:'身边有人，就不算独自',line:'一道身影，一次停留，都是校园里给彼此的光。',tone:'river'}
+];
+let posterCatalog=null,posterIndex=0,posterToken=0,posterAutoplayTimer=0;
+const POSTER_AUTOPLAY_MS=5000;
+function posterFileUrl(file){
+ const name=String(file||'').trim();
+ if(!/^[A-Za-z0-9][A-Za-z0-9._-]{0,80}$/.test(name)||name.includes('..')||!/\.(jpe?g|png|webp|gif)$/i.test(name))return '';
+ return '/homepage-posters/'+name;
+}
+function normalizePoster(item,index){
+ const base=POSTER_FALLBACK[index]||{file:'',title:'在校园里，善意会相遇',line:'一次举手之劳，就是给彼此的光。',tone:index%2?'river':'dawn'};
+ const title=String(item?.title??'').trim().slice(0,80)||base.title;
+ const line=String(item?.line??'').trim().slice(0,160)||base.line;
+ const credit=String(item?.credit??'').trim().slice(0,120);
+ const tone=item?.tone==='river'||item?.tone==='dawn'?item.tone:base.tone;
+ return {title,line,credit,image:posterFileUrl(item?.file||base.file),tone:tone==='river'?'river':'dawn',...posterLayout(item,index)};
+}
+function activePosters(){return posterCatalog?.length?posterCatalog:POSTER_FALLBACK.map(normalizePoster)}
+function posterSlot(index,delta,length){if(!length)return 0;return ((index+delta)%length+length)%length}
+async function ensurePosters(){
+ if(posterCatalog)return posterCatalog;
+ let items=POSTER_FALLBACK;
+ try{
+  const res=await fetch('/homepage-posters/manifest.json',{cache:'no-store'});
+  if(res.ok){
+   const data=await res.json();
+   if(data&&Array.isArray(data.posters)&&data.posters.length)items=data.posters;
+  }
+ }catch{}
+ posterCatalog=items.map(normalizePoster).filter(item=>item.title);
+ if(!posterCatalog.length)posterCatalog=POSTER_FALLBACK.map(normalizePoster);
+ if(posterIndex>=posterCatalog.length)posterIndex=0;
+ if(typeof Image!=='undefined')for(const item of posterCatalog)if(item.image){const preload=new Image();preload.src=item.image}
+ return posterCatalog;
+}
+function pad2(n){return String(n).padStart(2,'0')}
+function motionReduced(){try{return !!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)}catch{return false}}
+function watchPosterImage(img,frame,src){
+ const miss=()=>{frame.classList.add('is-fallback');frame.classList.remove('is-ready')};
+ const hit=()=>{frame.classList.remove('is-fallback');frame.classList.add('is-ready')};
+ img.onload=()=>{if(img.getAttribute('src')===src)hit()};
+ img.onerror=()=>{if(!src||img.getAttribute('src')===src)miss()};
+ if(!src){img.removeAttribute('src');miss();return}
+ if(img.getAttribute('src')!==src)img.src=src;
+ else if(img.complete){if(img.naturalWidth>0)hit();else miss()}
+}
+function paintPoster(){
+ const stage=document.querySelector?.('.poster-stage');
+ if(!stage)return;
+ const list=activePosters();
+ if(!list.length)return;
+ if(posterIndex>=list.length)posterIndex=0;
+ const item=list[posterIndex];
+ const frame=stage.querySelector('.poster-frame');
+ if(!frame)return;
+ const fading=frame.classList.contains('is-fading');
+ frame.className='poster-frame tone-'+item.tone+' focus-'+item.focus+(fading?' is-fading':'');
+ const copy=stage.querySelector('.poster-copy');
+ if(copy)copy.className='poster-copy align-'+item.align+' place-'+item.place+' measure-'+item.measure;
+ const veil=stage.querySelector('.poster-veil');
+ if(veil)veil.className='poster-veil place-'+item.place+' align-'+item.align;
+ const title=stage.querySelector('.poster-title');
+ const line=stage.querySelector('.poster-line');
+ if(title)title.textContent=item.title;
+ if(line)line.textContent=item.line;
+ let credit=stage.querySelector('.poster-credit');
+ if(item.credit){
+  if(!credit){credit=document.createElement('p');credit.className='poster-credit';stage.querySelector('.poster-copy')?.appendChild(credit)}
+  credit.textContent=item.credit;
+ }else if(credit)credit.remove();
+ const count=stage.querySelector('.poster-count');
+ if(count)count.textContent=pad2(posterIndex+1)+' / '+pad2(list.length);
+ stage.querySelectorAll('.poster-dot').forEach((dot,i)=>{
+  const on=i===posterIndex;
+  dot.classList.toggle('is-current',on);
+  if(on)dot.setAttribute('aria-current','true');else dot.removeAttribute('aria-current');
+ });
+ const img=stage.querySelector('.poster-photo');
+ if(img)watchPosterImage(img,frame,item.image);
+}
+function posterAutoplayHeld(){
+ if(route().page!=='home'||menuOpen)return true;
+ if(document.hidden||document.visibilityState==='hidden')return true;
+ return activePosters().length<2;
+}
+function stopPosterAutoplay(){
+ if(!posterAutoplayTimer)return;
+ clearTimeout(posterAutoplayTimer);
+ posterAutoplayTimer=0;
+}
+function syncPosterAutoplay(restart){
+ if(route().page!=='home'){posterToken++;stopPosterAutoplay();return}
+ if(posterAutoplayHeld()){stopPosterAutoplay();return}
+ if(posterAutoplayTimer&&!restart)return;
+ stopPosterAutoplay();
+ posterAutoplayTimer=setTimeout(()=>{
+  posterAutoplayTimer=0;
+  if(posterAutoplayHeld())return;
+  shiftPoster(1);
+ },POSTER_AUTOPLAY_MS);
+}
+function shiftPoster(delta){
+ const list=activePosters();
+ if(!list.length)return;
+ posterIndex=posterSlot(posterIndex,delta,list.length);
+ const frame=document.getElementById('poster-frame');
+ if(!frame||motionReduced()){paintPoster();syncPosterAutoplay(true);return}
+ const token=++posterToken;
+ frame.classList.add('is-fading');
+ setTimeout(()=>{
+  if(token!==posterToken)return;
+  paintPoster();
+  const next=document.getElementById('poster-frame');
+  if(!next)return;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>next.classList.remove('is-fading')));
+ },220);
+ syncPosterAutoplay(true);
+}
+function goPoster(index){
+ const list=activePosters();
+ if(!Number.isInteger(index)||index<0||index>=list.length||index===posterIndex)return;
+ shiftPoster(index-posterIndex);
+}
+function homePoster(){
+ const list=activePosters();
+ const item=list[posterIndex]||list[0];
+ const dots=list.map((_,i)=>`<button type="button" class="poster-dot${i===posterIndex?' is-current':''}" data-action="poster-go" data-index="${i}" aria-label="第 ${i+1} 张"${i===posterIndex?' aria-current="true"':''}></button>`).join('');
+ const credit=item.credit?`<p class="poster-credit">${esc(item.credit)}</p>`:'';
+ return `<section class="poster-stage" aria-roledescription="轮播" aria-label="首页"><div class="poster-frame tone-${item.tone} focus-${item.focus}" id="poster-frame"><img class="poster-photo" alt="" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil place-${item.place} align-${item.align}" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="home-menu" aria-controls="site-menu" aria-label="打开菜单"></button><div class="poster-copy align-${item.align} place-${item.place} measure-${item.measure}"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-dots" role="group" aria-label="海报">${dots}</div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
+}
 function shell(content){
  const r=route();
- return `<div class="shell"><aside class="sidebar"><a class="brand" href="#${homePage()}"><span class="brand-mark">集</span><div><strong>校集</strong><small>同学互助</small></div></a><div class="nav-title">${isStudent()?'常用':'导航'}</div><nav class="nav" aria-label="主导航">${navLinks(r.page)}</nav>${sidebarFoot()}</aside><div class="main"><header class="topbar"><div class="breadcrumb">${productCrumb()} <span>/ ${titles[r.page]}</span></div>${identityBar()}</header><main class="content" id="main-content">${content}</main></div></div>`;
+ const home=r.page==='home';
+ const aside=`<aside class="sidebar${menuOpen?' is-open':''}" id="site-menu" aria-hidden="${menuOpen?'false':'true'}" aria-label="菜单"><div class="menu-head"><a class="brand" href="#home" aria-label="回到首页"><span class="brand-mark" aria-hidden="true">集</span><small>同学互助</small></a><button type="button" class="menu-close" data-action="menu-close" aria-label="关闭菜单">${icon('close')}</button></div><div class="nav-title">${isStudent()?'常用':'导航'}</div><nav class="nav" aria-label="主导航">${navLinks(r.page)}</nav>${sidebarFoot()}</aside>`;
+ const top=home?'':`<header class="topbar"><div class="breadcrumb">${productCrumb()} <span>/ ${titles[r.page]}</span></div>${identityBar()}</header>`;
+ return `<div class="shell${home?' shell-home':''}${menuOpen?' menu-open':''}">${menuButton()}${aside}<div class="main">${top}<main class="content" id="main-content">${content}</main></div></div>`;
 }
 function heading(eye,title,sub,action=''){return `<div class="page-heading"><div>${eye?`<div class="eyebrow">${eye}</div>`:''}<h1>${title}</h1><p>${sub}</p></div>${action}</div>`}
 function galleryHero(){const pack=teamPack();if(!pack)return `<section class="hero"><div class="hero-main"><div class="eyebrow">本周推荐 · 学校事务</div><h2>办事前，先问问校园办事助手</h2><p>准备哪些材料、下一步怎么做？<br>从有来源的资料中，找到清楚的答案。</p><button class="btn" data-action="chat" data-id="affairs">开始对话 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>校集团队<small>每个助手都有维护团队</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`;return `<section class="hero"><div class="hero-main"><div class="eyebrow">${esc(pack.heroEye)}</div><h2>${esc(pack.heroTitle)}</h2><p>${esc(pack.heroBody)}</p><button class="btn" data-action="nav" data-page="team">进入团队工作台 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>生活 · 办事 · 学习<small>${esc(pack.name)}统一维护</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`}
@@ -178,12 +365,60 @@ function applyBoardHours(n){
  if(endEl)endEl.value=e.hour+':'+e.minute;
  setBoardDay('today');
 }
+function listingCard(l,mode){
+ const when=esc(listingWhen(l));
+ const type=esc(l.type||'互助');
+ const headline=esc(listingHeadline(l));
+ const text=esc(l.description||'');
+ if(mode==='mine'){
+  const st=l.status||'active';
+  const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';
+  const act=st==='taken_down'?'':'<div class="board-card-actions"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';
+  const reason=l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'';
+  return '<article class="record board-card">'+listingThumb(l)+'<div class="board-card-copy"><div class="board-card-kicker">'+tag+'<span class="tag blue">'+type+'</span><span class="board-when">'+when+'</span></div><h3 class="board-card-title">'+headline+'</h3><p class="board-card-text">'+text+'</p>'+reason+act+'</div></article>';
+ }
+ const role=roleTag(l.role);
+ return '<article class="record board-card">'+listingThumb(l)+'<div class="board-card-copy"><div class="board-card-kicker"><span class="tag blue">'+type+'</span>'+(role?'<span class="tag">'+esc(role)+'</span>':'')+'<span class="board-when">'+when+'</span></div><h3 class="board-card-title">'+headline+'</h3>'+(text?'<p class="board-card-text">'+text+'</p>':'')+'<p class="board-card-who">'+esc(l.ownerName||'同学')+'</p></div></article>';
+}
 function listingHeadline(l){return l.display||[l.type,l.title].filter(Boolean).join(' · ')||l.type||'同学登记'}
 function listingWhen(l){return l.windowText||(l.longTerm?'长期':(l.expiresAt?'有效至 '+String(l.expiresAt).slice(0,16).replace('T',' '):''))}
 function roleTag(role){return role==='offer'?'我来帮忙':role==='need'?'我需要':''}
-function authFormHtml(prefix='auth',opts={}){
- const focus=opts.autofocus?' autofocus':'';
- return '<form id="'+prefix+'-form" data-auth-form="1"><div class="field"><label for="'+prefix+'-id">学号</label><input id="'+prefix+'-id" name="studentId" required pattern="\\d{8}" maxlength="8" minlength="8" inputmode="numeric" placeholder="8 位数字学号"'+focus+'></div><div class="field"><label for="'+prefix+'-name">昵称（注册时可选）</label><input id="'+prefix+'-name" name="displayName" maxlength="20" placeholder="例如：小陈"></div><div class="field"><label for="'+prefix+'-pass">密码</label><input id="'+prefix+'-pass" name="password" type="password" required minlength="6" maxlength="72" autocomplete="new-password"></div><div class="actions"><button class="btn primary" type="submit" data-auth="login">登录</button><button class="btn" type="submit" data-auth="register">注册学号账号</button></div><p class="small muted" style="margin-top:12px">提问不用登录。登记和开聊需要 8 位学号。</p></form>';
+let authMode='login',authForgot=false,authShowPassword=false;
+function safeAuthReturn(value){
+ const hash=String(value||'');
+ if(!/^#(home|gallery|board|chat|upload|team|admin)(\/[A-Za-z0-9_-]{1,40})?$/.test(hash))return '';
+ return hash;
+}
+function rememberAuthReturn(){
+ try{
+  const next=safeAuthReturn(location.hash);
+  if(next)sessionStorage.setItem('campus-auth-next',next);
+ }catch{}
+}
+function takeAuthReturn(){
+ try{
+  const next=safeAuthReturn(sessionStorage.getItem('campus-auth-next')||'');
+  sessionStorage.removeItem('campus-auth-next');
+  return next;
+ }catch{return ''}
+}
+function goLogin(){
+ rememberAuthReturn();
+ if(route().page==='login')return render();
+ go('login');
+}
+function authNote(){
+ return '<div class="auth-note"><span class="auth-note-mark" aria-hidden="true">i</span><div><strong>用账号登录，用昵称认识彼此</strong><p>昵称可以修改，不影响登录账号</p></div></div>';
+}
+function loginPage(){
+ if(account){
+  return '<div class="auth-page"><section class="auth-card"><p class="auth-kicker">账号</p><h1>已登录</h1><p class="hint">当前昵称是别人看到的名字。登录账号不会因此改变。</p><form id="nick-form"><div class="field"><label for="nick-name">昵称</label><input id="nick-name" name="displayName" maxlength="20" value="'+esc(account.displayName||'')+'" placeholder="例如：小陈"></div><button class="btn primary auth-submit" type="submit">保存昵称</button></form>'+authNote()+'</section></div>';
+ }
+ const register=authMode==='register';
+ const type=authShowPassword?'text':'password';
+ const nick=register?'<div class="field"><label for="auth-name">昵称（可选）</label><input id="auth-name" name="displayName" maxlength="20" placeholder="不填也会有一个不暴露账号的昵称" autocomplete="nickname"></div>':'';
+ const forgot=authForgot?'<p class="small" role="status">暂时不能自助找回密码。这里没有短信或邮箱验证，也不会只凭登录账号重置密码。</p>':'';
+ return '<div class="auth-page"><section class="auth-card"><p class="auth-kicker">'+(register?'注册':'登录')+'</p><h1>'+(register?'创建账号':'欢迎回来')+'</h1><div class="auth-tabs" role="tablist"><button type="button" class="auth-tab'+(register?'':' is-current')+'" data-action="auth-tab" data-value="login" role="tab" aria-selected="'+(register?'false':'true')+'">登录</button><button type="button" class="auth-tab'+(register?' is-current':'')+'" data-action="auth-tab" data-value="register" role="tab" aria-selected="'+(register?'true':'false')+'">注册</button></div><form id="auth-page-form" data-mode="'+(register?'register':'login')+'"><div class="field"><label for="auth-user">登录账号</label><input id="auth-user" name="username" required minlength="3" maxlength="20" autocomplete="username" placeholder="'+(register?'字母、数字或下划线':'请输入登录账号')+'" autofocus></div>'+nick+'<div class="field auth-pass"><label for="auth-pass">密码</label><div class="auth-pass-line"><input id="auth-pass" name="password" type="'+type+'" required minlength="6" maxlength="72" autocomplete="'+(register?'new-password':'current-password')+'" placeholder="请输入密码"><button type="button" class="auth-peek" data-action="auth-peek">'+(authShowPassword?'隐藏':'显示')+'</button></div></div><div class="auth-row"><label class="check auth-keep"><input name="remember" type="checkbox" checked><span>保持登录<small>公共电脑请取消勾选</small></span></label>'+(register?'':'<button type="button" class="btn text small" data-action="auth-forgot">忘记密码？</button>')+'</div>'+forgot+'<button class="btn primary auth-submit" type="submit">'+(register?'注册':'登录')+'</button></form>'+authNote()+'<p class="auth-foot">'+(register?'已有账号？ <button type="button" class="btn text small" data-action="auth-tab" data-value="login">去登录</button>':'还没有账号？ <button type="button" class="btn text small" data-action="auth-tab" data-value="register">去注册</button>')+'</p></section></div>';
 }
 function boardPage(){
  const logged=!!account;
@@ -192,9 +427,9 @@ function boardPage(){
  const suggestions=['今天下午有没有人代取快递？','谁能接一下陪诊？','有没有人出闲置显示器？'];
  const nowParts=shanghaiParts(Date.now()),laterParts=shanghaiParts(Date.now()+2*3600000);
  const startClock=nowParts.hour+':'+nowParts.minute,endClock=laterParts.hour+':'+laterParts.minute;
- const register='<section class="panel board-register" id="board-register"><h2>互助登记</h2><p class="small muted">登记你能提供的帮助，或你的需求。类型自己写。「接……」表示你来做这件事。发布需要学号登录。</p>'+
+ const register='<section class="panel board-register" id="board-register"><details class="board-publish board-fold" id="board-publish"'+(boardPublishOpen?' open':'')+'><summary>'+(logged?'登记一条互助':'登录后登记互助')+'</summary><h2>互助登记</h2><p class="small muted">登记你能提供的帮助，或你的需求。类型自己写。「接……」表示你来做这件事。发布需要登录。</p>'+
  (logged
-  ?('<p class="muted small" style="margin:12px 0">当前学号：'+esc(account.studentId)+(account.displayName?' · '+esc(account.displayName):'')+'</p>'+
+  ?('<p class="muted small" style="margin:12px 0">当前昵称：'+esc(account.displayName||'同学')+'</p>'+
     '<form id="board-form"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><input id="board-type" name="type" type="text" required maxlength="30" placeholder="自己写，例如：代取快递、陪诊、出闲置、接摄影"></div>'+
     '<fieldset class="alarm-window"><legend>'+icon('clock')+' 生效时段</legend>'+
     '<div class="window-mode" role="radiogroup" aria-label="生效时段"><label class="window-choice"><input type="radio" name="windowMode" value="long"><span>长期有效</span></label><label class="window-choice"><input type="radio" name="windowMode" value="span" checked><span>指定时段</span></label></div>'+
@@ -204,24 +439,23 @@ function boardPage(){
     '<p class="small muted alarm-note">时间为北京时间。结束不晚于开始时，算到第二天。超过 90 天请改选长期有效。</p>'+
     '<div class="window-hours"><span class="small muted">从现在起</span><button type="button" data-action="board-hours" data-value="2">2 小时</button><button type="button" data-action="board-hours" data-value="4">4 小时</button><button type="button" data-action="board-hours" data-value="8">8 小时</button><button type="button" data-action="board-hours" data-value="24">24 小时</button></div></div></fieldset>'+
     '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><div class="field"><label for="board-image">放图片（可选）</label><input id="board-image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><img id="board-image-preview" class="listing-thumb hidden" alt="图片预览"><small id="board-image-note">最多 1 张，JPEG / PNG / WebP / GIF，4 MB 以内。不要上传证件、人脸特写等敏感个人信息。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
-    '<h3 style="margin-top:8px">我发布的登记 <span class="count">'+mine.length+'</span></h3>'+
-    (mine.length?mine.map(l=>{const st=l.status||'active';const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';const act=st==='taken_down'?'':'<div class="actions" style="margin-top:8px"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';return '<article class="record board-card">'+listingThumb(l)+'<div><p>'+tag+' <span class="tag blue">'+esc(l.type)+'</span> '+esc(listingHeadline(l))+'</p><small>'+esc(l.description)+'</small><small>'+esc(listingWhen(l))+'</small>'+(l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'')+act+'</div></article>';}).join(''):'<p class="small muted">你还没有发布过登记。</p>'))
-  :(authFormHtml()))+
- '</section>';
- const ask='<section class="panel board-ask"><h2>问别人</h2><p class="hint">互助通达按意思去对同学登记，不限固定类别。只会用正处在生效时段里的信息。「接……」表示对方来帮忙。</p>'+
+    '</details><h3 class="board-mine-title">我发布的登记 <span class="count">'+mine.length+'</span></h3>'+
+    (mine.length?mine.map(l=>listingCard(l,'mine')).join(''):'<p class="board-quiet">你还没有发布过登记。</p>')+'</section>')
+  :('<p class="board-quiet">提问不用登录。登记和开聊需要登录。</p><p><button class="btn primary" type="button" data-action="auth-open">去登录</button></p>'))+(logged?'':'</details></section>');
+ const ask='<section class="panel board-ask"><h2>问别人</h2><p class="hint">不用登录。互助通达按意思去对同学登记，不限固定类别。只会用正处在生效时段里的信息。「接……」表示对方来帮忙。</p>'+
  '<form id="board-ask-form"><textarea name="question" aria-label="向互助通达提问" required maxlength="500" rows="3" placeholder="例如：今天下午有没有人代取快递？谁能接一下陪诊？有没有人出闲置显示器？">'+esc(boardQuestion)+'</textarea>'+
  '<div class="board-ask-bar"><div class="board-chips">'+suggestions.map(s=>'<button type="button" data-action="board-suggest" data-value="'+esc(s)+'">'+esc(s)+'</button>').join('')+'</div>'+
  '<button class="btn primary" type="submit"'+(boardAsking?' disabled':'')+'>'+(boardAsking?'正在查找…':'提问')+'</button></div></form>'+
- (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>':'<div class="empty" style="margin-top:16px"><p>还没提问。想找人帮忙，或看看谁在接活，直接写在上面。</p></div>')+
+ (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>':'<p class="board-quiet">还没提问。写一句，就能看看有没有人对得上。</p>')+
  '</section>';
- const inbox=logged&&boardInbox.length?'<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record"><div><p><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'</p><small>'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</small><small>'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</small></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>':'';
- return heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
- '<div class="board-split">'+register+ask+'</div>'+inbox+boardListSection();
+ const inbox=logged&&boardInbox.length?'<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record board-thread"><div class="board-card-copy"><div class="board-card-kicker"><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'<span class="board-when">'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</span></div><p class="board-card-text">'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</p></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>':'';
+ return '<div class="board-page">'+heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
+ '<div class="board-split">'+register+ask+'</div>'+inbox+boardListSection()+'</div>';
 }
 function boardListSection(){
  const list=Array.isArray(boardListings)?boardListings:[];
- const body=list.length?list.map(l=>'<article class="record board-card">'+listingThumb(l)+'<div><p><span class="tag blue">'+esc(l.type||'互助')+'</span> '+(roleTag(l.role)?'<span class="tag">'+esc(roleTag(l.role))+'</span> ':'')+esc(listingHeadline(l))+'</p><small>'+esc(l.description||'')+'</small><small>'+esc(l.ownerName||'同学')+(listingWhen(l)?' · '+esc(listingWhen(l)):'')+'</small></div></article>').join(''):'<p class="small muted">暂无正在生效的登记。</p>';
- return '<section class="panel board-list" id="board-list"><h2>正在生效 <span class="count">'+list.length+'</span></h2>'+body+'</section>';
+ const body=list.length?list.map(l=>listingCard(l,'public')).join(''):'<p class="board-quiet">眼下没有正在生效的互助。</p>';
+ return '<section class="panel board-list" id="board-list"><h2>正在生效'+(list.length?' <span class="count">'+list.length+'</span>':'')+'</h2>'+body+'</section>';
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}
 function guard(kind){const admin=kind==='admin';const button=demoIdentities?(admin?'<button class="btn primary" data-action="switch" data-value="admin">切换为管理员</button>':'<button class="btn primary" data-action="switch" data-value="team">切换为校集团队成员</button>'):'<p class="small muted">公开访问不提供演示身份。</p>';const note=demoIdentities?'此处为演示身份切换，不是真实登录认证。':'公开访问不能切换演示身份。';if(admin)return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>管理员审核空间</h1><p>审核管理仅对管理员演示身份开放。<br>${note}</p>${button}</div>`;return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>团队创作空间</h1><p>请切换为校集团队成员，统一管理生活、办事和学习助手。<br>${note}</p>${button}</div>`}
@@ -358,9 +592,9 @@ function reportModal(listingId){
 function boardReviewModal(listingId){
  modal('驳回这条登记','<form id="board-review-form" data-id="'+esc(listingId)+'"><p class="small muted">驳回原因会显示给发布者，请写清楚需要修改的地方。</p><div class="field"><label for="board-review-reason">驳回原因 *</label><textarea id="board-review-reason" name="reason" required minlength="2" maxlength="300" rows="3"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn danger" type="submit">确认驳回</button></div></form>');
 }
-function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=`${titles[r.page]} · 校集`;document.getElementById('app').innerHTML=shell(({gallery,board:boardPage,upload,team,chat,admin}[r.page])());if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy()}
+function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:homePoster,gallery,board:boardPage,upload,team,chat,admin,login:loginPage}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home'||!posterCatalog)return;const dots=document.querySelectorAll?.('.poster-dot');if(dots&&dots.length!==posterCatalog.length){document.getElementById('app').innerHTML=shell(homePoster());paintPoster()}syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
-function openAuthDialog(){modal('学号登录',authFormHtml('dialog-auth',{autofocus:true}))}
+function openAuthDialog(){goLogin()}
 function closeModal(){document.getElementById('modal').close()}
 function id(prefix){return prefix+'-'+(globalThis.crypto?.randomUUID?.()||Date.now()+'-'+Math.random().toString(36).slice(2))}
 
@@ -418,11 +652,42 @@ document.addEventListener('change',async e=>{
   if(input.isConnected&&!form.elements.title.value)form.elements.title.value=file.name.replace(/\.[^.]+$/,'').slice(0,80);
  }
 });
+function posterTextSelected(){
+ try{
+  const sel=window.getSelection?.();
+  if(!sel||(typeof sel.isCollapsed==='boolean'&&sel.isCollapsed))return false;
+  return !!String(sel).trim();
+ }catch{return false}
+}
+function posterClickOpensMenu(e){
+ if(e.defaultPrevented||route().page!=='home'||menuOpen)return false;
+ if(!e.target.closest?.('.poster-stage'))return false;
+ if(e.target.closest?.('a'))return false;
+ const action=e.target.closest?.('[data-action]')?.dataset?.action||'';
+ if(action==='poster-next'||action==='poster-prev'||action==='poster-go'||action==='menu'||action==='menu-close')return false;
+ if(posterTextSelected())return false;
+ setMenu(true);
+ return true;
+}
 document.addEventListener('click',async e=>{
+ const menuBtn=e.target.closest?.('.menu-square');
+ const inMenu=e.target.closest?.('#site-menu');
+ if(menuOpen&&!menuBtn&&!inMenu){setMenu(false);if(e.target.closest?.('.poster-stage'))return}
+ if(inMenu&&e.target.closest?.('a[href^="#"]')){setMenu(false);return}
+ if(posterClickOpensMenu(e))return;
  const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset;
+ if(a.action==='menu'){setMenu(!menuOpen);return}
+ if(a.action==='menu-close'){setMenu(false);return}
+ if(a.action==='home-menu')return;
+ if(a.action==='poster-next'){shiftPoster(1);return}
+ if(a.action==='poster-prev'){shiftPoster(-1);return}
+ if(a.action==='poster-go'){goPoster(Number(a.index));return}
  if(a.action==='close'||a.action==='board-decline')return closeModal();
  if(a.action==='nav')return go(a.page);
- if(a.action==='auth-open'){if(!account)openAuthDialog();return}
+ if(a.action==='auth-open'){if(!account)goLogin();return}
+ if(a.action==='auth-tab'){authMode=a.value==='register'?'register':'login';authForgot=false;return render()}
+ if(a.action==='auth-peek'){authShowPassword=!authShowPassword;return render()}
+ if(a.action==='auth-forgot'){authForgot=true;return render()}
  if(a.action==='chat'){chatPrefill='';chatError='';return go('chat',a.id)}
  if(a.action==='prefill-chat'){chatPrefill=a.value||'';chatError='';return go('chat',a.id)}
  if(a.action==='category'){category=a.value;return render()}
@@ -457,7 +722,7 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='board-reject-listing'){boardReviewModal(a.id);return}
  if(a.action==='board-report-resolve'){try{const data=await api('board/report-resolve',{id:a.id,decision:a.decision});applyResult(data);closeModal();render();toast(a.decision==='take_down'?'已下架该登记':'已忽略举报')}catch(err){toast(err.message)}return}
  if(a.action==='board-accept'){
-  if(!account){closeModal();boardPublishOpen=true;if(route().page!=='board')go('board');else render();return toast('请先用学号登录，再和对方开聊。')}
+  if(!account){closeModal();goLogin();return toast('请先登录，再和对方开聊。')}
   try{const data=await api('board/open',{listingId:a.id});openDmModal(data.thread,a.id)}catch(err){toast(err.message)}
   return;
  }
@@ -476,18 +741,34 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='confirm-reset'){await perform({action:'reset'},'已恢复初始资料。');go('gallery')}
 });
 document.addEventListener('submit',async e=>{
- const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','board-form','board-ask-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','board-form','board-ask-form','dm-form'].includes(f.id))return;
+ const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form'||f.id==='auth-page-form'||f.id==='nick-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','auth-page-form','nick-form','board-form','board-ask-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','auth-page-form','nick-form','board-form','board-ask-form','dm-form'].includes(f.id))return;
  const fd=new FormData(f),get=n=>String(fd.get(n)||'').trim();
  if(f.id==='chat-form')return sendChat(get('question'));
  if(f.id==='board-ask-form')return askBoard(get('question'));
- if(authForm){
-  const mode=e.submitter?.dataset?.auth||'login';
-  try{applyResult(await api('auth/'+mode,{studentId:get('studentId'),password:get('password'),displayName:get('displayName')}));if(f.closest?.('dialog')&&document.getElementById('modal')?.open)closeModal();toast(mode==='register'?'注册成功，已登录':'登录成功');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
-  return;
- }
+ if(f.id==='auth-page-form'){
+   const mode=f.dataset.mode==='register'?'register':'login';
+   try{
+    applyResult(await api('auth/'+mode,{username:get('username'),password:get('password'),displayName:get('displayName'),remember:fd.has('remember')}));
+    const next=takeAuthReturn();
+    toast(mode==='register'?'注册成功，已登录':'登录成功');
+    boardNeedsRefresh=true;
+    if(next)location.hash=next;else location.hash='#board';
+    render();
+   }catch(err){toast(err.message)}
+   return;
+  }
+  if(f.id==='nick-form'){
+   try{applyResult(await api('auth/nickname',{displayName:get('displayName')}));toast('昵称已保存');render()}catch(err){toast(err.message)}
+   return;
+  }
+  if(authForm){
+   const mode=e.submitter?.dataset?.auth||'login';
+   try{applyResult(await api('auth/'+mode,{studentId:get('studentId'),password:get('password'),displayName:get('displayName')}));if(f.closest?.('dialog')&&document.getElementById('modal')?.open)closeModal();toast(mode==='register'?'注册成功，已登录':'登录成功');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
+   return;
+  }
  if(f.id==='board-form'){
   const longTerm=get('windowMode')==='long';
-  if(account&&!/^\d{8}$/.test(account.studentId||''))return toast('学号应为 8 位数字。');
+  if(!account)return toast('请先登录后再登记。');
   if(!longTerm){
    const day=get('windowDay')||'today';
    if(day!=='today'&&day!=='tomorrow'&&!/^\d{4}-\d{2}-\d{2}$/.test(day))return toast('请选择今天、明天或某一天。');
@@ -552,7 +833,14 @@ document.addEventListener('submit',async e=>{
  if(f.id==='review-form'){const reason=get('reason');const notice=document.getElementById('review-reason-error');if(!reason){if(notice){notice.textContent='请填写审核原因。';notice.classList.remove('hidden')}return toast('请填写审核原因。')}const decision=f.dataset.decision==='approve'?'approve':'reject';const kind=f.dataset.kind;return perform({action:'review',kind,id:f.dataset.id,decision,reason},decision==='reject'?'已驳回并记录原因。':kind==='doc'?'资料已审核入库，并记下通过原因。':'Agent 已上线，并记下通过原因。');}
  if(f.id==='edit-doc-form')return perform({action:'editDoc',id:f.dataset.id,title:get('title'),source:get('source'),sourceUrl:get('sourceUrl'),publishedAt:get('publishedAt'),collectedAt:get('collectedAt'),sourceKind:get('sourceKind'),content:get('content')},'已修改并重新提交。');
 });
-document.addEventListener('keydown',e=>{if((e.target.matches('#chat-form textarea')||e.target.matches('#board-ask-form textarea'))&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'&&menuOpen){setMenu(false);return}
+ if((e.target.matches?.('#chat-form textarea')||e.target.matches?.('#board-ask-form textarea'))&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}
+ if(route().page!=='home'||menuOpen||document.getElementById('modal')?.open)return;
+ if(e.target.closest?.('input,textarea,select'))return;
+ if(e.key==='ArrowRight')shiftPoster(1);
+ if(e.key==='ArrowLeft')shiftPoster(-1);
+});
 function searchInput(e){
  if(e.target.id!=='search'||e.isComposing)return;const pos=e.target.selectionStart;query=e.target.value;render();const el=document.getElementById('search');el.focus();el.setSelectionRange(pos,pos)
 }
@@ -577,7 +865,8 @@ document.addEventListener('change',e=>{
  if(/^\d{4}-\d{2}-\d{2}$/.test(value))setBoardDay(value);
  else setBoardDay('today');
 });
-window.addEventListener('hashchange',()=>{if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
+document.addEventListener('visibilitychange',()=>syncPosterAutoplay(false));
+window.addEventListener('hashchange',()=>{menuOpen=false;if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'list_campus_agents',title:'查看已上线校园助手',description:'只读列出当前本地平台已上线的助手与已审核资料数。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute(input){if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('不接受参数');return state.agents.filter(a=>a.status==='published').map(a=>({id:a.id,name:a.name,documents:state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length}))}},{signal:lifecycle.signal})).catch(()=>{})}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})}
 
