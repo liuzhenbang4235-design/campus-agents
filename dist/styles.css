@@ -138,7 +138,7 @@ body:has(.shell-home){background:#07090f;overflow:hidden}
 .poster-frame{position:absolute;inset:0;background:#07090f}
 .poster-frame.is-fallback.tone-dawn{background:radial-gradient(120% 80% at 72% 12%,rgba(255,196,120,.38),transparent 52%),linear-gradient(180deg,#1a3148 0%,#243e55 46%,#6d5638 100%)}
 .poster-frame.is-fallback.tone-river{background:radial-gradient(80% 60% at 28% 16%,rgba(255,255,255,.45),transparent 48%),linear-gradient(180deg,#8ec0e4 0%,#d5e6f1 34%,#1b3948 70%,#0c1820 100%)}
-.poster-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;opacity:0;transition:opacity .45s ease}
+.poster-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;opacity:0;transition:opacity .45s ease;pointer-events:none;-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
 .poster-frame.focus-left .poster-photo{object-position:24% 42%}
 .poster-frame.focus-right .poster-photo{object-position:76% 44%}
 .poster-frame.focus-top .poster-photo{object-position:center 18%}

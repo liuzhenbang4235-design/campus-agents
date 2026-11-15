@@ -215,6 +215,14 @@ test('poster homepage is a click-through frame and the menu starts closed',()=>{
  const css=fs.readFileSync(path.join(__dirname,'../dist/styles.css'),'utf8');
  assert.match(css,/\.poster-photo\{[^}]*object-fit:cover/);
  assert.doesNotMatch(css,/\.poster-photo\{[^}]*object-fit:contain/);
+ assert.match(css,/\.poster-photo\{[^}]*pointer-events:none/);
+ assert.match(css,/\.poster-photo\{[^}]*-webkit-user-drag:none/);
+ assert.doesNotMatch(css,/\.poster-(?:photo|stage|frame)\{[^}]*(?:scale\(|zoom\s*:)/);
+ assert.match(home,/class="poster-photo"[^>]*draggable="false"/);
+ assert.doesNotMatch(appSource,/dblclick|lightbox|gesturestart/);
+ const pageHtml=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
+ assert.match(pageHtml,/width=device-width,initial-scale=1/);
+ assert.doesNotMatch(pageHtml,/user-scalable|maximum-scale/);
  assert.match(css,/\.menu-square\{[^}]*position:fixed/);
  assert.match(css,/\.menu-square\{[^}]*width:56px;height:56px/);
  assert.match(css,/\.shell:not\(\.shell-home\) \.topbar\{[^}]*position:sticky/);
