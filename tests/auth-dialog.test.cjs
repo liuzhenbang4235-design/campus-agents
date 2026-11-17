@@ -138,7 +138,7 @@ test('login returns to the internal page that asked, and drops an external next'
  const login=loadApp('#gallery');
  await login.listeners.click[0]({target:actionTarget('auth-open')});
  vm.runInContext('render()',login.context);
- await login.listeners.submit[0](authSubmit('login',{username:'Lin',password:'secret1',displayName:''},{remember:true}));
+ await login.listeners.submit[0](authSubmit('login',{username:'Lin',password:'secret12',displayName:''},{remember:true}));
  const snap=login.context.__snap();
  assert.equal(login.calls[0].url,'/api/auth/login');
  assert.equal(login.calls[0].body.username,'Lin');
@@ -151,7 +151,7 @@ test('login returns to the internal page that asked, and drops an external next'
 
  const direct=loadApp('#login');
  direct.context.sessionStorage.setItem('campus-auth-next','https://evil.example');
- await direct.listeners.submit[0](authSubmit('register',{username:'lin',password:'secret1',displayName:'小林'},{remember:false}));
+ await direct.listeners.submit[0](authSubmit('register',{username:'lin',password:'secret12',displayName:'小林'},{remember:false}));
  const again=direct.context.__snap();
  assert.equal(direct.calls[0].body.remember,false);
  assert.equal(direct.calls[0].body.displayName,'小林');
