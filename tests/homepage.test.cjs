@@ -65,6 +65,7 @@ function collect(root,sel,found){
 
 function loadApp({hash='#home',manifest}={}){
  const listeners={};
+ const listenerOptions={};
  const shell=node('shell shell-home');
  const button=node('menu-square',{tag:'button',dataset:{action:'menu'}});
  const menu=node('sidebar',{id:'site-menu'});
@@ -108,7 +109,7 @@ function loadApp({hash='#home',manifest}={}){
  const document={
   hidden:false,
   visibilityState:'visible',
-  addEventListener(type,fn){(listeners[type]||=[]).push(fn)},
+  addEventListener(type,fn,options){(listeners[type]||=[]).push(fn);(listenerOptions[type]||=[]).push(options===undefined?null:options)},
   getElementById(id){return byId[id]||null},
   querySelector(sel){
    if(sel==='.shell')return shell;
@@ -125,7 +126,7 @@ function loadApp({hash='#home',manifest}={}){
   navigator:{platform:'Linux',userAgent:'node'},
   history:{replaceState(){}},
   window:{
-   addEventListener(type,fn){(listeners[type]||=[]).push(fn)},
+   addEventListener(type,fn,options){(listeners[type]||=[]).push(fn);(listenerOptions[type]||=[]).push(options===undefined?null:options)},
    scrollTo(){},
    matchMedia(){return {matches:true}},
    getSelection(){return {isCollapsed:true,toString(){return ''}}}
@@ -142,7 +143,7 @@ function loadApp({hash='#home',manifest}={}){
 globalThis.__state=()=>({menu:menuOpen,index:posterIndex,page:route().page,home:shell(homePoster()),catalog:posterCatalog});
 globalThis.__at=index=>{posterIndex=index;return homePoster()};
 `,context);
- return {context,listeners,clock,button,stage,menu,brand,frame,title,line,count,dots,photo,hit,prev,next};
+ return {context,listeners,listenerOptions,clock,button,stage,menu,brand,frame,title,line,count,dots,photo,hit,prev,next};
 }
 function fakeClock(){
  const pending=new Map();
@@ -484,6 +485,100 @@ test('gitignored poster files are served locally and missing files do not break 
  const stillUp=await raw(empty.server.address().port,'/app.js');
  assert.equal(absent.status,404);
  assert.equal(stillUp.status,200);
+});
+
+test('poster pinch is limited to the poster and leaves scroll, drawers, business pages, and keyboard zoom alone',async()=>{
+ // Synthetic events in this vm prove the page handlers. They do not move a real trackpad, touchscreen, or OS zoom.
+ const css=fs.readFileSync(path.join(__dirname,'../dist/styles.css'),'utf8');
+ const pageHtml=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
+ assert.match(css,/\.poster-stage\{[^}]*touch-action:pan-x pan-y/);
+ assert.match(css,/\.poster-stage \*\{touch-action:pan-x pan-y\}/);
+ assert.doesNotMatch(css,/\.poster-stage\{[^}]*touch-action:\s*none/);
+ assert.doesNotMatch(css,/user-scalable|maximum-scale/);
+ assert.match(pageHtml,/name="viewport" content="width=device-width,initial-scale=1"/);
+ assert.doesNotMatch(pageHtml,/user-scalable|maximum-scale|minimum-scale/);
+ assert.doesNotMatch(appSource,/user-scalable|maximum-scale/);
+ const loaded=loadApp({hash:'#home'});
+ const {context,listeners,listenerOptions,clock,button,stage,menu,title,hit,next}=loaded;
+ const pinchOpts=type=>listenerOptions[type]&&listenerOptions[type][0];
+ for(const type of ['wheel','touchmove','gesturestart','gesturechange']){
+  assert.equal(listeners[type].length,1);
+  assert.equal(pinchOpts(type).passive,false);
+  assert.equal(pinchOpts(type).capture,true);
+ }
+ const content=node('content',{id:'main-content'});
+ const send=(type,target,extra={})=>{
+  let prevented=false;
+  const event={target,ctrlKey:false,metaKey:false,cancelable:true,touches:[],preventDefault(){prevented=true},...extra};
+  for(const fn of listeners[type]||[])fn(event);
+  return prevented;
+ };
+ vm.runInContext('syncPosterAutoplay(false)',context);
+ assert.equal(clock.count(5000),1);
+ assert.equal(context.__state().index,0);
+ assert.equal(send('wheel',stage,{ctrlKey:true,deltaY:-120}),true);
+ assert.equal(send('wheel',title,{ctrlKey:true,deltaY:80}),true);
+ assert.equal(send('wheel',hit,{ctrlKey:true}),true);
+ assert.equal(send('wheel',next,{ctrlKey:true}),true);
+ assert.equal(send('wheel',stage,{ctrlKey:false,deltaY:40}),false);
+ assert.equal(send('wheel',stage,{metaKey:true,ctrlKey:false,deltaY:-40}),false);
+ assert.equal(send('wheel',stage,{ctrlKey:true,cancelable:false,deltaY:-40}),false);
+ assert.equal(send('wheel',button,{ctrlKey:true,deltaY:-80}),false);
+ assert.equal(send('wheel',menu,{ctrlKey:true,deltaY:-80}),false);
+ assert.equal(send('wheel',content,{ctrlKey:true,deltaY:-80}),false);
+ assert.equal(send('touchmove',stage,{touches:[{},{}]}),true);
+ assert.equal(send('touchmove',title,{touches:[{},{}]}),true);
+ assert.equal(send('touchmove',stage,{touches:[{}]}),false);
+ assert.equal(send('touchmove',menu,{touches:[{},{}]}),false);
+ assert.equal(send('touchmove',content,{touches:[{},{}]}),false);
+ assert.equal(send('touchmove',stage,{touches:[{},{}],cancelable:false}),false);
+ assert.equal(send('gesturestart',stage,{}),true);
+ assert.equal(send('gesturechange',hit,{}),true);
+ assert.equal(send('gesturestart',menu,{}),false);
+ assert.equal(send('gesturechange',button,{}),false);
+ assert.equal(context.__state().index,0);
+ assert.equal(context.__state().menu,false);
+ assert.equal(clock.count(5000),1);
+ const click=target=>listeners.click[0]({target});
+ await click(next);
+ assert.equal(context.__state().index,1);
+ assert.equal(context.__state().menu,false);
+ await click(button);
+ assert.equal(context.__state().menu,true);
+ assert.equal(clock.count(5000),0);
+ assert.equal(send('wheel',menu,{ctrlKey:true,deltaY:-100}),false);
+ assert.equal(send('touchmove',menu,{touches:[{},{}]}),false);
+ assert.equal(send('wheel',stage,{ctrlKey:true,deltaY:-100}),true);
+ assert.equal(context.__state().index,1);
+ await listeners.keydown[0]({key:'Escape',target:stage});
+ assert.equal(context.__state().menu,false);
+ assert.equal(clock.count(5000),1);
+ for(const key of ['+','-','=','_','0']){
+  let prevented=false;
+  for(const fn of listeners.keydown)fn({key,ctrlKey:true,metaKey:true,target:stage,preventDefault(){prevented=true}});
+  assert.equal(prevented,false,key);
+ }
+ await listeners.keydown[0]({key:'ArrowRight',target:stage});
+ assert.equal(context.__state().index,0);
+ assert.equal(title.textContent,'你的难题不必独自面对');
+ context.location.hash='#board';
+ await listeners.hashchange[0]();
+ assert.equal(context.__state().page,'board');
+ assert.equal(clock.count(5000),0);
+ assert.equal(send('wheel',stage,{ctrlKey:true,deltaY:-120}),false);
+ assert.equal(send('wheel',content,{ctrlKey:false,deltaY:120}),false);
+ assert.equal(send('touchmove',content,{touches:[{},{}]}),false);
+ assert.equal(send('gesturestart',stage,{}),false);
+ context.location.hash='#gallery';
+ await listeners.hashchange[0]();
+ assert.equal(context.__state().page,'gallery');
+ assert.equal(send('wheel',stage,{ctrlKey:true}),false);
+ context.location.hash='#home';
+ await listeners.hashchange[0]();
+ assert.equal(context.__state().page,'home');
+ assert.equal(send('wheel',stage,{ctrlKey:true,deltaY:-50}),true);
+ assert.equal(send('wheel',stage,{ctrlKey:false,deltaY:50}),false);
+ assert.equal(clock.count(5000),1);
 });
 
 test('operators are told to keep licensed posters out of git',()=>{
