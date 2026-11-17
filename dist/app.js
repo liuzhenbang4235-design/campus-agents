@@ -813,6 +813,46 @@ document.addEventListener('change',e=>{
  if(/^\d{4}-\d{2}-\d{2}$/.test(value))setBoardDay(value);
  else setBoardDay('today');
 });
+// Poster homepage pinch only. Chrome sends a trackpad pinch as ctrl+wheel.
+// Safari sends gesturestart/gesturechange. A two-finger touch is a pinch only
+// when the span between fingers changes; a stable span is a scroll and is left
+// alone. This does not cancel keyboard zoom shortcuts, an already-zoomed
+// viewport, or a gesture the browser delivers as non-cancelable.
+const POSTER_PINCH_SPAN=12;
+let posterPinchSpan=0;
+function touchSpan(touches){
+ if(!touches||touches.length<2)return 0;
+ const a=touches[0],b=touches[1];
+ const dx=Number(a.clientX)-Number(b.clientX),dy=Number(a.clientY)-Number(b.clientY);
+ if(!Number.isFinite(dx)||!Number.isFinite(dy))return 0;
+ return Math.hypot(dx,dy);
+}
+function posterPinchPage(){return route().page==='home'}
+function denyPosterPinch(event){
+ if(!posterPinchPage()||!event||event.cancelable===false||typeof event.preventDefault!=='function')return false;
+ event.preventDefault();
+ return true;
+}
+function posterPinchWheel(event){
+ if(!event||!event.ctrlKey)return;
+ denyPosterPinch(event);
+}
+function posterPinchGesture(event){denyPosterPinch(event)}
+function posterPinchTouchStart(event){posterPinchSpan=posterPinchPage()?touchSpan(event&&event.touches):0}
+function posterPinchTouchMove(event){
+ if(!posterPinchPage())return;
+ const span=touchSpan(event&&event.touches);
+ if(!span||!posterPinchSpan||Math.abs(span-posterPinchSpan)<POSTER_PINCH_SPAN)return;
+ denyPosterPinch(event);
+}
+function posterPinchTouchEnd(){posterPinchSpan=0}
+window.addEventListener('wheel',posterPinchWheel,{passive:false,capture:true});
+window.addEventListener('gesturestart',posterPinchGesture,{passive:false,capture:true});
+window.addEventListener('gesturechange',posterPinchGesture,{passive:false,capture:true});
+window.addEventListener('touchstart',posterPinchTouchStart,{passive:true,capture:true});
+window.addEventListener('touchmove',posterPinchTouchMove,{passive:false,capture:true});
+window.addEventListener('touchend',posterPinchTouchEnd,{passive:true,capture:true});
+window.addEventListener('touchcancel',posterPinchTouchEnd,{passive:true,capture:true});
 document.addEventListener('visibilitychange',()=>syncPosterAutoplay(false));
 window.addEventListener('hashchange',()=>{menuOpen=false;if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();

@@ -219,10 +219,14 @@ test('poster homepage is a click-through frame and the menu starts closed',()=>{
  assert.match(css,/\.poster-photo\{[^}]*-webkit-user-drag:none/);
  assert.doesNotMatch(css,/\.poster-(?:photo|stage|frame)\{[^}]*(?:scale\(|zoom\s*:)/);
  assert.match(home,/class="poster-photo"[^>]*draggable="false"/);
- assert.doesNotMatch(appSource,/dblclick|lightbox|gesturestart/);
+ assert.doesNotMatch(appSource,/dblclick|lightbox/);
+ assert.doesNotMatch(appSource,/user-scalable\s*=\s*no|maximum-scale/);
  const pageHtml=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
  assert.match(pageHtml,/width=device-width,initial-scale=1/);
  assert.doesNotMatch(pageHtml,/user-scalable|maximum-scale/);
+ assert.match(css,/body:has\(\.shell-home\)\{[^}]*touch-action:pan-x pan-y/);
+ assert.match(css,/\.poster-stage\{[^}]*touch-action:pan-x pan-y/);
+ assert.doesNotMatch(css,/(?:^|\n)(?:html|body)\{[^}]*touch-action:/);
  assert.match(css,/\.menu-square\{[^}]*position:fixed/);
  assert.match(css,/\.menu-square\{[^}]*width:56px;height:56px/);
  assert.match(css,/\.shell:not\(\.shell-home\) \.topbar\{[^}]*position:sticky/);
@@ -499,4 +503,59 @@ test('operators are told to keep licensed posters out of git',()=>{
  assert.match(ignore,/data\/homepage-posters\//);
  assert.match(appSource,/data\/homepage-posters\//);
  assert.match(appSource,/Do not commit contest photographs/);
+});
+
+test('poster homepage cancels trackpad and touch pinch without blocking scroll, keys, or other pages',async()=>{
+ assert.match(appSource,/const POSTER_PINCH_SPAN=12/);
+ assert.match(appSource,/window\.addEventListener\('wheel',posterPinchWheel,\{passive:false,capture:true\}\)/);
+ assert.match(appSource,/window\.addEventListener\('gesturestart',posterPinchGesture,\{passive:false,capture:true\}\)/);
+ assert.match(appSource,/window\.addEventListener\('gesturechange',posterPinchGesture,\{passive:false,capture:true\}\)/);
+ assert.match(appSource,/window\.addEventListener\('touchmove',posterPinchTouchMove,\{passive:false,capture:true\}\)/);
+ assert.match(appSource,/window\.addEventListener\('touchstart',posterPinchTouchStart,\{passive:true,capture:true\}\)/);
+ assert.doesNotMatch(appSource,/posterPinchWheel[\s\S]{0,180}shiftPoster|posterPinchGesture[\s\S]{0,80}setMenu/);
+ const {context,listeners,stage}=loadApp({hash:'#home'});
+ const fingers=(x1,y1,x2,y2)=>[{clientX:x1,clientY:y1},{clientX:x2,clientY:y2}];
+ const fire=(type,extra={})=>{
+  let calls=0;
+  const event=Object.assign({cancelable:true,ctrlKey:false,target:stage,preventDefault(){calls++}},extra);
+  const list=listeners[type]||[];
+  assert.ok(list.length,'missing '+type+' listener');
+  for(const fn of list)fn(event);
+  return calls;
+ };
+ assert.equal(fire('wheel',{ctrlKey:true,deltaY:-120}),1);
+ assert.equal(context.__state().index,0);
+ assert.equal(context.__state().menu,false);
+ assert.equal(fire('wheel',{ctrlKey:false,deltaY:140}),0);
+ assert.equal(fire('wheel',{ctrlKey:true,cancelable:false,deltaY:-120}),0);
+ vm.runInContext('setMenu(true)',context);
+ assert.equal(fire('wheel',{ctrlKey:true,deltaY:-80}),1);
+ assert.equal(context.__state().menu,true);
+ assert.equal(context.__state().index,0);
+ vm.runInContext('setMenu(false)',context);
+ await listeners.keydown[0]({key:'ArrowRight',target:stage});
+ assert.equal(context.__state().index,1);
+ assert.equal(context.__state().menu,false);
+ await listeners.keydown[0]({key:'ArrowLeft',target:stage});
+ assert.equal(context.__state().index,0);
+ fire('touchstart',{touches:fingers(20,40,120,40)});
+ assert.equal(fire('touchmove',{touches:fingers(20,70,120,70)}),0);
+ assert.equal(fire('touchmove',{touches:fingers(20,40,131,40)}),0);
+ assert.equal(fire('touchmove',{touches:fingers(20,40,132,40)}),1);
+ assert.equal(context.__state().index,0);
+ fire('touchend',{touches:[]});
+ fire('touchstart',{touches:[{clientX:30,clientY:30}]});
+ assert.equal(fire('touchmove',{touches:[{clientX:30,clientY:90}]}),0);
+ assert.equal(fire('gesturestart',{scale:1.4}),1);
+ assert.equal(fire('gesturechange',{scale:1.8}),1);
+ for(const hash of ['#board','#gallery','#chat','#upload','#team','#admin']){
+  context.location.hash=hash;
+  assert.equal(fire('wheel',{ctrlKey:true,deltaY:-120}),0,hash);
+  assert.equal(fire('gesturestart',{scale:1.4}),0,hash);
+  fire('touchstart',{touches:fingers(0,0,40,0)});
+  assert.equal(fire('touchmove',{touches:fingers(0,0,90,0)}),0,hash);
+ }
+ context.location.hash='#home';
+ assert.equal(fire('wheel',{ctrlKey:true,deltaY:-40}),1);
+ assert.equal(context.__state().page,'home');
 });

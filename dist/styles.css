@@ -133,8 +133,8 @@ span.model-chip{padding:4px 10px}
 .shell-home{background:#07090f;min-height:100vh;min-height:100dvh}
 .shell-home .main{min-height:100vh;min-height:100dvh}
 .shell-home .content{max-width:none;margin:0;padding:0}
-body:has(.shell-home){background:#07090f;overflow:hidden}
-.poster-stage{position:relative;height:100vh;height:100dvh;background:#07090f;overflow:hidden;color:#f6f3ea}
+body:has(.shell-home){background:#07090f;overflow:hidden;touch-action:pan-x pan-y}
+.poster-stage{position:relative;height:100vh;height:100dvh;background:#07090f;overflow:hidden;color:#f6f3ea;touch-action:pan-x pan-y}
 .poster-frame{position:absolute;inset:0;background:#07090f}
 .poster-frame.is-fallback.tone-dawn{background:radial-gradient(120% 80% at 72% 12%,rgba(255,196,120,.38),transparent 52%),linear-gradient(180deg,#1a3148 0%,#243e55 46%,#6d5638 100%)}
 .poster-frame.is-fallback.tone-river{background:radial-gradient(80% 60% at 28% 16%,rgba(255,255,255,.45),transparent 48%),linear-gradient(180deg,#8ec0e4 0%,#d5e6f1 34%,#1b3948 70%,#0c1820 100%)}
