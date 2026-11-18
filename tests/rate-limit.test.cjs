@@ -66,8 +66,8 @@ test('ask buckets follow the session cookie when the proxy address is shared',as
 test('ask buckets prefer the logged-in studentId over the session cookie',async t=>{
  const {open}=await setup(t);
  const a=await open(),b=await open(),c=await open();
- assert.equal((await a('auth/register',{studentId:'20210001',password:'secret1',displayName:'甲'})).status,200);
- assert.equal((await b('auth/login',{studentId:'20210001',password:'secret1'})).status,200);
+ assert.equal((await a('auth/register',{studentId:'20210001',password:'secret12',displayName:'甲'})).status,200);
+ assert.equal((await b('auth/login',{studentId:'20210001',password:'secret12'})).status,200);
  await fillAsks(a);
  assert.equal((await b('board/ask',{question:'有没有人代取快递'})).status,429);
  assert.equal((await c('board/ask',{question:'有没有人代取快递'})).status,200);

@@ -34,17 +34,17 @@ async function setup(t){
 
 test('studentId register and login failures',async t=>{
  const {request}=await setup(t);
- assert.equal((await request('auth/register',{studentId:'abc',password:'secret1'})).status,400);
- assert.equal((await request('auth/register',{studentId:'2021000',password:'secret1'})).status,400);
- assert.equal((await request('auth/register',{studentId:'202100011',password:'secret1'})).status,400);
+ assert.equal((await request('auth/register',{studentId:'abc',password:'secret12'})).status,400);
+ assert.equal((await request('auth/register',{studentId:'2021000',password:'secret12'})).status,400);
+ assert.equal((await request('auth/register',{studentId:'202100011',password:'secret12'})).status,400);
  assert.equal((await request('auth/register',{studentId:'20210001',password:'123'})).status,400);
- let r=await request('auth/register',{studentId:'20210001',password:'secret1',displayName:'甲同学'});
+ let r=await request('auth/register',{studentId:'20210001',password:'secret12',displayName:'甲同学'});
  assert.equal(r.status,200);assert.equal(r.account.studentId,'20210001');
- assert.equal((await request('auth/register',{studentId:'20210001',password:'secret1'})).status,409);
+ assert.equal((await request('auth/register',{studentId:'20210001',password:'secret12'})).status,409);
  await request('auth/logout',{});
  r=await request('auth/login',{studentId:'20210001',password:'wrong!!'});
  assert.equal(r.status,401);
- r=await request('auth/login',{studentId:'20210001',password:'secret1'});
+ r=await request('auth/login',{studentId:'20210001',password:'secret12'});
  assert.equal(r.status,200);assert.equal(r.account.displayName,'甲同学');
  const made=await request('board/create',{type:'二手教材',description:'大一高数上下册，八成新',contact:'微信 demo-only',...windowFields(7)});
  assert.equal(made.status,200);
@@ -57,7 +57,7 @@ test('studentId register and login failures',async t=>{
 
 test('expired listings are hidden from board list and chat retrieval',async t=>{
  const {request,opts}=await setup(t);
- await request('auth/register',{studentId:'20220001',password:'secret1',displayName:'乙'});
+ await request('auth/register',{studentId:'20220001',password:'secret12',displayName:'乙'});
  const created=await request('board/create',{type:'代课',description:'周三下午高等数学代课',contact:'QQ 10001',...windowFields(3)});
  assert.equal(created.status,200);
  const id=created.listing.id;
@@ -74,10 +74,10 @@ test('expired listings are hidden from board list and chat retrieval',async t=>{
 
 test('chat retrieval hits active campus board listings as peer sources',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20230001',password:'secret1',displayName:'丙'});
+ await request('auth/register',{studentId:'20230001',password:'secret12',displayName:'丙'});
  assert.equal((await request('board/create',{type:'二手教材',description:'出高数教材，高等数学教材转让，成色良好',contact:'微信 peer-only',...windowFields(7)})).status,200);
  await request('auth/logout',{});
- await request('auth/register',{studentId:'20230002',password:'secret1',displayName:'丁'});
+ await request('auth/register',{studentId:'20230002',password:'secret12',displayName:'丁'});
  const chat=await request('chat',{agentId:'life',question:'有没有二手高数教材'});
  assert.equal(chat.status,200);
  assert.equal(chat.message.mode,'retrieval');
@@ -88,7 +88,7 @@ test('chat retrieval hits active campus board listings as peer sources',async t=
  const dm=await request('board/dm',{listingId,text:'你好，书还在吗？'});
  assert.equal(dm.status,200);
  assert.equal(dm.thread.messages.at(-1).text,'你好，书还在吗？');
- assert.ok(!JSON.stringify(dm).includes('secret1'));
+ assert.ok(!JSON.stringify(dm).includes('secret12'));
 });
 
 test('board create requires student account',async t=>{
@@ -99,7 +99,7 @@ test('board create requires student account',async t=>{
 
 test('board contact is optional and a filled contact is still saved',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20261027',password:'secret1',displayName:'辛'});
+ await request('auth/register',{studentId:'20261027',password:'secret12',displayName:'辛'});
  const missing=await request('board/create',{type:'代取快递',description:'南门可以代取，联系方式稍后在开聊里说',...windowFields(3)});
  assert.equal(missing.status,200);
  assert.equal(missing.listing.contact,'');
@@ -126,7 +126,7 @@ test('unit: matchListings scores topical campus intents',()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'campus-board-unit-'));
  const file=path.join(dir,'board.json');
  const board=createBoard({file});
- board.register({studentId:'20240001',password:'secret1',displayName:'戊'});
+ board.register({studentId:'20240001',password:'secret12',displayName:'戊'});
  const book=board.createListing({studentId:'20240001'},{type:'二手书',description:'线代教材出闲置',contact:'c',...windowFields(7)});
  assert.equal(book.title,undefined);
  assert.ok(board.matchListings('有没有二手线性代数').length);
@@ -194,7 +194,7 @@ test('time-aligned listings outrank vague ones and miss the window when they do 
 
 test('ask does not open a chat until the student accepts',async t=>{
  const {request,app}=await setup(t);
- await request('auth/register',{studentId:'20250001',password:'secret1',displayName:'己'});
+ await request('auth/register',{studentId:'20250001',password:'secret12',displayName:'己'});
  assert.equal((await request('board/create',{type:'代取快递',description:'南门可以代取快递',contact:'微信 noon',...windowFields(7)})).status,200);
  await request('auth/logout',{});
  // Ask about the current moment, not "今天下午": the listing is created with a
@@ -212,7 +212,7 @@ test('ask does not open a chat until the student accepts',async t=>{
  const id=asked.offers[0].listingId;
  assert.equal((await request('board/dm?listingId='+encodeURIComponent(id))).status,401);
  assert.deepEqual(app.board.db.threads,{});
- await request('auth/register',{studentId:'20250002',password:'secret1',displayName:'庚'});
+ await request('auth/register',{studentId:'20250002',password:'secret12',displayName:'庚'});
  const peek=await request('board/dm?listingId='+encodeURIComponent(id));
  assert.equal(peek.status,200);
  assert.deepEqual(peek.messages,[]);
@@ -282,8 +282,11 @@ globalThis.__form=boardPage();
  const home=ctx.__home;
  assert.match(home,/互助通达/);
  assert.match(home,/找助手/);
- assert.match(home,/学号登录/);
- assert.match(home,/8 位数字学号/);
+ assert.match(home,/data-action="auth-open">登录</);
+ assert.match(home,/去登录/);
+ assert.match(home,/提问不用登录/);
+ assert.doesNotMatch(home,/8 位数字学号/);
+ assert.doesNotMatch(home,/设计预览/);
  assert.doesNotMatch(home,/8—12/);
  assert.match(home,/接摄影|接一下陪诊/);
  assert.match(home,/more-menu/);
@@ -301,7 +304,13 @@ globalThis.__form=boardPage();
  assert.match(home,/href="#chat"/);
  assert.match(home,/href="#gallery"/);
  assert.match(home,/href="#upload"/);
- assert.doesNotMatch(home,/hamburger|nav-toggle|menu-toggle/);
+ assert.match(home,/class="menu-square"/);
+ assert.match(home,/aria-expanded="false"/);
+ assert.match(home,/aria-label="打开菜单"/);
+ assert.match(home,/同学互助/);
+ assert.match(home,/问同学，或问校园助手。/);
+ assert.match(home,/href="#home"/);
+ assert.doesNotMatch(home,/sidebar is-open|menu-open/);
  assert.doesNotMatch(home,/团队工作台|审核管理|重置演示数据|本地资料问答|CAMPUS AGENTS|MUTUAL AID/);
  assert.doesNotMatch(home,/<label for="profile">演示身份<\/label>/);
  const chat=ctx.__chat;
@@ -480,7 +489,9 @@ globalThis.__lock=guard('admin');
  assert.match(html,/>互助登记</);
  assert.match(html,/>问别人</);
  assert.match(html,/board-chips/);
- assert.match(html,/8 位数字学号/);
+ assert.match(html,/去登录/);
+ assert.match(html,/提问不用登录/);
+ assert.doesNotMatch(html,/8 位数字学号/);
  assert.match(html,/model-chip/);
  assert.match(html,/role="status"/);
  assert.match(html,/模型已连接/);
@@ -521,7 +532,7 @@ test('open C2C prompt is attached for doubao, qwen and deepseek when the board i
 
 test('public board payloads never expose student IDs or thread keys',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20250011',password:'secret1',displayName:'甲'});
+ await request('auth/register',{studentId:'20250011',password:'secret12',displayName:'甲'});
  const created=await request('board/create',{type:'代取快递',description:'现在可以代取快递',contact:'微信 a',...windowFields(7)});
  assert.equal(created.status,200);
  assert.equal(created.listing.mine,true);
@@ -538,7 +549,7 @@ test('public board payloads never expose student IDs or thread keys',async t=>{
  assert.ok(asked.offers.length);
  assert.equal('ownerStudentId' in asked.offers[0],false);
  assert.doesNotMatch(JSON.stringify(asked.offers),/20250011/);
- await request('auth/register',{studentId:'20250012',password:'secret1',displayName:'乙'});
+ await request('auth/register',{studentId:'20250012',password:'secret12',displayName:'乙'});
  const opened=await request('board/open',{listingId:id});
  assert.equal(opened.status,200);
  assert.equal(opened.thread.peer.displayName,'甲');
@@ -556,16 +567,16 @@ test('public board payloads never expose student IDs or thread keys',async t=>{
 
 test('listing owner receives DM threads and can reply without seeing student IDs',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20250021',password:'secret1',displayName:'东'});
+ await request('auth/register',{studentId:'20250021',password:'secret12',displayName:'东'});
  const created=await request('board/create',{type:'代取快递',description:'现在可以代取快递',contact:'微信 dong',...windowFields(7)});
  assert.equal(created.status,200);
  const id=created.listing.id;
  await request('auth/logout',{});
- await request('auth/register',{studentId:'20250022',password:'secret1',displayName:'西'});
+ await request('auth/register',{studentId:'20250022',password:'secret12',displayName:'西'});
  assert.equal((await request('board/open',{listingId:id})).status,200);
  assert.equal((await request('board/dm',{listingId:id,text:'你好，还能代取吗？'})).status,200);
 
- await request('auth/login',{studentId:'20250021',password:'secret1'});
+ await request('auth/login',{studentId:'20250021',password:'secret12'});
  const board=await request('board');
  assert.equal(board.inbox.length,1);
  assert.equal(board.inbox[0].peer.displayName,'西');
@@ -584,12 +595,12 @@ test('listing owner receives DM threads and can reply without seeing student IDs
  assert.equal(after.thread.messages.at(-1).text,'可以的，六点前');
  assert.equal(after.thread.messages.at(-1).mine,true);
 
- await request('auth/login',{studentId:'20250022',password:'secret1'});
+ await request('auth/login',{studentId:'20250022',password:'secret12'});
  const askerView=await request('board/dm?listingId='+encodeURIComponent(id));
  assert.equal(askerView.messages.at(-1).text,'可以的，六点前');
  assert.equal(askerView.messages.at(-1).mine,false);
 
- await request('auth/register',{studentId:'20250023',password:'secret1',displayName:'南'});
+ await request('auth/register',{studentId:'20250023',password:'secret12',displayName:'南'});
  assert.equal((await request('board/thread?threadId='+encodeURIComponent(threadId))).status,403);
 });
 
@@ -640,7 +651,7 @@ function atBeijing(day,hm){return Date.parse(day+'T'+hm+':00+08:00')}
 
 test('lighter window maps onto the existing listing window',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20261107',password:'secret1',displayName:'窗'});
+ await request('auth/register',{studentId:'20261107',password:'secret12',displayName:'窗'});
  const lasting=await request('board/create',{type:'出闲置',description:'长期出一本闲置高数',windowMode:'long'});
  assert.equal(lasting.status,200);
  assert.equal(lasting.listing.longTerm,true);
@@ -676,7 +687,7 @@ test('lighter window maps onto the existing listing window',async t=>{
 
 test('optional listing image is stored and served without secrets',async t=>{
  const {request,send,opts,dir}=await setup(t);
- await request('auth/register',{studentId:'20261108',password:'secret1',displayName:'图'});
+ await request('auth/register',{studentId:'20261108',password:'secret12',displayName:'图'});
  const plain=await request('board/create',{type:'搬运',description:'不带图片也可以帮忙搬运',longTerm:true});
  assert.equal(plain.status,200);
  assert.equal(plain.listing.image,'');
@@ -695,7 +706,7 @@ test('optional listing image is stored and served without secrets',async t=>{
  assert.match(uploaded.image.url,/^\/api\/board\/images\/[0-9a-f-]{36}\.png$/);
  assert.equal(uploaded.image.mime,'image/png');
  assert.equal(JSON.stringify(uploaded).includes(dir),false);
- assert.equal(JSON.stringify(uploaded).includes('secret1'),false);
+ assert.equal(JSON.stringify(uploaded).includes('secret12'),false);
  const parts=shanghaiParts(Date.now());
  const start=parts.hour+':'+parts.minute;
  const end=String((+parts.hour+2)%24).padStart(2,'0')+':'+parts.minute;
@@ -703,7 +714,7 @@ test('optional listing image is stored and served without secrets',async t=>{
  assert.equal(made.status,200);
  assert.equal(made.listing.image,uploaded.image.url);
  assert.equal(JSON.stringify(made.listing).includes(dir),false);
- assert.equal(JSON.stringify(made.listing).includes('secret1'),false);
+ assert.equal(JSON.stringify(made.listing).includes('secret12'),false);
  const disk=JSON.parse(fs.readFileSync(opts.boardFile,'utf8'));
  const row=disk.listings.find(l=>l.id===made.listing.id);
  assert.equal(row.image,uploaded.image.url);
