@@ -669,6 +669,30 @@ function posterClickOpensMenu(e){
  setMenu(true);
  return true;
 }
+// Trackpad pinch is a ctrl+wheel on Chrome and Firefox, and a gesture event on
+// Safari. Cancel that default only while the event target is the poster itself.
+// The drawer, the menu button, business pages, and Ctrl/Cmd +/- are untouched.
+// This does not change the viewport meta and cannot stop an OS zoom gesture.
+function posterPinchTarget(target){
+ if(route().page!=='home')return false;
+ const node=target&&target.nodeType===3?target.parentElement:target;
+ return !!node?.closest?.('.poster-stage');
+}
+function blockPosterPinch(e){
+ if(!posterPinchTarget(e.target))return;
+ if(e.cancelable===false)return;
+ e.preventDefault();
+}
+document.addEventListener('wheel',e=>{
+ if(!e.ctrlKey)return;
+ blockPosterPinch(e);
+},{passive:false,capture:true});
+document.addEventListener('touchmove',e=>{
+ if(!e.touches||e.touches.length<2)return;
+ blockPosterPinch(e);
+},{passive:false,capture:true});
+document.addEventListener('gesturestart',blockPosterPinch,{passive:false,capture:true});
+document.addEventListener('gesturechange',blockPosterPinch,{passive:false,capture:true});
 document.addEventListener('click',async e=>{
  const menuBtn=e.target.closest?.('.menu-square');
  const inMenu=e.target.closest?.('#site-menu');
