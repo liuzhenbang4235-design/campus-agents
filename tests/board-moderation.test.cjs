@@ -45,15 +45,15 @@ test('login attempts are throttled per account',async t=>{
 
 test('students can report a listing and only admin can resolve it',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20250041',password:'secret1',displayName:'甲'});
+ await request('auth/register',{studentId:'20250041',password:'secret12',displayName:'甲'});
  const created=await request('board/create',{type:'代取快递',description:'现在可以代取快递',contact:'微信 a',...windowFields(7)});
  assert.equal(created.status,200);
  const id=created.listing.id;
  await request('auth/logout',{});
- await request('auth/register',{studentId:'20250042',password:'secret1',displayName:'乙'});
+ await request('auth/register',{studentId:'20250042',password:'secret12',displayName:'乙'});
  assert.equal((await request('board/report',{listingId:id,reason:'联系方式像广告'})).status,200);
  assert.equal((await request('board/report',{listingId:id,reason:'重复举报'})).status,409);
- await request('auth/login',{studentId:'20250041',password:'secret1'});
+ await request('auth/login',{studentId:'20250041',password:'secret12'});
  assert.equal((await request('board/report',{listingId:id,reason:'自己的登记'})).status,400);
  assert.equal((await request('board/report-resolve',{id:'whatever',decision:'dismiss'})).status,403);
 
@@ -67,7 +67,7 @@ test('students can report a listing and only admin can resolve it',async t=>{
  assert.equal((await request('state')).state.boardReports.length,0);
 
  await request('session',{profile:'student'});
- await request('auth/login',{studentId:'20250042',password:'secret1'});
+ await request('auth/login',{studentId:'20250042',password:'secret12'});
  assert.equal((await request('board/report',{listingId:id,reason:'还是广告'})).status,200);
  await request('session',{profile:'admin'});
  const pending=(await request('state')).state.boardReports;
@@ -76,21 +76,21 @@ test('students can report a listing and only admin can resolve it',async t=>{
  const after=await request('board');
  assert.equal(after.listings.some(l=>l.id===id),false);
  await request('session',{profile:'student'});
- await request('auth/login',{studentId:'20250042',password:'secret1'});
+ await request('auth/login',{studentId:'20250042',password:'secret12'});
  assert.equal((await request('board/report',{listingId:id,reason:'已经下架了'})).status,409);
 });
 
 test('owner inbox counts unread messages until the thread is opened',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20250051',password:'secret1',displayName:'东'});
+ await request('auth/register',{studentId:'20250051',password:'secret12',displayName:'东'});
  const created=await request('board/create',{type:'代取快递',description:'现在可以代取快递',contact:'微信 d',...windowFields(7)});
  const id=created.listing.id;
  await request('auth/logout',{});
- await request('auth/register',{studentId:'20250052',password:'secret1',displayName:'西'});
+ await request('auth/register',{studentId:'20250052',password:'secret12',displayName:'西'});
  await request('board/open',{listingId:id});
  await request('board/dm',{listingId:id,text:'第一条消息'});
 
- await request('auth/login',{studentId:'20250051',password:'secret1'});
+ await request('auth/login',{studentId:'20250051',password:'secret12'});
  let board=await request('board');
  assert.equal(board.inbox[0].unread,1);
  const threadId=board.inbox[0].threadId;
@@ -98,9 +98,9 @@ test('owner inbox counts unread messages until the thread is opened',async t=>{
  board=await request('board');
  assert.equal(board.inbox[0].unread,0);
 
- await request('auth/login',{studentId:'20250052',password:'secret1'});
+ await request('auth/login',{studentId:'20250052',password:'secret12'});
  await request('board/dm',{listingId:id,text:'第二条消息'});
- await request('auth/login',{studentId:'20250051',password:'secret1'});
+ await request('auth/login',{studentId:'20250051',password:'secret12'});
  board=await request('board');
  assert.equal(board.inbox[0].unread,1);
  await request('board/reply',{threadId,text:'收到'});
@@ -122,7 +122,7 @@ test('CAMPUS_ORIGINS gates proxied hosts, origins and the session cookie',async 
 
 test('pre-publication review holds new listings until an admin approves',async t=>{
  const {request}=await setup(t,{boardReview:true});
- await request('auth/register',{studentId:'20250061',password:'secret1',displayName:'甲'});
+ await request('auth/register',{studentId:'20250061',password:'secret12',displayName:'甲'});
  const created=await request('board/create',{type:'代取快递',description:'现在可以代取快递',contact:'微信 a',...windowFields(7)});
  assert.equal(created.status,200);
  assert.equal(created.listing.status,'pending');
@@ -152,7 +152,7 @@ test('pre-publication review holds new listings until an admin approves',async t
 
 test('pre-publication review is opt-in and defaults to immediate listings',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20250071',password:'secret1',displayName:'乙'});
+ await request('auth/register',{studentId:'20250071',password:'secret12',displayName:'乙'});
  const created=await request('board/create',{type:'代取快递',description:'现在可以代取快递',contact:'微信 c',...windowFields(7)});
  assert.equal(created.listing.status,'active');
 });
@@ -178,7 +178,7 @@ test('admin report queue and unread polling are wired in the web app',()=>{
 
 test('admin can take down an active listing without a report when asAdmin is set',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20250081',password:'secret1',displayName:'甲'});
+ await request('auth/register',{studentId:'20250081',password:'secret12',displayName:'甲'});
  const created=await request('board/create',{type:'代取快递',description:'现在可以代取快递',contact:'微信 a',...windowFields(7)});
  assert.equal(created.status,200);
  const id=created.listing.id;
@@ -186,7 +186,7 @@ test('admin can take down an active listing without a report when asAdmin is set
  assert.equal(own.status,200);
 
  await request('auth/logout',{});
- await request('auth/register',{studentId:'20250082',password:'secret1',displayName:'乙'});
+ await request('auth/register',{studentId:'20250082',password:'secret12',displayName:'乙'});
  assert.equal((await request('board/takedown',{id,asAdmin:true})).status,403);
  assert.equal((await request('board/takedown',{id})).status,403);
  assert.deepEqual((await request('state')).state.boardActiveListings,[]);
@@ -212,7 +212,7 @@ test('admin can take down an active listing without a report when asAdmin is set
  const asked=await request('board/ask',{question:'现在有没有人代取快递'});
  assert.equal(asked.offers.some(o=>o.listingId===id),false);
 
- await request('auth/login',{studentId:'20250081',password:'secret1'});
+ await request('auth/login',{studentId:'20250081',password:'secret12'});
  const withdrawn=await request('board/takedown',{id:own.listing.id});
  assert.equal(withdrawn.status,200);
  assert.equal(withdrawn.profile,'admin');

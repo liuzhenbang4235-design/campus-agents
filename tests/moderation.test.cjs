@@ -51,7 +51,7 @@ test('model screening blocks, allows, and fails open on errors',async()=>{
 
 test('blocked listings are rejected before they are stored',async t=>{
  const {request}=await setup(t);
- await request('auth/register',{studentId:'20250081',password:'secret1',displayName:'甲'});
+ await request('auth/register',{studentId:'20250081',password:'secret12',displayName:'甲'});
  const blocked=await request('board/create',{type:'代取快递',description:'可以代写论文，价格私聊',contact:'微信 a',...windowFields(7)});
  assert.equal(blocked.status,400);
  assert.match(blocked.error,/不允许/);
@@ -64,11 +64,11 @@ test('blocked listings are rejected before they are stored',async t=>{
 
 test('blocked private messages are rejected and not stored',async t=>{
  const {request,app}=await setup(t);
- await request('auth/register',{studentId:'20250082',password:'secret1',displayName:'东'});
+ await request('auth/register',{studentId:'20250082',password:'secret12',displayName:'东'});
  const created=await request('board/create',{type:'代取快递',description:'南门代取快递',contact:'微信 d',...windowFields(7)});
  const id=created.listing.id;
  await request('auth/logout',{});
- await request('auth/register',{studentId:'20250083',password:'secret1',displayName:'西'});
+ await request('auth/register',{studentId:'20250083',password:'secret12',displayName:'西'});
  assert.equal((await request('board/open',{listingId:id})).status,200);
  const blocked=await request('board/dm',{listingId:id,text:'加微信刷单返利'});
  assert.equal(blocked.status,400);
