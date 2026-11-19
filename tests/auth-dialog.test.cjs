@@ -25,7 +25,7 @@ function loadApp(hash='#gallery'){
  };
  const context={
   document,
-  window:{addEventListener(){},scrollTo(){}},
+  window:{addEventListener(type,fn){(listeners[type]||=[]).push(fn)},scrollTo(){}},
   location,
   history:{replaceState(){}},
   navigator:{platform:'Linux',userAgent:'node'},
@@ -92,6 +92,7 @@ test('top-bar login opens the login route and remembers only an internal return'
   assert.equal(vm.runInContext('safeAuthReturn("https://evil.example/phish")',context),'');
   assert.equal(vm.runInContext('safeAuthReturn("//evil.example")',context),'');
   assert.equal(vm.runInContext('safeAuthReturn("#login")',context),'');
+  assert.equal(vm.runInContext('safeAuthReturn("#home")',context),'');
   assert.equal(vm.runInContext('safeAuthReturn("#board")',context),'#board');
   assert.equal(vm.runInContext('safeAuthReturn("#chat/affairs")',context),'#chat/affairs');
  });
@@ -100,6 +101,10 @@ test('top-bar login opens the login route and remembers only an internal return'
 test('the login page matches the approved account form and not the preview chrome',()=>{
  const {context}=loadApp('#login');
  const html=vm.runInContext('__login()',context);
+ vm.runInContext('render()',context);
+ const rendered=context.__snap().app;
+ assert.match(rendered,/class="shell shell-plain"/);
+ assert.doesNotMatch(rendered,/menu-square|site-menu|sidebar|topbar/);
  assert.match(html,/欢迎回来/);
  assert.match(html,/登录账号/);
  assert.match(html,/name="username"/);
@@ -147,6 +152,11 @@ test('login returns to the internal page that asked, and drops an external next'
  assert.equal(snap.account.displayName,'同学1000');
  assert.match(snap.app,/同学1000/);
  assert.match(snap.app,/data-action="auth-logout"/);
+ assert.match(snap.app,/class="shell menu-open"/);
+ assert.match(snap.app,/class="sidebar is-open"/);
+ assert.match(snap.app,/aria-expanded="true"/);
+ assert.match(snap.app,/aria-label="收起菜单"/);
+ assert.doesNotMatch(snap.app,/menu-close/);
  assert.equal(snap.toast,'登录成功');
 
  const direct=loadApp('#login');
@@ -157,6 +167,43 @@ test('login returns to the internal page that asked, and drops an external next'
  assert.equal(direct.calls[0].body.displayName,'小林');
  assert.equal(again.hash,'#board');
  assert.equal(again.toast,'注册成功，已登录');
+});
+
+test('the dashboard docks open after login and the top-left button toggles it',async ()=>{
+ const {context,listeners}=loadApp('#login');
+ await listeners.submit[0](authSubmit('login',{username:'Lin',password:'secret12',displayName:''},{remember:true}));
+ assert.equal(vm.runInContext('menuOpen',context),true);
+ await listeners.click[0]({target:actionTarget('menu')});
+ assert.equal(vm.runInContext('menuOpen',context),false);
+ await listeners.click[0]({target:actionTarget('menu')});
+ assert.equal(vm.runInContext('menuOpen',context),true);
+});
+
+test('internal navigation keeps the dashboard open while entry and login close it',async ()=>{
+ const {context,listeners}=loadApp('#gallery');
+ vm.runInContext('account={studentId:"u1",displayName:"同学"};menuOpen=true',context);
+ context.location.hash='#chat';
+ await listeners.hashchange[0]();
+ assert.equal(vm.runInContext('route().page',context),'chat');
+ assert.equal(vm.runInContext('menuOpen',context),true);
+ context.location.hash='#login';
+ await listeners.hashchange[0]();
+ assert.equal(vm.runInContext('menuOpen',context),false);
+});
+
+test('docked dashboard reserves width instead of covering the content',()=>{
+ const css=fs.readFileSync(path.join(__dirname,'../dist/styles.css'),'utf8');
+ assert.match(css,/\.shell\{[^}]*--nav-w:clamp\(232px,18vw,264px\)/);
+ assert.match(css,/\.menu-square\{[^}]*width:42px;height:42px/);
+ assert.match(css,/\.menu-square \.icon\{width:20px;height:20px/);
+ assert.match(css,/\.shell>\.sidebar\{[^}]*padding:16px 18px 20px 68px/);
+ assert.match(css,/\.shell>\.sidebar \.nav-link\{[^}]*padding:9px 11px/);
+ assert.match(css,/\.shell\.menu-open>\.main\{margin-left:var\(--nav-w\)\}/);
+ assert.match(css,/\.shell>\.main\{[^}]*transition:margin-left \.34s/);
+ assert.match(css,/@media\(min-width:1280px\)/);
+ assert.match(css,/\.shell\.menu-open \.topbar\{padding-left:40px\}/);
+ assert.doesNotMatch(css,/menu-close/);
+ assert.doesNotMatch(appSource,/menu-close/);
 });
 
 test('forgot password explains that reset is unavailable and does not call the server',async()=>{

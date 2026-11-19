@@ -73,8 +73,7 @@ function applyResult(data){if(data.state)state=data.state;if(data.ai)ai=data.ai;
 async function perform(body,message){if(busy)return;busy=true;try{const data=await api('action',body);applyResult(data);closeModal();render();toast(message)}catch(e){const notice=document.getElementById('review-reason-error');if(notice){notice.textContent=e.message;notice.classList.remove('hidden')}toast(e.message)}finally{busy=false;updateBusy()}}
 function updateBusy(){document.querySelectorAll('#profile,#chat-agent,#chat-form button,#chat-form textarea,.suggestions button,#places-form input,#places-form select,#places-form button').forEach(el=>el.disabled=busy||(el.closest('#places-form')&&el.tagName==='BUTTON'&&!(placesUi.provider==='local'?ai.places?.localReady:ai.places?.ready)))}
 async function switchProfile(value){if(!demoIdentities){toast('当前为公开访问，不能切换演示身份。');return}if(busy)return;try{chatPrefill='';applyResult(await api('session',{profile:value}));resetPlaces();closeModal();render();toast('已切换至'+me().label)}catch(e){toast(e.message);render()}}
-async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#'+homePage());startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“start-preview.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
-async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['home','gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#home');startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
+async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['home','gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#home');menuOpen=defaultMenuOpen();startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
 
 let currentProfile='student',category='全部',query='',reviewTab='docs',teamTab='agents',chatPrefill='';
 const me=()=>profiles[currentProfile];
@@ -117,7 +116,12 @@ function identityBar(){
  if(!demoIdentities)return `<div class="identity">${accountControls()}${avatar}</div>`;
  return `<div class="identity">${accountControls()}${configButton()}<label for="profile">演示身份</label>${profileSelect()}${avatar}</div>`;
 }
-let menuOpen=false;
+let menuOpen=false,enteringPlatform=false;
+const NAV_DOCKED_QUERY='(min-width:1280px)';
+function navDocked(){
+ try{return !window.matchMedia||window.matchMedia(NAV_DOCKED_QUERY).matches}catch{return true}
+}
+function defaultMenuOpen(){return !!account&&navDocked()}
 function setMenu(open){
  const was=menuOpen;
  menuOpen=!!open;
@@ -127,12 +131,11 @@ function setMenu(open){
  if(shellEl)shellEl.classList.toggle('menu-open',menuOpen);
  if(aside){aside.classList.toggle('is-open',menuOpen);aside.setAttribute('aria-hidden',menuOpen?'false':'true')}
  if(btn){btn.setAttribute('aria-expanded',menuOpen?'true':'false');btn.setAttribute('aria-label',menuOpen?'收起菜单':'打开菜单')}
- if(menuOpen&&aside?.querySelector){const closeBtn=aside.querySelector('.menu-close');if(closeBtn?.focus)closeBtn.focus()}
- else if(was&&btn?.focus)btn.focus();
+ if(!menuOpen&&was&&btn?.focus)btn.focus();
  syncPosterAutoplay(false);
 }
 function menuButton(){
- return `<button type="button" class="menu-square" data-action="menu" aria-expanded="${menuOpen?'true':'false'}" aria-controls="site-menu" aria-label="${menuOpen?'收起菜单':'打开菜单'}">${icon('menu')}</button>`;
+ return `<button type="button" class="menu-square" data-action="menu" aria-expanded="${menuOpen?'true':'false'}" aria-controls="site-menu" aria-label="${menuOpen?'收起菜单':'打开菜单'}">${icon(menuOpen?'chev':'menu')}</button>`;
 }
 // Homepage photographs are not shipped with the app. Operators place licensed
 // images in data/homepage-posters/ (gitignored). A manifest may list any count.
@@ -252,7 +255,7 @@ function paintPoster(){
  if(img)watchPosterImage(img,frame,item.image);
 }
 function posterAutoplayHeld(){
- if(route().page!=='home'||menuOpen)return true;
+ if(route().page!=='home')return true;
  if(document.hidden||document.visibilityState==='hidden')return true;
  return activePosters().length<2;
 }
@@ -289,24 +292,19 @@ function shiftPoster(delta){
  },220);
  syncPosterAutoplay(true);
 }
-function goPoster(index){
- const list=activePosters();
- if(!Number.isInteger(index)||index<0||index>=list.length||index===posterIndex)return;
- shiftPoster(index-posterIndex);
-}
-function homePoster(){
+function entrySplash(){
  const list=activePosters();
  const item=list[posterIndex]||list[0];
- const dots=list.map((_,i)=>`<button type="button" class="poster-dot${i===posterIndex?' is-current':''}" data-action="poster-go" data-index="${i}" aria-label="第 ${i+1} 张"${i===posterIndex?' aria-current="true"':''}></button>`).join('');
- const credit=item.credit?`<p class="poster-credit">${esc(item.credit)}</p>`:'';
- return `<section class="poster-stage" aria-roledescription="轮播" aria-label="首页"><div class="poster-frame tone-${item.tone} focus-${item.focus}" id="poster-frame"><img class="poster-photo" alt="" draggable="false" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil place-${item.place} align-${item.align}" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="home-menu" aria-controls="site-menu" aria-label="打开菜单"></button><div class="poster-copy align-${item.align} place-${item.place} measure-${item.measure}"><h1 class="poster-title">${esc(item.title)}</h1><p class="poster-line">${esc(item.line)}</p>${credit}</div></div><button type="button" class="poster-arrow prev" data-action="poster-prev" aria-label="上一张">${icon('chev')}</button><button type="button" class="poster-arrow next" data-action="poster-next" aria-label="下一张">${icon('chev')}</button><div class="poster-foot"><div class="poster-dots" role="group" aria-label="海报">${dots}</div><p class="poster-count">${pad2(posterIndex+1)} / ${pad2(list.length)}</p></div></section>`;
+ return `<section class="poster-stage entry-stage" aria-roledescription="轮播" aria-label="平台入口"><div class="poster-frame tone-${item.tone} focus-${item.focus}" id="poster-frame"><img class="poster-photo" alt="" draggable="false" ${item.image?`src="${esc(item.image)}"`:''}><div class="poster-veil place-bottom align-center" aria-hidden="true"></div><button type="button" class="poster-hit" data-action="enter-platform" aria-label="进入平台"></button><p class="entry-prompt">请点击任意键进入平台</p></div></section>`;
 }
 function shell(content){
  const r=route();
- const home=r.page==='home';
- const aside=`<aside class="sidebar${menuOpen?' is-open':''}" id="site-menu" aria-hidden="${menuOpen?'false':'true'}" aria-label="菜单"><div class="menu-head"><a class="brand" href="#home" aria-label="回到首页"><span class="brand-mark" aria-hidden="true">集</span><small>同学互助</small></a><button type="button" class="menu-close" data-action="menu-close" aria-label="关闭菜单">${icon('close')}</button></div><div class="nav-title">${isStudent()?'常用':'导航'}</div><nav class="nav" aria-label="主导航">${navLinks(r.page)}</nav>${sidebarFoot()}</aside>`;
- const top=home?'':`<header class="topbar"><div class="breadcrumb">${productCrumb()} <span>/ ${titles[r.page]}</span></div>${identityBar()}</header>`;
- return `<div class="shell${home?' shell-home':''}${menuOpen?' menu-open':''}">${menuButton()}${aside}<div class="main">${top}<main class="content" id="main-content">${content}</main></div></div>`;
+ const entry=r.page==='home';
+ const plain=r.page==='login';
+ const chrome=!entry&&!plain;
+ const aside=chrome?`<aside class="sidebar${menuOpen?' is-open':''}" id="site-menu" aria-hidden="${menuOpen?'false':'true'}" aria-label="菜单"><div class="menu-head"><a class="brand" href="#home" aria-label="回到首页"><span class="brand-mark" aria-hidden="true">集</span><small>同学互助</small></a></div><div class="nav-title">${isStudent()?'常用':'导航'}</div><nav class="nav" aria-label="主导航">${navLinks(r.page)}</nav>${sidebarFoot()}</aside>`:'';
+ const top=chrome?`<header class="topbar"><div class="breadcrumb">${productCrumb()} <span>/ ${titles[r.page]}</span></div>${identityBar()}</header>`:'';
+ return `<div class="shell${entry?' shell-home':''}${plain?' shell-plain':''}${chrome&&menuOpen?' menu-open':''}">${chrome?menuButton():''}${aside}<div class="main">${top}<main class="content" id="main-content">${content}</main></div></div>`;
 }
 function heading(eye,title,sub,action=''){return `<div class="page-heading"><div>${eye?`<div class="eyebrow">${eye}</div>`:''}<h1>${title}</h1><p>${sub}</p></div>${action}</div>`}
 function galleryHero(){const pack=teamPack();if(!pack)return `<section class="hero"><div class="hero-main"><div class="eyebrow">本周推荐 · 学校事务</div><h2>办事前，先问问校园办事助手</h2><p>准备哪些材料、下一步怎么做？<br>从有来源的资料中，找到清楚的答案。</p><button class="btn" data-action="chat" data-id="affairs">开始对话 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>校集团队<small>每个助手都有维护团队</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`;return `<section class="hero"><div class="hero-main"><div class="eyebrow">${esc(pack.heroEye)}</div><h2>${esc(pack.heroTitle)}</h2><p>${esc(pack.heroBody)}</p><button class="btn" data-action="nav" data-page="team">进入团队工作台 ${icon('arrow')}</button></div><div class="hero-aside"><div><span class="hero-number">01</span><div>生活 · 办事 · 学习<small>${esc(pack.name)}统一维护</small></div></div><div><span class="hero-number">02</span><div>审核入库<small>资料通过审核后才可使用</small></div></div><div><span class="hero-number">03</span><div>来源可查<small>让每份回答有据可循</small></div></div></section>`}
@@ -387,7 +385,7 @@ function roleTag(role){return role==='offer'?'我来帮忙':role==='need'?'我�
 let authMode='login',authForgot=false,authShowPassword=false;
 function safeAuthReturn(value){
  const hash=String(value||'');
- if(!/^#(home|gallery|board|chat|upload|team|admin)(\/[A-Za-z0-9_-]{1,40})?$/.test(hash))return '';
+ if(!/^#(gallery|board|chat|upload|team|admin)(\/[A-Za-z0-9_-]{1,40})?$/.test(hash))return '';
  return hash;
 }
 function rememberAuthReturn(){
@@ -407,6 +405,13 @@ function goLogin(){
  rememberAuthReturn();
  if(route().page==='login')return render();
  go('login');
+}
+function enterPlatform(){
+ if(enteringPlatform||route().page!=='home')return;
+ enteringPlatform=true;
+ stopPosterAutoplay();
+ if(account){menuOpen=defaultMenuOpen();go(homePage())}else go('login');
+ enteringPlatform=false;
 }
 function authNote(){
  return '<div class="auth-note"><span class="auth-note-mark" aria-hidden="true">i</span><div><strong>用账号登录，用昵称认识彼此</strong><p>昵称可以修改，不影响登录账号</p></div></div>';
@@ -593,7 +598,7 @@ function reportModal(listingId){
 function boardReviewModal(listingId){
  modal('驳回这条登记','<form id="board-review-form" data-id="'+esc(listingId)+'"><p class="small muted">驳回原因会显示给发布者，请写清楚需要修改的地方。</p><div class="field"><label for="board-review-reason">驳回原因 *</label><textarea id="board-review-reason" name="reason" required minlength="2" maxlength="300" rows="3"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn danger" type="submit">确认驳回</button></div></form>');
 }
-function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:homePoster,gallery,board:boardPage,upload,team,chat,admin,login:loginPage}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home'||!posterCatalog)return;const dots=document.querySelectorAll?.('.poster-dot');if(dots&&dots.length!==posterCatalog.length){document.getElementById('app').innerHTML=shell(homePoster());paintPoster()}syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
+function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:entrySplash,gallery,board:boardPage,upload,team,chat,admin,login:loginPage}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home')return;paintPoster();syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
 function openAuthDialog(){goLogin()}
 function closeModal(){document.getElementById('modal').close()}
@@ -653,23 +658,6 @@ document.addEventListener('change',async e=>{
   if(input.isConnected&&!form.elements.title.value)form.elements.title.value=file.name.replace(/\.[^.]+$/,'').slice(0,80);
  }
 });
-function posterTextSelected(){
- try{
-  const sel=window.getSelection?.();
-  if(!sel||(typeof sel.isCollapsed==='boolean'&&sel.isCollapsed))return false;
-  return !!String(sel).trim();
- }catch{return false}
-}
-function posterClickOpensMenu(e){
- if(e.defaultPrevented||route().page!=='home'||menuOpen)return false;
- if(!e.target.closest?.('.poster-stage'))return false;
- if(e.target.closest?.('a'))return false;
- const action=e.target.closest?.('[data-action]')?.dataset?.action||'';
- if(action==='poster-next'||action==='poster-prev'||action==='poster-go'||action==='menu'||action==='menu-close')return false;
- if(posterTextSelected())return false;
- setMenu(true);
- return true;
-}
 // Trackpad pinch is a ctrl+wheel on Chrome and Firefox, and a gesture event on
 // Safari. Cancel that default only while the event target is the poster itself.
 // The drawer, the menu button, business pages, and Ctrl/Cmd +/- are untouched.
@@ -697,16 +685,12 @@ document.addEventListener('gesturechange',blockPosterPinch,{passive:false,captur
 document.addEventListener('click',async e=>{
  const menuBtn=e.target.closest?.('.menu-square');
  const inMenu=e.target.closest?.('#site-menu');
- if(menuOpen&&!menuBtn&&!inMenu){setMenu(false);if(e.target.closest?.('.poster-stage'))return}
- if(inMenu&&e.target.closest?.('a[href^="#"]')){setMenu(false);return}
- if(posterClickOpensMenu(e))return;
+ const overlayNav=!navDocked();
+ if(menuOpen&&overlayNav&&!menuBtn&&!inMenu){setMenu(false);if(e.target.closest?.('.poster-stage'))return}
+ if(inMenu&&e.target.closest?.('a[href^="#"]')){if(overlayNav)setMenu(false);return}
  const el=e.target.closest('[data-action]');if(!el)return;const a=el.dataset;
  if(a.action==='menu'){setMenu(!menuOpen);return}
- if(a.action==='menu-close'){setMenu(false);return}
- if(a.action==='home-menu')return;
- if(a.action==='poster-next'){shiftPoster(1);return}
- if(a.action==='poster-prev'){shiftPoster(-1);return}
- if(a.action==='poster-go'){goPoster(Number(a.index));return}
+ if(a.action==='enter-platform')return enterPlatform();
  if(a.action==='close'||a.action==='board-decline')return closeModal();
  if(a.action==='nav')return go(a.page);
  if(a.action==='auth-open'){if(!account)goLogin();return}
@@ -751,7 +735,7 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
   try{const data=await api('board/open',{listingId:a.id});openDmModal(data.thread,a.id)}catch(err){toast(err.message)}
   return;
  }
- if(a.action==='auth-logout'){try{applyResult(await api('auth/logout',{}));toast('已退出学号账号');boardNeedsRefresh=true;render()}catch(e){toast(e.message)}return}
+ if(a.action==='auth-logout'){try{applyResult(await api('auth/logout',{}));toast('已退出学号账号');menuOpen=false;boardNeedsRefresh=true;render()}catch(e){toast(e.message)}return}
  if(a.action==='board-admin-takedown'){if(me().role!=='admin')return toast('该操作需要管理员演示身份。');return modal('确认下架互助登记',`<p>下架后，这条已生效登记不再出现在有效列表和匹配结果里。没有举报也可以下架。</p><div class="modal-actions"><button class="btn" data-action="close">取消</button><button class="btn danger" data-action="confirm-board-admin-takedown" data-id="${esc(a.id)}">确认下架</button></div>`)}
  if(a.action==='confirm-board-admin-takedown'){if(me().role!=='admin')return toast('该操作需要管理员演示身份。');try{applyResult(await api('board/takedown',{id:a.id,asAdmin:true}));closeModal();toast('已下架');boardNeedsRefresh=true;render()}catch(e){toast(e.message)}return}
  if(a.action==='board-takedown'){try{applyResult(await api('board/takedown',{id:a.id}));toast('已下架');boardNeedsRefresh=true;render()}catch(e){toast(e.message)}return}
@@ -774,10 +758,11 @@ document.addEventListener('submit',async e=>{
    const mode=f.dataset.mode==='register'?'register':'login';
    try{
     applyResult(await api('auth/'+mode,{username:get('username'),password:get('password'),displayName:get('displayName'),remember:fd.has('remember')}));
+    menuOpen=defaultMenuOpen();
     const next=takeAuthReturn();
     toast(mode==='register'?'注册成功，已登录':'登录成功');
     boardNeedsRefresh=true;
-    if(next)location.hash=next;else location.hash='#board';
+    if(next)location.hash=next;else location.hash='#'+homePage();
     render();
    }catch(err){toast(err.message)}
    return;
@@ -861,10 +846,14 @@ document.addEventListener('submit',async e=>{
 document.addEventListener('keydown',e=>{
  if(e.key==='Escape'&&menuOpen){setMenu(false);return}
  if((e.target.matches?.('#chat-form textarea')||e.target.matches?.('#board-ask-form textarea'))&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}
- if(route().page!=='home'||menuOpen||document.getElementById('modal')?.open)return;
+ if(route().page!=='home')return;
+ if(document.getElementById('modal')?.open)return;
  if(e.target.closest?.('input,textarea,select'))return;
- if(e.key==='ArrowRight')shiftPoster(1);
- if(e.key==='ArrowLeft')shiftPoster(-1);
+ if(e.key==='Tab'||e.key==='Shift'||e.key==='Control'||e.key==='Alt'||e.key==='Meta')return;
+ if(e.ctrlKey||e.metaKey||e.altKey)return;
+ if(/^F\d{1,2}$/.test(e.key))return;
+ e.preventDefault();
+ enterPlatform();
 });
 function searchInput(e){
  if(e.target.id!=='search'||e.isComposing)return;const pos=e.target.selectionStart;query=e.target.value;render();const el=document.getElementById('search');el.focus();el.setSelectionRange(pos,pos)
@@ -891,7 +880,7 @@ document.addEventListener('change',e=>{
  else setBoardDay('today');
 });
 document.addEventListener('visibilitychange',()=>syncPosterAutoplay(false));
-window.addEventListener('hashchange',()=>{menuOpen=false;if(route().page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
+window.addEventListener('hashchange',()=>{const page=route().page;if(page==='home'||page==='login')menuOpen=false;if(page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'list_campus_agents',title:'查看已上线校园助手',description:'只读列出当前本地平台已上线的助手与已审核资料数。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute(input){if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('不接受参数');return state.agents.filter(a=>a.status==='published').map(a=>({id:a.id,name:a.name,documents:state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length}))}},{signal:lifecycle.signal})).catch(()=>{})}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})}
 

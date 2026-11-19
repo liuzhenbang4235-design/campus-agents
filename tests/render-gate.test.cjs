@@ -22,7 +22,7 @@ async function close(server){server.closeAllConnections();await new Promise(r=>s
 
 test('Blueprint defaults PUBLIC_MODE to 1 so a synced public site disables demo identities',()=>{
  const yaml=fs.readFileSync(path.join(__dirname,'..','render.yaml'),'utf8');
- const entry=yaml.match(/\n +- key: PUBLIC_MODE\n +value: "1"\n/);
+ const entry=yaml.match(/\r?\n +- key: PUBLIC_MODE\r?\n +value: "1"\r?\n/);
  assert.ok(entry,'render.yaml sets PUBLIC_MODE to the literal "1"');
  assert.doesNotMatch(entry[0],/sync:/);
 });

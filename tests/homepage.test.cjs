@@ -21,7 +21,6 @@ function classList(initial=''){
 }
 function matches(node,sel){
  if(sel==='[data-action]')return !!(node.dataset&&node.dataset.action);
- if(sel==='.menu-square')return node.classList.contains('menu-square');
  if(sel==='.poster-stage')return node.classList.contains('poster-stage');
  if(sel==='#site-menu')return node.id==='site-menu';
  if(sel==='a'||sel==='a[href]')return node.tag==='a';
@@ -67,11 +66,7 @@ function loadApp({hash='#home',manifest}={}){
  const listeners={};
  const listenerOptions={};
  const shell=node('shell shell-home');
- const button=node('menu-square',{tag:'button',dataset:{action:'menu'}});
- const menu=node('sidebar',{id:'site-menu'});
- const close=node('menu-close',{tag:'button',dataset:{action:'menu-close'}});
- const brand=node('brand',{tag:'a',href:'#home'});
- const stage=node('poster-stage');
+ const stage=node('poster-stage entry-stage');
  const frame=node('poster-frame tone-dawn',{id:'poster-frame'});
  const photo={
   classList:classList('poster-photo'),
@@ -89,22 +84,13 @@ function loadApp({hash='#home',manifest}={}){
   set src(value){this.attributes.src=value;this.complete=true;this.naturalWidth=0;if(this.onerror)this.onerror()}
  };
  photo.classList.contains=name=>name==='poster-photo'||frame.classList.contains(name);
- const title=node('poster-title');
- const line=node('poster-line');
- const count=node('poster-count',{text:'01 / 02'});
- const dots=[0,1].map(index=>node('poster-dot'+(index===0?' is-current':''),{tag:'button',dataset:{action:'poster-go',index:String(index)}}));
- const copy=node('poster-copy');
- const hit=node('poster-hit',{tag:'button',dataset:{action:'home-menu'}});
- const prev=node('poster-arrow prev',{tag:'button',dataset:{action:'poster-prev'}});
- const next=node('poster-arrow next',{tag:'button',dataset:{action:'poster-next'}});
- copy.appendChild(title);copy.appendChild(line);
- frame.appendChild(photo);frame.appendChild(copy);frame.appendChild(hit);
- const dotWrap=node('poster-dots');
- for(const dot of dots)dotWrap.appendChild(dot);
- stage.appendChild(frame);stage.appendChild(prev);stage.appendChild(next);stage.appendChild(dotWrap);stage.appendChild(count);
- menu.appendChild(close);menu.appendChild(brand);
- shell.appendChild(button);shell.appendChild(menu);shell.appendChild(stage);
- const byId={app:node('app'),'site-menu':menu,'poster-frame':frame,toast:node('toast'),modal:{open:false,innerHTML:'',classList:classList(),setAttribute(){},close(){this.open=false}}};
+ const veil=node('poster-veil place-bottom align-center');
+ const hit=node('poster-hit',{tag:'button',dataset:{action:'enter-platform'}});
+ const prompt=node('entry-prompt',{text:'请点击任意键进入平台'});
+ frame.appendChild(photo);frame.appendChild(veil);frame.appendChild(hit);frame.appendChild(prompt);
+ stage.appendChild(frame);
+ shell.appendChild(stage);
+ const byId={app:node('app'),'poster-frame':frame,toast:node('toast'),modal:{open:false,innerHTML:'',classList:classList(),setAttribute(){},close(){this.open=false}}};
  const clock=fakeClock();
  const document={
   hidden:false,
@@ -113,7 +99,6 @@ function loadApp({hash='#home',manifest}={}){
   getElementById(id){return byId[id]||null},
   querySelector(sel){
    if(sel==='.shell')return shell;
-   if(sel==='.menu-square')return button;
    if(sel==='.poster-stage')return stage;
    return shell.querySelector(sel);
   },
@@ -140,10 +125,10 @@ function loadApp({hash='#home',manifest}={}){
  context.window.matchMedia=()=>({matches:true});
  vm.createContext(context);
  vm.runInContext(appSource+`
-globalThis.__state=()=>({menu:menuOpen,index:posterIndex,page:route().page,home:shell(homePoster()),catalog:posterCatalog});
-globalThis.__at=index=>{posterIndex=index;return homePoster()};
+globalThis.__state=()=>({index:posterIndex,page:route().page,home:shell(entrySplash()),catalog:posterCatalog});
+globalThis.__at=index=>{posterIndex=index;return entrySplash()};
 `,context);
- return {context,listeners,listenerOptions,clock,button,stage,menu,brand,frame,title,line,count,dots,photo,hit,prev,next};
+ return {context,listeners,listenerOptions,clock,stage,frame,photo,hit,prompt};
 }
 function fakeClock(){
  const pending=new Map();
@@ -159,7 +144,6 @@ function fakeClock(){
   }
  };
 }
-
 function raw(port,route,method='GET'){
  return new Promise((resolve,reject)=>{
   const req=http.request({host:'127.0.0.1',port,method,path:route},res=>{
@@ -169,7 +153,7 @@ function raw(port,route,method='GET'){
  });
 }
 
-test('an empty visit opens the poster homepage and sections stay routable',()=>{
+test('an empty visit opens the poster entry splash and sections stay routable',()=>{
  assert.match(appSource,/if\(!location\.hash\|\|location\.hash==='#'\)history\.replaceState\(null,'','#home'\)/);
  assert.doesNotMatch(appSource,/history\.replaceState\(null,'','#'\+homePage\(\)\)/);
  const {context}=loadApp({hash:''});
@@ -177,151 +161,90 @@ test('an empty visit opens the poster homepage and sections stay routable',()=>{
  context.location.hash='#home';
  assert.equal(context.__state().page,'home');
  const home=context.__state().home;
- assert.match(home,/class="menu-square"/);
- assert.match(home,/你的难题不必独自面对/);
- assert.match(home,/在校园里，让一次举手之劳，成为彼此的光。/);
- assert.match(appSource,/身边有人，就不算独自/);
- assert.match(context.__at(1),/身边有人，就不算独自/);
- assert.match(context.__at(0),/你的难题不必独自面对/);
+ assert.match(home,/请点击任意键进入平台/);
+ assert.match(home,/data-action="enter-platform"/);
+ assert.match(context.__at(1),/02\.jpg/);
+ assert.doesNotMatch(context.__at(0),/你的难题不必独自面对|poster-title|poster-line/);
 });
 
-test('poster homepage is a click-through frame and the menu starts closed',()=>{
+test('entry splash is a full-bleed frame with only the enter prompt and no dashboard chrome',()=>{
  const {context}=loadApp({hash:'#home'});
  assert.equal(context.__state().page,'home');
  const home=context.__state().home;
- assert.match(home,/class="menu-square"/);
- assert.match(home,/aria-expanded="false"/);
- assert.match(home,/aria-hidden="true"/);
- assert.doesNotMatch(home,/点击画面，切换下一张/);
- assert.doesNotMatch(home,/校集|home-mark/);
- assert.match(home,/aria-label="回到首页"/);
- assert.match(home,/brand-mark/);
- assert.match(home,/01 \/ 02/);
- assert.match(home,/class="poster-hit" data-action="home-menu"/);
- assert.match(home,/aria-controls="site-menu" aria-label="打开菜单"/);
- assert.match(home,/aria-label="上一张"/);
- assert.match(home,/aria-label="下一张"/);
- assert.match(appSource,/const POSTER_AUTOPLAY_MS=5000/);
- assert.match(home,/互助通达/);
- assert.match(home,/与助手对话/);
- assert.match(home,/找助手/);
- assert.match(home,/资料贡献/);
- assert.match(home,/同学互助/);
- assert.match(home,/问同学，或问校园助手。/);
- assert.match(home,/href="#home"/);
+ assert.match(home,/class="poster-stage entry-stage"/);
+ assert.match(home,/请点击任意键进入平台/);
+ assert.match(home,/data-action="enter-platform"/);
+ assert.doesNotMatch(home,/menu-square|site-menu|sidebar|nav-link|topbar|home-menu|poster-arrow|poster-dot|poster-count|poster-copy|poster-title|poster-line|poster-credit/);
  assert.match(home,/src="\/homepage-posters\/01\.jpg"/);
- assert.doesNotMatch(home,/class="topbar"/);
- assert.doesNotMatch(home,/poster-credit/);
- assert.doesNotMatch(home,/sidebar is-open|menu-open/);
+ assert.match(home,/class="poster-photo"[^>]*draggable="false"/);
  const css=fs.readFileSync(path.join(__dirname,'../dist/styles.css'),'utf8');
  assert.match(css,/\.poster-photo\{[^}]*object-fit:cover/);
  assert.doesNotMatch(css,/\.poster-photo\{[^}]*object-fit:contain/);
  assert.match(css,/\.poster-photo\{[^}]*pointer-events:none/);
  assert.match(css,/\.poster-photo\{[^}]*-webkit-user-drag:none/);
  assert.doesNotMatch(css,/\.poster-(?:photo|stage|frame)\{[^}]*(?:scale\(|zoom\s*:)/);
- assert.match(home,/class="poster-photo"[^>]*draggable="false"/);
- assert.doesNotMatch(appSource,/dblclick|lightbox|gesturestart/);
+ assert.match(css,/\.entry-prompt\{[^}]*position:absolute/);
+ assert.match(css,/\.entry-prompt\{[^}]*pointer-events:none/);
+ assert.match(css,/\.entry-prompt\{[^}]*z-index:4/);
+ assert.match(css,/\.shell-plain \.content\{[^}]*place-items:center/);
+ assert.match(css,/prefers-reduced-motion:reduce\)\{[\s\S]*?\.entry-prompt\{animation:none\}/);
  const pageHtml=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
  assert.match(pageHtml,/width=device-width,initial-scale=1/);
  assert.doesNotMatch(pageHtml,/user-scalable|maximum-scale/);
- assert.match(css,/\.menu-square\{[^}]*position:fixed/);
- assert.match(css,/\.menu-square\{[^}]*width:56px;height:56px/);
- assert.match(css,/\.shell:not\(\.shell-home\) \.topbar\{[^}]*position:sticky/);
- assert.match(css,/\.shell:not\(\.shell-home\) \.topbar\{[^}]*z-index:40/);
- assert.match(css,/\.shell>\.sidebar\{[^}]*height:100dvh/);
- assert.match(css,/\.shell>\.sidebar\{[^}]*border-radius:0/);
- assert.match(css,/\.shell>\.sidebar\{[^}]*transform:translateX\(-100%\)/);
- assert.match(css,/\.shell>\.sidebar\.is-open\{[^}]*transform:translateX\(0\)/);
- assert.doesNotMatch(css,/\.shell>\.sidebar\.is-open\{[^}]*translateX\(16px\)/);
- assert.match(css,/prefers-reduced-motion:reduce\)\{[\s\S]*?\.shell>\.sidebar\{transition:none\}/);
+ assert.match(appSource,/const POSTER_AUTOPLAY_MS=5000/);
+ assert.doesNotMatch(appSource,/home-menu|posterClickOpensMenu|poster-go/);
 });
 
-test('the menu square toggles without advancing the poster, and the poster loops',async()=>{
- const {context,listeners,button,stage,menu,hit,prev,title}=loadApp({hash:'#home'});
+test('clicking or pressing a key on the entry splash goes to login',()=>{
+ const {context,listeners,stage,hit}=loadApp({hash:'#home'});
  const click=target=>listeners.click[0]({target});
- assert.equal(context.__state().index,0);
- await click(button);
- assert.equal(context.__state().menu,true);
- assert.equal(context.__state().index,0);
- await click(stage.querySelector('.poster-dot'));
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
- await click(hit);
- assert.equal(context.__state().menu,true);
- assert.equal(context.__state().index,0);
- await click(hit);
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
- await click(button);
- assert.equal(context.__state().menu,true);
- assert.equal(context.__state().index,0);
- await click(button);
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
- await click(prev);
- assert.equal(context.__state().index,1);
- assert.equal(context.__state().menu,false);
- await click(prev);
- assert.equal(context.__state().index,0);
- await click(title);
- assert.equal(context.__state().menu,true);
- assert.equal(context.__state().index,0);
- await click(menu.querySelector('.menu-close'));
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
+ click(hit);
+ assert.equal(context.location.hash,'#login');
+
+ context.location.hash='#home';
+ let prevented=false;
+ listeners.keydown[0]({key:'Enter',target:stage,ctrlKey:false,metaKey:false,altKey:false,preventDefault(){prevented=true}});
+ assert.equal(context.location.hash,'#login');
+ assert.equal(prevented,true);
+
+ context.location.hash='#home';
+ prevented=false;
+ listeners.keydown[0]({key:'ArrowRight',target:stage,ctrlKey:false,metaKey:false,altKey:false,preventDefault(){prevented=true}});
+ assert.equal(context.location.hash,'#login');
+ assert.equal(prevented,true);
+
+ context.location.hash='#home';
+ let tabPrevented=false;
+ listeners.keydown[0]({key:'Tab',target:stage,ctrlKey:false,metaKey:false,altKey:false,preventDefault(){tabPrevented=true}});
+ assert.equal(context.location.hash,'#home');
+ assert.equal(tabPrevented,false);
+
+ let ctrlPrevented=false;
+ listeners.keydown[0]({key:'a',target:stage,ctrlKey:true,metaKey:false,altKey:false,preventDefault(){ctrlPrevented=true}});
+ assert.equal(context.location.hash,'#home');
+ assert.equal(ctrlPrevented,false);
 });
 
-test('homepage autoplay keeps each title with its photo and pauses without stacking timers',async()=>{
+test('entry splash autoplay advances every five seconds and pauses without stacking timers',async()=>{
  const files=['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg'];
  const loaded=loadApp({hash:'#home',manifest:{posters:files.map((file,i)=>({file,title:'第'+(i+1)+'张',line:'短句'+(i+1)}))}});
- const {context,listeners,clock,button,stage,menu,brand,title,hit,next}=loaded;
- const click=target=>listeners.click[0]({target});
+ const {context,listeners,clock}=loaded;
  await vm.runInContext('ensurePosters()',context);
  vm.runInContext('paintPoster();syncPosterAutoplay(false)',context);
- assert.equal(title.textContent,'第1张');
+ assert.equal(context.__state().index,0);
  assert.equal(clock.count(5000),1);
  await clock.fire(5000);
  assert.equal(context.__state().index,1);
- assert.equal(title.textContent,'第2张');
  assert.equal(clock.count(5000),1);
  await clock.fire(5000);
  await clock.fire(5000);
  await clock.fire(5000);
  await clock.fire(5000);
  assert.equal(context.__state().index,5);
- assert.equal(title.textContent,'第6张');
  assert.equal(clock.count(5000),1);
  await clock.fire(5000);
  assert.equal(context.__state().index,0);
- assert.equal(title.textContent,'第1张');
  assert.equal(clock.count(5000),1);
-
- await click(button);
- assert.equal(context.__state().menu,true);
- assert.equal(context.__state().index,0);
- assert.equal(clock.count(5000),0);
- await clock.fire(5000);
- assert.equal(context.__state().index,0);
- await listeners.keydown[0]({key:'ArrowRight',target:stage});
- assert.equal(context.__state().index,0);
- await listeners.keydown[0]({key:'Escape',target:stage});
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
- assert.equal(clock.count(5000),1);
-
- await click(hit);
- assert.equal(context.__state().menu,true);
- await click(stage);
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
- await click(next);
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,1);
- assert.equal(title.textContent,'第2张');
- assert.equal(clock.count(5000),1);
- await click(stage.querySelectorAll('.poster-dot')[0]);
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
 
  context.document.hidden=true;
  context.document.visibilityState='hidden';
@@ -329,72 +252,49 @@ test('homepage autoplay keeps each title with its photo and pauses without stack
  assert.equal(clock.count(5000),0);
  await clock.fire(5000);
  assert.equal(context.__state().index,0);
- listeners.visibilitychange[0]();
- assert.equal(clock.count(5000),0);
+
  context.document.hidden=false;
  context.document.visibilityState='visible';
  listeners.visibilitychange[0]();
  listeners.visibilitychange[0]();
  assert.equal(clock.count(5000),1);
 
- context.window.getSelection=()=>({isCollapsed:false,toString(){return '第1张'}});
- await click(title);
- assert.equal(context.__state().menu,false);
- context.window.getSelection=()=>({isCollapsed:true,toString(){return ''}});
- const link=node('poster-link',{tag:'a',href:'#gallery'});
- stage.appendChild(link);
- await click(link);
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
-
- await click(button);
- await click(brand);
- assert.equal(context.__state().menu,false);
- assert.equal(context.__state().index,0);
- const nav=node('nav-link',{tag:'a',href:'#board'});
- menu.appendChild(nav);
- await click(button);
- await click(nav);
- assert.equal(context.__state().menu,false);
+ vm.runInContext('boardNeedsRefresh=false',context);
  context.location.hash='#board';
  await listeners.hashchange[0]();
  assert.equal(context.__state().page,'board');
  assert.equal(clock.count(5000),0);
  await clock.fire(5000);
  assert.equal(context.__state().index,0);
+
  context.location.hash='#home';
  await listeners.hashchange[0]();
  assert.equal(context.__state().page,'home');
  assert.equal(clock.count(5000),1);
  await clock.fire(5000);
  assert.equal(context.__state().index,1);
- assert.equal(title.textContent,'第2张');
- assert.equal(clock.count(5000),1);
- await click(button);
- await click(button);
- await click(button);
- await click(button);
- assert.equal(context.__state().menu,false);
  assert.equal(clock.count(5000),1);
 });
 
-test('a local manifest can add a photographer credit and cannot point outside the poster directory',async()=>{
+test('a local manifest feeds poster layout and cannot point outside the poster directory',async()=>{
  const loaded=loadApp({hash:'#home',manifest:{posters:[
-  {file:'01.jpg',credit:'林间'},
+  {file:'01.jpg',title:'甲',line:'一',credit:'林间',align:'right',place:'top',measure:'narrow',focus:'left'},
   {file:'../store.json',title:'',line:'',credit:''},
   {file:'https://example.com/secret.jpg',credit:'不该出现'}
  ]}});
  const after=await vm.runInContext('ensurePosters()',loaded.context);
  assert.equal(after.length,3);
  assert.equal(after[0].credit,'林间');
- assert.equal(after[0].title,'你的难题不必独自面对');
+ assert.equal(after[0].title,'甲');
  assert.equal(after[0].image,'/homepage-posters/01.jpg');
+ assert.deepEqual([after[0].align,after[0].place,after[0].measure,after[0].focus],['right','top','narrow','left']);
  assert.equal(after[1].image,'');
  assert.equal(after[2].image,'');
  assert.equal(after[2].credit,'不该出现');
  const html=loaded.context.__at(0);
- assert.match(html,/林间/);
- assert.match(html,/poster-credit/);
+ assert.match(html,/focus-left/);
+ assert.doesNotMatch(html,/poster-credit/);
+ assert.doesNotMatch(html,/poster-dot|poster-count/);
  const blank=loadApp({hash:'#home'});
  const fallback=await vm.runInContext('ensurePosters()',blank.context);
  assert.equal(fallback[0].credit,'');
@@ -404,7 +304,7 @@ test('a local manifest can add a photographer credit and cannot point outside th
  assert.equal(vm.runInContext('posterSlot(0,-1,2)',blank.context),1);
 });
 
-test('a manifest may list six posters and the carousel still loops',async()=>{
+test('a manifest may list six posters and the entry carousel still loops',async()=>{
  const files=['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg','06.jpg'];
  const loaded=loadApp({hash:'#home',manifest:{posters:files.map((file,i)=>({file,title:'第'+(i+1)+'张',line:'短句',credit:i===3?'署名':''}))}});
  const after=await vm.runInContext('ensurePosters()',loaded.context);
@@ -413,11 +313,12 @@ test('a manifest may list six posters and the carousel still loops',async()=>{
  assert.equal(after[3].credit,'署名');
  assert.equal(vm.runInContext('posterSlot(5,1,6)',loaded.context),0);
  const html=loaded.context.__at(5);
- assert.match(html,/06 \/ 06/);
- assert.equal((html.match(/class="poster-dot(?: |")/g)||[]).length,6);
+ assert.match(html,/06\.jpg/);
+ assert.match(html,/请点击任意键进入平台/);
+ assert.doesNotMatch(html,/06 \/ 06|poster-dot/);
 });
 
-test('poster layout fields override the rotation and invalid values fall back',async()=>{
+test('poster layout fields stay in the catalog and invalid values fall back',async()=>{
  const loaded=loadApp({hash:'#home',manifest:{posters:[
   {file:'01.jpg',title:'甲',line:'一',align:'right',place:'top',measure:'narrow',focus:'left'},
   {file:'02.jpg',title:'乙',line:'二',align:'diagonal',place:'',focus:'nope'},
@@ -431,9 +332,6 @@ test('poster layout fields override the rotation and invalid values fall back',a
  assert.equal(after[2].align,'left');
  assert.equal(after[2].focus,'left');
  const html=loaded.context.__at(0);
- assert.match(html,/align-right/);
- assert.match(html,/place-top/);
- assert.match(html,/measure-narrow/);
  assert.match(html,/focus-left/);
  const card=vm.runInContext(`listingCard({id:'a1',type:'代取快递',description:'南门代取',display:'代取快递',ownerName:'甲',windowText:'今天 14:00–16:00',status:'active',role:'offer'},'public')`,loaded.context);
  assert.match(card,/board-card-title/);
@@ -455,7 +353,8 @@ test('gitignored poster files are served locally and missing files do not break 
  fs.writeFileSync(path.join(dataDir,'store-secret.txt'),'do-not-serve');
  fs.writeFileSync(path.join(posterDir,'01.jpg'),Buffer.from([0xff,0xd8,0xff,0xd9]));
  fs.writeFileSync(path.join(posterDir,'manifest.json'),JSON.stringify({posters:[{file:'01.jpg',credit:'林间'}]}));
- fs.symlinkSync(path.join(dataDir,'store-secret.txt'),path.join(posterDir,'leak.json'));
+ let symlinkOk=true;
+ try{fs.symlinkSync(path.join(dataDir,'store-secret.txt'),path.join(posterDir,'leak.json'))}catch(e){symlinkOk=false;t.diagnostic('symlink unavailable: '+e.code)}
  const app=createApp({dataDir,configFile:path.join(dir,'config.json'),boardFile:path.join(dir,'board.json')});
  await new Promise(r=>app.server.listen(0,'127.0.0.1',r));
  const port=app.server.address().port;
@@ -476,12 +375,14 @@ test('gitignored poster files are served locally and missing files do not break 
  assert.match(manifest.headers['content-type'],/^application\/json/);
  assert.match(manifest.body.toString('utf8'),/林间/);
  assert.equal(missing.status,404);
- assert.equal(leak.status,404);
  assert.equal(parent.status,404);
  assert.equal(script.status,404);
  assert.doesNotMatch(missing.body.toString('utf8'),/do-not-serve/);
- assert.doesNotMatch(leak.body.toString('utf8'),/do-not-serve/);
  assert.doesNotMatch(parent.body.toString('utf8'),/do-not-serve/);
+ if(symlinkOk){
+  assert.equal(leak.status,404);
+  assert.doesNotMatch(leak.body.toString('utf8'),/do-not-serve/);
+ }
  assert.equal(page.status,200);
  assert.match(page.body.toString('utf8'),/校集/);
  assert.equal(posted.status,405);
@@ -495,8 +396,7 @@ test('gitignored poster files are served locally and missing files do not break 
  assert.equal(stillUp.status,200);
 });
 
-test('poster pinch is limited to the poster and leaves scroll, drawers, business pages, and keyboard zoom alone',async()=>{
- // Synthetic events in this vm prove the page handlers. They do not move a real trackpad, touchscreen, or OS zoom.
+test('poster pinch is limited to the entry poster and leaves scroll, business pages, and keyboard zoom alone',async()=>{
  const css=fs.readFileSync(path.join(__dirname,'../dist/styles.css'),'utf8');
  const pageHtml=fs.readFileSync(path.join(__dirname,'../dist/index.html'),'utf8');
  assert.match(css,/\.poster-stage\{[^}]*touch-action:pan-x pan-y/);
@@ -507,7 +407,7 @@ test('poster pinch is limited to the poster and leaves scroll, drawers, business
  assert.doesNotMatch(pageHtml,/user-scalable|maximum-scale|minimum-scale/);
  assert.doesNotMatch(appSource,/user-scalable|maximum-scale/);
  const loaded=loadApp({hash:'#home'});
- const {context,listeners,listenerOptions,clock,button,stage,menu,title,hit,next}=loaded;
+ const {context,listeners,listenerOptions,clock,stage,hit,prompt}=loaded;
  const pinchOpts=type=>listenerOptions[type]&&listenerOptions[type][0];
  for(const type of ['wheel','touchmove','gesturestart','gesturechange']){
   assert.equal(listeners[type].length,1);
@@ -523,52 +423,34 @@ test('poster pinch is limited to the poster and leaves scroll, drawers, business
  };
  vm.runInContext('syncPosterAutoplay(false)',context);
  assert.equal(clock.count(5000),1);
- assert.equal(context.__state().index,0);
  assert.equal(send('wheel',stage,{ctrlKey:true,deltaY:-120}),true);
- assert.equal(send('wheel',title,{ctrlKey:true,deltaY:80}),true);
  assert.equal(send('wheel',hit,{ctrlKey:true}),true);
- assert.equal(send('wheel',next,{ctrlKey:true}),true);
+ assert.equal(send('wheel',prompt,{ctrlKey:true}),true);
  assert.equal(send('wheel',stage,{ctrlKey:false,deltaY:40}),false);
  assert.equal(send('wheel',stage,{metaKey:true,ctrlKey:false,deltaY:-40}),false);
  assert.equal(send('wheel',stage,{ctrlKey:true,cancelable:false,deltaY:-40}),false);
- assert.equal(send('wheel',button,{ctrlKey:true,deltaY:-80}),false);
- assert.equal(send('wheel',menu,{ctrlKey:true,deltaY:-80}),false);
  assert.equal(send('wheel',content,{ctrlKey:true,deltaY:-80}),false);
  assert.equal(send('touchmove',stage,{touches:[{},{}]}),true);
- assert.equal(send('touchmove',title,{touches:[{},{}]}),true);
+ assert.equal(send('touchmove',hit,{touches:[{},{}]}),true);
+ assert.equal(send('touchmove',prompt,{touches:[{},{}]}),true);
  assert.equal(send('touchmove',stage,{touches:[{}]}),false);
- assert.equal(send('touchmove',menu,{touches:[{},{}]}),false);
  assert.equal(send('touchmove',content,{touches:[{},{}]}),false);
  assert.equal(send('touchmove',stage,{touches:[{},{}],cancelable:false}),false);
  assert.equal(send('gesturestart',stage,{}),true);
  assert.equal(send('gesturechange',hit,{}),true);
- assert.equal(send('gesturestart',menu,{}),false);
- assert.equal(send('gesturechange',button,{}),false);
- assert.equal(context.__state().index,0);
- assert.equal(context.__state().menu,false);
- assert.equal(clock.count(5000),1);
- const click=target=>listeners.click[0]({target});
- await click(next);
- assert.equal(context.__state().index,1);
- assert.equal(context.__state().menu,false);
- await click(button);
- assert.equal(context.__state().menu,true);
- assert.equal(clock.count(5000),0);
- assert.equal(send('wheel',menu,{ctrlKey:true,deltaY:-100}),false);
- assert.equal(send('touchmove',menu,{touches:[{},{}]}),false);
- assert.equal(send('wheel',stage,{ctrlKey:true,deltaY:-100}),true);
- assert.equal(context.__state().index,1);
- await listeners.keydown[0]({key:'Escape',target:stage});
- assert.equal(context.__state().menu,false);
- assert.equal(clock.count(5000),1);
+ assert.equal(send('gesturestart',content,{}),false);
  for(const key of ['+','-','=','_','0']){
   let prevented=false;
   for(const fn of listeners.keydown)fn({key,ctrlKey:true,metaKey:true,target:stage,preventDefault(){prevented=true}});
   assert.equal(prevented,false,key);
  }
- await listeners.keydown[0]({key:'ArrowRight',target:stage});
- assert.equal(context.__state().index,0);
- assert.equal(title.textContent,'你的难题不必独自面对');
+ let prevented=false;
+ listeners.keydown[0]({key:'ArrowRight',target:stage,ctrlKey:false,metaKey:false,altKey:false,preventDefault(){prevented=true}});
+ assert.equal(context.location.hash,'#login');
+ assert.equal(prevented,true);
+ assert.equal(clock.count(5000),0);
+
+ vm.runInContext('boardNeedsRefresh=false',context);
  context.location.hash='#board';
  await listeners.hashchange[0]();
  assert.equal(context.__state().page,'board');
@@ -577,10 +459,6 @@ test('poster pinch is limited to the poster and leaves scroll, drawers, business
  assert.equal(send('wheel',content,{ctrlKey:false,deltaY:120}),false);
  assert.equal(send('touchmove',content,{touches:[{},{}]}),false);
  assert.equal(send('gesturestart',stage,{}),false);
- context.location.hash='#gallery';
- await listeners.hashchange[0]();
- assert.equal(context.__state().page,'gallery');
- assert.equal(send('wheel',stage,{ctrlKey:true}),false);
  context.location.hash='#home';
  await listeners.hashchange[0]();
  assert.equal(context.__state().page,'home');
