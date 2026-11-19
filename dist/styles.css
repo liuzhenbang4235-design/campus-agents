@@ -109,26 +109,31 @@ span.model-chip{padding:4px 10px}
 
 /* Unopened homepage and left-edge drawer. The photograph stays full-bleed;
    the drawer overlays it and slides in from the left. Posters are local files. */
-.shell{display:block}
-.menu-square{position:fixed;top:18px;left:18px;z-index:70;width:56px;height:56px;padding:0;border:0;border-radius:16px;background:var(--lime);color:#17213b;display:grid;place-items:center;box-shadow:0 10px 24px rgba(20,32,59,.22)}
-.menu-square .icon{width:26px;height:26px;stroke-width:2.15}
+.shell{display:block;--nav-w:clamp(232px,18vw,264px)}
+.menu-square{position:fixed;top:14px;left:14px;z-index:70;width:42px;height:42px;padding:0;border:0;border-radius:12px;background:var(--lime);color:#17213b;display:grid;place-items:center;box-shadow:0 10px 24px rgba(20,32,59,.22)}
+.menu-square .icon{width:20px;height:20px;stroke-width:2.15}
 .menu-square:hover{filter:brightness(.97)}
-.shell>.sidebar{position:fixed;top:0;left:0;bottom:0;z-index:65;width:clamp(300px,25vw,360px);height:100vh;height:100dvh;max-height:none;margin:0;display:flex;flex-direction:column;padding:18px 22px 22px 88px;border:0;border-right:1px solid rgba(255,255,255,.08);border-radius:0;box-shadow:16px 0 48px rgba(0,0,0,.28);overflow:hidden;visibility:hidden;pointer-events:none;transform:translateX(-100%);transition:transform .34s cubic-bezier(.22,.61,.36,1),visibility 0s linear .34s}
+.shell>.sidebar{position:fixed;top:0;left:0;bottom:0;z-index:65;width:var(--nav-w);height:100vh;height:100dvh;max-height:none;margin:0;display:flex;flex-direction:column;padding:16px 18px 20px 68px;border:0;border-right:1px solid rgba(255,255,255,.08);border-radius:0;box-shadow:16px 0 48px rgba(0,0,0,.28);overflow:hidden;visibility:hidden;pointer-events:none;transform:translateX(-100%);transition:transform .34s cubic-bezier(.22,.61,.36,1),visibility 0s linear .34s}
 .shell>.sidebar.is-open{visibility:visible;pointer-events:auto;transform:translateX(0);transition:transform .34s cubic-bezier(.22,.61,.36,1),visibility 0s}
 .shell>.sidebar .menu-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.shell>.sidebar .brand{padding:2px 4px 18px;min-width:0}
+.shell>.sidebar .brand{padding:2px 6px 20px;min-width:0}
+.shell>.sidebar .brand-mark{width:34px;height:34px;border-radius:12px;font-size:19px}
+.shell>.sidebar .brand strong{font-size:1.3rem}
 .shell>.sidebar .brand small{display:block}
-.shell>.sidebar .menu-close{width:32px;height:32px;margin-top:2px;border:0;border-radius:8px;background:transparent;color:#c9d3e6;display:grid;place-items:center;flex-shrink:0}
-.shell>.sidebar .menu-close:hover{background:rgba(255,255,255,.06);color:#fff}
-.shell>.sidebar .menu-close .icon{width:16px;height:16px}
 .shell>.sidebar .nav{display:flex;flex-direction:column;gap:4px;flex:1 1 auto;min-height:0;overflow:auto}
 .shell>.sidebar .nav-title,.shell>.sidebar .sidebar-bottom{display:block}
 .shell>.sidebar .sidebar-bottom{margin-top:auto}
-.shell>.sidebar .nav-link{border-radius:12px;white-space:normal}
+.shell>.sidebar .nav-title{padding:0 11px}
+.shell>.sidebar .nav-link{border-radius:12px;white-space:normal;padding:9px 11px;gap:10px;font-size:.9rem}
 .shell>.sidebar .nav-link.nav-section{margin-top:14px}
 .shell>.sidebar .nav-link.active{box-shadow:inset 3px 0 0 #d9f887,inset 0 0 0 1px rgba(217,248,135,.72)}
 .shell>.sidebar .menu-head,.shell>.sidebar .nav-title,.shell>.sidebar .sidebar-bottom{flex-shrink:0}
-.topbar{padding-left:92px}
+.topbar{padding-left:72px;transition:padding-left .34s cubic-bezier(.22,.61,.36,1)}
+.shell>.main{min-width:0;transition:margin-left .34s cubic-bezier(.22,.61,.36,1)}
+@media(min-width:1280px){
+ .shell.menu-open>.main{margin-left:var(--nav-w)}
+ .shell.menu-open .topbar{padding-left:40px}
+}
 .shell:not(.shell-home) .topbar{position:sticky;top:0;z-index:40;background:#fff}
 .shell-home{background:#07090f;min-height:100vh;min-height:100dvh}
 .shell-home .main{min-height:100vh;min-height:100dvh}
@@ -183,13 +188,13 @@ body:has(.shell-home){background:#07090f;overflow:hidden}
 .poster-dot.is-current{width:18px;background:var(--lime)}
 .poster-count{position:absolute;right:28px;bottom:2px;color:rgba(255,255,255,.78);font-size:.82rem;letter-spacing:.16em;font-variant-numeric:tabular-nums}
 @media(max-width:760px){
- .menu-square{top:12px;left:12px;width:52px;height:52px}
- .menu-square .icon{width:24px;height:24px}
- .shell>.sidebar{top:0;width:min(300px,calc(100vw - 72px));height:100dvh;padding:14px 16px 18px 76px;border-radius:0}
+ .menu-square{top:12px;left:12px;width:46px;height:46px}
+ .menu-square .icon{width:21px;height:21px}
+ .shell>.sidebar{top:0;width:min(300px,calc(100vw - 72px));height:100dvh;padding:14px 16px 18px 70px;border-radius:0}
  .shell>.sidebar .nav{flex-direction:column;gap:4px}
  .shell>.sidebar .nav-link{border-radius:12px;padding:10px 12px}
  .shell>.sidebar .nav-link.nav-section{margin-top:14px}
- .topbar{padding-left:76px}
+ .topbar{padding-left:70px}
  .poster-frame.focus-right .poster-photo{object-position:78% 40%}
  .poster-frame.focus-left .poster-photo{object-position:22% 40%}
  .poster-copy.place-top,.poster-copy.place-middle{top:auto;bottom:108px}
@@ -264,4 +269,29 @@ body:has(.shell-home){background:#07090f;overflow:hidden}
 @media(max-width:760px){
  .auth-card{padding:22px 16px 18px}
  .auth-row{flex-direction:column}
+}
+
+/* Entry splash: photographs only, with one bottom prompt. No dashboard chrome. */
+.entry-stage .poster-veil{background:linear-gradient(180deg,transparent 52%,rgba(0,0,0,.58) 100%)}
+.entry-prompt{
+ position:absolute;left:50%;
+ bottom:calc(clamp(28px,7vh,64px) + env(safe-area-inset-bottom));
+ transform:translateX(-50%);z-index:4;
+ margin:0;color:#f7f4ec;white-space:nowrap;pointer-events:none;
+ font-size:clamp(.95rem,1.35vw,1.12rem);letter-spacing:.16em;
+ text-shadow:0 2px 18px rgba(0,0,0,.5);
+ animation:entry-breathe 2.6s ease-in-out infinite;
+}
+@keyframes entry-breathe{0%,100%{opacity:.72}50%{opacity:1}}
+@media(max-width:760px){
+ .entry-prompt{font-size:.92rem;letter-spacing:.12em}
+}
+
+/* Standalone login: no sidebar, no hamburger, no top bar. */
+.shell-plain{background:#f5f6fa}
+.shell-plain .main{min-height:100vh;min-height:100dvh}
+.shell-plain .content{max-width:none;margin:0;padding:24px;min-height:100vh;min-height:100dvh;display:grid;place-items:center}
+.shell-plain .auth-page{width:min(440px,calc(100% - 32px));max-width:none;margin:0}
+@media(prefers-reduced-motion:reduce){
+ .entry-prompt{animation:none}
 }

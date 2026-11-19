@@ -8,6 +8,12 @@
 
 在浏览器访问 http://127.0.0.1:4173 。不要直接打开dist/index.html，本版本需要后台。当前服务仅监听本机地址，尚未部署为全校可访问的网站。
 
+## 进入平台（2026-11-19 起）
+
+打开根地址后先看到全屏照片开场页：照片约 5 秒自动轮换，页面上没有左侧仪表盘、汉堡按钮和导航。照片底部显示「请点击任意键进入平台」；点击画面任意位置或按任意键进入独立登录页，登录页同样不显示左侧仪表盘。登录或注册成功后进入平台仪表盘（学生默认落在互助通达，其他演示身份落在找助手），左侧导航恢复。已登录时再打开开场页，点击会直接进入仪表盘。
+
+照片放在 `data/homepage-posters/`（已被 `.gitignore` 排除，不随仓库分发），至少放 `01.jpg`、`02.jpg` 两张授权照片；目录为空时使用渐变占位继续轮换，缺图不会影响服务启动。
+
 ## 直接问生活助手
 
 进入「校园生活助手」，可以问：
@@ -39,10 +45,14 @@
 | --- | --- | --- | --- |
 | 正式站 | 若已按 [deploy/render.md](deploy/render.md) 把 **main** 部署出去，跑的是已经合并进 main 的版本。自定义域名当时仍在实名审核，本文不写具体域名，也没有去生产环境探活 | 部署说明在 `deploy/`、`render.yaml`。合并进 main 可能触发自动部署 | 与当时的 main 相同：学号登录弹框，没有海报首页，没有独立登录页 |
 | `main` | Git 默认分支，也是本文件所在分支的基线 | [`53e64e93`](https://github.com/liuzhenbang4235-design/campus-agents/commit/53e64e93fb6cfe872b6d3c9db2bffe1003f87e27)（2026-11-10 14:00 +0800） | 学号登录。`node server.cjs` 可以跑 |
-| [PR 26](https://github.com/liuzhenbang4235-design/campus-agents/pull/26) | 未合并的产品分支 [`cursor/cinematic-home-menu-84e7`](https://github.com/liuzhenbang4235-design/campus-agents/tree/cursor/cinematic-home-menu-84e7) | 头 [`2532c11`](https://github.com/liuzhenbang4235-design/campus-agents/commit/2532c1127077a3e50ecaec0a21e91b6189165cae)（2026-11-15 22:23 +0800）。同日更早的审计头是 `d717f5b7`，那一笔仍在分支里，但已经不是最新 | 海报首页约 5 秒自动翻页；点画面打开菜单；海报本身不能拖走或点开大图。新账号用登录账号和密码，已有 8 位学号账号仍按学号登录。这些都还没进 main，也还没出现在正式站 |
+| [PR 26](https://github.com/liuzhenbang4235-design/campus-agents/pull/26) | 未合并的产品分支 [`cursor/cinematic-home-menu-84e7`](https://github.com/liuzhenbang4235-design/campus-agents/tree/cursor/cinematic-home-menu-84e7) | 头 [`2532c11`](https://github.com/liuzhenbang4235-design/campus-agents/commit/2532c1127077a3e50ecaec0a21e91b6189165cae)（2026-11-15 22:23 +0800）。同日更早的审计头是 `d717f5b7`，那一笔仍在分支里，但已经不是最新 | 海报首页约 5 秒自动翻页；PR 26 原行为是点画面打开菜单（2026-11-19 的 `cursor/entry-splash-login` 改为点画面进入平台）；海报本身不能拖走或点开大图。新账号用登录账号和密码，已有 8 位学号账号仍按学号登录。这些都还没进 main，也还没出现在正式站 |
 | 本机 | 你自己检出的目录，加上 `node server.cjs` | 浏览器地址是 http://127.0.0.1:4173 。维护者一台 Mac 上一次同步停在 [`9455785a`](https://github.com/liuzhenbang4235-design/campus-agents/commit/9455785ab87af101f50fb6298ff389daecf54a7d)（2026-11-13）：已有 5 秒首页，独立登录页还没装上 | 跟你检出的提交走。不要用那台 Mac 的旧截图证明新登录已经可用 |
 
-这次只补充文档，不改运行代码，也不把 PR 26 合并进来。审核结束前不要为了让文档生效去合 main。
+2026-11-19 入口改造（`cursor/entry-splash-login`）：开场页只保留照片轮换和底部“请点击任意键进入平台”，点击或按键进入独立登录页，登录成功后进入仪表盘；左侧导航只保留在仪表盘内部页面。
+
+2026-11-19 仪表盘布局（`cursor/docked-dashboard`）：登录成功后在宽屏（≥1280px）默认展开左侧仪表盘，左上角按钮可收起或重新打开；仪表盘以占位方式参与布局，主内容区随开合平滑缩放，不再被抽屉覆盖。窄屏仍使用覆盖式导航，默认收起。
+
+本次入口改造会修改运行代码（`dist/app.js`、`dist/styles.css`），但不把 PR 26 合并进 main。审核结束前不要为了让文档生效去合 main。
 
 ## 新成员先读
 
