@@ -1,5 +1,5 @@
 'use strict';
-const icons={grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',chat:'<path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-6a9 9 0 1 1 18-5Z"/><path d="M7 10h10M7 14h6"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/>',team:'<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/>',shield:'<path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z"/><path d="m8 12 3 3 5-6"/>',book:'<path d="M12 5v16M3 3c4-1 7 0 9 2 2-2 5-3 9-2v16c-4-1-7 0-9 2-2-2-5-3-9-2V3Z"/>',home:'<path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Z"/>',brief:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18m-9-2v4"/>',search:'<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',plus:'<path d="M12 4v16M4 12h16"/>',file:'<path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',check:'<path d="m4 12 5 5L20 6"/>',lock:'<rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3"/>',spark:'<path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',board:'<path d="M8 4h8v4H8zM5 8h14v12H5z"/><path d="M9 12h6M9 16h4"/>',menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',chev:'<path d="m15 6-6 6 6 6"/>'};
+const icons={grid:'<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',chat:'<path d="M21 11a9 9 0 0 1-9 9H4l-3 2 2-6a9 9 0 1 1 18-5Z"/><path d="M7 10h10M7 14h6"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/>',team:'<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v2"/>',shield:'<path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6l9-4Z"/><path d="m8 12 3 3 5-6"/>',book:'<path d="M12 5v16M3 3c4-1 7 0 9 2 2-2 5-3 9-2v16c-4-1-7 0-9 2-2-2-5-3-9-2V3Z"/>',home:'<path d="m3 10 9-7 9 7v11h-7v-7h-4v7H3Z"/>',brief:'<rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 12h18m-9-2v4"/>',search:'<circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/>',arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',plus:'<path d="M12 4v16M4 12h16"/>',file:'<path d="M14 2H5v20h14V7l-5-5Zm0 0v6h5M8 12h8m-8 4h6"/>',close:'<path d="m6 6 12 12M6 18 18 6"/>',check:'<path d="m4 12 5 5L20 6"/>',lock:'<rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v3"/>',spark:'<path d="m12 3 2.8 6.2L21 12l-6.2 2.8L12 21l-2.8-6.2L3 12l6.2-2.8Z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',board:'<path d="M8 4h8v4H8zM5 8h14v12H5z"/><path d="M9 12h6M9 16h4"/>',help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.9 2.2c-.8.5-1.4 1.1-1.4 2.3"/><path d="M12 17h.01"/>',menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',chev:'<path d="m15 6-6 6 6 6"/>'};
 const icon=n=>`<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${icons[n]||icons.spark}</svg>`;
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function linkifyEscaped(escaped){
@@ -62,7 +62,7 @@ function aiStatusNote(){const s=providerShort();return ai.configIssue?'模型 ID
 function studentModelChip(){const label=esc(studentModelLabel());if(!demoIdentities)return `<span class="tag model-chip" role="status">${label}</span>`;return `<button class="btn small model-chip" type="button" data-action="configure">${icon('spark')}${label}</button>`}
 
 let state={version:2,agents:[],docs:[],audit:[],chats:{},account:null,boardReports:[]},demoIdentities=true;
-let account=null,boardListings=[],boardMine=[],boardInbox=[],boardReviewMode=false,boardBusy=false,boardNeedsRefresh=true,dmListingId=null,boardQuestion='',boardAnswer=null,boardAsking=false,boardPublishOpen=false;
+let account=null,boardListings=[],boardMine=[],boardInbox=[],boardReviewMode=false,boardBusy=false,boardNeedsRefresh=true,dmListingId=null;
 let ai={ready:false,hasKey:false,model:'',dailyLimit:50,usedToday:0},busy=false,pendingChat=null,chatError='';
 async function api(path,body){
  const response=await fetch('/api/'+path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json','X-Campus-Client':'1'}:{},body:body?JSON.stringify(body):undefined});
@@ -73,7 +73,7 @@ function applyResult(data){if(data.state)state=data.state;if(data.ai)ai=data.ai;
 async function perform(body,message){if(busy)return;busy=true;try{const data=await api('action',body);applyResult(data);closeModal();render();toast(message)}catch(e){const notice=document.getElementById('review-reason-error');if(notice){notice.textContent=e.message;notice.classList.remove('hidden')}toast(e.message)}finally{busy=false;updateBusy()}}
 function updateBusy(){document.querySelectorAll('#profile,#chat-agent,#chat-form button,#chat-form textarea,.suggestions button,#places-form input,#places-form select,#places-form button').forEach(el=>el.disabled=busy||(el.closest('#places-form')&&el.tagName==='BUTTON'&&!(placesUi.provider==='local'?ai.places?.localReady:ai.places?.ready)))}
 async function switchProfile(value){if(!demoIdentities){toast('当前为公开访问，不能切换演示身份。');return}if(busy)return;try{chatPrefill='';applyResult(await api('session',{profile:value}));resetPlaces();closeModal();render();toast('已切换至'+me().label)}catch(e){toast(e.message);render()}}
-async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['home','gallery','board','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#home');menuOpen=defaultMenuOpen();startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
+async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['home','gallery','board','help','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#home');menuOpen=defaultMenuOpen();startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
 
 let currentProfile='student',category='全部',query='',reviewTab='docs',teamTab='agents',chatPrefill='';
 const me=()=>profiles[currentProfile];
@@ -87,14 +87,14 @@ const productCrumb=()=>me().role==='team'?teamProfile.name:'校集';
 const statusLabel={draft:'草稿',pending:'待审核',published:'已上线',approved:'已入库',rejected:'已驳回',offline:'已下架'};
 const badge=s=>`<span class="tag ${['published','approved'].includes(s)?'green':s==='pending'?'amber':s==='rejected'?'red':''}">${statusLabel[s]||s}</span>`;
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('visible');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('visible'),3500)}
-function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['home','gallery','board','chat','upload','team','admin','login'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
+function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['home','gallery','board','help','chat','upload','team','admin','login'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
 function go(page,id){const hash='#'+page+(id?'/'+id:'');if(location.hash===hash)render();else location.hash=hash}
-const titles={home:'校集',gallery:'找助手',board:'互助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理',login:'登录'};
+const titles={home:'校集',gallery:'找助手',board:'互助通达',help:'求助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理',login:'登录'};
 function profileSelect(){if(!demoIdentities)return '';return `<select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select>`}
 function accountControls(){return account?`<span class="tag blue">${esc(account.displayName||'同学')}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">登录</button>`}
 function configButton(){return `<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button>`}
 function navLinks(page){
- const items=[['board','board','互助通达',false],['chat','chat','与助手对话',false],['gallery','grid','找助手',true],['upload','upload','资料贡献',true]];
+ const items=[['board','board','互助通达',false],['help','help','求助通达',false],['chat','chat','与助手对话',false],['gallery','grid','找助手',true],['upload','upload','资料贡献',true]];
  if(!isStudent())items.push(['team','team','团队工作台',false]);
  if(me().role==='admin')items.push(['admin','shield','审核管理',false]);
  return items.map(([p,i,l,quiet])=>{
@@ -385,7 +385,7 @@ function roleTag(role){return role==='offer'?'我来帮忙':role==='need'?'我�
 let authMode='login',authForgot=false,authShowPassword=false;
 function safeAuthReturn(value){
  const hash=String(value||'');
- if(!/^#(gallery|board|chat|upload|team|admin)(\/[A-Za-z0-9_-]{1,40})?$/.test(hash))return '';
+ if(!/^#(gallery|board|help|chat|upload|team|admin)(\/[A-Za-z0-9_-]{1,40})?$/.test(hash))return '';
  return hash;
 }
 function rememberAuthReturn(){
@@ -426,41 +426,41 @@ function loginPage(){
  const forgot=authForgot?'<p class="small" role="status">暂时不能自助找回密码。这里没有短信或邮箱验证，也不会只凭登录账号重置密码。</p>':'';
  return '<div class="auth-page"><section class="auth-card"><p class="auth-kicker">'+(register?'注册':'登录')+'</p><h1>'+(register?'创建账号':'欢迎回来')+'</h1><div class="auth-tabs" role="tablist"><button type="button" class="auth-tab'+(register?'':' is-current')+'" data-action="auth-tab" data-value="login" role="tab" aria-selected="'+(register?'false':'true')+'">登录</button><button type="button" class="auth-tab'+(register?' is-current':'')+'" data-action="auth-tab" data-value="register" role="tab" aria-selected="'+(register?'true':'false')+'">注册</button></div><form id="auth-page-form" data-mode="'+(register?'register':'login')+'"><div class="field"><label for="auth-user">登录账号</label><input id="auth-user" name="username" required minlength="3" maxlength="20" autocomplete="username" placeholder="'+(register?'字母、数字或下划线':'请输入登录账号')+'" autofocus></div>'+nick+'<div class="field auth-pass"><label for="auth-pass">密码</label><div class="auth-pass-line"><input id="auth-pass" name="password" type="'+type+'" required minlength="6" maxlength="72" autocomplete="'+(register?'new-password':'current-password')+'" placeholder="请输入密码"><button type="button" class="auth-peek" data-action="auth-peek">'+(authShowPassword?'隐藏':'显示')+'</button></div></div><div class="auth-row"><label class="check auth-keep"><input name="remember" type="checkbox" checked><span>保持登录<small>公共电脑请取消勾选</small></span></label>'+(register?'':'<button type="button" class="btn text small" data-action="auth-forgot">忘记密码？</button>')+'</div>'+forgot+'<button class="btn primary auth-submit" type="submit">'+(register?'注册':'登录')+'</button></form>'+authNote()+'<p class="auth-foot">'+(register?'已有账号？ <button type="button" class="btn text small" data-action="auth-tab" data-value="login">去登录</button>':'还没有账号？ <button type="button" class="btn text small" data-action="auth-tab" data-value="register">去注册</button>')+'</p></section></div>';
 }
-function boardPage(){
- const logged=!!account;
- const mine=Array.isArray(boardMine)?boardMine:[];
- const answer=boardAnswer;
- const suggestions=['今天下午有没有人代取快递？','谁能接一下陪诊？','有没有人出闲置显示器？'];
+function helpRegisterSection(logged,mine){
  const nowParts=shanghaiParts(Date.now()),laterParts=shanghaiParts(Date.now()+2*3600000);
  const startClock=nowParts.hour+':'+nowParts.minute,endClock=laterParts.hour+':'+laterParts.minute;
- const register='<section class="panel board-register" id="board-register"><details class="board-publish board-fold" id="board-publish"'+(boardPublishOpen?' open':'')+'><summary>'+(logged?'登记一条互助':'登录后登记互助')+'</summary><h2>互助登记</h2><p class="small muted">登记你能提供的帮助，或你的需求。类型自己写。「接……」表示你来做这件事。发布需要登录。</p>'+
- (logged
-  ?('<p class="muted small" style="margin:12px 0">当前昵称：'+esc(account.displayName||'同学')+'</p>'+
-    '<form id="board-form"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><input id="board-type" name="type" type="text" required maxlength="30" placeholder="自己写，例如：代取快递、陪诊、出闲置、接摄影"></div>'+
-    '<fieldset class="alarm-window"><legend>'+icon('clock')+' 生效时段</legend>'+
-    '<div class="window-mode" role="radiogroup" aria-label="生效时段"><label class="window-choice"><input type="radio" name="windowMode" value="long"><span>长期有效</span></label><label class="window-choice"><input type="radio" name="windowMode" value="span" checked><span>指定时段</span></label></div>'+
-    '<div id="board-span"><div class="window-days" role="group" aria-label="哪一天"><button type="button" class="chip active" data-action="board-day" data-value="today">今天</button><button type="button" class="chip" data-action="board-day" data-value="tomorrow">明天</button><label class="chip window-pick" for="board-date">选一天</label></div>'+
-    '<input id="board-date" name="windowDate" type="date" aria-label="选一天"><input type="hidden" id="board-window-day" name="windowDay" value="today">'+
-    '<div class="form-grid window-clocks"><div class="field"><label for="board-start-time">开始</label><input id="board-start-time" name="windowStartTime" type="time" required value="'+esc(startClock)+'"></div><div class="field"><label for="board-end-time">结束</label><input id="board-end-time" name="windowEndTime" type="time" required value="'+esc(endClock)+'"></div></div>'+
-    '<p class="small muted alarm-note">时间为北京时间。结束不晚于开始时，算到第二天。超过 90 天请改选长期有效。</p>'+
-    '<div class="window-hours"><span class="small muted">从现在起</span><button type="button" data-action="board-hours" data-value="2">2 小时</button><button type="button" data-action="board-hours" data-value="4">4 小时</button><button type="button" data-action="board-hours" data-value="8">8 小时</button><button type="button" data-action="board-hours" data-value="24">24 小时</button></div></div></fieldset>'+
-    '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><div class="field"><label for="board-image">放图片（可选）</label><input id="board-image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><img id="board-image-preview" class="listing-thumb hidden" alt="图片预览"><small id="board-image-note">最多 1 张，JPEG / PNG / WebP / GIF，4 MB 以内。不要上传证件、人脸特写等敏感个人信息。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
-    '</details><h3 class="board-mine-title">我发布的登记 <span class="count">'+mine.length+'</span></h3>'+
-    (mine.length?mine.map(l=>listingCard(l,'mine')).join(''):'<p class="board-quiet">你还没有发布过登记。</p>')+'</section>')
-  :('<p class="board-quiet">提问不用登录。登记和开聊需要登录。</p><p><button class="btn primary" type="button" data-action="auth-open">去登录</button></p>'))+(logged?'':'</details></section>');
- const ask='<section class="panel board-ask"><h2>问别人</h2><p class="hint">不用登录。互助通达按意思去对同学登记，不限固定类别。只会用正处在生效时段里的信息。「接……」表示对方来帮忙。</p>'+
- '<form id="board-ask-form"><textarea name="question" aria-label="向互助通达提问" required maxlength="500" rows="3" placeholder="例如：今天下午有没有人代取快递？谁能接一下陪诊？有没有人出闲置显示器？">'+esc(boardQuestion)+'</textarea>'+
- '<div class="board-ask-bar"><div class="board-chips">'+suggestions.map(s=>'<button type="button" data-action="board-suggest" data-value="'+esc(s)+'">'+esc(s)+'</button>').join('')+'</div>'+
- '<button class="btn primary" type="submit"'+(boardAsking?' disabled':'')+'>'+(boardAsking?'正在查找…':'提问')+'</button></div></form>'+
- (answer?'<div class="bubble rich board-answer" id="board-answer">'+formatBubble(answer.text)+'</div>':'<p class="board-quiet">还没提问。写一句，就能看看有没有人对得上。</p>')+
- '</section>';
- const inbox=logged&&boardInbox.length?'<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record board-thread"><div class="board-card-copy"><div class="board-card-kicker"><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'<span class="board-when">'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</span></div><p class="board-card-text">'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</p></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>':'';
- return '<div class="board-page">'+heading('','互助通达','同学之间的事，直接问。代取、陪诊、出闲置、接摄影，或其他你想写的互助，都可以。')+
- '<div class="board-split">'+register+ask+'</div>'+inbox+boardListSection()+'</div>';
+ const intro='<p class="small muted">写清你需要的帮助，或你能提供的帮助。类型自己写。「接……」表示你来做这件事。发布需要登录。</p>';
+ if(!logged)return '<section class="panel board-register" id="board-register"><h2>发布求助</h2>'+intro+'<p class="board-quiet">登录后登记求助。提问和浏览不用登录。</p><p><button class="btn primary" type="button" data-action="auth-open">去登录</button></p></section>';
+ return '<section class="panel board-register" id="board-register"><h2>发布求助</h2>'+intro+
+  '<p class="muted small" style="margin:12px 0">当前昵称：'+esc(account.displayName||'同学')+'</p>'+
+  '<form id="board-form"><div class="field"><label for="board-type">类型 <span class="required">*</span></label><input id="board-type" name="type" type="text" required maxlength="30" placeholder="自己写，例如：代取快递、陪诊、出闲置、接摄影"></div>'+
+  '<fieldset class="alarm-window"><legend>'+icon('clock')+' 生效时段</legend>'+
+  '<div class="window-mode" role="radiogroup" aria-label="生效时段"><label class="window-choice"><input type="radio" name="windowMode" value="long"><span>长期有效</span></label><label class="window-choice"><input type="radio" name="windowMode" value="span" checked><span>指定时段</span></label></div>'+
+  '<div id="board-span"><div class="window-days" role="group" aria-label="哪一天"><button type="button" class="chip active" data-action="board-day" data-value="today">今天</button><button type="button" class="chip" data-action="board-day" data-value="tomorrow">明天</button><label class="chip window-pick" for="board-date">选一天</label></div>'+
+  '<input id="board-date" name="windowDate" type="date" aria-label="选一天"><input type="hidden" id="board-window-day" name="windowDay" value="today">'+
+  '<div class="form-grid window-clocks"><div class="field"><label for="board-start-time">开始</label><input id="board-start-time" name="windowStartTime" type="time" required value="'+esc(startClock)+'"></div><div class="field"><label for="board-end-time">结束</label><input id="board-end-time" name="windowEndTime" type="time" required value="'+esc(endClock)+'"></div></div>'+
+  '<p class="small muted alarm-note">时间为北京时间。结束不晚于开始时，算到第二天。超过 90 天请改选长期有效。</p>'+
+  '<div class="window-hours"><span class="small muted">从现在起</span><button type="button" data-action="board-hours" data-value="2">2 小时</button><button type="button" data-action="board-hours" data-value="4">4 小时</button><button type="button" data-action="board-hours" data-value="8">8 小时</button><button type="button" data-action="board-hours" data-value="24">24 小时</button></div></div></fieldset>'+
+  '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><div class="field"><label for="board-image">放图片（可选）</label><input id="board-image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><img id="board-image-preview" class="listing-thumb hidden" alt="图片预览"><small id="board-image-note">最多 1 张，JPEG / PNG / WebP / GIF，4 MB 以内。不要上传证件、人脸特写等敏感个人信息。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
+  '<h3 class="board-mine-title">我发布的求助 <span class="count">'+mine.length+'</span></h3>'+
+  (mine.length?mine.map(l=>listingCard(l,'mine')).join(''):'<p class="board-quiet">你还没有发布过求助。</p>')+
+  '</section>';
+}
+function helpInboxSection(){
+ if(!account||!Array.isArray(boardInbox)||!boardInbox.length)return '';
+ return '<section class="panel board-inbox"><h2>别人发来的消息 <span class="count">'+boardUnreadTotal()+' 条未读</span></h2><p class="hint">同学通过「同意开聊」发来的私聊，只有你和对方能看到。<button class="btn text small" type="button" data-action="board-refresh">刷新</button></p>'+boardInbox.map(t=>'<article class="record board-thread"><div class="board-card-copy"><div class="board-card-kicker"><span class="tag blue">'+esc(t.listing?.type||'互助')+'</span> '+esc(t.listing?.display||'同学登记')+(t.unread>0?' <span class="tag amber">'+t.unread+' 条未读</span>':'')+'<span class="board-when">'+esc(String(t.last?.time||'').replace('T',' ').slice(0,16))+'</span></div><p class="board-card-text">'+esc(t.peer?.displayName||'同学')+' · '+esc(t.last?.text||'')+'</p></div><button class="btn small" type="button" data-action="board-thread" data-thread="'+esc(t.threadId)+'">打开对话</button></article>').join('')+'</section>';
+}
+function boardPage(){
+ return '<div class="board-page">'+heading('','互助通达','同学们发布的求助信息。点开一条，了解情况后和同学一起解决。',`<a class="btn primary" href="#help">${icon('plus')}发布求助</a>`)+boardListSection()+'</div>';
+}
+function helpPage(){
+ const logged=!!account;
+ const mine=Array.isArray(boardMine)?boardMine:[];
+ return '<div class="board-page help-page">'+heading('','求助通达','把你的问题写下来，同学看到后会来帮你。',`<a class="btn" href="#board">${icon('board')}看看同学们的求助</a>`)+helpRegisterSection(logged,mine)+helpInboxSection()+'</div>';
 }
 function boardListSection(){
  const list=Array.isArray(boardListings)?boardListings:[];
- const body=list.length?list.map(l=>listingCard(l,'public')).join(''):'<p class="board-quiet">眼下没有正在生效的互助。</p>';
+ const body=list.length?list.map(l=>listingCard(l,'public')).join(''):'<p class="board-quiet">眼下没有正在生效的互助。想求助？<a href="#help">去「求助通达」发布一条</a>。</p>';
  return '<section class="panel board-list" id="board-list"><h2>正在生效'+(list.length?' <span class="count">'+list.length+'</span>':'')+'</h2>'+body+'</section>';
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}
@@ -542,16 +542,21 @@ function admin(){if(me().role!=='admin')return guard('admin');const docs=state.d
 async function loadBoard(){try{const data=await api('board');boardListings=data.listings||[];boardMine=Array.isArray(data.mine)?data.mine:[];boardInbox=Array.isArray(data.inbox)?data.inbox:[];if('reviewMode' in data)boardReviewMode=data.reviewMode===true;if('account' in data)account=data.account}catch(e){toast(e.message)}}
 function boardUnreadTotal(){return (Array.isArray(boardInbox)?boardInbox:[]).reduce((n,t)=>n+(Number(t.unread)||0),0)}
 async function refreshBoardQuietly(){
- if(!account||route().page!=='board'||busy)return;
+ if(!account||!['board','help'].includes(route().page)||busy)return;
  if(document.getElementById('modal')?.open)return;
  const active=document.activeElement;
  if(active&&['INPUT','TEXTAREA','SELECT'].includes(active.tagName))return;
- if([...document.querySelectorAll('#app textarea,#app input')].some(el=>String(el.value||'').trim()))return;
+ if([...document.querySelectorAll('#app textarea,#app input')].some(el=>{
+  if(el.type==='hidden'||el.type==='file')return false;
+  const value=String(el.value||'').trim();
+  if(!value)return false;
+  return el.tagName==='TEXTAREA'||value!==String(el.defaultValue||'').trim();
+ }))return;
  const before=JSON.stringify({listings:boardListings,inbox:boardInbox});
  try{
   const data=await api('board');boardListings=data.listings||[];boardInbox=Array.isArray(data.inbox)?data.inbox:[];if('account' in data)account=data.account;
   if(JSON.stringify({listings:boardListings,inbox:boardInbox})===before)return;
-  if(boardUnreadTotal()>0)toast('互助通达有 '+boardUnreadTotal()+' 条未读消息');
+  if(boardUnreadTotal()>0)toast('求助通达有 '+boardUnreadTotal()+' 条未读消息');
   render();
  }catch{}
 }
@@ -574,19 +579,6 @@ function openOfferModal(offers){
   :'<div class="modal-actions"><button class="btn" type="button" data-action="board-decline">考虑一下</button></div>';
  modal(one?'要和这位同学开聊吗？':'选一位同学开聊',lead+cards+actions);
 }
-async function askBoard(question){
- const q=String(question||'').trim();
- if(!q||boardAsking)return;
- boardQuestion=q;boardAsking=true;render();
- try{
-  const data=await api('board/ask',{question:q});
-  if('account' in data)account=data.account;
-  boardAnswer={text:data.text||'',offers:Array.isArray(data.offers)?data.offers:[]};
-  boardAsking=false;render();
-  if(boardAnswer.offers.length)openOfferModal(boardAnswer.offers);
- }catch(err){boardAsking=false;render();toast(err.message)}
-}
-
 function openDmModal(data,listingId,threadId){
  dmListingId=listingId;
  const msgs=(data.messages||[]).map(m=>'<div class="message '+(m.mine===true||(account&&m.from===account.studentId)?'user':'')+'"><div class="bubble">'+esc(m.text)+'<br><small>'+esc(String(m.time||'').replace('T',' ').slice(0,16))+'</small></div></div>').join('');
@@ -598,7 +590,7 @@ function reportModal(listingId){
 function boardReviewModal(listingId){
  modal('驳回这条登记','<form id="board-review-form" data-id="'+esc(listingId)+'"><p class="small muted">驳回原因会显示给发布者，请写清楚需要修改的地方。</p><div class="field"><label for="board-review-reason">驳回原因 *</label><textarea id="board-review-reason" name="reason" required minlength="2" maxlength="300" rows="3"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn danger" type="submit">确认驳回</button></div></form>');
 }
-function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:entrySplash,gallery,board:boardPage,upload,team,chat,admin,login:loginPage}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home')return;paintPoster();syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if(r.page==='board'&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;if(route().page==='board'){document.getElementById('app').innerHTML=shell(boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
+function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:entrySplash,gallery,board:boardPage,help:helpPage,upload,team,chat,admin,login:loginPage}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home')return;paintPoster();syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if((r.page==='board'||r.page==='help')&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;const pageNow=route().page;if(pageNow==='board'||pageNow==='help'){document.getElementById('app').innerHTML=shell(pageNow==='help'?helpPage():boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
 function openAuthDialog(){goLogin()}
 function closeModal(){document.getElementById('modal').close()}
@@ -719,10 +711,8 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='approve')return reviewReasonForm(a.kind,a.id,'approve');
  if(a.action==='reject')return reviewReasonForm(a.kind,a.id,'reject');
  if(a.action==='suggest')return sendChat(a.value);
- if(a.action==='board-suggest')return askBoard(a.value);
  if(a.action==='board-day'){setBoardDay(a.value==='tomorrow'?'tomorrow':'today');return}
  if(a.action==='board-hours'){applyBoardHours(a.value);return}
- if(a.action==='board-reoffer'){if(boardAnswer?.offers?.length)openOfferModal(boardAnswer.offers);return}
  if(a.action==='board-offer'){openOfferModal([{listingId:a.id,title:a.title,display:a.title,ownerName:a.owner,type:a.type,windowText:a.expires,image:a.image}]);return}
  if(a.action==='board-thread'){try{const data=await api('board/thread?threadId='+encodeURIComponent(a.thread));applyResult(data);openDmModal(data.thread,null,a.thread)}catch(err){toast(err.message)}return}
  if(a.action==='board-refresh'){loadBoard().then(()=>{if(route().page==='board')render()});return}
@@ -750,10 +740,9 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='confirm-reset'){await perform({action:'reset'},'已恢复初始资料。');go('gallery')}
 });
 document.addEventListener('submit',async e=>{
- const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form'||f.id==='auth-page-form'||f.id==='nick-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','auth-page-form','nick-form','board-form','board-ask-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','auth-page-form','nick-form','board-form','board-ask-form','dm-form'].includes(f.id))return;
+ const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form'||f.id==='auth-page-form'||f.id==='nick-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','auth-page-form','nick-form','board-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','auth-page-form','nick-form','board-form','dm-form'].includes(f.id))return;
  const fd=new FormData(f),get=n=>String(fd.get(n)||'').trim();
  if(f.id==='chat-form')return sendChat(get('question'));
- if(f.id==='board-ask-form')return askBoard(get('question'));
  if(f.id==='auth-page-form'){
    const mode=f.dataset.mode==='register'?'register':'login';
    try{
@@ -845,7 +834,7 @@ document.addEventListener('submit',async e=>{
 });
 document.addEventListener('keydown',e=>{
  if(e.key==='Escape'&&menuOpen){setMenu(false);return}
- if((e.target.matches?.('#chat-form textarea')||e.target.matches?.('#board-ask-form textarea'))&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}
+ if(e.target.matches?.('#chat-form textarea')&&e.key==='Enter'&&!e.shiftKey&&!e.isComposing){e.preventDefault();e.target.form.requestSubmit()}
  if(route().page!=='home')return;
  if(document.getElementById('modal')?.open)return;
  if(e.target.closest?.('input,textarea,select'))return;
@@ -860,7 +849,6 @@ function searchInput(e){
 }
 document.addEventListener('input',e=>{
  if(e.target.id==='city-keyword')document.getElementById('city-map-link').href=cityMapUrl(e.target.value);
- if(e.target.matches?.('#board-ask-form textarea'))boardQuestion=e.target.value;
  if(e.target.id==='api-key'){
   const box=document.getElementById('config-consent'),note=document.getElementById('saved-key-note');
   if(!box||!note)return;
@@ -871,7 +859,6 @@ document.addEventListener('input',e=>{
  }
 });
 document.addEventListener('input',searchInput);document.addEventListener('compositionend',searchInput);
-document.addEventListener('toggle',e=>{if(e.target.id==='board-publish')boardPublishOpen=e.target.open},true);
 document.addEventListener('change',e=>{
  if(e.target.name==='windowMode')return setBoardMode(e.target.value);
  if(e.target.id!=='board-date')return;
@@ -880,7 +867,7 @@ document.addEventListener('change',e=>{
  else setBoardDay('today');
 });
 document.addEventListener('visibilitychange',()=>syncPosterAutoplay(false));
-window.addEventListener('hashchange',()=>{const page=route().page;if(page==='home'||page==='login')menuOpen=false;if(page==='board')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
+window.addEventListener('hashchange',()=>{const page=route().page;if(page==='home'||page==='login')menuOpen=false;if(page==='board'||page==='help')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'list_campus_agents',title:'查看已上线校园助手',description:'只读列出当前本地平台已上线的助手与已审核资料数。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute(input){if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('不接受参数');return state.agents.filter(a=>a.status==='published').map(a=>({id:a.id,name:a.name,documents:state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length}))}},{signal:lifecycle.signal})).catch(()=>{})}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})}
 
