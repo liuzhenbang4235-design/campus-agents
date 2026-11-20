@@ -52,8 +52,8 @@ function loadApp(hash='#gallery'){
  context.globalThis=context;
  vm.createContext(context);
  const src=appSource.replace('\nboot();\n','\n/* boot skipped */\n')+`
-globalThis.__snap=()=>({hash:location.hash,publishOpen:boardPublishOpen,account,app:document.getElementById('app').innerHTML,modal:document.getElementById('modal').innerHTML,modalOpen:document.getElementById('modal').open,toast:document.getElementById('toast').textContent,next:sessionStorage.getItem('campus-auth-next')});
-globalThis.__loggedOutBoard=()=>{const prev=account;account=null;const html=boardPage();account=prev;return html};
+globalThis.__snap=()=>({hash:location.hash,account,app:document.getElementById('app').innerHTML,modal:document.getElementById('modal').innerHTML,modalOpen:document.getElementById('modal').open,toast:document.getElementById('toast').textContent,next:sessionStorage.getItem('campus-auth-next')});
+globalThis.__loggedOutHelp=()=>{const prev=account;account=null;const html=helpPage();account=prev;return html};
 globalThis.__login=()=>{location.hash='#login';return loginPage()};
 `;
  new vm.Script(src,{filename:'dist/app.js'}).runInContext(context);
@@ -88,12 +88,12 @@ test('top-bar login opens the login route and remembers only an internal return'
   assert.equal(snap.hash,'#login');
   assert.equal(snap.next,'#gallery');
   assert.equal(snap.modalOpen,false);
-  assert.equal(snap.publishOpen,false);
   assert.equal(vm.runInContext('safeAuthReturn("https://evil.example/phish")',context),'');
   assert.equal(vm.runInContext('safeAuthReturn("//evil.example")',context),'');
   assert.equal(vm.runInContext('safeAuthReturn("#login")',context),'');
   assert.equal(vm.runInContext('safeAuthReturn("#home")',context),'');
   assert.equal(vm.runInContext('safeAuthReturn("#board")',context),'#board');
+  assert.equal(vm.runInContext('safeAuthReturn("#help")',context),'#help');
   assert.equal(vm.runInContext('safeAuthReturn("#chat/affairs")',context),'#chat/affairs');
  });
 });
@@ -128,12 +128,14 @@ test('the login page matches the approved account form and not the preview chrom
  assert.match(registered,/已有账号？/);
 });
 
-test('logged-out board points at login instead of embedding the account form',()=>{
- const {context}=loadApp('#board');
- const html=context.__loggedOutBoard();
- assert.match(html,/登录后登记互助/);
+test('logged-out help points at login instead of embedding the account form',()=>{
+ const {context}=loadApp('#help');
+ const html=context.__loggedOutHelp();
+ assert.match(html,/发布求助/);
+ assert.match(html,/登录后登记求助/);
  assert.match(html,/data-action="auth-open">去登录</);
- assert.match(html,/提问不用登录/);
+ assert.match(html,/提问和浏览不用登录/);
+ assert.doesNotMatch(html,/id="board-form"/);
  assert.doesNotMatch(html,/id="auth-form"/);
  assert.doesNotMatch(html,/name="studentId"/);
  assert.doesNotMatch(html,/8 位数字学号/);
@@ -167,6 +169,18 @@ test('login returns to the internal page that asked, and drops an external next'
  assert.equal(direct.calls[0].body.displayName,'小林');
  assert.equal(again.hash,'#board');
  assert.equal(again.toast,'注册成功，已登录');
+});
+
+test('login from the help page returns to help',async()=>{
+ const help=loadApp('#help');
+ await help.listeners.click[0]({target:actionTarget('auth-open')});
+ assert.equal(help.context.__snap().hash,'#login');
+ assert.equal(help.context.__snap().next,'#help');
+ await help.listeners.submit[0](authSubmit('login',{username:'Lin',password:'secret12',displayName:''},{remember:true}));
+ const snap=help.context.__snap();
+ assert.equal(snap.hash,'#help');
+ assert.match(snap.app,/id="board-form"/);
+ assert.match(snap.app,/求助通达/);
 });
 
 test('the dashboard docks open after login and the top-left button toggles it',async ()=>{
@@ -222,6 +236,5 @@ test('opening a chat request while logged out goes to login and can return',asyn
  const snap=context.__snap();
  assert.equal(snap.hash,'#login');
  assert.equal(snap.next,'#chat/affairs');
- assert.equal(snap.publishOpen,false);
  assert.equal(snap.toast,'请先登录，再和对方开聊。');
 });
