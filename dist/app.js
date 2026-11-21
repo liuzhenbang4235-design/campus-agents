@@ -62,7 +62,7 @@ function aiStatusNote(){const s=providerShort();return ai.configIssue?'模型 ID
 function studentModelChip(){const label=esc(studentModelLabel());if(!demoIdentities)return `<span class="tag model-chip" role="status">${label}</span>`;return `<button class="btn small model-chip" type="button" data-action="configure">${icon('spark')}${label}</button>`}
 
 let state={version:2,agents:[],docs:[],audit:[],chats:{},account:null,boardReports:[]},demoIdentities=true;
-let account=null,boardListings=[],boardMine=[],boardInbox=[],boardReviewMode=false,boardBusy=false,boardNeedsRefresh=true,dmListingId=null;
+let account=null,boardListings=[],boardMine=[],boardInbox=[],boardReviewMode=false,boardBusy=false,boardNeedsRefresh=true,dmListingId=null,boardDateFilter='all',boardDateCustom='';
 let ai={ready:false,hasKey:false,model:'',dailyLimit:50,usedToday:0},busy=false,pendingChat=null,chatError='';
 async function api(path,body){
  const response=await fetch('/api/'+path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json','X-Campus-Client':'1'}:{},body:body?JSON.stringify(body):undefined});
@@ -73,7 +73,7 @@ function applyResult(data){if(data.state)state=data.state;if(data.ai)ai=data.ai;
 async function perform(body,message){if(busy)return;busy=true;try{const data=await api('action',body);applyResult(data);closeModal();render();toast(message)}catch(e){const notice=document.getElementById('review-reason-error');if(notice){notice.textContent=e.message;notice.classList.remove('hidden')}toast(e.message)}finally{busy=false;updateBusy()}}
 function updateBusy(){document.querySelectorAll('#profile,#chat-agent,#chat-form button,#chat-form textarea,.suggestions button,#places-form input,#places-form select,#places-form button').forEach(el=>el.disabled=busy||(el.closest('#places-form')&&el.tagName==='BUTTON'&&!(placesUi.provider==='local'?ai.places?.localReady:ai.places?.ready)))}
 async function switchProfile(value){if(!demoIdentities){toast('当前为公开访问，不能切换演示身份。');return}if(busy)return;try{chatPrefill='';applyResult(await api('session',{profile:value}));resetPlaces();closeModal();render();toast('已切换至'+me().label)}catch(e){toast(e.message);render()}}
-async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['home','gallery','board','help','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#home');menuOpen=defaultMenuOpen();startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
+async function boot(){try{const params=new URLSearchParams(location.search),wanted=params.get('profile'),page=params.get('page');applyResult(await api('state'));if(demoIdentities&&wanted&&Object.hasOwn(profiles,wanted))applyResult(await api('session',{profile:wanted}));if(wanted||page){if(page&&['home','gallery','board','help','mine','chat','upload','team','admin'].includes(page))history.replaceState(null,'',location.pathname+'#'+page);else history.replaceState(null,'',location.pathname+(location.hash||''))}if(!location.hash||location.hash==='#')history.replaceState(null,'','#home');menuOpen=defaultMenuOpen();startBoardPolling();render()}catch(e){document.getElementById('app').innerHTML='<main class="panel lock-page"><h1>请启动第二步本地服务</h1><p>'+(/Mac/i.test(navigator.platform||navigator.userAgent)?'在终端进入项目文件夹运行 <code>node server.cjs</code>，或双击“打开原型.command”':'双击项目文件夹内的“打开原型.cmd”')+'，再访问 '+esc(location.origin)+'。</p><p>'+esc(e.message)+'</p></main>'}}
 
 let currentProfile='student',category='全部',query='',reviewTab='docs',teamTab='agents',chatPrefill='';
 const me=()=>profiles[currentProfile];
@@ -87,14 +87,14 @@ const productCrumb=()=>me().role==='team'?teamProfile.name:'校集';
 const statusLabel={draft:'草稿',pending:'待审核',published:'已上线',approved:'已入库',rejected:'已驳回',offline:'已下架'};
 const badge=s=>`<span class="tag ${['published','approved'].includes(s)?'green':s==='pending'?'amber':s==='rejected'?'red':''}">${statusLabel[s]||s}</span>`;
 function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('visible');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('visible'),3500)}
-function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['home','gallery','board','help','chat','upload','team','admin','login'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
+function route(){const parts=location.hash.slice(1).split('/');if(parts[0]==='collect'){history.replaceState(null,'','#upload');parts[0]='upload'}return {page:['home','gallery','board','help','mine','chat','upload','team','admin','login'].includes(parts[0])?parts[0]:homePage(),id:parts[1]||'affairs'}}
 function go(page,id){const hash='#'+page+(id?'/'+id:'');if(location.hash===hash)render();else location.hash=hash}
-const titles={home:'校集',gallery:'找助手',board:'互助通达',help:'求助通达',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理',login:'登录'};
+const titles={home:'校集',gallery:'找助手',board:'互助通达',help:'求助通达',mine:'我的求助',chat:'与助手对话',upload:'资料贡献',team:'团队工作台',admin:'审核管理',login:'登录'};
 function profileSelect(){if(!demoIdentities)return '';return `<select id="profile" aria-label="切换演示身份">${Object.entries(profiles).map(([k,p])=>`<option value="${k}" ${currentProfile===k?'selected':''}>${p.label}</option>`).join('')}</select>`}
 function accountControls(){return account?`<span class="tag blue">${esc(account.displayName||'同学')}</span><button class="btn text small" data-action="auth-logout">退出</button>`:`<button class="btn small" type="button" data-action="auth-open">登录</button>`}
 function configButton(){return `<button class="btn small" data-action="configure">${icon('spark')}${aiConfigLabel()}</button>`}
 function navLinks(page){
- const items=[['board','board','互助通达',false],['help','help','求助通达',false],['chat','chat','与助手对话',false],['gallery','grid','找助手',true],['upload','upload','资料贡献',true]];
+ const items=[['board','board','互助通达',false],['help','help','求助通达',false],['mine','file','我的求助',false],['chat','chat','与助手对话',false],['gallery','grid','找助手',true],['upload','upload','资料贡献',true]];
  if(!isStudent())items.push(['team','team','团队工作台',false]);
  if(me().role==='admin')items.push(['admin','shield','审核管理',false]);
  return items.map(([p,i,l,quiet])=>{
@@ -364,6 +364,80 @@ function applyBoardHours(n){
  if(endEl)endEl.value=e.hour+':'+e.minute;
  setBoardDay('today');
 }
+function boardDateKeyOf(ms){
+ const p=shanghaiParts(ms);
+ return p.year+'-'+p.month+'-'+p.day;
+}
+function boardDateKey(l){
+ const ms=Date.parse(l&&l.createdAt||'');
+ return Number.isFinite(ms)?boardDateKeyOf(ms):'';
+}
+function boardTodayKey(){return boardDateKeyOf(Date.now())}
+function boardDateLabel(key){
+ const today=boardTodayKey();
+ if(key===today)return '今天';
+ if(key===dateKeyPlus(today,-1))return '昨天';
+ const parts=String(key||'').split('-');
+ if(parts.length!==3)return '日期未知';
+ const y=parts[0],m=Number(parts[1]),d=Number(parts[2]);
+ return (y===today.slice(0,4)?'':y+'年')+m+'月'+d+'日';
+}
+function boardCreatedLabel(l){
+ const ms=Date.parse(l&&l.createdAt||'');
+ if(!Number.isFinite(ms))return '';
+ const p=shanghaiParts(ms);
+ return p.month+'-'+p.day+' '+p.hour+':'+p.minute;
+}
+function boardFilteredListings(list){
+ const rows=Array.isArray(list)?list:[];
+ if(boardDateFilter==='today'){const today=boardTodayKey();return rows.filter(l=>boardDateKey(l)===today)}
+ if(boardDateFilter==='week'){const cutoff=dateKeyPlus(boardTodayKey(),-6);return rows.filter(l=>{const key=boardDateKey(l);return key&&key>=cutoff})}
+ if(boardDateFilter==='custom'&&boardDateCustom)return rows.filter(l=>boardDateKey(l)===boardDateCustom);
+ return rows;
+}
+function boardDateGroups(list){
+ const keys=[],map=new Map();
+ for(const l of list){
+  const key=boardDateKey(l)||'unknown';
+  if(!map.has(key)){map.set(key,[]);keys.push(key)}
+  map.get(key).push(l);
+ }
+ keys.sort((a,b)=>a==='unknown'?1:b==='unknown'?-1:b.localeCompare(a));
+ return keys.map(key=>({
+  key,label:key==='unknown'?'日期未知':boardDateLabel(key),
+  rows:map.get(key).slice().sort((a,b)=>(a.resolution==='solved'?1:0)-(b.resolution==='solved'?1:0))
+ }));
+}
+function boardDateFilterBar(){
+ const chips=[['all','全部日期'],['today','今天'],['week','近 7 天']];
+ return '<div class="board-date-bar" role="group" aria-label="按发布日期筛选">'+
+  chips.map(([value,label])=>'<button type="button" class="chip '+(boardDateFilter===value?'active':'')+'" data-action="board-date-filter" data-value="'+value+'">'+label+'</button>').join('')+
+  '<label class="board-date-pick" for="board-date-filter">选择日期<input id="board-date-filter" type="date" value="'+esc(boardDateCustom)+'"></label>'+
+  (boardDateFilter==='custom'&&boardDateCustom?'<button type="button" class="chip" data-action="board-date-filter" data-value="all">清除</button>':'')+
+  '</div>';
+}
+function boardHelpState(l){
+ const st=l.status||'active';
+ if(st==='pending')return {label:'待审核',tone:'amber',icon:''};
+ if(st==='rejected')return {label:'已驳回',tone:'red',icon:''};
+ if(st==='taken_down')return {label:'已下架',tone:'',icon:''};
+ if(l.resolution==='solved')return {label:'已解决',tone:'green',icon:'check'};
+ const count=Number(l.helpCount)||0;
+ if(count>0)return {label:'目前有 '+count+' 人帮助',tone:'green',icon:'team'};
+ return {label:'待帮助',tone:'amber',icon:''};
+}
+function boardHelpBadge(l){
+ const s=boardHelpState(l);
+ return '<span class="tag '+s.tone+' board-help-state">'+(s.icon?icon(s.icon):'')+esc(s.label)+'</span>';
+}
+function boardDetailButton(l,context='board'){
+ return '<button class="btn small" type="button" data-action="board-detail" data-id="'+esc(l.id)+'" data-context="'+esc(context)+'">查看详情</button>';
+}
+function boardHelperList(l){
+ const rows=Array.isArray(l.helpers)?l.helpers:[];
+ if(!rows.length)return '';
+ return '<div class="board-helpers"><p class="board-helpers-title">来帮忙的同学 <span class="count">'+rows.length+'</span></p>'+rows.map(h=>'<div class="board-helper"><div class="board-helper-head"><strong>'+esc(h.displayName||'同学')+'</strong><span class="board-when">'+esc(String(h.createdAt||'').replace('T',' ').slice(0,16))+'</span></div><p>'+esc(h.message||'')+'</p>'+(h.contact?'<p class="small muted">联系方式：'+esc(h.contact)+'</p>':'')+'</div>').join('')+'</div>';
+}
 function listingCard(l,mode){
  const when=esc(listingWhen(l));
  const type=esc(l.type||'互助');
@@ -371,13 +445,14 @@ function listingCard(l,mode){
  const text=esc(l.description||'');
  if(mode==='mine'){
   const st=l.status||'active';
-  const tag=st==='active'?'<span class="tag green">已生效</span>':st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';
-  const act=st==='taken_down'?'':'<div class="board-card-actions"><button class="btn danger small" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button></div>';
+  const tag=st==='active'?boardHelpBadge(l):st==='pending'?'<span class="tag amber">待审核</span>':st==='rejected'?'<span class="tag red">已驳回</span>':'<span class="tag">已下架</span>';
+  const actions=[boardDetailButton(l,'mine')];
+  if(st!=='taken_down')actions.push('<button class="btn danger small" type="button" data-action="board-takedown" data-id="'+esc(l.id)+'">'+(st==='active'?'下架':'撤回')+'</button>');
   const reason=l.reason?'<p class="reason">审核意见：'+esc(l.reason)+'</p>':'';
-  return '<article class="record board-card">'+listingThumb(l)+'<div class="board-card-copy"><div class="board-card-kicker">'+tag+'<span class="tag blue">'+type+'</span><span class="board-when">'+when+'</span></div><h3 class="board-card-title">'+headline+'</h3><p class="board-card-text">'+text+'</p>'+reason+act+'</div></article>';
+  return '<article class="record board-card">'+listingThumb(l)+'<div class="board-card-copy"><div class="board-card-kicker">'+tag+'<span class="tag blue">'+type+'</span><span class="board-when">'+when+'</span></div><h3 class="board-card-title">'+headline+'</h3><p class="board-card-text">'+text+'</p>'+reason+boardHelperList(l)+'<div class="board-card-actions">'+actions.join('')+'</div></div></article>';
  }
  const role=roleTag(l.role);
- return '<article class="record board-card">'+listingThumb(l)+'<div class="board-card-copy"><div class="board-card-kicker"><span class="tag blue">'+type+'</span>'+(role?'<span class="tag">'+esc(role)+'</span>':'')+'<span class="board-when">'+when+'</span></div><h3 class="board-card-title">'+headline+'</h3>'+(text?'<p class="board-card-text">'+text+'</p>':'')+'<p class="board-card-who">'+esc(l.ownerName||'同学')+'</p></div></article>';
+ return '<article class="record board-card">'+listingThumb(l)+'<div class="board-card-copy"><div class="board-card-kicker"><span class="tag blue">'+type+'</span>'+(role?'<span class="tag">'+esc(role)+'</span>':'')+boardHelpBadge(l)+'<span class="board-when">'+when+'</span></div><h3 class="board-card-title">'+headline+'</h3>'+(text?'<p class="board-card-text">'+text+'</p>':'')+'<p class="board-card-who">'+esc(l.ownerName||'同学')+'</p><div class="board-card-foot"><span class="board-created">'+(boardCreatedLabel(l)?'发布于 '+esc(boardCreatedLabel(l)):'')+'</span>'+boardDetailButton(l,'board')+'</div></div></article>';
 }
 function listingHeadline(l){return l.display||[l.type,l.title].filter(Boolean).join(' · ')||l.type||'同学登记'}
 function listingWhen(l){return l.windowText||(l.longTerm?'长期':(l.expiresAt?'有效至 '+String(l.expiresAt).slice(0,16).replace('T',' '):''))}
@@ -385,7 +460,7 @@ function roleTag(role){return role==='offer'?'我来帮忙':role==='need'?'我�
 let authMode='login',authForgot=false,authShowPassword=false;
 function safeAuthReturn(value){
  const hash=String(value||'');
- if(!/^#(gallery|board|help|chat|upload|team|admin)(\/[A-Za-z0-9_-]{1,40})?$/.test(hash))return '';
+ if(!/^#(gallery|board|help|mine|chat|upload|team|admin)(\/[A-Za-z0-9_-]{1,40})?$/.test(hash))return '';
  return hash;
 }
 function rememberAuthReturn(){
@@ -426,7 +501,7 @@ function loginPage(){
  const forgot=authForgot?'<p class="small" role="status">暂时不能自助找回密码。这里没有短信或邮箱验证，也不会只凭登录账号重置密码。</p>':'';
  return '<div class="auth-page"><section class="auth-card"><p class="auth-kicker">'+(register?'注册':'登录')+'</p><h1>'+(register?'创建账号':'欢迎回来')+'</h1><div class="auth-tabs" role="tablist"><button type="button" class="auth-tab'+(register?'':' is-current')+'" data-action="auth-tab" data-value="login" role="tab" aria-selected="'+(register?'false':'true')+'">登录</button><button type="button" class="auth-tab'+(register?' is-current':'')+'" data-action="auth-tab" data-value="register" role="tab" aria-selected="'+(register?'true':'false')+'">注册</button></div><form id="auth-page-form" data-mode="'+(register?'register':'login')+'"><div class="field"><label for="auth-user">登录账号</label><input id="auth-user" name="username" required minlength="3" maxlength="20" autocomplete="username" placeholder="'+(register?'字母、数字或下划线':'请输入登录账号')+'" autofocus></div>'+nick+'<div class="field auth-pass"><label for="auth-pass">密码</label><div class="auth-pass-line"><input id="auth-pass" name="password" type="'+type+'" required minlength="6" maxlength="72" autocomplete="'+(register?'new-password':'current-password')+'" placeholder="请输入密码"><button type="button" class="auth-peek" data-action="auth-peek">'+(authShowPassword?'隐藏':'显示')+'</button></div></div><div class="auth-row"><label class="check auth-keep"><input name="remember" type="checkbox" checked><span>保持登录<small>公共电脑请取消勾选</small></span></label>'+(register?'':'<button type="button" class="btn text small" data-action="auth-forgot">忘记密码？</button>')+'</div>'+forgot+'<button class="btn primary auth-submit" type="submit">'+(register?'注册':'登录')+'</button></form>'+authNote()+'<p class="auth-foot">'+(register?'已有账号？ <button type="button" class="btn text small" data-action="auth-tab" data-value="login">去登录</button>':'还没有账号？ <button type="button" class="btn text small" data-action="auth-tab" data-value="register">去注册</button>')+'</p></section></div>';
 }
-function helpRegisterSection(logged,mine){
+function helpRegisterSection(logged){
  const nowParts=shanghaiParts(Date.now()),laterParts=shanghaiParts(Date.now()+2*3600000);
  const startClock=nowParts.hour+':'+nowParts.minute,endClock=laterParts.hour+':'+laterParts.minute;
  const intro='<p class="small muted">写清你需要的帮助，或你能提供的帮助。类型自己写。「接……」表示你来做这件事。发布需要登录。</p>';
@@ -442,8 +517,6 @@ function helpRegisterSection(logged,mine){
   '<p class="small muted alarm-note">时间为北京时间。结束不晚于开始时，算到第二天。超过 90 天请改选长期有效。</p>'+
   '<div class="window-hours"><span class="small muted">从现在起</span><button type="button" data-action="board-hours" data-value="2">2 小时</button><button type="button" data-action="board-hours" data-value="4">4 小时</button><button type="button" data-action="board-hours" data-value="8">8 小时</button><button type="button" data-action="board-hours" data-value="24">24 小时</button></div></div></fieldset>'+
   '<div class="field"><label for="board-desc">说明 <span class="required">*</span></label><textarea id="board-desc" name="description" required maxlength="800" rows="4" placeholder="写清你能做什么，或你需要什么。例如：接代取，南门快递。不要写敏感隐私。"></textarea></div><div class="field"><label for="board-contact">联系方式（自愿公开，可选）</label><input id="board-contact" name="contact" maxlength="80" placeholder="例如 QQ / 微信 / 手机号"><small>可以不填。需要时再在开聊里交换联系方式。</small></div><div class="field"><label for="board-image">放图片（可选）</label><input id="board-image" name="image" type="file" accept="image/jpeg,image/png,image/webp,image/gif"><img id="board-image-preview" class="listing-thumb hidden" alt="图片预览"><small id="board-image-note">最多 1 张，JPEG / PNG / WebP / GIF，4 MB 以内。不要上传证件、人脸特写等敏感个人信息。</small></div><button class="btn primary" type="submit">'+icon('plus')+'提交登记</button></form>'+
-  '<h3 class="board-mine-title">我发布的求助 <span class="count">'+mine.length+'</span></h3>'+
-  (mine.length?mine.map(l=>listingCard(l,'mine')).join(''):'<p class="board-quiet">你还没有发布过求助。</p>')+
   '</section>';
 }
 function helpInboxSection(){
@@ -455,13 +528,55 @@ function boardPage(){
 }
 function helpPage(){
  const logged=!!account;
+ return '<div class="board-page help-page">'+heading('','求助通达','把你的问题写下来，同学看到后会来帮你。',`<a class="btn" href="#board">${icon('board')}看看同学们的求助</a>`)+helpRegisterSection(logged)+helpInboxSection()+'</div>';
+}
+function myRequestsPage(){
+ const logged=!!account;
  const mine=Array.isArray(boardMine)?boardMine:[];
- return '<div class="board-page help-page">'+heading('','求助通达','把你的问题写下来，同学看到后会来帮你。',`<a class="btn" href="#board">${icon('board')}看看同学们的求助</a>`)+helpRegisterSection(logged,mine)+helpInboxSection()+'</div>';
+ if(!logged)return '<div class="board-page my-page">'+heading('','我的求助','登录后查看你发布过的求助和解决情况。')+'<section class="panel"><p class="board-quiet">还没有登录。登录后才能查看自己的求助。</p><p><button class="btn primary" type="button" data-action="auth-open">去登录</button></p></section></div>';
+ const body=mine.length?mine.map(l=>listingCard(l,'mine')).join(''):'<p class="board-quiet">你还没有发布过求助。<a href="#help">去「求助通达」发布一条</a>。</p>';
+ return '<div class="board-page my-page">'+heading('','我的求助','看看你发布过的求助，以及现在有没有同学来帮忙。',`<a class="btn primary" href="#help">${icon('plus')}发布求助</a>`)+'<section class="panel board-list" id="my-list"><h2>我发布的求助'+(mine.length?' <span class="count">'+mine.length+'</span>':'')+'</h2>'+body+'</section></div>';
+}
+function boardFindListing(listingId){
+ const id=String(listingId||'');
+ return (Array.isArray(boardMine)?boardMine:[]).find(l=>l.id===id)||(Array.isArray(boardListings)?boardListings:[]).find(l=>l.id===id)||null;
+}
+function boardDetailModal(listingId,context='board'){
+ const l=boardFindListing(listingId);
+ if(!l)return toast('求助已不可用。');
+ const fromMine=context==='mine';
+ const owner=l.mine===true||(Array.isArray(boardMine)&&boardMine.some(x=>x.id===l.id));
+ const status=l.status||'active';
+ const contact=l.contact?'<p class="small muted">联系方式：'+esc(l.contact)+'</p>':'<p class="small muted">发布者没有公开联系方式，可以在帮助信息里留下你的联系方式。</p>';
+ const helperBlock=owner&&fromMine?'<div class="board-detail-helpers"><h3>帮助情况</h3>'+(Array.isArray(l.helpers)&&l.helpers.length?boardHelperList(l):'<p class="small muted">还没有同学提交帮助。</p>')+'</div>':'';
+ const solvedNote=l.resolution==='solved'?'<p class="small muted">这条求助已标记为已解决，不能再提交帮助。</p>':'';
+ const actions=[];
+ if(!account)actions.push('<button class="btn primary" type="button" data-action="board-help-login" data-id="'+esc(l.id)+'">登录后帮助</button>');
+ else if(owner&&fromMine){
+  if(status==='active'&&l.resolution!=='solved')actions.push('<button class="btn primary" type="button" data-action="board-resolve" data-id="'+esc(l.id)+'">标记已解决</button>');
+ }else if(status==='active'&&l.resolution!=='solved'){
+  actions.push('<button class="btn primary" type="button" data-action="board-help" data-id="'+esc(l.id)+'">'+(l.helpedByMe?'修改帮助信息':'帮助该同学')+'</button>');
+ }
+ actions.push('<button class="btn" type="button" data-action="close">关闭</button>');
+ modal('求助详情','<div class="board-detail">'+listingThumb(l)+'<div class="board-card-kicker">'+boardHelpBadge(l)+'<span class="tag blue">'+esc(l.type||'求助')+'</span><span class="board-when">'+esc(listingWhen(l))+'</span></div><h3 class="board-detail-title">'+esc(listingHeadline(l))+'</h3><p class="board-detail-owner">发布者：'+esc(l.ownerName||'同学')+'</p><p class="board-detail-text">'+esc(l.description||'')+'</p>'+contact+solvedNote+helperBlock+'<div class="modal-actions">'+actions.join('')+'</div></div>');
+}
+function boardHelpModal(listingId){
+ const l=boardFindListing(listingId);
+ if(!l)return toast('求助已不可用。');
+ if(!account)return boardDetailModal(listingId,'board');
+ const my=l.myHelp&&typeof l.myHelp==='object'?l.myHelp:{};
+ const self=l.mine===true;
+ modal('帮助该同学','<form id="board-help-form" data-id="'+esc(l.id)+'">'+listingThumb(l)+'<p class="small muted" style="margin:8px 0 14px">关于：'+esc(listingHeadline(l))+' · '+esc(listingWhen(l))+'</p>'+(self?'<p class="small muted">这是你自己的求助，提交后会记录为一条帮助信息。</p>':'')+'<div class="field"><label for="board-help-message">帮助说明 <span class="required">*</span></label><textarea id="board-help-message" name="message" required minlength="2" maxlength="300" rows="4" placeholder="例如：我下午三点后可以帮你从南门取快递。">'+esc(my.message||'')+'</textarea><small>对方会在「我的求助」里看到这段说明；再次提交会保留最后一次内容。</small></div><div class="field"><label for="board-help-contact">联系方式（可选）</label><input id="board-help-contact" name="contact" maxlength="80" value="'+esc(my.contact||'')+'" placeholder="例如 微信 / QQ / 手机号"></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn primary" type="submit">'+(my.message?'修改帮助信息':'提交帮助')+'</button></div></form>');
+}
+function boardResolveModal(listingId){
+ modal('标记为已解决？','<p>标记后，这条求助会在互助通达显示为已解决，不能再提交帮助；帮助记录仍保留在「我的求助」。</p><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn primary" type="button" data-action="confirm-board-resolve" data-id="'+esc(listingId)+'">确认已解决</button></div>');
 }
 function boardListSection(){
  const list=Array.isArray(boardListings)?boardListings:[];
- const body=list.length?list.map(l=>listingCard(l,'public')).join(''):'<p class="board-quiet">眼下没有正在生效的互助。想求助？<a href="#help">去「求助通达」发布一条</a>。</p>';
- return '<section class="panel board-list" id="board-list"><h2>正在生效'+(list.length?' <span class="count">'+list.length+'</span>':'')+'</h2>'+body+'</section>';
+ const filtered=boardFilteredListings(list);
+ const groups=boardDateGroups(filtered);
+ const body=groups.length?groups.map(g=>'<div class="board-date-group"><div class="board-date-title"><span>'+esc(g.label)+'</span><span class="count">'+g.rows.length+' 条</span></div>'+g.rows.map(l=>listingCard(l,'public')).join('')+'</div>').join(''):(list.length?'<p class="board-quiet">当前筛选没有正在生效的求助。<button type="button" class="btn text small" data-action="board-date-filter" data-value="all">查看全部日期</button></p>':'<p class="board-quiet">眼下没有正在生效的互助。想求助？<a href="#help">去「求助通达」发布一条</a>。</p>');
+ return '<section class="panel board-list" id="board-list"><h2>正在生效'+(filtered.length?' <span class="count">'+filtered.length+'</span>':'')+'</h2>'+boardDateFilterBar()+body+'</section>';
 }
 function empty(text){return `<div class="empty">${icon('file')}<p>${text}</p></div>`}
 function guard(kind){const admin=kind==='admin';const button=demoIdentities?(admin?'<button class="btn primary" data-action="switch" data-value="admin">切换为管理员</button>':'<button class="btn primary" data-action="switch" data-value="team">切换为校集团队成员</button>'):'<p class="small muted">公开访问不提供演示身份。</p>';const note=demoIdentities?'此处为演示身份切换，不是真实登录认证。':'公开访问不能切换演示身份。';if(admin)return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>管理员审核空间</h1><p>审核管理仅对管理员演示身份开放。<br>${note}</p>${button}</div>`;return `<div class="panel lock-page"><div class="agent-icon">${icon('lock')}</div><h1>团队创作空间</h1><p>请切换为校集团队成员，统一管理生活、办事和学习助手。<br>${note}</p>${button}</div>`}
@@ -538,11 +653,11 @@ function chat(){
  '<form id="chat-form"><textarea name="question" aria-label="输入问题" placeholder="'+askPlaceholder+'" rows="1" required maxlength="500">'+esc(prefill)+'</textarea><button class="btn primary" type="submit">发送 '+icon('arrow')+'</button></form>'+(me().role==='admin'?'<p>Enter 发送，Shift + Enter 换行。</p>':'')+'</div></section>'+
  chatAside(a,docs)+'</div>';
 }
-function admin(){if(me().role!=='admin')return guard('admin');const docs=state.docs.filter(d=>d.status==='pending');const agents=state.agents.filter(a=>a.status==='pending');const queue=reviewTab==='agents'?'agents':'docs';const reports=state.boardReports||[];const pendingListings=state.boardPendingListings||[];const pendingListingBody=pendingListings.length?pendingListings.map(l=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(l.type)+'</h3><span class="tag amber">待审核</span></div>'+listingThumb(l)+'<p>'+esc(l.description)+'</p><p class="small muted">发布者：'+esc(l.ownerName||'—')+' · '+esc(l.windowText||'')+' · 联系方式：'+esc(l.contact||'—')+'</p><div class="actions"><button class="btn primary small" data-action="board-approve-listing" data-id="'+esc(l.id)+'">通过上线</button><button class="btn danger small" data-action="board-reject-listing" data-id="'+esc(l.id)+'">驳回</button></div></article>').join(''):'<p class="small muted">暂无待审核的互助登记。</p>';const reportBody=reports.length?reports.map(r=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(r.listing?.display||'登记已不存在')+'</h3><span class="tag amber">待处理</span></div><p>举报原因：'+esc(r.reason)+'</p><p class="small muted">登记说明：'+esc(r.listing?.description||'（已不存在）')+'</p><p class="small muted">发布者：'+esc(r.listing?.ownerName||'—')+' · 举报人：'+esc(r.reporter?.displayName||'同学')+' · '+esc(String(r.createdAt||'').replace('T',' ').slice(0,16))+'</p><div class="actions"><button class="btn danger small" data-action="board-report-resolve" data-id="'+esc(r.id)+'" data-decision="take_down">下架登记</button><button class="btn small" data-action="board-report-resolve" data-id="'+esc(r.id)+'" data-decision="dismiss">忽略举报</button></div></article>').join(''):'<p class="small muted">暂无待处理举报。</p>';const pendingPanel=(boardReviewMode||pendingListings.length)?'<section class="panel"><h2>互助登记审核 <span class="count">'+pendingListings.length+'</span></h2>'+pendingListingBody+'</section>':'';const activeListings=state.boardActiveListings||[];const activeListingBody=activeListings.length?activeListings.map(l=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(l.display||l.type||'互助登记')+'</h3><span class="tag green">已生效</span></div>'+listingThumb(l)+'<p>'+esc(l.description||'')+'</p><p class="small muted">发布者：'+esc(l.ownerName||'—')+' · '+esc(l.type||'')+' · '+esc(l.windowText||'')+' · 联系方式：'+esc(l.contact||'—')+'</p><div class="actions"><button class="btn danger small" data-action="board-admin-takedown" data-id="'+esc(l.id)+'">主动下架</button></div></article>').join(''):'<p class="small muted">暂无已生效的互助登记。</p>';const activePanel='<section class="panel"><h2>已生效互助登记 <span class="count">'+activeListings.length+'</span></h2><p class="small muted fold-note">没有待处理举报时也可以主动下架。确认后不再出现在有效列表和匹配里。</p>'+activeListingBody+'</section>';const published=[...state.docs.filter(d=>d.status==='approved'||d.status==='offline').map(d=>({kind:'doc',data:d})),...state.agents.filter(a=>a.status==='published'||a.status==='offline').map(a=>({kind:'agent',data:a}))];const pendingBody=queue==='docs'?(docs.length?docs.map(d=>`<article class="review-card"><div class="review-card-head"><h3>${esc(d.title)}</h3>${badge(d.status)}</div><p>提交人：${profiles[d.owner]?.name||'演示用户'} · ${d.date}</p><p>目标助手：${esc(state.agents.find(a=>a.id===d.agent)?.name||'已不可用')}</p><p>来源：${esc(d.source)}</p><div class="actions"><button class="btn small" data-action="view-doc" data-id="${d.id}">查看内容并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('资料已处理完，暂无待审核内容。')):(agents.length?agents.map(a=>`<article class="review-card"><div class="review-card-head"><h3>${esc(a.name)}</h3>${badge(a.status)}</div><p>${teamName(a.team)} · ${a.category}</p><p>${esc(a.description)}</p><div class="actions"><button class="btn small" data-action="review-agent" data-id="${a.id}">查看配置并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('暂无待审核的 Agent。'));const publishedBody=published.length?published.map(({kind,data:d})=>`<div class="record"><div><p>${esc(d.title||d.name)}</p><small>${kind==='doc'?'资料':'Agent'} · ${statusLabel[d.status]}</small></div>${d.status==='offline'?`<button class="btn small" data-action="online" data-kind="${kind}" data-id="${d.id}">重新上架</button>`:`<button class="btn danger small" data-action="offline" data-kind="${kind}" data-id="${d.id}">下架</button>`}</div>`).join(''):'<p class="small muted fold-note">暂无已发布或已下架内容。</p>';const auditBody=state.audit.length?state.audit.slice().reverse().slice(0,8).map(a=>`<div class="audit-line"><strong>${esc(a.action)}</strong> · ${esc(a.title)}${a.reason?`<br>原因：${esc(a.reason)}`:''}<br>${esc(a.time)}</div>`).join(''):'<p class="small muted" style="margin-top:15px">操作完成后会记录在这里。</p>';return `${heading('','审核管理','先处理待审资料和 Agent。已发布内容默认收起，下架前会再确认。')}<div class="stats"><div class="stat"><span>待审核资料</span><strong>${docs.length}</strong></div><div class="stat"><span>待上线 Agent</span><strong>${agents.length}</strong></div><div class="stat"><span>本次审核记录</span><strong>${state.audit.length}</strong></div></div><div class="two-col"><section class="panel"><div class="review-tabs" role="group" aria-label="待审队列"><button data-action="review-tab" data-value="docs" class="${queue==='docs'?'active':''}">待审资料 <span class="count">${docs.length}</span></button><button data-action="review-tab" data-value="agents" class="${queue==='agents'?'active':''}">待审 Agent <span class="count">${agents.length}</span></button></div>${pendingBody}<details class="published-fold"><summary>查看已发布（${published.length}）</summary><p class="small muted fold-note">已入库资料和已上线 Agent 收在这里。下架会先确认，确认后不再参与检索。</p>${publishedBody}</details></section><aside class="stack"><section class="panel"><h2>审核要点</h2><ul class="info-list"><li>内容是否适合目标助手？</li><li>来源是否清楚，是否有分享权限？</li><li>是否包含个人信息或过期内容？</li><li>通过和驳回都要填写原因，原因会写入审核记录。</li></ul><div class="inline-notice">这里演示的是人工审核流程，不代表已经通过真实安全审查。</div></section>${pendingPanel}${activePanel}<section class="panel"><h2>互助举报 <span class="count">${reports.length}</span></h2>${reportBody}</section><section class="panel"><h2>最近操作</h2>${auditBody}</section></aside></div>`}
+function admin(){if(me().role!=='admin')return guard('admin');const docs=state.docs.filter(d=>d.status==='pending');const agents=state.agents.filter(a=>a.status==='pending');const queue=reviewTab==='agents'?'agents':'docs';const reports=state.boardReports||[];const pendingListings=state.boardPendingListings||[];const pendingListingBody=pendingListings.length?pendingListings.map(l=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(l.type)+'</h3><span class="tag amber">待审核</span></div>'+listingThumb(l)+'<p>'+esc(l.description)+'</p><p class="small muted">发布者：'+esc(l.ownerName||'—')+' · '+esc(l.windowText||'')+' · 联系方式：'+esc(l.contact||'—')+'</p><div class="actions"><button class="btn primary small" data-action="board-approve-listing" data-id="'+esc(l.id)+'">通过上线</button><button class="btn danger small" data-action="board-reject-listing" data-id="'+esc(l.id)+'">驳回</button></div></article>').join(''):'<p class="small muted">暂无待审核的互助登记。</p>';const reportBody=reports.length?reports.map(r=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(r.listing?.display||'登记已不存在')+'</h3><span class="tag amber">待处理</span></div><p>举报原因：'+esc(r.reason)+'</p><p class="small muted">登记说明：'+esc(r.listing?.description||'（已不存在）')+'</p><p class="small muted">发布者：'+esc(r.listing?.ownerName||'—')+' · 举报人：'+esc(r.reporter?.displayName||'同学')+' · '+esc(String(r.createdAt||'').replace('T',' ').slice(0,16))+'</p><div class="actions"><button class="btn danger small" data-action="board-report-resolve" data-id="'+esc(r.id)+'" data-decision="take_down">下架登记</button><button class="btn small" data-action="board-report-resolve" data-id="'+esc(r.id)+'" data-decision="dismiss">忽略举报</button></div></article>').join(''):'<p class="small muted">暂无待处理举报。</p>';const pendingPanel=(boardReviewMode||pendingListings.length)?'<section class="panel"><h2>互助登记审核 <span class="count">'+pendingListings.length+'</span></h2>'+pendingListingBody+'</section>':'';const activeListings=state.boardActiveListings||[];const activeListingBody=activeListings.length?activeListings.map(l=>'<article class="review-card"><div class="review-card-head"><h3>'+esc(l.display||l.type||'互助登记')+'</h3>'+(l.resolution==='solved'?'<span class="tag green">已解决</span>':'<span class="tag green">已生效</span>')+'</div>'+listingThumb(l)+'<p>'+esc(l.description||'')+'</p><p class="small muted">发布者：'+esc(l.ownerName||'—')+' · '+esc(l.type||'')+' · '+esc(l.windowText||'')+' · 联系方式：'+esc(l.contact||'—')+'</p><div class="actions"><button class="btn danger small" data-action="board-admin-takedown" data-id="'+esc(l.id)+'">主动下架</button></div></article>').join(''):'<p class="small muted">暂无已生效的互助登记。</p>';const activePanel='<section class="panel"><h2>已生效与已解决互助登记 <span class="count">'+activeListings.length+'</span></h2><p class="small muted fold-note">没有待处理举报时也可以主动下架。确认后不再出现在有效列表和匹配里；已解决登记排在后面。</p>'+activeListingBody+'</section>';const published=[...state.docs.filter(d=>d.status==='approved'||d.status==='offline').map(d=>({kind:'doc',data:d})),...state.agents.filter(a=>a.status==='published'||a.status==='offline').map(a=>({kind:'agent',data:a}))];const pendingBody=queue==='docs'?(docs.length?docs.map(d=>`<article class="review-card"><div class="review-card-head"><h3>${esc(d.title)}</h3>${badge(d.status)}</div><p>提交人：${profiles[d.owner]?.name||'演示用户'} · ${d.date}</p><p>目标助手：${esc(state.agents.find(a=>a.id===d.agent)?.name||'已不可用')}</p><p>来源：${esc(d.source)}</p><div class="actions"><button class="btn small" data-action="view-doc" data-id="${d.id}">查看内容并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('资料已处理完，暂无待审核内容。')):(agents.length?agents.map(a=>`<article class="review-card"><div class="review-card-head"><h3>${esc(a.name)}</h3>${badge(a.status)}</div><p>${teamName(a.team)} · ${a.category}</p><p>${esc(a.description)}</p><div class="actions"><button class="btn small" data-action="review-agent" data-id="${a.id}">查看配置并审核 ${icon('arrow')}</button></div></article>`).join(''):empty('暂无待审核的 Agent。'));const publishedBody=published.length?published.map(({kind,data:d})=>`<div class="record"><div><p>${esc(d.title||d.name)}</p><small>${kind==='doc'?'资料':'Agent'} · ${statusLabel[d.status]}</small></div>${d.status==='offline'?`<button class="btn small" data-action="online" data-kind="${kind}" data-id="${d.id}">重新上架</button>`:`<button class="btn danger small" data-action="offline" data-kind="${kind}" data-id="${d.id}">下架</button>`}</div>`).join(''):'<p class="small muted fold-note">暂无已发布或已下架内容。</p>';const auditBody=state.audit.length?state.audit.slice().reverse().slice(0,8).map(a=>`<div class="audit-line"><strong>${esc(a.action)}</strong> · ${esc(a.title)}${a.reason?`<br>原因：${esc(a.reason)}`:''}<br>${esc(a.time)}</div>`).join(''):'<p class="small muted" style="margin-top:15px">操作完成后会记录在这里。</p>';return `${heading('','审核管理','先处理待审资料和 Agent。已发布内容默认收起，下架前会再确认。')}<div class="stats"><div class="stat"><span>待审核资料</span><strong>${docs.length}</strong></div><div class="stat"><span>待上线 Agent</span><strong>${agents.length}</strong></div><div class="stat"><span>本次审核记录</span><strong>${state.audit.length}</strong></div></div><div class="two-col"><section class="panel"><div class="review-tabs" role="group" aria-label="待审队列"><button data-action="review-tab" data-value="docs" class="${queue==='docs'?'active':''}">待审资料 <span class="count">${docs.length}</span></button><button data-action="review-tab" data-value="agents" class="${queue==='agents'?'active':''}">待审 Agent <span class="count">${agents.length}</span></button></div>${pendingBody}<details class="published-fold"><summary>查看已发布（${published.length}）</summary><p class="small muted fold-note">已入库资料和已上线 Agent 收在这里。下架会先确认，确认后不再参与检索。</p>${publishedBody}</details></section><aside class="stack"><section class="panel"><h2>审核要点</h2><ul class="info-list"><li>内容是否适合目标助手？</li><li>来源是否清楚，是否有分享权限？</li><li>是否包含个人信息或过期内容？</li><li>通过和驳回都要填写原因，原因会写入审核记录。</li></ul><div class="inline-notice">这里演示的是人工审核流程，不代表已经通过真实安全审查。</div></section>${pendingPanel}${activePanel}<section class="panel"><h2>互助举报 <span class="count">${reports.length}</span></h2>${reportBody}</section><section class="panel"><h2>最近操作</h2>${auditBody}</section></aside></div>`}
 async function loadBoard(){try{const data=await api('board');boardListings=data.listings||[];boardMine=Array.isArray(data.mine)?data.mine:[];boardInbox=Array.isArray(data.inbox)?data.inbox:[];if('reviewMode' in data)boardReviewMode=data.reviewMode===true;if('account' in data)account=data.account}catch(e){toast(e.message)}}
 function boardUnreadTotal(){return (Array.isArray(boardInbox)?boardInbox:[]).reduce((n,t)=>n+(Number(t.unread)||0),0)}
 async function refreshBoardQuietly(){
- if(!account||!['board','help'].includes(route().page)||busy)return;
+ if(!account||!['board','help','mine'].includes(route().page)||busy)return;
  if(document.getElementById('modal')?.open)return;
  const active=document.activeElement;
  if(active&&['INPUT','TEXTAREA','SELECT'].includes(active.tagName))return;
@@ -590,7 +705,27 @@ function reportModal(listingId){
 function boardReviewModal(listingId){
  modal('驳回这条登记','<form id="board-review-form" data-id="'+esc(listingId)+'"><p class="small muted">驳回原因会显示给发布者，请写清楚需要修改的地方。</p><div class="field"><label for="board-review-reason">驳回原因 *</label><textarea id="board-review-reason" name="reason" required minlength="2" maxlength="300" rows="3"></textarea></div><div class="modal-actions"><button class="btn" type="button" data-action="close">取消</button><button class="btn danger" type="submit">确认驳回</button></div></form>');
 }
-function render(){const r=route();if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;const view={home:entrySplash,gallery,board:boardPage,help:helpPage,upload,team,chat,admin,login:loginPage}[r.page];document.getElementById('app').innerHTML=shell(view());if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home')return;paintPoster();syncPosterAutoplay(false)}).catch(()=>{})}if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}if((r.page==='board'||r.page==='help')&&boardNeedsRefresh&&!boardBusy){boardBusy=true;boardNeedsRefresh=false;loadBoard().then(()=>{boardBusy=false;const pageNow=route().page;if(pageNow==='board'||pageNow==='help'){document.getElementById('app').innerHTML=shell(pageNow==='help'?helpPage():boardPage());updateBusy()}}).catch(()=>{boardBusy=false;boardNeedsRefresh=true})}updateBusy();syncPosterAutoplay(false)}
+function render(){
+ const r=route();
+ if(isStudent()&&(r.page==='team'||r.page==='admin')){if(location.hash!=='#board')location.hash='#board';return}
+ document.title=r.page==='home'?'校集':`${titles[r.page]} · 校集`;
+ const pages={home:entrySplash,gallery,board:boardPage,help:helpPage,mine:myRequestsPage,upload,team,chat,admin,login:loginPage};
+ document.getElementById('app').innerHTML=shell(pages[r.page]());
+ if(r.page==='home'){ensurePosters().then(()=>{if(route().page!=='home')return;paintPoster();syncPosterAutoplay(false)}).catch(()=>{})}
+ if(r.page==='chat'){const el=document.getElementById('messages');if(el)el.scrollTop=el.scrollHeight}
+ if(['board','help','mine'].includes(r.page)&&boardNeedsRefresh&&!boardBusy){
+  boardBusy=true;boardNeedsRefresh=false;
+  loadBoard().then(()=>{
+   boardBusy=false;
+   const pageNow=route().page;
+   if(['board','help','mine'].includes(pageNow)){
+    document.getElementById('app').innerHTML=shell(pages[pageNow]());
+    updateBusy()
+   }
+  }).catch(()=>{boardBusy=false;boardNeedsRefresh=true})
+ }
+ updateBusy();syncPosterAutoplay(false)
+}
 function modal(title,body){const d=document.getElementById('modal');d.innerHTML=`<div class="modal-inner"><div class="modal-head"><h2 id="dialog-title">${title}</h2><button class="close" aria-label="关闭弹窗" data-action="close">${icon('close')}</button></div>${body}</div>`;d.setAttribute('aria-labelledby','dialog-title');if(!d.open)d.showModal()}
 function openAuthDialog(){goLogin()}
 function closeModal(){document.getElementById('modal').close()}
@@ -692,6 +827,11 @@ document.addEventListener('click',async e=>{
  if(a.action==='chat'){chatPrefill='';chatError='';return go('chat',a.id)}
  if(a.action==='prefill-chat'){chatPrefill=a.value||'';chatError='';return go('chat',a.id)}
  if(a.action==='category'){category=a.value;return render()}
+ if(a.action==='board-date-filter'){const value=['all','today','week'].includes(a.value)?a.value:'all';boardDateFilter=value;if(value!=='custom')boardDateCustom='';return render()}
+ if(a.action==='board-detail')return boardDetailModal(a.id,a.context==='mine'?'mine':'board');
+ if(a.action==='board-help')return boardHelpModal(a.id);
+ if(a.action==='board-help-login'){closeModal();goLogin();return toast('请先登录，再提交帮助。')}
+ if(a.action==='board-resolve')return boardResolveModal(a.id);
  if(busy)return toast('请求处理中，请稍等。');
  if(a.action==='switch'){if(!demoIdentities)return toast('当前为公开访问，不能切换演示身份。');return switchProfile(a.value)}
  if(a.action==='configure')return configDialog(false);
@@ -717,6 +857,10 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='board-thread'){try{const data=await api('board/thread?threadId='+encodeURIComponent(a.thread));applyResult(data);openDmModal(data.thread,null,a.thread)}catch(err){toast(err.message)}return}
  if(a.action==='board-refresh'){loadBoard().then(()=>{if(route().page==='board')render()});return}
  if(a.action==='board-report'){reportModal(a.id);return}
+ if(a.action==='confirm-board-resolve'){
+  try{applyResult(await api('board/resolve',{id:a.id}));await loadBoard();closeModal();render();toast('已标记为已解决')}catch(err){toast(err.message)}
+  return;
+ }
  if(a.action==='board-approve-listing'){try{const data=await api('board/review-listing',{id:a.id,decision:'approve'});applyResult(data);render();toast('已通过，登记现在生效')}catch(err){toast(err.message)}return}
  if(a.action==='board-reject-listing'){boardReviewModal(a.id);return}
  if(a.action==='board-report-resolve'){try{const data=await api('board/report-resolve',{id:a.id,decision:a.decision});applyResult(data);closeModal();render();toast(a.decision==='take_down'?'已下架该登记':'已忽略举报')}catch(err){toast(err.message)}return}
@@ -740,7 +884,7 @@ if(a.action==='config-provider'){const form=document.getElementById('config-form
  if(a.action==='confirm-reset'){await perform({action:'reset'},'已恢复初始资料。');go('gallery')}
 });
 document.addEventListener('submit',async e=>{
- const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form'||f.id==='auth-page-form'||f.id==='nick-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','auth-page-form','nick-form','board-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','auth-page-form','nick-form','board-form','dm-form'].includes(f.id))return;
+ const f=e.target;const authForm=f?.dataset?.authForm==='1'||f.id==='auth-form'||f.id==='auth-page-form'||f.id==='nick-form';if(!authForm&&!['upload-form','agent-form','review-form','edit-doc-form','chat-form','config-form','places-form','places-config-form','auth-form','auth-page-form','nick-form','board-form','board-help-form','dm-form','board-report-form','board-review-form'].includes(f.id))return;e.preventDefault();if(busy&&!authForm&&!['auth-form','auth-page-form','nick-form','board-form','dm-form'].includes(f.id))return;
  const fd=new FormData(f),get=n=>String(fd.get(n)||'').trim();
  if(f.id==='chat-form')return sendChat(get('question'));
  if(f.id==='auth-page-form'){
@@ -765,6 +909,17 @@ document.addEventListener('submit',async e=>{
    try{applyResult(await api('auth/'+mode,{studentId:get('studentId'),password:get('password'),displayName:get('displayName')}));if(f.closest?.('dialog')&&document.getElementById('modal')?.open)closeModal();toast(mode==='register'?'注册成功，已登录':'登录成功');boardNeedsRefresh=true;render()}catch(err){toast(err.message)}
    return;
   }
+ if(f.id==='board-help-form'){
+  const button=f.querySelector('button[type=submit]');
+  if(button)button.disabled=true;
+  try{
+   await api('board/help',{listingId:f.dataset.id,message:get('message'),contact:get('contact')});
+   await loadBoard();
+   closeModal();render();toast('已提交帮助，对方会看到你的信息。');
+  }catch(err){toast(err.message)}
+  finally{if(button&&button.isConnected)button.disabled=false}
+  return;
+ }
  if(f.id==='board-form'){
   const longTerm=get('windowMode')==='long';
   if(!account)return toast('请先登录后再登记。');
@@ -866,8 +1021,15 @@ document.addEventListener('change',e=>{
  if(/^\d{4}-\d{2}-\d{2}$/.test(value))setBoardDay(value);
  else setBoardDay('today');
 });
+document.addEventListener('change',e=>{
+ if(e.target.id!=='board-date-filter')return;
+ const value=String(e.target.value||'');
+ if(/^\d{4}-\d{2}-\d{2}$/.test(value)){boardDateFilter='custom';boardDateCustom=value}
+ else{boardDateFilter='all';boardDateCustom=''}
+ render();
+});
 document.addEventListener('visibilitychange',()=>syncPosterAutoplay(false));
-window.addEventListener('hashchange',()=>{const page=route().page;if(page==='home'||page==='login')menuOpen=false;if(page==='board'||page==='help')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
+window.addEventListener('hashchange',()=>{const page=route().page;if(page==='home'||page==='login')menuOpen=false;if(page==='board'||page==='help'||page==='mine')boardNeedsRefresh=true;render();window.scrollTo(0,0)});
 boot();
 if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{Promise.resolve(document.modelContext.registerTool({name:'list_campus_agents',title:'查看已上线校园助手',description:'只读列出当前本地平台已上线的助手与已审核资料数。',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute(input){if(!input||typeof input!=='object'||Object.keys(input).length)throw new Error('不接受参数');return state.agents.filter(a=>a.status==='published').map(a=>({id:a.id,name:a.name,documents:state.docs.filter(d=>d.agent===a.id&&d.status==='approved').length}))}},{signal:lifecycle.signal})).catch(()=>{})}catch{}window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true})}
 

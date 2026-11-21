@@ -169,7 +169,7 @@ test('admin report queue and unread polling are wired in the web app',()=>{
  assert.match(app,/board-approve-listing/);
  assert.match(app,/board-review-form/);
  assert.match(app,/boardReviewMode/);
- assert.match(app,/已生效互助登记/);
+ assert.match(app,/已生效与已解决互助登记/);
  assert.match(app,/board-admin-takedown/);
  assert.match(app,/confirm-board-admin-takedown/);
  assert.match(app,/api\('board\/takedown',\{id:a\.id,asAdmin:true\}\)/);

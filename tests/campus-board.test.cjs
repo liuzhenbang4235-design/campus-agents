@@ -279,6 +279,9 @@ globalThis.__board=shell(boardPage());
 location.hash='#help';
 globalThis.__help=shell(helpPage());
 globalThis.__form=helpPage();
+location.hash='#mine';
+globalThis.__mine=shell(myRequestsPage());
+globalThis.__myPage=myRequestsPage();
 `,ctx);
  assert.equal(ctx.__page,'board');
  const home=ctx.__home;
@@ -299,6 +302,8 @@ globalThis.__form=helpPage();
  assert.match(home,/>正在生效</);
  assert.match(home,/href="#help"/);
  assert.match(home,/>求助通达</);
+ assert.match(home,/href="#mine"/);
+ assert.match(home,/>我的求助</);
  assert.doesNotMatch(home,/class="panel board-ask"|id="board-ask-form"|>问别人</);
  assert.doesNotMatch(home,/class="panel board-register"|id="board-form"/);
  assert.doesNotMatch(home,/id="board-inbox"/);
@@ -342,7 +347,7 @@ globalThis.__form=helpPage();
  assert.match(ctx.__adminTeam,/创建 Agent/);
  assert.match(ctx.__adminPage,/南门代取快递/);
  assert.match(ctx.__adminPage,/下架登记/);
- assert.match(ctx.__adminPage,/已生效互助登记/);
+ assert.match(ctx.__adminPage,/已生效与已解决互助登记/);
  assert.match(ctx.__adminPage,/已生效的陪诊登记/);
  assert.match(ctx.__adminPage,/data-action="board-admin-takedown" data-id="a1"/);
  assert.match(ctx.__adminPage,/主动下架/);
@@ -370,10 +375,10 @@ globalThis.__form=helpPage();
  assert.match(form,/class="panel board-inbox"/);
  assert.match(form,/打开对话/);
  assert.match(form,/你好，还能代取吗/);
- assert.match(form,/我发布的求助/);
+ assert.doesNotMatch(form,/我发布的求助/);
  assert.doesNotMatch(form,/当前开启发布前审核/);
  assert.doesNotMatch(form,/问别人|互助通达按意思/);
- assert.match(form,/待审核/);
+ assert.doesNotMatch(form,/待审核/);
  assert.match(form,/id="board-type"/);
  assert.match(form,/type="text"/);
  assert.match(form,/指定时段/);
@@ -387,13 +392,23 @@ globalThis.__form=helpPage();
  assert.match(form,/证件/);
  assert.doesNotMatch(form,/datetime-local/);
  assert.match(form,/长期有效/);
- assert.match(form,/旧标题仍可显示/);
- assert.match(form,/data-action="board-takedown"/);
+ assert.doesNotMatch(form,/旧标题仍可显示|data-action="board-takedown"/);
  assert.doesNotMatch(form,/asAdmin|board-admin-takedown/);
  assert.match(form,/class="panel board-register"/);
  assert.match(form,/href="#board"/);
  assert.doesNotMatch(form,/class="panel board-ask"|id="board-ask-form"|id="board-list"/);
  assert.doesNotMatch(form,/id="board-title"|id="board-days"|<select id="board-type"/);
+ const myPage=ctx.__myPage;
+ assert.match(myPage,/我的求助/);
+ assert.match(myPage,/我发布的求助/);
+ assert.match(myPage,/待帮助/);
+ assert.match(myPage,/旧标题仍可显示/);
+ assert.match(myPage,/待审核/);
+ assert.match(myPage,/data-action="board-takedown"/);
+ assert.match(myPage,/data-action="board-detail"/);
+ assert.match(myPage,/data-context="mine"/);
+ assert.doesNotMatch(myPage,/data-action="board-resolve"/);
+ assert.match(ctx.__mine,/class="nav-link active" href="#mine" aria-current="page"/);
 });
 
 test('one team member sees life, affairs and study without a second identity',()=>{
@@ -473,6 +488,73 @@ globalThis.__studentSelect=profileSelect();
  assert.match(ctx.__studentChat,/chat-layout solo/);
 });
 
+test('helpers submit help, owners see count and details, and solving keeps a solved card at the end',async t=>{
+ const {request,app}=await setup(t);
+ await request('auth/register',{studentId:'20261201',password:'secret12',displayName:'求助者'});
+ const made=await request('board/create',{type:'代取快递',description:'南门快递需要帮忙取',contact:'微信 owner',...windowFields(7)});
+ assert.equal(made.status,200);
+ const id=made.listing.id;
+ await request('auth/logout',{});
+ assert.equal((await request('board/help',{listingId:id,message:'我下午可以帮你',contact:'微信 helper'})).status,401);
+ await request('auth/register',{studentId:'20261202',password:'secret12',displayName:'帮助者'});
+ const helped=await request('board/help',{listingId:id,message:'我下午可以帮你',contact:'微信 helper'});
+ assert.equal(helped.status,200);
+ assert.equal(helped.helpCount,1);
+ assert.equal(helped.helpedByMe,true);
+ const list=await request('board');
+ const row=list.listings.find(l=>l.id===id);
+ assert.equal(row.helpCount,1);
+ assert.equal(row.helpedByMe,true);
+ assert.equal(row.resolution,'open');
+ assert.equal(row.myHelp.message,'我下午可以帮你');
+ assert.equal(row.myHelp.contact,'微信 helper');
+ assert.equal('helpers' in row,false);
+ assert.doesNotMatch(JSON.stringify(list.listings),/20261202/);
+ const again=await request('board/help',{listingId:id,message:'我三点后可以帮你',contact:'微信 helper-2'});
+ assert.equal(again.helpCount,1);
+ await request('auth/logout',{});
+ await request('auth/login',{studentId:'20261201',password:'secret12'});
+ const owner=await request('board');
+ const mine=owner.mine.find(l=>l.id===id);
+ assert.equal(mine.helpCount,1);
+ assert.equal(mine.helpers.length,1);
+ assert.equal(mine.helpers[0].displayName,'帮助者');
+ assert.equal(mine.helpers[0].message,'我三点后可以帮你');
+ assert.equal(mine.helpers[0].contact,'微信 helper-2');
+ assert.doesNotMatch(JSON.stringify(mine),/20261202/);
+ const resolved=await request('board/resolve',{id});
+ assert.equal(resolved.status,200);
+ assert.equal(resolved.listing.resolution,'solved');
+ const after=await request('board');
+ assert.equal(after.listings.some(l=>l.id===id),true);
+ assert.equal(after.listings.find(l=>l.id===id).resolution,'solved');
+ assert.equal(after.listings.at(-1).id,id);
+ assert.equal(after.mine.find(l=>l.id===id).resolution,'solved');
+ assert.equal(after.mine.find(l=>l.id===id).helpCount,1);
+ assert.deepEqual(app.board.matchListings('南门快递'),[]);
+ await request('auth/logout',{});
+ await request('auth/login',{studentId:'20261202',password:'secret12'});
+ assert.equal((await request('board/help',{listingId:id,message:'再帮你一次'})).status,409);
+});
+
+test('publisher can submit help from the board detail',async t=>{
+ const {request}=await setup(t);
+ await request('auth/register',{studentId:'20261203',password:'secret12',displayName:'自助手'});
+ const made=await request('board/create',{type:'代取快递',description:'自己补充帮助信息',contact:'微信 self',...windowFields(7)});
+ assert.equal(made.status,200);
+ const helped=await request('board/help',{listingId:made.listing.id,message:'我先自己补充一下',contact:'微信 self'});
+ assert.equal(helped.status,200);
+ assert.equal(helped.helpCount,1);
+ const board=await request('board');
+ const row=board.listings.find(l=>l.id===made.listing.id);
+ assert.equal(row.helpCount,1);
+ assert.equal(row.helpedByMe,true);
+ assert.equal(row.myHelp.message,'我先自己补充一下');
+ const mine=board.mine.find(l=>l.id===made.listing.id);
+ assert.equal(mine.helpers.length,1);
+ assert.equal(mine.helpers[0].displayName,'自助手');
+});
+
 test('student board feed and help page are split in public mode',()=>{
  const css=fs.readFileSync(path.join(__dirname,'../dist/styles.css'),'utf8');
  assert.match(css,/\.board-page\{[^}]*flex-direction:column/);
@@ -529,15 +611,17 @@ globalThis.__lock=guard('admin');
  assert.match(html,/aria-label="主导航"/);
 });
 
-test('help route and board loading are wired for the split pages',()=>{
+test('board, help and mine routes are wired for the split pages',()=>{
  const app=fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8');
  assert.match(app,/help:'求助通达'/);
+ assert.match(app,/mine:'我的求助'/);
  assert.match(app,/help:helpPage/);
- assert.match(app,/r\.page==='board'\|\|r\.page==='help'/);
- assert.match(app,/pageNow==='help'\?helpPage\(\):boardPage\(\)/);
- assert.match(app,/!\['board','help'\]\.includes\(route\(\)\.page\)/);
- assert.match(app,/page==='board'\|\|page==='help'\)boardNeedsRefresh=true/);
- assert.match(app,/if\(page&&\['home','gallery','board','help','chat','upload','team','admin'\]\.includes\(page\)\)/);
+ assert.match(app,/mine:myRequestsPage/);
+ assert.match(app,/\['board','help','mine'\]\.includes\(r\.page\)/);
+ assert.match(app,/pages\[pageNow\]\(\)/);
+ assert.match(app,/!\['board','help','mine'\]\.includes\(route\(\)\.page\)/);
+ assert.match(app,/page==='board'\|\|page==='help'\|\|page==='mine'\)boardNeedsRefresh=true/);
+ assert.match(app,/if\(page&&\['home','gallery','board','help','mine','chat','upload','team','admin'\]\.includes\(page\)\)/);
  const document={addEventListener(){},getElementById(){return {innerHTML:'',classList:{add(){},remove(){}},setAttribute(){},scrollTop:0}},querySelectorAll(){return []}};
  const location={hash:'#help',origin:'http://127.0.0.1:4173'};
  const ctx=vm.createContext({document,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location,history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}}});
@@ -545,9 +629,14 @@ test('help route and board loading are wired for the split pages',()=>{
 currentProfile='student';
 globalThis.__page=route().page;
 globalThis.__title=titles.help;
+location.hash='#mine';
+globalThis.__minePage=route().page;
+globalThis.__mineTitle=titles.mine;
 `,ctx);
  assert.equal(ctx.__page,'help');
  assert.equal(ctx.__title,'求助通达');
+ assert.equal(ctx.__minePage,'mine');
+ assert.equal(ctx.__mineTitle,'我的求助');
 });
 
 test('open C2C prompt is attached for doubao, qwen and deepseek when the board is in play',async()=>{
@@ -788,7 +877,116 @@ test('optional listing image is stored and served without secrets',async t=>{
  assert.equal(anon.status,401);
 });
 
-test('listing image renders on the board list, help card and admin views',()=>{
+test('board groups requests by publication date and filters by date range',()=>{
+ const document={addEventListener(){},getElementById(){return {innerHTML:'',classList:{add(){},remove(){}},setAttribute(){},scrollTop:0}},querySelectorAll(){return []}};
+ const location={hash:'#board',origin:'http://127.0.0.1:4173'};
+ const ctx=vm.createContext({document,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location,history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}}});
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8')+`
+const now=Date.now();
+boardListings=[
+ {id:'today',type:'今天求助',description:'今天的求助',ownerName:'甲',createdAt:new Date(now).toISOString(),windowText:'长期',status:'active',helpCount:0,resolution:'open'},
+ {id:'old',type:'三天前求助',description:'三天前的求助',ownerName:'乙',createdAt:new Date(now-3*86400000).toISOString(),windowText:'长期',status:'active',helpCount:0,resolution:'open'},
+ {id:'older',type:'十天前求助',description:'十天前的求助',ownerName:'丙',createdAt:new Date(now-10*86400000).toISOString(),windowText:'长期',status:'active',helpCount:0,resolution:'open'}
+];
+location.hash='#board';
+boardDateFilter='all';
+globalThis.__all=boardPage();
+boardDateFilter='today';
+globalThis.__today=boardPage();
+boardDateFilter='week';
+globalThis.__week=boardPage();
+boardDateFilter='custom';boardDateCustom=boardDateKey(boardListings[1]);
+globalThis.__custom=boardPage();
+globalThis.__todayLabel=boardDateLabel(boardDateKey(boardListings[0]));
+`,ctx);
+ assert.match(ctx.__all,/board-date-bar/);
+ assert.match(ctx.__all,/data-action="board-date-filter"/);
+ assert.match(ctx.__all,/id="board-date-filter"/);
+ assert.match(ctx.__all,/board-date-group/);
+ assert.match(ctx.__all,/今天求助/);
+ assert.match(ctx.__all,/三天前求助/);
+ assert.match(ctx.__all,/十天前求助/);
+ assert.equal(ctx.__todayLabel,'今天');
+ assert.match(ctx.__today,/今天求助/);
+ assert.doesNotMatch(ctx.__today,/三天前求助/);
+ assert.match(ctx.__week,/三天前求助/);
+ assert.doesNotMatch(ctx.__week,/十天前求助/);
+ assert.match(ctx.__custom,/三天前求助/);
+ assert.doesNotMatch(ctx.__custom,/今天求助/);
+});
+
+test('help state, detail modal and my requests page render helper information',()=>{
+ const modalBox={innerHTML:'',open:false,setAttribute(){},showModal(){this.open=true},classList:{add(){},remove(){}}};
+ const document={addEventListener(){},getElementById(id){return id==='modal'?modalBox:{innerHTML:'',classList:{add(){},remove(){}},setAttribute(){},scrollTop:0}},querySelectorAll(){return []}};
+ const location={hash:'#board',origin:'http://127.0.0.1:4173'};
+ const ctx=vm.createContext({document,modalBox,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location,history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}}});
+ vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8')+`
+account={studentId:'20261210',displayName:'同学'};
+currentProfile='student';
+boardListings=[
+ {id:'h0',type:'代取快递',description:'南门快递需要帮忙取',ownerName:'甲',windowText:'长期',role:'need',mine:false,helpCount:0,helpedByMe:false,resolution:'open'},
+ {id:'h1',type:'陪诊',description:'下午需要陪去校医院',ownerName:'乙',windowText:'长期',role:'need',mine:false,helpCount:1,helpedByMe:false,resolution:'open'},
+ {id:'h2',type:'出闲置',description:'显示器出闲置',ownerName:'丙',windowText:'长期',role:'offer',mine:false,helpCount:1,helpedByMe:true,resolution:'open',myHelp:{message:'我可以帮你搬',contact:'微信 me'}},
+ {id:'h3',type:'代取快递',description:'已经解决的求助',ownerName:'丁',windowText:'长期',role:'need',mine:false,helpCount:1,helpedByMe:false,resolution:'solved'}
+];
+boardMine=[{id:'h1',type:'陪诊',description:'下午需要陪去校医院',status:'active',mine:true,windowText:'长期',helpCount:1,resolution:'open',helpers:[{displayName:'帮助者',message:'我下午可以帮你',contact:'微信 helper',createdAt:'2026-11-21T10:00:00.000Z'}]}];
+location.hash='#board';
+globalThis.__board=boardPage();
+location.hash='#mine';
+globalThis.__mine=myRequestsPage();
+boardDetailModal('h0');
+globalThis.__detailOther=document.getElementById('modal').innerHTML;
+boardDetailModal('h1','board');
+globalThis.__detailOwnerBoard=document.getElementById('modal').innerHTML;
+boardDetailModal('h1','mine');
+globalThis.__detailOwner=document.getElementById('modal').innerHTML;
+boardDetailModal('h3','board');
+globalThis.__detailSolved=document.getElementById('modal').innerHTML;
+boardHelpModal('h2');
+globalThis.__helpForm=document.getElementById('modal').innerHTML;
+boardHelpModal('h1');
+globalThis.__selfHelpForm=document.getElementById('modal').innerHTML;
+`,ctx);
+ assert.match(ctx.__board,/待帮助/);
+ assert.match(ctx.__board,/目前有 1 人帮助/);
+ assert.match(ctx.__board,/已解决/);
+ assert.match(ctx.__board,/board-help-state/);
+ assert.match(ctx.__board,/data-action="board-detail"/);
+ assert.match(ctx.__mine,/我的求助/);
+ assert.match(ctx.__mine,/我发布的求助/);
+ assert.match(ctx.__mine,/来帮忙的同学/);
+ assert.match(ctx.__mine,/帮助者/);
+ assert.match(ctx.__mine,/我下午可以帮你/);
+ assert.match(ctx.__mine,/微信 helper/);
+ assert.match(ctx.__mine,/data-action="board-detail"/);
+ assert.match(ctx.__mine,/data-context="mine"/);
+ assert.doesNotMatch(ctx.__mine,/data-action="board-resolve"/);
+ assert.match(ctx.__mine,/data-action="board-takedown"/);
+ assert.match(ctx.__detailOther,/求助详情/);
+ assert.match(ctx.__detailOther,/帮助该同学/);
+ assert.doesNotMatch(ctx.__detailOther,/标记已解决/);
+ assert.match(ctx.__detailOther,/发布者：甲/);
+ assert.doesNotMatch(ctx.__detailOwnerBoard,/标记已解决/);
+ assert.doesNotMatch(ctx.__detailOwnerBoard,/去我的求助查看帮助/);
+ assert.match(ctx.__detailOwnerBoard,/帮助该同学/);
+ assert.doesNotMatch(ctx.__detailOwnerBoard,/来帮忙的同学/);
+ assert.match(ctx.__detailOwner,/标记已解决/);
+ assert.match(ctx.__detailOwner,/来帮忙的同学/);
+ assert.match(ctx.__detailOwner,/微信 helper/);
+ assert.match(ctx.__detailSolved,/已解决/);
+ assert.match(ctx.__detailSolved,/不能再提交帮助/);
+ assert.doesNotMatch(ctx.__detailSolved,/帮助该同学/);
+ assert.doesNotMatch(ctx.__detailSolved,/标记已解决/);
+ assert.match(ctx.__helpForm,/id="board-help-form"/);
+ assert.match(ctx.__helpForm,/name="message"/);
+ assert.match(ctx.__helpForm,/我可以帮你搬/);
+ assert.match(ctx.__helpForm,/value="微信 me"/);
+ assert.match(ctx.__helpForm,/修改帮助信息/);
+ assert.match(ctx.__selfHelpForm,/这是你自己的求助/);
+ assert.match(ctx.__selfHelpForm,/提交帮助/);
+});
+
+test('listing image renders on the board list, my requests card and admin views',()=>{
  const modalBox={innerHTML:'',open:false,setAttribute(){},showModal(){this.open=true},classList:{add(){},remove(){}}};
  const document={addEventListener(){},getElementById(id){return id==='modal'?modalBox:{innerHTML:'',classList:{add(){},remove(){}},setAttribute(){},scrollTop:0}},querySelectorAll(){return []}};
  const location={hash:'#board',origin:'http://127.0.0.1:4173'};
@@ -801,7 +999,7 @@ boardListings=[{id:'img1',type:'出闲置',description:'闲置显示器',ownerNa
 boardMine=[{id:'img1',type:'出闲置',description:'闲置显示器',status:'active',mine:true,windowText:'11-07 10:00 – 11-07 12:00',image:${JSON.stringify(image)}}];
 location.hash='#board';
 globalThis.__board=boardPage();
-globalThis.__help=helpPage();
+globalThis.__mine=myRequestsPage();
 openOfferModal([{listingId:'img1',type:'出闲置',display:'出闲置',ownerName:'图',windowText:'11-07 10:00 – 11-07 12:00',image:${JSON.stringify(image)}}]);
 globalThis.__offer=document.getElementById('modal').innerHTML;
 state.boardPendingListings=[{id:'p9',type:'出闲置',description:'待审核的图片登记',ownerName:'图',contact:'',windowText:'长期',image:${JSON.stringify(image)}}];
@@ -813,14 +1011,14 @@ globalThis.__admin=admin();
  assert.match(ctx.__board,/id="board-list"/);
  assert.match(ctx.__board,/class="listing-thumb"/);
  assert.equal((ctx.__board.match(new RegExp(image.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length>=1,true);
- assert.match(ctx.__help,/我发布的求助/);
- assert.match(ctx.__help,/class="listing-thumb"/);
- assert.equal((ctx.__help.match(new RegExp(image.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length>=1,true);
+ assert.match(ctx.__mine,/我发布的求助/);
+ assert.match(ctx.__mine,/class="listing-thumb"/);
+ assert.equal((ctx.__mine.match(new RegExp(image.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length>=1,true);
  assert.match(ctx.__offer,/class="listing-thumb"/);
  assert.match(ctx.__offer,new RegExp(image.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
  assert.match(ctx.__admin,/待审核的图片登记/);
  assert.match(ctx.__admin,/class="listing-thumb"/);
  assert.doesNotMatch(ctx.__board,/\/data\/board-images\//);
- assert.doesNotMatch(ctx.__help,/\/data\/board-images\//);
+ assert.doesNotMatch(ctx.__mine,/\/data\/board-images\//);
  assert.doesNotMatch(ctx.__admin,/\/etc\/passwd|config\.local/);
 });

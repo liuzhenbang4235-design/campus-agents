@@ -94,6 +94,7 @@ test('top-bar login opens the login route and remembers only an internal return'
   assert.equal(vm.runInContext('safeAuthReturn("#home")',context),'');
   assert.equal(vm.runInContext('safeAuthReturn("#board")',context),'#board');
   assert.equal(vm.runInContext('safeAuthReturn("#help")',context),'#help');
+  assert.equal(vm.runInContext('safeAuthReturn("#mine")',context),'#mine');
   assert.equal(vm.runInContext('safeAuthReturn("#chat/affairs")',context),'#chat/affairs');
  });
 });
@@ -181,6 +182,18 @@ test('login from the help page returns to help',async()=>{
  assert.equal(snap.hash,'#help');
  assert.match(snap.app,/id="board-form"/);
  assert.match(snap.app,/求助通达/);
+});
+
+test('login from my requests returns to mine',async()=>{
+ const mine=loadApp('#mine');
+ await mine.listeners.click[0]({target:actionTarget('auth-open')});
+ assert.equal(mine.context.__snap().hash,'#login');
+ assert.equal(mine.context.__snap().next,'#mine');
+ await mine.listeners.submit[0](authSubmit('login',{username:'Lin',password:'secret12',displayName:''},{remember:true}));
+ const snap=mine.context.__snap();
+ assert.equal(snap.hash,'#mine');
+ assert.match(snap.app,/我的求助/);
+ assert.match(snap.app,/我发布的求助/);
 });
 
 test('the dashboard docks open after login and the top-left button toggles it',async ()=>{
