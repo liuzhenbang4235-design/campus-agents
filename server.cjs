@@ -1,4 +1,5 @@
 'use strict';
+const fs=require('node:fs'),path=require('node:path');
 const {createApp}=require('./lib/backend.cjs');
 
 // Local preview stays on loopback. HOST, when set, wins — including HOST=127.0.0.1
@@ -10,6 +11,24 @@ function resolveListenHost(env=process.env){
  if(host)return host;
  if(String(env.RENDER??'').trim()==='true')return '0.0.0.0';
  return '127.0.0.1';
+}
+// Cloud-model settings may live in a project-root .env (gitignored). Real env
+// vars always win over file values, so a Render Dashboard setting is never
+// masked by a leftover local file. Node 20.6+ has process.loadEnvFile; older
+// Node gets an explicit warning instead of a silent ignore.
+function loadDotEnv(file=path.join(__dirname,'.env')){
+ if(!fs.existsSync(file))return false;
+ if(typeof process.loadEnvFile!=='function'){
+  console.warn('当前 Node 版本不支持读取 .env，请升级到 Node 22 或使用系统环境变量。');
+  return false;
+ }
+ try{
+  process.loadEnvFile(file);
+  return true;
+ }catch(error){
+  console.warn('.env 读取失败，已忽略该文件：'+String(error&&error.message||error).split('\n')[0]);
+  return false;
+ }
 }
 function startServer(options={}){
  const {server}=createApp(options);
@@ -24,6 +43,7 @@ function startServer(options={}){
  });
 }
 function main(){
+ loadDotEnv();
  let pending;
  try{pending=startServer()}
  catch(e){console.error(e.message);process.exit(1)}
@@ -42,4 +62,4 @@ function main(){
  }).catch(e=>{console.error(e.code==='EADDRINUSE'?'The local preview port is in use. Stop the old preview first.':'Cannot start local preview.');process.exit(1)});
 }
 if(require.main===module)main();
-module.exports={resolveListenHost,startServer};
+module.exports={resolveListenHost,startServer,loadDotEnv};

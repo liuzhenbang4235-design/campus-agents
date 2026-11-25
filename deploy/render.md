@@ -64,7 +64,7 @@ Free 实例不能挂持久磁盘，本 Blueprint 也不挂。磁盘只在付费�
 
 ## 云端模型
 
-免费实例没有持久磁盘。只把 Key 写进 `config.local.json` 的话，休眠或重启后文件没了，管理页还得再贴一次。进程每次解析配置时，用下面的环境变量覆盖内存里的服务商设置（盖在 `config.local.json` 上面；文件不存在也可以）。环境变量里的 Key 优先于磁盘上过期或空的 Key。
+免费实例没有持久磁盘。只把 Key 写进 `config.local.json` 的话，休眠或重启后文件没了，管理页还得再贴一次。进程每次解析配置时，用下面的环境变量覆盖内存里的服务商设置（盖在 `config.local.json` 上面；文件不存在也可以）。环境变量里的 Key 优先于磁盘上过期或空的 Key。本地预览则把同名变量写进项目根目录 `.env`（参考 `.env.example`），`node server.cjs` 启动时读取；已存在的系统环境变量优先于 `.env`，Render 上没有 `.env` 文件时自动跳过。
 
 在 Dashboard → 该 Web Service → Environment 填写。`render.yaml` 里这几项是 `sync: false`：第一次用 Blueprint 创建时会问，之后只改 Dashboard，同步不会覆盖。改完会触发重新部署，新进程直接读到这些值。
 
@@ -84,7 +84,7 @@ CAMPUS_AI_DAILY_LIMIT=
 | `CAMPUS_AI_MODEL` | 模型 ID。填控制台调用示例里的 model，不要填 `apikey-` 开头的名称 |
 | `CAMPUS_AI_DAILY_LIMIT` | 可选。正整数。不填、留空或不是正整数时，沿用原来的每日 50 次 |
 
-密钥只放在这些环境变量里，或开发者自己电脑上未跟踪的 `config.local.json`。不要把真实 Key、`config.local.json`、`data/`、`imports/` 提交到 Git，也不要写进测试。管理接口只返回 `hasKey` 布尔值，响应和日志都不包含原始 Key。保存配置也不会把环境变量里的 Key 写回磁盘文件。
+密钥只放在这些环境变量里，或开发者自己电脑上未跟踪的 `.env` / `config.local.json`。不要把真实 Key、`.env`、`config.local.json`、`data/`、`imports/` 提交到 Git，也不要写进测试。管理接口只返回 `hasKey` 布尔值，响应和日志都不包含原始 Key。保存配置也不会把环境变量里的 Key 写回磁盘文件。
 
 ## Free 计划
 

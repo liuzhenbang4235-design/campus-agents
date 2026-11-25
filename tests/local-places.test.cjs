@@ -15,6 +15,16 @@ test('local search works without key or external consent, sorts and filters radi
  assert.deepEqual(r.places.map(p=>p.name),['近处店']);assert(r.places[0].distanceMeters>0&&r.places[0].distanceMeters<1000);assert.equal(r.provider,'local');assert.equal(r.dataUpdatedAt,fixture.collectedAt);
  const refs=s.sources(session,r.contextToken);assert.equal(refs[0].mapProvider,'local');assert.match(refs[0].source,/OpenStreetMap/);assert.match(refs[0].excerpt,/ · /);assert.doesNotMatch(refs[0].excerpt,/不是实时高德查询/);assert.match(refs[0].sourceUrl,/openstreetmap.org\/node\/2$/);assert.match(refs[0].date,/2026-09-24 01:00:00（北京时间）/);
 });
+test('nearby radius accepts 2 and 4 kilometers and still rejects other values',async()=>{
+ const s=service(),session={actor:'student'};
+ const centers=await s.run(session,{provider:'local',keyword:'测试大学'},true);
+ const token=centers.centers[0].token;
+ for(const radius of [2000,4000]){
+  const r=await s.run(session,{provider:'local',keyword:'咖啡',scope:'nearby',centerToken:token,radius});
+  assert.ok(Array.isArray(r.places),radius+' should succeed');
+ }
+ await assert.rejects(s.run(session,{provider:'local',keyword:'咖啡',scope:'nearby',centerToken:token,radius:1500}),/查询半径无效/);
+});
 test('local service aliases resolve to the same public categories',()=>{
  const s=service(),session={actor:'student'};
  for(const keyword of ['快递点','快递站','文印店','干洗','药房']){const r=searchLocal(dataset,{keyword,center:{lng:119.42,lat:32.34},radius:5000},distance);assert(Array.isArray(r),keyword);}

@@ -432,43 +432,32 @@ test('resaving an already enabled provider with an empty apiKey keeps the key an
  r=await request('config',{provider:'deepseek',model:'deepseek-chat',apiKey:'',enabled:true,dailyLimit:40});
  assert.match(r.error,/请填写DeepSeek的 API Key/);
 });
-test('ready model shows 已配置 and hides consent when the saved key stays',()=>{
- const modal={innerHTML:'',open:false,setAttribute(){},showModal(){this.open=true},close(){this.open=false},classList:{add(){},remove(){}}};
- const document={addEventListener(){},getElementById(id){return id==='modal'?modal:{innerHTML:'',classList:{add(){},remove(){}},setAttribute(){}}},querySelectorAll(){return []}};
+test('model notes stay read-only and the top bar has no config entry',()=>{
+ const document={addEventListener(){},getElementById(){return {innerHTML:'',classList:{add(){},remove(){}},setAttribute(){}}},querySelectorAll(){return []}};
  const ctx=vm.createContext({document,URL,URLSearchParams,fetch:async()=>({ok:false,json:async()=>({})}),setTimeout,clearTimeout,location:{hash:'#admin',origin:'http://127.0.0.1:4173'},history:{replaceState(){}},navigator:{platform:'Linux',userAgent:'node'},window:{addEventListener(){}}});
  vm.runInContext(fs.readFileSync(path.join(__dirname,'../dist/app.js'),'utf8')+`
 currentProfile='admin';
 state={version:2,agents:[],docs:[],audit:[],chats:{}};
 ai={ready:true,verified:false,enabled:true,provider:'doubao',model:'ep-demo',dailyLimit:50,usedToday:0,configIssue:'',hasKey:true,keys:{doubao:true,qwen:false,deepseek:false}};
-configDialog(false);
-globalThis.__label=aiConfigLabel();
 globalThis.__note=aiStatusNote();
 globalThis.__banner=chatBanner();
-globalThis.__dialog=document.getElementById('modal').innerHTML;
-globalThis.__button=configButton();
+globalThis.__adminBar=identityBar();
 ai.verified=true;
-globalThis.__verified=aiConfigLabel();
+globalThis.__verifiedNote=aiStatusNote();
 ai.verified=false;ai.ready=false;ai.enabled=false;ai.keys.doubao=false;
-globalThis.__unready=aiConfigLabel();
-ai={ready:false,verified:false,enabled:false,provider:'doubao',model:'ep-demo',dailyLimit:50,usedToday:0,configIssue:'',hasKey:true,keys:{doubao:true,qwen:false,deepseek:false}};
-configDialog(false);
-globalThis.__reenable=document.getElementById('modal').innerHTML;
+globalThis.__unreadyNote=aiStatusNote();
+globalThis.__unreadyBanner=chatBanner();
+currentProfile='student';
+globalThis.__studentBar=identityBar();
 `,ctx);
- assert.equal(ctx.__label,'豆包已配置');
  assert.equal(ctx.__note,'豆包已配置');
  assert.match(ctx.__banner,/豆包已配置/);
  assert.doesNotMatch(ctx.__banner,/待验证|还没验证|尚未验证|配置模型/);
- assert.match(ctx.__button,/豆包已配置/);
- assert.doesNotMatch(ctx.__button,/配置模型|待验证/);
- assert.equal(ctx.__verified,'豆包已连接');
- assert.equal(ctx.__unready,'配置模型');
- assert.match(ctx.__dialog,/已保存密钥，继续使用无需重填/);
- assert.match(ctx.__dialog,/id="config-consent" class="check hidden"|class="check hidden" id="config-consent"/);
- assert.match(ctx.__dialog,/已保存豆包密钥，留空保留/);
- assert.doesNotMatch(ctx.__dialog,/name="apiKey"[^>]*value=/);
- assert.doesNotMatch(ctx.__reenable,/已保存密钥，继续使用无需重填/);
- assert.match(ctx.__reenable,/id="config-consent" class="check"|class="check" id="config-consent"/);
- assert.doesNotMatch(ctx.__reenable,/config-consent[^>]*hidden/);
+ assert.equal(ctx.__verifiedNote,'豆包已连接');
+ assert.equal(ctx.__unreadyNote,'模型未配置（.env）');
+ assert.match(ctx.__unreadyBanner,/\.env/);
+ assert.doesNotMatch(ctx.__adminBar,/model-chip|data-action="configure"|配置模型/);
+ assert.doesNotMatch(ctx.__studentBar,/model-chip|data-action="configure"|配置模型/);
 });
 test('review list hides offline for items already offline and offers relist',()=>{
  const document={addEventListener(){},getElementById(){return {innerHTML:'',classList:{add(){},remove(){}},setAttribute(){}}},querySelectorAll(){return []}};

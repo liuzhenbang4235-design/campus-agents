@@ -4,6 +4,7 @@ config.json
 *.tmp
 .env
 .env.*
+!.env.example
 
 # local knowledge / usage (keep private)
 data/

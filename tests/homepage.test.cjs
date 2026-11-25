@@ -343,6 +343,12 @@ test('poster layout fields stay in the catalog and invalid values fall back',asy
  assert.match(mine,/已生效/);
  assert.match(mine,/data-action="board-takedown"/);
  assert.match(mine,/下架/);
+ const dedup=vm.runInContext(`listingCard({id:'a2',type:'快递',description:'2201号快递有误拿的吗。联系我',display:'快递 · 2201号快递有误拿的吗。联系我',contact:'1223112',ownerName:'同学',windowText:'长期',status:'active',role:'need'},'public')`,loaded.context);
+ assert.equal((dedup.match(/2201号快递/g)||[]).length,1);
+ assert.doesNotMatch(dedup,/board-card-text/);
+ const long=vm.runInContext(`listingCard({id:'a3',type:'快递',description:'这是一段超过二十八个字的说明文字用来确认长说明仍然会在正文完整显示而不是因为标题截断被误删',display:'快递 · 这是一段超过二十八个字的说明文字用来确认…',ownerName:'同学',windowText:'长期',status:'active',role:'need'},'public')`,loaded.context);
+ assert.match(long,/board-card-text/);
+ assert.match(long,/这是一段超过二十八个字的说明文字用来确认长说明仍然会在正文完整显示而不是因为标题截断被误删/);
 });
 
 test('gitignored poster files are served locally and missing files do not break the app',async t=>{
