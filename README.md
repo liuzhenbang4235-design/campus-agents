@@ -69,7 +69,7 @@
 
 ## 启动
 
-仓库没有第三方依赖。`package.json` 只有名字和 `start` 脚本，没有 `dependencies`，也没有 `engines`。不要为了启动去跑 `npm install`。
+仓库没有第三方依赖。`package.json` 只有名字、`start`/`test` 脚本和 `engines: node >=22.5`，没有 `dependencies`。不要为了启动去跑 `npm install`。
 
 ```bash
 node server.cjs
@@ -79,9 +79,23 @@ node server.cjs
 
 未设置 `HOST`、也不在 Render 上时，进程只听 `127.0.0.1`。端口默认 `4173`，可用环境变量 `PORT` 改。
 
-云端模型（可选）：复制 `.env.example` 为 `.env`，填写 `CAMPUS_AI_ENABLED`、`CAMPUS_AI_PROVIDER`、`CAMPUS_AI_API_KEY`、`CAMPUS_AI_MODEL`（可选 `CAMPUS_AI_DAILY_LIMIT`），重启 `node server.cjs` 生效。优先级：系统环境变量 > `.env` > `config.local.json`。网页右上角不再提供模型配置入口，模型状态只作只读展示；Render 上继续在 Dashboard 填同名变量。
+云端模型（可选）：复制 `.env.example` 为 `.env`，填写 `CAMPUS_AI_ENABLED`、`CAMPUS_AI_PROVIDER`、`CAMPUS_AI_API_KEY`、`CAMPUS_AI_MODEL`（DeepSeek 用 `deepseek-flash`；可选 `CAMPUS_AI_DAILY_LIMIT`），重启 `node server.cjs` 生效。优先级：系统环境变量 > `.env` > `config.local.json`。网页右上角不再提供模型配置入口，模型状态只作只读展示；Render 上继续在 Dashboard 填同名变量。
 
 2026-10-20 的旧迁移说明写过「Node.js 18 或更高版本」。那是旧提示，不是已经测过的最低版本。本文写作时在 Node `v22.23.4` 上跑过测试，见 [docs/onboarding/07-快速启动与测试.md](docs/onboarding/07-快速启动与测试.md)。
+
+## 账号与管理员
+
+- `PUBLIC_MODE=1` 时默认关闭自助注册，账号由管理员发放；本机未设 `PUBLIC_MODE` 时保留注册，方便试用。
+- 创建首个超级管理员：
+
+```bash
+node scripts/create-admin.cjs --username root --name 管理员
+```
+
+终端只显示一次初始密码；首次登录必须改密。
+
+- 已有超管可在「审核管理 → 账号管理」创建账号、分配角色、禁用/启用、重置密码和 CSV 批量导入。导入模板见 [docs/accounts-import-template.csv](docs/accounts-import-template.csv)，每行 `登录账号,昵称,初始密码,角色`，密码留空自动生成，导入前请删除示例行。
+- 忘记密码目前由管理员重置，不提供短信或邮箱自助找回。
 
 ## 测试
 

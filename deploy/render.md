@@ -81,7 +81,7 @@ CAMPUS_AI_DAILY_LIMIT=
 | `CAMPUS_AI_ENABLED` | `true` 才启用云端模型。也接受 `1`、`yes`、`on`（大小写不限）。`false`、`0`、`no`、`off` 关闭。 |
 | `CAMPUS_AI_PROVIDER` | `doubao`、`deepseek` 或 `qwen` |
 | `CAMPUS_AI_API_KEY` | 上面这家服务商的 API Key |
-| `CAMPUS_AI_MODEL` | 模型 ID。填控制台调用示例里的 model，不要填 `apikey-` 开头的名称 |
+| `CAMPUS_AI_MODEL` | 模型 ID。DeepSeek 用 `deepseek-flash`（推荐）或 `deepseek-v4-pro`；不要填已停用的 `deepseek-chat`，也不要填 `apikey-` 开头的名称 |
 | `CAMPUS_AI_DAILY_LIMIT` | 可选。正整数。不填、留空或不是正整数时，沿用原来的每日 50 次 |
 
 密钥只放在这些环境变量里，或开发者自己电脑上未跟踪的 `.env` / `config.local.json`。不要把真实 Key、`.env`、`config.local.json`、`data/`、`imports/` 提交到 Git，也不要写进测试。管理接口只返回 `hasKey` 布尔值，响应和日志都不包含原始 Key。保存配置也不会把环境变量里的 Key 写回磁盘文件。
